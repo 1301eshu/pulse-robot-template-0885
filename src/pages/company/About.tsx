@@ -371,6 +371,29 @@ const LocationsSection = () => {
   );
 }
 const About = () => {
+  // Set meta title and tags
+  useEffect(() => {
+    document.title = "demo title";
+    
+    // Update or create meta description tag
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'demo tags');
+    
+    // Update or create meta keywords tag
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'demo tags');
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
