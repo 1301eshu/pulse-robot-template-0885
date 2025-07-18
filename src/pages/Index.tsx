@@ -1,80 +1,100 @@
-
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import HumanoidSection from "@/components/HumanoidSection";
-import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
-import ImageShowcaseSection from "@/components/ImageShowcaseSection";
-import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/pages/Homepage/Hero";
+import Statistics from "@/pages/Homepage/Statistics";
+import Services from "@/pages/Homepage/Services";
+import ValueProposition from "@/pages/Homepage/ValueProposition";
+import Process from "@/pages/Homepage/Process";
+import FeaturedProjects from "@/pages/Homepage/FeaturedProjects";
+import Testimonials from "@/pages/Homepage/Testimonials";
+import CTA from "@/pages/Homepage/CTA";
+import Page_1 from "@/pages/Homepage/Page_1";
+import Page_2 from "@/pages/Homepage/Page_2";
+import Page_3 from "@/pages/Homepage/Page_3";
+import LogoScroller from '@/components/ui/component_13';
+import EditableStatSection from "@/components/Statistics";
+import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import Page_4 from "@/pages/Homepage/Page_4";
 
-const Index = () => {
-  // Initialize intersection observer to detect when elements enter viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+import ContactCta from "@/components/ui/component_6";
+import { Sparkles } from 'lucide-react';
 
-  useEffect(() => {
-    // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Increased offset to account for mobile nav
-        const offset = window.innerWidth < 768 ? 100 : 80;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      });
-    });
-  }, []);
-
+export default function Index() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
         <Hero />
-        <HumanoidSection />
-        <SpecsSection />
-        <DetailsSection />
-        <ImageShowcaseSection />
-        <Features />
-        <Testimonials />
-        <Newsletter />
-        <MadeByHumans />
+         <section className="pt-16 pb-12 bg-white overflow-hidden">
+  <div className="section-wrapper text-center">
+    <h2 className="text-2xl md:text-3xl font-semibold text-[#0F172A] mb-0 inline-flex items-center justify-center gap-2">
+      <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
+            <Sparkles className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-400 text-sm font-medium">Why Partner With Growth Natives?</span>
+          </div>
+    </h2>
+  </div>
+
+  {/* ✅ Wrap the logo marquee in .section-wrapper */}
+  <div className="section-wrapper">
+    <LogoScroller
+      logos={[
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+        'https://res.cloudinary.com/dar70fhfi/image/upload/v1752754241/6626489011bed77bbc20ee9b_power-bi-vector-logo-2022_1_lraijk.svg',
+            
+      ]}
+      className="pt-4 pb-0 bg-transparent overflow-visible"
+    />
+  </div>
+</section>
+
+
+
+        <Statistics />
+        <Services />
+        <ValueProposition />
+        <Page_2 />
+        
+        <FeaturedProjects />
+       
+        <Testimonials 
+          title="What Our Clients Say"
+          description="Discover how we've helped businesses transform their growth strategies and achieve remarkable results."
+        />
+        
+        <Process />
+         <ContactCta
+              heading="Let’s Build Your Next Growth Chapter "
+              subtext="With AI at the core and clarity at every step, we’re here to make growth feel less chaotic—and a whole lot more scalable. "
+              buttonLabel="Book Your Strategy Call  "
+              buttonLink="/get-started"
+/>
+        {/* Statistics Section */}
+        <EditableStatSection
+  stats={[
+    { label: "Customers Worlwide Put Faith In Us", value: "200+" },
+    { label: "Digital Transformation Experts", value: "400+" },
+    { label: "Years Of Collective Experience", value: "1500+" },
+  ]}
+/>
+        <Page_1 />
+       
+       
+       { /*  <CTA /> */}
+        
+        
+        { /* <Page_3 /> */}
+        
+        
+        
+        { /* <Page_4 />*/}
+        
       </main>
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}
