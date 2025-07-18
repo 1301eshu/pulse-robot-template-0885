@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const NetworkON = () => {
   // Set meta title and tags
   useEffect(() => {
-    document.title = "demo networkon title";
+    document.title = "SEO Tips for Delivery Management Products";
     
     // Update or create meta description tag
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -17,7 +17,7 @@ const NetworkON = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'demo networkon');
+    metaDescription.setAttribute('content', '1Streamline your logistics with our product delivery management solutions. Enhance efficiency, reduce costs, and ensure timely deliveries for your business. Optimize your delivery process with our advanced product delivery management system. Improve tracking, reduce delays, and elevate customer satisfaction today.');
     
     // Update or create meta keywords tag
     let metaKeywords = document.querySelector('meta[name="keywords"]');
