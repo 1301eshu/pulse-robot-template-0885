@@ -25,6 +25,33 @@ export default function Index() {
       <Header />
       <main>
         <Hero />
+        
+        {/* New Left-Right Section */}
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                  Transform Your Business with AI-Driven Solutions
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We combine cutting-edge artificial intelligence with proven growth strategies to help businesses scale efficiently. Our data-driven approach ensures every decision is backed by intelligence, not guesswork.
+                </p>
+              </div>
+              
+              {/* Right Side - Image */}
+              <div className="flex justify-center lg:justify-end">
+                <img
+                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80"
+                  alt="Business transformation"
+                  className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
          <section className="pt-16 pb-12 bg-white overflow-hidden">
   <div className="section-wrapper text-center">
     <h2 className="text-2xl md:text-3xl font-semibold text-[#0F172A] mb-0 inline-flex items-center justify-center gap-2">
