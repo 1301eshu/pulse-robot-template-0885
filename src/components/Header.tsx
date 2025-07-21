@@ -36,68 +36,69 @@ export default function Header() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#0A101F]">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
       <nav 
         className="relative"
         onMouseLeave={closeMenu}
       >
-        <div className="section-wrapper flex items-center justify-between py-4 relative">
+        <div className="section-wrapper flex items-center justify-between py-3 relative">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
               src="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751363539/Logo_-_Gradient_f2jmus.png"
               alt="GrowthNatives Logo"
-              className="h-8 w-auto"
+              className="h-9 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {['services', 'labs', 'resources', 'company'].map((menu) => (
               <div
                 key={menu}
                 className="relative"
                 onMouseEnter={() => openMenu(menu)}
               >
-                <button className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-4 font-semibold capitalize">
+                <button className="flex items-center text-gray-700 hover:text-primary hover:bg-gray-50 transition-all duration-200 px-4 py-2 rounded-lg font-medium capitalize">
                   {menu === 'services'
                     ? 'Our Services'
                     : menu === 'labs'
                     ? 'Growth Labs'
                     : menu.charAt(0).toUpperCase() + menu.slice(1)}
-                  <ChevronDown className="ml-1 w-4 h-4" />
+                  <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
                 </button>
               </div>
             ))}
           </div>
 
           {/* Right side - Desktop */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3">
             <button 
               onClick={toggleSearch}
-              className="text-white hover:text-[#0A6CFF] transition-colors p-2 rounded-lg"
+              className="text-gray-600 hover:text-primary hover:bg-gray-50 transition-all duration-200 p-2 rounded-lg"
             >
               <Search className="w-5 h-5" />
             </button>
             <SITE_CTA 
-  variant="primary" 
-  text="Contact Us" 
-  href="/company/contact"
-  size="md"
-/>
+              variant="primary" 
+              text="Contact Us" 
+              href="/company/contact"
+              size="md"
+              className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-md hover:shadow-lg transition-all duration-200"
+            />
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-3">
             <button 
               onClick={toggleSearch}
-              className="text-white hover:text-[#0A6CFF] transition-colors p-2 rounded-lg"
+              className="text-gray-600 hover:text-primary hover:bg-gray-50 transition-all duration-200 p-2 rounded-lg"
             >
               <Search className="w-5 h-5" />
             </button>
             <button
               onClick={toggleMobileMenu}
-              className="text-white hover:text-[#0A6CFF] transition-colors p-2 rounded-lg"
+              className="text-gray-600 hover:text-primary hover:bg-gray-50 transition-all duration-200 p-2 rounded-lg"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -131,21 +132,21 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0A101F] border-t border-gray-700 z-40">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40">
             <div className="px-6 py-4 space-y-4">
               <MobileMenuItem title="Our Services" items={['Marketing Automation', 'Salesforce', 'Marketing Analytics', 'Digital Marketing', 'Development Services', 'Design Services']} />
               <MobileMenuItem title="Growth Labs" items={['DiGGrowth', 'NetworkON', 'Pixel Dino', 'AI Chatbot']} />
               <MobileMenuItem title="Resources" items={['Blog', 'Case Studies', 'Templates', 'Documentation']} />
               <MobileMenuItem title="Company" items={['About', 'Team', 'Careers', 'Contact']} />
-              <div onClick={() => setIsMobileMenuOpen(false)}>
-  <SITE_CTA 
-    variant="primary" 
-    text="Contact Us" 
-    href="/company/contact"
-    size="md"
-    className="w-full justify-center"
-  />
-</div>
+              <div onClick={() => setIsMobileMenuOpen(false)} className="pt-4">
+                <SITE_CTA 
+                  variant="primary" 
+                  text="Contact Us" 
+                  href="/company/contact"
+                  size="md"
+                  className="w-full justify-center"
+                />
+              </div>
             </div>
           </div>
         )}
@@ -618,10 +619,10 @@ function MobileMenuItem({ title, items }: { title: string; items: string[] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-700 pb-4">
+    <div className="border-b border-gray-200 pb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-white font-semibold py-2"
+        className="flex items-center justify-between w-full text-gray-700 font-semibold py-2 hover:text-primary transition-colors"
       >
         {title}
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -632,7 +633,7 @@ function MobileMenuItem({ title, items }: { title: string; items: string[] }) {
             <Link
               key={item}
               to={`/${title.toLowerCase().replace(/\s+/g, '-')}/${item.toLowerCase().replace(/\s+/g, '-')}`}
-              className="block text-gray-300 hover:text-white py-1 text-sm"
+              className="block text-gray-600 hover:text-primary py-1 text-sm transition-colors"
             >
               {item}
             </Link>
