@@ -172,7 +172,7 @@ function MegaMenu({ open, children }: { open: boolean; children: React.ReactNode
           : 'opacity-0 -translate-y-4 pointer-events-none'}
       `}
     >
-      <div className="max-w-[1200px] mx-auto px-6 py-8">{children}</div>
+      <div className="max-w-[1200px] mx-auto px-6 py-6">{children}</div>
     </div>
   );
 }
@@ -181,83 +181,64 @@ function MegaMenu({ open, children }: { open: boolean; children: React.ReactNode
 function renderMenuContent(menu: string | null, activeCategory: string, setActiveCategory: React.Dispatch<React.SetStateAction<string>>) {
   if (menu === 'services') {
     return (
-      <>
-        <div className="grid grid-cols-[300px_1fr] gap-8">
-          {/* Left Sidebar - Categories */}
-          <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-6">Explore Categories</h3>
-            
-            <div className="space-y-1">
-              <CategoryMenuItem
-                icon={<Zap className="w-4 h-4" />}
-                iconBg="bg-yellow-100"
-                iconColor="text-yellow-600"
-                title="Marketing Automation"
-                subtitle="CRM & workflow automation"
-                categoryKey="marketing-automation"
-                isActive={activeCategory === 'marketing-automation'}
-                setActiveCategory={setActiveCategory}
-              />
-              <CategoryMenuItem
-                icon={<Cloud className="w-4 h-4" />}
-                iconBg="bg-blue-100"
-                iconColor="text-blue-600"
-                title="Salesforce"
-                subtitle="Custom solutions"
-                categoryKey="salesforce"
-                isActive={activeCategory === 'salesforce'}
-                setActiveCategory={setActiveCategory}
-              />
-              <CategoryMenuItem
-                icon={<BarChart3 className="w-4 h-4" />}
-                iconBg="bg-green-100"
-                iconColor="text-green-600"
-                title="Marketing Analytics"
-                subtitle="Data-driven insights"
-                categoryKey="marketing-analytics"
-                isActive={activeCategory === 'marketing-analytics'}
-                setActiveCategory={setActiveCategory}
-              />
-              <CategoryMenuItem
-                icon={<Megaphone className="w-4 h-4" />}
-                iconBg="bg-red-100"
-                iconColor="text-red-600"
-                title="Digital Marketing"
-                subtitle="Omnichannel growth"
-                categoryKey="digital-marketing"
-                isActive={activeCategory === 'digital-marketing'}
-                setActiveCategory={setActiveCategory}
-              />
-              <CategoryMenuItem
-                icon={<Code className="w-4 h-4" />}
-                iconBg="bg-gray-100"
-                iconColor="text-gray-600"
-                title="Development Services"
-                subtitle="Robust development"
-                categoryKey="development-services"
-                isActive={activeCategory === 'development-services'}
-                setActiveCategory={setActiveCategory}
-              />
-              <CategoryMenuItem
-                icon={<Palette className="w-4 h-4" />}
-                iconBg="bg-purple-100"
-                iconColor="text-purple-600"
-                title="Design Services"
-                subtitle="World-class designs"
-                categoryKey="design-services"
-                isActive={activeCategory === 'design-services'}
-                setActiveCategory={setActiveCategory}
-              />
-            </div>
-          </div>
-
-          {/* Right Content - Service Details */}
-          <div className="pl-8 border-l border-gray-200">
-            <ServiceContent activeCategory={activeCategory} />
+      <div className="flex flex-col space-y-6">
+        {/* Services List - Vertical Layout */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Services</h3>
+          
+          <div className="grid grid-cols-1 gap-2">
+            <ServiceMenuItem
+              icon={<Zap className="w-4 h-4" />}
+              iconBg="bg-yellow-100"
+              iconColor="text-yellow-600"
+              title="Marketing Automation"
+              subtitle="CRM & workflow automation"
+              items={['HubSpot', 'Marketo', 'Salesforce Pardot', 'Salesforce Marketing Cloud', 'Eloqua']}
+            />
+            <ServiceMenuItem
+              icon={<Cloud className="w-4 h-4" />}
+              iconBg="bg-blue-100"
+              iconColor="text-blue-600"
+              title="Salesforce"
+              subtitle="Custom solutions"
+              items={['Salesforce AI', 'Service Cloud', 'Sales Cloud', 'Marketing Cloud', 'Commerce Cloud']}
+            />
+            <ServiceMenuItem
+              icon={<BarChart3 className="w-4 h-4" />}
+              iconBg="bg-green-100"
+              iconColor="text-green-600"
+              title="Marketing Analytics"
+              subtitle="Data-driven insights"
+              items={['Web Analytics', 'Data Visualization', 'GA4 Migration', 'CRO']}
+            />
+            <ServiceMenuItem
+              icon={<Megaphone className="w-4 h-4" />}
+              iconBg="bg-red-100"
+              iconColor="text-red-600"
+              title="Digital Marketing"
+              subtitle="Omnichannel growth"
+              items={['Paid Ads', 'SEO', 'ORM', 'ABM', 'SMM']}
+            />
+            <ServiceMenuItem
+              icon={<Code className="w-4 h-4" />}
+              iconBg="bg-gray-100"
+              iconColor="text-gray-600"
+              title="Development Services"
+              subtitle="Robust development"
+              items={['Mobile App Development', 'Web Development', 'Testing & QA', 'DevOps']}
+            />
+            <ServiceMenuItem
+              icon={<Palette className="w-4 h-4" />}
+              iconBg="bg-purple-100"
+              iconColor="text-purple-600"
+              title="Design Services"
+              subtitle="World-class designs"
+              items={['UI/UX', 'Marketing Assets', 'Motion Graphics', 'Social Media']}
+            />
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-100">
+        <div className="pt-4 border-t border-gray-100">
           <Link
             to="/services"
             className="flex items-center justify-between w-full bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-white px-6 py-4 rounded-lg hover:from-[#041739] hover:to-[#083550] transition-all font-medium group"
@@ -269,58 +250,49 @@ function renderMenuContent(menu: string | null, activeCategory: string, setActiv
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </>
+      </div>
     );
   }
 
   if (menu === 'labs') {
     return (
-      <div className="grid grid-cols-2 gap-12">
-        <div className="space-y-6">
-          <LabCard
-            icon={<Lightbulb className="w-5 h-5 text-purple-600" />}
-            bg="bg-purple-100"
-            title="DiGGrowth"
-            desc="A no-code marketing analytics platform"
-            to="/growth-labs/diggrowth"
-          />
-          <LabCard
-            icon={<Zap className="w-5 h-5 text-green-600" />}
-            bg="bg-green-100"
-            title="NetworkON"
-            desc="AI-driven logistics optimization"
-            to="/growth-labs/networkon"
-          />
-          <LabCard
-            icon={<Palette className="w-5 h-5 text-orange-600" />}
-            bg="bg-orange-100"
-            title="Pixel Dino"
-            desc="Video production & design studio"
-            to="/growth-labs/pixel-dino"
-          />
-          <LabCard
-            icon={<Users className="w-5 h-5 text-blue-600" />}
-            bg="bg-blue-100"
-            title="AI Chatbot"
-            desc="AI Conversations That Convert"
-            to="/growth-labs/ai-chatbot"
-          />
-        </div>
-
-        <div className="flex flex-col items-center justify-center text-center space-y-6">
-          <div className="w-full max-w-sm h-48 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center border border-gray-200">
-            <span className="text-gray-400">Innovation Showcase</span>
+      <div className="flex flex-col space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Growth Labs</h3>
+          
+          <div className="grid grid-cols-1 gap-3">
+            <LabCard
+              icon={<Lightbulb className="w-5 h-5 text-purple-600" />}
+              bg="bg-purple-100"
+              title="DiGGrowth"
+              desc="A no-code marketing analytics platform"
+              to="/growth-labs/diggrowth"
+            />
+            <LabCard
+              icon={<Zap className="w-5 h-5 text-green-600" />}
+              bg="bg-green-100"
+              title="NetworkON"
+              desc="AI-driven logistics optimization"
+              to="/growth-labs/networkon"
+            />
+            <LabCard
+              icon={<Palette className="w-5 h-5 text-orange-600" />}
+              bg="bg-orange-100"
+              title="Pixel Dino"
+              desc="Video production & design studio"
+              to="/growth-labs/pixel-dino"
+            />
+            <LabCard
+              icon={<Users className="w-5 h-5 text-blue-600" />}
+              bg="bg-blue-100"
+              title="AI Chatbot"
+              desc="AI Conversations That Convert"
+              to="/growth-labs/ai-chatbot"
+            />
           </div>
-          <Link
-            to="/growth-labs"
-            className="inline-flex items-center bg-[#0A6CFF] text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            Innovation Hub
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Link>
         </div>
         
-        <div className="mt-8 pt-6 border-t border-gray-100 col-span-2">
+        <div className="pt-4 border-t border-gray-100">
           <Link
             to="/growth-labs"
             className="flex items-center justify-between w-full bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-white px-6 py-4 rounded-lg hover:from-[#041739] hover:to-[#083550] transition-all font-medium group"
@@ -638,6 +610,54 @@ function MobileMenuItem({ title, items }: { title: string; items: string[] }) {
               {item}
             </Link>
           ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ServiceMenuItem component for vertical navigation
+function ServiceMenuItem({ icon, iconBg, iconColor, title, subtitle, items }: {
+  icon: React.ReactNode;
+  iconBg: string;
+  iconColor: string;
+  title: string;
+  subtitle: string;
+  items: string[];
+}) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="border border-gray-200 rounded-lg hover:border-gray-300 transition-colors">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex items-center justify-between w-full p-4 text-left hover:bg-gray-50 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <div className={`w-8 h-8 ${iconBg} rounded-lg flex items-center justify-center`}>
+            <div className={iconColor}>{icon}</div>
+          </div>
+          <div>
+            <h4 className="font-medium text-gray-900">{title}</h4>
+            <p className="text-sm text-gray-500">{subtitle}</p>
+          </div>
+        </div>
+        <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+      </button>
+      
+      {isExpanded && (
+        <div className="border-t border-gray-200 p-4 bg-gray-50">
+          <div className="grid grid-cols-2 gap-2">
+            {items.map((item) => (
+              <Link
+                key={item}
+                to={`/services/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                className="text-sm text-gray-600 hover:text-primary hover:bg-white px-3 py-2 rounded transition-colors"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>
