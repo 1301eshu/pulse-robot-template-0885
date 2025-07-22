@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HubSpotForm from "@/components/HubSpotForm";
 
 // Component Imports
+import HubSpotForm from "@/components/HubSpotForm";
 import Testimonials from "@/components/ui/component_4";
 import LogoScroller from '@/components/ui/component_13';
 import AwardsSection from '@/components/ui/component_12';
@@ -37,15 +37,14 @@ const Contact = () => {
               With strategic teams and cutting-edge tools, we drive measurable results and elevate your business to new heights.
             </p>
           </div>
-
           {/* Right - HubSpot Form */}
-          <div className="bg-white text-black p-8 md:p-10 rounded-3xl shadow-2xl backdrop-blur-md">
-            <HubSpotForm 
-              portalId="YOUR_PORTAL_ID" 
-              formId="YOUR_FORM_ID"
-              className="hubspot-form"
-            />
-          </div>
+              <div className="w-full min-h-[500px] bg-white rounded-lg p-6 shadow-lg">
+                <HubSpotForm 
+                  portalId="7118070" 
+                  formId="4f454e59-44e2-4616-b894-4775419d06bd"
+                  className="hubspot-form custom"
+                />
+              </div>
         </div>
       </section>
 
