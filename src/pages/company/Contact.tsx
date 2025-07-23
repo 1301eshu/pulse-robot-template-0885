@@ -38,7 +38,7 @@ const Contact = () => {
             </p>
           </div>
           {/* Right - HubSpot Form */}
-              <div className="w-full min-h-[500px] bg-white rounded-lg p-6 shadow-lg">
+              <div className="w-full bg-white rounded-lg p-6 shadow-lg">
                 <HubSpotForm 
                   portalId="7118070" 
                   formId="4f454e59-44e2-4616-b894-4775419d06bd"
