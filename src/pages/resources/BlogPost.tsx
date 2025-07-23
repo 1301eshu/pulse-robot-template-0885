@@ -768,7 +768,7 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<any>(null);
   const [notFound, setNotFound] = useState(false);
-  const [toc, setToc] = useState<string[]>([]);
+  const [toc, setToc] = useState<{ text: string; id: string }[]>([]);
 
 useEffect(() => {
   if (slug) {
