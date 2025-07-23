@@ -769,6 +769,7 @@ const BlogPost = () => {
   const [post, setPost] = useState<any>(null);
   const [notFound, setNotFound] = useState(false);
   const [toc, setToc] = useState<{ text: string; id: string }[]>([]);
+  const [activeHeading, setActiveHeading] = useState<string>('');
 
 useEffect(() => {
   if (slug) {
@@ -787,6 +788,40 @@ useEffect(() => {
       .catch(() => setNotFound(true));
   }
 }, [slug]);
+
+// Scroll spy effect
+useEffect(() => {
+  if (toc.length === 0) return;
+
+  const handleScroll = () => {
+    const headings = toc.map(item => document.getElementById(item.id)).filter(Boolean);
+    const scrollPosition = window.scrollY + 150; // 150px offset for header
+
+    for (let i = headings.length - 1; i >= 0; i--) {
+      const heading = headings[i];
+      if (heading && heading.offsetTop <= scrollPosition) {
+        setActiveHeading(heading.id);
+        break;
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Set initial active heading
+
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [toc]);
+
+// Handle smooth scroll with offset
+const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  e.preventDefault();
+  const element = document.getElementById(id);
+  if (element) {
+    const yOffset = -120; // 120px offset from top
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
 
 
   if (notFound) return <Navigate to="/resources/blog" replace />;
@@ -853,7 +888,15 @@ useEffect(() => {
                 <ul className="space-y-3 border-l pl-4 text-sm text-gray-700 mb-10">
                   {toc.map((item : any, i) => (
                     <li key={i}>
-                      <a href={`#${item.id}`} className="hover:text-blue-600">
+                      <a 
+                        href={`#${item.id}`}
+                        onClick={(e) => handleTocClick(e, item.id)}
+                        className={`block py-1 transition-colors duration-200 ${
+                          activeHeading === item.id 
+                            ? 'text-blue-600 font-medium border-l-2 border-blue-600 -ml-[1px] pl-3' 
+                            : 'hover:text-blue-600'
+                        }`}
+                      >
                         {item.text}
                       </a>
                     </li>
