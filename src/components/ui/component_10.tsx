@@ -169,14 +169,20 @@ interface SubTab {
 
 interface RecentResourcesProps {
   heading?: string;
+  body?: string;
   subTabs: SubTab[];
   resources: ResourceItem[];
+  onLoadMore?: () => void;
+  hasMore?: boolean;
 }
 
 const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   heading = "Most Recent Resources",
+  body,
   subTabs,
   resources,
+  onLoadMore,
+  hasMore = false,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState(subTabs[0]?.id || "all");
   const [currentPage, setCurrentPage] = useState(1);
@@ -187,16 +193,21 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
       ? resources
       : resources.filter((r) => r.subtitle === activeSubTab);
 
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const paginatedResources = filteredResources.slice(
+  // When using load more, show all resources, otherwise paginate
+  const displayResources = onLoadMore ? filteredResources : filteredResources.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+  
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">{heading}</h2>
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900">{heading}</h2>
+          {body && <p className="text-gray-600 mt-2 max-w-2xl">{body}</p>}
+        </div>
 
         {/* Sub-tabs */}
         <div className="flex gap-2 mb-8 overflow-x-auto">
@@ -220,7 +231,7 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
 
         {/* Resource Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {paginatedResources.map((resource, index) => (
+          {displayResources.map((resource, index) => (
             <Link
               key={index}
               to={resource.slug ? `/resources/blog/${resource.slug}` : '#'}
@@ -269,22 +280,36 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center mt-10 gap-2">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        {/* Load More Button - only show if onLoadMore prop is provided */}
+        {onLoadMore && hasMore && (
+          <div className="flex justify-center mt-10">
             <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`w-8 h-8 rounded-md text-sm font-medium flex items-center justify-center transition-colors ${
-                currentPage === page
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-              }`}
+              onClick={onLoadMore}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-md font-medium transition-colors"
             >
-              {page}
+              Load More Posts
             </button>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {/* Traditional Pagination - only show if no onLoadMore prop */}
+        {!onLoadMore && totalPages > 1 && (
+          <div className="flex justify-center mt-10 gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-8 h-8 rounded-md text-sm font-medium flex items-center justify-center transition-colors ${
+                  currentPage === page
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
