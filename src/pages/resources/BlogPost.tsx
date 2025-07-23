@@ -880,7 +880,7 @@ const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
           </section>
 
           {/* Grid: TOC + Content */}
-          <div className="grid lg:grid-cols-[16rem_1fr] gap-[88px]">
+          <div className="grid pb-24 lg:grid-cols-[16rem_1fr] gap-[88px]">
             {/* TOC */}
             <aside className="hidden lg:block sticky top-24 self-start">
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Table of Contents</h3>
