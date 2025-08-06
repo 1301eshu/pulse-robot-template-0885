@@ -136,19 +136,18 @@ export default function SSRServicesSection() {
         </div>
 
         <div className="lg:grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Left column - Service list - Always shows first service as active for SSR */}
+          {/* Left column - Service list - All content visible for SSR */}
           <div className="flex flex-col gap-3 justify-center h-full">
             {services.map((service, index) => {
               const isActive = index === activeIndex;
-              const isSSRDefault = !isClient && index === 0; // First item active by default for SSR
-              const shouldShowAsActive = isActive || isSSRDefault;
+              const isFirstItem = index === 0;
               
               return (
                 <div
                   key={index}
                   onClick={() => handleServiceClick(index)}
                   className={`relative group transition-all duration-300 rounded-xl cursor-pointer px-6 py-5 ${
-                    shouldShowAsActive ? 'bg-[#F8FAFB]' : ''
+                    isActive && isClient ? 'bg-[#F8FAFB]' : ''
                   }`}
                 >
                   {/* Progress bar - only show when animation is active */}
@@ -161,48 +160,66 @@ export default function SSRServicesSection() {
                   )}
 
                   <h3
-                    className={`text-base md:text-lg font-semibold transition-colors ${
-                      shouldShowAsActive ? 'text-gray-900' : 'text-gray-400 group-hover:text-gray-700'
+                    className={`text-base md:text-lg font-semibold ${
+                      isActive && isClient 
+                        ? 'text-gray-900' 
+                        : isFirstItem 
+                          ? 'text-gray-900' // First item always visible for SSR
+                          : 'text-gray-400 group-hover:text-gray-700'
                     }`}
                   >
                     {service.title}
                   </h3>
 
-                  {/* Description - always show for first item on SSR */}
+                  {/* Description - Always render content, control visibility with CSS */}
                   <div
-                    className={`text-sm text-gray-500 overflow-hidden transition-all duration-500 ease-in-out ${
-                      shouldShowAsActive ? 'opacity-100 mt-2 mb-3 max-h-[100px]' : 'opacity-0 h-0 max-h-0'
+                    className={`text-sm text-gray-500 mt-2 mb-3 ${
+                      !isClient 
+                        ? 'block' // Show all content for SSR
+                        : isActive 
+                          ? 'block opacity-100' 
+                          : 'hidden opacity-0'
                     }`}
                   >
                     {service.description}
                   </div>
 
-                  {/* Mobile image - show first item for SSR */}
-                  {shouldShowAsActive && (
-                    <div className="mt-3 block lg:hidden">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-auto object-contain rounded-md transition-all duration-500 grayscale-0"
-                      />
-                    </div>
-                  )}
+                  {/* Mobile image - Always render for SSR, show first item */}
+                  <div className={`mt-3 block lg:hidden ${
+                    !isClient 
+                      ? (isFirstItem ? 'block' : 'sr-only') // Only first visible for SSR, others accessible to screen readers
+                      : isActive 
+                        ? 'block' 
+                        : 'hidden'
+                  }`}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-auto object-contain rounded-md transition-all duration-500 grayscale-0"
+                    />
+                  </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Right column - Image - Always shows first image for SSR */}
-          <div className="hidden lg:flex items-center justify-center">
-            <img
-              key={isClient ? activeIndex : 'ssr-default'} // Prevent key change on SSR
-              src={services[activeIndex].image}
-              alt={services[activeIndex].title}
-              className={`w-full max-w-xl h-full object-contain rounded-md grayscale ${
-                isClient ? 'fade-slide-in' : ''
-              }`}
-              style={{ filter: 'grayscale(0%)' }}
-            />
+          {/* Right column - Images - All images rendered for SSR */}
+          <div className="hidden lg:flex items-center justify-center relative">
+            {services.map((service, index) => (
+              <img
+                key={index}
+                src={service.image}
+                alt={service.title}
+                className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
+                  !isClient 
+                    ? (index === 0 ? 'opacity-100 relative' : 'opacity-0 absolute') // First image visible for SSR
+                    : index === activeIndex 
+                      ? 'opacity-100 relative fade-slide-in' 
+                      : 'opacity-0 absolute'
+                }`}
+                style={{ filter: 'grayscale(0%)' }}
+              />
+            ))}
           </div>
         </div>
       </div>
