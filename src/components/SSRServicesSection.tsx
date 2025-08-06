@@ -136,7 +136,7 @@ export default function SSRServicesSection() {
         </div>
 
         <div className="lg:grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Left column - Service list - All content visible for SSR */}
+          {/* Left column - All content always rendered for SSR */}
           <div className="flex flex-col gap-3 justify-center h-full">
             {services.map((service, index) => {
               const isActive = index === activeIndex;
@@ -147,7 +147,7 @@ export default function SSRServicesSection() {
                   key={index}
                   onClick={() => handleServiceClick(index)}
                   className={`relative group transition-all duration-300 rounded-xl cursor-pointer px-6 py-5 ${
-                    isActive && isClient ? 'bg-[#F8FAFB]' : ''
+                    (isActive && isClient) || (!isClient && isFirstItem) ? 'bg-[#F8FAFB]' : ''
                   }`}
                 >
                   {/* Progress bar - only show when animation is active */}
@@ -159,43 +159,39 @@ export default function SSRServicesSection() {
                     />
                   )}
 
+                  {/* Title - Always visible */}
                   <h3
-                    className={`text-base md:text-lg font-semibold ${
-                      isActive && isClient 
+                    className={`text-base md:text-lg font-semibold transition-colors ${
+                      (isActive && isClient) || (!isClient && isFirstItem)
                         ? 'text-gray-900' 
-                        : isFirstItem 
-                          ? 'text-gray-900' // First item always visible for SSR
-                          : 'text-gray-400 group-hover:text-gray-700'
+                        : 'text-gray-400 group-hover:text-gray-700'
                     }`}
                   >
                     {service.title}
                   </h3>
 
-                  {/* Description - Always render content, control visibility with CSS */}
+                  {/* Description - ALWAYS in DOM, control with opacity/height for SEO */}
                   <div
-                    className={`text-sm text-gray-500 mt-2 mb-3 ${
-                      !isClient 
-                        ? 'block' // Show all content for SSR
-                        : isActive 
-                          ? 'block opacity-100' 
-                          : 'hidden opacity-0'
+                    className={`text-sm text-gray-500 mt-2 mb-3 transition-all duration-300 ${
+                      (isActive && isClient) || (!isClient && isFirstItem)
+                        ? 'opacity-100 max-h-[200px]' 
+                        : 'opacity-0 max-h-0 overflow-hidden'
                     }`}
                   >
                     {service.description}
                   </div>
 
-                  {/* Mobile image - Always render for SSR, show first item */}
-                  <div className={`mt-3 block lg:hidden ${
-                    !isClient 
-                      ? (isFirstItem ? 'block' : 'sr-only') // Only first visible for SSR, others accessible to screen readers
-                      : isActive 
-                        ? 'block' 
-                        : 'hidden'
+                  {/* Mobile image - ALWAYS in DOM for all services */}
+                  <div className={`mt-3 block lg:hidden transition-all duration-300 ${
+                    (isActive && isClient) || (!isClient && isFirstItem)
+                      ? 'opacity-100 max-h-[400px]' 
+                      : 'opacity-0 max-h-0 overflow-hidden'
                   }`}>
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-auto object-contain rounded-md transition-all duration-500 grayscale-0"
+                      className="w-full h-auto object-contain rounded-md"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -203,23 +199,27 @@ export default function SSRServicesSection() {
             })}
           </div>
 
-          {/* Right column - Images - All images rendered for SSR */}
-          <div className="hidden lg:flex items-center justify-center relative">
-            {services.map((service, index) => (
-              <img
-                key={index}
-                src={service.image}
-                alt={service.title}
-                className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
-                  !isClient 
-                    ? (index === 0 ? 'opacity-100 relative' : 'opacity-0 absolute') // First image visible for SSR
-                    : index === activeIndex 
-                      ? 'opacity-100 relative fade-slide-in' 
-                      : 'opacity-0 absolute'
-                }`}
-                style={{ filter: 'grayscale(0%)' }}
-              />
-            ))}
+          {/* Right column - ALL images in DOM for SSR */}
+          <div className="hidden lg:flex items-center justify-center relative min-h-[400px]">
+            {services.map((service, index) => {
+              const isActive = index === activeIndex;
+              const isFirstItem = index === 0;
+              
+              return (
+                <img
+                  key={index}
+                  src={service.image}
+                  alt={service.title}
+                  className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
+                    (isActive && isClient) || (!isClient && isFirstItem)
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  } ${isClient && isActive ? 'fade-slide-in' : ''}`}
+                  style={{ filter: 'grayscale(0%)' }}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
