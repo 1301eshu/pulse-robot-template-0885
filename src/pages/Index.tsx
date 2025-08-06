@@ -17,6 +17,7 @@ import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_
 import Page_4 from "@/pages/Homepage/Page_4";
 
 import ContactCta from "@/components/ui/component_6";
+import FullStackFirepower from "@/components/FullStackFirepower";
 import { Sparkles } from 'lucide-react';
 
 export default function Index() {
@@ -83,6 +84,7 @@ export default function Index() {
 
         <Statistics />
         <Services />
+        <FullStackFirepower />
         <ValueProposition />
         <Page_2 />
         
