@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/pages/Homepage/Hero";
 import Statistics from "@/pages/Homepage/Statistics";
-import Services from "@/pages/Homepage/Services";
+import SSRServicesSection from "@/components/SSRServicesSection";
 import ValueProposition from "@/pages/Homepage/ValueProposition";
 import Process from "@/pages/Homepage/Process";
 import FeaturedProjects from "@/pages/Homepage/FeaturedProjects";
@@ -83,7 +83,7 @@ export default function Index() {
 
 
         <Statistics />
-        <Services />
+        <SSRServicesSection />
         <FullStackFirepower />
         <ValueProposition />
         <Page_2 />
