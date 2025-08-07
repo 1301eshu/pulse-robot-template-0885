@@ -170,13 +170,23 @@ export default function SSRServicesSection() {
                     {service.title}
                   </h3>
 
-                  {/* Description - ALWAYS visible for SSR */}
-                  <div className="text-sm text-gray-500 mt-2 mb-3">
+                  {/* Description - Show first item for SSR, others controlled by state */}
+                  <div 
+                    className={`text-sm text-gray-500 mt-2 mb-3 transition-all duration-300 ${
+                      (isActive && isClient) || (!isClient && isFirstItem)
+                        ? 'block' 
+                        : 'hidden'
+                    }`}
+                  >
                     {service.description}
                   </div>
 
-                  {/* Mobile image - ALWAYS visible for SSR */}
-                  <div className="mt-3 block lg:hidden">
+                  {/* Mobile image - Show first item for SSR, others controlled by state */}
+                  <div className={`mt-3 block lg:hidden transition-all duration-300 ${
+                    (isActive && isClient) || (!isClient && isFirstItem)
+                      ? 'block' 
+                      : 'hidden'
+                  }`}>
                     <img
                       src={service.image}
                       alt={service.title}
@@ -189,18 +199,27 @@ export default function SSRServicesSection() {
             })}
           </div>
 
-          {/* Right column - ALL images visible for SSR */}
+          {/* Right column - Show first image for SSR, others controlled by state */}
           <div className="hidden lg:flex items-center justify-center relative min-h-[400px]">
-            {services.map((service, index) => (
-              <img
-                key={index}
-                src={service.image}
-                alt={service.title}
-                className="w-full max-w-xl h-full object-contain rounded-md"
-                style={{ filter: 'grayscale(0%)' }}
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            ))}
+            {services.map((service, index) => {
+              const isActive = index === activeIndex;
+              const isFirstItem = index === 0;
+              
+              return (
+                <img
+                  key={index}
+                  src={service.image}
+                  alt={service.title}
+                  className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
+                    (isActive && isClient) || (!isClient && isFirstItem)
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  }`}
+                  style={{ filter: 'grayscale(0%)' }}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
