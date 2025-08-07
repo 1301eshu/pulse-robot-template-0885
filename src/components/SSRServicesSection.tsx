@@ -64,10 +64,37 @@ export default function SSRServicesSection() {
   useEffect(() => {
     if (!isClient || !isAnimationActive) return;
 
-    if (progressRef.current) {
-      progressRef.current.style.animation = 'none';
-      void progressRef.current.offsetWidth;
-      progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+    // Update all progress bars and images
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const serviceItems = document.querySelectorAll('.service-item');
+    const desktopImages = document.querySelectorAll('.desktop-service-image');
+
+    // Reset all items
+    serviceItems.forEach((item, index) => {
+      item.setAttribute('data-active', 'false');
+    });
+    desktopImages.forEach((img, index) => {
+      img.setAttribute('data-active', 'false');
+    });
+    progressBars.forEach(bar => {
+      bar.setAttribute('data-show', 'false');
+      (bar as HTMLElement).style.animation = 'none';
+    });
+
+    // Set active item
+    if (serviceItems[activeIndex]) {
+      serviceItems[activeIndex].setAttribute('data-active', 'true');
+    }
+    if (desktopImages[activeIndex]) {
+      desktopImages[activeIndex].setAttribute('data-active', 'true');
+    }
+
+    // Animate progress bar
+    const activeProgressBar = progressBars[activeIndex] as HTMLElement;
+    if (activeProgressBar) {
+      activeProgressBar.setAttribute('data-show', 'true');
+      void activeProgressBar.offsetWidth;
+      activeProgressBar.style.animation = `progressBar ${DURATION}ms linear forwards`;
     }
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -163,16 +190,19 @@ export default function SSRServicesSection() {
           max-height: 400px;
         }
 
-        /* Desktop images - always in DOM */
+        /* Desktop images - always in DOM with smooth transitions */
         .desktop-service-image {
           opacity: 0;
           z-index: 0;
+          transform: translateX(20px);
+          transition: all 0.5s ease-in-out;
         }
         
         .desktop-service-image[data-active="true"],
         .desktop-service-image[data-first="true"] {
           opacity: 1;
           z-index: 10;
+          transform: translateX(0);
         }
 
         .fade-in {
@@ -222,8 +252,7 @@ export default function SSRServicesSection() {
               >
                 {/* Progress bar - always in DOM */}
                 <div
-                  ref={index === activeIndex ? progressRef : null}
-                  className="absolute top-0 left-0 h-[3px] bg-[#1fa4fc] rounded-full progress-bar"
+                  className={`absolute top-0 left-0 h-[3px] bg-[#1fa4fc] rounded-full progress-bar`}
                   style={{ width: '0%' }}
                   data-show={index === activeIndex && isAnimationActive ? 'true' : 'false'}
                 />
