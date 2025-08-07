@@ -101,6 +101,80 @@ export default function SSRServicesSection() {
           to { width: 100%; }
         }
 
+        /* Service item states - always in DOM, controlled by CSS */
+        .service-item {
+          background: transparent;
+        }
+        
+        .service-item[data-active="true"], 
+        .service-item[data-first="true"] {
+          background: #F8FAFB;
+        }
+
+        /* Progress bar visibility */
+        .progress-bar {
+          opacity: 0;
+        }
+        
+        .progress-bar[data-show="true"] {
+          opacity: 1;
+        }
+
+        /* Service titles */
+        .service-title {
+          color: #9CA3AF;
+        }
+        
+        .service-item[data-active="true"] .service-title,
+        .service-item[data-first="true"] .service-title {
+          color: #111827;
+        }
+        
+        .service-item:hover .service-title {
+          color: #374151;
+        }
+
+        /* Service descriptions - always visible */
+        .service-description {
+          display: block;
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .service-item[data-active="true"] .service-description,
+        .service-item[data-first="true"] .service-description {
+          opacity: 1;
+          max-height: 200px;
+        }
+
+        /* Mobile images - always visible */
+        .service-mobile-image {
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .service-item[data-active="true"] .service-mobile-image,
+        .service-item[data-first="true"] .service-mobile-image {
+          opacity: 1;
+          max-height: 400px;
+        }
+
+        /* Desktop images - always in DOM */
+        .desktop-service-image {
+          opacity: 0;
+          z-index: 0;
+        }
+        
+        .desktop-service-image[data-active="true"],
+        .desktop-service-image[data-first="true"] {
+          opacity: 1;
+          z-index: 10;
+        }
+
         .fade-in {
           animation: fadeIn 0.4s ease-in-out;
         }
@@ -136,90 +210,61 @@ export default function SSRServicesSection() {
         </div>
 
         <div className="lg:grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Left column - All content always rendered for SSR */}
+          {/* Left column - ALL content always in DOM */}
           <div className="flex flex-col gap-3 justify-center h-full">
-            {services.map((service, index) => {
-              const isActive = index === activeIndex;
-              const isFirstItem = index === 0;
-              
-              return (
+            {services.map((service, index) => (
+              <div
+                key={index}
+                onClick={() => handleServiceClick(index)}
+                className={`relative group transition-all duration-300 rounded-xl cursor-pointer px-6 py-5 service-item`}
+                data-active={index === activeIndex && isClient ? 'true' : 'false'}
+                data-first={index === 0 ? 'true' : 'false'}
+              >
+                {/* Progress bar - always in DOM */}
                 <div
-                  key={index}
-                  onClick={() => handleServiceClick(index)}
-                  className={`relative group transition-all duration-300 rounded-xl cursor-pointer px-6 py-5 ${
-                    (isActive && isClient) || (!isClient && isFirstItem) ? 'bg-[#F8FAFB]' : ''
-                  }`}
-                >
-                  {/* Progress bar - only show when animation is active */}
-                  {isActive && isAnimationActive && (
-                    <div
-                      ref={progressRef}
-                      className="absolute top-0 left-0 h-[3px] bg-[#1fa4fc] rounded-full"
-                      style={{ width: '0%' }}
-                    />
-                  )}
+                  ref={index === activeIndex ? progressRef : null}
+                  className="absolute top-0 left-0 h-[3px] bg-[#1fa4fc] rounded-full progress-bar"
+                  style={{ width: '0%' }}
+                  data-show={index === activeIndex && isAnimationActive ? 'true' : 'false'}
+                />
 
-                  {/* Title - Always visible */}
-                  <h3
-                    className={`text-base md:text-lg font-semibold transition-colors ${
-                      (isActive && isClient) || (!isClient && isFirstItem)
-                        ? 'text-gray-900' 
-                        : 'text-gray-400 group-hover:text-gray-700'
-                    }`}
-                  >
-                    {service.title}
-                  </h3>
+                {/* Title - always rendered */}
+                <h3 className="text-base md:text-lg font-semibold transition-colors service-title">
+                  {service.title}
+                </h3>
 
-                  {/* Description - Show first item for SSR, others controlled by state */}
-                  <div 
-                    className={`text-sm text-gray-500 mt-2 mb-3 transition-all duration-300 ${
-                      (isActive && isClient) || (!isClient && isFirstItem)
-                        ? 'block' 
-                        : 'hidden'
-                    }`}
-                  >
-                    {service.description}
-                  </div>
-
-                  {/* Mobile image - Show first item for SSR, others controlled by state */}
-                  <div className={`mt-3 block lg:hidden transition-all duration-300 ${
-                    (isActive && isClient) || (!isClient && isFirstItem)
-                      ? 'block' 
-                      : 'hidden'
-                  }`}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-auto object-contain rounded-md"
-                      loading="lazy"
-                    />
-                  </div>
+                {/* Description - always rendered */}
+                <div className="text-sm text-gray-500 mt-2 mb-3 service-description">
+                  {service.description}
                 </div>
-              );
-            })}
+
+                {/* Mobile image - always rendered */}
+                <div className="mt-3 block lg:hidden service-mobile-image">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-auto object-contain rounded-md"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Right column - Show first image for SSR, others controlled by state */}
+          {/* Right column - ALL images always in DOM */}
           <div className="hidden lg:flex items-center justify-center relative min-h-[400px]">
-            {services.map((service, index) => {
-              const isActive = index === activeIndex;
-              const isFirstItem = index === 0;
-              
-              return (
-                <img
-                  key={index}
-                  src={service.image}
-                  alt={service.title}
-                  className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
-                    (isActive && isClient) || (!isClient && isFirstItem)
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  }`}
-                  style={{ filter: 'grayscale(0%)' }}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              );
-            })}
+            {services.map((service, index) => (
+              <img
+                key={index}
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 desktop-service-image"
+                style={{ filter: 'grayscale(0%)' }}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                data-active={index === activeIndex && isClient ? 'true' : 'false'}
+                data-first={index === 0 ? 'true' : 'false'}
+              />
+            ))}
           </div>
         </div>
       </div>
