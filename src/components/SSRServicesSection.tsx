@@ -190,19 +190,22 @@ export default function SSRServicesSection() {
           max-height: 400px;
         }
 
-        /* Desktop images - always in DOM with smooth transitions */
+        /* Desktop images - always in DOM with proper crossfade */
         .desktop-service-image {
           opacity: 0;
-          z-index: 0;
-          transform: translateX(20px);
-          transition: all 0.5s ease-in-out;
+          z-index: 1;
+          transform: translateX(0);
+          transition: opacity 0.6s ease-in-out;
         }
         
-        .desktop-service-image[data-active="true"],
-        .desktop-service-image[data-first="true"] {
+        .desktop-service-image[data-active="true"] {
           opacity: 1;
           z-index: 10;
-          transform: translateX(0);
+        }
+        
+        .desktop-service-image[data-first="true"] {
+          opacity: 1;
+          z-index: 5;
         }
 
         .fade-in {
