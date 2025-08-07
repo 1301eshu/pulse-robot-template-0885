@@ -170,23 +170,13 @@ export default function SSRServicesSection() {
                     {service.title}
                   </h3>
 
-                  {/* Description - ALWAYS in DOM, control with opacity/height for SEO */}
-                  <div
-                    className={`text-sm text-gray-500 mt-2 mb-3 transition-all duration-300 ${
-                      (isActive && isClient) || (!isClient && isFirstItem)
-                        ? 'opacity-100 max-h-[200px]' 
-                        : 'opacity-0 max-h-0 overflow-hidden'
-                    }`}
-                  >
+                  {/* Description - ALWAYS visible for SSR */}
+                  <div className="text-sm text-gray-500 mt-2 mb-3">
                     {service.description}
                   </div>
 
-                  {/* Mobile image - ALWAYS in DOM for all services */}
-                  <div className={`mt-3 block lg:hidden transition-all duration-300 ${
-                    (isActive && isClient) || (!isClient && isFirstItem)
-                      ? 'opacity-100 max-h-[400px]' 
-                      : 'opacity-0 max-h-0 overflow-hidden'
-                  }`}>
+                  {/* Mobile image - ALWAYS visible for SSR */}
+                  <div className="mt-3 block lg:hidden">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -199,27 +189,18 @@ export default function SSRServicesSection() {
             })}
           </div>
 
-          {/* Right column - ALL images in DOM for SSR */}
+          {/* Right column - ALL images visible for SSR */}
           <div className="hidden lg:flex items-center justify-center relative min-h-[400px]">
-            {services.map((service, index) => {
-              const isActive = index === activeIndex;
-              const isFirstItem = index === 0;
-              
-              return (
-                <img
-                  key={index}
-                  src={service.image}
-                  alt={service.title}
-                  className={`absolute inset-0 w-full max-w-xl h-full object-contain rounded-md transition-all duration-500 ${
-                    (isActive && isClient) || (!isClient && isFirstItem)
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  } ${isClient && isActive ? 'fade-slide-in' : ''}`}
-                  style={{ filter: 'grayscale(0%)' }}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              );
-            })}
+            {services.map((service, index) => (
+              <img
+                key={index}
+                src={service.image}
+                alt={service.title}
+                className="w-full max-w-xl h-full object-contain rounded-md"
+                style={{ filter: 'grayscale(0%)' }}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
           </div>
         </div>
       </div>
