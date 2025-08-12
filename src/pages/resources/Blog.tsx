@@ -418,6 +418,7 @@ const ResourcesIndex = () => {
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
           "https://via.placeholder.com/600x400",
         slug: post.slug,
+        category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
       }));
 
       setRecentResources(prev => [...prev, ...formattedResources]);

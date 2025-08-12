@@ -177,7 +177,8 @@ const App = () => (
           
           {/* Resources routes */}
           <Route path="/resources/blog" element={<Blog />} />
-          <Route path="/resources/blog/:slug" element={<BlogPost />} />
+          <Route path="/resources/blog/:category/:slug" element={<BlogPost />} />
+          <Route path="/resources/blog/:slug" element={<BlogPost />} /> {/* Legacy support */}
           <Route path="/resources/whitepapers" element={<Whitepapers />} />
           <Route path="/resources/roi-calculator" element={<RoiCalculator />} />
           <Route path="/resources/templates" element={<Templates />} />

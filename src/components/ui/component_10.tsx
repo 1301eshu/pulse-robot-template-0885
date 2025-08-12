@@ -160,6 +160,7 @@ export interface ResourceItem {
   readTime: string;
   image: string;
   slug?: string;
+  category?: string;
 }
 
 interface SubTab {
@@ -234,7 +235,7 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           {displayResources.map((resource, index) => (
             <Link
               key={index}
-              to={resource.slug ? `/resources/blog/${resource.slug}` : '#'}
+              to={resource.slug ? `/resources/blog/${resource.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${resource.slug}` : '#'}
               className="block"
             >
               <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">

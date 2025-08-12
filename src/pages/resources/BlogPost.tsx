@@ -719,6 +719,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import BlogInteractionBar from "@/components/BlogInteractionBar";
 
 // Utility to estimate read time
 function calculateReadTime(html: string) {
@@ -765,7 +766,7 @@ function addHeadingAnchors(html: string): string {
 
 
 const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug, category } = useParams<{ slug: string; category?: string }>();
   const [post, setPost] = useState<any>(null);
   const [notFound, setNotFound] = useState(false);
   const [toc, setToc] = useState<{ text: string; id: string }[]>([]);
@@ -832,7 +833,7 @@ const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
   const dateFormatted = new Date(post.date).toLocaleDateString("en-US", {
     year: "numeric", month: "long", day: "numeric"
   });
-  const category = post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog";
+  const postCategory = post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog";
   const tags = post._embedded?.["wp:term"]?.[1]?.map((t: any) => t.name) || [];
 
   return (
@@ -850,7 +851,7 @@ const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
                 Back to Blogs
               </Link>
 
-              <Badge className="mb-2 text-xs">{category}</Badge>
+              <Badge className="mb-2 text-xs">{postCategory}</Badge>
 
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
                 {post.title.rendered}
@@ -876,6 +877,16 @@ const handleTocClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
 
             <div>
               <img src={featuredImage} alt={post.title.rendered} className="rounded-lg w-full border border-gray-200" />
+              <BlogInteractionBar 
+                content={post.content.rendered}
+                title={post.title.rendered}
+                url={window.location.href}
+                views={1247} // This should come from your database
+                onViewIncrement={() => {
+                  // This will require Supabase connection to store view counts
+                  console.log('View incremented');
+                }}
+              />
             </div>
           </section>
 

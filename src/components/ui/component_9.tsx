@@ -40,7 +40,7 @@ const ExploreMoreSection: React.FC<ExploreMoreSectionProps> = ({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Card */}
-          <Link to={firstItem.slug ? `/resources/blog/${firstItem.slug}` : '#'}>
+          <Link to={firstItem.slug ? `/resources/blog/${firstItem.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${firstItem.slug}` : '#'}>
             <Card className="bg-white p-0 overflow-hidden flex flex-col h-full shadow-sm border border-gray-100 hover:shadow-lg transition group cursor-pointer">
               {firstItem.thumbnail && (
                 <div className="relative h-56 w-full overflow-hidden">
@@ -79,7 +79,7 @@ const ExploreMoreSection: React.FC<ExploreMoreSectionProps> = ({
             {restItems.slice(0, 3).map((item, index) => (
               <Link 
                 key={index} 
-                to={item.slug ? `/resources/blog/${item.slug}` : '#'}
+                to={item.slug ? `/resources/blog/${item.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${item.slug}` : '#'}
                 className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer group"
               >
                 <div className="flex-1">
