@@ -87,6 +87,7 @@ const ResourcesIndex = () => {
             subTabs={[]} // no subtabs on this page
             resources={recentResources}
             onLoadMore={hasMore ? handleLoadMore : undefined}
+            hasMore={hasMore}
           />
         </div>
 
