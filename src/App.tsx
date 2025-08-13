@@ -82,6 +82,7 @@ import Templates from "./pages/resources/Templates";
 import Documentation from "./pages/resources/Documentation";
 import Support from "./pages/resources/Support";
 import ResourcesCaseStudies from "./pages/resources/CaseStudies";
+import CaseStudyPost from "./pages/resources/CaseStudyPost";
 import Infographics from "./pages/resources/Infographics";
 
 // Company pages
@@ -179,7 +180,7 @@ const App = () => (
           <Route path="/resources/blog" element={<Blog />} />
           <Route path="/resources/blog/:category/:slug" element={<BlogPost />} />
           <Route path="/resources/case-studies" element={<ResourcesCaseStudies />} />
-          <Route path="/case-studies/:category/:slug" element={<BlogPost />} />
+          <Route path="/case-studies/:category/:slug" element={<CaseStudyPost />} />
           <Route path="/resources/blog/:slug" element={<BlogPost />} /> {/* Legacy support */}
           <Route path="/resources/whitepapers" element={<Whitepapers />} />
           <Route path="/resources/roi-calculator" element={<RoiCalculator />} />
