@@ -1,118 +1,98 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import ExploreMoreSection, { ExploreItem } from "@/components/ui/component_9";
-import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import CaseStudyFeaturedSection, { CaseStudyItem } from "@/components/ui/component_21";
+import CaseStudyGridSection, { CaseStudyGridItem } from "@/components/ui/component_22";
 import ContactCta from "@/components/ui/component_6";
 
-const ResourcesIndex = () => {
-  const [activeTab, setActiveTab] = useState('articles');
+const CaseStudiesIndex = () => {
+  const [featuredCaseStudies, setFeaturedCaseStudies] = useState<CaseStudyItem[]>([]);
+  const [allCaseStudies, setAllCaseStudies] = useState<CaseStudyGridItem[]>([]);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const perPage = 9;
 
-  const exploreMoreItems: ExploreItem[] = [
-    {
-      tag: "Blogs",
-      title: "HubSpot Just Changed the Game: Meet the Deep Research Connector with ChatGPT",
-      readTime: "5 min read",
-      category: "Marketing Automation",
-      thumbnail: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-    },
-    {
-      tag: "Blogs",
-      title: "Google Ads Services Agency Drives 300% ROI Increase",
-      readTime: "9 min",
-      category: "Performance Marketing",
-    },
-    {
-      tag: "Blogs",
-      title: "The Complete Guide to Salesforce Marketing Cloud Implementation",
-      readTime: "7 min",
-      category: "Salesforce",
-    },
-    {
-      tag: "Blogs",
-      title: "Revenue Lifecycle Visualized: New Benchmarks",
-      readTime: "4 min",
-      category: "RevOps"
-    },
-  ];
+  const fetchCaseStudies = async (page: number) => {
+    try {
+      // Fetch posts with 'case-studies' category or resource_category-case-studies
+      const res = await fetch(`https://growthnatives.com/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`);
+      const data = await res.json();
 
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "“Wait, so this thing just... does it? Like, by itself?” Yes. And no, it’s not magic. It’s called Agentic AI and it’s the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg",
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?w=600&h=400",
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You’ve got Marketo. You’ve got data. You’ve got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-    },
-    {
-      title: "The Developer’s Evolution in the Age of AI: What’s Next?",
-      subtitle: "As AI cements its role in software development, the question is no longer if developers should adapt but how far they’re willing to evolve...",
-      author: "Vishal Mehta",
-      date: "June 16, 2025",
-      readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1629904853893-dbb7c4183031?w=600&h=400",
-    },
-    {
-      title: "The Ultimate AI Readiness Checklist for Your Marketing Ops Stack",
-      subtitle: "AI isn’t the future—it’s already here, quietly revolutionizing marketing operations stacks everywhere...",
-      author: "Akanksha Dass",
-      date: "June 13, 2025",
-      readTime: "3 min read",
-      image: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?w=600&h=400",
-    },
-    {
-      title: "Understanding Adobe Experience Platform Web SDK: A Comprehensive Introduction",
-      subtitle: "The Adobe Experience Platform (AEP) Web SDK is transforming how businesses collect, manage, and leverage data...",
-      author: "Shivam Joshi",
-      date: "June 10, 2025",
-      readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1618005198919-d3d4b5aa1c63?w=600&h=400",
-    },
-  ];
+      const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
+      setHasMore(page < totalPages);
+
+      // Filter posts that have case studies in their class list or categories
+      const caseStudyPosts = data.filter((post: any) => 
+        post.class_list?.some((cls: string) => cls.includes('case-studies') || cls.includes('resource_category-case-studies')) ||
+        post._embedded?.["wp:term"]?.[0]?.some((term: any) => term.slug.includes('case-studies'))
+      );
+
+      const formattedCaseStudies: CaseStudyGridItem[] = caseStudyPosts.map((post: any) => ({
+        title: post.title.rendered,
+        excerpt: stripHTML(post.excerpt.rendered),
+        client: extractClientName(post.title.rendered),
+        industry: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Technology",
+        results: extractResults(post.content.rendered),
+        image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+        slug: post.slug,
+        category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+      }));
+
+      setAllCaseStudies(prev => [...prev, ...formattedCaseStudies]);
+
+      // Set featured case studies only once (from first batch)
+      if (page === 1) {
+        const formattedFeatured: CaseStudyItem[] = caseStudyPosts.slice(0, 3).map((post: any) => ({
+          title: post.title.rendered,
+          client: extractClientName(post.title.rendered),
+          industry: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Technology",
+          results: extractResults(post.content.rendered),
+          thumbnail: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+          slug: post.slug,
+          category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+        }));
+        setFeaturedCaseStudies(formattedFeatured);
+      }
+    } catch (err) {
+      console.error("Failed to fetch case studies", err);
+      setHasMore(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCaseStudies(page);
+  }, [page]);
+
+  const handleLoadMore = () => setPage(prev => prev + 1);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-16">
-        {/* Explore More Section */}
-        <ExploreMoreSection heading="Explore more" items={exploreMoreItems} />
+        {/* Featured Case Studies Section */}
+        <CaseStudyFeaturedSection 
+          heading="Success Stories" 
+          body="Real results from real clients. See how we've helped businesses transform their digital presence and achieve measurable growth."
+          items={featuredCaseStudies} 
+        />
 
-        {/* Recent Blogs - Center heading only for this page */}
+        {/* All Case Studies Grid */}
         <div className="[&>h2]:text-center">
-          <RecentResourcesSection
-            heading="Most Recent Blogs"
+          <CaseStudyGridSection
+            heading="All Case Studies"
             subTabs={[]} // no subtabs on this page
-            resources={recentResources}
+            caseStudies={allCaseStudies}
+            onLoadMore={hasMore ? handleLoadMore : undefined}
+            hasMore={hasMore}
           />
         </div>
 
         {/* Contact CTA */}
         <ContactCta
-          heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
-          subtext="Let’s plug in the tech, the talent, and the timing."
-          buttonLabel="Talk to an Expert"
+          heading="Ready to Write Your Success Story?"
+          subtext="Let's create a case study that showcases your business transformation."
+          buttonLabel="Start Your Journey"
           buttonLink="/contact"
         />
       </main>
@@ -122,4 +102,26 @@ const ResourcesIndex = () => {
   );
 };
 
-export default ResourcesIndex;
+export default CaseStudiesIndex;
+
+// Utilities
+function stripHTML(html: string) {
+  return html.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim();
+}
+
+function extractClientName(title: string) {
+  // Try to extract client name from title (first few words)
+  const words = title.split(' ');
+  return words.length > 2 ? words.slice(0, 2).join(' ') : 'Client';
+}
+
+function extractResults(content: string) {
+  // Extract key metrics/results from content
+  const plainText = content.replace(/<[^>]+>/g, "");
+  const percentageMatch = plainText.match(/(\d+)%/);
+  const increaseMatch = plainText.match(/(\d+)x|(\d+) times/);
+  
+  if (percentageMatch) return `${percentageMatch[1]}% improvement`;
+  if (increaseMatch) return `${increaseMatch[1] || increaseMatch[2]}x growth`;
+  return "Significant ROI increase";
+}

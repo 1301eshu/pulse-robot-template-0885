@@ -178,6 +178,8 @@ const App = () => (
           {/* Resources routes */}
           <Route path="/resources/blog" element={<Blog />} />
           <Route path="/resources/blog/:category/:slug" element={<BlogPost />} />
+          <Route path="/resources/case-studies" element={<ResourcesCaseStudies />} />
+          <Route path="/case-studies/:category/:slug" element={<BlogPost />} />
           <Route path="/resources/blog/:slug" element={<BlogPost />} /> {/* Legacy support */}
           <Route path="/resources/whitepapers" element={<Whitepapers />} />
           <Route path="/resources/roi-calculator" element={<RoiCalculator />} />
@@ -185,7 +187,6 @@ const App = () => (
           <Route path="/resources/documentation" element={<Documentation />} />
           <Route path="/resources/support" element={<Support />} />
           <Route path="/resources/tools" element={<Templates />} />
-          <Route path="/resources/case-studies" element={<ResourcesCaseStudies />} />
           <Route path="/resources/infographics" element={<Infographics />} />
           
           {/* Company routes */}
