@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CaseStudyFeaturedSection, { CaseStudyItem } from "@/components/ui/component_21";
@@ -6,64 +6,98 @@ import CaseStudyGridSection, { CaseStudyGridItem } from "@/components/ui/compone
 import ContactCta from "@/components/ui/component_6";
 
 const CaseStudiesIndex = () => {
-  const [featuredCaseStudies, setFeaturedCaseStudies] = useState<CaseStudyItem[]>([]);
-  const [allCaseStudies, setAllCaseStudies] = useState<CaseStudyGridItem[]>([]);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-  const perPage = 9;
+  const featuredCaseStudies: CaseStudyItem[] = [
+    {
+      title: "300% ROI Increase for SaaS Company Through Marketing Automation",
+      client: "TechFlow Solutions",
+      industry: "SaaS",
+      results: "300% ROI increase",
+      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400",
+      slug: "techflow-roi-increase",
+      category: "marketing-automation",
+    },
+    {
+      title: "50% Lead Cost Reduction with HubSpot Implementation",
+      client: "GrowthCorp",
+      industry: "E-commerce",
+      results: "50% cost reduction",
+      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400",
+      slug: "growthcorp-lead-reduction",
+      category: "hubspot",
+    },
+    {
+      title: "2x Conversion Rate with Salesforce Optimization",
+      client: "DataDrive Inc",
+      industry: "Technology",
+      results: "2x conversion rate",
+      thumbnail: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400",
+      slug: "datadrive-conversion",
+      category: "salesforce",
+    },
+  ];
 
-  const fetchCaseStudies = async (page: number) => {
-    try {
-      // Fetch posts with 'case-studies' category or resource_category-case-studies
-      const res = await fetch(`https://growthnatives.com/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`);
-      const data = await res.json();
-
-      const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
-      setHasMore(page < totalPages);
-
-      // Filter posts that have case studies in their class list or categories
-      const caseStudyPosts = data.filter((post: any) => 
-        post.class_list?.some((cls: string) => cls.includes('case-studies') || cls.includes('resource_category-case-studies')) ||
-        post._embedded?.["wp:term"]?.[0]?.some((term: any) => term.slug.includes('case-studies'))
-      );
-
-      const formattedCaseStudies: CaseStudyGridItem[] = caseStudyPosts.map((post: any) => ({
-        title: post.title.rendered,
-        excerpt: stripHTML(post.excerpt.rendered),
-        client: extractClientName(post.title.rendered),
-        industry: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Technology",
-        results: extractResults(post.content.rendered),
-        image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
-        slug: post.slug,
-        category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-      }));
-
-      setAllCaseStudies(prev => [...prev, ...formattedCaseStudies]);
-
-      // Set featured case studies only once (from first batch)
-      if (page === 1) {
-        const formattedFeatured: CaseStudyItem[] = caseStudyPosts.slice(0, 3).map((post: any) => ({
-          title: post.title.rendered,
-          client: extractClientName(post.title.rendered),
-          industry: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Technology",
-          results: extractResults(post.content.rendered),
-          thumbnail: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
-          slug: post.slug,
-          category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-        }));
-        setFeaturedCaseStudies(formattedFeatured);
-      }
-    } catch (err) {
-      console.error("Failed to fetch case studies", err);
-      setHasMore(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchCaseStudies(page);
-  }, [page]);
-
-  const handleLoadMore = () => setPage(prev => prev + 1);
+  const allCaseStudies: CaseStudyGridItem[] = [
+    {
+      title: "300% ROI Increase for SaaS Company Through Marketing Automation",
+      excerpt: "How we helped TechFlow Solutions transform their marketing operations and achieve unprecedented growth through strategic automation implementation.",
+      client: "TechFlow Solutions",
+      industry: "SaaS",
+      results: "300% ROI increase",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400",
+      slug: "techflow-roi-increase",
+      category: "marketing-automation",
+    },
+    {
+      title: "50% Lead Cost Reduction with HubSpot Implementation",
+      excerpt: "A complete HubSpot implementation that streamlined lead generation processes and significantly reduced customer acquisition costs.",
+      client: "GrowthCorp",
+      industry: "E-commerce",
+      results: "50% cost reduction",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400",
+      slug: "growthcorp-lead-reduction",
+      category: "hubspot",
+    },
+    {
+      title: "2x Conversion Rate with Salesforce Optimization",
+      excerpt: "Comprehensive Salesforce optimization that doubled conversion rates and improved sales team efficiency by 80%.",
+      client: "DataDrive Inc",
+      industry: "Technology",
+      results: "2x conversion rate",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400",
+      slug: "datadrive-conversion",
+      category: "salesforce",
+    },
+    {
+      title: "85% Email Open Rate Improvement with Marketo",
+      excerpt: "Strategic email marketing campaign optimization that dramatically improved engagement and lead nurturing effectiveness.",
+      client: "EmailMaster Pro",
+      industry: "Marketing",
+      results: "85% open rate boost",
+      image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=400",
+      slug: "emailmaster-engagement",
+      category: "marketo",
+    },
+    {
+      title: "40% Revenue Growth Through Digital Transformation",
+      excerpt: "Complete digital transformation strategy that modernized operations and drove significant revenue growth for a traditional manufacturer.",
+      client: "IndustryCorp",
+      industry: "Manufacturing",
+      results: "40% revenue growth",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400",
+      slug: "industrycorp-transformation",
+      category: "digital-transformation",
+    },
+    {
+      title: "60% Faster Time-to-Market with DevOps Implementation",
+      excerpt: "DevOps transformation that accelerated product development cycles and improved deployment reliability by 95%.",
+      client: "SpeedTech",
+      industry: "Software",
+      results: "60% faster delivery",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400",
+      slug: "speedtech-devops",
+      category: "devops",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -83,8 +117,6 @@ const CaseStudiesIndex = () => {
             heading="All Case Studies"
             subTabs={[]} // no subtabs on this page
             caseStudies={allCaseStudies}
-            onLoadMore={hasMore ? handleLoadMore : undefined}
-            hasMore={hasMore}
           />
         </div>
 
