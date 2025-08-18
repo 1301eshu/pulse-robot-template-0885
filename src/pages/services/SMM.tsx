@@ -40,24 +40,32 @@ export default function MarketingAutomation() {
     label: "Pardot Audit & Operations",
     icon: Zap,
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "analytics",
     label: "Pardot Consulting & Implementation",
     icon: BarChart2,
     image: "https://example.com/image2.jpg",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "integration",
     label: "Pardot Managed Services ",
     icon: Database,
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "security",
     label: "Pardot Migration & Custom Integrations",
     icon: ShieldCheck,
     image: "https://example.com/image4.jpg",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
 ];
 
@@ -193,15 +201,15 @@ const features: FeatureContent[] = [
         {/* HERO Section */}
         <HeroSection
           heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
+         
           subtext="Target like a pro, save hours, win campaigns on cruise control."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/SMM.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
+ 
   title="You’re in smart company—alongside brands scaling better with Pardot. "
   stats={[
     { label: "Happy Pardot Clients  ", value: "25+" },
@@ -221,25 +229,14 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+           subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
          <LogoScroller
         heading=" Brands That Trust Us With Pardot"
         subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
+        
       />
 
         {/* Testimonials */}
@@ -249,7 +246,7 @@ const features: FeatureContent[] = [
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
         {/* Call to Action */}
         <ContactCta

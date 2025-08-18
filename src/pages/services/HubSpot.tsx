@@ -12,6 +12,8 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
+
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -34,32 +36,65 @@ import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
+ // Tab Items
  const tabs: TabItem[] = [
   {
     id: "marketing",
-    label: "HubSpot Audit & Strategy",
+    label: "HubSpot Audit ",
     icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp", // replace with actual
+    ctaText: "Read More",
+    ctaLink: "l3/hubspot-audit"
   },
   {
     id: "analytics",
-    label: "HubSpot Consulting & Implementation",
+    label: "HubSpot Consulting ",
     icon: BarChart2,
-    image: "https://example.com/image2.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Consulting.webp",
+    ctaText: "Read More",
+    ctaLink: "L3/hubspot-consulting"
   },
   {
     id: "integration",
-    label: "HubSpot Migrations & Integrations",
+    label: "HubSpot Operations",
     icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Implementation.webp",
+   ctaText: "Read More",
+  ctaLink: "L3/hubspot-operations"
   },
   {
     id: "security",
-    label: "HubSpot Breeze Implementation & Training",
+    label: "HubSpot Migration ",
     icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Operations.webp",
+   // ctaText: "Get a Demo",
+   // ctaLink: "/l3-template"
   },
+   {
+    id: "development",
+    label: "HubSpot Implementation ",
+    icon: ShieldCheck,
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Migration.webp",
+    ctaText: "Read More",
+  ctaLink: "L3/hubspot-crm"
+  },
+     {
+    id: "technology",
+    label: "HubSpot Breeze Implementation & Training ",
+    icon: ShieldCheck,
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20breeze%20implementation%20&%20training.webp",
+  ctaText: "Read More",
+   ctaLink: "L3/training-hubspot"
+  },
+    {
+    id: "automation",
+    label: "HubSpot Managed Services ",
+    icon: ShieldCheck,
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspopt%20managed%20services.webp",
+   ctaText: "Read More",
+    ctaLink: "L3/hubspot-managed-services"
+  },
+   
 ];
 
 
@@ -68,72 +103,75 @@ export default function MarketingAutomation() {
 const features: FeatureContent[] = [
   {
     id: "marketing",
+   
+    description: "Your automation, uncovered—what works, what’s waste, and what’s next. ",
     items: [
-      {
-        icon: Zap,
-        title: "Uncover what’s working—and what’s just noise ",
-      },
-      {
-        icon: Zap,
-        title: "Find gaps, quick wins, and untapped potential  ",
-      },
-      {
-        icon: Zap,
-        title: "Build a smarter, tighter automation game plan  ",
-      },
+      { icon: Zap, title: "Uncover what’s working—and what’s just noise  " },
+      { icon: Zap, title: "Find gaps, quick wins, and untapped potential   " },
+      { icon: Zap, title: "Build a smarter, tighter automation game plan  " },
     ],
   },
   {
     id: "analytics",
+   
+    description: "From strategy to setup, we make HubSpot bend to your business—not the other way around.  ",
     items: [
-      {
-        icon: BarChart2,
-        title: "Tailored builds, not cookie-cutter setups  ",
-      },
-      {
-        icon: BarChart2,
-        title: "We map goals → flows → flawless execution  ",
-      },
-      {
-        icon: BarChart2,
-        title: "From kickoff to go-live, we’ve got this  ",
-      },
+      { icon: BarChart2, title: "Expert guidance, tailored to your goals & teams   " },
+      { icon: BarChart2, title: "We map goals → flows → flawless execution   " },
+      { icon: BarChart2, title: "From kickoff to go-live, we’ve got this  " },
     ],
   },
   {
     id: "integration",
+   
+    description: "Behind every smart campaign is smarter ops—clean data, clear workflows, and zero bottlenecks.   ",
     items: [
-      {
-        icon: Database,
-        title: "Move to HubSpot without losing your mind (or data) ",
-      },
-      {
-        icon: Database,
-        title: "Plug in tools, build bridges, and stay secure ",
-      },
-      {
-        icon: Database,
-        title: "From Marketo mayhem to HubSpot harmony—we got you ",
-      },
+      { icon: Database, title: "Streamline systems, sync tools, and scale confidently  " },
+      { icon: Database, title: "We clean, structure, and automate your backend for impact  " },
+      { icon: Database, title: "From data hygiene to workflow logic, we make it all click   " },
     ],
   },
   {
     id: "security",
+   
+    description: "Shift your stack and sync your systems—without the chaos. ",
     items: [
-      {
-        icon: ShieldCheck,
-        title: "Train Breeze to support your GTM motion end-to-end  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Deploy AI-powered campaigns, content, and sales outreach  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Your team + AI, working like they’ve known each other forever  ",
-      },
+      { icon: ShieldCheck, title: "Move to HubSpot without losing your mind (or data)   " },
+      { icon: ShieldCheck, title: "From Marketo mayhem to HubSpot harmony—we got you  " },
+      { icon: ShieldCheck, title: "From prep to post-migration QA, we handle it all " },
     ],
   },
+   {
+    id: "development",
+   
+    description: "Built right from day one. Smart setups, sleek design, and systems that scale.  ",
+    items: [
+      { icon: ShieldCheck, title: "Setup tailored to your teams, goals, and tech stack   " },
+      { icon: ShieldCheck, title: "Implement HubSpot with clean logic and future-ready flows " },
+      { icon: ShieldCheck, title: "From page templates to full-funnel builds, we do it end to end   " },
+    ],
+  },
+  {
+    id: "technology",
+   
+    description: "Train your AI wingman to hit every GTM note perfectly.",
+    items: [
+      { icon: ShieldCheck, title: "Train Breeze to support your GTM motion end-to-end   " },
+      { icon: ShieldCheck, title: "Deploy AI-powered campaigns, content, and sales outreach  " },
+      { icon: ShieldCheck, title: "Your team + AI, working like they’ve known each other forever  " },
+    ],
+  },
+  {
+    id: "automation",
+   
+    description: "Consider us your always-on HubSpot pit crew—with an AI edge. ",
+    items: [
+      { icon: ShieldCheck, title: "Campaigns launched, workflows optimized—on repeat   " },
+      { icon: ShieldCheck, title: "Weekly performance checks, monthly growth experiments  " },
+      { icon: ShieldCheck, title: "AI tweaks and trend-based updates, so you’re never stale   " },
+    ],
+  },
+  
 ];
 
   // Resources for recent articles
@@ -170,16 +208,16 @@ const features: FeatureContent[] = [
   // FAQ List
   const faqs = [
     {
-      q: "What’s included in the free HubSpot audit?",
-      a: " We deep-dive your workflows, CRM setup, email flows, lead scoring, and show you 3 AI-powered moves you’re not using yet.",
+      q: "What's included in the free HubSpot audit?",
+      a: " We deep-dive your workflows, CRM setup, email flows, lead scoring, and show you 3 AI-powered moves you're not using yet.",
     },
     {
       q: "Can you migrate us from another CRM?",
-      a: "Yep. We’ve migrated clients from Salesforce, Zoho, Marketo—you name it.",
+      a: "Yep. We've migrated clients from Salesforce, Zoho, Marketo—you name it.",
     },
     {
       q: "What HubSpot license do I need to work with you? ",
-      a: " We work across Starter, Pro, and Enterprise. We’ll help you scale smart based on your goals (and budget). ",
+      a: " We work across Starter, Pro, and Enterprise. We'll help you scale smart based on your goals (and budget). ",
     },
     {
       q: "How long does onboarding take?",
@@ -189,22 +227,23 @@ const features: FeatureContent[] = [
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="serviceHubspot" />
       <Header />
       <SmartBreadcrumb />
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="HubSpot That Learns Fast, Sells Faster—with AI Inside"
-          highlight="3x faster"
-          subtext="Smarter HubSpot campaigns that think, move, and convert on cue."
+          heading=" HubSpot That Learns Fast, Sells Faster—with AI Inside"
+         
+          subtext="Smarter HubSpot campaigns that think, move, and convert on cue. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
         />
 
         {/* Statistics Section */}
          <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in good company—with brands scaling smarter on HubSpot. "
+ 
+  title="You're in good company—with brands scaling smarter on HubSpot. "
   stats={[
     { label: "HubSpot automation builds and counting ", value: "80+" },
     { label: "Certified HubSpot pros on deck ", value: "40+" },
@@ -222,40 +261,38 @@ const features: FeatureContent[] = [
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See What Smart HubSpot Looks Like in Action "
+          body="A few real wins we've helped brands achieve with HubSpot. "
+          subTabs={[]}
           resources={recentResources}
         />
 
         <LogoScroller
         heading="Brands That Trust Our HubSpot Game"
         subtext="From lean teams to enterprise squads—we help them all move smarter."
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
+        
       />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description="It’s not luck. It’s systems, strategy, and a little AI swagger.  "
+          title=" Real Stories, Real HubSpot Growth  "
+          description="It's not luck. It's systems, strategy, and a little AI swagger.  "
         />
 
         {/* FAQs */}
         <FaqSection title="FAQ's" faqs={faqs} />
 
+         {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading=" More From Our Content Repertoire"
+          body=" Keep your HubSpot IQ high with our freshest blog posts, guides, and AI hot takes. "
+          subTabs={[]}
+          resources={recentResources}
+        />
+
         {/* Call to Action */}
         <ContactCta
-          heading=" Let’s Build Your AI-Powered HubSpot Engine"
+          heading=" Let's Build Your AI-Powered HubSpot Engine"
           subtext="Real-time insights. Campaigns that adapt. Tech that works for you."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"

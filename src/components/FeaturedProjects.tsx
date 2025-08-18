@@ -12,7 +12,7 @@ const clients = [
       { value: 25, suffix: "%", desc: "Increase in keyword rankings & organic traffic" },
     ],
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751359291/Spirent_kx85rz.png",
-    cta: { label: "Get a Complimentary Consultation!" },
+    //cta: { label: "Get a Complimentary Consultation!" },
   },
   {
     logo: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png",
@@ -24,7 +24,7 @@ const clients = [
       { value: 271, suffix: "%", desc: "Rise in organic traffic with D2C" },
     ],
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360248/Lamav_duxryv.png",
-    cta: { label: "Get a Complimentary Consultation!" },
+    //cta: { label: "Get a Complimentary Consultation!" },
   },
   {
     logo: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png",
@@ -36,7 +36,7 @@ const clients = [
       { value: 25, suffix: "%", desc: "Reduction in manual effort" },
     ],
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361552/Cover_wbbgla.png",
-    cta: { label: "Get a Complimentary Consultation!" },
+    //cta: { label: "Get a Complimentary Consultation!" },
   }
 ];
 
@@ -80,41 +80,37 @@ export default function ClientShowcaseCard() {
 
       {/* Card Container */}
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-10 bg-[#F8FAFB] rounded-xl p-6 md:p-10 transition-all duration-700 ease-in-out">
-        {/* Left Section with animation */}
-        <div key={active + "-left"} className="flex-1 flex flex-col justify-between animate-fadeSlideUp">
-          <div>
-            <img src={current.logo} alt={current.name} className="h-6 mb-4" />
-            <blockquote className="text-2xl md:text-3xl font-light text-[#131829] leading-snug mb-6">
-              {current.headline}
-            </blockquote>
-            <p className="text-[#5E6874] text-base mb-8">{current.person}</p>
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              {current.stats.map((stat, idx) => {
-                const value = useCountUp(stat.value, active);
-                return (
-                  <div key={idx}>
-                    <div className="text-[1.5rem] font-semibold text-black">
-                      {value}
-                      {stat.suffix}
-                    </div>
-                    <div className="text-sm text-[#5E6874]">{stat.desc}</div>
-                  </div>
-                );
-              })}
-            </div>
+        {/* Left Section */}
+        <div key={active + "-left"} className="flex-1 animate-fadeSlideUp">
+  <img src={current.logo} alt={current.name} className="h-6 mb-4" />
+  <blockquote className="text-2xl md:text-3xl font-light text-[#131829] leading-snug mb-6">
+    {current.headline}
+  </blockquote>
+  <p className="text-[#5E6874] text-base mb-8">{current.person}</p>
+  <div className="grid grid-cols-2 gap-6 mb-8">
+    {current.stats.map((stat, idx) => {
+      const value = useCountUp(stat.value, active);
+      return (
+        <div key={idx}>
+          <div className="text-[1.5rem] font-semibold text-black">
+            {value}
+            {stat.suffix}
           </div>
-
-          {/* Divider */}
-          <div className="h-px bg-[#E0E0E0] mb-4 w-full" />
-
-          {/* CTA */}
-          <SITE_CTA 
-            variant="primary" 
-            text={current.cta.label} 
-            href="/company/contact"
-            size="md"
-          />
+          <div className="text-sm text-[#5E6874]">{stat.desc}</div>
         </div>
+      );
+    })}
+  </div>
+</div>
+
+{/* CTA is hidden for all, so divider is also removed */}
+{/* <div className="h-px bg-[#E0E0E0] mb-4 w-full" />
+<SITE_CTA 
+  variant="primary" 
+  text={current.cta.label} 
+  href="/company/contact"
+  size="md"
+/> */}
 
         {/* Right Section */}
         <div key={active + "-right"} className="flex-1 animate-fadeSlideUp">

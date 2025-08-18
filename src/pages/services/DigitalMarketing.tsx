@@ -11,6 +11,7 @@ import FaqSection from "@/components/ui/component_5";
 import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -28,6 +29,7 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -38,25 +40,29 @@ export default function MarketingAutomation() {
     id: "marketing",
     label: "Search Engine Optimization (SEO)",
     icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Slider%20L1/SEO.webp", // replace with actual
+    
   },
   {
     id: "analytics",
     label: "Pay-Per-Click (PPC) Advertising",
     icon: BarChart2,
-    image: "https://example.com/image2.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Slider%20L1/PPC.webp",
+    
   },
   {
     id: "integration",
     label: "Social Media Marketing",
     icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Slider%20L1/social%20Media%20marketing.webp",
+    
   },
   {
     id: "security",
     label: "Conversion Rate Optimization (CRO) ",
     icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Slider%20L1/CRO.webp",
+    
   },
 ];
 
@@ -137,24 +143,32 @@ const features: FeatureContent[] = [
   // Platform Feature Cards
   const platformFeatures = [
     {
-      icon: <span className="text-xl">🌀</span>,
+     icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/Google%20Ads%20+%20Performance%20Max.png",
       title: "Google Ads + Performance Max ",
       description: "Smarter targeting and bidding powered by machine learning ",
+       ctaUrl: "#",
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-gray-700 group-hover:text-white" />,
+     icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/Meta%20+%20LinkedIn%20Ads.png",
       title: "Meta + LinkedIn Ads ",
       description: "AI-enhanced creative + audience strategy for B2C and B2B growth that work ",
+       ctaUrl: "#",
     },
     {
-      icon: <Clock className="w-6 h-6 text-gray-700 group-hover:text-white" />,
+     icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/GA4%20+%20Looker%20Studio.png",
       title: "GA4 + Looker Studio ",
       description: "Real-time dashboards, attribution insights, and CRO tracking ",
+       ctaUrl: "#",
     },
     {
-      icon: <Heart className="w-6 h-6 text-gray-700 group-hover:text-white" />,
+     icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/SEMrush%20+%20Surfer%20SEO.png",
       title: "SEMrush + Surfer SEO ",
       description: "AI-driven content strategy and search optimization ",
+       ctaUrl: "#",
     },
   ];
 
@@ -180,20 +194,22 @@ const features: FeatureContent[] = [
   
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="digitalMarketing" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-0">
         {/* HERO Section */}
         <HeroSection
           heading="Digital Marketing Fueled by AI Precision"
-          highlight="3x faster"
-          subtext="Harness the power of AI and LLMs to elevate your brand's digital presence. "
-          bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+         
+          subtext="From SEO to paid media, we build strategies that deliver real traffic, real leads, and real results. "
+          bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Analytics.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
+ 
   title="You’re in good company with brands that trust AI-enhanced digital marketing. "
   stats={[
     { label: "Increase in Lead Volume ", value: "4x" },
@@ -220,9 +236,7 @@ const features: FeatureContent[] = [
               <p className="text-gray-600 mb-6">
                 Top digital marketing tools we use—powered by AI, optimized for impact.
               </p>
-              <button className="text-blue-700 font-medium hover:text-blue-700 transition-colors">
-                Get Started &gt;
-              </button>
+              
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -244,14 +258,7 @@ const features: FeatureContent[] = [
          <LogoScroller
         heading="Brands That Trust Our AI-Driven Strategies "
         subtext="  From startups to enterprises, our digital marketing solutions deliver results."
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
+         
       />
 
         {/* Testimonials */}
@@ -261,7 +268,7 @@ const features: FeatureContent[] = [
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
         {/* Call to Action */}
         <ContactCta

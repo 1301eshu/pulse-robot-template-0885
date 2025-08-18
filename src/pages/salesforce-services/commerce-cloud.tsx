@@ -1,0 +1,3 @@
+// ...existing code from CommerceCloud...
+import CommerceCloud from "../services/CommerceCloud";
+export default CommerceCloud;

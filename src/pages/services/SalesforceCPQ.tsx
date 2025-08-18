@@ -4,257 +4,220 @@ import { useState } from "react";
 
 // Component Imports
 import EditableStatSection from "@/components/Statistics";
-import Component1 from "@/components/ui/component_1";
-import FeatureCard from "@/components/ui/component_3";
 import Testimonials from "@/components/ui/component_4";
 import FaqSection from "@/components/ui/component_5";
 import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
-import EnterpriseCapabilities, {
-  TabItem,
-  FeatureContent,
-} from "@/components/ui/component_2";
-
+import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui/component_2";
+import DynamicSEO from "@/components/DynamicSEO";
 // Icons
-import {
-  Zap,
-  BarChart2,
-  Database,
-  ShieldCheck,
-  Clock,
-  Heart,
-} from "lucide-react";
+import { Zap, BarChart2, Database, ShieldCheck } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items: Representing each major CPQ offering
+  const tabs: TabItem[] = [
+    {
+      id: "consulting",
+      label: "Salesforce CPQ Consulting & Implementation",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/CPQ/Salesforce%20CPQ%20Consulting%20&%20Implementaion.webp", // Add relevant image if needed
+ //     ctaText: "Audit Me!",
+  //    ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "optimization",
+      label: "Salesforce CPQ Optimization",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/CPQ/Salesforce%20CPQ%20Optimization.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "integration",
+      label: "Salesforce CPQ Integration",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/CPQ/Salesforce%20CPQ%20%20Integrations.webp",
+  //    ctaText: "Audit Me!",
+  //    ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "management",
+      label: "Salesforce CPQ Management",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/CPQ/Salesforce%20CPQ%20Management.webp",
+ //     ctaText: "Audit Me!",
+  //    ctaLink: "/lead-gen-form",
+    },
+  ];
 
+  // Features for each tab, per the "What We Do" section
+  const features: FeatureContent[] = [
+    {
+      id: "consulting",
+      description: "We build CPQ setups that help you close deals fast. From planning to execution, it’s all tailored, AI-optimized, and ready to scale.",
+      items: [
+        { icon: Zap, title: "AI-first workflows that cut quote time" },
+        { icon: Zap, title: "Smart rules that prevent costly mistakes" },
+        { icon: Zap, title: "Catalogs reps can access anywhere" },
+      ],
+    },
+    {
+      id: "optimization",
+      description: "Already live? We level up your setup with AI automation that shortens sales cycles and boosts accuracy.",
+      items: [
+        { icon: BarChart2, title: "Approvals auto routed, no manual nudging" },
+        { icon: BarChart2, title: "Real-time quote health insights" },
+        { icon: BarChart2, title: "Suggest upsells your reps would miss" },
+      ],
+    },
+    {
+      id: "integration",
+      description: "We plug CPQ into your stack, so sales ops, finance, and inventory never miss a beat.",
+      items: [
+        { icon: Database, title: "Auto-sync with CRM, ERP, and billing" },
+        { icon: Database, title: "Live inventory pulls into quote builder" },
+        { icon: Database, title: "Push closed deals to order instantly" },
+      ],
+    },
+    {
+      id: "management",
+      description: "With analytics and ML built-in, we make CPQ your team’s smartest seller—always learning, never stalling.",
+      items: [
+        { icon: ShieldCheck, title: "Spot quote delays before they cost you" },
+        { icon: ShieldCheck, title: "Forecast quote-to-close with confidence" },
+        { icon: ShieldCheck, title: "Track what pricing strategies work" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
-
-  // Resources for recent articles
+  // Case Studies (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
+      title: "How AI-Powered Salesforce CPQ Makes Sales Teams Unstoppable",
+      subtitle: "A few real wins we've helped brands achieve with AI-powered Salesforce CPQ.",
+      author: "Case Study Author",
       date: "July 7, 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "cpq-case-study-1"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
+      title: "Quotes That Think, Deals That Close",
+      subtitle: "Configure, Price, Quote in minutes with intelligent automation that sales teams love.",
+      author: "Case Study Author",
       date: "July 4, 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "cpq-case-study-2"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
+      title: "Boosting Sales Efficiency with Salesforce CPQ",
+      subtitle: "See how we made CPQ faster, smarter, and scalable with AI inside.",
+      author: "Case Study Author",
       date: "July 4, 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "cpq-case-study-3"
     },
   ];
 
-  // FAQ List
+  // FAQ Section
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "How fast can you implement Salesforce CPQ?",
+      a: "Most clients are up and running in 4-8 weeks, depending on the complexity. We've got AI-accelerated templates for heavy lifting.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Is Salesforce CPQ suitable for complex pricing structures?",
+      a: "Absolutely! Salesforce CPQ is designed to handle intricate pricing models, ensuring accuracy and flexibility.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Can CPQ handle our complex pricing models?",
+      a: "The more complex your pricing, the more you'll love what AI-powered CPQ can do. We've tamed pricing monsters in 27 industries.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "Will our sales team actually use it?",
+      a: "They'll fight over who gets to use it first. Our adoption rates are 94% because we build systems salespeople love, not tolerate.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="salesforceCPQ" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-00">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Salesforce CPQ: Quotes That Think, Deals That Close"
+          subtext="Configure, Price, Quote in minutes with intelligent automation that sales teams love"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Salesforce%20Cpq.webp"
+          buttonText="Audit Me!"
+          buttonLink="/lead-gen-form"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You're in good company—with brands closing faster with AI-powered Salesforce CPQ."
+          stats={[
+            { label: "Salesforce CPQ projects delivered since 2020 ", value: "60+" },
+            { label: "Faster quote-to-cash cycle on an average ", value: "30%" },
+            { label: "Certified Salesforce experts on deck ", value: "60+" },
+          ]}
+        />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="Smarter Quotes, Faster Deals, Happier Teams"
+          subtitle="We integrate AI into every facet of your sales process, transforming Salesforce CPQ into a strategic powerhouse"
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
-        {/* Recent Resources Section */}
+        {/* Case Study Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See How AI-Powered Salesforce CPQ Makes Sales Teams Unstoppable"
+          body="A few real wins we've helped brands achieve with AI-powered Salesforce CPQ."
+          subTabs={[]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
-
-        {/* Testimonials */}
-        <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+        {/* Customer Logo Section */}
+        <LogoScroller
+          heading="Brands That Trust Our Salesforce CPQ Know-How"
+          subtext="From scale-ups to global giants—we help them quote faster"
         />
 
-        {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        {/* Client Testimonials Section */}
+        <Testimonials
+          title="Real Stories, Real Impact"
+          description="See how we made CPQ faster, smarter, and scalable with AI inside"
+        />
 
-        {/* Call to Action */}
+        {/* FAQs Section */}
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* More Resources Section */}
+        <RecentResourcesSection
+          heading="More from Our Content Repertoire"
+          body="Keep your CPQ IQ high with our freshest blog posts, guides, and AI hot takes."
+          subTabs={[]}
+          resources={recentResources}
+        />
+
+        {/* CTA Section */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Ready to Revolutionize Your Sales Process?"
+          subtext="Real-time pricing. Quotes that adapt. CPQ that works for you"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,35 +30,53 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
+ // Tab Items
  const tabs: TabItem[] = [
   {
     id: "marketing",
-    label: "Pardot Audit & Operations",
+    label: "Adobe Analytics ",
     icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Web%20Analytics/Adobe%20Analytics.webp", // replace with actual
+  ctaText: "Read More",
+  ctaLink: "L3/adobe-analytics"
+    
   },
   {
     id: "analytics",
-    label: "Pardot Consulting & Implementation",
+    label: "Google Analytics ",
     icon: BarChart2,
-    image: "https://example.com/image2.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Web%20Analytics/Google%20Analytics.webp",
+   ctaText: "Read More",
+    ctaLink: "L3/google-analytics"
   },
   {
     id: "integration",
-    label: "Pardot Managed Services ",
+    label: "Matamo Analytics ",
     icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Web%20Analytics/Matamo%20Analytics.webp",
+ ctaText: "Read More",
+ctaLink: "L3/matomo"
   },
   {
     id: "security",
-    label: "Pardot Migration & Custom Integrations",
+    label: "Piwik Pro  ",
     icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Web%20Analytics/Piwik%20Pro.webp",
+  ctaText: "Read More",
+   ctaLink: "L3/piwik"
+  },
+    {
+    id: "development",
+    label: "Parallel Tracking   ",
+    icon: ShieldCheck,
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Web%20Analytics/Parallel%20Tracking.webp",
+    ctaText: "Read More",
+ ctaLink: "L3/GA4"
   },
 ];
 
@@ -67,70 +86,52 @@ export default function MarketingAutomation() {
 const features: FeatureContent[] = [
   {
     id: "marketing",
+  
+    description: "Turn raw data into sharp insights with clean tracking, smart dashboards, and targeted segmentation.  ",
     items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
+      { icon: Zap, title: "Capture critical data aligned with your goals.  " },
+      { icon: Zap, title: "Design dashboards that make data easy to digest.  " },
+      { icon: Zap, title: "Segment your audience for laser-focused targeting. " },
     ],
   },
   {
     id: "analytics",
+   
+    description: "Let us fine-tune GA to your goals and surface the insights that actually move the needle. ",
     items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
+      { icon: BarChart2, title: "Google Analytics set up, no room for error.   " },
+      { icon: BarChart2, title: "Dashboards that make your data shine.   " },
+      { icon: BarChart2, title: "Track conversions like a performance review.   " },
     ],
   },
   {
     id: "integration",
+   
+    description: "No noise or clutter—just a clean, customized setup built around what you really want to track.  ",
     items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
+      { icon: Database, title: "Seamless Matomo integration, no tech headaches.  " },
+      { icon: Database, title: "Customize Matomo to track what truly counts.  " },
+      { icon: Database, title: "Train your team to master Matomo’s magic.  " },
     ],
   },
   {
     id: "security",
+   
+    description: "Data privacy, audience behavior, heatmaps—we bring it all together under one powerful, secure hood. ",
     items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
+      { icon: ShieldCheck, title: "Piwik PRO, built exactly for your business.  " },
+      { icon: ShieldCheck, title: "Data protection? We’ve got it locked down.  " },
+      { icon: ShieldCheck, title: "Heatmaps and reports that uncover hidden gems.  " },
+    ],
+  },
+   {
+    id: "development",
+   
+    description: "We make sure no event gets left behind, giving you the full, unsampled story your business deserves. ",
+    items: [
+      { icon: ShieldCheck, title: "Bypass GA4 limits with seamless event tracking   " },
+      { icon: ShieldCheck, title: "Get 100% real-time, unsampled user data   " },
+      { icon: ShieldCheck, title: "Merge cross-platform data into one view   " },
     ],
   },
 ];
@@ -169,92 +170,92 @@ const features: FeatureContent[] = [
   // FAQ List
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: " How are your web analytics services different from a basic setup? ",
+      a: "We go beyond code drops—think smart tracking, tailored segments, and dashboards that actually make sense.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Can you help us make sense of messy data?",
+      a: " Totally. We clean the chaos and turn your data dump into crystal-clear, click-worthy insights.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "What if we use multiple tools like GA, Matomo, Adobe? ",
+      a: "No sweat. We sync it all up and give you one slick view that tells the full story.  ",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "Do we need to be data nerds to use your dashboards?",
+      a: "Nope. They're built for humans—clean, visual, and zero jargon guaranteed. ",
     },
   ];
   
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="webAnalytics" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-00">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Web Analytics That Turn User Behavior into Business Wins"
+          subtext="Tap into user behavior and light up the path from browse to buy.  "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/web%20analytics.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
+ 
+  title="You’re in sharp company—brands decoding data and growing bolder. "
   stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
+    { label: "Certified Web Analytics geniuses  ", value: "30+" },
+    { label: " Custom reports generated ", value: "500+" },
+    { label: "Sites optimized  ", value: "100+" },
+    { label: " Data pipelines set up, end to end  ", value: "150+" },
   ]}
 />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title=" How We Make Web Analytics Work Like Charm "
+          subtitle=" We turn scattered signals into sharp, sales-worthy insights, powered by AI. "
           tabs={tabs}
           features={features} 
         />
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See What Smart Web Analytics Looks Like in Action  "
+          body=" A glimpse at how we’ve helped brands turn raw traffic into real traction. "
+           subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
          <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
+        heading="Brands That Bank on Our Web Analytics Mojo  "
+        subtext=" From hustle mode to hyper-scale—we help them read between the clicks. "
+        
       />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="  Real Stories. Real Web Analytics Wins.   "
+          description=" Powered by AI, a lot of strategy, skill & insights that don’t sleep.  "
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+          {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading=" More From Our Content Repertoire  "
+          body=" Keep your analytics edge sharp with our newest guides, blog posts, and AI-powered insights. "
+           subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Build Your AI-Powered Analytics Engine"
+          subtext="Smarter data, sharper decisions, faster growth—let’s make it happen.  "
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

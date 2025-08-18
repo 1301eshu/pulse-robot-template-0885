@@ -6,38 +6,40 @@ function useCountUp(end: string | number, duration = 1400) {
   const [value, setValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+
   const { numeric, suffix } = (() => {
     const match = String(end).match(/^([0-9,.]+)(.*)$/);
-    return match ? {
-      numeric: Number(match[1].replace(/,/g, '')),
-      suffix: match[2]
-    } : {
-      numeric: 0,
-      suffix: ""
-    };
+    return match
+      ? { numeric: Number(match[1].replace(/,/g, '')), suffix: match[2] }
+      : { numeric: 0, suffix: "" };
   })();
 
   useEffect(() => {
     let frame: number;
     let observer: IntersectionObserver | null = null;
+
     function start() {
       if (hasAnimated) return;
       setHasAnimated(true);
       const start = performance.now();
+
       function animate(now: number) {
         const progress = Math.min((now - start) / duration, 1);
         setValue(Math.floor(progress * numeric));
         if (progress < 1) frame = requestAnimationFrame(animate);
         else setValue(numeric);
       }
+
       frame = requestAnimationFrame(animate);
     }
+
     if (ref.current) {
-      observer = new window.IntersectionObserver(([entry]) => {
+      observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) start();
       }, { threshold: 0.6 });
       observer.observe(ref.current);
     }
+
     return () => {
       if (frame) cancelAnimationFrame(frame);
       if (observer && ref.current) observer.unobserve(ref.current);
@@ -50,7 +52,9 @@ function useCountUp(end: string | number, duration = 1400) {
 type Stat = {
   label: string;
   value: string;
+  isNegative?: boolean; // <-- add this line
 };
+
 
 type StatSectionProps = {
   title?: string;
@@ -58,6 +62,9 @@ type StatSectionProps = {
   stats: Stat[];
   setTitle?: (val: string) => void;
   setSubtitle?: (val: string) => void;
+  className?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
 };
 
 export default function EditableStatSection({
@@ -65,17 +72,36 @@ export default function EditableStatSection({
   subtitle,
   stats,
   setTitle,
-  setSubtitle
+  setSubtitle,
+  className = "",
+  paddingTop = "pt-20",
+  paddingBottom = "pb-0",
 }: StatSectionProps) {
-  const shouldRemoveTopPadding = !title && !subtitle;
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
 
   return (
-    <section className={`${shouldRemoveTopPadding ? "pt-0" : "pt-20"} pb-20 bg-white`}>
+    <section className={`bg-white ${paddingTop} ${paddingBottom} ${className}`} ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4">
+
         {/* Text Container */}
         {(title || subtitle) && (
           <div className="max-w-3xl">
-            {/* Subtitle */}
             {setSubtitle ? (
               <input
                 value={subtitle}
@@ -88,7 +114,6 @@ export default function EditableStatSection({
               </span>
             ) : null}
 
-            {/* Title */}
             {setTitle ? (
               <textarea
                 value={title}
@@ -104,25 +129,34 @@ export default function EditableStatSection({
           </div>
         )}
 
-        {/* Stat Cards */}
-        <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Stat Cards with animation */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2">
           {stats.map((stat, i) => {
-            const { ref, value, suffix } = useCountUp(stat.value, 1600 + i * 150);
+        const { ref, value, suffix } = useCountUp(stat.value, 1600 + i * 150);
+        const showValue = stat.isNegative ? (value === 0 ? '-' : `-${value}`) : value;
+
+
             return (
               <div
                 key={i}
-                className="flex flex-col justify-between bg-[#F7FAFB] rounded-2xl px-10 pt-10 pb-10 min-h-[220px]"
+                className={`bg-[#F7FAFB] rounded-2xl px-10 pt-10 pb-10 min-h-[220px] flex flex-col items-start transform transition-all duration-700 ease-out
+                  ${inView ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-6'}
+                `}
+                style={{
+                  transitionDelay: `${i * 150}ms`
+                }}
               >
-                <span className="block text-xl text-gray-500 font-medium mb-12">
-                  {stat.label}
-                </span>
                 <span
-                  ref={ref}
-                  style={{ fontVariantNumeric: "tabular-nums" }}
-                  className="block text-gray-900 tracking-tight text-5xl font-light"
-                >
-                  {value}
-                  {suffix}
+         ref={ref}
+      style={{ fontVariantNumeric: "tabular-nums" }}
+      className="text-gray-900 tracking-tight text-5xl font-light mb-6"
+     >
+     {showValue}{suffix}
+      </span>
+
+
+                <span className="text-xl text-gray-500 font-medium leading-snug">
+                  {stat.label}
                 </span>
               </div>
             );
@@ -132,4 +166,3 @@ export default function EditableStatSection({
     </section>
   );
 }
-

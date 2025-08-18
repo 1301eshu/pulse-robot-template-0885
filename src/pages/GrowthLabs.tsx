@@ -1,6 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Link } from "react-router-dom";
 import { 
   Lightbulb, 
@@ -63,10 +64,11 @@ const GrowthLabs = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <SmartBreadcrumb />
+      <main className="pt-8">
         <div className="container mx-auto px-6 py-12">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-white mb-6">Growth Labs</h1>
+            <h1 className="text-4xl font-bold text-white mb-6">AI Labs</h1>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               Our innovation hub where we experiment with cutting-edge technologies, 
               conduct research, and build community around the future of growth marketing.

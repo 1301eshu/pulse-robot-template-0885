@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,232 +30,210 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  const tabs: TabItem[] = [
+    {
+      id: "consulting",
+      label: "Salesforce Einstein Analytics Consulting ",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Salesforce%20Einstein%20Analytics%20Consulting.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/audit-form"
+    },
+    {
+      id: "implementation",
+      label: "Salesforce Einstein Implementation Services",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Salesforce%20Einstein%20Implementation%20Consulting.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/audit-form"
+    },
+    {
+      id: "enablement",
+      label: "Einstein Feature Enablement",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Einstein%20feature%20enablement.webp",
+   //   ctaText: "Audit Me!",
+    //  ctaLink: "/audit-form"
+    },
+    {
+      id: "optimization",
+      label: "Einstein Analytics Role Management ",
+      icon: Clock,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Einstein%20analytics%20role%20management.webp",
+    //  ctaText: "Audit Me!",
+    //  ctaLink: "/audit-form"
+    },
+    {
+      id: "Development",
+      label: "Einstein Analytics Optimization",
+      icon: Clock,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Einstein%20analytics%20Optimization.webp",
+    //  ctaText: "Audit Me!",
+    //  ctaLink: "/audit-form"
+    },
+  ];
 
+  const features: FeatureContent[] = [
+    {
+      id: "consulting",
+      description: "We decode your data goals and build an AI game plan that moves metrics.",
+      items: [
+        { icon: BarChart2, title: "Align AI to real revenue outcomes" },
+        { icon: BarChart2, title: "Build KPIs that predict, not just measure" },
+        { icon: BarChart2, title: "Spot trends, gaps, and growth signals early" },
+      ],
+    },
+    {
+      id: "implementation",
+      description: "We make sure Einstein fits your stack, learns from your data, and launches without mess.",
+      items: [
+        { icon: Database, title: "Connect cleanly to your existing tech" },
+        { icon: Database, title: "Train on your actual business data" },
+        { icon: Database, title: "Launch fast, no disruption, no drama" },
+      ],
+    },
+    {
+      id: "enablement",
+      description: "We unlock the good stuff—forecasting, scoring, bots—and train your team to use it like pros.",
+      items: [
+        { icon: Zap, title: "Prioritize leads that are ready to buy" },
+        { icon: Zap, title: "Forecast pipeline with crystal ball clarity" },
+        { icon: Zap, title: "Launch bots that solve before humans need to" },
+      ],
+    },
+    {
+      id: "optimization",
+      description: "We customize AI insights by role—so your teams get what they need, when they need it.",
+      items: [
+        { icon: Clock, title: "Personalized views for sales, service, ops" },
+        { icon: Clock, title: "Auto-delivered insights in plain English" },
+        { icon: Clock, title: "Tools that simplify—not overwhelm—teams" },
+      ],
+    },
+     {
+      id: "Development",
+       description: "We fine-tune your Einstein setup as you grow—because static models don’t win markets.",
+      items: [
+        { icon: Clock, title: "Recalibrate AI models with fresh data" },
+        { icon: Clock, title: "Benchmark performance vs. your industry" },
+        { icon: Clock, title: "Scale smart with proactive refinements" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
-
-  // Resources for recent articles
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
+      title: "Agentic AI: The Silent Force Reshaping Business Intelligence",
+      subtitle: "Forget dashboards. Let the data talk back. Discover the rise of Einstein AI + Agentic tools.",
       author: "Sneha Kumari",
-      date: "July 7, 2025",
+      date: "July 25, 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "einstein-agentic-ai"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
+      title: "5 Einstein Features You’re Not Using (But Should)",
+      subtitle: "If you're only using forecasting, you're leaving ROI on the table. Here's what to unlock next.",
       author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
+      date: "July 22, 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "einstein-feature-checklist"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
+      title: "Smarter Teams with Role-Based Einstein Insights",
+      subtitle: "Sales wants pipeline. Ops needs accuracy. Everyone wins when Einstein adapts by role.",
       author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      date: "July 18, 2025",
+      readTime: "4 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "einstein-role-insights"
     },
   ];
 
-  // FAQ List
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "How quickly will we see ROI from Einstein Analytics?",
+      a: "Most teams start spotting “Whoa, we didn’t know that” insights in 30 days—and drive measurable ROI in under 90.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Do we need data scientists to use Einstein effectively?",
+      a: "Not at all. We build intuitive interfaces that anyone can use while the AI does heavy lifting.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Can Einstein integrate with our existing tech stack?",
+      a: "Absolutely. We connect Einstein to your entire digital ecosystem for truly unified intelligence.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "What's included in your Einstein Analytics audit?",
+      a: "A full breakdown of your data maturity, 3 missed AI wins, and a plan to get more ROI out of what you already have.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="salesforceEinstein" />
       <Header />
-      <main className="pt-24">
-        {/* HERO Section */}
+      <SmartBreadcrumb />
+      <main className="pt-0">
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="Einstein AI That Predicts, Personalizes, and Powers Growth"
+          subtext="Predict smarter. Act faster. Make every decision data-backed with Salesforce Einstein AI."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Salesforce%20Einstein.webp"
         />
 
-        {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
-
-        {/* Tab Features Section */}
-        <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
-          tabs={tabs}
-          features={features} 
+          title="You're in good company—with brands predicting smarter with Einstein AI"
+          stats={[
+            { label: "Salesforce Einstein projects launched across industries", value: "70+" },
+            { label: "Salesforce Implementations since 2020", value: "100+" },
+            { label: "Certified pros in AI-powered analytics and automation ", value: "60+" },
+          ]}
         />
 
-        {/* Recent Resources Section */}
+        <EnterpriseCapabilities
+          title="Einstein AI That Thinks Like Your Best Analyst"
+          subtitle="We unlock Einstein AI’s full potential, so your data works harder than your team."
+          tabs={tabs}
+          features={features}
+        />
+
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See How Einstein AI Transforms Business Outcomes"
+          body="A few real wins we've helped brands achieve with Einstein AI."
+           subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
+      
+
+        <LogoScroller
+          heading="Brands That Trust Our Einstein AI Expertise"
+          subtext="From lean teams to enterprise squads—we help them all predict smarter."
+        />
+
+        <Testimonials
+          title="Real Stories, Real AI Growth"
+          description=" From clunky reports to revenue-driving insights—see what happens when we bring Einstein AI in"
+        />
+
+        <FaqSection title="FAQs" faqs={faqs} />
+
+         <RecentResourcesSection
+          heading="Let's Make Your Data Predict the Future"
+          body="Einstein AI, customized to answer your most valuable business questions "
+           subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
-
-        {/* Testimonials */}
-        <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
-        />
-
-        {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
-
-        {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let's Make Your Data Predict the Future"
+          subtext="Einstein AI, customized to answer your most valuable business questions"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

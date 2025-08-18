@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,235 +30,230 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Paid Ads Services)
+  const tabs: TabItem[] = [
+    {
+      id: "google",
+      label: "Google Ads",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/Google%20Ads.webp",
+      ctaText: "",
+      ctaLink: ""
+    },
+    {
+      id: "meta",
+      label: "Meta Ads (Facebook, Instagram, WhatsApp, Threads)",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/Meta%20Ads%20(Facebook,%20Instagram,%20WhatsApp,%20Threads).webp",
+      ctaText: "",
+      ctaLink: ""
+    },
+    {
+      id: "linkedin",
+      label: "LinkedIn Ads",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/LinkedIn%20Ads.webp",
+      ctaText: "",
+      ctaLink: ""
+    },
+    {
+      id: "adobe",
+      label: "Adobe Ad Cloud & Bing Ads",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/Adobe%20Ad%20Cloud%20&%20Bing%20Ads.webp",
+      ctaText: "",
+      ctaLink: ""
+    },
+    {
+      id: "x",
+      label: "X Ads",
+      icon: Heart,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/X%20Ads.webp",
+      ctaText: "",
+      ctaLink: ""
+    },
+  ];
 
+  // Features (Paid Ads features content)
+  const features: FeatureContent[] = [
+    {
+      id: "google",
+      description: "Google knows everything. We just make sure it knows you. With ads that convert, and never overspend, we turn the world’s biggest search engine into your fan.",
+      items: [
+        { icon: Zap, title: "Ads so targeted, your wallet will thank you" },
+        { icon: Zap, title: "Copy that clicks. No boring ads allowed" },
+        { icon: Zap, title: "Budget hacks that make every cent count" },
+      ],
+    },
+    {
+      id: "meta",
+      description: "We make Meta ads irresistible. Whether it’s a scroll on Threads, a swipe on Instagram, or a tap on WhatsApp, we’re in all the right places with all the right moves.",
+      items: [
+        { icon: BarChart2, title: "Meta ads that scroll, stop, and sell" },
+        { icon: BarChart2, title: "One ad to rule all Meta realms" },
+        { icon: BarChart2, title: "Insights that don’t make you squint." },
+      ],
+    },
+    {
+      id: "linkedin",
+      description: "Boardroom-ready campaigns that speak the language of decision-makers.",
+      items: [
+        { icon: Database, title: "Ads built for C-suites, buyers, and industry insiders" },
+        { icon: Database, title: "Laser-focused targeting by role, company, and interest" },
+        { icon: Database, title: "Turn attention into action and leads that matter" },
+      ],
+    },
+    {
+      id: "adobe",
+      description: "Not your usual ad suspects, but they pull weight. Adobe brings the polish, Bing brings the reach, we bring the results.",
+      items: [
+        { icon: ShieldCheck, title: "Adobe ads crafted to catch eyes and wallets." },
+        { icon: ShieldCheck, title: "Messaging that hooks, reels in & converts fast." },
+        { icon: ShieldCheck, title: "Bing ads that reach beyond Google and bring serious clicks." },
+      ],
+    },
+    {
+      id: "x",
+      description: "Relevant and built for scroll-stopping impact. We help you ride real-time trends & get the engagement that spreads.",
+      items: [
+        { icon: Heart, title: "Trend-driven ad copy with viral potential" },
+        { icon: Heart, title: "Smart targeting across interests, events, and conversations" },
+        { icon: Heart, title: "Boost visibility, buzz, and brand recall" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Years of combined industry know-how", value: "100+" },
+    { label: "Increase in inbound leads", value: "45%" },
+    { label: "ROI from paid traffic", value: "3X" },
+  ];
 
-  // Resources for recent articles
+  // Resources (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "AI for PPC: The Smart Marketer's Guide",
+      subtitle: "Harnessing automation for lower CPC and higher ROI.",
+      author: "PPC Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "ai-for-ppc"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "Winning Ad Copy—No Clicks Wasted",
+      subtitle: "What really makes an ad scroll-stopping? Let’s break it down.",
+      author: "Ad Creative Lead",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "winning-ad-copy"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Remarketing Redefined: Boomerang Your Visitors",
+      subtitle: "Strategies to turn casual visitors into customers with smart retargeting.",
+      author: "Growth Strategist",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "remarketing-strategies"
     },
   ];
 
-  // FAQ List
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "Can you help with ad copy and creatives?",
+      a: "Absolutely! We whip up ad copy and visuals that speak your audience’s language—and make them stop scrolling.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "What metrics do you track to measure success?",
+      a: "We keep an eye on CTR, CPC, CPA, conversion rates, and ROI — basically, all the juicy numbers that prove we’re winning.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Can you help with remarketing campaigns?",
+      a: "You bet! We craft clever remarketing moves that pull back your visitors like a boomerang — turning looks into clicks.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How do you manage bidding strategies?",
+      a: "We let AI crunch the numbers but add a human touch to fine-tune bids for max bang without the budget bang.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="paidAds" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-0">
+
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="Performance-Obsessed PPC Services with an AI Assist"
+          subtext="Real-time PPC magic — more clicks, better leads, bigger returns"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/Paid%20ads.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="Welcome to the hub—where every click is a step toward brand success."
+          stats={stats}
+        />
 
-        {/* Tab Features Section */}
+        {/* Tab Features Section (We Mix AI Brains into Your Paid Ads Engine) */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="We Mix AI Brains into Your Paid Ads Engine"
+          subtitle="We crack the code on ad fatigue, keeping your campaigns fierce and conversion ready."
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="Watch How Good, AI-Smart Paid Ads Work"
+          body="Brands we’ve helped crush goals with smart paid campaigns"
+          subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        <LogoScroller
+          heading="Brands Backing Our Paid Ads Game"
+          subtext="From tight teams to titans—we deliver campaigns that never miss."
+          
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Stories, Real Growth with Paid Ads"
+          description="Thanks to brains syncing with AI’s precision pulse."
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Your go-to spot for smart PPC insights, guides, and AI tips."
+          subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let's Start AI-Powered PPC That Means Business"
+          subtext="Target the right people, spend less, get more."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />
+
       </main>
       <Footer />
     </div>

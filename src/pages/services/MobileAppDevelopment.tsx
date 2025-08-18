@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,235 +30,213 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Mobile App Dev Services)
+  const tabs: TabItem[] = [
+    {
+      id: "strategy",
+      label: "Strategy & Consulting",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Mobile%20Development/Stratedgy%20Consulting.webp",
+ //     ctaText: "Get a Demo",
+ //   ctaLink: "/l3-template"
+    },
+    {
+      id: "implementation",
+      label: "Implementation & Setup",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Mobile%20Development/Implementaion%20&%20Setup.webp",
+  //     ctaText: "Get a Demo",
+ //   ctaLink: "/l3-template"
+    },
+    {
+      id: "architecture",
+      label: "Architecture & Design",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Mobile%20Development/Architecture%20Design.webp",
+  //     ctaText: "Get a Demo",
+ //   ctaLink: "/l3-template"
+    },
+    {
+      id: "support",
+      label: "Support & Maintenance",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Mobile%20Development/Support%20&%20maintainance.webp",
+   //    ctaText: "Get a Demo",
+  //  ctaLink: "/l3-template"
+    },
+  ];
 
+  // Features (Mobile App Dev Zigzag content)
+  const features: FeatureContent[] = [
+    {
+      id: "strategy",
+      description: "From roadmap to rollout, we bring your mobile app to life, smoothly.",
+      items: [
+        { icon: Zap, title: "Product strategy rooted in user behavior and market gaps" },
+        { icon: Zap, title: "Stacks that run fast, scale hard, don't box you in" },
+        { icon: Zap, title: "Launch handled end to end - QA, app stores, post-drop flow, what have you" },
+      ],
+    },
+    {
+      id: "implementation",
+      description: "Built for swipes, taps, and scale. Whether it’s iOS, Android, or the web, we make AI-backed apps that move fast.",
+      items: [
+        { icon: BarChart2, title: "iOS & Android apps that work like a charm" },
+        { icon: BarChart2, title: "Native & cross-platform magic to take your app places" },
+        { icon: BarChart2, title: "AI-led progressive apps that turn functionality into fun" },
+      ],
+    },
+    {
+      id: "architecture",
+      description: "It’s not just wireframes and logic, it’s mobile flow, visual rhythm, and rock-solid tech.",
+      items: [
+        { icon: Database, title: "AI-led architecture for speed, reliability & future growth" },
+        { icon: Database, title: "Designs that perfectly align with your brand goals" },
+        { icon: Database, title: "Effortless user flows that keep your audience hooked" },
+      ],
+    },
+    {
+      id: "support",
+      description: "Think of us as your post-launch pit crew—fixing issues fast, preventing the rest, and keeping users happy.",
+      items: [
+        { icon: ShieldCheck, title: "Non-stop security monitoring to keep the bad guys out" },
+        { icon: ShieldCheck, title: "Vulnerability reports that catch problems before they catch you" },
+        { icon: ShieldCheck, title: "Routine audits that keep your app running smooth" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Combined years of full-stack development experience", value: "200+" },
+    { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
+    { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
+  ];
 
-  // Resources for recent articles
+  // Resources (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "Mobile App Design Trends for 2025",
+      subtitle: "Stay ahead with the latest in mobile UX and AI-driven engagement.",
+      author: "App Design Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "mobile-design-trends-2025"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "Cross-Platform vs. Native: What to Choose?",
+      subtitle: "Pros, cons, and decision frameworks for business leaders.",
+      author: "Mobile Dev Lead",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "cross-vs-native"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Launching Apps at Scale: Lessons Learned",
+      subtitle: "Common pitfalls, scaling tips, and how to ensure a smooth launch.",
+      author: "Growth Strategist",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "app-launch-lessons"
     },
   ];
 
-  // FAQ List
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "What tech stack do you use?",
+      a: "We’re fluent in Swift, Kotlin, React Native, Flutter—and whatever works best for you.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Can you turn my rough idea into a full app?",
+      a: "100%. We take your napkin sketch and turn it into something you’ll want to show off.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Do you help with app store submissions?",
+      a: "Yep. We handle the whole process—from icons to guidelines to going live.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How do you ensure my app is secure?",
+      a: "We build with security-first frameworks, encrypt data, and run regular vulnerability checks.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="mobileAppDevelopment" />
       <Header />
+      <SmartBreadcrumb />
       <main className="pt-24">
+
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Mobile Apps Built for Growth and Engagement"
+          subtext="Apps that think fast, move smart, and serve your users instantly."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/Mobile%20App%20Development%20Servivces.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You’re in the right place—where mobile innovation drives real growth."
+          stats={stats}
+        />
 
-        {/* Tab Features Section */}
+        {/* Tab Features Section (Mobile App Dev Services) */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="How We Blend AI into Mobile App Development"
+          subtitle="From native to hybrid, we design mobile experiences that adapt, personalize, and perform—powered by AI."
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See Smarter, AI-Driven Mobile Apps in Action"
+          body="Brands we've helped craft apps for seamless, intuitive user journeys"
+          subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        <LogoScroller
+          heading="Brands That Trust Our App Development Expertise"
+          subtext="Whether startups or giants, we build mobile apps that stick."
+          
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Results, Real Mobile App Impact"
+          description="Smooth apps, sharp design, AI-enhanced. Built to perform"
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Stay in the know with the latest Mobile App Development blog posts, guides, and AI hacks."
+          subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Build Smarter Mobile Apps with the Midas Touch of AI"
+          subtext="Slick design, smooth performance, and user love—baked in."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />
+
       </main>
       <Footer />
     </div>

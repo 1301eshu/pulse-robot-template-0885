@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,235 +30,213 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Web Dev Services)
+  const tabs: TabItem[] = [
+    {
+      id: "optimization",
+      label: "Site Optimization",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Web%20Development/Site%20Optimization.webp",
+    ctaText: "Read More",
+   ctaLink: "L3/site-optimization"
+    },
+    {
+      id: "frontend-backend",
+      label: "Backend & Front-End Technology",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Web%20Development/Back%20&%20Front%20End%20Technology.webp",
+     ctaText: "Read More",
+    ctaLink: "#"
+    },
+    {
+      id: "cms",
+      label: "CMS Development",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Web%20Development/CMS%20Development.webp",
+       ctaText: "Read More",
+    ctaLink: "L3/cms-development"
+    },
+    {
+      id: "custom-dev",
+      label: "Custom Web Development for Enterprises",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Web%20Development/CMS%20Development.webp",
+    //   ctaText: "Get a Demo",
+  //  ctaLink: "/l3-template"
+    },
+  ];
 
+  // Features (Web Dev Zigzag content)
+  const features: FeatureContent[] = [
+    {
+      id: "optimization",
+      description: "We tune your site like a racecar. Lean code, tamed databases, and zero bloat. Because slow pages are so 2012, and your users didn’t sign up for a buffering marathon.",
+      items: [
+        { icon: Zap, title: "Give your site a speed boost, no pit stops" },
+        { icon: Zap, title: "Clean code for smooth sailing performance" },
+        { icon: Zap, title: "Tame your database for lightning-fast loads" },
+      ],
+    },
+    {
+      id: "frontend-backend",
+      description: "Brains in the back, beauty in the front. We engineer clean code, smart logic, and interfaces that wow. Built to scale & stun.",
+      items: [
+        { icon: BarChart2, title: "Build scalable logic that grows with your product" },
+        { icon: BarChart2, title: "Run fast with clean, framework-powered architecture" },
+        { icon: BarChart2, title: "Build interactive UIs that users can’t ignore" },
+      ],
+    },
+    {
+      id: "cms",
+      description: "From pixel-perfect pages to plug-and-play shops, we turn CMS into your secret weapon. AEO loves it, your team runs it, and your users? They keep coming back for more.",
+      items: [
+        { icon: Database, title: "Launch LLM SEO & geo-optimized sites" },
+        { icon: Database, title: "Build online stores as smooth as they sell" },
+        { icon: Database, title: "Craft custom websites with CMS power & style" },
+      ],
+    },
+    {
+      id: "custom-dev",
+      description: "Big goals need bold builds. We craft tailored web solutions that flex with your scale, fix what’s broken and never ghost you post-launch.",
+      items: [
+        { icon: ShieldCheck, title: "Build custom web solutions that grow with you" },
+        { icon: ShieldCheck, title: "Tackle challenges head-on with expert tech advice" },
+        { icon: ShieldCheck, title: "Migrate easy and enjoy continous support" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Combined years of full-stack development experience", value: "200+" },
+    { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
+    { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
+  ];
 
-  // Resources for recent articles
+  // Resources (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "Future-Proof Your Website: AI and Web Dev Trends",
+      subtitle: "A guide to the tech, tools, and strategies shaping web experiences in 2025.",
+      author: "Web Dev Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "future-proof-website"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "How to Optimize Web Performance Without Losing Your Mind",
+      subtitle: "Speed, scalability, and best practices for devs and marketers.",
+      author: "Performance Lead",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "web-performance-optimization"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Migration Made Easy: Tech Stacks, Data, and UX",
+      subtitle: "How to move platforms (and data) without the drama.",
+      author: "Solutions Architect",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "website-migration"
     },
   ];
 
-  // FAQ List
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "Can you help us migrate our website to another platform?",
+      a: "Yep, we handle migrations smoothly. Whether you're moving from WordPress to Webflow, Shopify to Headless, we handle full-stack migrations with zero data loss and minimal downtime.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Will my site work well on mobile and all devices?",
+      a: "Absolutely! We go mobile-first, so your site looks and works perfectly on any device, delivering a smooth, fast experience everywhere.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Do you build websites that are SEO and AEO ready from day one?",
+      a: "Yes. Every site we deliver is structured for search engine indexing and AI-powered discovery tools.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How do you keep our site secure?",
+      a: "We use top-tier encryption, regular audits, and industry best practices to keep your site locked down and your data safe.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="webDevelopment" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-0">
+
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="Web Development That’s Fast, Adaptable, AI-Savvy"
+          subtext="Sites that load quickly, flex hard, and get what your users are here for."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/Web%20Development.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You’re in good company—where creativity meets clean code for perfect websites."
+          stats={stats}
+        />
 
-        {/* Tab Features Section */}
+        {/* Tab Features Section (Web Dev Services) */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="We Blend AI with Web Development for Effortless User Experiences"
+          subtitle="We optimize every layer of your website to ensure smooth performance and intelligent functionality"
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See AI-Infused Web Development In Action"
+          body="Brands we’ve helped create seamless, user-focused experiences."
+          subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        <LogoScroller
+          heading="Trusted by Teams Who Demand Clean, Scalable Code"
+          subtext="From SMBs to big leagues, we help their websites perform & convert."
+         
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Results, Real Web Development Impact"
+          description="Powered by AI and clean code. User-friendly, business ready."
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading="More from Our Content Repertoire"
+          body="Stay in the know with the latest Web Development blog posts, guides, and AI hacks."
+          subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Perfect Your Web Experience with a Hint of AI"
+          subtext="Intuitive design, blazing speed, and rock-solid performance."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />
+
       </main>
       <Footer />
     </div>

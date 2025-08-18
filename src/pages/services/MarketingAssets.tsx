@@ -29,6 +29,7 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -40,24 +41,32 @@ export default function MarketingAutomation() {
     label: "Pardot Audit & Operations",
     icon: Zap,
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "analytics",
     label: "Pardot Consulting & Implementation",
     icon: BarChart2,
     image: "https://example.com/image2.jpg",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "integration",
     label: "Pardot Managed Services ",
     icon: Database,
     image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
   {
     id: "security",
     label: "Pardot Migration & Custom Integrations",
     icon: ShieldCheck,
     image: "https://example.com/image4.jpg",
+    ctaText: "Get a Demo",
+    ctaLink: "/l3-template"
   },
 ];
 
@@ -125,11 +134,11 @@ const features: FeatureContent[] = [
       },
       {
         icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
+        title: "Migrations so smooth, you'll blink and miss it  ",
       },
       {
         icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
+        title: "Integrations that don't break a sweat ",
       },
     ],
   },
@@ -169,40 +178,41 @@ const features: FeatureContent[] = [
   // FAQ List
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "We're already using Pardot. Will you audit what's working before pitching changes?",
+      a: "Sure, we check your existing setup first—what's firing, what's flopping—then layer in what adds real lift. ",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "If we don't know what's broken, can you still help?",
+      a: "Absolutely. Our audits surface what's missing. Most clients call it their biggest eye-opener. ",
     },
     {
       q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      a: "100%. Marketing automation that doesn't sync with sales is just noise. We close that loop. ",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "Do we need to upgrade our Pardot plan to work with your team? ",
+      a: "No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
     },
   ];
   
   return (
     <div className="bg-white text-gray-900">
       <Header />
+      <SmartBreadcrumb />
       <main className="pt-24">
         {/* HERO Section */}
         <HeroSection
           heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
+          
           subtext="Target like a pro, save hours, win campaigns on cruise control."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/Marketing%20Assets.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
+  
+  title="You're in smart company—alongside brands scaling better with Pardot. "
   stats={[
     { label: "Happy Pardot Clients  ", value: "25+" },
     { label: "Certified Pardot Nerds ", value: "20+" },
@@ -213,7 +223,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          subtitle="We work behind the scenes to give your lead gen and campaigns a quiet boost."
           tabs={tabs}
           features={features} 
         />
@@ -221,39 +231,28 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+           subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
          <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
+        heading="Brands That Trust Us With Pardot"
+        subtext="Unicorns, enterprises, and everything in between—Pardot runs with us  "
+        
       />
 
         {/* Testimonials */}
         <Testimonials
           title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          description="Less grunt work, more growth—AI-led, expert-fed. "
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
+          heading="Don't Let Your Pardot Gather Dust "
           subtext="Give it the TLC it deserves & see the magic unfold!"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"

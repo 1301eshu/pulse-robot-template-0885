@@ -2,29 +2,68 @@ import { ReactNode } from 'react';
 
 type FeatureCardProps = {
   icon: ReactNode;
+  imageSrc?: string;
   title: string;
   description: string;
+  useBoxedImage?: boolean;
+  ctaUrl?: string;
+  nocta?: boolean; // optional flag to hide CTA
 };
 
-export default function FeatureCard({ icon, title, description }: FeatureCardProps) {
+export default function FeatureCard({
+  icon,
+  imageSrc,
+  title,
+  description,
+  useBoxedImage = true,
+  ctaUrl,
+  nocta = false,
+}: FeatureCardProps) {
   return (
-    <div className="group bg-gray-50 hover:bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-gray-900 hover:text-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-      
-      {/* Icon */}
-      <div className="w-12 h-12 bg-gray-100 group-hover:bg-white/20 rounded-lg flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
-        {icon}
-      </div>
+    <div className="h-full group flex flex-col justify-between bg-gray-50 hover:bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-gray-900 hover:text-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer min-h-[280px]">
+      <div className="flex flex-col flex-grow justify-between">
+        <div>
+          <div
+            className={`h-14 flex items-center mb-6 ${
+              useBoxedImage
+                ? 'w-14 bg-gray-100 group-hover:bg-white/20 rounded-lg justify-center'
+                : ''
+            }`}
+          >
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={title}
+                className={`${
+                  useBoxedImage ? 'w-6 h-6' : 'h-[28px] max-w-[100px]'
+                } object-contain transition-transform duration-300 ease-in-out group-hover:scale-[1.08]`}
+              />
+            ) : (
+              icon
+            )}
+          </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
+          <h3 className="text-xl font-bold mb-2">{title}</h3>
+          <p className="text-sm leading-relaxed">{description}</p>
+        </div>
 
-      {/* Description */}
-      <p className="text-sm leading-relaxed">{description}</p>
-
-      {/* CTA */}
-      <div className="mt-4 inline-flex items-center font-semibold text-black group-hover:text-white transition-all duration-300">
-        Learn More
-        <span className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+        {!nocta && (
+          <div className="mt-4">
+            {ctaUrl ? (
+              <a
+                href={ctaUrl}
+                className="inline-flex items-center font-semibold text-black group-hover:text-white transition-all duration-300"
+              >
+                Learn More
+                <span className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            ) : (
+              <div className="h-[24px]" />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

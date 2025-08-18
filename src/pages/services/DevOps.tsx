@@ -1,4 +1,4 @@
-// src/pages/services/MarketingAutomation.tsx
+// src/pages/services/DevOpsAutomation.tsx
 
 import { useState } from "react";
 
@@ -10,8 +10,9 @@ import Testimonials from "@/components/ui/component_4";
 import FaqSection from "@/components/ui/component_5";
 import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
-import LogoScroller from '@/components/ui/component_13';
+import LogoScroller from "@/components/ui/component_13";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -23,238 +24,197 @@ import {
   BarChart2,
   Database,
   ShieldCheck,
-  Clock,
-  Heart,
 } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
-export default function MarketingAutomation() {
+export default function DevOpsAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  const tabs: TabItem[] = [
+    {
+      id: "strategy",
+      label: "DevOps Strategy & Advisory",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Devops%20Stratedgy%20&%20Advisory.webp",
+   //  ctaText: "Audit Me!",
+   //   ctaLink: "/audit-form",
+    },
+    {
+      id: "ci-cd",
+      label: "CI/CD Pipelines",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/CD%20Pipelines.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/audit-form",
+    },
+    {
+      id: "monitoring",
+      label: "Monitoring & Observability",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Monitoring%20&%20Observalibity.webp",
+  //    ctaText: "Audit Me!",
+   //   ctaLink: "/audit-form",
+    },
+    {
+      id: "analytics",
+      label: "Metrics & AI Analytics",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Metrics%20&%20Ai%20Analytics.webp",
+   //   ctaText: "Audit Me!",
+  //    ctaLink: "/audit-form",
+    },
+  ];
 
+  // Tab Features
+  const features: FeatureContent[] = [
+    {
+      id: "strategy",
+      items: [
+        { icon: Zap, title: "AI-powered game plan that powers growth without the grind" },
+        { icon: Zap, title: "We turn your DevOps plan into a smooth launch" },
+        { icon: Zap, title: "Mix Agile with DevOps for speed that never lags" },
+      ],
+    },
+    {
+      id: "ci-cd",
+      items: [
+        { icon: BarChart2, title: "Rapid releases, smoother workflows, no compromises" },
+        { icon: BarChart2, title: "Merge, test, deploy—effortless and error-free" },
+        { icon: BarChart2, title: "Automate the process with AI assistance, speed up the results" },
+      ],
+    },
+    {
+      id: "monitoring",
+      items: [
+        { icon: Database, title: "Track every release, fix issues in real time" },
+        { icon: Database, title: "Optimize performance and tackle risks, instantly" },
+        { icon: Database, title: "AI to give real-time insights, rapid fixes, flawless releases" },
+      ],
+    },
+    {
+      id: "analytics",
+      items: [
+        { icon: ShieldCheck, title: "Track uptime, spot threats, deploy with confidence" },
+        { icon: ShieldCheck, title: "Smarter releases start with smarter metrics " },
+        { icon: ShieldCheck, title: "Deploy more, stress less—automation’s got this" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
-
-  // Resources for recent articles
+  // Recent Resources
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
+      title: "Agentic AI in DevOps: What It Changes (Hint: Everything)",
+      subtitle: "AI isn't just helping DevOps—it’s rewriting the playbook. From CI/CD to real-time rollback...",
       author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      date: "July 20, 2025",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1581093588401-7a065b1925d2?w=600&h=400",
+      slug: "agentic-ai-devops",
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
+      title: "Top Metrics to Watch in Your AI-Driven DevOps Stack",
+      subtitle: "Don't fly blind. These are the KPIs that matter when your releases rely on AI and automation...",
       author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      date: "July 18, 2025",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400",
+      slug: "devops-metrics-ai",
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
+      title: "CI/CD + AI: Speed Meets Intelligence",
+      subtitle: "Merge, deploy, repeat—now with machine learning in the mix. Here’s how leading teams do it...",
       author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      date: "July 15, 2025",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437f6?w=600&h=400",
+      slug: "ci-cd-ai-automation",
     },
   ];
 
-  // FAQ List
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "How does DevOps speed up deployments?",
+      a: "With automation, testing on the go, and seamless integration—speed is the name of the game.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Can DevOps help me reduce downtime?",
+      a: "Absolutely! With continuous monitoring and automated fixes, we keep things running without a hitch.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "How do you make sure my releases are bug-free?",
+      a: "Continuous testing, real-time fixes, and automated checks keep bugs at bay and quality high.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How does DevOps handle scalability?",
+      a: "With agile practices and automation, DevOps scales seamlessly—whether you’re a startup or an enterprise.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="devops" />
       <Header />
-      <main className="pt-24">
-        {/* HERO Section */}
+      <SmartBreadcrumb />
+      <main className="pt-0">
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Driven DevOps That Accelerate Releases and Eliminate Downtime"
+         // highlight="Fast. Smart. Scalable."
+          subtext="Drive quick releases with automated, frictionless workflows"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/Dev%20OPs.webp"
         />
 
-        {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
-
-        {/* Tab Features Section */}
-        <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
-          tabs={tabs}
-          features={features} 
+          
+          title="You’re in good company—where speed, seamless releases, and brand success unite"
+          stats={[
+            { label: "Combined years of full-stack development experience", value: "200+" },
+            { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
+            { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
+          ]}
         />
 
-        {/* Recent Resources Section */}
+        <EnterpriseCapabilities
+          title="What We Deliver Through AI-Infused DevOps"
+          subtitle="We keep your code flowing smoothly, deploying at great speed."
+          tabs={tabs}
+          features={features}
+        />
+
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See AI-Ready, Smart DevOps in Action "
+          body="Brands we've helped ship faster, safer, and smarter, without chaos  "
+          subTabs={[          ]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
-
-        {/* Testimonials */}
-        <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+        <LogoScroller
+          heading="Brands Backing Our DevOps Game"
+          subtext="From scaling startups to global giants, we power their smoother releases"
         />
 
-        {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <Testimonials
+          title="Real Results with Smarter DevOps Solutions"
+          description="How? With smart strategy, expert moves, and a touch of AI."
+        />
 
-        {/* Call to Action */}
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire "
+          body="Catch up on the hottest DevOps trends, blog posts & AI insights you just can’t miss.   "
+          subTabs={[          ]}
+          resources={recentResources}
+        />
+
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Get Your DevOps on the Fast Track with AI"
+          subtext="Faster code, zero bugs, and flawless uptime."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

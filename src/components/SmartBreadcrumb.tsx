@@ -13,7 +13,7 @@ import {
 // Display-friendly route names
 const routeNames: Record<string, string> = {
   'services': 'Services',
-  'growth-labs': 'Growth Labs',
+  'growth-labs': 'AI Labs',
   'resources': 'Resources',
   'company': 'Company',
   'hubspot': 'HubSpot',
@@ -22,6 +22,7 @@ const routeNames: Record<string, string> = {
   'salesforce-cpq': 'Salesforce CPQ',
   'salesforce-einstein': 'Salesforce Einstein',
   'salesforce-marketing-cloud': 'Salesforce Marketing Cloud',
+  'marketing-cloud': 'Marketing Cloud',
   'salesforce-pardot': 'Salesforce Pardot',
   'sales-cloud': 'Sales Cloud',
   'service-cloud': 'Service Cloud',
@@ -36,9 +37,11 @@ const routeNames: Record<string, string> = {
   'cro': 'Conversion Rate Optimization',
   'analytics': 'Analytics',
   'ga4-migration': 'GA4 Migration',
-  'web-analytics': 'Web Analytics',
+  
+  'growth-marketing-pod-services': 'Growth Marketing Pod Services',
   'data-visualization': 'Data Visualization',
-  'seo': 'SEO',
+  'seo': 'Search Engine Optimization',
+  'SEO': 'Search Engine Optimization',
   'paid-ads': 'Paid Advertising',
   'performance-marketing': 'Performance Marketing',
   'digital-marketing': 'Digital Marketing',
@@ -54,7 +57,8 @@ const routeNames: Record<string, string> = {
   'design-services': 'Design Services',
   'marketing-assets': 'Marketing Assets',
   'motion-graphics': 'Motion Graphics',
-  'development': 'Development',
+  'development': 'Development Services',
+  'development-services': 'Development Services',
   'about': 'About',
   'careers': 'Careers',
   'contact': 'Contact',
@@ -76,26 +80,139 @@ const routeNames: Record<string, string> = {
   'roi-calculator': 'ROI Calculator',
   'support': 'Support',
   'templates': 'Templates',
-  'whitepapers': 'Whitepapers'
+  'testing-&-qa': 'Testing & QA',
+  'downloadable-assets': 'Downloadable Assets',
+  'whitepapers': 'Whitepapers',
+  'strategic-services': 'Strategic Services',
+  'jira-professional-services': 'Jira Professional Services',
+  'content-marketing-services': 'Content Marketing Services',
+  'analytics-as-a-service': 'Analytics as a Service'
+};
+
+// Map L2 services to their L1 categories
+const serviceToCategory: Record<string, string> = {
+  // Marketing Automation Services
+  'hubspot': 'marketing-automation-services',
+  'marketo': 'marketing-automation-services',
+  'eloqua': 'marketing-automation-services',
+  'pardot': 'marketing-automation-services',
+  
+  // Salesforce Services
+  'sales-cloud': 'salesforce-services',
+  'service-cloud': 'salesforce-services',
+  'commerce-cloud': 'salesforce-services',
+  'experience-cloud': 'salesforce-services',
+  'marketing-cloud': 'salesforce-services',
+  'cpq': 'salesforce-services',
+  'einstein-analytics': 'salesforce-services',
+  'salesforce-ai-enablement': 'salesforce-services',
+  
+  // Marketing Analytics Services
+  'web-analytics': 'marketing-analytics-services',
+  'marketing-analytics': 'marketing-analytics-services',
+  'data-warehousing-etl': 'marketing-analytics-services',
+  'self-service-bi-data-democratization': 'marketing-analytics-services',
+  'real-time-ai-powered-analytics': 'marketing-analytics-services',
+  'advanced-data-visualization': 'marketing-analytics-services',
+  
+  // Digital Marketing Services
+  'seo': 'digital-marketing-services',
+  'ppc': 'digital-marketing-services',
+  'social-media': 'digital-marketing-services',
+  'orm-services': 'digital-marketing-services',
+  'account-based-marketing-abm': 'digital-marketing-services',
+  'cro': 'digital-marketing-services',
+  'ecommerce-marketing': 'digital-marketing-services',
+  'paid-ads': 'digital-marketing-services',
+  
+  // Development Services
+  'web-development': 'development-services',
+  'mobile-app-development': 'development-services',
+  'ecommerce-development': 'development-services',
+  'testing-qa': 'development-services',
+  'devops': 'development-services',
+  'site-optimization-services': 'development-services',
+  
+  // UI/UX Design Agency
+  'ui-ux-design-agency': 'ui-ux-design-agency',
+  'motion-graphics': 'ui-ux-design-agency',
+  'mobile-apps': 'ui-ux-design-agency',
+  'brand-campaign': 'ui-ux-design-agency',
+  'marketing-sales-collateral-design': 'ui-ux-design-agency',
+  
+  // Strategic Services
+  'growth-marketing-pod': 'strategic-services',
+  'enterprise-planning': 'strategic-services',
+  'demand-generation-strategy': 'strategic-services',
+  'strategic-opportunity-assessment': 'strategic-services',
+  'ai-optimized-enterprise-resource-planning': 'strategic-services',
+  
+  // Content Marketing Services
+  'website-copywriting': 'content-marketing-services',
+  'email-lifecycle-copywriting': 'content-marketing-services',
+  'social-media-ad-copywriting': 'content-marketing-services',
+  'content-strategy-planning': 'content-marketing-services',
+  'blog-longform-content': 'content-marketing-services',
+  'ghostwriting': 'content-marketing-services'
 };
 
 export function SmartBreadcrumb() {
   const location = useLocation();
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const originalPathnames = location.pathname.split('/').filter((x) => x);
+  
+  // Don't show breadcrumbs on homepage
+  if (originalPathnames.length === 0) return null;
+  
+  let pathnames = [...originalPathnames];
 
-  if (pathnames.length === 0) return null;
+  // Handle different URL patterns
+  if (pathnames[0].endsWith('-services')) {
+    // Handle URLs like /marketing-automation-services/, /digital-marketing-services/, etc.
+    const baseName = pathnames[0];
+    
+    if (pathnames.length === 1) {
+      // L1 service page like /marketing-automation-services/
+      pathnames = [baseName];
+    } else {
+      // L2 service page like /marketing-automation-services/hubspot/
+      const subServiceName = pathnames[1];
+      pathnames = [baseName, subServiceName];
+    }
+  } else if (pathnames[0] === 'company') {
+    // Company pages: Skip "company" and show only the sub-page
+    if (pathnames.length === 1) {
+      pathnames = ['company'];
+    } else {
+      // For company sub-pages, skip the "company" segment
+      pathnames = [pathnames[1]];
+    }
+  } else if (pathnames[0] === 'resources') {
+    // Resource pages: /resources/blog, /resources/case-studies, etc.
+    if (pathnames.length === 1) {
+      pathnames = ['resources'];
+    } else {
+      pathnames = ['resources', pathnames[1]];
+    }
+  } else if (pathnames[0] === 'growth-labs') {
+    // Growth Labs pages: /growth-labs/ai-experiments, etc.
+    if (pathnames.length === 1) {
+      pathnames = ['growth-labs'];
+    } else {
+      pathnames = ['growth-labs', pathnames[1]];
+    }
+  }
 
   return (
-    <div className="bg-gray-50 border-b border-gray-200 mt-24 relative z-40">
-      <div className="section-wrapper py-3">
+    <div className="bg-gray-50 border-b border-gray-200 relative z-20 mt-20">
+      <div className="container mx-auto px-6 py-3 max-w-7xl">
         <Breadcrumb>
-          <BreadcrumbList>
+          <BreadcrumbList className="items-center justify-start">
             {/* Home link */}
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <Link
                   to="/"
-                  className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-150"
+                  className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors duration-150"
                 >
                   <Home className="h-4 w-4" />
                   <span>Home</span>
@@ -105,7 +222,23 @@ export function SmartBreadcrumb() {
 
             {/* Other segments */}
             {pathnames.map((pathname, index) => {
-              const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+              const isDirectServicePage = originalPathnames[0].endsWith('-services');
+              
+              let routeTo;
+              if (isDirectServicePage) {
+                // For direct service URLs like /marketing-automation-services/hubspot/
+                if (index === 0) {
+                  // First segment is the L1 service category
+                  routeTo = `/${pathname}/`;
+                } else {
+                  // This is the L2 service
+                  routeTo = `/${pathnames[0]}/${pathname}/`;
+                }
+              } else {
+                // Standard URL construction for company, resources, growth-labs, etc.
+                routeTo = `/${pathnames.slice(0, index + 1).join('/')}/`;
+              }
+              
               const isLast = index === pathnames.length - 1;
 
               const displayName =

@@ -1,84 +1,108 @@
 import React from "react";
+import { SITE_CTA } from "@/components/SITE_CTAs";
+
+const DEFAULT_HERO_BG =
+  "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/L1_Hero_Banner/L1_Hero_Banner.webp";
 
 interface HeroSectionProps {
   heading: string;
-  highlight?: string; // Made optional
+  highlight?: string;
   subtext: string;
   buttonText?: string;
   buttonLink?: string;
-  bgImage: string;
   rightImage: string;
+  noCta?: boolean;
+  bgImage?: string;
   overlayTitle?: string;
   overlayDesc?: string;
   overlayButtonText?: string;
+  centerText?: boolean;
 }
 
 export default function HeroSection({
   heading,
   highlight,
   subtext,
-  buttonText = "Book a demo →",
-  buttonLink = "#",
-  bgImage,
+  buttonText = "Audit Me!",
+  buttonLink = "/company/contact-services/",
   rightImage,
-  overlayTitle = "🧩 Onboarding",
-  overlayDesc = "Explore our internal processes",
-  overlayButtonText = "Resume training",
+  noCta,
+  centerText = false,
 }: HeroSectionProps) {
+  const effectiveBg = DEFAULT_HERO_BG;
+
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-6 pt-8 ">
-        <section className="relative rounded-2xl overflow-hidden">
-          {/* Background Image */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
+        <section className="relative rounded-xl sm:rounded-2xl overflow-hidden">
+          {/* Background */}
           <div className="absolute inset-0 z-0">
             <img
-              src={bgImage}
+              src={effectiveBg}
               alt="Hero Background"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-black/60" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 py-14 px-6 md:px-12">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left: Text */}
-              <div>
-                <h1 className="text-white text-5xl font-bold leading-tight mb-4">
+          <div className="relative z-10 py-8 sm:py-12 px-4 sm:px-8">
+            <div
+              className={`grid items-center gap-8 sm:gap-10 md:gap-12 ${
+                centerText ? "grid-cols-1 text-center" : "md:grid-cols-12"
+              }`}
+            >
+              {/* Left */}
+              <div className={centerText ? "max-w-3xl mx-auto" : "md:col-span-7"}>
+                <h1
+                  className={`text-white font-medium tracking-tight mb-4 leading-[1.2]
+                  text-4xl sm:text-5xl md:text-6xl
+                  ${centerText ? "text-center" : "text-left"}`}
+                >
                   {heading}
                   {highlight && (
-                    <span className="ml-2 bg-green-500 text-black px-3 py-1 rounded-md inline-block animate-glow">
+                    <span className="ml-2 align-middle bg-green-500 text-black px-2 py-0.5 rounded-md inline-block text-sm sm:text-base font-medium">
                       {highlight}
                     </span>
                   )}
                 </h1>
-                <p className="text-gray-200 text-lg mb-6">{subtext}</p>
 
-                <a href={buttonLink}>
-                  <button className="bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-gray-200 transition">
-                    {buttonText}
-                  </button>
-                </a>
+                <p
+                  className={`text-gray-200 mb-6 leading-relaxed
+                  text-[15px] sm:text-base md:text-lg font-normal
+                  ${centerText ? "text-center" : "text-left"}`}
+                >
+                  {subtext}
+                </p>
+
+                {!noCta && (
+                  <div className={centerText ? "flex justify-center" : ""}>
+                    <SITE_CTA
+                      variant="secondary"
+                      text={buttonText}
+                      href={buttonLink}
+                      size="md"
+                      className="text-white w-full sm:w-auto"
+                      icon
+                    />
+                  </div>
+                )}
               </div>
 
-              {/* Right: Image Block */}
-              <div className="w-full md:max-w-lg mx-auto md:mx-0">
-                <div className="relative rounded-xl overflow-hidden">
-                  <img
-                    src={rightImage}
-                    alt="Hero Right"
-                    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                  {/* Glass Overlay */}
-                  <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-sm text-white px-4 py-3 rounded-lg border border-white/10 shadow-md">
-                    <div className="text-sm font-medium mb-1">{overlayTitle}</div>
-                    <div className="text-xs text-gray-200 mb-2">{overlayDesc}</div>
-                    <button className="bg-white text-black text-xs px-3 py-1 rounded-full hover:bg-gray-100">
-                      {overlayButtonText}
-                    </button>
+              {/* Right image - always visible */}
+              {!centerText && (
+                <div className="md:col-span-5">
+                  <div className="relative rounded-xl overflow-hidden">
+                    <img
+                      src={rightImage}
+                      alt="Hero Right"
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>

@@ -12,6 +12,7 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -29,235 +30,247 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Zigzag section - services)
+  const tabs: TabItem[] = [
+    {
+      id: "onpage-offpage",
+      label: "On-Page LLM SEO Optimization",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/SEO/Off-Page,%20LLM%20SEO%20Optimization.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/onpage"
+    },
+    {
+      id: "offpage-offpage",
+      label: "Off-Page LLM SEO Optimization",
+      icon: Zap,
+      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Digital%20Marketing/SEO/Off-Page%20LLM%20SEO%20Optimization.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/offpage"
+    },
+    {
+      id: "content",
+      label: "SEO Content Creation",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/SEO/SEO%20Content%20Creation.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/seo-content"
+    },
+    {
+      id: "technical",
+      label: "Technical SEO & Site Auditing",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/SEO/Technical%20SEO%20&%20Site%20Auditing.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/seo-technical"
+    },
+    {
+      id: "outreach",
+      label: "Guest Posting & Strategic Outreach",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/SEO/Guest%20Posting%20&%20Strategic%20Outreach.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/seo-guest"
+    },
+    {
+      id: "ai-readiness",
+      label: "AI SEO Readiness",
+      icon: Heart,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/SEO/AI%20SEO%20Readiness.webp",
+      ctaText: "Read More",
+      ctaLink: "L3/calculator"
+    },
+  ];
 
+  // Features (Zigzag section content)
+  const features: FeatureContent[] = [
+    {
+      id: "onpage-offpage",
+      description: "From intent-driven keywords to AI-friendly page structure, we optimize every on-page element to work better with search engines, voice assistants, and generative AI.",
+      items: [
+        { icon: Zap, title: "LLM-picked keywords that get what users mean" },
+        { icon: Zap, title: "Meta tags + Q&A that talk fluent AI (AEO-style)" },
+        { icon: Zap, title: "Structured data + entity-rich content for AI citations" },
+      ],
+    },
+    {
+      id: "offpage-offpage",
+      description: "From trusted backlinks to authority signals that travel across the web, we amplify your content’s reach so search engines & generative AI rank and cite you more often. ",
+      items: [
+        { icon: Zap, title: "Backlinks from high-authority, AI-visible sources " },
+        { icon: Zap, title: "Consistent brand and entity references across platforms " },
+        { icon: Zap, title: "Inclusion in knowledge graphs and reputable data sources " },
+      ],
+    },
+    {
+      id: "content",
+      description: "We blend human creativity with LLM brainpower to create content that ranks, resonates, and gets people (and algorithms) talking.",
+      items: [
+        { icon: BarChart2, title: "LLM-tuned stories that hit B2B intent" },
+        { icon: BarChart2, title: "Blogs, videos, and visuals tailored by AI insights" },
+        { icon: BarChart2, title: "Content built to rank, click, and keep talking" },
+      ],
+    },
+    {
+      id: "technical",
+      description: "We train your site to speak fluent SEO, with the help of AI that knows exactly what search engines want.",
+      items: [
+        { icon: Database, title: "Audits that speak search engine & LLM fluently" },
+        { icon: Database, title: "We clean up links, speed, and structure" },
+        { icon: Database, title: "Sites prepped to be crawled, indexed, and loved by AI" },
+      ],
+    },
+    {
+      id: "outreach",
+      description: "No spammy link farms, no fluff. Just high-authority placements, LLM-informed pitches, and backlinks that mean business.",
+      items: [
+        { icon: ShieldCheck, title: "Authority spots, not random blog dumps" },
+        { icon: ShieldCheck, title: "Smart backlinks with traffic-driving power" },
+        { icon: ShieldCheck, title: "Outreach that opens the right doors" },
+      ],
+    },
+    {
+      id: "ai-readiness",
+      description: "Optimize your site for AI-powered engines and LLM-generated answers, so you show up where search is headed.",
+      items: [
+        { icon: Heart, title: "Structure content to get cited in LLM tools like ChatGPT" },
+        { icon: Heart, title: "Use schema and formatting built for machine-readability" },
+        { icon: Heart, title: "Stay ahead of AI-first SEO trends and algorithm shifts" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Collective years of industry know-how", value: "100+" },
+    { label: "Uptick in visibility", value: "30%" },
+    { label: "SEO specialists on deck", value: "50+" },
+  ];
 
-  // Resources for recent articles
+  // Resources (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "AI-First SEO: What Marketers Need Now",
+      subtitle: "Key shifts as search engines get smarter (and what to do about it).",
+      author: "SEO Strategy Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "ai-first-seo"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "The New Rules of Technical SEO",
+      subtitle: "Why site health and AI readiness are now inseparable.",
+      author: "Technical SEO Lead",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "technical-seo"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Getting Cited in LLMs and Chatbots",
+      subtitle: "From schema to outreach: what helps your brand get referenced.",
+      author: "Outreach Lead",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "llm-seo-citations"
     },
   ];
 
-  // FAQ List
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "How does LLM-powered SEO level up keyword strategies?",
+      a: "LLMs get what people really mean. That means smarter content, better matches, and rankings that stick.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "How do you get content into AI search results (GEO)?",
+      a: "We serve up well-cited, high-authority content that AI loves to quote — perfect for SGE, chatbots, and all things generative.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Do you optimize for voice, mobile, and AI assistants?",
+      a: "You bet. We follow AEO rules and let LLMs guide the structure so your content talks fluently across screens, speakers, and search bars.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How do you make global SEO work in the age of AI?",
+      a: "We mix GEO know-how with multilingual SEO. Think smart tags, local flavor, and content that travels well across borders and bots.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="seo" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-0">
+
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="SEO Services with an LLM-First Mindset"
+          subtext="Designed for how people search now, not how they used to. From algorithms to audience needs, LLM SEO bridges the gap."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/SEO.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="When scaling smarter is the goal, we’re the company brands keep"
+          stats={stats}
+        />
 
-        {/* Tab Features Section */}
+        {/* Tab Features Section (We Blend LLM Smarts into Your SEO Strategy) */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="We Blend LLM Smarts into Your SEO Strategy"
+          subtitle="LLM-powered insights that optimize every crawl, click, and keyword with precision and intent matching."
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="Watch How AI-Infused SEO Owns the Game"
+          body="Brands we’ve helped climb the SERPs with LLM-led content & AEO-friendly strategies"
+          subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        <LogoScroller
+          heading="Brands that Recognize Our SEO Brilliance"
+          subtext="Local gems or global brands, we scale their search story."
+          
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Wins, Real Growth Stories"
+          description="No lag, all lift. Powered by AI, built on brains"
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* Recent Resources Section */}
+        <RecentResourcesSection
+          heading="More from Our Content Repertoire"
+          body="Stay ahead with the freshest SEO tips, tools, and AI tricks to keep your rankings sharp."
+          subTabs={[]} // no subtabs on this page
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let's shift from SEO-first to AI-first marketing & show up where it matters."
+          subtext="Structured content and boosted visibility at every high-intent moment."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />
+
       </main>
       <Footer />
     </div>

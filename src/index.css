@@ -116,6 +116,19 @@
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
+
+  @keyframes grow-width {
+    0% { 
+      width: 0%; 
+    }
+    100% { 
+      width: 100%; 
+    }
+  }
+
+  .animate-grow-3s {
+    animation: grow-width 3s ease-out forwards;
+  }
 }
 
 .section-wrapper {

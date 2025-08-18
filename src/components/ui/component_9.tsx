@@ -11,6 +11,7 @@ export interface ExploreItem {
   category: string;
   thumbnail?: string;
   slug?: string;
+  type: 'blogs' | 'case-studies';
 }
 
 interface ExploreMoreSectionProps {
@@ -40,14 +41,33 @@ const ExploreMoreSection: React.FC<ExploreMoreSectionProps> = ({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Card */}
-          <Link to={firstItem.slug ? `/resources/blog/${firstItem.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${firstItem.slug}` : '#'}>
+          <Link
+            to={
+              firstItem.slug
+                ? firstItem.type === "case-studies"
+                  ? `/case-studies/${firstItem.slug}`
+                  : `/blogs/${firstItem.category
+                    ?.replace(/\s*\([^)]*\)/g, "") // remove text in brackets
+                    .toLowerCase()
+                    .replace(/\s+/g, "-") || "general"
+                  }/${firstItem.slug}`
+                : "#"
+            }
+          >
+
             <Card className="bg-white p-0 overflow-hidden flex flex-col h-full shadow-sm border border-gray-100 hover:shadow-lg transition group cursor-pointer">
               {firstItem.thumbnail && (
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-44 sm:h-48 w-full overflow-hidden rounded-t-xl">
                   <img
                     src={firstItem.thumbnail}
                     alt={firstItem.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="
+        w-full h-full
+        object-cover
+        transition-transform duration-300
+        scale-100                /* normal default scale */
+        group-hover:scale-105    /* gentle zoom on hover */
+      "
                   />
                   <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                     <span className="text-white font-semibold text-sm flex items-center gap-1">
@@ -77,11 +97,22 @@ const ExploreMoreSection: React.FC<ExploreMoreSectionProps> = ({
           {/* Right: 3 Cards */}
           <div className="space-y-4 flex flex-col justify-between h-full">
             {restItems.slice(0, 3).map((item, index) => (
-              <Link 
-                key={index} 
-                to={item.slug ? `/resources/blog/${item.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${item.slug}` : '#'}
+              <Link
+                key={index}
+                to={
+                  item.slug
+                    ? item.type === "case-studies"
+                      ? `/case-studies/${item.slug}`
+                      : `/blogs/${item.category
+                        ?.replace(/\s*\([^)]*\)/g, "") // remove text in brackets
+                        .toLowerCase()
+                        .replace(/\s+/g, "-") || "general"
+                      }/${item.slug}`
+                    : "#"
+                }
                 className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer group"
               >
+
                 <div className="flex-1">
                   <Badge className="mb-2 text-xs bg-blue-100 text-blue-700 font-medium">
                     {item.tag}

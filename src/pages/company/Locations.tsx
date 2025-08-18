@@ -1,12 +1,14 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 const Locations = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <SmartBreadcrumb />
+      <main className="pt-8">
         <div className="container mx-auto px-6 py-12">
           <h1 className="text-4xl font-bold text-white mb-6">Locations</h1>
           <p className="text-gray-400 text-lg mb-8">

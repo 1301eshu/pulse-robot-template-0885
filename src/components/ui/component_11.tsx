@@ -14,10 +14,25 @@ interface CoreValuesProps {
   subheading?: string;
 }
 
+const teamMembers = [
+  {
+    name: "Taranbir Singh Nandha",
+    role: "Founder & Chief Executive Officer",
+    image:
+      "https://res.cloudinary.com/dhbhumz3q/image/upload/v1754471449/11_2_n2oa5t.png"
+  },
+  {
+    name: "Balwinder Kaur",
+    role: "Co-Founder",
+    image:
+      "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Company/About%20us/Balwinder.webp"
+  }
+];
+
 const CoreValues: React.FC<CoreValuesProps> = ({
   values,
-  heading = "The Core Values That Drive Us",
-  subheading = "Since the day we started, our set of 6 core values have driven our corporate culture, instilling a sense of trust and togetherness among us.",
+  heading = "Our Core Values – The Growth Code",
+  subheading
 }) => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,14 +62,56 @@ const CoreValues: React.FC<CoreValuesProps> = ({
 
   return (
     <>
+      {/* MEET OUR NATIVES SECTION */}
+      <section className="bg-white w-full py-20">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Text */}
+          <div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Meet the Natives
+            </h2>
+            <p className="text-xl text-gray-700 mb-6 max-w-lg">
+              Behind every smart strategy and seamless automation is a team of humans who actually love to drive amazing business outcomes.
+            </p>
+          </div>
+
+          {/* Right Cards - Consistent Styling */}
+          <div className="flex justify-center flex-wrap gap-6">
+  {teamMembers.map((member, i) => (
+    <button
+      key={i}
+      aria-label={`Open details for ${member.name}`}
+      tabIndex={0}
+      className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-none group"
+      style={{
+        backgroundImage: `url(${member.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center top" // <-- FIXED
+      }}
+    >
+      <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10 text-center z-10 bg-gradient-to-t from-black via-black/70 to-transparent">
+        <h3 className="text-base font-semibold text-white">{member.name}</h3>
+        <p className="text-xs text-white mt-1">{member.role}</p>
+      </div>
+    </button>
+  ))}
+</div>
+        </div>
+      </section>
+
       {/* CORE VALUES SECTION */}
-      <section ref={sectionRef} className="py-24 bg-white text-gray-800 w-full">
+      <section
+        ref={sectionRef}
+        className="py-24 bg-white text-gray-800 w-full"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{heading}</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {subheading}
-            </p>
+            {subheading && (
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                {subheading}
+              </p>
+            )}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -85,53 +142,8 @@ const CoreValues: React.FC<CoreValuesProps> = ({
           </div>
         </div>
       </section>
- {/* MEET OUR NATIVES SECTION */}
-      <section className="bg-white w-full py-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Text */}
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Say Hello to Our Natives
-            </h2>
-            <p className="text-xl text-gray-700 mb-6 max-w-lg">
-              Our Natives help companies nurture leads and move them through the buyer's journey.
-            </p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition-all">
-              Meet the Team
-            </button>
-          </div>
-
-          {/* Right Cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* Card 1 */}
-            <div className="relative bg-black rounded-2xl overflow-hidden shadow-lg text-white">
-              <img
-                src="https://res.cloudinary.com/dhbhumz3q/image/upload/v1752587362/taran_nandha_iuixag.webp" // Replace with actual public image path
-                alt="Taranbir Singh Nandha"
-                className="w-full object-cover"
-              />
-              <div className="absolute bottom-0 w-full px-6 py-4 bg-gradient-to-t from-black via-black/70 to-transparent">
-                <h3 className="text-xl font-bold">Taranbir Singh Nandha</h3>
-                <p className="text-sm">Founder & Chief Executive Officer</p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="relative bg-black rounded-2xl overflow-hidden shadow-lg text-white">
-              <img
-                src="https://res.cloudinary.com/dhbhumz3q/image/upload/v1752587362/taran_nandha_iuixag.webp" // Replace with actual public image path
-                alt="Balwinder Kaur"
-                className="w-full object-cover"
-              />
-              <div className="absolute bottom-0 w-full px-6 py-4 bg-gradient-to-t from-black via-black/70 to-transparent">
-                <h3 className="text-xl font-bold">Balwinder Kaur</h3>
-                <p className="text-sm">Co-Founder</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
+
 export default CoreValues;

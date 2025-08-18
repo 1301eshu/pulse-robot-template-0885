@@ -19,7 +19,7 @@ export default function FaqSection({ title = 'Frequently Asked Questions', faqs 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6 max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">{title}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-10 ">{title}</h2>
 
         <div className="space-y-4">
           {faqs.map((f, i) => (

@@ -4,12 +4,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Sparkles } from 'lucide-react';
 
 const clientLogos = [
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
-  'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png',
+  'https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Homepage/Recognitions/Inc%205000.webp',
+  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_7_xdwpxg.webp',
+  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_1_r672nr.webp',
+  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_8_vcrazd.webp',
+  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/Group_86572_1_crg2mq.webp',
+  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/image_24_unsfok.webp',
 ];
 
 const AwardCard = ({
@@ -57,10 +57,14 @@ export default function AwardsSection() {
     <section ref={sectionRef} className="bg-white py-20 px-6 md:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-12">
         {/* LEFT TEXT */}
-        <div className="flex-1 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-400 text-sm font-medium">Awards Section</span>
+        <div className="flex-1 text-left">
+          <div className="relative mb-6">
+            <div className="flex items-center gap-2">
+              <div className="w-1 h-5 bg-[#1fa4fc] rounded-sm" />
+              <h3 className="text-sm font-semibold text-[#1fa4fc]">
+                Awards
+              </h3>
+            </div>
           </div>
 
           <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal">
@@ -69,19 +73,9 @@ export default function AwardsSection() {
           <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-base mb-10 md:mb-[40px]">
             We are honored and humbled to have received multiple awards and accolades in our growing years.
           </p>
-
-          {/* <div className="w-full md:w-auto">
-            <button className="group inline-flex items-center gap-2 text-[#1fa4fc] font-semibold text-base transition hover:gap-3">
-              Know More About us
-              <span className="transform transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </button>
-          </div> */ }
-          
         </div>
 
-        {/* RIGHT LOGO GRID (3x2) */}
+        {/* RIGHT LOGO GRID */}
         <div className="flex-1 flex flex-col justify-center items-center md:items-start">
           <div className="grid grid-cols-3 gap-6 w-full">
             {clientLogos.map((logo, i) => (

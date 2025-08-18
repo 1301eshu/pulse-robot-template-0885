@@ -1,48 +1,56 @@
-import { useEffect, useRef } from 'react';
+declare global {
+  interface Window {
+    hbspt?: {
+      forms: {
+        create: (options: any) => void;
+      };
+    };
+  }
+}
+
+
+import { useEffect } from "react";
 
 interface HubSpotFormProps {
   portalId: string;
   formId: string;
-  className?: string;
+  region?: string;
+  targetId?: string;
 }
 
-const HubSpotForm = ({ portalId, formId, className = "" }: HubSpotFormProps) => {
-  const formIdRef = useRef(`hubspot-form-${formId}`);
-
+const HubSpotForm = ({
+  portalId,
+  formId,
+  region = "na1",
+  targetId = "hubspotFormContainer",
+}: HubSpotFormProps) => {
   useEffect(() => {
-    // Load HubSpot script if not already loaded
-    if (!window.hbspt) {
-      const script = document.createElement('script');
-      script.src = '//js.hsforms.net/forms/v2.js';
-      script.async = true;
-      script.onload = () => {
-        createForm();
-      };
-      document.body.appendChild(script);
-    } else {
-      createForm();
-    }
+    const script = document.createElement("script");
+    script.src = "//js.hsforms.net/forms/embed/v2.js";
+    script.type = "text/javascript";
+    script.charset = "utf-8";
 
-   function createForm() {
+    script.onload = () => {
       if (window.hbspt) {
         window.hbspt.forms.create({
-          region: "na1",
+          region,
           portalId,
           formId,
-          target: `#${formIdRef.current}`,
+          target: `#${targetId}`,
         });
       }
-    }
-  }, [portalId, formId]);
+    };
 
-  return <div id={formIdRef.current} className={className} />;
+    document.body.appendChild(script);
+
+    return () => {
+      // Optional cleanup: remove form if component unmounts
+      const formContainer = document.getElementById(targetId);
+      if (formContainer) formContainer.innerHTML = "";
+    };
+  }, [portalId, formId, region, targetId]);
+
+  return <div id={targetId}></div>;
 };
-
-// Extend Window interface for TypeScript
-declare global {
-  interface Window {
-    hbspt: any;
-  }
-}
 
 export default HubSpotForm;

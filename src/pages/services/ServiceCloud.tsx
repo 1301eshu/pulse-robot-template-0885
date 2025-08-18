@@ -12,249 +12,246 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
 } from "@/components/ui/component_2";
 
-// Icons
 import {
   Zap,
   BarChart2,
   Database,
   ShieldCheck,
-  Clock,
   Heart,
 } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Zigzag/Services)
+  const tabs: TabItem[] = [
+    {
+      id: "consulting",
+      label: "Consulting & Implementation",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Consulting%20&%20Implementation.webp",
+    //  ctaText: "Get a Demo",
+     // ctaLink: "/l3-template"
+    },
+    {
+      id: "customization",
+      label: "Customization",
+      icon: Heart,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Customization.webp",
+    //  ctaText: "Get a Demo",
+    //  ctaLink: "/l3-template"
+    },
+    {
+      id: "integration",
+      label: "Integration",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Integration.webp",
+   //   ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    },
+    {
+      id: "analytics",
+      label: "Analytics & Reporting",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Analytics%20&%20Reporting.webp",
+   //   ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    },
+    {
+      id: "audit",
+      label: "Audit & Optimization",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Audit%20Optimization.webp",
+   //   ctaText: "Get a Demo",
+    //  ctaLink: "/l3-template"
+    },
+  ];
 
+  // Features (Zigzag content)
+  const features: FeatureContent[] = [
+    {
+      id: "consulting",
+      description: "Expert-led setup with AI-powered workflows that resolve faster and scale smarter.",
+      items: [
+        { icon: Zap, title: "AI-powered strategies to resolve tickets faster" },
+        { icon: Zap, title: "Smart workflows built for scale" },
+        { icon: Zap, title: "Cloud-first setup for service agility" },
+      ],
+    },
+    {
+      id: "customization",
+      description: "We tailor customer journeys and data models for secure, scalable service operations.",
+      items: [
+        { icon: Heart, title: "Personalized support journeys using AI" },
+        { icon: Heart, title: "Secure, scalable cloud data structure" },
+        { icon: Heart, title: "Continuous platform optimization to match changing customer expectations" },
+      ],
+    },
+    {
+      id: "integration",
+      description: "Built for speed and scale—real-time sync and routing across your Salesforce stack.",
+      items: [
+        { icon: Database, title: "Real-time sync across platforms and tools" },
+        { icon: Database, title: "Automated routing to boost response times" },
+        { icon: Database, title: "Seamless connections with your entire Salesforce ecosystem" },
+      ],
+    },
+    {
+      id: "analytics",
+      description: "Dashboards built to drive real-time KPIs, cross-channel insights, and AI-powered forecasting.",
+      items: [
+        { icon: BarChart2, title: "Track service KPIs in real-time" },
+        { icon: BarChart2, title: "Understand trends across every touchpoint" },
+        { icon: BarChart2, title: "Predict needs with AI-powered insights" },
+      ],
+    },
+    {
+      id: "audit",
+      description: "We benchmark your setup with audits and deliver clear steps to improve.",
+      items: [
+        { icon: ShieldCheck, title: "Identify inefficiencies with AI-led audits" },
+        { icon: ShieldCheck, title: "Benchmark setup against best practices" },
+        { icon: ShieldCheck, title: "Actionable steps for service excellence" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Salesforce Service Cloud setups driving faster support", value: "100+" },
+    { label: "Years of combined Salesforce experience (yep, we counted)", value: "200+" },
+    { label: "Certified experts in AI-powered case management", value: "60+" },
+  ];
 
-  // Resources for recent articles
+  // Recent Resources Section
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
+      title: "Smarter Case Resolution with AI",
+      subtitle: "How AI is transforming support desk efficiency, reducing time-to-close, and boosting satisfaction.",
+      author: "AI Solutions Team",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "salesforce-service-cloud-ai"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "Building Loyalty Beyond Ticket Resolution",
+      subtitle: "The shift from closing tickets to creating lasting customer loyalty using Service Cloud.",
+      author: "CX Strategists",
+      date: "July 2025",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
+      slug: "service-cloud-loyalty"
+    },
+    {
+      title: "How to Audit Your Service Workflows with AI",
+      subtitle: "A practical guide to spotting and fixing inefficiencies in your Service Cloud setup.",
+      author: "Ops Audit Lead",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "audit-service-cloud-ai"
     },
   ];
 
   // FAQ List
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "Can Service Cloud improve both agent performance and customer experience?",
+      a: "Yes. AI-assisted tools boost productivity while helping agents personalize every interaction—no more copy-paste replies.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "What’s included in your Salesforce Service Cloud audit?",
+      a: "We review workflows, routing, agent tools, and highlight AI ideas that can reduce response times and boost CX instantly.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Can you connect Salesforce Service Cloud to my CRM or ERP?",
+      a: "Absolutely. We break silos and build one smart service ecosystem.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How long does implementation take?",
+      a: "Most teams go live in 4–6 weeks.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="servicesCloud" />
+      
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="pt-0">
+
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Salesforce Service Cloud That Solves Customer Issues Faster and Smarter"
+          subtext="Build support systems that think like your best agent—and improve with every interaction."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Service%20Cloud.webp"
+          buttonText="Audit Me!"
+          buttonLink="/your-lead-gen-form-page"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
-
-        {/* Tab Features Section */}
-        <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
-          tabs={tabs}
-          features={features} 
+          title="AI service support, scaled to build loyalty, not just close tickets."
+          stats={stats}
         />
 
-        {/* Recent Resources Section */}
+        {/* What We Do Section */}
+        <EnterpriseCapabilities
+          title="AI Support That Thinks Like Your Best Agent—Only Faster"
+          subtitle="We tune, train, and tailor your Salesforce Service Cloud with AI smarts for real results."
+          tabs={tabs}
+          features={features}
+        />
+
+        {/* More Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading=" See What Smart Salesforce Service Cloud Looks Like in Action"
+          body="A few real wins we've helped brands achieve with Salesforce Service Cloud.  "
+          subTabs={[]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        {/* Customer Logo Section */}
+        <LogoScroller
+          heading="Leading Brands That Trust Our Salesforce Service Cloud Solutions"
+          subtext="Companies leveraging our Salesforce Service Cloud expertise to deliver exceptional customer support"
+          
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Stories, Real Impact"
+          description="Hear how we’ve helped teams deliver 5-star support with Salesforce Service Cloud"
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* More Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Read our latest tips, strategies, and AI insights for better customer support"
+          subTabs={[]}
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Transform Your Customer Support With AI-Powered Salesforce Service Cloud"
+          subtext="Let’s map your Service Cloud transformation—with automation, insights, and AI built in."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

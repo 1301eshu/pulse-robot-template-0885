@@ -6,10 +6,10 @@ import { Card, CardContent } from '@/components/ui/card';
 const testimonials = [
   {
     quote:
-      "Growth Natives revamped our marketing ops from the ground up. We saw a 48% lift in qualified leads in Q2 alone.",
-    author: "Sarah Johnson",
-    position: "VP Marketing",
-    company: "SaaS Company",
+      "We were looking for an experienced company that had expertise in all aspects of marketing and Growth Natives have surpassed all expectations, delivering tremendous results. They took the time to understand our business needs and tailored a package suitable for our eCommerce platform. Our revenue went up 52% within the first 30 days, our organic traffic and rankings improved significantly",
+    author: "Dr. Tarj Mavi",
+    position: "Founder",
+    company: "LAMAV",
     avatar:
       "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80",
   },

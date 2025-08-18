@@ -12,12 +12,12 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
 } from "@/components/ui/component_2";
 
-// Icons
 import {
   Zap,
   BarChart2,
@@ -29,232 +29,235 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Zigzag/Services)
+  const tabs: TabItem[] = [
+    {
+      id: "consulting",
+      label: "Consulting & Implementation",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Sales%20Cloud%20/Consulting%20&%20Implementation.webp",
+  //    ctaText: "Get a Demo",
+  //    ctaLink: "/l3-template"
+    },
+    {
+      id: "integrations",
+      label: "Integrations",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Sales%20Cloud%20/Integrations.png",
+   //   ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    },
+    {
+      id: "migration",
+      label: "Migration",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Sales%20Cloud%20/Migration.webp",
+   //   ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    },
+    {
+      id: "support",
+      label: "Support & Maintenance",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Sales%20Cloud%20/Support%20Maintainance.webp",
+   //   ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    },
+    {
+      id: "audit",
+      label: "Audit & Optimization",
+      icon: Heart,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Sales%20Cloud%20/Audit%20Optimization.webp",
+    //  ctaText: "Get a Demo",
+   //   ctaLink: "/l3-template"
+    }
+  ];
 
+  // Features (Zigzag section content)
+  const features: FeatureContent[] = [
+    {
+      id: "consulting",
+      description: "We tailor Salesforce Sales Cloud builds that combine automation, AI, and proven flows to drive predictable pipeline growth.",
+      items: [
+        { icon: Zap, title: "Custom setups for your GTM motion" },
+        { icon: Zap, title: "Predict outcomes with Einstein insights" },
+        { icon: Zap, title: "Automate away repetitive sales tasks" }
+      ]
+    },
+    {
+      id: "integrations",
+      description: "Bring all your customer data into one view—Sales Cloud connects seamlessly across CRMs, ERPs, social platforms, and support tools.",
+      items: [
+        { icon: BarChart2, title: "Sync lead, contact, and opportunity data across platforms" },
+        { icon: BarChart2, title: "Enable cross-team visibility with shared account insights" },
+        { icon: BarChart2, title: "Connect to tools like Slack, Outlook, and eCommerce platforms" }
+      ]
+    },
+    {
+      id: "migration",
+      description: "Make the move to Salesforce Sales Cloud without slowing down—fast-track adoption, preserve your data, and future-ready foundations.",
+      items: [
+        { icon: Database, title: "Migrate leads, opportunities, workflows, and reports—cleanly and completely" },
+        { icon: Database, title: "Preserve data integrity with validation, deduplication, and mapping best practices" },
+        { icon: Database, title: "Cut migration time in half with proven frameworks and AI-assisted setup" }
+      ]
+    },
+    {
+      id: "support",
+      description: "Stay sales-ready with dedicated Sales Cloud support—smart fixes, smooth operations, and zero disruption.",
+      items: [
+        { icon: ShieldCheck, title: "Manage roles, permissions & user onboarding with ease" },
+        { icon: ShieldCheck, title: "Ensure clean, secure, and up-to-date deal data" },
+        { icon: ShieldCheck, title: "Proactively monitor, troubleshoot, and optimize workflows" }
+      ]
+    },
+    {
+      id: "audit",
+      description: "We audit your setup, find leaks, and tune your sales engine for efficiency, scale, and AI-powered growth.",
+      items: [
+        { icon: Heart, title: "Identify gaps in current setup" },
+        { icon: Heart, title: "Align tech with revenue goals" },
+        { icon: Heart, title: "Scale smart with AI insights" }
+      ]
+    }
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Statistics (Trust Markers)
+  const stats = [
+    { label: "Happy Salesforce Customers", value: "100+" },
+    { label: "Years of combined Salesforce experience", value: "200+" },
+    { label: "Salesforce-certified experts on board", value: "60+" }
+  ];
 
-  // Resources for recent articles
+  // Recent Resources
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "Winning More Deals with AI in Salesforce Sales Cloud",
+      subtitle: "How smart automation changed the pipeline game for our clients.",
+      author: "Sales Ops Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "ai-salesforce-deals"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "5 Ways to Supercharge Sales Cloud With Integrations",
+      subtitle: "Our best integration tips for connecting your revenue stack.",
+      author: "CRM Solutions",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "salesforce-integration-tips"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Data Hygiene for Smarter Selling",
+      subtitle: "Why clean data is the not-so-secret weapon for quota-crushing teams.",
+      author: "Sales Enablement",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "data-hygiene-sales"
     },
   ];
 
-  // FAQ List
+  // Case Study Tabs (Carousel)
+  const caseStudyTabs: TabItem[] = [
+    { id: "cs1", label: "Case Study 1", icon: Zap, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/1" },
+    { id: "cs2", label: "Case Study 2", icon: BarChart2, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/2" },
+    { id: "cs3", label: "Case Study 3", icon: Database, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/3" },
+    { id: "cs4", label: "Case Study 4", icon: ShieldCheck, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/4" },
+  ];
+
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "Do I need a big sales team to use Salesforce Sales Cloud?",
+      a: "Nope! Whether you're solo or scaling, we tailor the platform to your current team and future growth.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "What’s included in the free audit?",
+      a: "We review your current CRM setup, sales processes, and tools, plus give you AI-driven ideas to instantly boost efficiency.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "Can Sales Cloud work with my existing tools?",
+      a: "Absolutely. We’ll integrate your current stack so your teams keep using what they love, just smarter.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "What happens after I migrate to Salesforce Sales Cloud?",
+      a: "We stick around! Our team supports you with adoption, training, optimization, and ongoing enhancements.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="salesCloud" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Sales Cloud: Where Smart Selling Happens"
+          subtext="Crush your sales targets with intelligent automation and data insights"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Sales%20cloud.webp"
+         
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You’re in good company—with brands scaling smarter with Salesforce Sales Cloud."
+          stats={stats}
+        />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="Smart Sales Solutions That Actually Move the Needle"
+          subtitle="We turn ordinary sales processes into revenue engines that never sleep"
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
-        {/* Recent Resources Section */}
+       {/* More Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="Success Stories That Speak for Themselves "
+          body="A few real-world wins we’ve driven with Salesforce Sales Cloud. "
+          subTabs={[]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        {/* Logo Section */}
+        <LogoScroller
+          heading="Trusted by Companies Using Salesforce Sales Cloud"
+          subtext="From lean teams to global sellers—we help them all win smarter."
+         
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Stories, Real Growth"
+          description="Hear how we helped brands hit revenue goals with Salesforce Sales Cloud."
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* More Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Explore our freshest blog posts, playbooks, and AI-powered sales ideas."
+          subTabs={[]}
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let AI Drive Your Sales Machine to New Heights"
+          subtext="Custom Salesforce Sales Cloud solutions that deliver"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

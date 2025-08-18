@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, Truck, Zap, BarChart3 } from "lucide-react";
@@ -6,29 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const NetworkON = () => {
-  // Set meta title and tags
-  useEffect(() => {
-    document.title = "SEO Tips for Delivery Management Products";
-    
-    // Update or create meta description tag
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', '1Streamline your logistics with our product delivery management solutions. Enhance efficiency, reduce costs, and ensure timely deliveries for your business. Optimize your delivery process with our advanced product delivery management system. Improve tracking, reduce delays, and elevate customer satisfaction today.');
-    
-    // Update or create meta keywords tag
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', 'demo networkon');
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -12,249 +12,254 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
 } from "@/components/ui/component_2";
 
-// Icons
 import {
   Zap,
   BarChart2,
   Database,
   ShieldCheck,
-  Clock,
   Heart,
 } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (Eloqua Zigzag/Services)
+  const tabs: TabItem[] = [
+    {
+      id: "audit",
+      label: "Eloqua Audit",
+      icon: Zap,
+     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Audit.webp",
+     ctaText: "Read More",
+    ctaLink: "L3/eloqua-audit"
+    },
+    {
+      id: "consulting",
+      label: "Eloqua Consulting",
+      icon: BarChart2,
+     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Consulting.webp",
+     ctaText: "Read More",
+   ctaLink: "L3/eloqua-consulting"
+    },
+    {
+      id: "migration",
+      label: "Eloqua Migration",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Migration.webp",
+   ctaText: "Read More",
+   ctaLink: "L3/eloqua-migration"
+    },
+    {
+      id: "implementation",
+      label: "Eloqua Implementation",
+      icon: Heart,
+     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Implementation.webp",
+      ctaText: "Read More",
+   ctaLink: "l3/eloqua-implementation"
+    },
+    {
+      id: "reporting",
+      label: "Eloqua Reporting & Analytics",
+      icon: ShieldCheck,
+     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Reporting%20and%20Analytics.webp",
+   ctaText: "Read More",
+  ctaLink: "L3/eloqua-reporting"
+    },
+  ];
 
+  // Features (Eloqua Zigzag content)
+  const features: FeatureContent[] = [
+    {
+      id: "audit",
+      description: "Time to clean up what’s dragging you down. Audits find the leaks, AI insights guide the fix, and strategy gives your campaigns the edge they’ve been missing.",
+      items: [
+        { icon: Zap, title: "Deep-dive audits to spot hidden leaks." },
+        { icon: Zap, title: "Custom strategies, no copy-paste vibes." },
+        { icon: Zap, title: "Less guesswork. More campaign glow-ups." },
+      ],
+    },
+    {
+      id: "consulting",
+      description: "Turn that enterprise beast into a smooth, marketing machine. No more stressing about broken syncs.",
+      items: [
+        { icon: BarChart2, title: "Streamline lead flows, fix logic loops, and banish bad data." },
+        { icon: BarChart2, title: "Build journeys that not only map leads, but move them." },
+        { icon: BarChart2, title: "Connect CRM, content, and campaigns like a growth engine." },
+      ],
+    },
+    {
+      id: "migration",
+      description: "Moving to Eloqua? Let's make it seamless. Migrations stay smooth, tools sync tight, and integrations flex to fit your exact setup.",
+      items: [
+        { icon: Database, title: "Migrate smoothly from old to Eloqua." },
+        { icon: Database, title: "Preserve your logic, scoring, and segmentation." },
+        { icon: Database, title: "Faster go-live, zero data loss, and no broken campaigns." },
+      ],
+    },
+    {
+      id: "implementation",
+      description: "Built right from day one. No mess or patchwork, pure performance.",
+      items: [
+        { icon: Heart, title: "Smart setup that fits your funnel just perfectly." },
+        { icon: Heart, title: "Lead scoring, nurture flows, and segments that work." },
+        { icon: Heart, title: "CRM, content, and data stitched together like magic." },
+      ],
+    },
+    {
+      id: "reporting",
+      description: "No more digging through dashboards. Get clear metrics, AI-backed insights, and reports that help you plan what’s next, not just explain what happened.",
+      items: [
+        { icon: ShieldCheck, title: "Get the numbers that actually tell a story." },
+        { icon: ShieldCheck, title: "Turn analytics into your marketing playbook." },
+        { icon: ShieldCheck, title: "Campaign metrics so clear, you’ll see the future." },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers (Statistics)
+  const stats = [
+    { label: "Eloqua customers since 2019", value: "30+" },
+    { label: "Certified Eloqua pros at work", value: "20+" },
+    { label: "Avg. boost in campaign speed", value: "30%" },
+  ];
 
-  // Resources for recent articles
+  // Resources (RecentResourcesSection)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "5 Ways AI Supercharges Eloqua Workflows",
+      subtitle: "Why automation and insight beat intuition—every single time.",
+      author: "Eloqua Strategy Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "eloqua-ai-workflows"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "Moving to Eloqua: Migration Playbook for Enterprise",
+      subtitle: "How to migrate without the headaches, keep your data, and boost results fast.",
+      author: "Migration Specialist",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "eloqua-migration-playbook"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "Campaign Reporting in Eloqua: What’s Worth Tracking?",
+      subtitle: "Tips on turning Eloqua analytics into winning marketing moves.",
+      author: "Lead Analyst",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "eloqua-reporting"
     },
   ];
 
-  // FAQ List
+  // Case Studies (as carousel tabs)
+  const caseStudyTabs: TabItem[] = [
+    { id: "cs1", label: "Case Study 1", icon: Zap, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/1" },
+    { id: "cs2", label: "Case Study 2", icon: BarChart2, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/2" },
+    { id: "cs3", label: "Case Study 3", icon: Database, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/3" },
+    { id: "cs4", label: "Case Study 4", icon: ShieldCheck, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/4" },
+  ];
+
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "Our data’s a mess. Can you still work with it?",
+      a: "Sure! We clean, map, and sync your data for better scoring and real ROI.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "How long does Eloqua implementation take?",
+      a: "Most brands go live in under 4 weeks—strategy, setup, testing, and a dash of AI included.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "What if our Eloqua setup’s already live?",
+      a: "Even better. We fine-tune what’s working. Expect cleaner workflows, sharper targeting, and smarter segmentation.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "Is this a one-time setup or a long-term deal?",
+      a: "Your call. Quick setup sprint or full-stack support, we flex to fit your growth plan.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO
+        page="eloqua"
+      />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-First Eloqua That Understands the Assignment"
+          subtext="Campaigns that know when to launch, learn, and land the sale."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/eloqua.webp"
+          buttonText="Audit Me!"
+          buttonLink="/your-lead-gen-form-page"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You’re in good crowd—where top brands scale with Eloqua"
+          stats={stats}
+        />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="How We Transform Eloqua with AI Spark"
+          subtitle="We take your platform from basic to bougie with AI tricks that deliver actual money moves."
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
-        {/* Recent Resources Section */}
+        {/* More Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="Watch AI-Backed Eloqua Work Wonders "
+          body="Brands we’ve helped crush it with an outcome-oriented Eloqua. "
+          subTabs={[]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        {/* Customer Logo Section */}
+        <LogoScroller
+          heading="Brands Winning Big with Our Eloqua Edge"
+          subtext="Helping brands of all sizes scale with smarter Eloqua solutions"
+          
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Stories, Real Impact"
+          description="No shortcuts. Just strategy, fine automation, and a bit of AI finesse."
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* More Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Stay sharp on all things Eloqua—tips, tricks, and AI takes served fresh."
+          subTabs={[]}
+          resources={recentResources}
+        />
 
         {/* Call to Action */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Launch AI-Baked Eloqua Like It’s Built for Today"
+          subtext="Seamless strategies, sharp insights, and AI magic under the hood."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

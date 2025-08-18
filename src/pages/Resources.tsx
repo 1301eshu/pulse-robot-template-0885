@@ -1,9 +1,11 @@
+
 // src/pages/ResourcesIndex.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, BookOpen, FileText, Image, Download, Search, Clock, User, Calendar } from "lucide-react";
 import { Link } from 'react-router-dom';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import RevOpsHero from "@/components/ui/component_8";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,177 +20,347 @@ interface SubTab {
 }
 
 const ResourcesIndex = () => {
-  const [activeTab, setActiveTab] = useState('articles');
+  const [activeTab, setActiveTab] = useState('blogs');
   const [activeSubTab, setActiveSubTab] = useState('all');
+  const [tabContents, setTabContents] = useState<any>({});
+  const [exploreMoreItems, setExploreMoreItems] = useState<ExploreItem[]>([]);
+  const [recentResources, setRecentResources] = useState<ResourceItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingResources, setIsLoadingResources] = useState(false);
 
   const tabs = [
-    { id: 'articles', label: 'Articles' },
-    { id: 'podcasts', label: 'Podcasts' },
-    { id: 'guides', label: 'Guides' },
-    { id: 'webinars', label: 'Webinars' }
+    { id: 'blogs', label: 'Blogs' },
+    { id: 'case-studies', label: 'Case Studies' },
+    { id: 'infographics', label: 'Infographics' },
+    { id: 'downloadable-assets', label: 'Downloadable Assets' }
   ];
 
-  const tabContents = {
-  articles: {
-    featuredTag: "FEATURED",
-    title: "How to Migrate from AppMeasurement.js to Web SDK",
-    description: "A step-by-step guide to consolidating analytics tracking and improving data accuracy across your digital properties.",
-    buttonText: "Read More",
-    buttonLink: "#",
-    imageUrl: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
-  },
-  podcasts: {
-    featuredTag: "NEW EPISODE",
-    title: "The Future of RevOps: Real Talk with Real Leaders",
-    description: "Join us as we uncover how top companies are scaling revenue ops across tools and teams.",
-    buttonText: "Listen Now",
-    buttonLink: "#",
-    imageUrl: "/lovable-uploads/podcast-hero.png"
-  },
-  guides: {
-    featuredTag: "INSIGHT",
-    title: "10 RevOps Tactics That Actually Work",
-    description: "This downloadable guide walks you through proven strategies from top revenue teams.",
-    buttonText: "Download Guide",
-    buttonLink: "#",
-    imageUrl: "/lovable-uploads/guide-hero.png"
-  },
-  webinars: {
-    featuredTag: "UPCOMING",
-    title: "From Data Chaos to Clarity: Live with Segment & Mixpanel",
-    description: "Save your seat for this exclusive session on building analytics that drive action.",
-    buttonText: "Register",
-    buttonLink: "#",
-    imageUrl: "/lovable-uploads/webinar-hero.png"
-  }
-};
+  // Utility functions
+  const stripHTML = (html: string) => {
+    return html.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim();
+  };
+
+  const calculateReadTime = (html: string) => {
+    const plainText = html.replace(/<[^>]+>/g, "");
+    const wordCount = plainText.trim().split(/\s+/).length;
+    const time = Math.ceil(wordCount / 200);
+    return `${time} min read`;
+  };
+
+  // Fetch resources based on category
+  const fetchResourcesByCategory = async (category: string) => {
+    setIsLoadingResources(true);
+    try {
+      let apiUrl = '';
+
+      switch (category) {
+        case 'blogs':
+          apiUrl = 'https://growthnatives.com/wp-json/wp/v2/posts?per_page=12&_embed';
+          break;
+        case 'case-studies':
+          // Try case-studies custom post type first, fallback to posts with category
+          apiUrl = 'https://growthnatives.com/wp-json/wp/v2/case-studies?per_page=12&_embed';
+          break;
+        case 'infographics':
+          // Try infographics custom post type first, fallback to posts with category
+          apiUrl = 'https://growthnatives.com/wp-json/wp/v2/posts?per_page=12&categories=infographics&_embed';
+          break;
+        case 'downloadable-assets':
+          // Try downloadable assets custom post type first, fallback to posts with category
+          apiUrl = 'https://growthnatives.com/wp-json/wp/v2/ebooks?per_page=12&_embed';
+          break;
+        default:
+          apiUrl = 'https://growthnatives.com/wp-json/wp/v2/posts?per_page=12&_embed';
+      }
+
+      const response = await fetch(apiUrl);
+      
+      // If custom post type fails, fallback to regular posts
+      if (!response.ok && category !== 'blogs') {
+        const fallbackUrl = 'https://growthnatives.com/wp-json/wp/v2/posts?per_page=12&_embed';
+        const fallbackResponse = await fetch(fallbackUrl);
+        const fallbackData = await fallbackResponse.json();
+        
+        // Show first few posts as fallback with category label
+        const formattedResources: ResourceItem[] = fallbackData.slice(0, 6).map((post: any) => ({
+          title: `[${category.replace('-', ' ').toUpperCase()}] ${post.title.rendered}`,
+          subtitle: stripHTML(post.excerpt.rendered),
+          author: post._embedded?.author?.[0]?.name || "Unknown Author",
+          date: new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          readTime: calculateReadTime(post.content.rendered),
+          image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+          slug: post.slug,
+          category: category.replace('-', ' '),
+        }));
+        setRecentResources(formattedResources);
+      } else {
+        const data = await response.json();
+        const formattedResources: ResourceItem[] = data.map((post: any) => ({
+          title: post.title.rendered,
+          subtitle: stripHTML(post.excerpt.rendered),
+          author: post._embedded?.author?.[0]?.name || "Unknown Author",
+          date: new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          readTime: calculateReadTime(post.content?.rendered || post.excerpt?.rendered || ''),
+          image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+          slug: post.slug,
+          category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+        }));
+        setRecentResources(formattedResources);
+      }
+    } catch (error) {
+      console.error('Error fetching resources:', error);
+      // Fallback to placeholder content
+      setRecentResources([
+        {
+          title: "Content Loading Error",
+          subtitle: "We're experiencing technical difficulties. Please try again later.",
+          author: "Growth Natives",
+          date: new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          readTime: "1 min read",
+          image: "https://via.placeholder.com/600x400",
+          slug: "#",
+          category: "Error"
+        }
+      ]);
+    } finally {
+      setIsLoadingResources(false);
+    }
+  };
+
+  // Fetch latest content for each tab and explore more items
+  useEffect(() => {
+    const fetchContent = async () => {
+      setIsLoading(true);
+      try {
+        const tabContentData: any = {};
+
+        // Fetch latest blog posts for explore more section (4 posts)
+        const exploreRes = await fetch('https://growthnatives.com/wp-json/wp/v2/posts?per_page=4&_embed');
+        const exploreData = await exploreRes.json();
+        
+        if (exploreData.length > 0) {
+          // Set explore more items from API data
+          const formattedExploreItems: ExploreItem[] = exploreData.map((post: any) => ({
+            tag: "Blogs",
+            title: post.title.rendered,
+            readTime: calculateReadTime(post.content.rendered),
+            category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
+            thumbnail: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+            slug: post.slug,
+            type: "blog"
+          }));
+          setExploreMoreItems(formattedExploreItems);
+
+          // Use first post for tab content
+          const post = exploreData[0];
+          tabContentData.blogs = {
+            featuredTag: "LATEST BLOG",
+            title: post.title.rendered,
+            description: stripHTML(post.excerpt.rendered).substring(0, 150) + "...",
+            buttonText: "Read More",
+            buttonLink: `/resources/blog/${post.slug}`,
+            imageUrl: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400"
+          };
+        }
+
+        // For case studies, infographics, and downloadable assets, 
+        // we'll use placeholder content with real page links
+        tabContentData['case-studies'] = {
+          featuredTag: "CASE STUDY",
+          title: "Google Ads Services Agency Drives 300% ROI Increase",
+          description: "Discover how our strategic approach to Google Ads management helped a B2B SaaS company achieve remarkable growth and ROI.",
+          buttonText: "View Case Study",
+          buttonLink: "/resources/case-studies",
+          imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400"
+        };
+
+        tabContentData.infographics = {
+          featuredTag: "INFOGRAPHIC",
+          title: "Revenue Lifecycle Visualized: New Benchmarks",
+          description: "A comprehensive visual guide to understanding revenue operations benchmarks and best practices for modern businesses.",
+          buttonText: "View Infographic",
+          buttonLink: "/resources/infographics",
+          imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400"
+        };
+
+        tabContentData['downloadable-assets'] = {
+          featuredTag: "DOWNLOAD",
+          title: "Complete Marketing Automation Playbook",
+          description: "A comprehensive guide with templates, checklists, and frameworks to optimize your marketing automation strategy.",
+          buttonText: "Download Now",
+          buttonLink: "/resources/downloadable-assets",
+          imageUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&h=400"
+        };
+
+        setTabContents(tabContentData);
+        
+      } catch (error) {
+        console.error('Error fetching content:', error);
+        // Fallback content
+        setTabContents({
+          blogs: {
+            featuredTag: "FEATURED",
+            title: "Latest Marketing Insights",
+            description: "Stay updated with the latest trends and strategies in digital marketing.",
+            buttonText: "Read More",
+            buttonLink: "/resources/blog",
+            imageUrl: "https://via.placeholder.com/600x400"
+          }
+        });
+        // Fallback explore items
+        setExploreMoreItems([
+          {
+            tag: "Blogs",
+            title: "Latest Marketing Insights",
+            readTime: "5 min read",
+            category: "Marketing",
+            thumbnail: "https://via.placeholder.com/600x400",
+            slug: "latest-insights",
+            type: "blogs"
+          }
+        ]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchContent();
+  }, []);
+
+  // Fetch resources when active tab changes
+  useEffect(() => {
+    fetchResourcesByCategory(activeTab);
+  }, [activeTab]);
 
   const subTabs: SubTab[] = [
-  { id: "all", label: "All" },
-  { id: "infographics", label: "Infographics" },
-  { id: "case-studies", label: "Case Studies" },
-  { id: "downloadable", label: "Downloadable Assets" }
-];
-
-
-const exploreMoreItems: ExploreItem[] = [
-  {
-    tag: "Guides",
-    title: "HubSpot Just Changed the Game: Meet the Deep Research Connector with ChatGPT",
-    readTime: "5 min read",
-    category: "Marketing Automation",
-    thumbnail: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-  },
-  {
-    tag: "Case Studies",
-    title: "Google Ads Services Agency Drives 300% ROI Increase",
-    readTime: "9 min",
-    category: "Performance Marketing",
-  },
-  {
-    tag: "Blogs",
-    title: "The Complete Guide to Salesforce Marketing Cloud Implementation",
-    readTime: "7 min",
-    category: "Salesforce",
-  },
-  {
-    tag: "Infographic",
-    title: "Revenue Lifecycle Visualized: New Benchmarks",
-    readTime: "4 min",
-    category: "RevOps"
-  },
-];
-
-const recentResources: ResourceItem[] = [
-  {
-    title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-    subtitle:
-      "“Wait, so this thing just... does it? Like, by itself?” Yes. And no, it’s not magic. It’s called Agentic AI and it’s the next evolution of marketing automation you...",
-    author: "Sneha Kumari",
-    date: "July 7, 2025",
-    readTime: "6 min read",
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg",
-  },
-  {
-    title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-    subtitle:
-      "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards among other things (most of which...",
-    author: "Mehakpreet Kaur",
-    date: "July 4, 2025",
-    readTime: "7 min read",
-    
-    image: "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?w=600&h=400",
-  },
-  {
-    title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-    subtitle:
-      "You’ve got Marketo. You’ve got data. You’ve got 47 tabs open. Now what? If you’re still building audiences with spreadsheet acrobatics and sending...",
-    author: "Mehakpreet Kaur",
-    date: "July 4, 2025",
-    readTime: "6 min read",
-    
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-  },
-  {
-    title: "The Developer’s Evolution in the Age of AI: What’s Next?",
-    subtitle:
-      "As AI cements its role in software development, the question is no longer if developers should adapt but how far they’re willing to evolve. April 2025 marked a...",
-    author: "Vishal Mehta",
-    date: "June 16, 2025",
-    readTime: "4 min read",
-    
-    image: "https://images.unsplash.com/photo-1629904853893-dbb7c4183031?w=600&h=400",
-  },
-  {
-    title: "The Ultimate AI Readiness Checklist for Your Marketing Ops Stack",
-    subtitle:
-      "AI isn’t the future—it’s already here, quietly revolutionizing marketing operations stacks everywhere. But here’s the real question: Is your...",
-    author: "Akanksha Dass",
-    date: "June 13, 2025",
-    readTime: "3 min read",
-    
-    image: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?w=600&h=400",
-  },
-  {
-    title: "Understanding Adobe Experience Platform Web SDK: A Comprehensive Introduction",
-    subtitle:
-      "The Adobe Experience Platform (AEP) Web SDK is transforming how businesses collect, manage, and leverage data across the Adobe Experience Cloud,...",
-    author: "Shivam Joshi",
-    date: "June 10, 2025",
-    readTime: "9 min read",
-    
-    image: "https://images.unsplash.com/photo-1618005198919-d3d4b5aa1c63?w=600&h=400",
-  },
-];
-
+    { id: "blogs", label: "Blogs" },
+    { id: "case-studies", label: "Case Studies" },
+    { id: "infographics", label: "Infographics" },
+    { id: "downloadable-assets", label: "Downloadable Assets" }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <SmartBreadcrumb />
 
       {/* 🚀 New Hero Section */}
-  <RevOpsHero
-  sectionHeading="Resources"
-  sectionSubheading="Explore insights across formats"
-  activeTab={activeTab}
-  onTabChange={setActiveTab}
-  tabs={tabs}
-  tabContents={tabContents}
-/>
+      {!isLoading && Object.keys(tabContents).length > 0 ? (
+        <RevOpsHero
+          sectionHeading="Resources"
+          sectionSubheading="Explore insights across formats"
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          tabs={tabs}
+          tabContents={tabContents}
+        />
+      ) : (
+        <div className="bg-[#f7f9fc] pb-20 py-0">
+          <div className="section-wrapper py-[48px]">
+            <div className="text-left mb-6">
+              <h2 className="text-4xl md:text-5xl font-semibold text-[#101828] mb-2">
+                Resources
+              </h2>
+              <p className="text-lg text-[#475467]">Explore insights across formats</p>
+            </div>
+            <div className="flex items-center justify-center py-20">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1570EF]"></div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <ExploreMoreSection heading="Explore more" items={exploreMoreItems} />
 
-      <RecentResourcesSection heading="Most Recent Resources" subTabs={subTabs} resources={recentResources} />
-   
-      {/* Call to Action */}
-        <ContactCta
-          heading=" Let’s Make Your Salesforce Smarter (And Less Annoying) "
-          subtext="Let’s plug in the tech, the talent, and the timing."
-          buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
-        />
+      {/* Custom Recent Resources Section with Tab Functionality */}
+      <section className="py-16 bg-white">
+        <div className="section-wrapper">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#101828] mb-8">
+            Most Recent Resources
+          </h2>
+          
+          {/* Custom Sub-Tabs */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {subTabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? 'bg-primary text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-      
+          {/* Resources Grid */}
+          {isLoadingResources ? (
+            <div className="flex items-center justify-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1570EF]"></div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {recentResources.map((resource, index) => (
+                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <img
+                      src={resource.image}
+                      alt={resource.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-[#101828] mb-2 line-clamp-2">
+                      {resource.title}
+                    </h3>
+                    <p className="text-[#475467] text-sm mb-4 line-clamp-3">
+                      {resource.subtitle}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-[#667085]">
+                      <div className="flex items-center gap-2">
+                        <User className="w-3 h-3" />
+                        <span>{resource.author}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-3 h-3" />
+                        <span>{resource.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-3 h-3" />
+                        <span>{resource.readTime}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    
+      {/* Call to Action */}
+      <ContactCta
+        heading=" Let's Make Your Salesforce Smarter (And Less Annoying) "
+        subtext="Let's plug in the tech, the talent, and the timing."
+        buttonLabel="Talk to an Expert"
+        buttonLink="/contact"
+      />
+
       <Footer />
     </div>
   );

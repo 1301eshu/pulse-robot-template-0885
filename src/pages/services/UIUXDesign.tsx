@@ -1,4 +1,4 @@
-// src/pages/services/MarketingAutomation.tsx
+
 
 import { useState } from "react";
 
@@ -12,20 +12,10 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
-import EnterpriseCapabilities, {
-  TabItem,
-  FeatureContent,
-} from "@/components/ui/component_2";
-
+import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui/component_2";
+import DynamicSEO from "@/components/DynamicSEO";
 // Icons
-import {
-  Zap,
-  BarChart2,
-  Database,
-  ShieldCheck,
-  Clock,
-  Heart,
-} from "lucide-react";
+import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -34,227 +24,225 @@ export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  const tabs: TabItem[] = [
+    {
+      id: "web",
+      label: "Custom Web Design",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/UIUX/custom%20Web%20design.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "ux",
+      label: "UX & Responsive Design",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/UIUX/UX%20&%20Responsive%20Design.webp",
+  //    ctaText: "Audit Me!",
+  //    ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "ecom",
+      label: "eCommerce Design",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/UIUX/eCommerce%20Design.webp",
+    //  ctaText: "Audit Me!",
+    //  ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "cms",
+      label: "CMS Integration",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/UIUX/CMS%20Integration.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/lead-gen-form",
+    },
+    {
+      id: "support",
+      label: "Website Maintenance & Support",
+      icon: Heart,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/UIUX/Website%20Maintainance%20&%20Support.webp",
+   //   ctaText: "Audit Me!",
+   //   ctaLink: "/lead-gen-form",
+    },
+  ];
 
+  // Features for each tab
+  const features: FeatureContent[] = [
+    {
+      id: "web",
+      description: "Designs built for clicks, not crickets.",
+      items: [
+        { icon: Zap, title: "Understand your goals, audience, and the vibe you’re going for" },
+        { icon: Zap, title: "Craft pixel-perfect designs tailored to your brand" },
+        { icon: Zap, title: "Design interfaces that engage, not just exist" },
+      ],
+    },
+    {
+      id: "ux",
+      description: "From desktop to mobile—everything just works.",
+      items: [
+        { icon: BarChart2, title: "Mobile-first designs that actually feel mobile" },
+        { icon: BarChart2, title: "Build flows that users don’t need to “figure out”" },
+        { icon: BarChart2, title: "Usability testing baked in, not bolted on" },
+      ],
+    },
+    {
+      id: "ecom",
+      description: "Carts, checkouts, and conversions—done right.",
+      items: [
+        { icon: Database, title: "Design that guides users straight to “Buy Now”" },
+        { icon: Database, title: "Product layouts that make scrolling addictive" },
+        { icon: Database, title: "Seamless UX from homepage to happy purchase" },
+      ],
+    },
+    {
+      id: "cms",
+      description: "Update content like a boss—no dev required.",
+      items: [
+        { icon: ShieldCheck, title: "Plug into WordPress, Shopify, or your CMS of choice" },
+        { icon: ShieldCheck, title: "Train your team to use the CMS with ease" },
+        { icon: ShieldCheck, title: "Set up smart SEO structure while we’re at it" },
+      ],
+    },
+    {
+      id: "support",
+      description: "Designs done? We’re still on it.",
+      items: [
+        { icon: Heart, title: "Fixes, updates, and proactive optimizations" },
+        { icon: Heart, title: "Keep performance high and downtime low" },
+        { icon: Heart, title: "Backups, patches, and peace of mind" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Stats Section
+  const stats = [
+    { value: "25+", label: "UX experts on deck" },
+    { value: "60+", label: "UI/UX projects delivered and counting" },
+    { value: "100+", label: "Happy customers worldwide" },
+    { value: "40%", label: "Avg. lift in engagement on redesigned websites within 3 months" },
+  ];
 
-  // Resources for recent articles
+  // Case Study Tiles (as resources)
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      title: "Smart UI/UX in Action: Case Study 1",
+      subtitle: "A real win we've helped brands achieve with killer website design.",
+      author: "Case Study Author",
+      date: "2025",
+      readTime: "3 min read",
+      image: "",
+      slug: "case-study-1"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      title: "Smart UI/UX in Action: Case Study 2",
+      subtitle: "Another example of how we create engaging, high-converting sites.",
+      author: "Case Study Author",
+      date: "2025",
+      readTime: "3 min read",
+      image: "",
+      slug: "case-study-2"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      title: "Smart UI/UX in Action: Case Study 3",
+      subtitle: "Yet another brand success story—by design.",
+      author: "Case Study Author",
+      date: "2025",
+      readTime: "3 min read",
+      image: "",
+      slug: "case-study-3"
     },
   ];
 
-  // FAQ List
+  // FAQs
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "What makes custom website design better than using templates?",
+      a: "Custom design lets us create a unique user interface tailored specifically to your business goals, audience needs, and branding—giving you that competitive edge that templates just can't deliver.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "How do you ensure a seamless mobile experience for websites?",
+      a: "We use a mobile-first design approach, ensuring your website looks and functions perfectly on mobile devices and apps, and improving user engagement across all platforms.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "How do you integrate AI-driven personalization into designs?",
+      a: "We leverage AI to create adaptive interfaces that learn user behavior, providing personalized content recommendations and dynamic design elements that evolve with user preferences.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "What's your design process from start to finish?",
+      a: "We start with extensive research to determine user needs, then move to wireframing and prototyping. After getting feedback, we refine designs and create high-fidelity mockups for development.",
+    },
+    {
+      q: "How long does the design process typically take?",
+      a: "Most projects are completed in 3–4 weeks, but the timeline depends on complexity and scope—we keep you in the loop every step of the way.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="servicesUiUx" />
       <Header />
       <main className="pt-24">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
-          bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          heading="AI-Powered UI/UX Design That Thinks Before You Blink"
+          subtext="Interfaces that click, scroll, and convert like they know what users want."
+          bgImage=""
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/UX.webp"
+          buttonText="Audit Me!"
+          buttonLink="/lead-gen-form"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
+          title="You’re in good company—with brands that design faster, convert better, and scale smoother."
+          stats={stats.map(s => ({ label: s.label, value: s.value }))}
+        />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
+          title="What We Do with UI/UX"
+          subtitle="We design, test, and perfect your digital experience with AI smarts for real user love."
           tabs={tabs}
-          features={features} 
+          features={features}
         />
 
-        {/* Recent Resources Section */}
+        {/* Recent Resources / Case Studies Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See What Smart UI/UX Looks Like in Action"
+          body="A few real wins we've helped brands achieve with killer website design."
+          subTabs={[]}
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        {/* Customer Logo Section */}
+        <LogoScroller
+          heading="Designed With & For These Brands"
+          subtext="From startups to scaled up, we build UX they swear by."
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Clients That Felt Our UI/UX Glow-Up"
+          description="These stories are real—just like their skyrocketing engagement stats."
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Call to Action */}
+        {/* More Resources */}
+        <RecentResourcesSection
+          heading="More from Our Content Repertoire"
+          body="Design tips, AI-powered UI glow-ups, and hot takes on what users actually want."
+          subTabs={[]}
+          resources={recentResources}
+        />
+
+        {/* CTA Section */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Build Your AI-Powered Website Experience"
+          subtext="Smooth flows, sticky UX, and a vibe your users remember."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

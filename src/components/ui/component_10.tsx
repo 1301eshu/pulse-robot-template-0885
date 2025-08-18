@@ -147,6 +147,7 @@
 // export default RecentResourcesSection;
 
 
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, User } from "lucide-react";
@@ -175,6 +176,8 @@ interface RecentResourcesProps {
   resources: ResourceItem[];
   onLoadMore?: () => void;
   hasMore?: boolean;
+  isLoadingMore?: boolean;
+  LoadMoreSkeleton?: React.ComponentType;
 }
 
 const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
@@ -184,6 +187,8 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   resources,
   onLoadMore,
   hasMore = false,
+  isLoadingMore = false,
+  LoadMoreSkeleton,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState(subTabs[0]?.id || "all");
   const [currentPage, setCurrentPage] = useState(1);
@@ -199,11 +204,10 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-  
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
 
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">{heading}</h2>
@@ -219,11 +223,10 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
                 setActiveSubTab(tab.id);
                 setCurrentPage(1);
               }}
-              className={`px-4 py-2 rounded-full font-medium transition-colors whitespace-nowrap ${
-                activeSubTab === tab.id
+              className={`px-4 py-2 rounded-full font-medium transition-colors whitespace-nowrap ${activeSubTab === tab.id
                   ? "bg-blue-600 text-white"
                   : "bg-white text-gray-600 hover:bg-gray-100"
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -233,9 +236,17 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
         {/* Resource Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayResources.map((resource, index) => (
+
             <Link
               key={index}
-              to={resource.slug ? `/resources/blog/${resource.category?.toLowerCase().replace(/\s+/g, '-') || 'general'}/${resource.slug}` : '#'}
+              to={resource.slug
+                ? `/blogs/${resource.category
+                  ?.replace(/\s*\([^)]*\)/g, '')   // remove text inside brackets
+                  .toLowerCase()
+                  .replace(/\s+/g, '-')             // replace spaces with hyphens
+                || 'general'
+                }/${resource.slug}`
+                : '#'}
               className="block"
             >
               <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
@@ -257,9 +268,9 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
                 <CardContent className="bg-white p-6">
                   {/* Author + Date */}
                   <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
-                    <span className="flex items-center gap-1">
+                    {/* <span className="flex items-center gap-1">
                       <User className="w-4 h-4" /> {resource.author}
-                    </span>
+                    </span> */}
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" /> {resource.date}
                     </span>
@@ -281,8 +292,11 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           ))}
         </div>
 
+        {/* Loading More Skeleton */}
+        {isLoadingMore && LoadMoreSkeleton && <LoadMoreSkeleton />}
+
         {/* Load More Button - only show if onLoadMore prop is provided */}
-        {onLoadMore && hasMore && (
+        {onLoadMore && hasMore && !isLoadingMore && (
           <div className="flex justify-center mt-10">
             <button
               onClick={onLoadMore}
@@ -300,11 +314,10 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={`w-8 h-8 rounded-md text-sm font-medium flex items-center justify-center transition-colors ${
-                  currentPage === page
+                className={`w-8 h-8 rounded-md text-sm font-medium flex items-center justify-center transition-colors ${currentPage === page
                     ? "bg-blue-600 text-white"
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 {page}
               </button>

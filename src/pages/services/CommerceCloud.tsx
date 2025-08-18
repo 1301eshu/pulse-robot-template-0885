@@ -12,12 +12,13 @@ import ContactCta from "@/components/ui/component_6";
 import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
+import DynamicSEO from "@/components/DynamicSEO";
+
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
 } from "@/components/ui/component_2";
 
-// Icons
 import {
   Zap,
   BarChart2,
@@ -29,232 +30,218 @@ import {
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items
- const tabs: TabItem[] = [
-  {
-    id: "marketing",
-    label: "Pardot Audit & Operations",
-    icon: Zap,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png", // replace with actual
-  },
-  {
-    id: "analytics",
-    label: "Pardot Consulting & Implementation",
-    icon: BarChart2,
-    image: "https://example.com/image2.jpg",
-  },
-  {
-    id: "integration",
-    label: "Pardot Managed Services ",
-    icon: Database,
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png",
-  },
-  {
-    id: "security",
-    label: "Pardot Migration & Custom Integrations",
-    icon: ShieldCheck,
-    image: "https://example.com/image4.jpg",
-  },
-];
+  // Tab Items (What We Do w/ Commerce Cloud)
+  const tabs: TabItem[] = [
+    {
+      id: "visual",
+      label: "Salesforce Commerce Cloud Visual Design",
+      icon: Zap,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Commerce%20Cloud/Salesforce%20Commerce%20Cloud%20Visual%20Design.webp",
+      ctaText: "",
+      ctaLink: "",
+    },
+    {
+      id: "omni",
+      label: "Omni-Channel Strategy",
+      icon: BarChart2,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Commerce%20Cloud/omni%20channel%20stratedgy.webp",
+      ctaText: "",
+      ctaLink: "",
+    },
+    {
+      id: "site",
+      label: "Site Management & Optimization",
+      icon: Database,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Commerce%20Cloud/site%20management%20&%20Optimization.webp",
+      ctaText: "",
+      ctaLink: "",
+    },
+    {
+      id: "integration",
+      label: "Integration",
+      icon: ShieldCheck,
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Commerce%20Cloud/Integration.webp",
+      ctaText: "",
+      ctaLink: "",
+    },
+  ];
 
+  // Features under each tab
+  const features: FeatureContent[] = [
+    {
+      id: "visual",
+      description: "We design AI-enhanced storefronts that delight, convert, and respond to real-time shoppers' behavior.",
+      items: [
+        { icon: Zap, title: "Interfaces personalized with AI" },
+        { icon: Zap, title: "Layouts that drive conversions fast" },
+        { icon: Zap, title: "Responsive UX for every device" },
+      ],
+    },
+    {
+      id: "omni",
+      description: "Deliver consistent, data-driven commerce across devices, stores, and touchpoints—powered by real-time AI insights.",
+      items: [
+        { icon: BarChart2, title: "Unified shopping across web, mobile, and store" },
+        { icon: BarChart2, title: "Smart POS integration with AI" },
+        { icon: BarChart2, title: "Brand consistency across channels" },
+      ],
+    },
+    {
+      id: "site",
+      description: "Keep your storefront fast, reliable, and conversion-ready with proactive performance tuning and backend intelligence.",
+      items: [
+        { icon: Database, title: "AI-monitored performance insights" },
+        { icon: Database, title: "Easy-to-navigate product structures" },
+        { icon: Database, title: "Proactive bug detection and quick resolution workflows" },
+      ],
+    },
+    {
+      id: "integration",
+      description: "We connect systems like PIMs and ERPs into one unified engine that keeps your store ahead.",
+      items: [
+        { icon: ShieldCheck, title: "Fast, scalable storefront setup" },
+        { icon: ShieldCheck, title: "Plug-and-play ERP/PIM integrations" },
+        { icon: ShieldCheck, title: "Smarter warehousing, faster delivery" },
+      ],
+    },
+  ];
 
-  // Tab Content
-  // --------- FEATURES UNDER EACH TAB ----------
-const features: FeatureContent[] = [
-  {
-    id: "marketing",
-    items: [
-      {
-        icon: Zap,
-        title: "Audits that kick your campaign into high gear ",
-      },
-      {
-        icon: Zap,
-        title: "MarTech & CRM, buttered up and synced  ",
-      },
-      {
-        icon: Zap,
-        title: "Leads that never ghost, always engage  ",
-      },
-    ],
-  },
-  {
-    id: "analytics",
-    items: [
-      {
-        icon: BarChart2,
-        title: "Consulting that gets your sales & marketing vibing  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Tech stack hacks that fast-track your wins, AI-boosted  ",
-      },
-      {
-        icon: BarChart2,
-        title: "Lead nurturing that turns your prospects into diehards ",
-      },
-    ],
-  },
-  {
-    id: "integration",
-    items: [
-      {
-        icon: Database,
-        title: "24/7 access to Pardot-certified experts, always on deck ",
-      },
-      {
-        icon: Database,
-        title: "High-volume campaigns? We handle them like pros ",
-      },
-      {
-        icon: Database,
-        title: "Seamless work continuity, even during transitions ",
-      },
-    ],
-  },
-  {
-    id: "security",
-    items: [
-      {
-        icon: ShieldCheck,
-        title: "Pardot that just gets your stack ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Migrations so smooth, you’ll blink and miss it  ",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Integrations that don’t break a sweat ",
-      },
-    ],
-  },
-];
+  // Trust Markers/Statistics Section
+  const stats = [
+    { label: "Salesforce Commerce Cloud clients served across industries", value: "70+" },
+    { label: "Years of combined Salesforce & eCommerce expertise", value: "100+" },
+    { label: "Salesforce-certified experts on deck", value: "60+" },
+  ];
 
-  // Resources for recent articles
+  // Recent Resources/More Content Section
   const recentResources: ResourceItem[] = [
     {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
+      title: "AI-First eCommerce: What It Really Means for Your Bottom Line",
+      subtitle: "How brands are using AI-powered Commerce Cloud to increase conversions and lifetime value.",
+      author: "eCommerce Insights Team",
+      date: "July 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
+      slug: "ai-ecommerce-bottom-line"
     },
     {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
+      title: "The Secret Sauce of Omni-Channel Shopping",
+      subtitle: "What top brands do differently to win buyers across every digital touchpoint.",
+      author: "Strategy Team",
+      date: "July 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
+      slug: "omnichannel-strategy"
     },
     {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
+      title: "How AI Makes Storefronts Perform Like Top Sellers",
+      subtitle: "Why real-time performance tuning and bug detection matter for conversion.",
+      author: "Performance Engineering",
+      date: "July 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
+      slug: "ai-storefront-performance"
     },
   ];
 
-  // FAQ List
+  // Case Study Tabs (for the carousel)
+  const caseStudyTabs: TabItem[] = [
+    { id: "cs1", label: "Case Study 1", icon: Zap, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/1" },
+    { id: "cs2", label: "Case Study 2", icon: BarChart2, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/2" },
+    { id: "cs3", label: "Case Study 3", icon: Database, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/3" },
+    { id: "cs4", label: "Case Study 4", icon: ShieldCheck, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/4" },
+  ];
+
+  // FAQs Section
   const faqs = [
     {
-      q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      q: "How quickly can you get our Salesforce Commerce Cloud store up and running?",
+      a: "Most implementations go live in 8-12 weeks, with AI features rolled out strategically for immediate ROI.",
     },
     {
-      q: " If we don’t know what’s broken, can you still help?",
-      a: "Absolutely. Our audits surface what’s missing. Most clients call it their biggest eye-opener. ",
+      q: "Can your AI solutions integrate with our existing product catalog?",
+      a: "Absolutely! We connect seamlessly with any PIM, ERP, or inventory system you already have.",
     },
     {
-      q: "Can you help us align Pardot with our CRM and sales team? ",
-      a: "100%. Marketing automation that doesn’t sync with sales is just noise. We close that loop. ",
+      q: "What makes your Salesforce Commerce Cloud approach different?",
+      a: "We build AI into every touchpoint—not as an afterthought—so your store gets smarter with every visit.",
     },
     {
-      q: " Do we need to upgrade our Pardot plan to work with your team? ",
-      a: " No. We work with any Pardot plan, cranking up the impact without you needing to spend more.",
+      q: "How do we measure success with your Salesforce Commerce Cloud solutions?",
+      a: "Revenue, conversion rates, AOV, and customer lifetime value—metrics that matter to your bottom line.",
     },
   ];
-  
+
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="commerceCloud" />
       <Header />
-      <main className="pt-24">
+      <SmartBreadcrumb />
+      <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Your Pardot, Amped Up with AI"
-          highlight="3x faster"
-          subtext="Target like a pro, save hours, win campaigns on cruise control."
+          heading="AI-Powered Salesforce Commerce Cloud That Sells While You Sleep"
+          subtext="Turn browsers into buyers with intelligent shopping experiences that learn, adapt, and convert"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751356419/Grouped_Elements_tiadn3.png"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Commerce%20cloud.webp"
+         
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-  subtitle="WHY PARTNER WITH GROWTH NATIVES?"
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
-  stats={[
-    { label: "Happy Pardot Clients  ", value: "25+" },
-    { label: "Certified Pardot Nerds ", value: "20+" },
-    { label: "Jump in Campaign Performance ", value: "30%" },
-  ]}
-/>
-
-        {/* Tab Features Section */}
-        <EnterpriseCapabilities
-          title="How We Give Pardot a Nudge (in the Right Direction)"
-          subtitle=" We work behind the scenes to give your lead gen and campaigns a quiet boost."
-          tabs={tabs}
-          features={features} 
+          title="You’re in good company—with brands making every click count with Salesforce Commerce Cloud."
+          stats={stats}
         />
 
-        {/* Recent Resources Section */}
+        {/* What We Do/Features Section */}
+        <EnterpriseCapabilities
+          title="What We Do with Salesforce Commerce Cloud"
+          subtitle="We build smart shopping experiences that turn browsers into buyers across every digital touchpoint"
+          tabs={tabs}
+          features={features}
+        />
+
+       {/* More Resources Section */}
         <RecentResourcesSection
-          heading="Stay Ahead with HubSpot + AI Insights"
-          subTabs={[
-            { id: "all", label: "All Resources" },
-            { id: "guides", label: "Guides" },
-            { id: "case-studies", label: "Case Studies" }
-          ]}
+          heading="See What Smart Salesforce Commerce Cloud Looks Like in Action"
+          body="A few real wins we've helped brands achieve with Salesforce Commerce Cloud. "
+          subTabs={[]} // no subtabs in this section
           resources={recentResources}
         />
 
-         <LogoScroller
-        heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
-        logos={[
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-          'https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png',
-        ]}
-      />
+        {/* Customer Logo Section */}
+        <LogoScroller
+          heading="Powering Intelligent Commerce for Growing Brands"
+          subtext="From ambitious challengers to industry leaders, we power high-converting Salesforce Commerce Cloud experiences."
+         
+        />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          title="Real Growth, Real Revenue Stories"
+          description="Hear how our AI-powered Salesforce Commerce Cloud solutions drive results that matter"
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Call to Action */}
+        {/* More Resources Section */}
+        <RecentResourcesSection
+          heading="More From Our Content Repertoire"
+          body="Get expert strategies and AI insights to accelerate digital commerce growth"
+          subTabs={[]} // no subtabs in this section
+          resources={recentResources}
+        />
+
+        {/* CTA Section */}
         <ContactCta
-          heading="Don’t Let Your Pardot Gather Dust "
-          subtext="Give it the TLC it deserves & see the magic unfold!"
+          heading="Let’s Build Your AI-First Commerce Cloud Experience."
+          subtext="Let's build your AI-powered selling machine that works day & night"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />
