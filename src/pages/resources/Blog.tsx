@@ -20,6 +20,8 @@ const decodeHTML = (html: string) => {
 const ResourcesIndex = () => {
   const [exploreMoreItems, setExploreMoreItems] = useState<ExploreItem[]>([]);
   const [recentResources, setRecentResources] = useState<ResourceItem[]>([]);
+  const [categories, setCategories] = useState<{ id: number; name: string; slug: string }[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,11 +30,26 @@ const ResourcesIndex = () => {
   // show 9 per page as requested
   const perPage = 9;
 
-  const fetchPosts = async (page: number) => {
+  const fetchCategories = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/categories`);
+      const data = await res.json();
+      setCategories(data);
+    } catch (err) {
+      console.error("Failed to fetch categories", err);
+    }
+  };
+
+  const fetchPosts = async (page: number, categoryId?: number, reset = false) => {
     if (page > 1) setIsLoadingMore(true);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`);
+      let url = `${API_BASE_URL}/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`;
+      if (categoryId) {
+        url += `&categories=${categoryId}`;
+      }
+
+      const res = await fetch(url);
       const data = await res.json();
 
       const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
@@ -55,7 +72,11 @@ const ResourcesIndex = () => {
         category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
       }));
 
-      setRecentResources(prev => [...prev, ...formattedResources]);
+      if (reset) {
+        setRecentResources(formattedResources);
+      } else {
+        setRecentResources(prev => [...prev, ...formattedResources]);
+      }
 
       // Set explore items only once (from first batch)
       if (page === 1) {
@@ -70,35 +91,52 @@ const ResourcesIndex = () => {
           slug: post.slug,
         }));
         setExploreMoreItems(formattedExploreItems);
-        setIsLoading(false);
+        if (reset) setIsLoading(false);
       }
     } catch (err) {
       console.error("Failed to fetch posts", err);
       setHasMore(false);
-      setIsLoading(false);
+      if (reset) setIsLoading(false);
     } finally {
       setIsLoadingMore(false);
     }
   };
 
+  // Initial data fetch
   useEffect(() => {
-    fetchPosts(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page]);
+    const initializeData = async () => {
+      await fetchCategories();
+      await fetchPosts(1, undefined, true);
+    };
+    initializeData();
+  }, []);
 
-  const handleLoadMore = () => setPage(prev => prev + 1);
+  // Handle category change
+  const handleCategoryChange = async (categorySlug: string) => {
+    setActiveCategory(categorySlug);
+    setPage(1);
+    setRecentResources([]);
+    setHasMore(true);
+    
+    const categoryId = categorySlug === "all" ? undefined : categories.find(cat => cat.slug === categorySlug)?.id;
+    await fetchPosts(1, categoryId, true);
+  };
 
-  // Build tabs from the categories in the resources (All + unique categories)
+  // Handle load more
+  const handleLoadMore = () => {
+    const categoryId = activeCategory === "all" ? undefined : categories.find(cat => cat.slug === activeCategory)?.id;
+    const nextPage = page + 1;
+    setPage(nextPage);
+    fetchPosts(nextPage, categoryId);
+  };
+
+  // Build tabs from the fetched categories
   const categoryTabs = useMemo(() => {
-    const cats = Array.from(
-      new Set(
-        recentResources
-          .map(r => (r.category || "General").trim())
-          .filter(Boolean)
-      )
-    );
-    return [{ id: "all", label: "All" }, ...cats.map(c => ({ id: slugify(c), label: c }))];
-  }, [recentResources]);
+    return [
+      { id: "all", label: "All" },
+      ...categories.map(cat => ({ id: cat.slug, label: cat.name }))
+    ];
+  }, [categories]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -125,14 +163,17 @@ const ResourcesIndex = () => {
                 hideTabs={false}
                 // let the component use our tabs (built from categories)
                 subTabs={categoryTabs}
-                // feed all resources we’ve fetched so far
+                // feed all resources we've fetched so far
                 resources={recentResources}
                 // load more flow
                 onLoadMore={handleLoadMore}
                 hasMore={hasMore}
                 isLoadingMore={isLoadingMore}
                 LoadMoreSkeleton={LoadMoreSkeleton}
-                // IMPORTANT: don’t pass `count` so it won’t trim to 3
+                // Handle category tab changes
+                onTabChange={handleCategoryChange}
+                activeTab={activeCategory}
+                // IMPORTANT: don't pass `count` so it won't trim to 3
               />
             </div>
           </>

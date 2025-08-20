@@ -41,6 +41,10 @@ interface RecentResourcesProps {
   limit?: number;       // used only if count is undefined
   hideTabs?: boolean;   // default: true (hide category pills)
   count?: number;       // default: 3 (also used for fetch size)
+  
+  /** Tab control props */
+  onTabChange?: (tabId: string) => void;
+  activeTab?: string;
 }
 
 /* ===== Component ===== */
@@ -62,6 +66,10 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   hideTabs = true,
   count = 3,
   limit = 9,
+  
+  // tab control props
+  onTabChange,
+  activeTab,
 }) => {
   const postLimit = count ?? limit;
 
@@ -88,8 +96,15 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   );
 
   const [activeSubTab, setActiveSubTab] = useState(
-    effectiveTabs[0]?.id || "all"
+    activeTab || effectiveTabs[0]?.id || "all"
   );
+  // Update internal state when activeTab prop changes
+  useEffect(() => {
+    if (activeTab && activeTab !== activeSubTab) {
+      setActiveSubTab(activeTab);
+    }
+  }, [activeTab, activeSubTab]);
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 30;
 
@@ -219,8 +234,12 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
               <button
                 key={tab.id}
                 onClick={() => {
-                  setActiveSubTab(tab.id);
+                  const newTab = tab.id;
+                  setActiveSubTab(newTab);
                   setCurrentPage(1);
+                  if (onTabChange) {
+                    onTabChange(newTab);
+                  }
                 }}
                 className={`px-4 py-2 rounded-full font-medium transition-colors whitespace-nowrap ${
                   activeSubTab === tab.id
