@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function SocialMedia() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -208,13 +209,14 @@ export default function SocialMedia() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="Want to Be That Brand Everyone Shares? Start Here."
-          body="Hot takes, playbooks, and platform guides for scroll domination."
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+           {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="  Want to Be That Brand Everyone Shares? Start Here.  "
+  body="Hot takes, playbooks, and platform guides for scroll domination. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

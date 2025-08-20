@@ -15,6 +15,7 @@ import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui
 import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function TestingQA() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -196,6 +197,15 @@ export default function TestingQA() {
 
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
+
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay updated with the latest Testing & QA guides, blog posts and AI tips. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

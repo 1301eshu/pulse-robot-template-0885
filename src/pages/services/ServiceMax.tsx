@@ -223,7 +223,7 @@ export default function ServiceMax() {
           heading="Ready to Transform Your Field Service?"
           subtext="Let's discuss how ServiceMax can optimize your operations."
           buttonLabel="Get Started"
-          buttonLink="/company/contact"
+          buttonLink="/contact"
         />
       </main>
       <Footer />

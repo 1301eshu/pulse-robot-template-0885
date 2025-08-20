@@ -16,6 +16,7 @@ import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 import { Zap, BarChart2, Database, ShieldCheck, Heart, FileText, Sparkles, Package, Wrench, Repeat } from "lucide-react";
 
 export default function UIUXDesignAgency() {
@@ -231,13 +232,14 @@ export default function UIUXDesignAgency() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources */}
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Design tips, AI-powered UI glow-ups, and hot takes on what users actually want."
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay in the know with the latest Mobile App Development blog posts, guides, and AI hacks."
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA Section */}
         <ContactCta

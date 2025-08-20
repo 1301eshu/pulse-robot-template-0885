@@ -107,7 +107,7 @@ const RecentResourcesSections: React.FC = () => {
                 key={index}
                 to={
                     resource.slug
-                    ? `/resources/case-studies/${resource.slug.replace(/\/$/, "")}`
+                    ? `/case-studies/${resource.slug.replace(/\/$/, "")}`
                     : "#"
                 }
                 className="block"

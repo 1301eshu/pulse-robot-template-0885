@@ -7,38 +7,45 @@ const OurJourney = () => {
 
   const milestones = [
     {
-      year: "2016",
+      year: "2019",
       title: "The Beginning",
-      description: "Founded with a vision to transform digital experiences through innovative solutions and cutting-edge technology.",
+      description: "We started out to make digital work better for people. A small team rolled up sleeves, built fast, and focused on outcomes.",
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/The%20Beginning.webp",
       icon: Sparkles
     },
     {
-      year: "2018",
-      title: "AI Integration",
-      description: "Pioneered AI-driven marketing solutions, revolutionizing how businesses connect with their customers.",
+      year: "2020",
+      title: "Building the Basics",
+      description: "We set up clean processes and already took a pace in marketing, data, and CX. Quality got tighter, speed went up.",
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/AI%20Integration.webp",
       icon: Target
     },
     {
-      year: "2020",
-      title: "Global Expansion",
-      description: "Expanded operations worldwide, bringing our expertise to clients across multiple continents.",
+      year: "2021",
+      title: " Serving Global Clients ",
+      description: "Started working on full-funnel projects from across the world. We learned time-zone rhythm, kept communication simple, and shipped on schedule.",
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/about%20us%20/Growth%20Journey%20/Global.webp",
       icon: Globe
     },
     {
-      year: "2022",
-      title: "Innovation Labs",
-      description: "Launched dedicated innovation labs to research and develop next-generation digital solutions.",
+      year: "2023",
+      title: " AI Entered the Org",
+      description: "The crew got bigger and AI-fluent, and we became smarter together. Requests spiked. We delivered, and the run kept building. ",
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/about%20us%20/Growth%20Journey%20/innovation.webp",
       icon: Sparkles
     },
     {
       year: "2024",
-      title: "AI-First Future",
-      description: "Leading the industry with AI-first strategies and transformative technologies for the digital future.",
+      title: " Inc. 5000 #606 ",
+      description: "We made the Inc. 5000 list at #606 (we’re still not chill about it), and we thank our customers, partners, and the team for it. AI became part of daily work: automation, smart content, and better decisions.",
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/AI%20first%20future.webp",
+      icon: TrendingUp
+    },
+    {
+      year: "2025",
+      title: "  Onwards and Upwards ",
+      description: "We earned a spot again on the Inc. 5000 list. This time at #1876. More R&D, more AI-powered functioning, stronger partnerships, and a focus on helping every client grow with us. ",
+      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/2025.webp",
       icon: TrendingUp
     }
   ];

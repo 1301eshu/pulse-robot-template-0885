@@ -15,6 +15,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function HubSpot() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -251,13 +252,14 @@ export default function HubSpot() {
         {/* FAQs */}
         <FaqSection title="FAQ's" faqs={faqs} />
 
-         {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading=" More From Our Content Repertoire"
-          body=" Keep your HubSpot IQ high with our freshest blog posts, guides, and AI hot takes. "
-          subTabs={[]}
-          resources={recentResources}
-        />
+      {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="Keep your HubSpot IQ high with our freshest blog posts, guides, and AI hot takes. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

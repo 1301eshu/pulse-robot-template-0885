@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { FileText, Package, Sparkles, Zap } from "lucide-react";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function BrandCampaign() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -204,13 +205,14 @@ export default function BrandCampaign() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay updated with the tips, tactics, resources, and insights to outsmart the algorithm and your competitors."
-          subTabs={[]}
-          resources={recentResources}
-        />
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay updated with the tips, tactics, resources and insights to outsmart the algorithm and your competitors. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA */}
         <ContactCta

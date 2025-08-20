@@ -50,6 +50,12 @@ import EloquaAudit from "./pages/marketing-automation-services/eloqua/eloqua-aud
 import Google from "./pages/digital-marketing-services/ppc/google-ads.tsx";
 import Linkedin from "./pages/digital-marketing-services/ppc/linkedin-ads.tsx";
 import Meta from "./pages/digital-marketing-services/ppc/meta-ads.tsx";
+import MarketingCloudMarket from "./pages/services/MarketingCloud.tsx";
+
+
+
+
+
 
 
 
@@ -120,11 +126,11 @@ import BrandCampaignDesign from "./pages/services/brand-campaign";
 
 // New Salesforce service pages
 import SalesforceAI from "./pages/services/SalesforceAI";
-import SalesCloud from "./pages/services/SalesCloud";
+import SalesCloud from "./pages/salesforce-services/sales-cloud";
 import CommerceCloud from "./pages/services/CommerceCloud";
 import SalesforceEinstein from "./pages/services/SalesforceEinstein";
-import ServiceCloud from "./pages/services/ServiceCloud";
-import ExperienceCloud from "./pages/services/ExperienceCloud";
+import ServiceCloud from "./pages/salesforce-services/service-cloud";
+import ExperienceCloud from "./pages/salesforce-services/experience-cloud";
 import SalesforceCPQ from "./pages/services/SalesforceCPQ";
 import SalesforceAnalyticsCloud from "./pages/services/SalesforceAnalyticsCloud";
 import Conga from "./pages/services/Conga";
@@ -262,7 +268,7 @@ const App = () => (
           <Route path="/marketing-automation-services/eloqua/implementation" element={<EloquaImplementation />} />
          
           {/* <Route path="/marketing-automation-services/marketing-cloud/" element={<MarketingCloud />} /> */}
-          <Route path="/salesforce-services/marketing-cloud/" element={<MarketingCloud />} />
+          <Route path="/marketing-automation-services/marketing-cloud/" element={<MarketingCloudMarket />} />
           <Route path="/marketing-automation-services/eloqua/" element={<Eloqua />} />
           <Route path="/salesforce-services/" element={<Salesforce />} />
          
@@ -426,17 +432,17 @@ const App = () => (
           <Route path="/resources/downloadableassets" element={<DownloadableAssets />} />
           
           {/* Company routes */}
-          <Route path="/company/about-services/" element={<About />} />
-          <Route path="/company/about" element={<Navigate to="/company/about-services/" replace />} />
+          <Route path="/about/" element={<About />} />
 
-          <Route path="/company/contact-services/" element={<Contact />} />
-          <Route path="/company/contact" element={<Navigate to="/company/contact-services/" replace />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route 
+            path="/contact" 
+            element={<Navigate to="/contact/" replace />} 
+          />          
+          <Route path="/contact" element={<Navigate to="/company/contact" replace />} />
+          <Route path="/meet-the-team/" element={<Team />} />
 
-          <Route path="/company/team-services/" element={<Team />} />
-          <Route path="/company/team" element={<Navigate to="/company/team-services/" replace />} />
-
-          <Route path="/company/careers-services/" element={<Careers />} />
-          <Route path="/company/careers" element={<Navigate to="/company/careers-services/" replace />} />
+          <Route path="/careers" element={<Careers />} />
 
           <Route path="/faqs/" element={<FAQs />} />
           <Route path="/faqs" element={<Navigate to="/faqs/" replace />} />

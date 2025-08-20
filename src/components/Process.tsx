@@ -89,7 +89,7 @@ export default function ProcessSection() {
     <Sparkles className="w-4 h-4 text-blue-400" />
     <span className="text-blue-500 text-sm font-medium">Our Process</span>
   </div>
-  <h2 className="text-3xl md:text-5xl font-bold text-[#0F172A] mb-6">
+  <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal">
     Start Smart. Stay Scalable.
   </h2>
   <p className="text-[#5E6874] text-base mb-8 max-w-2xl mx-auto">

@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -209,12 +210,14 @@ return (
         description=" Because when it’s done right, you feel it immediately.  "
       />
       <FaqSection title="FAQs" faqs={faqs} />
-      <RecentResourcesSection
-        heading=" More From Our Content Repertoire "
-        body=" Deep dives, AI tips, and tactical Jira wisdom.  "
-        subTabs={[]}
-        resources={recentResources}
-      />
+      {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Deep dives, AI tips, and tactical Jira wisdom.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
       <ContactCta
         heading="Let’s Migrate with Precision  "
         subtext="No chaos. No compromise. Just Jira that’s finally aligned with your future.  "

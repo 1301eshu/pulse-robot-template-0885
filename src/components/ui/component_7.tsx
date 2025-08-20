@@ -24,7 +24,7 @@ export default function HeroSection({
   highlight,
   subtext,
   buttonText = "Audit Me!",
-  buttonLink = "/company/contact-services/",
+  buttonLink = "/contact/",
   rightImage,
   noCta,
   centerText = false,

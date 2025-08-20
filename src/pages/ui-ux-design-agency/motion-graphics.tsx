@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MotionGraphics() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -208,13 +209,14 @@ export default function MotionGraphics() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-         {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Design Arsenal"
-          body="Tips, trends, and tactical guides for better brand storytellingdelivered fresh."
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="Tips, trends, and tactical guides for better brand storytelling—delivered fresh. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

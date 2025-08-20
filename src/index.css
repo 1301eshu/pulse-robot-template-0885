@@ -60,6 +60,17 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Blog content anchor styling */
+  .prose a {
+    color: hsl(217, 91%, 60%) !important;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .prose a:hover {
+    color: hsl(217, 91%, 50%) !important;
+  }
 }
 
 @layer utilities {

@@ -15,6 +15,7 @@ import { FileText, Package, Sparkles, Database, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -221,13 +222,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay updated with fresh resources, strategic marketing tips, and AI takes straight from industry experts."
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="  Stay updated with fresh resources, strategic marketing tips, and AI takes straight from industry experts. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA */}
         <ContactCta

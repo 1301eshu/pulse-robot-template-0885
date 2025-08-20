@@ -10,12 +10,313 @@ const seoConfig = {
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema: { /* your schema.org content */}
+      schema: {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.growthnatives.com/#webpage",
+            "url": "https://www.growthnatives.com",
+            "name": "Growth Natives - Full-Stack Marketing, Salesforce & Automation Agency",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.growthnatives.com/#website"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebSite",
+              "@id": "https://www.growthnatives.com/#website"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.growthnatives.com/images/hero-banner.png"
+            },
+            "datePublished": "2025-01-01",
+            "dateModified": "2025-07-02",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.growthnatives.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Our Services",
+                  "item": "https://www.growthnatives.com/services/"
+                }
+              ]
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.growthnatives.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "about": {
+              "@id": "https://www.growthnatives.com/#organization"
+            },
+            "mentions": [
+              { "@id": "https://www.growthnatives.com/#offercatalog" },
+              { "@id": "https://www.growthnatives.com/#faqpage" },
+              { "@id": "https://www.growthnatives.com/#reviewblock" },
+              { "@id": "https://www.growthnatives.com/#definedterms" }
+            ],
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".blog-title", ".summary-intro", ".key-benefits"]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.growthnatives.com/#website",
+            "url": "https://www.growthnatives.com",
+            "name": "Growth Natives",
+            "publisher": { "@id": "https://www.growthnatives.com/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.growthnatives.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://www.growthnatives.com/#organization",
+            "name": "Growth Natives",
+            "url": "https://www.growthnatives.com",
+            "priceRange": "$$$",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://growthnatives.com/path-to-your-logo.jpg"
+            },
+            "image": {
+              "@id": "https://growthnatives.com/path-to-your-logo.jpg"
+            },
+            "email": "sales@growthnatives.com",
+            "telephone": "(828) 203-2776",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "8425 NE 22nd Place",
+              "addressLocality": "Clyde Hill",
+              "addressRegion": "WA",
+              "postalCode": "98004",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Monday",
+                "opens": "10:00",
+                "closes": "19:30"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Tuesday",
+                "opens": "10:00",
+                "closes": "19:30"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Wednesday",
+                "opens": "10:00",
+                "closes": "19:30"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Thursday",
+                "opens": "10:00",
+                "closes": "19:30"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Friday",
+                "opens": "10:00",
+                "closes": "19:30"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "17",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "sameAs": [
+              "https://g.co/kgs/4j9JmPS",
+              "https://www.linkedin.com/company/growthnatives/",
+              "https://www.instagram.com/growthnatives/",
+              "https://www.youtube.com/channel/UC1Zg8vMT43lQ9KdeLmy-U_w",
+              "https://x.com/GrowthNatives",
+              "https://www.reddit.com/r/GrowthNatives/"
+            ],
+            "member": [
+              {
+                "@type": "Person",
+                "@id": "https://www.growthnatives.com/#taranbir",
+                "name": "Taranbir Singh Nandha",
+                "jobTitle": "Founder & Chief Executive Officer",
+                "worksFor": { "@id": "https://www.growthnatives.com/#organization" }
+              },
+              {
+                "@type": "Person",
+                "@id": "https://www.growthnatives.com/#balwinder",
+                "name": "Balwinder Kaur",
+                "jobTitle": "Co-Founder",
+                "worksFor": { "@id": "https://www.growthnatives.com/#organization" }
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.growthnatives.com/#faqpage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How does Growth Natives tailor its services to different industries?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Growth Natives customizes digital solutions by understanding each industry's unique audience, regulations, and challenges. From healthcare to tech, we adapt our approach to align with business goals."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you ensure customer engagement using AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We use data-driven personalization, marketing automation, and behavioral insights to enhance customer interactions and increase lifetime value."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What sets Growth Natives apart in digital transformation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide a full-stack solution: marketing, automation, development, and design—all driven by agile strategy and measurable KPIs."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "@id": "https://www.growthnatives.com/#offercatalog",
+            "name": "Growth Natives Service Catalog",
+            "url": "https://www.growthnatives.com/services/",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Marketing Automation",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "HubSpot Automation",
+                      "url": "https://www.growthnatives.com/services/marketing-automation/hubspot/",
+                      "description": "Setup, manage, and optimize HubSpot workflows, email sequences, and lead nurturing automation.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" },
+                      "areaServed": ["US", "India", "Canada"],
+                      "audience": { "@type": "Audience", "audienceType": "Marketing Teams" }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Marketo Services",
+                      "url": "https://www.growthnatives.com/services/marketing-automation/marketo/",
+                      "description": "Advanced campaign operations, lead scoring, and reporting using Adobe Marketo Engage.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" }
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Salesforce Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Salesforce Marketing Cloud",
+                      "url": "https://www.growthnatives.com/services/salesforce/marketing-cloud/",
+                      "description": "Personalized journeys, email studio, and audience builder implementation via SFMC.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Salesforce Sales Cloud",
+                      "url": "https://www.growthnatives.com/services/salesforce/sales-cloud/",
+                      "description": "CRM architecture, workflow automation, and lead lifecycle optimization in Sales Cloud.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" }
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "UI/UX and Web Development",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "React.js Development",
+                      "description": "Modern, responsive, and SEO-friendly front-end interfaces built with React.js.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" }
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Webflow and WordPress",
+                      "description": "Creative websites with low-code platforms like Webflow and scalable WordPress CMS.",
+                      "provider": { "@id": "https://www.growthnatives.com/#organization" }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "@type": "DefinedTermSet",
+            "@id": "https://www.growthnatives.com/#definedterms",
+            "name": "Growth Natives Glossary",
+            "hasDefinedTerm": [
+              { "@type": "DefinedTerm", "name": "Marketing Automation", "url": "https://en.wikipedia.org/wiki/Marketing_automation" },
+              { "@type": "DefinedTerm", "name": "Salesforce Marketing Cloud", "url": "https://en.wikipedia.org/wiki/Salesforce.com#Marketing_Cloud" },
+              { "@type": "DefinedTerm", "name": "HubSpot CRM", "url": "https://en.wikipedia.org/wiki/HubSpot" },
+              { "@type": "DefinedTerm", "name": "UI/UX Design", "url": "https://en.wikipedia.org/wiki/User_experience_design" }
+            ]
+          },
+          {
+            "@type": "Review",
+            "@id": "https://www.growthnatives.com/#reviewblock",
+            "reviewBody": "Growth Natives helped scale our digital campaigns with Salesforce and HubSpot. Their response time, clarity, and execution were top-notch.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "author": { "@type": "Person", "name": "Alicia Gomez" },
+            "itemReviewed": { "@id": "https://www.growthnatives.com/#organization" },
+            "publisher": { "@type": "Organization", "name": "Clutch" },
+            "datePublished": "2025-05-30"
+          }
+        ]
+      },
     },
     serviceMarketingAutomation: {
       title: "Marketing Automation That Accelerates Growth | Growth Natives",
       description: "Automate and scale your marketing efforts with customized automation strategies that drive engagement, conversions, and ROI",
-      canonical: "/services/marketing-automation-services/",
+      canonical: "/marketing-automation-services/",
       updatedAt: "2025-03-10T12:48:09+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -83,7 +384,7 @@ const seoConfig = {
     serviceHubspot: {
       title: "HubSpot Services to Streamline Your Marketing | Growth Natives",
       description: "Unlock HubSpot's full potential with tailored implementation, automation, and inbound marketing strategies that fuel business growth",
-      canonical: "/services/hubspot/",
+      canonical: "/marketing-automation-services/hubspot/",
       updatedAt: "2025-03-10T12:17:27+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -146,7 +447,7 @@ const seoConfig = {
     eloqua: {
       title: "Drive Engagement with Eloqua Expertise | Growth Natives",
       description: "Maximize Oracle Eloqua for campaign automation, lead scoring, and personalization that converts across the buyer journey",
-      canonical: "/services/eloqua/",
+      canonical: "/marketing-automation-services/eloqua/",
       updatedAt: "2025-03-10T12:59:27+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -197,7 +498,7 @@ const seoConfig = {
     serviceMarketo: {
       title: "Marketo Campaigns Built for Performance | Growth Natives",
       description: "Drive better engagement and higher ROI with advanced Marketo automation, lead management, and email marketing strategies",
-      canonical: "/services/marketo/",
+      canonical: "/marketing-automation-services/marketo/",
       updatedAt: "2025-02-20T13:04:23+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -265,7 +566,7 @@ const seoConfig = {
     salesforcePardot: {
       title: "Smarter Lead Nurturing with Pardot Solutions | Growth Natives",
       description: "Leverage Pardot automation services to streamline lead nurturing, personalize campaigns, and achieve measurable marketing results.",
-      canonical: "/services/salesforce-pardot",
+      canonical: "/marketing-automation-services/pardot/",
       updatedAt: "2025-02-26T12:18:18+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -316,7 +617,7 @@ const seoConfig = {
     salesforceMarketingCloud: {
       title: "Unlock Powerful Journeys with Marketing Cloud | Growth Natives",
       description: "Build powerful, data-driven customer journeys with Salesforce Marketing Cloud across email, mobile, social, and advertising",
-      canonical: "/services/salesforce-marketing-cloud",
+      canonical: "/marketing-automation-services/marketing-cloud/",
       updatedAt: "2025-02-26T05:58:28+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -379,7 +680,7 @@ const seoConfig = {
     salesforce: {
       title: "End-to-End Salesforce Consulting That Delivers | Growth Natives",
       description: "End-to-end Salesforce consulting to streamline operations, improve CRM adoption, and drive smarter decisions at scale",
-      canonical: "/services/salesforce",
+      canonical: "/salesforce-services/",
       updatedAt: "2025-02-27T06:34:23+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -452,7 +753,7 @@ const seoConfig = {
     salesforceAI: {
       title: "Reimagine Customer Intelligence with Salesforce AI | Growth Natives",
       description: "Leverage Salesforce AI to deliver predictive insights, intelligent automation, and personalized experiences that convert",
-      canonical: "/services/salesforce-ai",
+      canonical: "/salesforce-services/ai-enablement/",
       updatedAt: "2025-01-13T10:29:07+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -515,7 +816,7 @@ const seoConfig = {
     salesCloud: {
       title: "Fuel Sales Performance with Sales Cloud | Growth Natives",
       description: "Increase win rates with Sales Cloud by empowering your team with smart tools, better CRM data, and scalable sales processes",
-      canonical: "/services/sales-cloud/",
+      canonical: "/salesforce-services/sales-cloud/",
       updatedAt: "2025-02-27T05:11:07+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -578,7 +879,7 @@ const seoConfig = {
     commerceCloud: {
       title: "Salesforce Commerce Cloud - Growth Natives",
       description: "Inspirational Ecommerce Experiences for Your Customers with performance-driven and agile commerce cloud solutions.",
-      canonical: "/services/commerce-cloud/",
+      canonical: "/salesforce-services/commerce-cloud/",
       updatedAt: "2025-02-27T04:41:44+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -656,7 +957,7 @@ const seoConfig = {
     salesforceCPQ: {
       title: "Simplify Pricing with Salesforce CPQ Solutions | Growth Natives",
       description: "Simplify quoting and pricing with Salesforce CPQ by automating complex sales workflows and delivering faster accurate proposals",
-      canonical: "/services/salesforce-cpq",
+      canonical: "/salesforce-services/cpq/",
       updatedAt: "2025-03-10T12:36:18+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -860,7 +1161,7 @@ const seoConfig = {
     salesforceEinstein: {
       title: "Smarter Decisions with Einstein-Powered Insights | Growth Natives",
       description: "Enhance your CRM with Einstein AI using actionable insights, lead scoring, and automation to drive marketing and sales success",
-      canonical: "/salesforce-services/ai-enablement/",
+      canonical: "/salesforce-services/einstein-analytics/",
       updatedAt: "2025-02-27T04:54:43+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -923,7 +1224,7 @@ const seoConfig = {
     servicesAnalytics: {
       title: "Business Intelligence that Drives Impact | Growth Natives",
       description: "Turn raw data into business intelligence with analytics solutions that help uncover trends and improve performance",
-      canonical: "/marketing-analytics-services/",
+      canonical: "/analytics-services/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -1064,7 +1365,7 @@ const seoConfig = {
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema: { /* your schema.org content */}
+      schema: { /* your schema.org content */ }
     },
     adobeExperiencePlatform: {
       title: "Make Adobe Experience Platform Work for You | Growth Natives",
@@ -1074,7 +1375,7 @@ const seoConfig = {
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema: { /* your schema.org content */}
+      schema: { /* your schema.org content */ }
     },
     dataVisualization: {
       title: "Visual Dashboards for Confident Decisions | Growth Natives",
@@ -1084,7 +1385,7 @@ const seoConfig = {
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema: { /* your schema.org content */}
+      schema: { /* your schema.org content */ }
     },
     dataWarehousingEtl: {
       title: "Scalable ETL & Warehousing Solutions | Growth Natives",
@@ -1426,7 +1727,7 @@ const seoConfig = {
     paidAds: {
       title: "Paid Advertising Strategies That Win | Growth Natives",
       description: "Run high-performance ad campaigns across Google, Meta, and LinkedIn to generate quality leads and conversions",
-      canonical: "/paid-ads-services/",
+      canonical: "/digital-marketing-services/ppc/",
       updatedAt: "2025-02-26T07:06:24+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -1559,7 +1860,7 @@ const seoConfig = {
     orm: {
       title: "Take Control of Your Online Reputation | Growth Natives",
       description: "Protect and enhance your online presence with reputation management that monitors, repairs, and builds your digital image",
-      canonical: "/orm-services/",
+      canonical: "/digital-marketing-services/orm-services/",
       updatedAt: "2025-03-10T12:12:23+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -1629,7 +1930,7 @@ const seoConfig = {
     abm: {
       title: "Account-Based Marketing Tailored to Your ICP | Growth Natives",
       description: "Target high-value accounts with Account-Based Marketing using custom content, retargeting, and multi-channel nurture strategies",
-      canonical: "/digital-marketing-services/abm/",
+      canonical: "/digital-marketing-services/account-based-marketing-abm/",
       updatedAt: "2025-02-26T10:23:20+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -1770,7 +2071,7 @@ const seoConfig = {
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema:{
+      schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "headline": "Build Faster with Full-Stack Development | Growth Natives",
@@ -1838,7 +2139,7 @@ const seoConfig = {
     mobileAppDevelopment: {
       title: "Mobile App Development for Modern Users | Growth Natives",
       description: "Build user-first mobile apps for iOS and Android that are performance-driven, intuitive, and scalable for growth",
-      canonical: "/mobile-app-development-services/",
+      canonical: "/development-services/mobile-apps-development/",
       updatedAt: "2025-03-10T12:05:19+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -1974,12 +2275,12 @@ const seoConfig = {
     testingQA: {
       title: "QA & Testing Services for Seamless Delivery | Growth Natives",
       description: "Ensure performance and reliability with QA services that include manual and automated testing across platforms and devices",
-      canonical: "/services/testing-&-qa",
+      canonical: "/development-services/qa-and-testing/",
       updatedAt: "2024-10-18T07:52:05+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
       readTime: "Less than a minute",
-      schema: { /* your schema.org content */}
+      schema: { /* your schema.org content */ }
     },
     devops: {
       title: "DevOps Support for Continuous Deployment | Growth Natives",
@@ -2178,7 +2479,7 @@ const seoConfig = {
     servicesUiUx: {
       title: "UI/UX That Translates Vision Into Value | Growth Natives",
       description: "Craft seamless user experiences with UI/UX design that optimizes engagement and drives user satisfaction",
-      canonical: "/ui-ux-design-agency/",
+      canonical: "/ui-ux-design-agency/website-designing-services/",
       updatedAt: "2025-02-27T10:23:14+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2246,7 +2547,7 @@ const seoConfig = {
     mobileApps: {
       title: "Stunning Mobile Interfaces That Perform | Growth Natives",
       description: "Design and develop mobile apps that are fast, engaging, and tailored to your business and user goals",
-      canonical: "/mobile-apps-services/",
+      canonical: "/ui-ux-design-agency/mobile-app-design-services/",
       updatedAt: "2025-02-27T05:37:19+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2304,7 +2605,7 @@ const seoConfig = {
     motionGraphics: {
       title: "Motion Graphics That Capture Attention | Growth Natives",
       description: "Tell your brand story with motion graphics and animations that capture attention and explain complex ideas clearly",
-      canonical: "/motion-graphics-services/",
+      canonical: "/ui-ux-design-agency/motion-graphics-services/",
       updatedAt: "2025-02-27T05:45:09+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2448,7 +2749,7 @@ const seoConfig = {
     marketingSalesCollateralDesign: {
       title: "Branded Collateral That Closes Deals | Growth Natives",
       description: "Design compelling marketing and sales assets including decks, PDFs, and one-pagers that support your team",
-      canonical: "/marketing-sales-collateral-design-services/",
+      canonical: "/ui-ux-design-agency/marketing-sales-collateral-design-services/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2506,7 +2807,7 @@ const seoConfig = {
     jiraProfessionalServices: {
       title: "Jira Services for Seamless Project Management | Growth Natives",
       description: "Optimize Jira for your team with consulting, implementation, and training to improve productivity and tracking",
-      canonical: "/jira-professional-services-services/",
+      canonical: "/jira-professional-services/",
       updatedAt: "2025-04-29T10:51:27+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2574,7 +2875,7 @@ const seoConfig = {
     jiraStrategyImplementation: {
       title: "Strategy-Driven Jira Implementation | Growth Natives",
       description: "Plan and scale Jira systems with strategies tailored to your workflows and enterprise objectives",
-      canonical: "/jira-strategy-implementation-services/",
+      canonical: "/jira-professional-services/jira-strategy-implementation/",
       updatedAt: "2025-02-26T07:32:37+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2632,7 +2933,7 @@ const seoConfig = {
     jiraMigrationConfiguration: {
       title: "Smooth Jira Migrations Without the Risk | Growth Natives",
       description: "Migrate and configure Jira setups with data integrity and improved project visibility",
-      canonical: "/jira-migration-configuration-services/",
+      canonical: "/jira-professional-services/jira-migration/",
       updatedAt: "2025-02-26T07:28:11+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2700,7 +3001,7 @@ const seoConfig = {
     jiraAutomationWorkflow: {
       title: "Workflow Automation Built in Jira | Growth Natives",
       description: "Automate Jira workflows to save time, reduce errors, and increase team efficiency with intelligent rules",
-      canonical: "/jira-automation-workflow-services/",
+      canonical: "/jira-professional-services/jira-automation-workflow/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2770,7 +3071,7 @@ const seoConfig = {
     jiraSupportMaintenance: {
       title: "Continuous Jira Support for Growing Teams | Growth Natives",
       description: "Receive ongoing Jira support and maintenance including issue resolution and system updates",
-      canonical: "/jira-support-maintenance-services/",
+      canonical: "/jira-professional-services/jira-support-maintenance/",
       updatedAt: "2025-02-26T07:46:18+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2838,7 +3139,7 @@ const seoConfig = {
     strategicServices: {
       title: "Marketing Strategy Rooted in Performance | Growth Natives",
       description: "Unlock your next growth phase with strategic services blending data, design, and technology for business acceleration",
-      canonical: "/strategic-services-services/",
+      canonical: "/strategic-services/",
       updatedAt: "2025-04-29T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2908,7 +3209,7 @@ const seoConfig = {
     growthMarketingPod: {
       title: "Launch Faster with Growth Marketing Pods | Growth Natives",
       description: "Scale demand with cross-functional Growth Pods focused on experimentation, performance, and conversion",
-      canonical: "/growth-marketing-pod-services/",
+      canonical: "/strategic-services/growth-marketing-pod/",
       updatedAt: "2025-04-29T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -2979,7 +3280,7 @@ const seoConfig = {
     enterprisePlanning: {
       title: "Enterprise Marketing That Drives Change | Growth Natives",
       description: "Align teams and goals with enterprise planning services that support growth with smart strategies and execution",
-      canonical: "/enterprise-planning-services/",
+      canonical: "/strategic-services/enterprise-planning/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3035,7 +3336,7 @@ const seoConfig = {
     contentMarketingServices: {
       title: "Content Marketing with a Clear ROI | Growth Natives",
       description: "Drive brand growth with high-quality, engaging content tailored to your audience and optimized for every stage of the funnel",
-      canonical: "/digital-marketing-services/content-marketing-services/",
+      canonical: "/content-marketing-services/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3115,7 +3416,7 @@ const seoConfig = {
     websiteCopywriting: {
       title: "Website Copywriting That Converts | Growth Natives",
       description: "Convert browsers into buyers with clear, compelling website copywriting that communicates value and drives action",
-      canonical: "/digital-marketing-services/website-copywriting/",
+      canonical: "/content-marketing-services/website-copywriting/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3183,7 +3484,7 @@ const seoConfig = {
     emailLifecycleCopywriting: {
       title: "Email Copy That Powers the Customer Journey | Growth Natives",
       description: "Build relationships and increase retention with lifecycle-focused email copy that nurtures, re-engages, and converts",
-      canonical: "/email-lifecycle-copywriting-services/",
+      canonical: "/content-marketing-services/email-lifecycle-copywriting/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3261,7 +3562,7 @@ const seoConfig = {
     socialMediaAdCopywriting: {
       title: "Thumb-Stopping Social Ad Copywriting | Growth Natives",
       description: "Create scroll-stopping social ad copy that connects emotionally and drives clicks across platforms",
-      canonical: "/digital-marketing-services/social-media-ad-copywriting/",
+      canonical: "/content-marketing-services/social-media-ad-copywriting/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3331,7 +3632,7 @@ const seoConfig = {
     contentStrategyPlanning: {
       title: "Content Strategy to Fuel Business Growth | Growth Natives",
       description: "Plan smarter content campaigns with a strategic roadmap focused on audience needs, channel alignment, and measurable ROI",
-      canonical: "/digital-marketing-services/content-strategy-planning/",
+      canonical: "/content-marketing-services/content-strategy-planning/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3404,7 +3705,7 @@ const seoConfig = {
     blogLongformContent: {
       title: "Long-Form Blog Content That Ranks | Growth Natives",
       description: "Publish SEO-optimized blog and long-form content that ranks, educates, and builds authority with your audience",
-      canonical: "/digital-marketing-services/longform-content/",
+      canonical: "/content-marketing-services/longform-content/",
       updatedAt: "2025-08-05T10:47:08+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3472,7 +3773,7 @@ const seoConfig = {
     about: {
       title: "Meet the Team Behind Growth Natives | About Us",
       description: "Discover the people and passion behind Growth Natives with a culture built on creativity, performance, and customer success",
-      canonical: "/company/about-services/",
+      canonical: "/about/",
       updatedAt: "2024-11-11T16:57:13+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3482,7 +3783,7 @@ const seoConfig = {
         "@type": "WebPage",
         "headline": "Meet the Team Behind Growth Natives | About Us",
         "description": "Discover the people and passion behind Growth Natives with a culture built on creativity, performance, and customer success",
-        "url": "https://www.growthnatives.com/company/about-services/",
+        "url": "/about/",
         "dateModified": "2024-11-11T16:57:13+00:00",
         "author": {
           "@type": "Person",
@@ -3542,7 +3843,7 @@ const seoConfig = {
     careers: {
       title: "Join Our Team | Careers at Growth Natives",
       description: "Looking for a dynamic work environment? Explore exciting career opportunities at Growth Natives and be a part of our innovative and fast-growing team",
-      canonical: "company/careers-services/",
+      canonical: "/careers/",
       updatedAt: "2024-05-17T11:09:42+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3550,17 +3851,24 @@ const seoConfig = {
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "headline": "Marketing Automation",
+        "headline": "Join Our Team | Careers at Growth Natives",
+        "description": "Looking for a dynamic work environment? Explore exciting career opportunities at Growth Natives and be a part of our innovative and fast-growing team",
+        "url": "https://www.growthnatives.com/careers/",
+        "dateModified": "2024-05-17T11:09:42+00:00",
+        "author": {
+          "@type": "Person",
+          "name": "Taran Nandha"
+        },
         "about": [
           {
             "@type": "Thing",
-            "name": "Marketing",
-            "sameAs": "https://en.wikipedia.org/wiki/Marketing"
+            "name": "Careers",
+            "sameAs": "https://en.wikipedia.org/wiki/Career"
           },
           {
             "@type": "Thing",
-            "name": "Marketing Automation",
-            "sameAs": "https://en.wikipedia.org/wiki/Marketing_automation"
+            "name": "Team",
+            "sameAs": "https://en.wikipedia.org/wiki/Team"
           }
         ],
         "mentions": [
@@ -3576,13 +3884,8 @@ const seoConfig = {
           },
           {
             "@type": "Thing",
-            "name": "Pixel",
-            "sameAs": "https://en.wikipedia.org/wiki/Spy_pixel"
-          },
-          {
-            "@type": "Thing",
-            "name": "Case",
-            "sameAs": "https://en.wikipedia.org/wiki/Case_law"
+            "name": "Leadership",
+            "sameAs": "https://en.wikipedia.org/wiki/Leadership"
           },
           {
             "@type": "Thing",
@@ -3591,13 +3894,8 @@ const seoConfig = {
           },
           {
             "@type": "Thing",
-            "name": "Downloadable",
-            "sameAs": "https://en.wikipedia.org/wiki/Digital_distribution"
-          },
-          {
-            "@type": "Thing",
-            "name": "Leadership",
-            "sameAs": "https://en.wikipedia.org/wiki/Leadership"
+            "name": "Culture",
+            "sameAs": "https://en.wikipedia.org/wiki/Organizational_culture"
           }
         ]
       }
@@ -3605,7 +3903,7 @@ const seoConfig = {
     team: {
       title: "Meet the Experts Behind Growth Natives | Our Team",
       description: "Discover the passionate and skilled team driving success at Growth Natives. Learn more about our experts and their commitment to delivering exceptional results.",
-      canonical: "company/team-services/",
+      canonical: "/meet-the-team/",
       updatedAt: "2024-11-11T16:53:51+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3613,7 +3911,11 @@ const seoConfig = {
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "headline": "Marketing Automation",
+        "name": "Meet the Experts Behind Growth Natives | Our Team",
+        "headline": "Meet the Experts Behind Growth Natives",
+        "description": "Discover the passionate and skilled team driving success at Growth Natives. Learn more about our experts and their commitment to delivering exceptional results.",
+        "url": "https://www.growthnatives.com/meet-the-team/",
+        "dateModified": "2024-11-11T16:53:51+00:00",
         "about": [
           {
             "@type": "Thing",
@@ -3624,7 +3926,7 @@ const seoConfig = {
         "mentions": [
           {
             "@type": "Thing",
-            "name": "analytics",
+            "name": "Analytics",
             "sameAs": "https://en.wikipedia.org/wiki/Analytics"
           },
           {
@@ -3654,7 +3956,7 @@ const seoConfig = {
           },
           {
             "@type": "Thing",
-            "name": "mindset",
+            "name": "Mindset",
             "sameAs": "https://en.wikipedia.org/wiki/Mindset"
           }
         ]
@@ -3663,7 +3965,7 @@ const seoConfig = {
     contact: {
       title: "Contact Us - GrowthNatives",
       description: "Connect with Growth Natives for expert digital solutions including Salesforce services, marketing, analytics, automation, and more. Our team is ready to help transform your business. Reach out today!",
-      canonical: "company/contact-services/",
+      canonical: "/contact-us/",
       updatedAt: "2025-02-14T07:04:50+00:00",
       twitterCard: "summary_large_image",
       twitterAuthor: "Taran Nandha",
@@ -3671,7 +3973,14 @@ const seoConfig = {
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "headline": "Marketing Automation",
+        "headline": "Contact Us - GrowthNatives",
+        "description": "Connect with Growth Natives for expert digital solutions including Salesforce services, marketing, analytics, automation, and more. Our team is ready to help transform your business. Reach out today!",
+        "url": "https://www.growthnatives.com/contact-us/",
+        "dateModified": "2025-02-14T07:04:50+00:00",
+        "author": {
+          "@type": "Person",
+          "name": "Taran Nandha"
+        },
         "about": [
           {
             "@type": "Thing",
@@ -3682,12 +3991,12 @@ const seoConfig = {
         "mentions": [
           {
             "@type": "Thing",
-            "name": "no-code",
+            "name": "No-code",
             "sameAs": "https://en.wikipedia.org/wiki/No-code_development_platform"
           },
           {
             "@type": "Thing",
-            "name": "analytics",
+            "name": "Analytics",
             "sameAs": "https://en.wikipedia.org/wiki/Analytics"
           },
           {

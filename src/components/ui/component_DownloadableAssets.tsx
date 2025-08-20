@@ -198,7 +198,7 @@ const RecentResourcesSection: React.FC = () => {
                             key={index}
                             to={
                                 resource.slug && resource.category
-                                ? `/resources/downloadable-assets/${resource.category.toLowerCase()}/${resource.slug}`
+                                ? `/downloadable-assets/${resource.category.toLowerCase()}/${resource.slug}`
                                 : '/downloadable-assets'
                             }
                             className="block"

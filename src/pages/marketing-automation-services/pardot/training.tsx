@@ -226,7 +226,7 @@ const L3Template = () => {
         heading="Looking for Proven Pardot Training and Certification?"
         subtext="Focus your energy on growth while we train your team in Pardot automation."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

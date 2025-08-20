@@ -16,6 +16,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function SelfServiceBIDataDemocratization() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -176,7 +177,7 @@ const features: FeatureContent[] = [
           heading="Self-Service BI That Puts AI-Powered Insight in Every Team’s Hands "
           subtext="No gatekeeping. No guesswork. Just clear answers—on demand. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/Self-Service%20BI%20&%20Data%20Democratization.webp"
+          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/L-2%20Banner%20Images%20/Self-Service%20BI%20&%20Data%20Democratization.webp"
         />
 
         {/* Statistics Section */}
@@ -222,13 +223,14 @@ const features: FeatureContent[] = [
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-          {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="  More From Our Content Repertoire "
-          body="  Insights, frameworks, and technical cheat codes from our data team.  "
-           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+            {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Let’s turn clicks into insights and insights into revenue.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

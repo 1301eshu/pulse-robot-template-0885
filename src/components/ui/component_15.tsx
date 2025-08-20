@@ -42,9 +42,9 @@ export default function PartnershipSection({
     <section className="pt-16 pb-8 bg-white overflow-hidden">
       {/* Title + underline */}
       <div className="flex flex-col items-center justify-center mb-4">
-        <h2 className="text-sm font-semibold text-[#1fa4fc]">
+        <h4 className="text-sm font-semibold text-[#1fa4fc]">
           Our Partnerships & Growth Stack
-        </h2>
+        </h4>
         <div className="w-10 h-[3px] bg-[#1fa4fc] mx-auto mt-2 rounded-full" />
       </div>
 

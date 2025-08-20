@@ -249,7 +249,7 @@ const L3Template = () => {
         heading="Looking for Proven Pardot Services and Solutions?"
         subtext="Focus your energy on business growth while we expand your Pardot operations & find out if your instance is working to its optimum level."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

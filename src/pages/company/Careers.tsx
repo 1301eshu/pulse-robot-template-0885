@@ -73,7 +73,7 @@ const Careers = () => {
           heading="Let's Build Your Next Growth Chapter"
           subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic—and a whole lot more scalable."
           buttonLabel="Book Your Strategy Call"
-          buttonLink="company/contact"
+          buttonLink="/contact"
         />
         
       </main>

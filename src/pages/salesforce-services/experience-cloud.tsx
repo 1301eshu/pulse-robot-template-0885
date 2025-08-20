@@ -12,6 +12,7 @@ import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui/component_2";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
@@ -257,13 +258,14 @@ export default function ExperienceCloud() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Keep your Experience Cloud IQ sharp with our latest guides, case studies, and smart community hot takes."
-          subTabs={[]}
-          resources={moreResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Keep your Experience Cloud IQ sharp with our latest guides, case studies, and smart community hot takes. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

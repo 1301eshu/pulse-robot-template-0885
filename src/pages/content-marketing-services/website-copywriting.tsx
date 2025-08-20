@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -235,8 +236,7 @@ export default function WebsiteCopywriting() {
           subtext="Built to feed LLMs, ace AI search, and speak human fluently."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Website%20Copywriting.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-website-copy"
+         
         />
         <EditableStatSection
           title="You're in good crowd—with brands turning clicks into conversions through smart copy."
@@ -263,12 +263,14 @@ export default function WebsiteCopywriting() {
           description="Strategy meets structure—sprinkled with just the right amount of AI magic."
         />
         <FaqSection title="FAQs" faqs={faqs} />
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Keep your website words sharp with our latest tips, blog posts, and AI-powered insights."
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="Keep your website words sharp with our latest tips, blog posts, and AI-powered insights."
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Let's Craft Copy That Gets You Found (and Chosen)"
           subtext="Crafted for search engines, fine-tuned for humans, and a few bots."

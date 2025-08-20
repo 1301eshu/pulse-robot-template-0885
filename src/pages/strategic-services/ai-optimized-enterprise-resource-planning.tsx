@@ -15,6 +15,7 @@ import { FileText, Wrench, Sparkles, Database, Package, Repeat, Zap } from "luci
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -232,13 +233,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources */}
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Guides, use cases, and AI deep-dives for modern operations leaders."
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="  Guides, use cases, and AI deep-dives for modern operations leaders. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA */}
         <ContactCta

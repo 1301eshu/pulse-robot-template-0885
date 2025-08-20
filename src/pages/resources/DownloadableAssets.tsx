@@ -19,7 +19,7 @@ const ResourcesIndex = () => {
   const [activeTab, setActiveTab] = useState('articles');
 
   // --- DIY hero featured card content (left copy + right card) ---
-const featured = {
+  const featured = {
     title: "The Ultimate Marketo to HubSpot Migration Checklist",
     subtitle:
       "As businesses grow and evolve, so do their marketing platform needs. While Marketo has long been a trusted solution for robust marketing automation, many businesses consider migrating to HubSpot because of their scaling business needs, intuitive interface, com...",
@@ -27,8 +27,9 @@ const featured = {
     date: "July 7, 2025",
     readTime: "6 min read",
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/downloadable-assets/Generic-Checklist-2.webp",
-    slug: "/resources",
+    slug: "the-ultimate-marketo-to-hubspot-migration-checklist",
     list: "Checklist",
+    category: "marketing-automation",
   };
 
   // --- SAME section data as your Most Recent Resources grid ---
@@ -70,13 +71,17 @@ const featured = {
             <SITE_CTA
               variant="secondary"
               text="Talk to an Expert"
-              href="/company/contact"
+              href="/contact"
               size="md"
             />
           </div>
 
           {/* Right card — exact styling pattern from RecentResourcesSection */}
-          <Link to={featured.slug ?? "#"} className="block">
+          <Link to={
+            featured.slug && featured.category
+              ? `/downloadable-assets/${featured.category.toLowerCase()}/${featured.slug}`
+              : '/downloadable-assets'
+          } className="block">
             <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
               <div className="relative h-56 overflow-hidden">
                 <img
@@ -136,7 +141,7 @@ const featured = {
           heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/company/contact"
+          buttonLink="/contact"
         />
       </main>
 

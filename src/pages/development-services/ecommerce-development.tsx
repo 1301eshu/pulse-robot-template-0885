@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -199,8 +200,7 @@ export default function MarketingAutomation() {
           subtext="From search to checkout, everything optimized & built to convert."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/E%20commerce%20Stratedgy.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-form"
+         
         />
 
         {/* Trust Markers Section */}
@@ -245,13 +245,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Catch up on the hottest eCommerce development trends, blog posts & AI hacks."
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Catch up on the hottest eCommerce development trends, blog posts & AI hacks."
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA Section */}
         <ContactCta

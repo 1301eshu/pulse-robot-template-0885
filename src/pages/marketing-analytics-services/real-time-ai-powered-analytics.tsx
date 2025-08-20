@@ -16,6 +16,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function RealTimeAIPoweredAnalytics() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -172,7 +173,7 @@ const features: FeatureContent[] = [
           heading="Real-Time, AI-Powered Analytics That See the Shift Before You Do "
           subtext="Turn high-volume data into decisions instantly. Embedded AI does the thinking, so you don’t have to."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/Real%20time%20Ai%20Powered%20Analytics.webp"
+          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/L-2%20Banner%20Images%20/Real%20Time%20Ai%20Powered%20Analytics.webp"
         />
 
         {/* Statistics Section */}
@@ -218,13 +219,14 @@ const features: FeatureContent[] = [
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-          {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="  More From Our Content Repertoire  "
-          body=" Sharp reads on smart decisions, automation, and real-time everything.  "
-           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+          {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="  Sharp reads on smart decisions, automation, and real-time everything.   "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

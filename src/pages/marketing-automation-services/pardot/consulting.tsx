@@ -232,7 +232,7 @@ const L3Template = () => {
         heading="Need a Trusted Pardot Consulting Partner?"
         subtext="Focus your energy on business growth while we expand your Account Engagement operations."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

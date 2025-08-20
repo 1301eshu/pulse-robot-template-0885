@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -316,13 +317,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Keep your Salesforce IQ high with tips, takes, and trends worth reading."
-          subTabs={[]} // No tabs for this blog section
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Keep your Salesforce IQ high with tips, takes, and trends worth reading. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

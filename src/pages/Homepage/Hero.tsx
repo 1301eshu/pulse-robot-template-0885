@@ -43,16 +43,19 @@ export default function HeroBanner() {
             <SITE_CTA
               variant="secondary"
               text="Talk to an Expert"
-              href="/company/contact"
+              href="/contact"
               size="md"
             />
-       {/*     <a
-              href="/audit"
-              className="inline-flex items-center text-white/80 hover:text-white transition font-medium"
-            >
-              Quick AI-Readiness Audit?
-              <ChevronRight className="ml-1 w-5 h-5" />  
-            </a>  */}
+          <a
+  href="https://aioverview.growthnatives.com/ai-overview-visibility-checker/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center text-white/80 hover:text-white transition font-medium"
+>
+  Quick AI-Readiness Audit?
+  <ChevronRight className="ml-1 w-5 h-5" />
+</a>
+
           </div>
         </div>
 

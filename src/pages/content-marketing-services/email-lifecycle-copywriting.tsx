@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -178,8 +179,7 @@ return (
         subtext="From onboarding flows to win-back emails, we craft messages that engage and convert."
         bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
         rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/email%20&%20Lifecycle%20Copywriting.webp"
-        buttonText="Audit Me!"
-        buttonLink="/lifecycle-audit"
+       
       />
       <EditableStatSection
         title="You're in good company—with brands that know smart emails build smarter customer journeys."
@@ -210,12 +210,14 @@ return (
         description="Campaigns built on systems, strategy, and a little AI spark."
       />
       <FaqSection title="FAQs" faqs={faqs} />
-      <RecentResourcesSection
-        heading="More From Our Content Repertoire"
-        body="Explore email best practices, blog posts, guides and AI-backed lifecycle wins."
-        subTabs={[]}
-        resources={recentResources}
-      />
+      {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Explore email best practices, blog posts, guides and AI-backed lifecycle wins"
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
       <ContactCta
         heading="Let’s Map the Right Message to the Right Moment"
         subtext="Because great lifecycle copy knows exactly when (and what) to say."

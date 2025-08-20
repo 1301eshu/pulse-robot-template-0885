@@ -91,14 +91,14 @@ const DiGGrowth = () => {
             <SITE_CTA 
               variant="primary" 
               text="Start Free Trial" 
-              href="/company/contact"
+              href="/contact"
               size="lg"
               className="mr-4"
             />
             <SITE_CTA 
               variant="secondary" 
               text="Schedule Demo" 
-              href="/company/contact"
+              href="/contact"
               size="lg"
             />
           </div>

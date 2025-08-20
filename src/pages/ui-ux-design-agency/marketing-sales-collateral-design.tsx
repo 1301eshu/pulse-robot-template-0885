@@ -15,6 +15,7 @@ import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 import { FileText, Package, Sparkles, Zap, BarChart2, Database, ShieldCheck, Heart, Wrench, Repeat } from "lucide-react";
 
 export default function MarketingSalesCollateralDesign() {
@@ -232,13 +233,14 @@ export default function MarketingSalesCollateralDesign() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources */}
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Fresh takes on sales design, campaign assets, and AI-powered creative."
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="  More from Our Content Repertoire   "
+  body="Fresh takes on sales design, campaign assets, and AI-powered creative.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA */}
         <ContactCta

@@ -22,6 +22,7 @@ import {
   Menu,
   X,
   FileText,
+  Bot,
 } from 'lucide-react';
 import Lottie from "lottie-react";
 import GrowthNativesLogo from "@/assets/Growth-Natives-Logo.json";
@@ -92,7 +93,7 @@ export default function Header() {
               <SITE_CTA 
     variant="secondary" 
     text="Contact Us" 
-    href="/company/contact"
+    href="/contact"
     size="sm"
   />
             </div>
@@ -163,7 +164,7 @@ export default function Header() {
                       { name: 'HubSpot', url: '/marketing-automation-services/hubspot/' },
                       { name: 'Marketo', url: '/marketing-automation-services/marketo/' },
                       { name: 'Salesforce Pardot', url: '/marketing-automation-services/pardot/' },
-                      { name: 'Salesforce Marketing Cloud', url: '/salesforce-services/marketing-cloud/' },
+                      { name: 'Salesforce Marketing Cloud', url: '/marketing-automation-services/marketing-cloud/' },
                       { name: 'Eloqua', url: '/marketing-automation-services/eloqua/' }
                     ]},
                     { name: 'Salesforce', url: '/salesforce-services/', subItems: [
@@ -261,15 +262,16 @@ export default function Header() {
                     { name: 'Infographics', url: '/infographics' },
                    // { name: 'E-Books', url: '/resources/ebooks' },
                    // { name: 'ROI Calculator', url: '/resources/roi-calculator' }
+                    { name: 'Ai Visibility Checker', url: 'https://aioverview.growthnatives.com/ai-overview-visibility-checker/' },
                   ]} 
                 />
                 <MobileMenuItem 
                   title="Company" 
                   items={[
-                    { name: 'About Us', url: '/company/about' },
-                    { name: 'Leadership Team', url: '/company/team' },
-                    { name: 'Careers', url: '/company/careers' },
-                    { name: 'Contact', url: '/company/contact' },
+                    { name: 'About Us', url: '/about' },
+                    { name: 'Leadership Team', url: '/meet-the-team/' },
+                    { name: 'Careers', url: '/careers' },
+                    { name: 'Contact', url: '/contact' },
                    // { name: 'Locations', url: '/company/locations' },
                     //{ name: 'Press', url: '/company/press' }
                   ]} 
@@ -278,7 +280,7 @@ export default function Header() {
     <SITE_CTA 
       variant="secondary" 
       text="Contact Us" 
-      href="/company/contact"
+      href="/contact"
       size="sm"
       className="w-full justify-center"
     />
@@ -513,7 +515,7 @@ if (menu === 'labs') {
 
       <div className="flex flex-col items-center justify-center text-center space-y-4">
         <img
-          src="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/header/image_26_ho73sw.webp"
+          src="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/PR%20Post%20-1.webp"
           alt="Innovation Showcase"
           className="w-full max-w-sm h-40 object-cover rounded-xl border border-gray-200"
         />
@@ -576,6 +578,13 @@ if (menu === 'labs') {
             desc="Useful checklists & downloads"
             to="/downloadable-assets"
           />
+          <ResCard
+            icon={<Bot className="w-4 h-4 text-red-600" />}
+            bg="bg-red-100"
+            title=" Ai Visibility Checker"
+            desc="Monitor your brand’s presence in AI Overviews "
+            to="https://aioverview.growthnatives.com/ai-overview-visibility-checker/"
+          />
         </div>
         
         <div className="mt-6 pt-4 border-t border-gray-100">
@@ -603,28 +612,28 @@ if (menu === 'labs') {
             bg="bg-blue-100"
             title="About Us"
             desc="Learn our story and mission"
-            to="/company/about"
+            to="/about"
           />
           <CoCard
             icon={<Users className="w-4 h-4 text-purple-600" />}
             bg="bg-purple-100"
             title="Leadership Team"
             desc="Meet the people behind the scenes"
-            to="/company/team"
+            to="/meet-the-team/"
           />
           <CoCard
             icon={<TrendingUp className="w-4 h-4 text-green-600" />}
             bg="bg-green-100"
             title="Careers"
-            desc="Get in touch"
-            to="/company/careers-services/"
+            desc="Join the dream team"
+            to="/careers/"
           />
           <CoCard
             icon={<ArrowRight className="w-4 h-4 text-orange-600" />}
             bg="bg-orange-100"
             title="Contact"
             desc="Get in touch"
-            to="/company/contact"
+            to="/contact"
           />
         </div>
         
@@ -848,7 +857,7 @@ function ServiceLink({ title }: { title: string }) {
     'HubSpot': '/marketing-automation-services/hubspot/',
     'Marketo': '/marketing-automation-services/marketo/',
     'Salesforce Pardot': '/marketing-automation-services/pardot/',
-    'Salesforce Marketing Cloud': '/salesforce-services/marketing-cloud/',
+    'Salesforce Marketing Cloud': '/marketing-automation-services/marketing-cloud/',
     'Eloqua': '/marketing-automation-services/eloqua/',
     // Salesforce and other mappings (UPDATED)
     'Salesforce': '/salesforce-services/',

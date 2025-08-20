@@ -10,7 +10,6 @@ import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { ChevronLeft, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-
 // You can expand bios per member here:
 const teamMembers = [
   {
@@ -244,9 +243,11 @@ My strength lies in strategizing, directing, and harmonizing team efforts to opt
       </>
     )
    }
-            
+         
+  // ... rest of team members (unchanged)
 ];
 
+// ================== Modal ==================
 function TeamMemberModal({
   open,
   onClose,
@@ -278,12 +279,11 @@ function TeamMemberModal({
       className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* ========== MOBILE: full-screen sheet (not cropping image) ========== */}
+      {/* ========== MOBILE ========== */}
       <div
         className="md:hidden fixed inset-0 bg-white flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* header */}
         <div className="sticky top-0 z-10 flex items-center justify-between px-3 py-3 border-b border-gray-200 bg-white">
           <button
             ref={backBtnRef}
@@ -305,7 +305,6 @@ function TeamMemberModal({
           </button>
         </div>
 
-        {/* content */}
         <div className="overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+20px)]">
           <div className="pt-4">
             <div className="w-full rounded-xl overflow-hidden bg-black/5 mb-4 flex items-center justify-center">
@@ -341,7 +340,7 @@ function TeamMemberModal({
         </div>
       </div>
 
-      {/* ========== DESKTOP: centered dialog (sibling of mobile wrapper) ========== */}
+      {/* ========== DESKTOP ========== */}
       <div
         className="hidden md:flex fixed inset-0 items-center justify-center"
         onClick={(e) => e.stopPropagation()}
@@ -394,14 +393,14 @@ function TeamMemberModal({
   );
 }
 
-
+// ================== Main Team Page ==================
 const Team = () => {
   const ceos = teamMembers.slice(0, 2);
   const remaining = teamMembers.slice(2);
 
   const [selected, setSelected] = useState(null);
 
-   return (
+  return (
     <div className="bg-white text-gray-900">
       <Header />
       <SmartBreadcrumb />
@@ -411,12 +410,16 @@ const Team = () => {
           subtext="At Growth Natives, leadership isn’t a title — it’s a mindset. Fueled by AI, sharp thinking, and just the right amount of disruption, our leaders turn momentum into measurable growth. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/image%20(33).png"
-          noCta // ✅ just add this      
-          />
+          noCta      
+        />
 
+        {/* Gradient applied here */}
         <section className="pt-[100px] pb-[40px] text-center">
           <h2 className="text-4xl font-bold text-black mb-2">
-            Meet the <span className="text-blue-600">Team</span>
+            Meet the{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Team
+            </span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             The people behind the magic — leading with passion, vision, and
@@ -428,75 +431,66 @@ const Team = () => {
           {/* CEOs */}
           <div className="flex justify-center flex-wrap gap-6 mb-12">
             {ceos.map((member, i) => (
-  <button
-    key={i}
-    onClick={() => setSelected(member)}
-    aria-label={`Open details for ${member.name}`}
-    tabIndex={0}
-    className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-blue-400"
-    style={{
-      backgroundImage: `url(${member.image})`,
-      backgroundSize: "cover",
-      
-    }}
-  >
-    {/* Text container moved up and padded */}
-    <div className="absolute bottom-10 left-0 right-0 px-4 pb-1 text-center z-10">
-      <h3 className="text-base font-semibold text-white">
-        {member.name}
-      </h3>
-      <p className="text-xs text-white mt-1">
-        {member.role}
-      </p>
-    </div>
-  </button>
-))}
-
-
+              <button
+                key={i}
+                onClick={() => setSelected(member)}
+                aria-label={`Open details for ${member.name}`}
+                tabIndex={0}
+                className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-blue-400"
+                style={{
+                  backgroundImage: `url(${member.image})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="absolute bottom-10 left-0 right-0 px-4 pb-1 text-center z-10">
+                  <h3 className="text-base font-semibold text-white">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs text-white mt-1">
+                    {member.role}
+                  </p>
+                </div>
+              </button>
+            ))}
           </div>
 
           {/* Everyone else */}
-<div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-  {remaining.map((member, i) => (
-    <button
-      key={i}
-      onClick={() => setSelected(member)}
-      aria-label={`Open details for ${member.name}`}
-      tabIndex={0}
-      className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-blue-400"
-      style={{
-        backgroundImage: `url(${member.image})`,
-        backgroundSize: "cover",
-      }}
-    >
-      {/* Text positioned with better margin inside the image */}
-      <div className="absolute bottom-10 left-0 right-0 px-4 pb-1 text-center z-10">
-        <h3 className="text-base font-semibold text-white">
-          {member.name}
-        </h3>
-        <p className="text-xs text-white mt-1">
-          {member.role}
-        </p>
-      </div>
-    </button>
-  ))}
-</div>
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+            {remaining.map((member, i) => (
+              <button
+                key={i}
+                onClick={() => setSelected(member)}
+                aria-label={`Open details for ${member.name}`}
+                tabIndex={0}
+                className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-blue-400"
+                style={{
+                  backgroundImage: `url(${member.image})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="absolute bottom-10 left-0 right-0 px-4 pb-1 text-center z-10">
+                  <h3 className="text-base font-semibold text-white">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs text-white mt-1">
+                    {member.role}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
 
+          {/* Modal */}
+          <TeamMemberModal open={!!selected} onClose={() => setSelected(null)} member={selected} />
 
-
-        {/* Modal */}
-        <TeamMemberModal open={!!selected} onClose={() => setSelected(null)} member={selected} />
-          
-                  <InstagramSection />
-                  <BentoGallery />
+          <InstagramSection />
+          <BentoGallery />
           <ContactCta 
-          heading="Growth Natives – Let’s Build What Breaks the Mold "
-          subtext="Join us on a journey where bold ideas meet real expertise and success is engineered. ;"
-          buttonLabel="Talk to Us!"
-        />
-          
-
-      </section>
+            heading="Growth Natives – Let’s Build What Breaks the Mold "
+            subtext="Join us on a journey where bold ideas meet real expertise and success is engineered. "
+            buttonLabel="Talk to Us!"
+          />
+        </section>
       </main>
       <Footer />
     </div>

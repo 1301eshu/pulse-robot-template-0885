@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import RecentResourcesSection, { ResourceItem } from '@/components/ui/component_10';
 import { SITE_CTA } from '@/components/SITE_CTAs';
+import { API_BASE_URL } from '../../../apiconfig';
 
 // same steps array as before
 const steps = [
@@ -55,7 +56,7 @@ export default function ProcessSection() {
     async function fetchPosts() {
       try {
         const res = await fetch(
-          `https://growthnatives.com/wp-json/wp/v2/posts?per_page=3&_embed`
+          `${API_BASE_URL}/wp-json/wp/v2/posts?per_page=3&_embed`
         );
         const data = await res.json();
 
@@ -134,9 +135,9 @@ export default function ProcessSection() {
           {/* ── Header ── */}
           <div className="text-center mb-12">
             <div className="flex flex-col items-center justify-center mb-10">
-              <h2 className="text-sm font-semibold text-[#1fa4fc]">
+              <h4 className="text-sm font-semibold text-[#1fa4fc]">
                 AI Readiness Audit
-              </h2>
+              </h4>
               <div className="w-10 h-[3px] bg-[#1fa4fc] mx-auto mt-2 rounded-full" />
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
@@ -152,7 +153,7 @@ export default function ProcessSection() {
               <SITE_CTA
                 variant="secondary"
                 text="Book My Audit "
-                href="/company/contact"
+                href="/contact"
                 size="md"
               />
             </div>

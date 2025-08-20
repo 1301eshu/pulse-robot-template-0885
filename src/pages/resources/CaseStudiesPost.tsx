@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar, Eye, Headphones, } from "lucide-react";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+import { API_BASE_URL } from '../../../apiconfig';
 
 // Case study data
 const casePosts = {
@@ -564,6 +566,96 @@ const CaseStudiesPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug && casePosts[slug];
   const [activeId, setActiveId] = useState("");
+  const [seoData, setSeoData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [headTags, setHeadTags] = useState<JSX.Element[]>([]);
+  const [rankMathAuthor, setRankMathAuthor] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchRankMath = async () => {
+      try {
+        const publicDomain = API_BASE_URL;
+        const path = window.location.pathname;
+        const apiUrl = `${publicDomain}/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
+
+        const response = await fetch(apiUrl);
+        const result = await response.json();
+
+        if (result?.head) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(result.head, "text/html");
+          const elements: JSX.Element[] = [];
+
+          // ✅ Extract Author from twitter:data1
+          const twitterData1 = doc.querySelector('meta[name="twitter:data1"]')?.getAttribute("content");
+          if (twitterData1) {
+            setRankMathAuthor(twitterData1);
+          } else {
+            // ✅ Fallback: Extract from JSON-LD
+            const jsonLdScript = doc.querySelector('script[type="application/ld+json"]');
+            if (jsonLdScript) {
+              try {
+                const jsonLd = JSON.parse(jsonLdScript.textContent || "{}");
+                if (jsonLd["@graph"]) {
+                  const authorNode = jsonLd["@graph"].find((node: any) => node["@type"] === "Person" && node.name);
+                  if (authorNode?.name) {
+                    setRankMathAuthor(authorNode.name);
+                  }
+                }
+              } catch (err) {
+                console.warn("Error parsing JSON-LD:", err);
+              }
+            }
+          }
+
+          doc.head.childNodes.forEach((node) => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              const el = node as HTMLElement;
+              switch (el.tagName.toLowerCase()) {
+                case "title":
+                  elements.push(<title key={elements.length}>{el.textContent}</title>);
+                  break;
+                case "meta":
+                  elements.push(
+                    <meta
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    />
+                  );
+                  break;
+                case "link":
+                  elements.push(
+                    <link
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    />
+                  );
+                  break;
+                case "script":
+                  elements.push(
+                    <script
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    >
+                      {el.textContent}
+                    </script>
+                  );
+                  break;
+                default:
+                  break;
+              }
+            }
+          });
+
+          setHeadTags(elements);
+        }
+      } catch (error) {
+        console.error("Error fetching Rank Math data:", error);
+      }
+    };
+
+    fetchRankMath();
+  }, []);
 
   useEffect(() => {
     const headingElements = Array.from(document.querySelectorAll("h2[id]"));
@@ -590,7 +682,7 @@ const CaseStudiesPost = () => {
     return () => observer.disconnect();
   }, []);
 
-  if (!post) return <Navigate to="/resources/case-studies" replace />;
+  if (!post) return <Navigate to="/case-studies" replace />;
 
   const renderContent = (item: any, index: number) => {
     switch (item.type) {
@@ -626,8 +718,8 @@ const CaseStudiesPost = () => {
 
   return (
     <div className="bg-white">
+      <Helmet>{headTags}</Helmet>
       <Header />
-
       <main className="pt-12 px-4 sm:px-6 pb-12">
         <div className="max-w-[1140px] mx-auto">
           {/* Hero Section: Left & Right Layout */}
@@ -635,7 +727,7 @@ const CaseStudiesPost = () => {
             <div>
               {/* Back Link */}
               <Link
-                to="/resources/case-studies"
+                to="/case-studies"
                 className="text-blue-600 text-sm flex items-center gap-1 mb-6 hover:underline"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -730,11 +822,10 @@ const CaseStudiesPost = () => {
                     <li key={i}>
                       <a
                         href={`#${sectionId}`}
-                       className={`block py-1 transition-colors duration-200 ${
-                          activeId === sectionId
-                             ? 'text-blue-600 font-medium border-l-2 border-blue-600 -ml-[1px] pl-3'
-                             : 'hover:text-blue-600'
-                         }`}
+                        className={`block py-1 transition-colors duration-200 ${activeId === sectionId
+                            ? 'text-blue-600 font-medium border-l-2 border-blue-600 -ml-[1px] pl-3'
+                            : 'hover:text-blue-600'
+                          }`}
                       >
                         {item}
                       </a>
@@ -760,16 +851,6 @@ const CaseStudiesPost = () => {
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Ready to Transform Your Marketing Strategy?</h3>
                 <p className="text-gray-600 mb-4 text-sm">Let our experts help you implement cutting-edge solutions for your business.</p>
                 <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">Get Started Today</Button>
-              </div>
-
-              <div className="mt-12 pt-6 border-t border-gray-200 flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                  <User className="text-blue-600" />
-                </div>
-                <div>
-                  <p className="font-medium text-gray-900">{post.author}</p>
-                  <p className="text-sm text-gray-600">Marketing automation specialist with 5+ years of experience helping brands grow through data-driven strategy.</p>
-                </div>
               </div>
             </div>
           </div>

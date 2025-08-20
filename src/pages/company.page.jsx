@@ -129,7 +129,7 @@ const Company = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Let's discuss how we can help accelerate your business growth
             </p>
-            <Link to="/company/contact">
+            <Link to="/contact">
               <Button size="lg" className="mr-4">
                 Contact Us
               </Button>

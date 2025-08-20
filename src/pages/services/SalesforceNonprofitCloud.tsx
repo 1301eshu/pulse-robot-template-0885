@@ -223,7 +223,7 @@ export default function SalesforceNonprofitCloud() {
           heading="Ready to Amplify Your Nonprofit's Impact?"
           subtext="Let's discuss how Nonprofit Cloud can transform your organization."
           buttonLabel="Get Started"
-          buttonLink="/company/contact"
+          buttonLink="/contact"
         />
       </main>
       <Footer />

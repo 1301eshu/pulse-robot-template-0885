@@ -14,6 +14,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function Pardot() {
   const tabs: TabItem[] = [
@@ -235,12 +236,14 @@ export default function Pardot() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Level up your Pardot skills with our blog posts, guides, and AI tips."
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Level up your Pardot skills with our blog posts, guides, and AI tips."
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         <ContactCta
           heading="Let's Enhance Your Pardot with AI"

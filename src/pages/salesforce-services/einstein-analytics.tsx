@@ -15,6 +15,7 @@ import DynamicSEO from "@/components/DynamicSEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 import {
   Zap,
   BarChart2,
@@ -205,12 +206,14 @@ export default function EinsteinAnalytics() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-         <RecentResourcesSection
-          heading="Let's Make Your Data Predict the Future"
-          body="Einstein AI, customized to answer your most valuable business questions "
-           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="More From Our Content Repertoire Section "
+  body=" Keep your Einstein AI IQ high with our freshest blog posts, guides, and AI hot takes. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         <ContactCta
           heading="Let's Make Your Data Predict the Future"

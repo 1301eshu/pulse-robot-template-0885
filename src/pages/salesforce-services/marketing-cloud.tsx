@@ -13,6 +13,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingCloud() {
   const tabs: TabItem[] = [
@@ -241,12 +242,14 @@ export default function MarketingCloud() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire  "
-          body=" Stay in the know with the latest Salesforce Marketing Cloud blog posts, guides, and AI hacks to keep you sharp.   "
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="More From Our Content Repertoire Section "
+  body="Explore our latest guides, blog posts, and AI takes to sharpen your Salesforce Marketing Cloud game. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         <ContactCta
           heading="Let’s Fire Up Your AI-Powered Salesforce Marketing Cloud Engine"

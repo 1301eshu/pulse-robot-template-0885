@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from "@/components/ui/component_13";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -189,8 +190,7 @@ export default function MarketingAutomation() {
           subtext="Turn your ideas into insight-packed content that ranks and drives reputation."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Content%20Writing/Blog%20&%20Long-Form%20Content%20(2).webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-ghostwriting"
+        
         />
         <EditableStatSection
           title="You’re in good company—brands and leaders who trust us to write their story."
@@ -217,6 +217,15 @@ export default function MarketingAutomation() {
           description="We don’t just write. We deliver results."
         />
         <FaqSection title="FAQs" faqs={faqs} />
+
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="  See what’s new in thought leadership, AI strategy, and content that works."
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Ready to Build Your Thought Leadership?"
           subtext="Let’s map your content to the way people search, buy, and learn."

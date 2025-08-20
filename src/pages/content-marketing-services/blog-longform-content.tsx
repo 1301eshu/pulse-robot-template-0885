@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from "@/components/ui/component_13";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -189,8 +190,7 @@ export default function MarketingAutomation() {
           subtext="Blog ecosystems that show up in search, train LLMs & spark buyer journeys."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Blog%20%26%20Long-Form%20Content.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-blog-content"
+         
         />
         <EditableStatSection
           title="You’re in good company—brands that lead with insight, not just volume."
@@ -217,6 +217,15 @@ export default function MarketingAutomation() {
           description="We don’t just write. We deliver results."
         />
         <FaqSection title="FAQs" faqs={faqs} />
+
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay sharp with content tips, freshest news, blog posts & AI insights, tailored for you. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Ready to Build a Smarter Blog?"
           subtext="Let’s map your content to the way people search, buy, and learn."

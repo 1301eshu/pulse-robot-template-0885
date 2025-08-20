@@ -11,6 +11,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -196,8 +197,7 @@ export default function PaidAds() {
           subtext=" Real-time paid ads magic — more clicks, better leads, bigger returns"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/Paid%20ads.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-ppc"
+          
         />
         <EditableStatSection
           title="Welcome to the hub—where every click is a step toward brand success."
@@ -224,12 +224,16 @@ export default function PaidAds() {
           description="We don’t just run ads. We deliver results."
         />
         <FaqSection title="FAQs" faqs={faqs} />
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Your go-to spot for smart PPC insights, guides, and AI tips."
-          subTabs={[]}
-          resources={recentResources}
-        />
+
+        
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Your go-to spot for smart PPC insights, guides, and AI tips.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Ready to Scale Your Paid Ads?"
           subtext="Let’s map your paid strategy to the way people search, buy, and learn."

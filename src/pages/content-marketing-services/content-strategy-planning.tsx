@@ -11,6 +11,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -175,8 +176,7 @@ export default function MarketingAutomation() {
           subtext="Structured for SERPs, surfaced by GPTs, crafted to rank, resonate, and convert."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Content%20Stratedgy%20&%20planning.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-content-strategy"
+         
         />
 
         {/* Trust Markers */}
@@ -210,6 +210,15 @@ export default function MarketingAutomation() {
           description="We don’t just plan. We deliver results."
         />
         <FaqSection title="FAQs" faqs={faqs} />
+
+         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay sharp with content strategy tips, freshest news, blog posts & AI insights, tailored for you.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Ready to Build a Smarter Content Plan?"
           subtext="Let’s map your content to the way people search, buy, and learn."

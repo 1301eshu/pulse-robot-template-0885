@@ -14,6 +14,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function Eloqua() {
   // Tab Items (Eloqua Zigzag/Services)
@@ -212,12 +213,14 @@ export default function Eloqua() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay sharp on all things Eloqua—tips, tricks, and AI takes served fresh."
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="More From Our Content Repertoire"
+  body=" Seamless strategies, sharp insights, and AI magic under the hood. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         <ContactCta
           heading="Launch AI-Baked Eloqua Like It’s Built for Today"

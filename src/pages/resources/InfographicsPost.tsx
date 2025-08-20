@@ -289,7 +289,11 @@
 // export default BlogPost;
 
 
-
+const decodeHTML = (html: string) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
 import { useParams, Navigate } from 'react-router-dom';
 import { useEffect, useState, useLayoutEffect } from 'react';
 import Header from "@/components/Header";
@@ -300,6 +304,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogInteractionBar from "@/components/BlogInteractionBar";
+import { API_BASE_URL } from '../../../apiconfig';
 
 // Utility to estimate read time
 function calculateReadTime(html: string) {
@@ -363,9 +368,9 @@ const BlogPost = () => {
 useEffect(() => {
   const fetchRankMath = async () => {
     try {
-      const publicDomain = "https://growthnatives.com";
+      const publicDomain = API_BASE_URL;
       const path = window.location.pathname;
-      const apiUrl = `https://growthnatives.com/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
+      const apiUrl = `${publicDomain}/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
 
       const response = await fetch(apiUrl);
       const result = await response.json();
@@ -450,7 +455,7 @@ useEffect(() => {
 
   useEffect(() => {
     if (slug) {
-      fetch(`https://growthnatives.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
+      fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
         .then((res) => res.json())
         .then((data) => {
           if (data.length > 0) {
@@ -533,7 +538,7 @@ useEffect(() => {
               <Badge className="mb-2 text-xs">{postCategory}</Badge>
 
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
-                {post.title.rendered}
+                {decodeHTML(post.title.rendered)}
               </h1>
 
               {/* <p
@@ -558,7 +563,7 @@ useEffect(() => {
               <img src={featuredImage} alt={post.title.rendered} className="rounded-lg w-full border border-gray-200" />
               <BlogInteractionBar
                 content={post.content.rendered}
-                title={post.title.rendered}
+                title={decodeHTML(post.title.rendered)}
                 url={window.location.href}
                 views={1247} // This should come from your database
                 onViewIncrement={() => {

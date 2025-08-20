@@ -203,7 +203,7 @@ const L3Template = () => {
         heading="Ready to Become a Marketo Ninja?"
         subtext="Focus your energy on growth while we train your team in Marketo automation."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

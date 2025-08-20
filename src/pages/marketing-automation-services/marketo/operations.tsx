@@ -252,7 +252,7 @@ const L3Template = () => {
         heading="Fast-Track Your Marketing Endeavors With Top-Notch Marketo Services"
         subtext="Achieve marketing excellence with our outcome-driven Marketo solutions that provide you with everything you need to elevate your efforts."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

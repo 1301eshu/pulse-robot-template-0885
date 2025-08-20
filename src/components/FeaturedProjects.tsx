@@ -108,7 +108,7 @@ export default function ClientShowcaseCard() {
 <SITE_CTA 
   variant="primary" 
   text={current.cta.label} 
-  href="/company/contact"
+  href="/contact"
   size="md"
 /> */}
 

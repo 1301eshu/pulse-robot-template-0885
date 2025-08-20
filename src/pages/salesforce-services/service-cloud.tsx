@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -239,13 +240,14 @@ export default function ServiceCloud() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Read our latest tips, strategies, and AI insights for better customer support"
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading="More From Our Content Repertoire Section "
+  body=" Read our latest tips, strategies, and AI insights for better customer support  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

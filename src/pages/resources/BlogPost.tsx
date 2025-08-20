@@ -300,7 +300,24 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogInteractionBar from "@/components/BlogInteractionBar";
+import authorsRaw from "../../assets/Author.json";
+import { API_BASE_URL } from '../../../apiconfig';
 
+
+type Author = {
+  name: string;
+  bio: string;
+  linkedin?: string;
+  linkedin_url?: string;
+};
+const authors: Author[] = authorsRaw;
+
+
+const decodeHTML = (html: string) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
 // Utility to estimate read time
 function calculateReadTime(html: string) {
   const plainText = html.replace(/<[^>]+>/g, "");
@@ -360,97 +377,97 @@ const BlogPost = () => {
   const [headTags, setHeadTags] = useState<JSX.Element[]>([]);
   const [rankMathAuthor, setRankMathAuthor] = useState<string | null>(null);
 
-useEffect(() => {
-  const fetchRankMath = async () => {
-    try {
-      const publicDomain = "https://growthnatives.com";
-      const path = window.location.pathname;
-      const apiUrl = `https://growthnatives.com/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
+  useEffect(() => {
+    const fetchRankMath = async () => {
+      try {
+        const publicDomain = API_BASE_URL;
+        const path = window.location.pathname;
+        const apiUrl = `${publicDomain}/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
 
-      const response = await fetch(apiUrl);
-      const result = await response.json();
+        const response = await fetch(apiUrl);
+        const result = await response.json();
 
-      if (result?.head) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(result.head, "text/html");
-        const elements: JSX.Element[] = [];
+        if (result?.head) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(result.head, "text/html");
+          const elements: JSX.Element[] = [];
 
-        // ✅ Extract Author from twitter:data1
-        const twitterData1 = doc.querySelector('meta[name="twitter:data1"]')?.getAttribute("content");
-        if (twitterData1) {
-          setRankMathAuthor(twitterData1);
-        } else {
-          // ✅ Fallback: Extract from JSON-LD
-          const jsonLdScript = doc.querySelector('script[type="application/ld+json"]');
-          if (jsonLdScript) {
-            try {
-              const jsonLd = JSON.parse(jsonLdScript.textContent || "{}");
-              if (jsonLd["@graph"]) {
-                const authorNode = jsonLd["@graph"].find((node: any) => node["@type"] === "Person" && node.name);
-                if (authorNode?.name) {
-                  setRankMathAuthor(authorNode.name);
+          // ✅ Extract Author from twitter:data1
+          const twitterData1 = doc.querySelector('meta[name="twitter:data1"]')?.getAttribute("content");
+          if (twitterData1) {
+            setRankMathAuthor(twitterData1);
+          } else {
+            // ✅ Fallback: Extract from JSON-LD
+            const jsonLdScript = doc.querySelector('script[type="application/ld+json"]');
+            if (jsonLdScript) {
+              try {
+                const jsonLd = JSON.parse(jsonLdScript.textContent || "{}");
+                if (jsonLd["@graph"]) {
+                  const authorNode = jsonLd["@graph"].find((node: any) => node["@type"] === "Person" && node.name);
+                  if (authorNode?.name) {
+                    setRankMathAuthor(authorNode.name);
+                  }
                 }
+              } catch (err) {
+                console.warn("Error parsing JSON-LD:", err);
               }
-            } catch (err) {
-              console.warn("Error parsing JSON-LD:", err);
             }
           }
+
+          doc.head.childNodes.forEach((node) => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              const el = node as HTMLElement;
+              switch (el.tagName.toLowerCase()) {
+                case "title":
+                  elements.push(<title key={elements.length}>{el.textContent}</title>);
+                  break;
+                case "meta":
+                  elements.push(
+                    <meta
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    />
+                  );
+                  break;
+                case "link":
+                  elements.push(
+                    <link
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    />
+                  );
+                  break;
+                case "script":
+                  elements.push(
+                    <script
+                      key={elements.length}
+                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                    >
+                      {el.textContent}
+                    </script>
+                  );
+                  break;
+                default:
+                  break;
+              }
+            }
+          });
+
+          setHeadTags(elements);
         }
-
-        doc.head.childNodes.forEach((node) => {
-          if (node.nodeType === Node.ELEMENT_NODE) {
-            const el = node as HTMLElement;
-            switch (el.tagName.toLowerCase()) {
-              case "title":
-                elements.push(<title key={elements.length}>{el.textContent}</title>);
-                break;
-              case "meta":
-                elements.push(
-                  <meta
-                    key={elements.length}
-                    {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                  />
-                );
-                break;
-              case "link":
-                elements.push(
-                  <link
-                    key={elements.length}
-                    {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                  />
-                );
-                break;
-              case "script":
-                elements.push(
-                  <script
-                    key={elements.length}
-                    {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                  >
-                    {el.textContent}
-                  </script>
-                );
-                break;
-              default:
-                break;
-            }
-          }
-        });
-
-        setHeadTags(elements);
+      } catch (error) {
+        console.error("Error fetching Rank Math data:", error);
       }
-    } catch (error) {
-      console.error("Error fetching Rank Math data:", error);
-    }
-  };
+    };
 
-  fetchRankMath();
-}, []);
+    fetchRankMath();
+  }, []);
 
 
 
   useEffect(() => {
     if (slug) {
-      fetch(`https://growthnatives.com/wp-json/wp/v2/posts?slug=${slug}&_embed`)
+      fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
         .then((res) => res.json())
         .then((data) => {
           if (data.length > 0) {
@@ -506,15 +523,22 @@ useEffect(() => {
 
   // const author = post._embedded?.author?.[0]?.name || "Unknown Author";
   const author = rankMathAuthor || post._embedded?.author?.[0]?.name || "Unknown Author";
+  const matchedAuthor = authors.find(a => a.name.toLowerCase() === author.toLowerCase());
+  const displayAuthor = matchedAuthor || { name: author, bio: "", linkedin: null };
 
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/800x400";
-  const dateFormatted = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric", month: "long", day: "numeric"
-  });
   const postCategory = post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog";
   const tags = post._embedded?.["wp:term"]?.[1]?.map((t: any) => t.name) || [];
   const location = useLocation();
   const backLink = location.state?.from || "/blogs"; // default to blogs
+  const dateFormatted = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric", month: "long", day: "numeric"
+  });
+
+  const updatedDateFormatted = new Date(post.modified).toLocaleDateString("en-US", {
+    year: "numeric", month: "long", day: "numeric"
+  });
+
   return (
     <div className="bg-white">
       <Helmet>{headTags}</Helmet>
@@ -533,7 +557,7 @@ useEffect(() => {
               <Badge className="mb-2 text-xs">{postCategory}</Badge>
 
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
-                {post.title.rendered}
+                {decodeHTML(post.title.rendered)}
               </h1>
 
               {/* <p
@@ -546,19 +570,23 @@ useEffect(() => {
                   <User className="w-4 h-4" /> {author}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" /> {dateFormatted}
+                  <Calendar className="w-4 h-4" /> Published on: {dateFormatted}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-4 h-4" /> Updated on: {updatedDateFormatted}
                 </span>
                 <span className="flex items-center gap-1">
                   <Clock className="w-4 h-4" /> {calculateReadTime(post.content.rendered)}
                 </span>
               </div>
+
             </div>
 
             <div>
               <img src={featuredImage} alt={post.title.rendered} className="rounded-lg w-full border border-gray-200" />
               <BlogInteractionBar
                 content={post.content.rendered}
-                title={post.title.rendered}
+                title={decodeHTML(post.title.rendered)}
                 url={window.location.href}
                 views={1247} // This should come from your database
                 onViewIncrement={() => {
@@ -573,6 +601,40 @@ useEffect(() => {
           <div className="grid pb-24 lg:grid-cols-[16rem_1fr] gap-[88px] mb-10">
             {/* TOC */}
             <aside className="hidden lg:block sticky top-24 self-start">
+              {/* Author Info */}
+              <div className="p-4 mb-10 border border-gray-200 rounded-lg bg-white shadow-sm text-sm text-gray-700">
+                <h4 className="text-base font-bold text-gray-900 mb-3">Author</h4>
+                <div className="flex items-center gap-3 mb-2">
+                  {/* Avatar Icon */}
+                  <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <div className="font-semibold text-gray-900 flex items-center gap-1">
+                      {displayAuthor.name}
+                      {displayAuthor.linkedin && (
+                        <a href={displayAuthor.linkedin} target="_blank" rel="noopener noreferrer">
+                          <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                            className="w-4 h-4"
+                            alt="LinkedIn"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bio */}
+                {displayAuthor.bio && (
+                  <p className="text-xs mb-4">{displayAuthor.bio}</p>
+                )}
+              </div>
+
+
               {toc.length > 0 && (
                 <>
                   <h3 className="text-lg font-semibold mb-4 text-gray-800">Table of Contents</h3>
@@ -594,63 +656,6 @@ useEffect(() => {
                   </ul>
                 </>
               )}
-
-              {/* Author Info */}
-              <div className="p-4 border border-gray-200 rounded-lg bg-white shadow-sm text-sm text-gray-700">
-                <h4 className="text-base font-bold text-gray-900 mb-3">Author</h4>
-                <div className="flex items-center gap-3 mb-2">
-                  {/* Avatar Icon */}
-                  <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 text-gray-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                    </svg>
-                  </div>
-
-                  <div>
-                    <div className="font-semibold text-gray-900 flex items-center gap-1">
-                      Sameer Pawar
-                      <a
-                        href="https://linkedin.com/in/sameerpawar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                          className="w-4 h-4"
-                          alt="LinkedIn"
-                        />
-                      </a>
-                    </div>
-                    <div className="text-xs text-gray-500">Director Growth Marketing</div>
-                  </div>
-                </div>
-                <p className="text-xs mb-4">
-                  Sameer, with 20+ years in B2B/B2C, focuses on extracting clear, actionable
-                  insights from big data, driven by a passion for understanding Google's
-                  endless queries.
-                </p>
-                <p className="text-xs">
-                  <strong className="text-gray-900">Article Reviewed By:</strong>{" "}
-                  Arpit Srivastava{" "}
-                  <a
-                    href="https://linkedin.com/in/arpitsrivastava"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                      className="w-4 h-4 inline ml-1"
-                      alt="LinkedIn"
-                    />
-                  </a>
-                </p>
-              </div>
-
             </aside>
 
             {/* Main Content */}
@@ -670,7 +675,15 @@ useEffect(() => {
               <div className="mt-16 p-6 bg-gray-50 rounded-lg border text-center shadow-sm">
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Ready to Transform Your Marketing Strategy?</h3>
                 <p className="text-gray-600 mb-4 text-sm">Let our experts help you implement cutting-edge solutions for your business.</p>
-                <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">Get Started Today</Button>
+                <a
+                  href="/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
+                    Get Started Today
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -684,3 +697,4 @@ useEffect(() => {
 };
 
 export default BlogPost;
+

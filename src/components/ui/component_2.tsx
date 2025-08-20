@@ -83,7 +83,7 @@ export default function EnterpriseCapabilities({
   const currentFeature = features.find((f) => f.id === activeTab?.id);
 
   return (
-    <section className="bg-[#0F1117] text-white py-20 overflow-hidden">
+    <section className="bg-[#0F1117] text-white py-20 overflow-hidden mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {(title || subtitle) && (
           <div className="text-center mb-16">

@@ -97,13 +97,13 @@ const ValueProposition = () => {
           {/* 🧠 Header */}
           <div className="text-center mb-16">
             <div className="flex flex-col items-center justify-center mb-10">
-              <h2 className="text-sm font-semibold text-[#1fa4fc]">
+              <h4 className="text-sm font-semibold text-[#1fa4fc]">
                 Our AI Difference
-              </h2>
+              </h4>
               <div className="w-10 h-[3px] bg-[#1fa4fc] mx-auto mt-2 rounded-full" />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-white-900 font-normal">
               What AI-Native Looks Like
             </h2>
 

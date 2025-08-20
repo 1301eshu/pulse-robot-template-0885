@@ -15,7 +15,7 @@ export default function ContactCta({
   subtext,
   buttonLabel = 'Talk to an Expert',
 }: ContactCtaProps) {
-  const FORCED_HREF = '/company/contact'; // 👈 single link used everywhere
+  const FORCED_HREF = '/contact'; // 👈 single link used everywhere
 
   return (
     <section className="pt-14 pb-20 bg-white">

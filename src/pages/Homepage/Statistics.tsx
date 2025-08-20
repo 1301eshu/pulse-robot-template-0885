@@ -143,16 +143,16 @@ export default function VisualMasterpieceSection() {
           <div className="relative mb-6">
             <div className="flex items-center gap-2">
               <div className="w-1 h-5 bg-[#1fa4fc] rounded-sm" />
-              <h3 className="text-sm font-semibold text-[#1fa4fc]">
+              <h4 className="text-sm font-semibold text-[#1fa4fc]">
                 Why Partner With Growth Natives?
-              </h3>
+              </h4>
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal">
-            We're not another agency.
-            <br className="block md:hidden" />
-            We're your AI-Native growth engine.
+          <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal"> 
+            We're not another agency. 
+            <br className="block md:hidden" /> 
+            We're your AI-Native growth engine. 
           </h2>
           <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-base mb-10 md:mb-[40px]">
             We don't just plug into your operations—we power it. From strategy to

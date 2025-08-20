@@ -28,7 +28,7 @@ export default function CTA() {
             <SITE_CTA 
               variant="primary" 
               text="Get a Complimentary Consultation!" 
-              href="/company/contact"
+              href="/contact"
               size="lg"
             />
           </div>

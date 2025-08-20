@@ -15,6 +15,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -239,13 +240,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Stay ahead with the freshest SEO tips, tools, and AI tricks to keep your rankings sharp."
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay ahead with the freshest SEO tips, tools, and AI tricks to keep your rankings sharp.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

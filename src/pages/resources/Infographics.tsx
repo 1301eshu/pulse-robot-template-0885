@@ -149,7 +149,13 @@ import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_
 import ContactCta from "@/components/ui/component_6";
 import { ExploreSectionSkeleton, RecentBlogsSkeleton, LoadMoreSkeleton } from "@/components/ui/BlogSkeletons";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import { API_BASE_URL } from "../../../apiconfig"; 
 
+const decodeHTML = (html: string) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
 const ResourcesIndex = () => {
   const [exploreMoreItems, setExploreMoreItems] = useState<ExploreItem[]>([]);
   const [recentResources, setRecentResources] = useState<ResourceItem[]>([]);
@@ -165,14 +171,14 @@ const ResourcesIndex = () => {
     }
 
     try {
-      const res = await fetch(`https://growthnatives.com/wp-json/wp/v2/posts?resource_category=7&per_page=${perPage}&page=${page}&_embed`);
+      const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=7&per_page=${perPage}&page=${page}&_embed`);
       const data = await res.json();
 
       const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
       setHasMore(page < totalPages);
 
       const formattedResources: ResourceItem[] = data.map((post: any) => ({
-        title: post.title.rendered,
+        title: decodeHTML(post.title.rendered),
         subtitle: stripHTML(post.excerpt.rendered),
         author: post._embedded?.author?.[0]?.name || "Unknown Author",
         date: new Date(post.date).toLocaleDateString("en-US", {
@@ -194,7 +200,7 @@ const ResourcesIndex = () => {
       if (page === 1) {
         const formattedExploreItems: ExploreItem[] = data.slice(0, 4).map((post: any) => ({
           tag: "Blogs",
-          title: post.title.rendered,
+          title: decodeHTML(post.title.rendered),
           readTime: calculateReadTime(post.content.rendered),
           category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
           thumbnail:
@@ -236,14 +242,23 @@ const ResourcesIndex = () => {
             <ExploreMoreSection heading="Explore more" items={exploreMoreItems} />
 
             <div className="[&>h2]:text-center">
-              <RecentResourcesSection
-                heading="Most Recent Infographics"
-                subTabs={[]} // no subtabs
+             <RecentResourcesSection
+                heading="Explore more"
+                body="No fluff. Just frameworks, findings, and future-forward thinking."
+                // use your fetched data (so disable internal autoData)
+                autoData={false}
+                // SHOW TAGS on this page
+                hideTabs={true}
+                // let the component use our tabs (built from categories)
+                // subTabs={categoryTabs}
+                // feed all resources we’ve fetched so far
                 resources={recentResources}
+                // load more flow
                 onLoadMore={handleLoadMore}
                 hasMore={hasMore}
                 isLoadingMore={isLoadingMore}
                 LoadMoreSkeleton={LoadMoreSkeleton}
+                // IMPORTANT: don’t pass `count` so it won’t trim to 3
               />
             </div>
           </>

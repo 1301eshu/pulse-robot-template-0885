@@ -601,7 +601,7 @@ const DownloadablePost = () => {
     return () => observer.disconnect();
   }, []);
 
-  if (!post) return <Navigate to="/resources/case-studies" replace />;
+  if (!post) return <Navigate to="/downloadable-assets" replace />;
 
   const renderContent = (item: any, index: number) => {
     switch (item.type) {
@@ -637,7 +637,7 @@ const DownloadablePost = () => {
           <div className="max-w-[1140px] mx-auto pt-20 pb-10 px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <Link
-                to="/resources/downloadable-assets"
+                to="/downloadable-assets"
                 className="text-blue-600 text-sm flex items-center gap-1 mb-6 hover:underline"
               >
                 <ArrowLeft className="w-4 h-4" /> Back to Downloadable Assets

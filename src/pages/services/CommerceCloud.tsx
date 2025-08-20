@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 
 import EnterpriseCapabilities, {
   TabItem,
@@ -230,13 +231,14 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Get expert strategies and AI insights to accelerate digital commerce growth"
-          subTabs={[]} // no subtabs in this section
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="Get expert strategies and AI insights to accelerate digital commerce growth "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA Section */}
         <ContactCta

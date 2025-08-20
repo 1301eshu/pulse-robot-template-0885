@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Zap, BarChart2, Database, ShieldCheck } from "lucide-react";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function CPQ() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -189,12 +190,14 @@ export default function CPQ() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-        <RecentResourcesSection
-          heading="More from Our Content Repertoire"
-          body="Keep your CPQ IQ high with our freshest blog posts, guides, and AI hot takes."
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Keep your CPQ IQ high with our freshest blog posts, guides, and AI hot takes.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         <ContactCta
           heading="Ready to Revolutionize Your Sales Process?"

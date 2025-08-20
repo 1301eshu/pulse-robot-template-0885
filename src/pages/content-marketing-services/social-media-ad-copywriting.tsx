@@ -12,6 +12,7 @@ import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
 import EnterpriseCapabilities, { TabItem, FeatureContent } from "@/components/ui/component_2";
+import ExploreMoreBlock from "@/components/exploremore";
 
 // Icons
 import { Zap, BarChart2, Database, ShieldCheck } from "lucide-react";
@@ -192,8 +193,7 @@ export default function SocialMediaAdCopywriting() {
           subtext="From scroll-stops to click-throughs, we craft copy that’s platform-smart & algorithm-savvy."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Social%20Media%20&%20Ad%20Copywriting%20.webp"
-          buttonText="Audit Me!"
-          buttonLink="/lead-gen-social-copywriting"
+        
         />
         <EditableStatSection
           title="You’re in good company—with brands growing reach, clicks, and conversions through smart copy."
@@ -221,12 +221,14 @@ export default function SocialMediaAdCopywriting() {
           description="Our formula? Insight, structure, and a streak of bold."
         />
         <FaqSection title="FAQs" faqs={faqs} />
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay sharp with content tips, freshest news, blog posts & AI insights "
-          subTabs={[]}
-          resources={recentResources}
-        />
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay sharp with content tips, freshest news, blog posts & AI insights"
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
         <ContactCta
           heading="Let’s Write Copy That Wins the Feed"
           subtext="From strategy to posts to paid—our words spark action and build pipeline."

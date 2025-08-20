@@ -152,7 +152,7 @@ const Contact = () => {
               {/* <h1>Contact Us</h1> */}
               <HubSpotForm
                 portalId="7118070"
-                formId="462af1d3-4316-4ea5-a5ad-98eabe95b77b"
+                formId="17bbc6f8-91bd-44fb-a9a8-f4633d52d7e4"
                 region="na1" // Change if needed
               />
             </div>
@@ -189,7 +189,7 @@ const Contact = () => {
         heading="You’re One Conversation Away from Better Execution "
         subtext="We don’t do vague promises. We do focused strategy, fast delivery, and results that show up. "
         buttonLabel="Let's Talk "
-        buttonLink="company/contact"
+        buttonLink="/contact"
       />
 
       <Footer />

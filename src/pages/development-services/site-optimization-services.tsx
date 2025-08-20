@@ -205,7 +205,7 @@ const L3Template = () => {
         heading="Boost Performance, Engagement, & Conversions With the A-Team By Your Side"
         subtext="We leverage cutting-edge strategies and proven techniques to boost performance, ensuring your website works as hard as you do."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />

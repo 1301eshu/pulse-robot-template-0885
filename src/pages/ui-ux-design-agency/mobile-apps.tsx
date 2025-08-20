@@ -14,6 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MobileApps() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -201,13 +202,14 @@ export default function MobileApps() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Design Arsenal"
-          body="Our latest takes on mobile design, AI-led UX, and what keeps users coming back."
-          subTabs={[]}
-          resources={recentResources}
-        />
+      {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body="Our latest takes on mobile design, AI-led UX, and what keeps users coming back.  "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* CTA Section */}
         <ContactCta

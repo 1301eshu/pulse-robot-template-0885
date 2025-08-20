@@ -13,6 +13,7 @@ import HeroSection from "@/components/ui/component_7";
 import LogoScroller from '@/components/ui/component_13';
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import DynamicSEO from "@/components/DynamicSEO";
+import ExploreMoreBlock from "@/components/exploremore";
 import EnterpriseCapabilities, {
   TabItem,
   FeatureContent,
@@ -200,7 +201,7 @@ export default function SalesCloud() {
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="AI-Powered Sales Cloud: Where Smart Selling Happenvbrbrnnns"
+          heading="AI-Powered Sales Cloud: Where Smart Selling Happens"
           subtext="Crush your sales targets with intelligent automation and data insights"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Sales%20cloud.webp"
@@ -222,13 +223,14 @@ export default function SalesCloud() {
           features={features}
         />
 
-       {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="Success Stories That Speak for Themselves "
-          body="A few real-world wins we’ve driven with Salesforce Sales Cloud. "
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section A: component_10 (3 equal cards) --- */}
+<RecentResourcesSection
+  heading="More From Our Content Repertoire"
+  body="Explore our freshest blog posts, playbooks, and AI-powered sales ideas."
+  subTabs={[]}
+  resources={recentResources}
+/>
+
 
         {/* Logo Section */}
         <LogoScroller
@@ -246,13 +248,15 @@ export default function SalesCloud() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Explore our freshest blog posts, playbooks, and AI-powered sales ideas."
-          subTabs={[]}
-          resources={recentResources}
-        />
+       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Explore our freshest blog posts, playbooks, and AI-powered sales ideas. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
+
 
         {/* Call to Action */}
         <ContactCta

@@ -51,9 +51,9 @@ const RevOpsHero: React.FC<RevOpsHeroProps> = ({
               </button>)}
           </div>
 
-          <div className="w-full md:w-72">
+         {/*  <div className="w-full md:w-72">
             <input type="text" placeholder={searchPlaceholder} className="w-full rounded-lg border border-gray-200 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1570EF]" />
-          </div>
+          </div> */}
         </div>
 
         {/* Content + Image */}

@@ -16,6 +16,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function AdvancedDataVisualization() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -26,7 +27,7 @@ export default function AdvancedDataVisualization() {
     id: "marketing",
     label: "Tableau  ",
     icon: Zap,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp", // replace with actual
+    image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/Advance%20Data%20Visualization/Tableau.webp", // replace with actual
     ctaText: "Read More",
      ctaLink: "/marketing-analytics-services/data-visualization/tableau/"
   },
@@ -34,7 +35,7 @@ export default function AdvancedDataVisualization() {
     id: "analytics",
     label: "Power BI  ",
     icon: BarChart2,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Consulting.webp",
+    image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/Advance%20Data%20Visualization/Power%20BI.webp",
  ctaText: "Read More",
    ctaLink: "/marketing-analytics-services/data-visualization/power-bi/"
   },
@@ -42,7 +43,7 @@ export default function AdvancedDataVisualization() {
     id: "integration",
     label: "Looker Studio (formerly Google Data Studio) ",
     icon: Database,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Operations.webp",
+    image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/Advance%20Data%20Visualization/Looker%20Studio%20(formerly%20Google%20Data%20Studio).webp",
     ctaText: "Read More",
     ctaLink: "/marketing-analytics-services/data-visualization/looker-studio/"
   },
@@ -50,7 +51,7 @@ export default function AdvancedDataVisualization() {
     id: "security",
     label: "Datorama (Marketing Intelligence by Salesforce)  ",
     icon: ShieldCheck,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Migration.webp",
+    image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/Advance%20Data%20Visualization/Datorama%20(Marketing%20Intelligence%20by%20Salesforce).webp",
  ctaText: "Read More",
     ctaLink: "/marketing-analytics-services/data-visualization/datorama/"
   },
@@ -58,7 +59,7 @@ export default function AdvancedDataVisualization() {
     id: "development",
     label: "Embedded AI Capabilities  ",
     icon: ShieldCheck,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Implementation.webp",
+    image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/Advance%20Data%20Visualization/Embedded%20Al%20Capabilities.webp",
   //   ctaText: "Get a Demo",
   //  ctaLink: "/l3-template"
   },
@@ -182,7 +183,7 @@ const features: FeatureContent[] = [
          
           subtext="See what your data is really saying with clear, compelling visuals. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/L-2%20Banner%20Images%20/Advanced%20Data%20Visualization.webp"
         />
 
         {/* Statistics Section */}
@@ -227,13 +228,14 @@ const features: FeatureContent[] = [
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-         {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading=" More From Our Content Repertoire"
-          body="  Stay in the know with AI-powered best practices for next-gen dashboards, freshest blog posts and industry news."
-          subTabs={[]}
-          resources={recentResources}
-        />
+          {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+<ExploreMoreBlock
+  heading=" More From Our Content Repertoire "
+  body=" Stay in the know with AI-powered best practices for next-gen dashboards, freshest blog posts and industry news. "
+  perPage={6}
+  firstN={4}
+  contentType="blogs"
+/>
 
         {/* Call to Action */}
         <ContactCta

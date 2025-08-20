@@ -93,15 +93,15 @@ export default function ServicesSection() {
         {/* Heading */}
         <div className="flex flex-col items-center justify-center mb-10">
           <div className="flex items-center gap-2">
-            <h2 className="text-sm font-semibold text-[#1fa4fc]">
+            <h4 className="text-sm font-semibold text-[#1fa4fc]">
               What We Do
-            </h2>
+            </h4>
           </div>
           <div className="w-10 h-[3px] bg-[#1fa4fc] mx-auto mt-2 rounded-full" />
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 fade-in">
+          <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal">
             Full-Stack Firepower. AI-Native Execution for Full-Funnel Growth 
           </h2>
           <p className="text-gray-600 mt-4 text-base md:text-lg fade-in">

@@ -217,7 +217,7 @@ const L3Template = () => {
         heading="ABM's Golden Hour - Let 6Sense Illuminate Your Success!"
         subtext="Unleash precision targeting, personalized experiences, and impactful engagement, turning every campaign into a golden opportunity for triumph."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/company/contact-services/"
+        buttonLink="/contact/"
       />
 
       <Footer />
