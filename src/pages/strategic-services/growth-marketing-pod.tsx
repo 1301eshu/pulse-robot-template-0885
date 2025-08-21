@@ -191,7 +191,7 @@ const features: FeatureContent[] = [
          
           subtext="Plug into a full-stack team where AI sharpens the strategy—and humans make it happen fast."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/strategic%20services%20hero%20banner%20/Growth%20marketing%20pod.webp"
         />
 
         {/* Statistics Section */}

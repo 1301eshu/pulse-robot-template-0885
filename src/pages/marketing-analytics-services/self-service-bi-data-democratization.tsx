@@ -51,7 +51,7 @@ export default function SelfServiceBIDataDemocratization() {
     id: "development",
     label: "Training & Enablement at Scale    ",
     icon: ShieldCheck,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Self-Service%20BI%20%20Data%20Democratization%20/Training%20&%20Enablement%20at%20Scale%20%20%20%20.webp",
+    image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/self%20service/Training%20&%20Enablement%20at%20Scale%20%20%20%20.webp",
   },
 ];
 

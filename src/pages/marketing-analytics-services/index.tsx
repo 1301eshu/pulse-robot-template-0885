@@ -65,7 +65,7 @@ export default function MarketingAutomation() {
       id: "dashboard",
       label: "Real-Time & AI-Powered Analytics ",
       icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Slider%20L1/real%20time%20&%20AI%20Powered%20Analytics%20.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Analytics%20l1/real%20time%20%20AI%20Powered%20Analytics%20.webp",
       ctaText: "",
       ctaLink: ""
     },

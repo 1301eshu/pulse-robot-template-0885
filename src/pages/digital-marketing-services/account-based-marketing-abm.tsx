@@ -217,7 +217,7 @@ export default function MarketingAutomation() {
           heading="AI-Enhanced ABM That Reach the Right Accounts at the Right Time"
           subtext="Smarter signals, sharper plays—goodbye cold calls, hello hot accounts."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/ABM.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20hero%20banners/ABM.webp"
          
         />
 

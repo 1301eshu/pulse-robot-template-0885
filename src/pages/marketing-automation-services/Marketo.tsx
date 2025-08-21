@@ -50,7 +50,7 @@ export default function Marketo() {
       id: "integration",
       label: "Marketo Custom Integrations",
       icon: Database,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Marketo/Marketo%20Custom%20Integrations.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketo%20L2/Marketo%20Custom%20Integrations.webp",
       ctaText: "Read More",
       ctaLink: "/marketing-automation-services/marketo/integration"
     },

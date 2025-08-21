@@ -113,10 +113,24 @@ export default function Testimonials({
     if (!el) return;
 
     let frame: number;
+    let cachedScrollWidth = 0;
+    let cachedClientWidth = 0;
+    let lastCacheTime = 0;
+    const CACHE_DURATION = 1000; // Cache dimensions for 1 second
+    
     const scroll = () => {
       if (!isPaused && el) {
+        const now = Date.now();
+        
+        // Only read layout properties occasionally to avoid forced reflows
+        if (now - lastCacheTime > CACHE_DURATION) {
+          cachedScrollWidth = el.scrollWidth;
+          cachedClientWidth = el.clientWidth;
+          lastCacheTime = now;
+        }
+        
         el.scrollLeft += 1;
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
+        if (cachedScrollWidth > 0 && cachedClientWidth > 0 && el.scrollLeft + cachedClientWidth >= cachedScrollWidth - 1) {
           el.scrollLeft = 0;
         }
       }

@@ -188,7 +188,7 @@ const features: FeatureContent[] = [
         
           subtext="Smart workflows, zero chaos. Because you’ve got better things to do than babysit campaigns. "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Marketing%20Automation_Banner.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketing%20automation%20l1/Marketing%20Automation.webp"
         />
 
         {/* Statistics Section */}

@@ -45,7 +45,7 @@ export default function EinsteinAnalytics() {
       id: "enablement",
       label: "Einstein Feature Enablement",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Einstein/Einstein%20feature%20enablement.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/einstein%20l2/Einstein%20feature%20enablement.webp",
     },
     {
       id: "optimization",

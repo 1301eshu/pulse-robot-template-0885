@@ -48,26 +48,30 @@ export default function PartnershipSection({
         <div className="w-10 h-[3px] bg-[#1fa4fc] mx-auto mt-2 rounded-full" />
       </div>
 
-      {/* Logos */}
+      {/* Logos - Optimized DOM structure */}
       <div className="section-wrapper">
         <div className="relative overflow-hidden group">
-          <div className="flex gap-x-4 sm:gap-x-6 whitespace-nowrap w-max animate-marquee group-hover:[animation-play-state:paused]">
+          <div 
+            className="flex gap-x-4 sm:gap-x-6 whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]"
+            style={{ width: `${(itemWidthPx + 24) * logos.length * 2}px` }}
+          >
             {[...logos, ...logos].map((logo, index) => (
-              <div
+              <img
                 key={index}
-                className="shrink-0 flex items-center justify-center h-20 sm:h-24 px-6 rounded-xl transition-transform duration-300 hover:-translate-y-[2px]"
-                style={{ width: `${itemWidthPx}px` }}       // ← fixed 300px cell
+                src={logo}
+                alt={getAlt(logo, index)}
+                loading="lazy"
+                decoding="async"
+                width="92"
+                height="56"
+                className="shrink-0 object-contain opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 hover:-translate-y-[2px]"
+                style={{ 
+                  width: `${itemWidthPx}px`,
+                  height: `80px`,
+                  padding: '12px',
+                }}
                 aria-label={getAlt(logo, index)}
-              >
-                <img
-                  src={logo}
-                  alt={getAlt(logo, index)}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-auto object-contain max-w-[90%] opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition"
-                  style={{ maxHeight: `${imageMaxHeightPx}px` }} // ← consistent logo height
-                />
-              </div>
+              />
             ))}
           </div>
         </div>

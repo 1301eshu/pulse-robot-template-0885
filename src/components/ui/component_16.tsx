@@ -28,10 +28,8 @@ export default function InstagramSection() {
         </div>
 
         {/* Content */}
-        {/* CHANGED: items-start -> items-center */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
           {/* Left copy */}
-          {/* CHANGED: added justify-center h-full */}
           <div className="flex flex-col items-start justify-center h-full gap-4">
             <p className="text-xl sm:text-2xl font-bold">
               Follow Us on <span className="italic">Instagram</span>
@@ -56,7 +54,7 @@ export default function InstagramSection() {
           </div>
 
           {/* Right: clickable image grid */}
-          <div className="grid grid-cols-2 gap-4 max-w-xl lg:ml-auto w-full">
+          <div className="grid grid-cols-2 gap-4 max-w-xl w-full lg:ml-0 justify-self-start">
             {images.map((src, i) => (
               <a
                 key={i}

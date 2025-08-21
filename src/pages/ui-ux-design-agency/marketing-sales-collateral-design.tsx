@@ -205,7 +205,7 @@ export default function MarketingSalesCollateralDesign() {
         {/* What We Do */}
         <EnterpriseCapabilities
           title="What We Do with Marketing & Sales Collateral Design"
-          subtitle="From pitch decks to social ads, we craft on-brand, on-target collateralamplified by AI and strategy."
+          subtitle="From pitch decks to social ads, we craft on-brand, on-target collateral amplified by AI and strategy."
           tabs={tabs}
           features={features}
         />
@@ -213,7 +213,7 @@ export default function MarketingSalesCollateralDesign() {
         {/* Case Study / Recent Resources (reusing component) */}
         <RecentResourcesSection
           heading="See What High-Impact Collateral Looks Like"
-          body="A few wins weve helped unlock with strategic, performance-driven asset design."
+          body="A few wins we've helped unlock with strategic, performance-driven asset design."
           subTabs={[]}
           resources={recentResources}
         />

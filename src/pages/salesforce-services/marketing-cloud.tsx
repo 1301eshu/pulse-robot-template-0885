@@ -39,7 +39,7 @@ export default function MarketingCloud() {
       id: "migrations",
       label: "Integrations & Optimization  ",
       icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Migration.webp",
+       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Implementation.webp",
     },
     
   ];

@@ -40,7 +40,7 @@ export default function PaidAds() {
       id: "google",
       label: "Google Ads",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/Google%20Ads.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20/Google%20Ads.webp",
       ctaText: "",
       ctaLink: ""
     },

@@ -211,6 +211,7 @@ const ResourcesIndex = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
+  const [isLoadingExplore, setIsLoadingExplore] = useState(false);
 
   // show 9 per page as requested
   const perPage = 9;
@@ -280,7 +281,7 @@ const ResourcesIndex = () => {
         }));
         setExploreMoreItems(formattedExploreItems);
       }
-      
+
       if (reset) setIsLoading(false);
     } catch (err) {
       console.error("Failed to fetch posts", err);
@@ -288,6 +289,7 @@ const ResourcesIndex = () => {
       if (reset) setIsLoading(false);
     } finally {
       setIsLoadingMore(false);
+      setIsLoadingExplore(false); // <-- stop skeleton when category loaded
     }
   };
 
@@ -312,7 +314,8 @@ const ResourcesIndex = () => {
     setPage(1);
     setRecentResources([]);
     setHasMore(true);
-    
+    setIsLoadingExplore(true); // <-- show skeleton
+
     const categoryId = categorySlug === "all" ? undefined : categories.find(cat => cat.slug === categorySlug)?.id;
     await fetchPosts(1, categoryId, true);
   };
@@ -355,7 +358,7 @@ const ResourcesIndex = () => {
                     <h2 className="text-2xl font-bold text-gray-900">Explore more</h2>
                     <p className="text-gray-600 mt-2">No fluff. Just frameworks, findings, and future-forward thinking.</p>
                   </div>
-                  
+
                   {/* Category Dropdown - moved to right */}
                   <DropdownMenu modal={false}>
                     <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
@@ -364,8 +367,8 @@ const ResourcesIndex = () => {
                       </span>
                       <ChevronDown className="w-4 h-4 text-gray-500" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent 
-                      className="w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto" 
+                    <DropdownMenuContent
+                      className="w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto"
                       align="end"
                       sideOffset={4}
                       avoidCollisions={true}
@@ -373,9 +376,8 @@ const ResourcesIndex = () => {
                     >
                       <DropdownMenuItem
                         onClick={() => handleCategoryChange("all")}
-                        className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
-                          activeCategory === "all" ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
-                        }`}
+                        className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === "all" ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
+                          }`}
                       >
                         All
                       </DropdownMenuItem>
@@ -383,9 +385,8 @@ const ResourcesIndex = () => {
                         <DropdownMenuItem
                           key={category.id}
                           onClick={() => handleCategoryChange(category.slug)}
-                          className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
-                            activeCategory === category.slug ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
-                          }`}
+                          className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === category.slug ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
+                            }`}
                         >
                           {category.name}
                         </DropdownMenuItem>
@@ -395,96 +396,90 @@ const ResourcesIndex = () => {
                 </div>
 
                 {/* Loading State */}
-                {isLoadingMore && page === 1 ? (
-                  <RecentBlogsSkeleton />
+                {isLoadingExplore ? (
+                  <LoadMoreSkeleton />
+                ) : recentResources.length === 0 ? (
+                  <div className="text-center py-16">
+                    <div className="text-gray-400 text-6xl mb-4">📝</div>
+                    <h3 className="text-xl font-medium text-gray-900 mb-2">No posts found</h3>
+                    <p className="text-gray-600">
+                      {activeCategory === "all"
+                        ? "No blog posts are available at the moment."
+                        : `No posts found for "${getCurrentCategoryName()}" category.`}
+                    </p>
+                  </div>
                 ) : (
                   <>
-                    {/* No Posts Found */}
-                    {recentResources.length === 0 && !isLoadingMore ? (
-                      <div className="text-center py-16">
-                        <div className="text-gray-400 text-6xl mb-4">📝</div>
-                        <h3 className="text-xl font-medium text-gray-900 mb-2">No posts found</h3>
-                        <p className="text-gray-600">
-                          {activeCategory === "all" 
-                            ? "No blog posts are available at the moment." 
-                            : `No posts found for "${getCurrentCategoryName()}" category.`
+                    {/* Resource Cards Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {recentResources.map((resource, index) => (
+                        <Link
+                          key={index}
+                          to={
+                            resource.slug
+                              ? `/blogs/${(resource.category || "general")
+                                .replace(/\s*\([^)]*\)/g, "")
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")
+                              }/${resource.slug}`
+                              : "#"
                           }
-                        </p>
+                          className="block"
+                        >
+                          <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
+                            {/* Image + Hover Overlay */}
+                            <div className="relative h-48 overflow-hidden">
+                              <img
+                                src={resource.image}
+                                alt={resource.title}
+                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <span className="text-white font-semibold text-sm flex items-center gap-1">
+                                  Read more <span className="text-lg">›</span>
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Card Text Content */}
+                            <CardContent className="bg-white p-6">
+                              <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
+                                <span className="flex items-center gap-1">
+                                  <Calendar className="w-4 h-4" /> {resource.date}
+                                </span>
+                              </div>
+
+                              <h3 className="font-bold text-gray-900 mb-8 group-hover:text-blue-600 transition-colors line-clamp-2 text-[1.05rem] leading-tight">
+                                {resource.title}
+                              </h3>
+
+                              <div className="text-sm text-gray-500 flex items-center gap-1 mt-2">
+                                <Clock className="w-4 h-4" />
+                                {resource.readTime}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </Link>
+                      ))}
+                    </div>
+
+                    {/* Loading More Skeleton */}
+                    {isLoadingMore && <LoadMoreSkeleton />}
+
+                    {/* Load More Button */}
+                    {hasMore && !isLoadingMore && recentResources.length > 0 && (
+                      <div className="flex justify-center mt-10">
+                        <button
+                          onClick={handleLoadMore}
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-md font-medium transition-colors"
+                        >
+                          Load More Posts
+                        </button>
                       </div>
-                    ) : (
-                      <>
-                        {/* Resource Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                          {recentResources.map((resource, index) => (
-                            <Link
-                              key={index}
-                              to={
-                                resource.slug
-                                  ? `/blogs/${
-                                      (resource.category || "general")
-                                        .replace(/\s*\([^)]*\)/g, "")
-                                        .toLowerCase()
-                                        .replace(/\s+/g, "-")
-                                    }/${resource.slug}`
-                                  : "#"
-                              }
-                              className="block"
-                            >
-                              <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
-                                {/* Image + Hover Overlay */}
-                                <div className="relative h-48 overflow-hidden">
-                                  <img
-                                    src={resource.image}
-                                    alt={resource.title}
-                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                  />
-                                  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                                    <span className="text-white font-semibold text-sm flex items-center gap-1">
-                                      Read more <span className="text-lg">›</span>
-                                    </span>
-                                  </div>
-                                </div>
-
-                                {/* Card Text Content */}
-                                <CardContent className="bg-white p-6">
-                                  <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
-                                    <span className="flex items-center gap-1">
-                                      <Calendar className="w-4 h-4" /> {resource.date}
-                                    </span>
-                                  </div>
-
-                                  <h3 className="font-bold text-gray-900 mb-8 group-hover:text-blue-600 transition-colors line-clamp-2 text-[1.05rem] leading-tight">
-                                    {resource.title}
-                                  </h3>
-
-                                  <div className="text-sm text-gray-500 flex items-center gap-1 mt-2">
-                                    <Clock className="w-4 h-4" />
-                                    {resource.readTime}
-                                  </div>
-                                </CardContent>
-                              </Card>
-                            </Link>
-                          ))}
-                        </div>
-
-                        {/* Loading More Skeleton */}
-                        {isLoadingMore && LoadMoreSkeleton && <LoadMoreSkeleton />}
-
-                        {/* Load More Button */}
-                        {hasMore && !isLoadingMore && recentResources.length > 0 && (
-                          <div className="flex justify-center mt-10">
-                            <button
-                              onClick={handleLoadMore}
-                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-md font-medium transition-colors"
-                            >
-                              Load More Posts
-                            </button>
-                          </div>
-                        )}
-                      </>
                     )}
                   </>
                 )}
+
               </div>
             </section>
           </>

@@ -255,7 +255,7 @@ export default function WebsiteCopywriting() {
           resources={recentResources}
         />
         <LogoScroller
-          heading="Brands That Let Our Copy Do the Talkin"
+          heading="Brands That Let Our Copy Do the Talking"
           subtext="Whether lean or loaded—we help teams convert faster."
         />
         <Testimonials

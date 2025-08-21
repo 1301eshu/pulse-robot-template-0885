@@ -189,7 +189,7 @@ export default function MarketingAutomation() {
           heading="Enterprise Resource Planning That Learns, Adapts, and Scales—Powered by AI"
           subtext="Align your systems, teams, and decisions with ERP that doesn’t just record history—but helps you shape it."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/strategic%20services%20hero%20banner%20/ABM.webp"
         />
 
         {/* Statistics / Trust Markers */}

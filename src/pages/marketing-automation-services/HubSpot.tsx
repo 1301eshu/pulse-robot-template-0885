@@ -219,7 +219,7 @@ export default function HubSpot() {
         />
 
         {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+        <FaqSection title="FAQs" faqs={faqs} />
 
       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
         <ExploreMoreBlock

@@ -192,7 +192,7 @@ const features: FeatureContent[] = [
          
           subtext=" From GTM to org-wide transformation, we help you design and deploy plans that don’t gather dust.  "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/strategic%20services%20hero%20banner%20/Enterprise%20planning.webp"
         />
 
         {/* Statistics Section */}

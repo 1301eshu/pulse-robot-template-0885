@@ -37,14 +37,30 @@ export default function Testimonials() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Infinite scroll
+  // Infinite scroll with cached dimensions
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
     let frame: number;
+    let cachedScrollWidth = 0;
+    let cachedClientWidth = 0;
+    let lastCacheTime = 0;
+    const CACHE_DURATION = 1000; // Cache dimensions for 1 second
+    
     const step = () => {
-      const el = containerRef.current;
       if (el && !isPaused) {
+        const now = Date.now();
+        
+        // Only read layout properties occasionally to avoid forced reflows
+        if (now - lastCacheTime > CACHE_DURATION) {
+          cachedScrollWidth = el.scrollWidth;
+          cachedClientWidth = el.clientWidth;
+          lastCacheTime = now;
+        }
+        
         el.scrollLeft += 1;
-        if (el.scrollLeft >= el.scrollWidth / 2) {
+        if (cachedScrollWidth > 0 && el.scrollLeft >= cachedScrollWidth / 2) {
           el.scrollLeft = 0;
         }
       }

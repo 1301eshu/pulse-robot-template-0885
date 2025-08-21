@@ -181,7 +181,7 @@ export default function MarketingAutomation() {
           heading="AI-Powered Mobile Apps Built for Growth and Engagement"
           subtext="Apps that think fast, move smart, and serve your users instantly."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/Mobile%20App%20Development%20Servivces.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Development%20Service%20L2%20Banner/Mobile%20App%20Development%20Servivces.webp"
         />
 
         {/* Statistics Section */}

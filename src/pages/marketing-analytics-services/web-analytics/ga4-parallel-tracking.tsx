@@ -202,7 +202,7 @@ No more sampling and no more data gaps, only complete and reliable analytics rep
 
       {/* Testimonials */}
       <Testimonials
-        title="Our customers"
+        title="Our Customers"
         description="At Growth Natives, we have built strong partnerships with valued customers whose expertise enhances and complements our own capabilities."
       />{/* :contentReference[oaicite:9]{index=9} */}
 

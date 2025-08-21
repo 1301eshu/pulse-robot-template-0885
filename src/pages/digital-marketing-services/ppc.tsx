@@ -188,7 +188,7 @@ const features: FeatureContent[] = [
          
           subtext="Drive qualified traffic, convert with precision and grow across Google, Meta & more."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Digital%20Marketing/L2%20Banners/PPC.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20hero%20banners/ppc.webp"
         />
 
         {/* Statistics Section */}

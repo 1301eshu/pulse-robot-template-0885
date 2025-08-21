@@ -72,25 +72,29 @@ export default function LogoScroller({
         )}
       </div>
 
-      {/* Logo Marquee */}
+      {/* Logo Marquee - Optimized DOM structure */}
       <div className="relative overflow-hidden group">
-        <div className="logo-marquee flex gap-x-4 sm:gap-x-6 whitespace-nowrap w-max animate-marquee group-hover:[animation-play-state:paused]">
+        <div 
+          className="flex gap-x-4 sm:gap-x-6 whitespace-nowrap animate-marquee group-hover:[animation-play-state:paused]"
+          style={{ width: `${(itemWidthPx + 24) * finalLogos.length * 2}px` }}
+        >
           {[...finalLogos, ...finalLogos].map((logo, index) => (
-            <div
+            <img
               key={index}
-              className="shrink-0 flex items-center justify-center h-20 sm:h-24 px-6 rounded-xl transition-transform duration-300 hover:-translate-y-[2px]"
-              style={{ width: `${itemWidthPx}px` }}   // ← fixed 300px cell
+              src={logo}
+              alt={getAlt(logo, index)}
+              loading="lazy"
+              decoding="async"
+              width="56"
+              height="56"
+              className="shrink-0 object-contain opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 hover:-translate-y-[2px]"
+              style={{ 
+                width: `${itemWidthPx}px`,
+                height: `${imageMaxHeightPx}px`,
+                padding: '12px',
+              }}
               aria-label={getAlt(logo, index)}
-            >
-              <img
-                src={logo}
-                alt={getAlt(logo, index)}
-                loading="lazy"
-                decoding="async"
-                className="w-auto object-contain max-w-[90%] opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition"
-                style={{ maxHeight: `${imageMaxHeightPx}px` }}  // ← consistent height
-              />
-            </div>
+            />
           ))}
         </div>
       </div>

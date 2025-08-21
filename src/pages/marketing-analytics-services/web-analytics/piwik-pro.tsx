@@ -207,7 +207,7 @@ const L3Template = () => {
       <AwardsSection />
 
       {/* FAQs */}
-      <FaqSection title="Frequently Asked Questions - Piwink PRO Essentials" faqs={faqs} />
+      <FaqSection title="Frequently Asked Questions - Piwik PRO Essentials" faqs={faqs} />
 
       {/* Recent Blogs - keep from old code */}
       <div className="[&>h2]:text-center">

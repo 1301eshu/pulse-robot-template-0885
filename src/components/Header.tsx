@@ -68,20 +68,18 @@ export default function Header() {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-6">
                 {['services', 'labs', 'resources', 'company'].map((menu) => (
-                  <div
+                  <button
                     key={menu}
-                    className="relative"
+                    className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-3 font-medium capitalize text-sm"
                     onMouseEnter={() => openMenu(menu)}
                   >
-                    <button className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-3 font-medium capitalize text-sm">
-                      {menu === 'services'
-                        ? 'Our Services'
-                        : menu === 'labs'
-                          ? 'AI Labs'
-                          : menu.charAt(0).toUpperCase() + menu.slice(1)}
-                      <ChevronDown className="ml-1 w-3 h-3" />
-                    </button>
-                  </div>
+                    {menu === 'services'
+                      ? 'Our Services'
+                      : menu === 'labs'
+                        ? 'AI Labs'
+                        : menu.charAt(0).toUpperCase() + menu.slice(1)}
+                    <ChevronDown className="ml-1 w-3 h-3" />
+                  </button>
                 ))}
               </div>
 
@@ -265,7 +263,7 @@ export default function Header() {
                       { name: 'Infographics', url: '/infographics' },
                    { name: 'E-Books', url: '/ebooks' },
                    { name: 'Growth Stream', url: '/growth-stream' },
-                   { name: 'Press Releases', url: '/press-releases' },
+                   { name: 'Press Releases', url: '/press-release' },
                    // { name: 'ROI Calculator', url: '/resources/roi-calculator' }
                       { name: 'AI Visibility Checker', url: 'https://aioverview.growthnatives.com/ai-overview-visibility-checker/' },
                     ]}
@@ -295,20 +293,11 @@ export default function Header() {
             )}
 
             {/* Mega Menu positioned outside the container but anchored to it */}
-            <MegaMenu open={!!activeMenu && !isMobileMenuOpen}>
-              <div className={activeMenu === 'services' ? '' : 'hidden'}>
-                {renderMenuContent('services', activeCategory, setActiveCategory)}
-              </div>
-              <div className={activeMenu === 'labs' ? '' : 'hidden'}>
-                {renderMenuContent('labs', activeCategory, setActiveCategory)}
-              </div>
-              <div className={activeMenu === 'resources' ? '' : 'hidden'}>
-                {renderMenuContent('resources', activeCategory, setActiveCategory)}
-              </div>
-              <div className={activeMenu === 'company' ? '' : 'hidden'}>
-                {renderMenuContent('company', activeCategory, setActiveCategory)}
-              </div>
-            </MegaMenu>
+            {!isMobileMenuOpen && (
+              <MegaMenu open={!!activeMenu}>
+                {activeMenu && renderMenuContent(activeMenu, activeCategory, setActiveCategory)}
+              </MegaMenu>
+            )}
           </nav>
         </div>
       </header>

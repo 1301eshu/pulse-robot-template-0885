@@ -83,6 +83,7 @@ const OurJourney = () => {
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-500 opacity-30 z-0" />
 
+          {/* ↑ Increased vertical spacing & column gap on md+ */}
           <div className="space-y-20 md:space-y-28 relative z-10">
             {milestones.map((milestone, index) => {
               const isVisible = visibleMilestones.includes(index);
@@ -94,7 +95,7 @@ const OurJourney = () => {
                 <div
                   key={index}
                   data-index={index}
-                  className="milestone grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 relative"
+                  className="milestone grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16 relative"
                 >
                   {/* Mobile icon */}
                   <div className="block md:hidden text-center mb-4">
@@ -105,8 +106,8 @@ const OurJourney = () => {
                     </div>
                   </div>
 
-                  {/* Text */}
-                  <div className={animationClass}>
+                  {/* Text – added padding on the center side */}
+                  <div className={`${animationClass} md:pr-20 lg:pr-24`}>
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 rounded-full border border-blue-500/30 mb-4">
                       <Calendar className="w-4 h-4 text-blue-400" />
                       <span className="text-blue-400 text-sm font-medium">{milestone.year}</span>
@@ -115,8 +116,8 @@ const OurJourney = () => {
                     <p className="text-gray-300 text-lg leading-relaxed">{milestone.description}</p>
                   </div>
 
-                  {/* Image */}
-                  <div className={animationClass}>
+                  {/* Image – added padding on the center side */}
+                  <div className={`${animationClass} md:pl-20 lg:pl-24`}>
                     <img
                       src={milestone.image}
                       alt={milestone.title}

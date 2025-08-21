@@ -21,16 +21,16 @@ const BentoGallery = () => {
             Life at Growth Natives
           </h2>
           <SITE_CTA 
-              variant="secondary" 
-              text="Careers"
-              href="/careers/"
-              size="md" 
-            />
-          
+            variant="secondary" 
+            text="Careers"
+            href="/careers/"
+            size="md" 
+          />
         </div>
 
         {/* Final Grid */}
-        <div className="grid grid-cols-4 grid-rows-3 gap-4 h-[600px]">
+        {/* Mobile: 2 cols with auto row height; Desktop: original 4x3 and fixed height */}
+        <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-auto md:h-[600px]">
           {/* Large Left Image */}
           <div className="col-span-2 row-span-2 bg-muted rounded-lg overflow-hidden">
             <img src={images[0]} alt="Team collaboration" className="w-full h-full object-cover" />

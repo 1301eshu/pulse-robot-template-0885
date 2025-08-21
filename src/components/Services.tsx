@@ -48,12 +48,20 @@ export default function ServicesSection() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const progressRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  // Reset and start progress animation without forced reflow
+  const resetProgress = () => {
     if (progressRef.current) {
       progressRef.current.style.animation = 'none';
-      void progressRef.current.offsetWidth;
-      progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+      requestAnimationFrame(() => {
+        if (progressRef.current) {
+          progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+        }
+      });
     }
+  };
+
+  useEffect(() => {
+    resetProgress();
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {

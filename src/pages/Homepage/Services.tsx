@@ -11,12 +11,12 @@ const services = [
   {
     title: 'AI-Led RevOps ',
     description: 'Predictive revenue engines, automated handoffs, and frictionless GTM motion.',
-    image: 'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Services/Frame_2121453493_vza2js.webp'
+    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/second.webp'
   },
   {
     title: 'Wholesome Salesforce Solutions ',
     description: 'From Sales Cloud to Service + Marketing—intelligence built in. ',
-    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/thirdimage.webp'
+    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/third.webp'
   },
   {
     title: 'Performance Marketing That Scales ',
@@ -50,8 +50,11 @@ export default function ServicesSection() {
   useEffect(() => {
     if (progressRef.current) {
       progressRef.current.style.animation = 'none';
-      void progressRef.current.offsetWidth;
-      progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+      requestAnimationFrame(() => {
+        if (progressRef.current) {
+          progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+        }
+      });
     }
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);

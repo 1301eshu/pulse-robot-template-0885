@@ -1,10 +1,49 @@
 'use client';
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
-import Lottie from "lottie-react";
-import shoppingBagAnimation from "@/assets/shopping-bag-animation.json";
 import { SITE_CTA } from "@/components/SITE_CTAs";
+
+// Lazy load Lottie and animation
+const Lottie = React.lazy(() => import("lottie-react"));
+
+const AnimationComponent = () => {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    import("@/assets/shopping-bag-animation.json")
+      .then((data) => {
+        setAnimationData(data.default || data);
+      })
+      .catch((error) => {
+        console.warn("Failed to load animation:", error);
+        setAnimationData(null);
+      });
+  }, []);
+
+  if (!animationData) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="animate-pulse bg-white/20 rounded-lg w-full h-full min-h-[200px]" />
+      </div>
+    );
+  }
+
+  return (
+    <React.Suspense fallback={
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="animate-pulse bg-white/20 rounded-lg w-full h-full min-h-[200px]" />
+      </div>
+    }>
+      <Lottie 
+        animationData={animationData} 
+        className="w-full h-full" 
+        loop 
+        autoplay 
+      />
+    </React.Suspense>
+  );
+};
 
 export default function HeroBanner() {
   return (
@@ -15,6 +54,11 @@ export default function HeroBanner() {
           src="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Hero%20Section/8302_gqqgrs.webp"
           alt="Background"
           className="w-full h-full object-cover object-center"
+          fetchPriority="high"
+          loading="eager"
+          width="1920"
+          height="1080"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
@@ -59,10 +103,10 @@ export default function HeroBanner() {
           </div>
         </div>
 
-        {/* Lottie (JSON video) */}
+        {/* Animation */}
         <div className="flex-1 flex justify-center md:justify-end max-w-[400px] mt-10 md:mt-0 mb-12 md:mb-0">
           {/*            └── ⬅️ extra space after video on mobile only */}
-          <Lottie animationData={shoppingBagAnimation} className="w-full h-full" loop autoplay />
+          <AnimationComponent />
         </div>
       </div>
     </div>

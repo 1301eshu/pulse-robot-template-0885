@@ -48,7 +48,7 @@ export default function ServiceCloud() {
       id: "customization",
       label: "Customization",
       icon: Heart,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Service%20Cloud/Customization.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/service%20cloud/Customization.webp",
     //  ctaText: "Get a Demo",
     //  ctaLink: "/l3-template"
     },
@@ -204,7 +204,7 @@ export default function ServiceCloud() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="AI service support, scaled to build loyalty, not just close tickets."
+          title="AI-driven support, scaled to build loyalty, not just close tickets."
           stats={stats}
         />
 

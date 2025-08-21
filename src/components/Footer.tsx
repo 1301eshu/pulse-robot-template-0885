@@ -65,6 +65,9 @@ export default function Footer() {
             <li><a href="/case-studies/" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">Case Studies</a></li>
             <li><a href="/infographics/" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">Infographics</a></li>
             <li><a href="/downloadable-assets/" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">Downloadable Assets</a></li>
+             <li><a href="/ebooks" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">E-Books</a></li>
+             <li><a href="/growth-stream" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">Growth Stream</a></li>
+             <li><a href="/press-release" className="text-white no-underline hover:text-blue-600 hover:underline hover:decoration-blue-600 transition">Press Releases</a></li>
           </ul>
         </div>
 

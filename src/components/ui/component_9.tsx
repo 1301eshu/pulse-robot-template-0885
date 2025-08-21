@@ -110,24 +110,30 @@ const ExploreMoreSection: React.FC<ExploreMoreSectionProps> = ({
                       }/${item.slug}`
                     : "#"
                 }
-                className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer group"
+                className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer group"
               >
+                <div className="flex flex-col">
+                  {/* Tag and Read Time in one row */}
+                  <div className="flex items-center justify-between">
+                    <Badge className="text-xs bg-blue-100 text-blue-700 font-medium">
+                      {item.tag}
+                    </Badge>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {item.readTime}
+                      <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
 
-                <div className="flex-1">
-                  <Badge className="mb-2 text-xs bg-blue-100 text-blue-700 font-medium">
-                    {item.tag}
-                  </Badge>
-                  <h4 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                  {/* Title and Category below */}
+                  <h4 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors mt-2">
                     {item.title}
                   </h4>
                   <p className="text-sm text-gray-500">{item.category}</p>
                 </div>
-                <div className="flex items-center text-sm text-gray-500 ml-4">
-                  <Clock className="w-4 h-4 mr-1" />
-                  {item.readTime}
-                  <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
               </Link>
+
+
             ))}
           </div>
         </div>

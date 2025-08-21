@@ -166,7 +166,7 @@ export default function DevOpsAutomation() {
          // highlight="Fast. Smart. Scalable."
           subtext="Drive quick releases with automated, frictionless workflows"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Hero-Section-Banner_L2/Dev%20OPs.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Development%20Service%20L2%20Banner/Dev%20OPs.webp"
         />
 
         <EditableStatSection

@@ -33,6 +33,10 @@ const AwardCard = ({
       src={logo}
       alt={`Client Logo ${index + 1}`}
       className="max-h-12 object-contain"
+      width="80" 
+      height="48"
+      loading="lazy"
+      decoding="async"
     />
   </div>
 );

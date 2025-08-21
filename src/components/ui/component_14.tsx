@@ -40,8 +40,11 @@ export default function SmartStackSection() {
   useEffect(() => {
     if (progressRef.current) {
       progressRef.current.style.animation = 'none';
-      void progressRef.current.offsetWidth;
-      progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+      requestAnimationFrame(() => {
+        if (progressRef.current) {
+          progressRef.current.style.animation = `progressBar ${DURATION}ms linear forwards`;
+        }
+      });
     }
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
