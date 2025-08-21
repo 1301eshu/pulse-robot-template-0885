@@ -201,11 +201,11 @@ import TermsConditions from "./pages/resources/terms-conditions";
 import PrivacyPolicy from "./pages/resources/privacy-policy";
 import CookiePolicy from "./pages/resources/cookie-policy";
 import EditorialPolicy from "./pages/resources/editorial-policy";
-import EBooks from "./pages/resources/EBooks";
+import EBooks from "./pages/resources/ebooks";
 import EBooksPost from "./pages/resources/EbooksPost";
 
-import GrowthStream from "./pages/resources/Growth-Stream.tsx";
-import PressRelease from "./pages/resources/Press-Release.tsx";
+import GrowthStream from "./pages/resources/growth-stream.tsx";
+import PressRelease from "./pages/resources/press-release.tsx";
 import DownloablePost from "./pages/resources/DownloadablePost";
 
 
