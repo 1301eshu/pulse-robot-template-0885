@@ -137,6 +137,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Al-First%20Approach.webp",
       title: "AI-First Approach ",
       description: "We build strategy around LLMs, not the other way around ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -144,6 +145,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Tailored,%20Data-Driven%20Plans.webp",
       title: "Tailored, Data-Driven Plans ",
       description: "No cookie-cutter frameworks—just custom roadmaps that work ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -151,6 +153,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Platform-Agnostic%20Execution.webp",
       title: "Platform-Agnostic Execution",
       description: "Salesforce, HubSpot, GPT—whatever moves the needle fastest ",
+      nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
     },
@@ -159,6 +162,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Global%20+%20Agile%20Expertise.webp",
       title: "Global + Agile Expertise ",
       description: "Strategy and delivery from AI-fluent, cross-timezone teams ",
+      nocta: true,
        ctaUrl: "#",
     },
     

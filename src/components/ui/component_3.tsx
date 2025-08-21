@@ -7,7 +7,7 @@ type FeatureCardProps = {
   description: string;
   useBoxedImage?: boolean;
   ctaUrl?: string;
-  nocta?: boolean; // optional flag to hide CTA
+  nocta?: boolean | 'true' | 'false';
 };
 
 export default function FeatureCard({
@@ -19,8 +19,22 @@ export default function FeatureCard({
   ctaUrl,
   nocta = false,
 }: FeatureCardProps) {
+  const hideCta =
+    nocta === true || nocta === 'true' || !ctaUrl || ctaUrl.trim() === '';
+
+  const Wrapper = hideCta ? 'div' : 'a';
+
   return (
-    <div className="h-full group flex flex-col justify-between bg-gray-50 hover:bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-gray-900 hover:text-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer min-h-[280px]">
+    <Wrapper
+      {...(!hideCta ? { href: ctaUrl } : {})}
+      className={`h-full group flex flex-col justify-between bg-gray-50 rounded-2xl p-6 
+      transition-all duration-300 min-h-[280px]
+      ${
+        hideCta
+          ? 'cursor-default'
+          : 'hover:bg-gradient-to-br from-[#051946] to-[#0A3E5E] text-gray-900 hover:text-white hover:-translate-y-2 cursor-pointer'
+      }`}
+    >
       <div className="flex flex-col flex-grow justify-between">
         <div>
           <div
@@ -47,24 +61,18 @@ export default function FeatureCard({
           <p className="text-sm leading-relaxed">{description}</p>
         </div>
 
-        {!nocta && (
+        {/* Show inline CTA only if not hiding */}
+        {!hideCta && (
           <div className="mt-4">
-            {ctaUrl ? (
-              <a
-                href={ctaUrl}
-                className="inline-flex items-center font-semibold text-black group-hover:text-white transition-all duration-300"
-              >
-                Learn More
-                <span className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            ) : (
-              <div className="h-[24px]" />
-            )}
+            <span className="inline-flex items-center font-semibold text-black group-hover:text-white transition-all duration-300">
+              Learn More
+              <span className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </span>
           </div>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 }

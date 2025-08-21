@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import SITE_CTA from "@/components/SITE_CTAs";
-import HeroSection from "@/components/ui/component_7";
+import HeroStacked from "@/components/aboutbanner";
 import CoreValues, { ValueType } from "@/components/ui/component_11";
 import ContactCta from "@/components/ui/component_6";
 import InstagramSection from "@/components/ui/component_16";
@@ -78,14 +78,13 @@ export const aboutPageValues: ValueType[] = [
 const AboutHeroSection = () => {
   return (
     <section className="relative">
-      <HeroSection
-        heading="We're Growth Natives. Part Technologists, Part Creatives. 100% AI-Powered."
-        subtext="We're a next-gen Marketing & Customer Engagement Agency, merging cutting-edge AI technology with creative spark to build digital experiences that actually work. From automation to analytics, we design, develop, and deliver tools that elevate brands and delight customers. "
-        bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-        rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/image%20(33).png"
-     
-       noCta // ✅ just add this 
-         />
+      <HeroStacked
+  heading="We're Growth Natives. Part Technologists, Part Creatives."
+        highlight="100% AI-Powered."
+  subtext="We're a next-gen Marketing & Customer Engagement Agency, merging cutting-edge AI technology with creative spark to build digital experiences that actually work. From automation to analytics, we design, develop, and deliver tools that elevate brands and delight customers."
+  imageSrc="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Hero.webp"
+hideCta   // ✅ hides the CTA
+        />
       <div className="h-16 w-full bg-white" />
     </section>
   );

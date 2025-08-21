@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const stats = [
   {
@@ -99,26 +98,21 @@ export default function VisualMasterpieceSection() {
   const [inView, setInView] = useState(false);
   const [fixedHeight, setFixedHeight] = useState<string>();
 
-  // Measure true content height on mount, on inView, and on resize
   useEffect(() => {
     const measure = () => {
       if (!sectionRef.current) return;
-      // scrollHeight is the un-transformed height
       const h = sectionRef.current.scrollHeight;
       setFixedHeight(`${h}px`);
     };
 
-    // next paint → all children rendered
     requestAnimationFrame(measure);
 
-    // if inView just flipped, re-measure (in case count-up or transforms affect anything)
     if (inView) requestAnimationFrame(measure);
 
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
   }, [inView]);
 
-  // IntersectionObserver to toggle inView
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => setInView(e.isIntersecting),
@@ -133,11 +127,10 @@ export default function VisualMasterpieceSection() {
   return (
     <section
       ref={sectionRef}
-      // lock the measured height
       style={fixedHeight ? { height: fixedHeight } : undefined}
-      className="bg-white py-20 px-6 md:px-10 overflow-hidden"
+      className="bg-white py-20 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-12">
+      <div className="section-wrapper flex flex-col md:flex-row items-start justify-between gap-12">
         {/* LEFT CONTENT */}
         <div className="flex-1 text-left">
           <div className="relative mb-6">
@@ -150,9 +143,7 @@ export default function VisualMasterpieceSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl leading-snug mb-4 text-gray-900 font-normal"> 
-            We're not another agency. 
-            <br className="block md:hidden" /> 
-            We're your AI-Native growth engine. 
+            We're not another agency. We're your AI-Native growth engine. 
           </h2>
           <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-base mb-10 md:mb-[40px]">
             We don't just plug into your operations—we power it. From strategy to

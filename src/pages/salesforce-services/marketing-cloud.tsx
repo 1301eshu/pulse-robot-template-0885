@@ -19,151 +19,93 @@ export default function MarketingCloud() {
   const tabs: TabItem[] = [
     {
       id: "audit",
-      label: "Salesforce Marketing Cloud Audit ",
+      label: "Strategy & Planning  ",
       icon: Zap,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Audit%20.webp",
     },
     {
       id: "consulting",
-      label: "Salesforce Marketing Cloud Consulting",
+      label: "Implementation & Setup ",
       icon: BarChart2,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Consulting.webp",
     },
     {
       id: "implementation",
-      label: "Salesforce Marketing Cloud Implementation",
+      label: "Analytics & Reporting ",
       icon: Database,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Implementation.webp",
     },
     {
       id: "migrations",
-      label: "Salesforce Marketing Cloud Migrations ",
+      label: "Integrations & Optimization  ",
       icon: ShieldCheck,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Migration.webp",
     },
-    {
-      id: "agentforce",
-      label: "Salesforce Marketing Cloud Agentforce Implementation",
-      icon: Clock,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Agent%20Force.webp",
-    },
-    {
-      id: "operations",
-      label: "Salesforce Marketing Cloud Operations Services  ",
-      icon: Heart,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Operations.webp",
-    },
-    {
-      id: "managed",
-      label: "Salesforce Marketing Cloud Managed Services ",
-      icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Managed%20Services.webp",
-    },
-    {
-      id: "training",
-      label: "Salesforce Marketing Cloud Training ",
-      icon: BarChart2,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Training.webp",
-    }
+    
   ];
 
   const features: FeatureContent[] = [
     {
       id: "audit",
-      description: "If your SFMC feels messy, slow, or stuck, we dig deep, clean it up, and get it firing on all cylinders.",
+      description: "We build journey blueprints that adapt to customer behavior and scale with smart segmentation. ",
       items: [
-        { icon: Zap, title: "Spot bloated logic, dead-end journeys & sluggish automation" },
-        { icon: Zap, title: "Clean your data, tighten segments, cut what’s wasted" },
-        { icon: Zap, title: "Get a clear, action-ready plan to boost performance fast" }
+        { icon: Zap, title: "Data-first journey mapping " },
+        { icon: Zap, title: "Segments that grow with you " },
+        { icon: Zap, title: "Smart triggers when engagement peaks " }
       ]
     },
     {
       id: "consulting",
-      description: "We use AI to map journeys, spot trends, and plan campaigns that hit.",
+      description: "Set up for success—clean builds, fast rollouts, and journeys that perform from day one. ",
       items: [
-        { icon: BarChart2, title: "Turn data into your blueprint for success" },
-        { icon: BarChart2, title: "Make Einstein AI do the brainwork" },
-        { icon: BarChart2, title: "We plan, prep, and press 'go live'" }
+        { icon: BarChart2, title: "Define scope, goals, and data requirements upfront " },
+        { icon: BarChart2, title: "Configure Salesforce Marketing Cloud tools: Email Studio, Journey Builder, Mobile Studio " },
+        { icon: BarChart2, title: "Test, QA, and deploy an environment optimized for personalization and scale " }
       ]
     },
     {
       id: "implementation",
-      description: "Expect seamless automation, personalization, and AI-powered marketing.",
+      description: "See everything. Predict anything. Optimize fast with real-time insights from Einstein AI. ",
       items: [
-        { icon: Database, title: "Build tailored journeys, segments, and automations" },
-        { icon: Database, title: "Configure CRM and data for unified customer views" },
-        { icon: Database, title: "Enable Einstein AI for predictive engagement" }
+        { icon: Database, title: "Real-time dashboards, zero guesswork " },
+        { icon: Database, title: "Performance views across every channel " },
+        { icon: Database, title: "Predictive insights with Einstein A" }
       ]
     },
     {
       id: "migrations",
-      description: "Making a switch? Keep it clean and seamless. With AI tools, platforms sync fast, data transfers smooth, and everything lands where it should.",
+      description: "We turn siloed systems into synchronized journeys—powered by real-time data and automation. ",
       items: [
-        { icon: ShieldCheck, title: "Switching to Salesforce Marketing Cloud? We’ll make it painless" },
-        { icon: ShieldCheck, title: "Rebuild automations, segments, and templates for peak performance" },
-        { icon: ShieldCheck, title: "Data on the move, quick & smooth" }
+        { icon: ShieldCheck, title: "Connect Sales & Service Cloud to Salesforce Marketing Cloud for unified journeys " },
+        { icon: ShieldCheck, title: "Trigger campaigns with real-time behavioral and CRM data " },
+        { icon: ShieldCheck, title: "Optimize every touchpoint with performance insights and AI-led recommendations " }
       ]
     },
-    {
-      id: "agentforce",
-      description: "Agentforce + Salesforce Marketing Cloud = serious firepower. AI gets baked into your workflows, strategy levels up, and campaigns hit harder.",
-      items: [
-        { icon: Clock, title: "Set up Agentforce in a snap with Salesforce Marketing Cloud" },
-        { icon: Clock, title: "Infuse your marketing strategy with Agentforce AI mojo" },
-        { icon: Clock, title: "Ignite your campaigns & sales outreach with Agentforce sparks" }
-      ]
-    },
-    {
-      id: "operations",
-      description: "We handle the behind-the-scenes so your marketing shows up sharp and synced.",
-      items: [
-        { icon: Heart, title: "Campaigns out the door fast, no fumbles." },
-        { icon: Heart, title: "Journeys, lists, and automations kept clean and conversion-ready " },
-        { icon: Heart, title: "Performance tuned with smart ops and Einstein AI where it counts " }
-      ]
-    },
-    {
-      id: "managed",
-      description: "We keep your SFMC running smooth and smart, managing day-to-day execution while leveling up with built-in AI. ",
-      items: [
-        { icon: ShieldCheck, title: "Campaigns executed, tested, and tracked, without daily grind" },
-        { icon: ShieldCheck, title: "Journeys, segments, and automations managed for max efficiency" },
-        { icon: ShieldCheck, title: "Deploy Einstein AI to fine-tune send times & content performance" }
-      ]
-    },
-    {
-      id: "training",
-      description: "We turn your team into SFMC pros, confident, capable, and AI-ready.",
-      items: [
-        { icon: BarChart2, title: "Hands-on training according to your tools, use cases, and team roles" },
-        { icon: BarChart2, title: "Learn to build journeys, manage data, and launch campaigns easily" },
-        { icon: BarChart2, title: "Master Einstein AI features to drive better campaign performance" }
-      ]
-    }
+    
   ];
 
   const stats = [
-    { label: "Happy Salesforce customers", value: "100+" },
-    { label: "Combined years of know-how", value: "200+" },
-    { label: "Salesforce-certified experts on deck", value: "60+" },
+    { label: "Salesforce Marketing Cloud implementations across industries", value: "100+" },
+    { label: "Years of combined Salesforce experience", value: "200+" },
+    { label: "Salesforce certified experts on deck ", value: "60+" },
   ];
 
   const faqs = [
     {
-      q: "What’s the first step to get started with you?",
-      a: "We’d kick off with a discovery session to define your goals and craft a custom strategy."
+      q: "How quickly can we start seeing results with Salesforce Marketing Cloud?  ",
+      a: "With our implementation approach, most clients see measurable improvements within the first 60 days."
     },
     {
-      q: "Do we need to overhaul our systems?",
-      a: "No. We’ll integrate Salesfroce Marketing Cloud with your existing systems, building on what’s already working."
+      q: " Do we need to rebuild all our marketing assets?  ",
+      a: "Nope! We integrate with your existing creative and enhance it with AI-powered targeting and delivery."
     },
     {
-      q: "How much can Salesforce Marketing Cloud be customized?",
-      a: "Plenty! We’ll tailor workflows, campaigns, and AI insights to fit your needs."
+      q: "Can Salesforce Marketing Cloud connect with my CRM or data tools?",
+      a: "Absolutely. We ensure full integration with Salesforce and third-party tools to build a unified view of every customer."
     },
     {
-      q: "Do we need a full-time team to manage Salesforce Marketing Cloud?",
-      a: "Not at all. We’ll take care of the heavy lifting so your team can focus on standout campaigns."
+      q: "How does Einstein AI improve marketing? ",
+      a: "It predicts customer behavior, personalizes content, optimizes send times, and continuously improves."
     }
   ];
 
@@ -204,40 +146,40 @@ export default function MarketingCloud() {
       <SmartBreadcrumb />
       <main className="">
         <HeroSection
-          heading="Salesforce Marketing Cloud: Smarter Journeys with a Little AI Magic"
-          subtext="Campaigns that catch the vibe, read the room, and just know what works."
+          heading=" AI-Powered Salesforce Marketing Cloud That Knows Your Customers Better Than Their Mothers"
+          subtext=" Turn data into personalized journeys that convert, engage, and grow your business"
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/Salesforce%20Marketing%20Cloud.webp"
        
         />
 
         <EditableStatSection
-          title="You’re in good company—with brands scaling smarter on Salesforce Marketing Cloud"
+          title="You're in good company—with brands scaling faster with Salesforce Marketing Cloud. "
           stats={stats}
         />
 
         <EnterpriseCapabilities
-          title="Mix AI Brains into Your Salesforce Marketing Cloud Flow"
-          subtitle="We fine-tune your Salesforce Marketing Cloud setup to drive better results, minus the hiccups."
+          title="AI-Powered Salesforce Marketing Cloud That Meets Your Marketing Ambition"
+          subtitle="We tune, train, and tailor your Salesforce Marketing Cloud with AI smarts for real results."
           tabs={tabs}
           features={features}
         />
 
         <RecentResourcesSection
-          heading="Get a Front-Row View of AI-Sprinkled Salesforce Marketing Cloud  "
-          body="Brands we’ve helped win big with Salesforce Marketing Cloud  "
+          heading="Salesforce Marketing Cloud in Action: Real Results, Real ROI "
+          body=" How we helped brands unlock growth with data-driven marketing and AI. "
           subTabs={[]}
           resources={recentResources}
         />
 
         <LogoScroller
-          heading="Brands Backing Our Salesforce Marketing Cloud Brilliance"
-          subtext="Small crews or big leagues, we plug in a strategy that scales."
+          heading="Powering AI-Driven Marketing for Companies Who Mean Business "
+          subtext="From ambitious startups to enterprise giants, we make Salesforce Marketing Cloud work smarter "
         />
 
         <Testimonials
-          title="Real Stories, Real Salesforce Marketing Cloud Growth"
-          description="Less drag, more drive. AI-smart, strategy-tight."
+          title="Real Marketers, Real AI Transformations"
+          description=" Hear how our team helped these marketing leaders deliver campaigns that work"
         />
 
         <FaqSection title="FAQs" faqs={faqs} />
@@ -245,15 +187,15 @@ export default function MarketingCloud() {
        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
 <ExploreMoreBlock
   heading="More From Our Content Repertoire Section "
-  body="Explore our latest guides, blog posts, and AI takes to sharpen your Salesforce Marketing Cloud game. "
+  body=" Explore our latest guides, blog posts, and AI takes to sharpen your Salesforce Marketing Cloud game. "
   perPage={6}
   firstN={4}
   contentType="blogs"
 />
 
         <ContactCta
-          heading="Let’s Fire Up Your AI-Powered Salesforce Marketing Cloud Engine"
-          subtext="Smarter insights, faster workflows, and campaigns that think on their feet."
+          heading="Let's Make Your Salesforce Marketing Cloud Work 10x Harder"
+          subtext="From implementation to optimization, we'll power up your customer journeys with AI baked into every step."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

@@ -225,8 +225,8 @@ export default function SalesCloud() {
 
        {/* --- Section A: component_10 (3 equal cards) --- */}
 <RecentResourcesSection
-  heading="More From Our Content Repertoire"
-  body="Explore our freshest blog posts, playbooks, and AI-powered sales ideas."
+  heading="Success Stories That Speak for Themselves "
+  body="A few real-world wins we’ve driven with Salesforce Sales Cloud. "
   subTabs={[]}
   resources={recentResources}
 />

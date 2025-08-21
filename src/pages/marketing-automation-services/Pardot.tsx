@@ -138,39 +138,10 @@ export default function Pardot() {
 
   const stats = [
     { label: "Happy Pardot clients", value: "25+" },
-    { label: "Certified Pardot-certified consultants", value: "20+" },
+    { label: " Pardot-Certified consultants ", value: "20+" },
     { label: "Jump in campaign performance", value: "30%" },
   ];
 
-  const recentResources: ResourceItem[] = [
-    {
-      title: "5 Ways AI Supercharges Pardot Campaigns",
-      subtitle: "From smarter segmentation to real automation, AI is rewriting Pardot best practices.",
-      author: "Pardot Strategy Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "pardot-ai-campaigns"
-    },
-    {
-      title: "Avoiding Messy Migrations: A Pardot Playbook",
-      subtitle: "Tips and tools for making your move to Pardot flawless, fast, and future-proof.",
-      author: "Migration Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "pardot-migration-playbook"
-    },
-    {
-      title: "Unlocking Reporting in Pardot: Data-Driven Growth",
-      subtitle: "How the best marketers use Pardot analytics for everyday decisions.",
-      author: "Analytics Team",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "pardot-reporting"
-    },
-  ];
 
   const faqs = [
     {
@@ -221,7 +192,7 @@ export default function Pardot() {
           heading="See What Happens When Pardot Gets a Boost"
           body="These brands knew who to call for Pardot know-how "
           subTabs={[]}
-          resources={recentResources}
+          resourceType="73"
         />
 
         <LogoScroller

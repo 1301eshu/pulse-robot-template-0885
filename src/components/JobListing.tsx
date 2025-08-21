@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { MapPin, Clock, Users, Building2, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 interface JobListingProps {
@@ -59,11 +58,6 @@ const JobListing: React.FC<JobListingProps> = ({
             </div>
           </div>
         </div>
-         {/* <Button 
-          className="bg-gray-900 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition-all duration-300"
-        >
-          View Job
-        </Button> */}
       </div>
 
       <div className="flex items-center gap-2 mb-4">

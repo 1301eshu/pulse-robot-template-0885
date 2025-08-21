@@ -101,37 +101,6 @@ export default function WebDevelopment() {
     { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Future-Proof Your Website: AI and Web Dev Trends",
-      subtitle: "A guide to the tech, tools, and strategies shaping web experiences in 2025.",
-      author: "Web Dev Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "future-proof-website"
-    },
-    {
-      title: "How to Optimize Web Performance Without Losing Your Mind",
-      subtitle: "Speed, scalability, and best practices for devs and marketers.",
-      author: "Performance Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "web-performance-optimization"
-    },
-    {
-      title: "Migration Made Easy: Tech Stacks, Data, and UX",
-      subtitle: "How to move platforms (and data) without the drama.",
-      author: "Solutions Architect",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "website-migration"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
@@ -186,7 +155,7 @@ export default function WebDevelopment() {
           heading="See AI-Infused Web Development In Action"
           body="Brands we’ve helped create seamless, user-focused experiences."
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourceType="116"
         />
 
         <LogoScroller

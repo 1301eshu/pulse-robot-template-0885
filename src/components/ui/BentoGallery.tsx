@@ -23,7 +23,7 @@ const BentoGallery = () => {
           <SITE_CTA 
               variant="secondary" 
               text="Careers"
-              href="/company/careers"
+              href="/careers/"
               size="md" 
             />
           

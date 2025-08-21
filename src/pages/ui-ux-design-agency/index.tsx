@@ -147,6 +147,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/logos_figma.png",
       title: "Figma ",
       description: "Design systems that evolve with your product ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -154,6 +155,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/Adobe%20icon.png",
       title: "Adobe Creative Cloud ",
       description: "Visuals that flex across formats and devices ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -161,6 +163,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/Mark_Logo.png",
       title: "Webflow ",
       description: "From static design to pixel-perfect builds ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -168,6 +171,8 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/Canva%20logo",
       title: "Canva  ",
       description: "Templates that let your team",
+        useBoxedImage: false,
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -175,6 +180,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/heygen",
       title: "HeyGen ",
       description: "Script-to-video avatars that",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -182,6 +188,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/creatai",
       title: "Creatie.ai  ",
       description: "Rapid ideation meets real-time visual generation ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -189,6 +196,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/Midjourney_Emblem.png",
       title: "Midjourney ",
       description: "Hyper-custom visuals, abstract to hyperreal ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -196,6 +204,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/descript%20logo",
       title: "Descript  ",
       description: "Audio + video editing meets transcription superpowers  ",
+      nocta: true,
        ctaUrl: "#",
     },
   ];

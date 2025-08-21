@@ -6,7 +6,7 @@ const services = [
   {
     title: 'Intelligent Marketing Automation  ',
     description: 'AI-triggered workflows. Always-on engagement. Zero manual chaos.',
-    image: 'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Services/Group_7523_wxks4p.webp'
+    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/firstimage.webp'
   },
   {
     title: 'AI-Led RevOps ',
@@ -16,7 +16,7 @@ const services = [
   {
     title: 'Wholesome Salesforce Solutions ',
     description: 'From Sales Cloud to Service + Marketing—intelligence built in. ',
-    image: 'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Services/Group_7522_hpmz7w.webp'
+    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/thirdimage.webp'
   },
   {
     title: 'Performance Marketing That Scales ',

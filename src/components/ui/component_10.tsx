@@ -25,6 +25,7 @@ interface SubTab {
 interface RecentResourcesProps {
   heading?: string;
   body?: string;
+  resourceType?: string; // e.g., "blog", "case-study", etc.
 
   /** legacy props (kept for compatibility; overridden when autoData=true) */
   subTabs?: SubTab[];
@@ -42,8 +43,8 @@ interface RecentResourcesProps {
   hideTabs?: boolean;   // default: true (hide category pills)
   count?: number;       // default: 3 (also used for fetch size)
   
-  /** Tab control props */
-  onTabChange?: (tabId: string) => void;
+  /** External tab control */
+  onTabChange?: (tabId: string) => void | Promise<void>;
   activeTab?: string;
 }
 
@@ -51,7 +52,7 @@ interface RecentResourcesProps {
 const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   heading = "Most Recent Resources",
   body,
-
+  resourceType,
   // legacy incoming props (ignored when autoData=true)
   subTabs: subTabsProp = [],
   resources: resourcesProp = [],
@@ -67,7 +68,7 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   count = 3,
   limit = 9,
   
-  // tab control props
+  // external tab control
   onTabChange,
   activeTab,
 }) => {
@@ -98,13 +99,9 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   const [activeSubTab, setActiveSubTab] = useState(
     activeTab || effectiveTabs[0]?.id || "all"
   );
-  // Update internal state when activeTab prop changes
-  useEffect(() => {
-    if (activeTab && activeTab !== activeSubTab) {
-      setActiveSubTab(activeTab);
-    }
-  }, [activeTab, activeSubTab]);
-
+  
+  // Use external activeTab when provided
+  const currentActiveTab = activeTab || activeSubTab;
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 30;
 
@@ -116,8 +113,9 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
     (async () => {
       try {
         setLoading(true);
+        const resourceTypeParam = resourceType ? `&categories=${resourceType}` : '';
         const res = await fetch(
-          `https://growthnatives.com/wp-json/wp/v2/posts?per_page=${postLimit}&_embed`,
+          `https://growthnatives.com/wp-json/wp/v2/posts?status=publish&per_page=${postLimit}&_embed${resourceTypeParam}`,
           { cache: "no-store" }
         );
         const data = await res.json();
@@ -178,20 +176,20 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   /* ===== Filtering ===== */
   // If we have tabs (auto OR provided), filter by category slug.
   const filteredResources = useMemo(() => {
-    if (activeSubTab === "all") return effectiveResources;
+    if (currentActiveTab === "all") return effectiveResources;
 
     const usingAutoTabs = autoData && autoTabs.length > 0;
     const usingProvidedTabs = !autoData && (subTabsProp?.length ?? 0) > 0;
 
     if (usingAutoTabs || usingProvidedTabs) {
       return effectiveResources.filter(
-        (r) => slugify(r.category || "general") === activeSubTab
+        (r) => slugify(r.category || "general") === currentActiveTab
       );
     }
 
     // fallback: no tabs available
     return effectiveResources;
-  }, [activeSubTab, effectiveResources, autoData, autoTabs.length, subTabsProp]);
+  }, [currentActiveTab, effectiveResources, autoData, autoTabs.length, subTabsProp]);
 
   /* ===== Pagination / Display ===== */
   const displayResources = onLoadMore
@@ -234,15 +232,15 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
               <button
                 key={tab.id}
                 onClick={() => {
-                  const newTab = tab.id;
-                  setActiveSubTab(newTab);
-                  setCurrentPage(1);
                   if (onTabChange) {
-                    onTabChange(newTab);
+                    onTabChange(tab.id);
+                  } else {
+                    setActiveSubTab(tab.id);
                   }
+                  setCurrentPage(1);
                 }}
                 className={`px-4 py-2 rounded-full font-medium transition-colors whitespace-nowrap ${
-                  activeSubTab === tab.id
+                  currentActiveTab === tab.id
                     ? "bg-blue-600 text-white"
                     : "bg-white text-gray-600 hover:bg-gray-100"
                 }`}

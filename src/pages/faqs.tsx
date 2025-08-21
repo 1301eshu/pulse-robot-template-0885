@@ -5,9 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function faqs() {
- const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
- // FAQ List
+  // FAQ List
   const faqs = [
     {
       q: "What Services Does Growth Natives Offer?",
@@ -58,35 +58,37 @@ export default function faqs() {
       q: "Can Growth Natives Assist B2B Clients in the Financial Sector With Cost-Effective Digital Solutions?",
       a: "Yes, Growth Natives specializes in delivering cost-effective digital solutions for B2B clients in the financial sector, optimizing processes, and enhancing customer experiences.",
     },
-     {
+    {
       q: "How Does Growth Natives Ensure Data Security for B2B Clients in Highly Regulated Industries?",
       a: "Growth Natives prioritizes data security for B2B clients in regulated industries through robust cybersecurity measures, compliance adherence, and implementing industry best practices.",
     },
-     {
+    {
       q: "Can Growth Natives Provide Examples of Successful B2B Digital Transformation Projects?",
       a: "Certainly. Growth Natives has successfully executed B2B digital transformation projects, enhancing operational efficiency, boosting customer engagement, and achieving measurable business growth.",
     },
-     {
+    {
       q: "In What Ways Does Growth Natives Tailor Digital Solutions for B2B Clients in Healthcare?",
       a: "Growth Natives tailors digital solutions for B2B clients in healthcare by incorporating technologies like Generative AI to improve patient experiences, streamline processes, and ensure compliance with industry regulations.",
     },
-     {
+    {
       q: "How Does Growth Natives Measure the Success of its Digital Solutions for B2B Clients?",
       a: "Growth Natives employs key performance indicators (KPIs), data analytics, and client feedback to measure the success of digital solutions for B2B clients, ensuring tangible and impactful results.",
     },
-     {
+    {
       q: "Can Growth Natives Assist B2B Brands in the Travel Sector With Innovative Customer Engagement Strategies?",
       a: "Absolutely. Growth Natives specializes in crafting innovative customer engagement strategies for B2B brands in the travel sector, leveraging technologies like Generative AI to enhance user experiences and drive bookings.",
     },
   ];
 
-   return (
+  return (
     <div className="bg-white text-gray-900">
+      <Header />
 
-       <Header />
+      {/* Added spacer between header and FAQs (adjust values as needed) */}
+      <div aria-hidden className="h-8 sm:h-12 md:h-16 lg:h-20" />
 
-       {/* FAQs */}
-        <FaqSection title="FAQ's" faqs={faqs} />
+      {/* FAQs */}
+      <FaqSection title="FAQ's" faqs={faqs} />
 
       <Footer />
     </div>

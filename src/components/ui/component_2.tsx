@@ -152,9 +152,9 @@ export default function EnterpriseCapabilities({
 
               {currentFeature.items.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-600/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-blue-600" />
-                  </div>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-600/10 shrink-0">
+  <item.icon className="w-7 h-7 text-blue-600 flex-shrink-0" />
+</div>
                   <h4 className="font-semibold text-lg">{item.title}</h4>
                 </div>
               ))}

@@ -121,7 +121,7 @@ export default function MarketingAutomation() {
     { value: "25+", label: "UX experts on deck" },
     { value: "60+", label: "UI/UX projects delivered and counting" },
     { value: "100+", label: "Happy customers worldwide" },
-    { value: "40%", label: "Avg. lift in engagement on redesigned websites within 3 months" },
+  //  { value: "40%", label: "Avg. lift in engagement on redesigned websites within 3 months" },
   ];
 
   // Case Study Tiles (as resources)

@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/ui/component_7";
+import HeroStacked from "@/components/aboutbanner";
 import InstagramSection from "@/components/ui/component_16";
 import BentoGallery from '@/components/ui/BentoGallery';
 import ContactCta from "@/components/ui/component_6";
@@ -185,7 +185,7 @@ const teamMembers = [
     )
   },
   {
-    name: "Rahul Sharma  ",
+    name: "Rahul Sharma  ",
     role: "Associate Director - MarTech  ",
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Company/About%20us/Rahul-1.webp",
     linkedin: "https://www.linkedin.com/in/rahul-sharma-b5b8ba61/",
@@ -199,7 +199,7 @@ const teamMembers = [
     )
   },
   {
-    name: "Akhil Yadav  ",
+    name: "Akhil Yadav  ",
     role: "Associate Director – Product ",
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Company/About%20us/Akhil.webp",
     linkedin: "https://www.linkedin.com/in/akhil-yadav-pm03/",
@@ -215,7 +215,7 @@ My strength lies in strategizing, directing, and harmonizing team efforts to opt
     )
   },
   {
-    name: "Geeta Patial   ",
+    name: "Geeta Patial   ",
     role: "Sr. Manager - Human Resources  ",
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Company/About%20us/Geeta.webp",
     linkedin: "https://www.linkedin.com/in/geeta-patial-7332531b0/",
@@ -230,7 +230,7 @@ My strength lies in strategizing, directing, and harmonizing team efforts to opt
     )
   },
   {
-    name: "Balpreet Singh   ",
+    name: "Balpreet Singh   ",
     role: "Engineering Leader   ",
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Company/About%20us/Balpreet.webp",
     linkedin: "https://www.linkedin.com/in/balpreetbrar/",
@@ -246,6 +246,37 @@ My strength lies in strategizing, directing, and harmonizing team efforts to opt
          
   // ... rest of team members (unchanged)
 ];
+
+function LinkedInButton({
+  href,
+  className = "",
+}: { href: string; className?: string }) {
+  if (!href) return null;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Share on LinkedIn"
+      className={[
+        "rounded-full bg-[#0A66C2] flex items-center justify-center",
+        "hover:opacity-80 transition-opacity shadow",
+        // default size; override with parent utilities if needed
+        "w-12 h-12 md:w-16 md:h-16",
+        className,
+      ].join(" ")}
+    >
+      {/* White LinkedIn "in" glyph */}
+      <svg viewBox="0 0 24 24" className="w-6 h-6 md:w-8 md:h-8 text-white" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M20.447 20.452H17.2v-5.569c0-1.328-.024-3.039-1.852-3.039-1.853 0-2.136 1.447-2.136 2.944v5.664H9.069V9h3.112v1.561h.044c.434-.82 1.494-1.685 3.074-1.685 3.29 0 3.897 2.165 3.897 4.983v6.593zM5.337 7.433A1.817 1.817 0 1 1 7.154 5.616c0 1.003-.814 1.817-1.817 1.817zM6.812 20.452H3.861V9h2.951v11.452z"
+        />
+      </svg>
+    </a>
+  );
+}
+
 
 // ================== Modal ==================
 function TeamMemberModal({
@@ -307,37 +338,28 @@ function TeamMemberModal({
 
         <div className="overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+20px)]">
           <div className="pt-4">
-            <div className="w-full rounded-xl overflow-hidden bg-black/5 mb-4 flex items-center justify-center">
+            <div className="relative w-full rounded-xl overflow-hidden bg-black/5 mb-4 flex items-center justify-center">
               <img
                 src={member.image}
                 alt={member.name}
                 loading="lazy"
                 className="block w-full h-auto max-h-[50vh] object-contain"
               />
+              {member.linkedin && (
+                <LinkedInButton
+                  href={member.linkedin}
+                  className="absolute bottom-3 left-1/2 -translate-x-1/2"
+                />
+              )}
             </div>
-
-            <h2 className="text-2xl font-semibold">{member.name}</h2>
-            <p className="text-gray-700 mb-4">{member.role}</p>
-
-            <div className="prose prose-sm max-w-none text-gray-700">
-              {member.bio}
-            </div>
-
-            {member.linkedin && (
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-5 text-blue-600 font-medium"
-              >
-                View on LinkedIn
-                <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
-                </svg>
-              </a>
-            )}
-          </div>
-        </div>
+            
+    {/* ✅ add back these */}
+    <h2 className="text-2xl font-semibold mt-2">{member.name}</h2>
+    <p className="text-gray-700 mb-4">{member.role}</p>
+    <div className="prose prose-sm max-w-none text-gray-700">{member.bio}</div>
+  </div>
+</div>
+          
       </div>
 
       {/* ========== DESKTOP ========== */}
@@ -363,28 +385,29 @@ function TeamMemberModal({
                 className="w-full h-full object-contain"
               />
               {member.linkedin && (
-                <a
+                <LinkedInButton
                   href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 shadow hover:bg-blue-50 transition"
-                  title="LinkedIn"
-                >
-                  <svg fill="currentColor" viewBox="0 0 32 32" width={28} height={28} className="text-[#0A66C2]">
-                    <circle cx="16" cy="16" r="16" fill="#fff" />
-                    <path d="M12.75 13.25H10.5V21H12.75V13.25ZM11.625 12.25C12.24 12.25 12.75 11.74 12.75 11.125C12.75 10.51 12.24 10 11.625 10C11.01 10 10.5 10.51 10.5 11.125C10.5 11.74 11.01 12.25 11.625 12.25ZM21 17.5V21H18.75V17.75C18.75 17.07 18.68 16.25 17.75 16.25C16.82 16.25 16.75 17 16.75 17.75V21H14.5V13.25H16.62V14.13H16.65C17 13.47 17.86 13 18.75 13C20.47 13 21 14.08 21 15.54V17.5Z" />
-                  </svg>
-                </a>
+                  className="absolute bottom-5 left-1/2 -translate-x-1/2"
+                />
               )}
             </div>
           </div>
 
-          {/* Details */}
+          {/* Details (desktop) — same height as image; bio scrolls */}
           <div className="flex-1 min-w-0">
-            <h2 className="text-3xl font-bold mb-1">{member.name}</h2>
-            <h4 className="text-gray-700 text-lg mb-4 font-medium">{member.role}</h4>
-            <div className="text-gray-700 space-y-3 text-base leading-relaxed">
-              {member.bio}
+            <div className="h-[360px] flex flex-col">
+              {/* header fixed */}
+              <div className="pb-2">
+                <h2 className="text-3xl font-bold mb-1">{member.name}</h2>
+                <h4 className="text-gray-700 text-lg font-medium">{member.role}</h4>
+              </div>
+
+              {/* only this scrolls if text is long */}
+              <div className="mt-3 flex-1 overflow-y-auto pr-3">
+                <div className="text-gray-700 space-y-3 text-base leading-relaxed">
+                  {member.bio}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -405,12 +428,12 @@ const Team = () => {
       <Header />
       <SmartBreadcrumb />
       <main>
-        <HeroSection
-          heading="The Crew Building Growth, Natively "
-          subtext="At Growth Natives, leadership isn’t a title — it’s a mindset. Fueled by AI, sharp thinking, and just the right amount of disruption, our leaders turn momentum into measurable growth. "
-          bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/image%20(33).png"
-          noCta      
+        <HeroStacked
+          heading="The Crew Building Growth,"
+          highlight="Natively"
+          subtext="At Growth Natives, leadership isn’t a title — it’s a mindset. Fueled by AI, sharp thinking, and just the right amount of disruption, our leaders turn momentum into measurable growth."
+          imageSrc="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Hero.webp"
+          hideCta
         />
 
         {/* Gradient applied here */}

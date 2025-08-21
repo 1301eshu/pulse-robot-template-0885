@@ -186,7 +186,7 @@ return (
           { label: " Workflow automations deployed across Jira Cloud & Data Center  ", value: "100+" },
           { label: "Certified Jira Experts  ", value: "20+" },
           { label: "Avg. boost in ticket resolution speed  ", value: "35%" },
-          { label: " Customer teams operating with zero manual routing ", value: "50+" },
+  //        { label: " Customer teams operating with zero manual routing ", value: "50+" },
         ]}
       />
       <EnterpriseCapabilities

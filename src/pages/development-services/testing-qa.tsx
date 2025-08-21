@@ -95,37 +95,6 @@ export default function TestingQA() {
     { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Next-Gen QA: AI-Driven Testing in 2025",
-      subtitle: "How smart automation is reshaping quality for digital products.",
-      author: "QA Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-qa-2025"
-    },
-    {
-      title: "Manual vs. Automated Testing: When & Why",
-      subtitle: "A guide for dev teams, product leads, and modern CTOs.",
-      author: "Lead Tester",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "manual-vs-automated"
-    },
-    {
-      title: "Performance Testing Playbook",
-      subtitle: "Prevent lags and crashes before they ruin your user’s day.",
-      author: "QA Strategy",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "performance-playbook"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
@@ -178,10 +147,10 @@ export default function TestingQA() {
        
         {/* Recent Resources Section */}
         <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay updated with the latest Testing & QA guides, blog posts and AI tips."
+          heading="See Flawless, AI-Enhanced Testing in Action "
+          body="Brands we've helped launch bug-free, high-performing experiences across platforms"
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourceType="389"
         />
 
         <LogoScroller

@@ -91,7 +91,7 @@ export default function MobileApps() {
     { value: "26+", label: "Combined years of design prowess and counting" },
     { value: "10+", label: "Game-changing apps launched" },
     { value: "8+", label: "Mobile design wizards on deck" },
-    { value: "3x", label: "Boost in retention for clients using our AI-backed UX enhancements" },
+ //   { value: "3x", label: "Boost in retention for clients using our AI-backed UX enhancements" },
   ];
 
   // Case Study Tiles (as resources)

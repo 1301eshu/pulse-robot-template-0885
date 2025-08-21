@@ -188,7 +188,7 @@ const features: FeatureContent[] = [
     { label: "Reduction in BI team workload with self-serve rollouts   ", value: "80% " },
     { label: "More cross-functional dashboards created within the first 30 days  ", value: "5x  " },
     { label: "Accuracy rating for AI-assisted reporting ", value: "98%  " },
-    { label: "  Frontline teams turned into data-driven decision makers ", value: "150+" },
+//    { label: "  Frontline teams turned into data-driven decision makers ", value: "150+" },
   ]}
 />
 

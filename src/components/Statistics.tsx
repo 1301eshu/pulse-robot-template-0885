@@ -7,11 +7,16 @@ function useCountUp(end: string | number, duration = 1400) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
-  const { numeric, suffix } = (() => {
-    const match = String(end).match(/^([0-9,.]+)(.*)$/);
+  // UPDATED: capture optional prefix (e.g., "$"), the number, and any suffix (e.g., "k", "+", "%")
+  const { prefix, numeric, suffix } = (() => {
+    const match = String(end).trim().match(/^\s*([^\d\-+]*)(-?\d[\d,]*\.?\d*)(.*)$/);
     return match
-      ? { numeric: Number(match[1].replace(/,/g, '')), suffix: match[2] }
-      : { numeric: 0, suffix: "" };
+      ? {
+          prefix: match[1] || "",
+          numeric: Math.abs(Number(match[2].replace(/,/g, ""))),
+          suffix: match[3] || ""
+        }
+      : { prefix: "", numeric: 0, suffix: "" };
   })();
 
   useEffect(() => {
@@ -46,7 +51,8 @@ function useCountUp(end: string | number, duration = 1400) {
     };
   }, [numeric]);
 
-  return { ref, value: hasAnimated ? value : 0, suffix };
+  // UPDATED: return prefix as well
+  return { ref, value: hasAnimated ? value : 0, prefix, suffix };
 }
 
 type Stat = {
@@ -54,7 +60,6 @@ type Stat = {
   value: string;
   isNegative?: boolean; // <-- add this line
 };
-
 
 type StatSectionProps = {
   title?: string;
@@ -132,9 +137,9 @@ export default function EditableStatSection({
         {/* Stat Cards with animation */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2">
           {stats.map((stat, i) => {
-        const { ref, value, suffix } = useCountUp(stat.value, 1600 + i * 150);
-        const showValue = stat.isNegative ? (value === 0 ? '-' : `-${value}`) : value;
-
+            // UPDATED: also grab prefix
+            const { ref, value, prefix, suffix } = useCountUp(stat.value, 1600 + i * 150);
+            const showValue = stat.isNegative ? (value === 0 ? '-' : `-${value}`) : value;
 
             return (
               <div
@@ -147,13 +152,13 @@ export default function EditableStatSection({
                 }}
               >
                 <span
-         ref={ref}
-      style={{ fontVariantNumeric: "tabular-nums" }}
-      className="text-gray-900 tracking-tight text-5xl font-light mb-6"
-     >
-     {showValue}{suffix}
-      </span>
-
+                  ref={ref}
+                  style={{ fontVariantNumeric: "tabular-nums" }}
+                  className="text-gray-900 tracking-tight text-5xl font-light mb-6"
+                >
+                  {/* UPDATED: render prefix before the number */}
+                  {prefix}{showValue}{suffix}
+                </span>
 
                 <span className="text-xl text-gray-500 font-medium leading-snug">
                   {stat.label}

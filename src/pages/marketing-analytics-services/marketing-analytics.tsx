@@ -101,7 +101,7 @@ export default function MarketingAnalytics() {
     { label: "Certified Web Analytics geniuses", value: "30+" },
     { label: "Analytics goals and events implemented", value: "200+" },
     { label: "Analytics Technologies Mastered", value: "20+" },
-    { label: "Attribution models tailored for multi-channel growth", value: "50+" },
+  //  { label: "Attribution models tailored for multi-channel growth", value: "50+" },
   ];
 
   // Resources (RecentResourcesSection)

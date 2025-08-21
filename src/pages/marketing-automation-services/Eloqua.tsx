@@ -117,37 +117,6 @@ export default function Eloqua() {
     { label: "Avg. boost in campaign speed", value: "30%" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "5 Ways AI Supercharges Eloqua Workflows",
-      subtitle: "Why automation and insight beat intuition—every single time.",
-      author: "Eloqua Strategy Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "eloqua-ai-workflows"
-    },
-    {
-      title: "Moving to Eloqua: Migration Playbook for Enterprise",
-      subtitle: "How to migrate without the headaches, keep your data, and boost results fast.",
-      author: "Migration Specialist",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "eloqua-migration-playbook"
-    },
-    {
-      title: "Campaign Reporting in Eloqua: What’s Worth Tracking?",
-      subtitle: "Tips on turning Eloqua analytics into winning marketing moves.",
-      author: "Lead Analyst",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "eloqua-reporting"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
@@ -198,7 +167,7 @@ export default function Eloqua() {
           heading="Watch AI-Backed Eloqua Work Wonders "
           body="Brands we’ve helped crush it with an outcome-oriented Eloqua. "
           subTabs={[]}
-          resources={recentResources}
+          resourceType="516"
         />
 
         <LogoScroller
@@ -216,7 +185,7 @@ export default function Eloqua() {
        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
 <ExploreMoreBlock
   heading="More From Our Content Repertoire"
-  body=" Seamless strategies, sharp insights, and AI magic under the hood. "
+  body=" Stay sharp on all things Eloqua—tips, tricks, and AI takes served fresh.  "
   perPage={6}
   firstN={4}
   contentType="blogs"

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { SITE_CTA } from '@/components/SITE_CTAs';
 
 type ContactCtaProps = {
@@ -15,7 +16,17 @@ export default function ContactCta({
   subtext,
   buttonLabel = 'Talk to an Expert',
 }: ContactCtaProps) {
-  const FORCED_HREF = '/contact'; // 👈 single link used everywhere
+  const FORCED_HREF = '/contact'; // single link used everywhere
+
+  // Figure out if we are currently on the contact page (client-side only).
+  const [targetHref, setTargetHref] = useState(FORCED_HREF);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const p = window.location.pathname || '';
+      const onContact = p === '/contact' || p.startsWith('/contact/');
+      setTargetHref(onContact ? '#' : FORCED_HREF);
+    }
+  }, []);
 
   return (
     <section className="pt-14 pb-20 bg-white">
@@ -40,7 +51,7 @@ export default function ContactCta({
               <SITE_CTA
                 variant="secondary"
                 text={buttonLabel}
-                href={FORCED_HREF}  // 👈 always this link
+                href={targetHref}  // '#' on /contact (scrolls to top), '/contact' elsewhere
                 size="md"
               />
             )}

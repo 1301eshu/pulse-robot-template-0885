@@ -37,7 +37,7 @@ export default function MarketingAutomation() {
   const tabs: TabItem[] = [
     {
       id: "audit",
-      label: "Eloqua Audit",
+      label: "Eloqua Auditssssssss",
       icon: Zap,
      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Eloqua/Eloqua%20Audit.webp",
      ctaText: "Read More",

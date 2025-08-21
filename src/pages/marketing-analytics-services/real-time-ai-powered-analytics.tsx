@@ -184,7 +184,7 @@ const features: FeatureContent[] = [
     { label: "Lag between behavior & insight  ", value: "0 " },
     { label: " Accuracy rate for predictive trend models ", value: "87%  " },
     { label: " Faster decision-making cycle post-implementation", value: "10x  " },
-    { label: " Automation of manual reporting tasks ", value: "65%" },
+  //  { label: " Automation of manual reporting tasks ", value: "65%" },
   ]}
 />
 

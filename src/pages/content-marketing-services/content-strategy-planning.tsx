@@ -115,36 +115,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Why AI-Ready Content Strategies Win in 2025",
-      subtitle: "See how top brands design content that ranks, resonates, and converts—across both search engines and AI assistants.",
-      author: "Growth Natives",
-      date: "June 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-content-strategy",
-    },
-    {
-      title: "From Blog to Blueprint: Mapping Your Funnel with Content",
-      subtitle: "Our approach to building content clusters that educate, engage, and guide users to convert.",
-      author: "Growth Natives",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "content-blueprint-mapping",
-    },
-    {
-      title: "Content for Humans, Structured for Bots: The New SEO/AEO Playbook",
-      subtitle: "Tips and frameworks to maximize your content’s discoverability—by both search engines and generative AI.",
-      author: "Growth Natives",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "human-bot-content-structure",
-    }
-  ];
-
   const faqs = [
     {
       q: "What makes your content planning different from other agencies?",
@@ -199,7 +169,7 @@ export default function MarketingAutomation() {
           heading="See How Strategy Drives Results"
           body="How we helped brands build content engines that scale."
           subTabs={[]}
-          resources={recentResources}
+          resourceType="38"
         />
         <LogoScroller
           heading="Brands That Trust Our Content Roadmaps"

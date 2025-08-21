@@ -217,7 +217,7 @@ export default function EinsteinAnalytics() {
 
         <ContactCta
           heading="Let's Make Your Data Predict the Future"
-          subtext="Einstein AI, customized to answer your most valuable business questions"
+          subtext="Einstein AI, customized to answer your most valuable business questions."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

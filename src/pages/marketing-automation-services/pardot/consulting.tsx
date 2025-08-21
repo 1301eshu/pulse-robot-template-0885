@@ -53,37 +53,6 @@ const L3Template = () => {
     },
   ];
 
-  // Recent Blogs — unchanged
-  const recentResources: ResourceItem[] = [
-    {
-      title: "4 CRO Best Practices to Drive Business Growth",
-      subtitle: "Turn ad clicks into revenue by tightening UX, testing, and funnel clarity.",
-      author: "Rukman Singh",
-      date: "Dec 1, 2022",
-      readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400",
-      slug: "cro-best-practices-drive-growth",
-    },
-    {
-      title: "Mobile-Friendly Website Design: Enhance UX & Boost SEO",
-      subtitle: "Mobile-first experiences improve engagement, rankings, and conversions.",
-      author: "Rukman Singh",
-      date: "Mar 7, 2022",
-      readTime: "10 min read",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400",
-      slug: "mobile-friendly-website-design",
-    },
-    {
-      title: "Messy SEO – Improving Site Structure As Google’s Title Tag Change Affects CTRs",
-      subtitle: "Why hierarchy and internal linking matter more than ever.",
-      author: "Sakshi Arora",
-      date: "Jan 10, 2022",
-      readTime: "25 min read",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400",
-      slug: "improving-site-structure-title-tag-change",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -224,7 +193,6 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
-          resources={recentResources}
         />
       </div>
 

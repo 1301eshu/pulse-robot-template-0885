@@ -95,37 +95,6 @@ export default function MobileAppDevelopment() {
     { label: "Custom websites built for startups, enterprises, and everything in between", value: "150+" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Mobile App Design Trends for 2025",
-      subtitle: "Stay ahead with the latest in mobile UX and AI-driven engagement.",
-      author: "App Design Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "mobile-design-trends-2025"
-    },
-    {
-      title: "Cross-Platform vs. Native: What to Choose?",
-      subtitle: "Pros, cons, and decision frameworks for business leaders.",
-      author: "Mobile Dev Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "cross-vs-native"
-    },
-    {
-      title: "Launching Apps at Scale: Lessons Learned",
-      subtitle: "Common pitfalls, scaling tips, and how to ensure a smooth launch.",
-      author: "Growth Strategist",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "app-launch-lessons"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
@@ -180,7 +149,7 @@ export default function MobileAppDevelopment() {
           heading="See Smarter, AI-Driven Mobile Apps in Action"
           body="Brands we've helped craft apps for seamless, intuitive user journeys"
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourceType="261"
         />
 
         <LogoScroller

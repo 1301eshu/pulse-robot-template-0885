@@ -184,7 +184,7 @@ const features: FeatureContent[] = [
     { label: "Structured, cleaned, and pipelined for reporting   ", value: "100TB+ " },
     { label: " Pipeline uptime across all cloud-managed warehouses ", value: "99.99% " },
     { label: " Faster data availability across business units  ", value: "5x " },
-    { label: "  Records Data rows processed daily in real-time workflows ", value: "400M+" },
+ //   { label: "  Records Data rows processed daily in real-time workflows ", value: "400M+" },
   ]}
 />
 

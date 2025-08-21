@@ -196,7 +196,7 @@ const features: FeatureContent[] = [
  
   title="When every click counts, growth-driven brands trust us with their ad dollars. "
   stats={[
-    { label: "Managed ad spend across platforms annually  ", value: "20M+" },
+    { label: "Managed ad spend across platforms annually  ", value: "$20M+" },
     { label: "Faster optimization cycles powered by AI automations", value: "65%" },
     { label: "Avg. ROAS across Google and Meta campaigns ", value: "4.7X" },
           ]}

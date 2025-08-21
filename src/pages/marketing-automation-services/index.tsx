@@ -39,7 +39,7 @@ export default function MarketingAutomation() {
  const tabs: TabItem[] = [
   {
     id: "marketing",
-    label: "Campaign Automationsss",
+    label: "Campaign Automation",
     icon: Zap,
     image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Slider%20L1/Campaign%20Automation.webp", // replace with actual
     
@@ -136,15 +136,15 @@ const features: FeatureContent[] = [
       title: "Pardot, But Make It Perform",
       description: "We tweak, optimize, and turn Pardot into your power tool.",
       useBoxedImage: false,
-      ctaUrl: "/salesforce-services/salesforce-pardot"
+      ctaUrl: "/marketing-automation-services/Pardot"
     },
     {
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Icons/Salesforce.webp",
       title: "Salesforce Marketing Cloud That Doesn’t Sleep",
       description: "AI-powered campaigns that speak, sell, and self-optimize.",
-     
-      ctaUrl: "/marketing-automation-services/salesforce-marketing-cloud"
+       useBoxedImage: false,
+      ctaUrl: "/marketing-automation-services/marketing-cloud/"
     },
     {
       icon: null,

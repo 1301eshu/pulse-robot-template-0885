@@ -149,6 +149,7 @@ const features: FeatureContent[] = [
       title: "Salesforce Sales Cloud ",
       description: "Supercharge your pipeline with predictive, AI-powered moves. ",
       useBoxedImage: false,
+      
       ctaUrl: "/salesforce-services/sales-cloud/" // 👈 CTA link here
     },
     {
@@ -221,7 +222,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Salesforce%20Nonprofit%20Cloud.webp",
       title: "Salesforce Nonprofit Cloud ",
       description: "Field service, leveled up—connected, predictive, and ridiculously efficient. ",
-
+       useBoxedImage: false,
        nocta: true,  
        ctaUrl: "#",
     },
@@ -287,7 +288,7 @@ const features: FeatureContent[] = [
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="AI-Powered Salesforce Solutions That Actually Know What’s Up "
+          heading="AI-Powered Salesforce Solutions That Actually Know What’s Up"
         
           subtext="Smarter workflows. Predictive insights. Zero chaos. All systems: go. "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"

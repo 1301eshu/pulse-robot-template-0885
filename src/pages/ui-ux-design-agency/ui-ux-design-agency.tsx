@@ -192,7 +192,7 @@ export default function UIUXDesignAgency() {
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/UX.webp"
           buttonText="Audit Me!"
-          buttonLink="/lead-gen-form"
+          buttonLink="/contact"
         />
 
         {/* Statistics Section */}

@@ -10,42 +10,42 @@ const OurJourney = () => {
       year: "2019",
       title: "The Beginning",
       description: "We started out to make digital work better for people. A small team rolled up sleeves, built fast, and focused on outcomes.",
-      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/The%20Beginning.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/The%20Beginning.webp",
       icon: Sparkles
     },
     {
       year: "2020",
       title: "Building the Basics",
       description: "We set up clean processes and already took a pace in marketing, data, and CX. Quality got tighter, speed went up.",
-      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/AI%20Integration.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Building%20the%20Basics.webp",
       icon: Target
     },
     {
       year: "2021",
       title: " Serving Global Clients ",
       description: "Started working on full-funnel projects from across the world. We learned time-zone rhythm, kept communication simple, and shipped on schedule.",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/about%20us%20/Growth%20Journey%20/Global.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Serving%20Global%20Clients.webp",
       icon: Globe
     },
     {
       year: "2023",
       title: " AI Entered the Org",
       description: "The crew got bigger and AI-fluent, and we became smarter together. Requests spiked. We delivered, and the run kept building. ",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/about%20us%20/Growth%20Journey%20/innovation.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/AI%20Entered%20the%20Org.jpg",
       icon: Sparkles
     },
     {
       year: "2024",
       title: " Inc. 5000 #606 ",
       description: "We made the Inc. 5000 list at #606 (we’re still not chill about it), and we thank our customers, partners, and the team for it. AI became part of daily work: automation, smart content, and better decisions.",
-      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/AI%20first%20future.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/INC%205000.webp",
       icon: TrendingUp
     },
     {
       year: "2025",
       title: "  Onwards and Upwards ",
       description: "We earned a spot again on the Inc. 5000 list. This time at #1876. More R&D, more AI-powered functioning, stronger partnerships, and a focus on helping every client grow with us. ",
-      image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/About%20us/2025.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Onwards%20and%20Upwards.webp",
       icon: TrendingUp
     }
   ];

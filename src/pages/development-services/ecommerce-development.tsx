@@ -137,36 +137,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Recent Resources
-  const recentResources: ResourceItem[] = [
-    {
-      title: "AI for eCommerce: Real Use Cases for Smarter Stores",
-      subtitle: "Get hands-on with AI integrations that drive real sales growthsee our favorite use cases, from automation to analytics.",
-      author: "GrowthNatives",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-ecommerce-use-cases"
-    },
-    {
-      title: "Top 5 eCommerce Dev Trends for 2025",
-      subtitle: "The future is hereAI, headless commerce, automation, and the tech that makes it all seamless.",
-      author: "GrowthNatives",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ecommerce-dev-trends"
-    },
-    {
-      title: "Personalization Engines: What Actually Works?",
-      subtitle: "Tested tactics for making every shopper feel like your store was built for them.",
-      author: "GrowthNatives",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "personalization-engines"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -224,9 +194,9 @@ export default function MarketingAutomation() {
        {/* More Resources Section */}
         <RecentResourcesSection
           heading=" See How Smarter AI-Backed eCommerce Takes Off "
-          body=" Brands weve helped launch faster and scale smoother "
+          body=" Brands we've helped launch faster and scale smoother "
           subTabs={[]}
-          resources={recentResources}
+         resourceType="201"
         />
 
         {/* Customer Logo Section */}
@@ -256,7 +226,7 @@ export default function MarketingAutomation() {
 
         {/* CTA Section */}
         <ContactCta
-          heading="Lets Build Your AI-Driven eCommerce Empire"
+          heading="Let's Build Your AI-Driven eCommerce Empire"
           subtext="No more slow loads, just fast sales and happy customers."
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"

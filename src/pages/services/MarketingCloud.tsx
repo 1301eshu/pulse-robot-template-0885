@@ -179,7 +179,7 @@ export default function MarketingAutomation() {
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Marketing%20Cloud.webp"
           buttonText="Audit Me!"
-          buttonLink="/your-lead-gen-form-page"
+          buttonLink="/contact/"
         />
 
         <EditableStatSection

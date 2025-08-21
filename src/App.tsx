@@ -1,6 +1,5 @@
 import MarketingAutomation from "./pages/marketing-automation-services/index";
 import HubSpotManagedServices from "./pages/marketing-automation-services/hubspot/hubspot-managed-services";
-import HubSpotLanding from "./pages/marketing-automation-services/hubspot/index";
 import HubSpot from "./pages/marketing-automation-services/HubSpot";
 import HubSpotConsulting from "./pages/marketing-automation-services/hubspot/hubspot-consulting";
 import HubSpotAudit from "./pages/marketing-automation-services/hubspot/hubspot-audit";
@@ -50,7 +49,7 @@ import EloquaAudit from "./pages/marketing-automation-services/eloqua/eloqua-aud
 import Google from "./pages/digital-marketing-services/ppc/google-ads.tsx";
 import Linkedin from "./pages/digital-marketing-services/ppc/linkedin-ads.tsx";
 import Meta from "./pages/digital-marketing-services/ppc/meta-ads.tsx";
-import MarketingCloudMarket from "./pages/services/MarketingCloud.tsx";
+import MarketingCloudMarket from "./pages/services/SalesforceMarketingCloud.tsx";
 
 
 
@@ -84,7 +83,7 @@ import Company from "./pages/Company";
 
 // Service pages
 import AiRevops from "./pages/services/AiRevops";
-import Salesforce from "./pages/services/Salesforce";
+import Salesforce from "./pages/salesforce-services";
 import PerformanceMarketing from "./pages/services/PerformanceMarketing";
 import Development from "./pages/services/Development";
 import AnalyticsAsAService from "./pages/services/AnalyticsAsAService";
@@ -92,7 +91,7 @@ import DigitalMarketing from "./pages/services/DigitalMarketing";
 import DesignServices from "./pages/services/DesignServices";
 
 // Content Marketing Services
-import ContentMarketingServices from "./pages/digital-marketing-services/seo/content-marketing";
+import ContentMarketingServices from "./pages/content-marketing-services";
 import WebsiteCopywriting from "./pages/content-marketing-services/website-copywriting";
 import EmailLifecycleCopywriting from "./pages/content-marketing-services/email-lifecycle-copywriting";
 import SocialMediaAdCopywriting from "./pages/content-marketing-services/social-media-ad-copywriting";
@@ -127,6 +126,8 @@ import BrandCampaignDesign from "./pages/services/brand-campaign";
 // New Salesforce service pages
 import SalesforceAI from "./pages/services/SalesforceAI";
 import SalesCloud from "./pages/salesforce-services/sales-cloud";
+import SalesforceMarketingCloud from "./pages/salesforce-services/marketing-cloud"
+
 import CommerceCloud from "./pages/services/CommerceCloud";
 import SalesforceEinstein from "./pages/services/SalesforceEinstein";
 import ServiceCloud from "./pages/salesforce-services/service-cloud";
@@ -200,9 +201,11 @@ import TermsConditions from "./pages/resources/terms-conditions";
 import PrivacyPolicy from "./pages/resources/privacy-policy";
 import CookiePolicy from "./pages/resources/cookie-policy";
 import EditorialPolicy from "./pages/resources/editorial-policy";
-import EBooks from "./pages/resources/ebooks";
-import GrowthStream from "./pages/resources/growth-stream";
-import PressRelease from "./pages/resources/press-release";
+import EBooks from "./pages/resources/EBooks";
+import EBooksPost from "./pages/resources/EbooksPost";
+
+import GrowthStream from "./pages/resources/Growth-Stream.tsx";
+import PressRelease from "./pages/resources/Press-Release.tsx";
 import DownloablePost from "./pages/resources/DownloadablePost";
 
 
@@ -226,6 +229,7 @@ import AdobeTarget from "./pages/marketing-analytics-services/conversion-rate-op
 import Datorama from "./pages/marketing-analytics-services/data-visualization/datorama.tsx";
 import Optimizely from "./pages/marketing-analytics-services/conversion-rate-optimization-cro/optimizely.tsx";
 import VWO from "./pages/marketing-analytics-services/conversion-rate-optimization-cro/vwo.tsx";
+import GrowthStreamPost from "./pages/resources/GrowthStreamPost.tsx";
 
 const queryClient = new QueryClient();
 
@@ -268,7 +272,7 @@ const App = () => (
           <Route path="/marketing-automation-services/eloqua/implementation" element={<EloquaImplementation />} />
          
           {/* <Route path="/marketing-automation-services/marketing-cloud/" element={<MarketingCloud />} /> */}
-          <Route path="/marketing-automation-services/marketing-cloud/" element={<MarketingCloudMarket />} />
+          <Route path="/marketing-automation-services/salesforce-marketing-cloud/" element={<MarketingCloudMarket />} />
           <Route path="/marketing-automation-services/eloqua/" element={<Eloqua />} />
           <Route path="/salesforce-services/" element={<Salesforce />} />
          
@@ -276,7 +280,7 @@ const App = () => (
           
           <Route path="/digital-marketing-services/" element={<DigitalMarketing />} />
           <Route path="/ui-ux-design-agency/" element={<UIUXDesignAgencyServices />} />
-          <Route path="/ui-ux-design-agency/ui-ux-design-agency" element={<UIUXDesignAgency />} />
+          <Route path="/ui-ux-design-agency/website-designing-services" element={<UIUXDesignAgency />} />
           <Route path="/ui-ux-design-agency/motion-graphics" element={<MotionGraphics />} />
           <Route path="/ui-ux-design-agency/social-media" element={<SocialMedia />} />
           <Route path="/ui-ux-design-agency/mobile-apps" element={<MobileApps />} />
@@ -359,6 +363,7 @@ const App = () => (
           <Route path="/salesforce-services/service-cloud/" element={<ServiceCloud />} />
           <Route path="/salesforce-services/experience-cloud/" element={<ExperienceCloud />} />
           <Route path="/salesforce-services/cpq/" element={<CPQ />} />
+          <Route path="/salesforce-services/marketing-cloud/" element={<SalesforceMarketingCloud />} />
           <Route path="/services/salesforce-nonprofit-cloud" element={<SalesforceNonprofitCloud />} />
           
           {/* New Analytics services */}
@@ -426,9 +431,11 @@ const App = () => (
           <Route path="/resources/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/resources/cookie-policy" element={<CookiePolicy />} />
           <Route path="/resources/editorial-policy" element={<EditorialPolicy />} />
-          <Route path="/resources/ebooks" element={<EBooks />} />
-          <Route path="/resources/growth-stream" element={<GrowthStream />} />
-          <Route path="/resources/press-release" element={<PressRelease />} />
+          <Route path="/ebooks" element={<EBooks />} />
+          <Route path="/ebooks/:slug" element={<EBooksPost />} />
+          <Route path="/growth-stream" element={<GrowthStream />} />
+          <Route path="/growth-stream/:slug" element={<GrowthStreamPost />} />
+          <Route path="/press-release" element={<PressRelease />} />
           <Route path="/resources/downloadableassets" element={<DownloadableAssets />} />
           
           {/* Company routes */}

@@ -6,8 +6,8 @@ export const ExploreSectionSkeleton = () => {
       <div className="container mx-auto px-4">
         <Skeleton className="h-10 w-48 mx-auto mb-12" />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 4 }).map((_, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="bg-card rounded-lg overflow-hidden border">
               <Skeleton className="h-48 w-full" />
               <div className="p-6 space-y-4">
@@ -62,8 +62,8 @@ export const RecentBlogsSkeleton = () => {
 
 export const LoadMoreSkeleton = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-      {Array.from({ length: 4 }).map((_, index) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      {Array.from({ length: 6 }).map((_, index) => (
         <div key={index} className="bg-card rounded-lg overflow-hidden border">
           <div className="flex flex-col md:flex-row">
             <Skeleton className="h-48 md:h-32 w-full md:w-48 flex-shrink-0" />

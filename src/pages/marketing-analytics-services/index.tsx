@@ -39,84 +39,129 @@ export default function MarketingAutomation() {
   const tabs: TabItem[] = [
     {
       id: "online-presence",
-      label: "Online Presence Management",
+      label: "Data Warehousing & ETL ",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Marketing%20Analytics%20/Online%20Presence%20Management.webp",
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Slider%20L1/data%20Warehousing%20&%20ETL.webp",
       ctaText: "",
       ctaLink: ""
     },
     {
       id: "data-driven",
-      label: "Data-Driven Marketing",
+      label: "Advanced Data Visualization ",
       icon: BarChart2,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Marketing%20Analytics%20/Data-Driven%20Marketing.webp",
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Slider%20L1/advanced%20Data%20visualization.webp",
       ctaText: "",
       ctaLink: ""
     },
     {
       id: "tracking-setup",
-      label: "Analytics Tracking Set-up",
+      label: "Self-Service BI & Data Democratization ",
       icon: Database,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Marketing%20Analytics%20/Analytics%20Tracking%20Set-up.webp",
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Slider%20L1/self%20service%20BI%20-%20Data%20Democratization.webp",
       ctaText: "",
       ctaLink: ""
     },
     {
       id: "dashboard",
-      label: "Analytics Dashboard Creation",
+      label: "Real-Time & AI-Powered Analytics ",
       icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Marketing%20Analytics%20/Analytics%20Dashboard%20Creation.webp",
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Slider%20L1/real%20time%20&%20AI%20Powered%20Analytics%20.webp",
       ctaText: "",
       ctaLink: ""
     },
   ];
 
+
+  // Platform Features
+  const platformFeatures = [
+    {
+       icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Icons/google_bigquery.webp",
+      title: "Google BigQuery   ",
+      description: "Fast, scalable warehousing for modern BI  ",
+       nocta: true,
+      useBoxedImage: false,
+      
+      ctaUrl: "/salesforce-services/sales-cloud/" // 👈 CTA link here
+    },
+    {
+       icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Icons/Looker.webp",
+      title: "Looker Studio  ", 
+      description: "Executive dashboards, business-ready insights ",
+       nocta: true,
+      useBoxedImage: false,
+      ctaUrl: "/salesforce-services/service-cloud/",
+    },
+    {
+      icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Icons/New_Power_BI.webp",
+      title: "Power BI & Tableau ",
+      description: "Self-serve dashboards with enterprise depth ",
+       nocta: true,
+      useBoxedImage: false,
+      ctaUrl: "/marketing-automation-services/marketing-cloud/",
+    },
+    {
+       icon: null,
+      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Icons/snowflake%20DBT.webp",
+      title: "Snowflake + DBT ",
+      description: "ELT, warehouse, and data logic done right  ",
+       nocta: true,
+      useBoxedImage: false,
+      ctaUrl: "/salesforce-services/cpq/",
+    },
+   
+    
+  ];
+
+  
   // Features (Zigzag section content)
   const features: FeatureContent[] = [
     {
       id: "online-presence",
-      description: "We audit, analyze, and optimize your website, ads, and content performance, then show you how it all connects.",
+    //  description: "We audit, analyze, and optimize your website, ads, and content performance, then show you how it all connects.",
       items: [
-        { icon: Zap, title: "Unified view of all marketing touchpoints" },
-        { icon: Zap, title: "Engagement and funnel behavior tracking" },
-        { icon: Zap, title: "Insights tied to visibility, reach, and conversions" },
+        { icon: Zap, title: "Centralized, cleaned, structured—ready to analyze " },
+        { icon: Zap, title: "Scalable architecture, powered by cloud & logic " },
+        { icon: Zap, title: "Built to support modern BI and AI workflows " },
       ],
     },
     {
       id: "data-driven",
-      description: "Let AI do the heavy lifting. Predict, personalize, and pivot with precision.",
+   //   description: "Let AI do the heavy lifting. Predict, personalize, and pivot with precision.",
       items: [
-        { icon: BarChart2, title: "Cross-platform data enrichment (ads, CRM, web)" },
-        { icon: BarChart2, title: "Audience segmentation powered by behavior and intent" },
-        { icon: BarChart2, title: "Real-time ROI tracking and campaign recommendations" },
+        { icon: BarChart2, title: "Dashboards your team will actually use " },
+        { icon: BarChart2, title: "Drag, drop, drill—insights in a glance " },
+        { icon: BarChart2, title: "Intuitive, interactive, always up to date " },
       ],
     },
     {
       id: "tracking-setup",
-      description: "Get the foundation right or everything else crumbles. Set up events and parameters to track what drives performance.",
+   //   description: "Get the foundation right or everything else crumbles. Set up events and parameters to track what drives performance.",
       items: [
-        { icon: Database, title: "GA4, Adobe, or custom tracking, flawless configuration" },
-        { icon: Database, title: "Tag Manager orchestration for campaigns and conversions" },
-        { icon: Database, title: "Attribution-ready setups across all funnel stages" },
+        { icon: Database, title: "Explore your own data—no IT required " },
+        { icon: Database, title: "Drag-and-drop reports with enterprise-grade accuracy " },
+        { icon: Database, title: "Train your teams, not just your tools " },
       ],
     },
     {
       id: "dashboard",
-      description: "We help you build sleek, decision-ready views that combine AI, UX, and marketing logic.",
+  //    description: "We help you build sleek, decision-ready views that combine AI, UX, and marketing logic.",
       items: [
-        { icon: ShieldCheck, title: "Looker Studio, Power BI, Tableau, and GA Dashboards" },
-        { icon: ShieldCheck, title: "Predictive metrics, performance KPIs, and channel ROI" },
-        { icon: ShieldCheck, title: "Custom views for stakeholders: CMO to campaign lead" },
+        { icon: ShieldCheck, title: "Track user behavior, ops, or ROI live " },
+        { icon: ShieldCheck, title: "Predict what’s next, not just what happened " },
+        { icon: ShieldCheck, title: "Uncover patterns with machine learning and domain logic " },
       ],
     },
   ];
 
   // Trust Markers (Statistics)
   const stats = [
-    { label: "Certified Web Analytics geniuses", value: "30+" },
-    { label: "Analytics goals and events implemented", value: "200+" },
-    { label: "Analytics Technologies Mastered", value: "20+" },
-    { label: "Attribution models tailored for multi-channel growth", value: "50+" },
+    { label: "Events Tracked Monthly ", value: "1.6B+  " },
+    { label: "Increase in CRO, Post-Audit ", value: "92%" },
+    { label: "Faster Insights via AI Dashboards ", value: "12x" },
+   
   ];
 
   // Resources (RecentResourcesSection)
@@ -153,20 +198,20 @@ export default function MarketingAutomation() {
   // FAQs
   const faqs = [
     {
-      q: "Can you build a custom attribution model for us?",
-      a: "Yes. We create data-driven attribution models that align with your customer journey across touchpoints, platforms, and channels.",
+      q: "Do I need a specific analytics platform to get started?",
+      a: "Nope! We’re completely tool-agnostic and work with whatever stack you’ve got—Google Analytics, Snowflake, Adobe AEP, Mixpanel, you name it. ",
     },
     {
-      q: "How do you connect marketing analytics to business outcomes?",
-      a: "We map your data to important KPIs (revenue, retention, ROAS). Every dashboard and insight ties back to growth and decision-making.",
+      q: "What’s included in the free data analytics audit?",
+      a: "A full walkthrough of your current dashboards, tracking setup, and KPIs—plus one AI-powered insight we guarantee you haven’t implemented yet.",
     },
     {
-      q: "Can we integrate CRM, ad platforms, and offline data sources?",
-      a: "Definitely. We build data pipelines that unify platforms like HubSpot, Salesforce, Meta Ads, Google Ads, and even offline conversions into a single reporting layer.",
+      q: "Can you help with AEP Web SDK migration or GA4 setup? ",
+      a: "Absolutely. We specialize in modern tracking architecture—including GA4 migration, parallel tracking, and seamless AEP Web SDK rollouts.",
     },
     {
-      q: "Will we need to rely on your team every time we need a report?",
-      a: "No. We build self-serve dashboards and train your team to confidently explore, filter, and extract insights without needing constant support.",
+      q: "Is your analytics solution only for enterprise teams?",
+      a: "Not at all! Our solutions scale beautifully—from lean startups using affordable BI tools to global teams managing complex product analytics.",
     },
   ];
 
@@ -179,61 +224,67 @@ export default function MarketingAutomation() {
 
         {/* HERO Section */}
         <HeroSection
-          heading="AI-Powered Marketing Analytics That Fuel Growth"
-          subtext="Map your marketing to what matters. Real impact, not just impressions."
+          heading="Analytics That Actually Drive Action, Not Just Observation"
+          subtext="Turn raw data into real-time, AI-powered business decisions. "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/Marketing%20Analytics.webp"
+          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section%20Analytics-as-a-service.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands leveling up with sharper marketing decisions."
+          title="You’re in good company with teams that trust their data into real growth."
           stats={stats}
         />
 
         {/* Tab Features Section (How We Make Marketing Analytics Work for Results) */}
         <EnterpriseCapabilities
-          title="How We Make Marketing Analytics Work for Results"
-          subtitle="We turn data into strategic action that drives marketing ROI"
+          title="Where Data Meets Performance "
+          subtitle=" Analytics solutions built around 'YOUR’ business—not someone else's. "
           tabs={tabs}
           features={features}
         />
 
-        {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="See the Impact of Sharp Marketing Analytics"
-          body="A glimpse at how we’ve helped brands track smarter for better growth"
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+         {/* Platform Feature Cards */}
+        <section className="py-20 bg-white">
+  <div className="section-wrapper">
+    <div className="text-left mb-16 max-w-2xl">
+      <h2 className="text-4xl font-bold mb-4 text-gray-900">
+       Our Platform Power Plays 
+      </h2>
+      <p className="text-gray-600 mb-6">
+      We plug into your stack. Then we make it smarter. 
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {platformFeatures.map((card, idx) => (
+        <FeatureCard key={idx} {...card} />
+      ))}
+    </div>
+  </div>
+</section>
 
         <LogoScroller
-          heading="Folks That Trust Our Marketing Analytics Moves"
-          subtext="From high-growth startups to enterprises—we help them decode every click and conversion."
+          heading="Brands That See the Bigger Picture "
+          subtext=" From startups to enterprise, data-driven growth starts here. "
          
         />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Stories. Real ROI."
-          description="Strategy in the lead, AI magic in hand, and insights that work day & night."
+          title="Real Stories. Real Growth"
+          description="Hear how data moved the dial. "
         />
 
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Recent Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Keep your marketing analytics edge sharp with our newest guides, blog posts, and AI-powered insights."
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
-        />
+      
 
         {/* Call to Action */}
         <ContactCta
-          heading="Want to See Your Marketing Data in Motion?"
-          subtext="Let’s turn clicks into insights and insights into revenue."
+          heading="Let’s Turn Your Data Into an AI-Powered Direction  "
+          subtext="Book your free audit and unlock one strategic, AI-powered insight you can use immediately. "
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

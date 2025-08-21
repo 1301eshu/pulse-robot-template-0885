@@ -12,7 +12,8 @@ interface HeroSectionProps {
   buttonLink?: string;
   rightImage: string;
   noCta?: boolean;
-  bgImage?: string;
+  bgImage?: string; // existing usage (don't touch this)
+  customBgImage?: string; // ✅ new prop for page-level overrides
   overlayTitle?: string;
   overlayDesc?: string;
   overlayButtonText?: string;
@@ -28,8 +29,11 @@ export default function HeroSection({
   rightImage,
   noCta,
   centerText = false,
+  bgImage,
+  customBgImage, // ✅ added
 }: HeroSectionProps) {
-  const effectiveBg = DEFAULT_HERO_BG;
+  // Priority: customBgImage > bgImage > DEFAULT
+  const effectiveBg = customBgImage || bgImage || DEFAULT_HERO_BG;
 
   return (
     <div className="bg-white">
@@ -90,7 +94,7 @@ export default function HeroSection({
                 )}
               </div>
 
-              {/* Right image - always visible */}
+              {/* Right image */}
               {!centerText && (
                 <div className="md:col-span-5">
                   <div className="relative rounded-xl overflow-hidden">

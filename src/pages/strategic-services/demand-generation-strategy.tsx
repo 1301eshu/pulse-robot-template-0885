@@ -182,8 +182,8 @@ export default function MarketingAutomation() {
         <HeroSection
           heading="Demand Generation Strategy, Powered by AI, Engineered for Today’s Buyer Journey"
           subtext="A full-funnel demand motion that blends intent, and orchestration, built to keep your pipeline warm & your brand top-of-mind."
-          bgImage="https://via.placeholder.com/1600x600?text=Hero+Image"
-          rightImage="https://via.placeholder.com/600x400?text=Hero+Right"
+          bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
+          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
           buttonText="Audit Me"
         />
 

@@ -213,7 +213,7 @@ const features: FeatureContent[] = [
     { label: "Certified Web Analytics specialists on deck ", value: "30+" },
     { label: " Custom dashboards & reports built ", value: "500+" },
     { label: "Sites optimized  ", value: "100+" },
-    { label: " Data pipelines set up, end to end  ", value: "150+" },
+ //   { label: " Data pipelines set up, end to end  ", value: "150+" },
   ]}
 />
 

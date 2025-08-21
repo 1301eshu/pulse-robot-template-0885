@@ -186,7 +186,7 @@ return (
           { label: "Clients Served  ", value: "50+" },
           { label: "Certified Jira Experts  ", value: "20+" },
           { label: "Avg. Efficiency Boost  ", value: "30%" },
-          { label: "Years of Combined Atlassian Know-How  ", value: "200+" },
+     //     { label: "Years of Combined Atlassian Know-How  ", value: "200+" },
         ]}
       />
       <EnterpriseCapabilities

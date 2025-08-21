@@ -119,10 +119,14 @@ export default function ClientShowcaseCard() {
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
 
   // Auto-scroll every 7s
-  useEffect(() => {
-    const id = setInterval(() => setActive((p) => (p + 1) % clients.length), 7000);
-    return () => clearInterval(id);
-  }, []);
+ useEffect(() => {
+  if (isVideoOpen) return; // ⛔️ don't start interval while popup is open
+  const id = setInterval(
+    () => setActive((p) => (p + 1) % clients.length),
+    7000
+  );
+  return () => clearInterval(id);
+}, [isVideoOpen]);
 
   // ESC to close modal
   useEffect(() => {

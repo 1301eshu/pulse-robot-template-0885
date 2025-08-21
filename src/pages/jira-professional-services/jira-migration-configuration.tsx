@@ -186,7 +186,7 @@ return (
           { label: " Successful Jira Migrations Delivered ", value: "35+" },
           { label: "Certified Jira Experts  ", value: "20+" },
           { label: " Uptime During Go-Live Transition   ", value: "100%" },
-          { label: " Data Lost. Ever.  ", value: "0" },
+    //      { label: " Data Lost. Ever.  ", value: "0" },
         ]}
       />
       <EnterpriseCapabilities

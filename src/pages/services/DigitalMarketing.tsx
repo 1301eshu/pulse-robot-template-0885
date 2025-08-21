@@ -147,6 +147,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/Google%20Ads%20+%20Performance%20Max.png",
       title: "Google Ads + Performance Max ",
       description: "Smarter targeting and bidding powered by machine learning ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -154,6 +155,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/Meta%20+%20LinkedIn%20Ads.png",
       title: "Meta + LinkedIn Ads ",
       description: "AI-enhanced creative + audience strategy for B2C and B2B growth that work ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -161,6 +163,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/GA4%20+%20Looker%20Studio.png",
       title: "GA4 + Looker Studio ",
       description: "Real-time dashboards, attribution insights, and CRO tracking ",
+      nocta: true,
        ctaUrl: "#",
     },
     {
@@ -168,6 +171,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Digital%20Marketing%20Modular%20Logo%20/SEMrush%20+%20Surfer%20SEO.png",
       title: "SEMrush + Surfer SEO ",
       description: "AI-driven content strategy and search optimization ",
+      nocta: true,
        ctaUrl: "#",
     },
   ];
@@ -212,8 +216,8 @@ const features: FeatureContent[] = [
  
   title="You’re in good company with brands that trust AI-enhanced digital marketing. "
   stats={[
-    { label: "Increase in Lead Volume ", value: "4x" },
-    { label: "Reduction in CAC ", value: "2.5x" },
+    { label: "Increase in ROI From Paid Campaigns  ", value: "6x" },
+    { label: "Faster Campaign Launch Time  ", value: "3x" },
     { label: "Client Retention Rate ", value: "97%" },
   ]}
 />

@@ -127,37 +127,6 @@ export default function MarketingAutomation() {
     { label: "Long-form assets delivered across industries", value: "200+" }
   ];
 
-  // Recent Resources Section
-  const recentResources: ResourceItem[] = [
-    {
-      title: "How AI is Changing B2B Blog Strategy",
-      subtitle: "New rules for ranking, writing, and staying relevant in the LLM era.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-changing-b2b-blog"
-    },
-    {
-      title: "AEO & Entity-Based SEO: The Next Wave",
-      subtitle: "Why blogs that feed AI models are outpacing those that don't.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "aeo-entity-seo"
-    },
-    {
-      title: "The Anatomy of a LLM-Optimized Pillar Page",
-      subtitle: "Structuring long-form content for search, humans, and AI all at once.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "llm-pillar-page"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
@@ -206,7 +175,7 @@ export default function MarketingAutomation() {
           heading="See How Content Drives Results"
           body="How we helped brands build blog engines that scale."
           subTabs={[]}
-          resources={recentResources}
+          resourceType="35"
         />
         <LogoScroller
           heading="Brands That Trust Our Content"

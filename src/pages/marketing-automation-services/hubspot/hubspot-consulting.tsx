@@ -226,7 +226,6 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
-          resources={recentResources}
         />
       </div>
 

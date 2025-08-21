@@ -34,11 +34,11 @@ export default function FaqSection({ title = 'Frequently Asked Questions', faqs 
                 aria-controls={`faq-${i}`}
               >
                 <span className="font-medium text-lg text-gray-800">{f.q}</span>
-                <ChevronDown
-                  className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
-                    openFaq === i ? 'rotate-180' : ''
-                  }`}
-                />
+               <ChevronDown
+  size={20}                                   // ensures the SVG’s width/height attrs are 20
+  className={`w-5 h-5 shrink-0 text-gray-500  // Tailwind size + don’t let flex shrink it
+              transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
+/>
               </button>
 
               <div

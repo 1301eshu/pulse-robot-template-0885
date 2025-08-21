@@ -106,36 +106,6 @@ export default function DevOpsAutomation() {
     },
   ];
 
-  // Recent Resources
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI in DevOps: What It Changes (Hint: Everything)",
-      subtitle: "AI isn't just helping DevOps its rewriting the playbook. From CI/CD to real-time rollback...",
-      author: "Sneha Kumari",
-      date: "July 20, 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1581093588401-7a065b1925d2?w=600&h=400",
-      slug: "agentic-ai-devops",
-    },
-    {
-      title: "Top Metrics to Watch in Your AI-Driven DevOps Stack",
-      subtitle: "Don't fly blind. These are the KPIs that matter when your releases rely on AI and automation...",
-      author: "Mehakpreet Kaur",
-      date: "July 18, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400",
-      slug: "devops-metrics-ai",
-    },
-    {
-      title: "CI/CD + AI: Speed Meets Intelligence",
-      subtitle: "Merge, deploy, repeat now with machine learning in the mix. Heres how leading teams do it...",
-      author: "Mehakpreet Kaur",
-      date: "July 15, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437f6?w=600&h=400",
-      slug: "ci-cd-ai-automation",
-    },
-  ];
 
   const faqs = [
     {
@@ -190,8 +160,8 @@ export default function DevOpsAutomation() {
         <RecentResourcesSection
           heading="See AI-Ready, Smart DevOps in Action "
           body="Brands we've helped ship faster, safer, and smarter, without chaos  "
-          subTabs={[          ]}
-          resources={recentResources}
+          subTabs={[]}
+          resourceType="472"
         />
 
         <LogoScroller

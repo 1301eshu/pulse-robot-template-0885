@@ -13,6 +13,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ExploreMoreBlock from "@/components/exploremore";
+import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -164,7 +165,8 @@ export default function MarketingAutomation() {
   return (
     <div className="bg-white text-gray-900">
       <Header />
-      <main className="pt-24">
+       <SmartBreadcrumb />
+      <main className="pt-0">
         {/* HERO Section */}
         <HeroSection
           heading="eCommerce Strategy Services, Rewired for the AI Era"

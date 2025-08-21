@@ -70,9 +70,9 @@ const Careers = () => {
         <InstagramSection />
 
         <ContactCta
-          heading="Let's Build Your Next Growth Chapter"
-          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic—and a whole lot more scalable."
-          buttonLabel="Book Your Strategy Call"
+          heading="Let’s Build What Breaks the Mold "
+          subtext=" Join us on a journey where bold ideas meet real expertise and success is engineered. "
+          buttonLabel="Talk to Us! "
           buttonLink="/contact"
         />
         

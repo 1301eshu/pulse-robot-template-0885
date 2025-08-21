@@ -850,7 +850,15 @@ const CaseStudiesPost = () => {
               <div className="mt-16 p-6 bg-gray-50 rounded-lg border text-center shadow-sm">
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Ready to Transform Your Marketing Strategy?</h3>
                 <p className="text-gray-600 mb-4 text-sm">Let our experts help you implement cutting-edge solutions for your business.</p>
-                <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">Get Started Today</Button>
+                <a
+                  href="/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
+                    Get Started Today
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

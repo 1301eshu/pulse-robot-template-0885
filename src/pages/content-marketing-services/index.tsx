@@ -124,6 +124,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Blog%20Posts.webp",
       title: " Blog Posts ",
       description: "SEO-smart and snackable—written for humans, optimized for AEO. ",
+       nocta: true,
        ctaUrl: "#",
     },
     {
@@ -131,6 +132,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/articles.webp",
       title: "Articles",
       description: "Authority pieces with edge, POV, and high-share potential. ",
+       nocta: true,
        ctaUrl: "#",
     },
     {
@@ -138,6 +140,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Ebooks%20white%20paper.webp",
       title: "eBooks + Whitepapers ",
       description: "Deep dives that don’t drown readers in jargon. ",
+       nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
     },
@@ -146,6 +149,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Landing%20Pages.webp",
       title: "Landing Pages ",
       description: "Copy that scrolls fast, sells hard, and hits your CTA.",
+       nocta: true,
        ctaUrl: "#",
     },
     {
@@ -153,6 +157,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/social%20ad%20copywriting.webp",
       title: " Social + Ad Copywriting ",
       description: "From LinkedIn hooks to paid ad zingers—short, sharp, and scroll-stopping. ",
+       nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
     },
@@ -161,6 +166,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/email%20sequences.webp",
       title: " Email Sequences ",
       description: "Personalized, sharp, and timed to convert.  ",
+        nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
     },
@@ -169,6 +175,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Video%20Podcast.webp",
       title: "  Video & Podcast Scripts ",
       description: "Written for the ear, not the page—clear, clever, and cuttable.  ",
+        nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
     },
@@ -177,6 +184,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Thought%20Leadership.webp",
       title: " Thought Leadership  ",
       description: "Ghostwritten brilliance that sounds 100% “you”—only sharper.  ",
+        nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
     },
@@ -185,6 +193,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Webinar%20Decks%20+%20Talk%20Track.webp",
       title: " Webinar Decks + Talk Track ",
       description: "Slides with style and speaker notes that sell the story.  ",
+        nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
     },
@@ -201,6 +210,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Product%20GTechnical%20docs.webp",
       title: "Product + Technical Docs   ",
       description: "Complex ideas, cleanly explained—your PMs will thank you.  ",
+       nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
     },
@@ -209,6 +219,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/sales%20Enablement%20Docs.webp",
       title: "Sales Enablement Docs  ",
       description: "Leave-behinds that don’t get left behind. ",
+       nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
     },
@@ -235,6 +246,49 @@ const features: FeatureContent[] = [
       q: " If you’re using AI, how do you keep it “me”? ",
       a: " Great question. Our prompts are brand-trained. Our humans are sharp. And our final drafts sound like you, just better. ",
     },
+  ];
+
+
+
+   // Platform Tools
+  const platformTools = [
+    {
+      icon: null,
+      imageSrc: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Content%20L1/Logos/Chatgpt.webp",
+      title: "ChatGPT + Gemini ",
+      description: "LLM-driven content, ideation, and brand-safe writing flows ",
+      useBoxedImage: false,
+      nocta: true,
+      ctaUrl: "#",
+    },
+    {
+     icon: null,
+      imageSrc: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Content%20L1/Logos/Blog%20Posts.webp",
+      title: "ElevenLabs + Descript ",
+      description: "AI audio + video scripting that scales like magic  ",
+      useBoxedImage: false,
+      nocta: true,
+      ctaUrl: "#",
+    },
+    {
+      icon: null,
+      imageSrc: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Content%20L1/Logos/hubspot.webp",
+      title: "HubSpot + MS Clarity  ",
+      description: "Content performance tracking and user behavior insights ",
+      nocta: true,
+      ctaUrl: "#",
+      useBoxedImage: false
+    },
+    {
+     icon: null,
+      imageSrc: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Content%20L1/Logos/blog.webp",
+      title: "Jasper + Surfer SEO ",
+      description: "Content that ranks, converts, and actually reads well ",
+      useBoxedImage: false,
+      nocta: true,
+      ctaUrl: "#",
+    },
+      
   ];
   
   return (
@@ -287,6 +341,28 @@ const features: FeatureContent[] = [
             {/* Unified grid — no slices, no flex — clean 3-column layout */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {platformFeatures.map((card, idx) => (
+        <FeatureCard key={idx} {...card} />
+      ))}
+    </div>
+          </div>
+        </section>
+
+         {/* Platform Feature Cards */}
+        <section className="py-20 bg-white">
+          <div className="section-wrapper">
+            <div className="text-left mb-16 max-w-2xl">
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">
+              Our Platform Power Plays
+              </h2>
+              <p className="text-gray-600 mb-6">
+              We write, optimize, and publish using the sharpest tools in the content stack. 
+              </p>
+             
+            </div>
+
+            {/* Unified grid — no slices, no flex — clean 3-column layout */}
+     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {platformTools.map((card, idx) => (
         <FeatureCard key={idx} {...card} />
       ))}
     </div>

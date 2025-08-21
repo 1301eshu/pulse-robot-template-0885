@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const clientLogos = [
-  'https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Homepage/Recognitions/Inc%205000.webp',
-  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_7_xdwpxg.webp',
-  'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_1_r672nr.webp',
+  'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/awards/inc.webp',
+  'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/awards/impact.webp',
+  'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/awards/Clutch.webp',
   'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/img_8_vcrazd.webp',
   'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/Group_86572_1_crg2mq.webp',
   'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Awards%20and%20Recognitions/image_24_unsfok.webp',
@@ -54,16 +53,14 @@ export default function AwardsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-20 px-6 md:px-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-12">
+    <section ref={sectionRef} className="bg-white py-20 overflow-hidden">
+      <div className="section-wrapper flex flex-col md:flex-row items-start justify-between gap-12">
         {/* LEFT TEXT */}
         <div className="flex-1 text-left">
           <div className="relative mb-6">
             <div className="flex items-center gap-2">
               <div className="w-1 h-5 bg-[#1fa4fc] rounded-sm" />
-              <h3 className="text-sm font-semibold text-[#1fa4fc]">
-                Awards
-              </h3>
+              <h3 className="text-sm font-semibold text-[#1fa4fc]">Awards</h3>
             </div>
           </div>
 

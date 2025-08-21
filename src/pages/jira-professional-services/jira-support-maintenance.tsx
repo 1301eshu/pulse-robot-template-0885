@@ -171,7 +171,7 @@ return (
           { label: " Jira instances actively maintained ", value: "50+" },
           { label: "Certified Jira Experts  ", value: "20+" },
           { label: " Avg. Jira uptime under our watch  ", value: "99.98%" },
-          { label: " AI-backed support layer monitoring every workflow ", value: "1" },
+ //         { label: " AI-backed support layer monitoring every workflow ", value: "1" },
         ]}
       />
       <EnterpriseCapabilities

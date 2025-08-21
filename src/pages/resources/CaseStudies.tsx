@@ -65,8 +65,8 @@ const ResourcesIndex = () => {
 
         {/* Contact CTA */}
         <ContactCta
-          heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
-          subtext="Let’s plug in the tech, the talent, and the timing."
+          heading="Join Our Newsletter"
+          subtext="Talk to an expert"
           buttonLabel="Talk to an Expert"
           buttonLink="/contact"
         />

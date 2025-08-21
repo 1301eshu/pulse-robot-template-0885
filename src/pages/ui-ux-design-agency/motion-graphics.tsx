@@ -101,7 +101,7 @@ export default function MotionGraphics() {
     { label: "Years of motion mastery and counting", value: "30+" },
     { label: "Boost in conversion rates post-launch", value: "45%" },
     { label: "Motion design experts on deck", value: "8+" },
-    { label: "Brands leveled-up with scroll-stopping motion assets", value: "70+" },
+  //  { label: "Brands leveled-up with scroll-stopping motion assets", value: "70+" },
   ];
 
   // Resources (RecentResourcesSection)

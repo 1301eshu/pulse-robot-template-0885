@@ -121,6 +121,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/Logo%20Jira/Jira%20Software%20That%20Scales.webp",
       title: "Jira Software That Scales ",
       description: "Agile flows with predictive AI sprint optimization ",
+       nocta: true,
        ctaUrl: "#",
     },
     {
@@ -128,6 +129,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/Logo%20Jira/Jira%20Service%20Management%20That%20Delivers.webp",
       title: "Jira Service Management That Delivers ",
       description: "AI-powered ticket routing and instant SLAs ",
+       nocta: true,
        ctaUrl: "#",
     },
     {
@@ -135,6 +137,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/Logo%20Jira/Cloud%20&%20Data%20Center%20That%20Grows%20With%20You.webp",
       title: "Cloud & Data Center That Grows With You ",
       description: "AI tools that forecast load & flag issues before they hit ",
+       nocta: true,
       useBoxedImage: false,
        ctaUrl: "#",
     },
@@ -143,6 +146,7 @@ const features: FeatureContent[] = [
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/Logo%20Jira/Custom%20Plugins%20&%20Apps.webp",
       title: "Custom Plugins & Apps  ",
       description: "Integrations infused with automation, not maintenance ",
+       nocta: true,
        ctaUrl: "#",
     },
     
@@ -222,7 +226,7 @@ const features: FeatureContent[] = [
     { label: "Clients Served  ", value: "50+" },
     { label: "Certified Jira Experts ", value: "20+" },
     { label: "Avg. Efficiency Boost  ", value: "30%" },
-    { label: "Years of Combined Atlassian Know-How  ", value: "200+" },
+ //   { label: "Years of Combined Atlassian Know-How  ", value: "200+" },
   ]}
 />
 
@@ -266,8 +270,8 @@ const features: FeatureContent[] = [
          
 
         <LogoScroller
-        heading=" Brands That Trust Our HubSpot Game "
-        subtext=" Smart solutions built for some of the world’s smartest teams."
+        heading="Brands That Trust Our Jira Game  "
+        subtext=" Smart solutions built for some of the world’s smartest teams. "
         
       />
 
