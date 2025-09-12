@@ -118,15 +118,25 @@ export default function ClientShowcaseCard() {
   const embedUrl = useMemo(() => toEmbedUrl(current.videoUrl, true), [current.videoUrl]);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
 
-  // Auto-scroll every 7s
- useEffect(() => {
-  if (isVideoOpen) return; // ⛔️ don't start interval while popup is open
-  const id = setInterval(
-    () => setActive((p) => (p + 1) % clients.length),
-    7000
-  );
-  return () => clearInterval(id);
-}, [isVideoOpen]);
+  // Auto-scroll every 8s with better performance
+  useEffect(() => {
+    if (isVideoOpen) return;
+    
+    let interval: NodeJS.Timeout;
+    
+    const startInterval = () => {
+      interval = setInterval(() => {
+        // Only update if page is visible and not in video mode
+        if (!document.hidden && !isVideoOpen) {
+          setActive((p) => (p + 1) % clients.length);
+        }
+      }, 8000);
+    };
+
+    startInterval();
+    
+    return () => clearInterval(interval);
+  }, [isVideoOpen]);
 
   // ESC to close modal
   useEffect(() => {
@@ -285,8 +295,8 @@ export default function ClientShowcaseCard() {
 
       {/* Animations */}
       <style>{`
-        @keyframes subtleZoom { 0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)} }
-        .animate-subtleZoom { animation: subtleZoom 20s ease-in-out infinite; }
+        @keyframes subtleZoom { 0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)} }
+        .animate-subtleZoom { animation: subtleZoom 30s ease-in-out infinite; }
         @keyframes fadeSlideUp { 0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)} }
         .animate-fadeSlideUp { animation: fadeSlideUp 0.8s ease-in-out; }
       `}</style>

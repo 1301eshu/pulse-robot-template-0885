@@ -58,7 +58,15 @@ export default function ExploreMoreBlock({
       setIsLoading(true);
       setError(null);
       try {
-        const res = await fetch(endpoint, { cache: "no-store" });
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        
+        const res = await fetch(endpoint, { 
+          cache: "no-store",
+          signal: controller.signal 
+        });
+        clearTimeout(timeoutId);
+        
         if (!res.ok) throw new Error(`WP fetch failed: ${res.status}`);
         const data = await res.json();
 

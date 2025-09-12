@@ -63,12 +63,37 @@ export default function ClientShowcaseCard() {
   const [active, setActive] = useState(0);
   const current = clients[active];
 
-  // Auto-scroll every 7 seconds
+  // Auto-scroll every 8 seconds with visibility check
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % clients.length);
-    }, 7000);
-    return () => clearInterval(interval);
+    let interval: NodeJS.Timeout;
+    
+    const startInterval = () => {
+      interval = setInterval(() => {
+        // Only update if document is visible
+        if (!document.hidden) {
+          setActive((prev) => (prev + 1) % clients.length);
+        }
+      }, 8000);
+    };
+
+    startInterval();
+    
+    // Pause when page is hidden
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        clearInterval(interval);
+      } else {
+        clearInterval(interval);
+        startInterval();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   return (

@@ -34,9 +34,16 @@ const ResourcesIndex = () => {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        
         const res = await fetch(
-        `${API_BASE_URL}/wp-json/wp/v2/growth-stream?per_page=1&_embed`
+          `${API_BASE_URL}/wp-json/wp/v2/growth-stream?per_page=1&_embed`,
+          { signal: controller.signal }
         );
+        clearTimeout(timeoutId);
+        
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
 
         if (data.length > 0) {
