@@ -78,7 +78,15 @@ export default function ProcessSection() {
 
     async function fetchPosts() {
       try {
-        const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?per_page=3&_embed`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        
+        const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?per_page=3&_embed`, {
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
 
         if (cancelled) return;
@@ -124,9 +132,9 @@ export default function ProcessSection() {
           setActive((a) => (a + 1) % steps.length);
           return 0;
         }
-        return prev + 100 / (STEP_DURATION / 50);
+        return prev + 100 / (STEP_DURATION / 100);
       });
-    }, 50);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [isPlaying]);

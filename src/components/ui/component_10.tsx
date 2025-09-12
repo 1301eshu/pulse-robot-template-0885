@@ -99,10 +99,17 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
         setLoading(true);
         const resourceTypeParam = resourceType ? `&categories=${resourceType}` : '';
         const resourcepostTypeParam = resourcePostType ? `${resourcePostType}` : 'posts';
+        
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        
         const res = await fetch(
           `${API_BASE_URL}/wp-json/wp/v2/${resourcepostTypeParam}?status=publish&per_page=${postLimit}&_embed${resourceTypeParam}`,
-          { cache: "no-store" }
+          { cache: "no-store", signal: controller.signal }
         );
+        clearTimeout(timeoutId);
+        
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (cancelled) return;
 
