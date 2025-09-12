@@ -377,8 +377,8 @@ function renderMenuContent(menu: string | null, activeCategory: string, setActiv
           <div className="space-y-2">
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-4">Explore Categories</h3>
 
-            {/* Categories with scroll only below 1366px */}
-            <div className="space-y-2 max-h-[400px] xl:max-h-none overflow-y-auto custom-scrollbar pr-2">
+            {/* Categories with scroll below 1440px */}
+            <div className="space-y-2 max-h-[400px] 2xl:max-h-none overflow-y-auto custom-scrollbar pr-2">
               <CategoryMenuItem
                 icon={<Zap className="w-3 h-3" />}
                 iconBg="bg-yellow-100"
