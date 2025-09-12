@@ -93,7 +93,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "thought",
-      description: "Publish deep insights—not just reworded listicles.",
+      description: "Publish deep insights-not just reworded listicles.",
       items: [
         { icon: BarChart2, title: "First-party insights + expert POVs" },
         { icon: BarChart2, title: "LLM-tuned formatting (clear H1/H2s, semantic chunks)" },
@@ -205,7 +205,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers / Statistics Section */}
         <EditableStatSection
-          title="You’re in sharp company—with brands that blog with purpose and publish with precision."
+          title="You’re in sharp company-with brands that blog with purpose and publish with precision."
           stats={stats}
         />
 
@@ -235,7 +235,7 @@ export default function MarketingAutomation() {
         {/* Testimonials Section */}
         <Testimonials
           title="Real Stories, Real Content Wins"
-          description="We mix structure and strategy—plus a pinch of AI magic and a lot of nerve."
+          description="We mix structure and strategy-plus a pinch of AI magic and a lot of nerve."
         />
 
         {/* FAQs */}
@@ -254,7 +254,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build Content That Your Audience & AI Love"
           subtext="Content that teaches, converts, and keeps working long after it’s published."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

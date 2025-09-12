@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from HubSpot Training page)
@@ -33,7 +34,7 @@ const L3Template = () => {
     },
     {
       q: "What is the Duration of HubSpot Training Programs?",
-      a: "Duration varies by course and need—from a few hours for individual sessions to several weeks for comprehensive certification programs.",
+      a: "Duration varies by course and need-from a few hours for individual sessions to several weeks for comprehensive certification programs.",
     },
     {
       q: "Is Ongoing Support Available After Completing HubSpot Training?",
@@ -47,13 +48,14 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="marketingautomationserviceshubspottraining"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
       <ContactWithBg
         heading="HubSpot Training Services"
         highlight="to Master the Art of Inbound and Content Marketing"
-        description="Get your entire team up to speed on HubSpot in a hands‑on environment—learn inbound and content marketing, take practical courses, pursue certifications, and make the most of your HubSpot instance."
+        description="Get your entire team up to speed on HubSpot in a hands‑on environment-learn inbound and content marketing, take practical courses, pursue certifications, and make the most of your HubSpot instance."
       />
 
       <EditableStatSection
@@ -73,7 +75,7 @@ const L3Template = () => {
             What Our HubSpot Training Entails
           </h2>
           <p className="text-lg text-gray-700 mb-12">
-            Learn from certified HubSpot experts through courses designed to help you leverage HubSpot tools—optimize online presence, run effective campaigns, extend positive customer experiences, streamline processes, and achieve business goals.
+            Learn from certified HubSpot experts through courses designed to help you leverage HubSpot tools-optimize online presence, run effective campaigns, extend positive customer experiences, streamline processes, and achieve business goals.
           </p>
 
           {/* Service Cards Container */}
@@ -104,7 +106,7 @@ const L3Template = () => {
               {
                 title: "Robust HubSpot CMS Training",
                 desc:
-                  "Tailored training and support to master HubSpot tools and features—improve performance and ROI with flexible formats.",
+                  "Tailored training and support to master HubSpot tools and features-improve performance and ROI with flexible formats.",
                 bullets: [
                   "Master key tools and features",
                   "In‑person sessions to clear doubts",
@@ -115,7 +117,7 @@ const L3Template = () => {
               {
                 title: "HubSpot CMS Training Course Outlines",
                 desc:
-                  "Courses to manage website content, update pages, add content, and optimize site structure—no complex coding required.",
+                  "Courses to manage website content, update pages, add content, and optimize site structure-no complex coding required.",
                 bullets: [
                   "Interpret analytics to maximize time and budget",
                   "Target each buying‑stage to expand reach",
@@ -163,7 +165,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
-          resourceType="71"
+             resourceType="71"
+
         />
       </div>
 

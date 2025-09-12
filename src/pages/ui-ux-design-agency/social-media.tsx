@@ -60,9 +60,9 @@ export default function SocialMedia() {
   const features: FeatureContent[] = [
     {
       id: "custom-content",
-      description: "Content that actually makes people stop scrolling (and maybe even click \u201cfollow\u201d).",
+      description: "Content that actually makes people stop scrolling (and maybe even click follow).",
       items: [
-        { icon: Zap, title: "Designs that match your vibe\u2014across posts, stories, reels, and videos." },
+        { icon: Zap, title: "Designs that match your vibe across posts, stories, reels, and videos." },
         { icon: Zap, title: "AI-enhanced video thumbnails, product mockups, animations & promos." },
         { icon: Zap, title: "Platform-specific tweaks that make your content perform better (everywhere)." },
       ],
@@ -72,8 +72,8 @@ export default function SocialMedia() {
       description: "Your brand, but with templates that get real consistent and seriously clickable.",
       items: [
         { icon: Heart, title: "Templates you can reuse, remix, and rule every content format." },
-        { icon: Heart, title: "Perfect alignment of colors, fonts, logo placements\u2014zero off-brand moments." },
-        { icon: Heart, title: "Built to flex across Instagram, LinkedIn, YouTube, Pinterest\u2014you name it." },
+        { icon: Heart, title: "Perfect alignment of colors, fonts, logo placements zero off-brand moments." },
+        { icon: Heart, title: "Built to flex across Instagram, LinkedIn, YouTube, Pinterest you name it." },
       ],
     },
     {
@@ -101,53 +101,22 @@ export default function SocialMedia() {
     { label: "Social media design experts with platform-first thinking", value: "20+" },
     { label: "Years of Combined Experience", value: "150+" },
     { label: "Brands served across B2B, D2C, and mobile-first markets", value: "50+" },
-    { label: "Assets built to break the scroll and boost engagement", value: "100+" },
-  ];
-
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "AI Hacks for Scroll-Stopping Social",
-      subtitle: "How to use the latest tools for more likes and shares.",
-      author: "Social Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-social-hacks"
-    },
-    {
-      title: "The Secret to Branded Content That Converts",
-      subtitle: "Our proven playbook for building feeds people follow.",
-      author: "Creative Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "brand-content-strategy"
-    },
-    {
-      title: "Profile Makeovers: 2025 Edition",
-      subtitle: "What matters now, what\u2019s out\u2014and why you need an upgrade.",
-      author: "Strategy Director",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "profile-makeovers"
-    },
+//    { label: "Assets built to break the scroll and boost engagement", value: "100+" },
   ];
 
   // FAQs
   const faqs = [
     {
-      q: "How can custom social media design improve my brand\u2019s presence?",
-      a: "Custom design makes your feed cohesive, recognizable, and scroll-stopping\u2014aka, the stuff that builds loyal fans.",
+      q: "How can custom social media design improve my brands presence?",
+      a: "Custom design makes your feed cohesive, recognizable, and scroll-stopping aka, the stuff that builds loyal fans.",
     },
     {
       q: "What platforms do you design for?",
-      a: "Instagram, LinkedIn, YouTube, Twitter, Facebook, Pinterest\u2014even Threads.",
+      a: "Instagram, LinkedIn, YouTube, Twitter, Facebook, Pinterest even Threads.",
     },
     {
       q: "How do you ensure brand consistency?",
-      a: "We build a custom brand kit\u2014colors, fonts, vibe checks\u2014and use AI tools to keep every post on point.",
+      a: "We build a custom brand kit colors, fonts, vibe checks and use AI tools to keep every post on point.",
     },
     {
       q: "How do you develop a content strategy for my brand?",
@@ -155,7 +124,7 @@ export default function SocialMedia() {
     },
     {
       q: "Is profile optimization really necessary?",
-      a: "It\u2019s your first impression online. Our optimizations make sure you look professional, findable, and memorable.",
+      a: "It's your first impression online. Our optimizations make sure you look professional, findable, and memorable.",
     },
   ];
 
@@ -167,7 +136,7 @@ export default function SocialMedia() {
       <main className="pt-0">
         {/* HERO Section */}
         <HeroSection
-          heading="Social Media Design That Pops, Performs\u2014Powered by AI"
+          heading="Social Media Design That Pops, Performs-Powered by AI "
           subtext="Scroll-stopping designs + smart content systems that make your brand impossible to ignore."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/Social%20Media.webp"
@@ -175,7 +144,7 @@ export default function SocialMedia() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You\u2019re in good company\u2014with brands that don\u2019t just post, they perform"
+          title="You’re in good company-with brands that don’t just post, they perform "
           stats={stats}
         />
 
@@ -192,17 +161,17 @@ export default function SocialMedia() {
           heading="See What Scroll-Stopping Social Looks Like in Action"
           body="A few real wins we've helped brands achieve with next-level content."
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
-          heading="Creators, Founders, Marketers\u2014They All Trust Our Scroll Game"
-          subtext="From startups to unicorns, we\u2019ve helped brands punch above their weight."
+          heading="Creators, Founders, Marketers-They All Trust Our Scroll Game "
+          subtext="From startups to unicorns, we’ve helped brands punch above their weight."
         />
 
         {/* Testimonials */}
         <Testimonials
-          title="Real Talk from Brands We\u2019ve Helped Stand Out Online"
+          title="Real Talk from Brands We’ve Helped Stand Out Online "
           description="Less luck, more creative clarity (and some AI magic)."
         />
 
@@ -216,14 +185,16 @@ export default function SocialMedia() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="285"
+
 />
 
         {/* Call to Action */}
         <ContactCta
           heading="Let's Build Your AI-Powered Social Media Empire"
-          subtext="More eyes, more clicks, more \u201cwho did your design?\u201d DMs."
+          subtext="More eyes, more clicks, more “who did your design?” DMs."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

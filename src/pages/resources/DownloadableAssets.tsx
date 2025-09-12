@@ -9,6 +9,7 @@ import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_
 import { SITE_CTA } from "@/components/SITE_CTAs";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Calendar, Clock, User } from "lucide-react";
+import DynamicSEO from '@/components/DynamicSEO';
 
 interface SubTab {
   id: string;
@@ -43,6 +44,7 @@ const ResourcesIndex = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <DynamicSEO page='downloadableassets'/>
       <Header />
       <SmartBreadcrumb />
 
@@ -54,29 +56,29 @@ const ResourcesIndex = () => {
             <h3 className="text-lg font-semibold text-gray-800 mb-2">
               Growth Natives DIY Hub:
             </h3>
-            <h2 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
+            <h1 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
               We've Got the Blueprints,<br />
               You’ve Got the Skills
-            </h2>
+            </h1>
             <p className="text-lg text-gray-700 mb-4">
               Who says you need a tech wizard (or a hefty invoice) to tackle your big projects?
-              With our DIY cheat sheets, you can roll up your sleeves and get it done—no expensive
+              With our DIY cheat sheets, you can roll up your sleeves and get it done-no expensive
               experts required. Whether you’re migrating to HubSpot, setting up Salesforce, or building
               a website from scratch, these guides break it all down into simple, actionable steps.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              We believe in empowering you to take charge without the extra baggage—financial or technical.
+              We believe in empowering you to take charge without the extra baggage-financial or technical.
               So grab a cheat sheet, dive in, and show your tech stack who’s boss!
             </p>
             <SITE_CTA
               variant="secondary"
               text="Talk to an Expert"
-              href="/contact"
+              href="/contact-us"
               size="md"
             />
           </div>
 
-          {/* Right card — exact styling pattern from RecentResourcesSection */}
+          {/* Right card - exact styling pattern from RecentResourcesSection */}
           <Link to={
             featured.slug && featured.category
               ? `/downloadable-assets/${featured.category.toLowerCase()}/${featured.slug}`
@@ -138,10 +140,10 @@ const ResourcesIndex = () => {
 
         {/* CTA */}
         <ContactCta
-          heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
-          subtext="Let’s plug in the tech, the talent, and the timing."
+         heading="Let's Build Your Next Growth Chapter"
+          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

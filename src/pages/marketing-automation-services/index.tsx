@@ -188,13 +188,13 @@ const features: FeatureContent[] = [
         
           subtext="Smart workflows, zero chaos. Because you’ve got better things to do than babysit campaigns. "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"
-          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketing%20automation%20l1/Marketing%20Automation.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketing%20automation%20l1/Marketing%20Automation%20(1).webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in good company—alongside brands that automate smart, scale faster, and never drop a lead. "
+  title="You’re in good company-alongside brands that automate smart, scale faster, and never drop a lead. "
   stats={[
     { label: "Marketing Automation Customers ", value: "170+" },
     { label: "Certified Marketing Automation Experts ", value: "90+" },
@@ -259,7 +259,7 @@ const features: FeatureContent[] = [
           heading="AI Meets Marketing Automation. You Meet Results."
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

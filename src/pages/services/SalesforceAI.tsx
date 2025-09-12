@@ -116,7 +116,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "crm",
-      description: "Your central command for every customer touchpoint—now powered by smarter signals, automation, and insight.",
+      description: "Your central command for every customer touchpoint-now powered by smarter signals, automation, and insight.",
       items: [
         { icon: Zap, title: "Predict who’s ready to buy, churn, or engage" },
         { icon: Zap, title: "Automate lead scores, follow-ups, and clean-ups" },
@@ -134,7 +134,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "salescloud",
-      description: "Close faster with sales tools that think ahead—AI helps reps focus on deals, not data.",
+      description: "Close faster with sales tools that think ahead-AI helps reps focus on deals, not data.",
       items: [
         { icon: Database, title: "Auto-score leads based on conversion potential" },
         { icon: Database, title: "Surface next-best actions for every opportunity" },
@@ -152,7 +152,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "commercecloud",
-      description: "Smarter stores, happier shoppers—AI curates, recommends, and accelerates conversions across your storefronts.",
+      description: "Smarter stores, happier shoppers-AI curates, recommends, and accelerates conversions across your storefronts.",
       items: [
         { icon: ShieldCheck, title: "Deliver product recommendations that match intent" },
         { icon: ShieldCheck, title: "Automate promotions based on buying behavior" },
@@ -161,7 +161,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "experiencecloud",
-      description: "Create digital experiences that learn and evolve—AI helps you serve the right content at the right time.",
+      description: "Create digital experiences that learn and evolve-AI helps you serve the right content at the right time.",
       items: [
         { icon: Clock, title: "Personalize portals using user history and signals" },
         { icon: Clock, title: "Recommend content and support docs automatically" },
@@ -170,7 +170,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "analyticscloud",
-      description: "Turn scattered data into sharp, AI-powered decisions—faster.",
+      description: "Turn scattered data into sharp, AI-powered decisions-faster.",
       items: [
         { icon: Zap, title: "Build dashboards that forecast, not just report" },
         { icon: Zap, title: "Use machine learning to find hidden patterns" },
@@ -179,7 +179,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "mulesoft",
-      description: "Connect, sync, and visualize like a pro—MuleSoft moves your data and Tableau shows what matters.",
+      description: "Connect, sync, and visualize like a pro-MuleSoft moves your data and Tableau shows what matters.",
       items: [
         { icon: Database, title: "MuleSoft connects all your systems to deliver AI-ready, unified data" },
         { icon: Database, title: "Tableau visualizes that data with live, decision-ready dashboards" },
@@ -208,7 +208,7 @@ export default function MarketingAutomation() {
   const recentResources: ResourceItem[] = [
     {
       title: "5 Ways AI Supercharges Salesforce Workflows",
-      subtitle: "Why automation and insight beat intuition—every single time.",
+      subtitle: "Why automation and insight beat intuition-every single time.",
       author: "Salesforce Strategy Team",
       date: "July 2025",
       readTime: "6 min read",
@@ -259,7 +259,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Will you train our teams on Agentforce and AI tools?",
-      a: "Yes. We upskill your team to confidently run AI-powered systems—day one and beyond.",
+      a: "Yes. We upskill your team to confidently run AI-powered systems-day one and beyond.",
     },
   ];
 
@@ -304,7 +304,7 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Trusted by Brands That Move Fast with Salesforce AI"
-          subtext="From startups to global players—we help them scale smarter."
+          subtext="From startups to global players-we help them scale smarter."
          
         />
 
@@ -330,7 +330,7 @@ export default function MarketingAutomation() {
           heading="Let's Build Your AI-Powered Salesforce Engine"
           subtext="From lead to close, AI makes every step faster, sharper, and more human"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

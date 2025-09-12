@@ -125,7 +125,7 @@ export default function Eloqua() {
     },
     {
       q: "How long does Eloqua implementation take?",
-      a: "Most brands go live in under 4 weeks—strategy, setup, testing, and a dash of AI included.",
+      a: "Most brands go live in under 4 weeks-strategy, setup, testing, and a dash of AI included.",
     },
     {
       q: "What if our Eloqua setup’s already live?",
@@ -148,11 +148,11 @@ export default function Eloqua() {
           subtext="Campaigns that know when to launch, learn, and land the sale."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/eloqua.webp"
-         
+
         />
 
         <EditableStatSection
-          title="You’re in good crowd—where top brands scale with Eloqua"
+          title="You’re in good crowd-where top brands scale with Eloqua"
           stats={stats}
         />
 
@@ -167,7 +167,7 @@ export default function Eloqua() {
           heading="Watch AI-Backed Eloqua Work Wonders "
           body="Brands we’ve helped crush it with an outcome-oriented Eloqua. "
           subTabs={[]}
-          resourceType="516"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -182,20 +182,21 @@ export default function Eloqua() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
-<ExploreMoreBlock
-  heading="More From Our Content Repertoire"
-  body=" Stay sharp on all things Eloqua—tips, tricks, and AI takes served fresh.  "
-  perPage={6}
-  firstN={4}
-  contentType="blogs"
-/>
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+        <ExploreMoreBlock
+          heading="More From Our Content Repertoire"
+          body=" Stay sharp on all things Eloqua-tips, tricks, and AI takes served fresh.  "
+          perPage={6}
+          firstN={4}
+          contentType="blogs"
+          resourceType="24"
+        />
 
         <ContactCta
           heading="Launch AI-Baked Eloqua Like It’s Built for Today"
           subtext="Seamless strategies, sharp insights, and AI magic under the hood."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

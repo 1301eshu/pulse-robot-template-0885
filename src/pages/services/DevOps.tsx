@@ -83,7 +83,7 @@ export default function DevOpsAutomation() {
       id: "ci-cd",
       items: [
         { icon: BarChart2, title: "Rapid releases, smoother workflows, no compromises" },
-        { icon: BarChart2, title: "Merge, test, deploy—effortless and error-free" },
+        { icon: BarChart2, title: "Merge, test, deploy-effortless and error-free" },
         { icon: BarChart2, title: "Automate the process with AI assistance, speed up the results" },
       ],
     },
@@ -100,7 +100,7 @@ export default function DevOpsAutomation() {
       items: [
         { icon: ShieldCheck, title: "Track uptime, spot threats, deploy with confidence" },
         { icon: ShieldCheck, title: "Smarter releases start with smarter metrics " },
-        { icon: ShieldCheck, title: "Deploy more, stress less—automation’s got this" },
+        { icon: ShieldCheck, title: "Deploy more, stress less-automations got this" },
       ],
     },
   ];
@@ -109,7 +109,7 @@ export default function DevOpsAutomation() {
   const recentResources: ResourceItem[] = [
     {
       title: "Agentic AI in DevOps: What It Changes (Hint: Everything)",
-      subtitle: "AI isn't just helping DevOps—it’s rewriting the playbook. From CI/CD to real-time rollback...",
+      subtitle: "AI isn't just helping DevOps-it’s rewriting the playbook. From CI/CD to real-time rollback...",
       author: "Sneha Kumari",
       date: "July 20, 2025",
       readTime: "5 min read",
@@ -127,7 +127,7 @@ export default function DevOpsAutomation() {
     },
     {
       title: "CI/CD + AI: Speed Meets Intelligence",
-      subtitle: "Merge, deploy, repeat—now with machine learning in the mix. Here’s how leading teams do it...",
+      subtitle: "Merge, deploy, repeat-now with machine learning in the mix. Here’s how leading teams do it...",
       author: "Mehakpreet Kaur",
       date: "July 15, 2025",
       readTime: "6 min read",
@@ -139,7 +139,7 @@ export default function DevOpsAutomation() {
   const faqs = [
     {
       q: "How does DevOps speed up deployments?",
-      a: "With automation, testing on the go, and seamless integration—speed is the name of the game.",
+      a: "With automation, testing on the go, and seamless integration-speed is the name of the game.",
     },
     {
       q: "Can DevOps help me reduce downtime?",
@@ -151,7 +151,7 @@ export default function DevOpsAutomation() {
     },
     {
       q: "How does DevOps handle scalability?",
-      a: "With agile practices and automation, DevOps scales seamlessly—whether you’re a startup or an enterprise.",
+      a: "With agile practices and automation, DevOps scales seamlessly-whether you’re a startup or an enterprise.",
     },
   ];
 
@@ -171,7 +171,7 @@ export default function DevOpsAutomation() {
 
         <EditableStatSection
           
-          title="You’re in good company—where speed, seamless releases, and brand success unite"
+          title="You’re in good company-where speed, seamless releases, and brand success unite"
           stats={[
             { label: "Combined years of full-stack development experience", value: "200+" },
             { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
@@ -216,7 +216,7 @@ export default function DevOpsAutomation() {
           heading="Let’s Get Your DevOps on the Fast Track with AI"
           subtext="Faster code, zero bugs, and flawless uptime."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

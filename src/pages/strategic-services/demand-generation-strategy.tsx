@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import ExploreMoreBlock from "@/components/exploremore";
+import DynamicSEO from "@/components/DynamicSEO";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -64,7 +65,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "audience-intelligence",
-      description: "We don’t guess your ICP—we engineer it with precision.",
+      description: "We don’t guess your ICP-we engineer it with precision.",
       items: [
         { icon: FileText, title: "Unified signals from CRM, content, and channel engagement" },
         { icon: FileText, title: "LLMs that spot emerging personas and buying patterns" },
@@ -73,7 +74,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "conversion-playbooks",
-      description: "More than just top-funnel filler—this is storytelling that sells.",
+      description: "More than just top-funnel filler-this is storytelling that sells.",
       items: [
         { icon: Package, title: "AI-personalized messaging by funnel stage and channel" },
         { icon: Package, title: "Asset planning aligned to actual decision triggers" },
@@ -109,43 +110,12 @@ export default function MarketingAutomation() {
     },
     {
       id: "pod-deployment",
-      description: "Demand gen doesn’t live in silos—neither do we.",
+      description: "Demand gen doesn’t live in silos-neither do we.",
       items: [
-        { icon: FileText, title: "Strategy, content, operations, and analytics—moving as one" },
+        { icon: FileText, title: "Strategy, content, operations, and analytics-moving as one" },
         { icon: FileText, title: "Modular pods built for scale, speed, and GTM alignment" },
         { icon: FileText, title: "Built to plug into your current ecosystem, no heavy lift required" },
       ],
-    },
-  ];
-
-  // Resources
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic.",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://via.placeholder.com/600x400?text=Resource+1",
-      slug: "agentic-ai-marketing-ops",
-    },
-    {
-      title: "The AI Shortlist: Top Demand Gen Use Cases",
-      subtitle: "From predictive scoring to AI-personalized campaigns, here’s what’s working now.",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://via.placeholder.com/600x400?text=Resource+2",
-      slug: "ai-shortlist-demand-gen",
-    },
-    {
-      title: "Intent Data + LLMs = Demand Generation Superpowers",
-      subtitle: "Map intent signals to campaigns that convert faster.",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://via.placeholder.com/600x400?text=Resource+3",
-      slug: "intent-data-llm-demand-gen",
     },
   ];
 
@@ -165,7 +135,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Can we start with one part of the strategy?",
-      a: "Absolutely. Start with content, targeting, or scoring—then expand as momentum builds.",
+      a: "Absolutely. Start with content, targeting, or scoring-then expand as momentum builds.",
     },
     {
       q: "Is this strategy suitable for long sales cycles and complex buyer journeys?",
@@ -175,6 +145,7 @@ export default function MarketingAutomation() {
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="strategicservicesdemandgenerationstrategy" />
       <Header />
       <SmartBreadcrumb />
       <main>
@@ -189,7 +160,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers */}
         <EditableStatSection
-          title="You’re in smart company—with brands using our demand gen strategies compounding momentum."
+          title="You’re in smart company-with brands using our demand gen strategies compounding momentum."
           stats={[
             { label: "Avg. uplift in qualified pipeline within 2 quarters", value: "200%+" },
             { label: "Drop in cost-per-MQL across channels", value: "65%" },
@@ -210,7 +181,7 @@ export default function MarketingAutomation() {
           heading="See How Smart Demand Gen Became Profitable"
           body="Brands we’ve helped turn lead generation into pipeline momentum and kept it going."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Logo Carousel */}
@@ -235,6 +206,8 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="38"
+
 />
 
         {/* CTA */}
@@ -242,7 +215,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build a Demand Engine That Doesn’t Quit"
           subtext="Demand done smarter, powered by AI and purpose-built for you."
           buttonLabel="Talk to Us"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

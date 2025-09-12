@@ -87,7 +87,7 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
    
-    description: "We take your Jira to the cloud without breaking anything—or anyone.  ",
+    description: "We take your Jira to the cloud without breaking anything-or anyone.  ",
     items: [
       { icon: Zap, title: "Full-stack migration planning that accounts for every workflow, custom field, and permission  " },
       { icon: Zap, title: "AI-assisted field mapping and data QA   " },
@@ -117,7 +117,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "Structure that supports your people—not the other way around.  ",
+    description: "Structure that supports your people-not the other way around.  ",
     items: [
       { icon: ShieldCheck, title: "Every custom field mapped with intent    " },
       { icon: ShieldCheck, title: "Permission schemes that reflect your org’s reality   " },
@@ -127,7 +127,7 @@ const features: FeatureContent[] = [
    {
     id: "development",
    
-    description: "Keep the apps you love—or upgrade them. We’ll make it seamless.  ",
+    description: "Keep the apps you love-or upgrade them. We’ll make it seamless.  ",
     items: [
       { icon: ShieldCheck, title: "Validate compatibility before the move  " },
       { icon: ShieldCheck, title: "Replace legacy or unsupported tools with AI-native alternatives   " },
@@ -171,7 +171,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "What’s included in a Jira migration project? ",
-      a: " Planning, field mapping, user/data migration, workflow translation, integration testing—and yes, AI-optimized cleanup.  ",
+      a: " Planning, field mapping, user/data migration, workflow translation, integration testing-and yes, AI-optimized cleanup.  ",
     },
     {
       q: "Can you handle complex or multi-instance Jira environments? ",
@@ -195,7 +195,7 @@ const features: FeatureContent[] = [
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Jira Migrations That Don’t Miss a Beat—With AI at the Wheel "
+          heading="Jira Migrations That Don’t Miss a Beat-With AI at the Wheel "
          
           subtext="Cloud or Data Center, we move your Jira fast, clean, and chaos-free."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
@@ -205,7 +205,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
          <EditableStatSection
  
-  title="You’re in good company—with power users who run Jira without friction   "
+  title="You’re in good company-with power users who run Jira without friction   "
   stats={[
     { label: " Successful Jira Migrations Delivered ", value: "35+" },
     { label: "Certified Jira Experts  ", value: "20+" },
@@ -217,7 +217,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title=" What We Do with Jira Migration & Configuration   "
-          subtitle="Whether you're migrating from server, consolidating multiple instances, or shifting to cloud—we make the process airtight, intelligent, and fast.  "
+          subtitle="Whether you're migrating from server, consolidating multiple instances, or shifting to cloud-we make the process airtight, intelligent, and fast.  "
           tabs={tabs}
           features={features} 
         />
@@ -225,14 +225,14 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading=" See What Smart Jira Migration Looks Like in Action   "
-          body="From mess to mastery—these brands made the move without the mayhem.  "
+          body="From mess to mastery-these brands made the move without the mayhem.  "
           subTabs={[]}
           resources={recentResources}
         />
 
         <LogoScroller
         heading=" Brands That Moved with Growth Natives  "
-        subtext=" From startups upgrading to scale to enterprises ditching legacy for lean—we’ve got the blueprint. "
+        subtext=" From startups upgrading to scale to enterprises ditching legacy for lean-we’ve got the blueprint. "
         
       />
 
@@ -258,7 +258,7 @@ const features: FeatureContent[] = [
           heading="Let’s Migrate with Precision  "
           subtext="No chaos. No compromise. Just Jira that’s finally aligned with your future.  "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

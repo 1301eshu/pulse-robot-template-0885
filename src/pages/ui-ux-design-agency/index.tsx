@@ -183,14 +183,7 @@ const features: FeatureContent[] = [
       nocta: true,
        ctaUrl: "#",
     },
-    {
-    icon: null,
-      imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/creatai",
-      title: "Creatie.ai  ",
-      description: "Rapid ideation meets real-time visual generation ",
-      nocta: true,
-       ctaUrl: "#",
-    },
+     
     {
      icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Design%20Services%20Logos/Midjourney_Emblem.png",
@@ -213,7 +206,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "Do you only design in Figma or Adobe?",
-      a: "We’re tool-agnostic—but love tools that scale smartly.",
+      a: "We’re tool-agnostic-but love tools that scale smartly.",
     },
     {
       q: "Can you help redesign just parts of our site/app?",
@@ -225,7 +218,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Do you offer development support too?",
-      a: " Yep. Dev handoff or full-stack builds—we’ve got you.",
+      a: " Yep. Dev handoff or full-stack builds-we’ve got you.",
     },
   ];
 
@@ -246,7 +239,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
        <EditableStatSection
   
-  title="You’re in good company—alongside brands who've ditched the 'meh' for 'marvelous' with our AI-infused designs.  "
+  title="You’re in good company-alongside brands who've ditched the 'meh' for 'marvelous' with our AI-infused designs.  "
   stats={[
     { label: "Projects Transformed   ", value: "250+" },
     { label: "Happy Clients  ", value: "100+" },
@@ -270,12 +263,12 @@ const features: FeatureContent[] = [
         Our AI-Enhanced Platform Power Plays
       </h2>
       <p className="text-gray-600 mb-6">
-        We design across tools and stacks—and bring the AI magic wherever you are.
+        We design across tools and stacks-and bring the AI magic wherever you are.
       </p>
       
     </div>
 
-    {/* Unified grid — no slices, no flex — clean 3-column layout */}
+    {/* Unified grid - no slices, no flex - clean 3-column layout */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {platformFeatures.map((card, idx) => (
         <FeatureCard key={idx} {...card} />
@@ -286,8 +279,8 @@ const features: FeatureContent[] = [
 
 
          <LogoScroller
-        heading=" Design That Pops Off—Backed by Brands Who Get It "
-        subtext=" From bold startups to global names—we turn ideas into identity, and identity into  "
+        heading=" Design That Pops Off-Backed by Brands Who Get It "
+        subtext=" From bold startups to global names-we turn ideas into identity, and identity into impact. "
        
       />
 
@@ -305,7 +298,7 @@ const features: FeatureContent[] = [
           heading="Ready for Design That’s Got Brains and Beauty?"
           subtext="Let’s combine some creative energy with AI efficiency and build something scroll-worthy. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

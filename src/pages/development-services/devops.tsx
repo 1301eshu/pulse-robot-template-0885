@@ -38,23 +38,23 @@ export default function DevOpsAutomation() {
   const tabs: TabItem[] = [
     {
       id: "strategy",
-      label: "DevOps Strategy & Advisory",
+      label: "DevOps Strategy & Advisory Services ",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Devops%20Stratedgy%20&%20Advisory.webp",
+      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/CD%20Pipelines.webp",
    //  ctaText: "Audit Me!",
    //   ctaLink: "/audit-form",
     },
     {
       id: "ci-cd",
-      label: "CI/CD Pipelines",
+      label: "Continuous Integration & Deployment (CI/CD)  ",
       icon: BarChart2,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/CD%20Pipelines.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Development%20Service%20L2%20Banner/Devops/CI_CD%20Pipelines.webp",
    //   ctaText: "Audit Me!",
    //   ctaLink: "/audit-form",
     },
     {
       id: "monitoring",
-      label: "Monitoring & Observability",
+      label: "DevOps Monitoring Solutions ",
       icon: Database,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Monitoring%20&%20Observalibity.webp",
   //    ctaText: "Audit Me!",
@@ -62,7 +62,7 @@ export default function DevOpsAutomation() {
     },
     {
       id: "analytics",
-      label: "Metrics & AI Analytics",
+      label: "DevOps Metrics and Analytics ",
       icon: ShieldCheck,
       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/DevOps/Metrics%20&%20Ai%20Analytics.webp",
    //   ctaText: "Audit Me!",
@@ -74,6 +74,7 @@ export default function DevOpsAutomation() {
   const features: FeatureContent[] = [
     {
       id: "strategy",
+        description: "With AI woven into every layer, we help you deliver smarter, scale faster, and stay ahead of change. ",
       items: [
         { icon: Zap, title: "AI-powered game plan that powers growth without the grind" },
         { icon: Zap, title: "We turn your DevOps plan into a smooth launch" },
@@ -82,6 +83,7 @@ export default function DevOpsAutomation() {
     },
     {
       id: "ci-cd",
+        description: "Build, test, and deploy at speed. With AI in the mix, we cut down errors and get your features live without the lag. ",
       items: [
         { icon: BarChart2, title: "Rapid releases, smoother workflows, no compromises" },
         { icon: BarChart2, title: "Merge, test, deploy effortless and error-free" },
@@ -90,6 +92,7 @@ export default function DevOpsAutomation() {
     },
     {
       id: "monitoring",
+        description: "Every deploy tracked, every anomaly flagged. Stay ahead of failures with AI-powered monitoring that never blinks. ",
       items: [
         { icon: Database, title: "Track every release, fix issues in real time" },
         { icon: Database, title: "Optimize performance and tackle risks, instantly" },
@@ -98,10 +101,11 @@ export default function DevOpsAutomation() {
     },
     {
       id: "analytics",
+        description: "Less gut-feel, more ground truth. AI-enhanced analytics power decisions at every stage of delivery. ",
       items: [
         { icon: ShieldCheck, title: "Track uptime, spot threats, deploy with confidence" },
         { icon: ShieldCheck, title: "Smarter releases start with smarter metrics " },
-        { icon: ShieldCheck, title: "Deploy more, stress less automation s got this" },
+        { icon: ShieldCheck, title: "Deploy more, stress less automation got this" },
       ],
     },
   ];
@@ -161,7 +165,7 @@ export default function DevOpsAutomation() {
           heading="See AI-Ready, Smart DevOps in Action "
           body="Brands we've helped ship faster, safer, and smarter, without chaos  "
           subTabs={[]}
-          resourceType="472"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -183,13 +187,14 @@ export default function DevOpsAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="398"
 />
 
         <ContactCta
-          heading="Lets Get Your DevOps on the Fast Track with AI"
+          heading="Let's Get Your DevOps on the Fast Track with AI"
           subtext="Faster code, zero bugs, and flawless uptime."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

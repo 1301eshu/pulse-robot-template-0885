@@ -83,7 +83,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "consulting",
-      description: "Set up for success—clean builds, fast rollouts, and journeys that perform from day one.",
+      description: "Set up for success-clean builds, fast rollouts, and journeys that perform from day one.",
       items: [
         { icon: BarChart2, title: "Define scope, goals, and data requirements upfront" },
         { icon: BarChart2, title: "Configure Salesforce Marketing Cloud tools: Email Studio, Journey Builder, Mobile Studio " },
@@ -101,7 +101,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "migrations",
-      description: "We turn siloed systems into synchronized journeys—powered by real-time data and automation. ",
+      description: "We turn siloed systems into synchronized journeys-powered by real-time data and automation. ",
       items: [
         { icon: ShieldCheck, title: "Connect Sales & Service Cloud to Salesforce Marketing Cloud for unified journeys " },
         { icon: ShieldCheck, title: "Trigger campaigns with real-time behavioral and CRM data " },
@@ -137,35 +137,6 @@ export default function MarketingAutomation() {
   ];
 
   // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   return (
     <div className="bg-white text-gray-900">
@@ -179,11 +150,11 @@ export default function MarketingAutomation() {
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Marketing%20Cloud.webp"
           buttonText="Audit Me!"
-          buttonLink="/contact/"
+          buttonLink="/contact-us/"
         />
 
         <EditableStatSection
-          title="You're in good company—with brands scaling faster with Salesforce Marketing Cloud. "
+          title="You're in good company-with brands scaling faster with Salesforce Marketing Cloud. "
           stats={stats}
         />
 
@@ -199,7 +170,7 @@ export default function MarketingAutomation() {
           heading="Salesforce Marketing Cloud in Action: Real Results, Real ROI   "
           body="How we helped brands unlock growth with data-driven marketing and AI.  "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -235,14 +206,14 @@ export default function MarketingAutomation() {
           heading="More From Our Content Repertoire  "
           body="  Explore our latest guides, blog posts, and AI takes to sharpen your Salesforce Marketing Cloud game.  "
           subTabs={[]}
-          resources={recentResources}
+          
         />
 
         <ContactCta
           heading=" Let's Make Your Salesforce Marketing Cloud Work 10x Harder "
           subtext="From implementation to optimization, we'll power up your customer journeys with AI baked into every step. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

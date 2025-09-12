@@ -45,7 +45,7 @@ export default function HeroBanner() {
           </h2>
 
           <p className="text-lg md:text-xl text-white/80 mt-6 mb-8">
-            We dream, design, develop, and deliver intelligent systems that drive scale—not chaos.
+            We dream, design, develop, and deliver intelligent systems that drive scale-not chaos.
           </p>
 
           <div className="flex flex-wrap gap-3 items-center mb-12 max-w-lg">

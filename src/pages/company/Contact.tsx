@@ -9,6 +9,7 @@ import AwardsSection from '@/components/ui/component_12';
 import EditableStatSection from '@/components/Statistics';
 import ContactCta from "@/components/ui/component_6";
 import HubSpotForm from "@/components/HubSpotForm";
+import DynamicSEO from '@/components/DynamicSEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,18 +44,20 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page='contact'/>
       <Header />
 
       {/* Contact Section with BG Image */}
-      <section
-        className="py-28 text-white"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+     <section
+  className="pt-40 pb-28 text-white"   // ⬅️ increased top padding only
+  style={{
+    backgroundImage:
+      'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+
         <div className="section-wrapper grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* Left - Text */}
@@ -189,7 +192,7 @@ const Contact = () => {
         heading="You’re One Conversation Away from Better Execution "
         subtext="We don’t do vague promises. We do focused strategy, fast delivery, and results that show up. "
         buttonLabel="Let's Talk "
-        buttonLink="/contact"
+        buttonLink="/contact-us"
       />
 
       <Footer />

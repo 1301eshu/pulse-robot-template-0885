@@ -89,7 +89,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "management",
-      description: "With analytics and ML built-in, we make CPQ your team’s smartest seller—always learning, never stalling.",
+      description: "With analytics and ML built-in, we make CPQ your team’s smartest seller-always learning, never stalling.",
       items: [
         { icon: ShieldCheck, title: "Spot quote delays before they cost you" },
         { icon: ShieldCheck, title: "Forecast quote-to-close with confidence" },
@@ -167,7 +167,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You're in good company—with brands closing faster with AI-powered Salesforce CPQ."
+          title="You're in good company-with brands closing faster with AI-powered Salesforce CPQ."
           stats={[
             { label: "Salesforce CPQ projects delivered since 2020 ", value: "60+" },
             { label: "Faster quote-to-cash cycle on an average ", value: "30%" },
@@ -194,7 +194,7 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands That Trust Our Salesforce CPQ Know-How"
-          subtext="From scale-ups to global giants—we help them quote faster"
+          subtext="From scale-ups to global giants-we help them quote faster"
         />
 
         {/* Client Testimonials Section */}
@@ -219,7 +219,7 @@ export default function MarketingAutomation() {
           heading="Ready to Revolutionize Your Sales Process?"
           subtext="Real-time pricing. Quotes that adapt. CPQ that works for you"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

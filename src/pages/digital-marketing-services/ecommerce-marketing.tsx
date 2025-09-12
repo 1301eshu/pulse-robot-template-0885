@@ -14,11 +14,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ExploreMoreBlock from "@/components/exploremore";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import DynamicSEO from "@/components/DynamicSEO";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Tab Items — switched from Pardot to Channel/Platform-led eCommerce Strategy pillars
+  // Tab Items - switched from Pardot to Channel/Platform-led eCommerce Strategy pillars
   const tabs: TabItem[] = [
     {
       id: "klaviyo",
@@ -62,14 +63,14 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Feature bullets per tab — rewritten from the eCommerce Strategy L2 brief
+  // Feature bullets per tab - rewritten from the eCommerce Strategy L2 brief
   const features: FeatureContent[] = [
     {
       id: "klaviyo",
       description: "Smarter eCommerce emails, powered by real-time data.",
       items: [
         { icon: Zap, title: "AI-driven segmentation that adapts to behavior" },
-        { icon: Zap, title: "Flows that nurture, recover, and convert—automatically" },
+        { icon: Zap, title: "Flows that nurture, recover, and convert-automatically" },
         { icon: Zap, title: "Built for DTC brands that want to scale smarter" },
       ],
     },
@@ -97,7 +98,7 @@ export default function MarketingAutomation() {
       items: [
         { icon: ShieldCheck, title: "Listings that shine in Walmart’s crowded aisle" },
         { icon: ShieldCheck, title: "Reviews managed, trust earned, sales up" },
-        { icon: ShieldCheck, title: "Clicks, carts, and credibility—nail it all" },
+        { icon: ShieldCheck, title: "Clicks, carts, and credibility-nail it all" },
       ],
     },
     {
@@ -111,38 +112,7 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Resources for recent articles (placeholders retained — feel free to swap)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping eCommerce Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes—and no. Why agentic systems are the next evolution for your store.",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "agentic-ai-ecommerce-ops"
-    },
-    {
-      title: "The AI Shortlist: Must‑Know Use Cases for eCom Growth",
-      subtitle: "From smarter segmentation to dynamic pricing—what actually moves the needle this quarter.",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-use-cases-ecommerce-growth"
-    },
-    {
-      title: "Marketo & AI: Segmentation and Nurtures That Convert",
-      subtitle: "You’ve got data and 47 tabs open—here’s the sane way to run smarter plays.",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
-
-  // FAQs — aligned to eCommerce Strategy page
+  // FAQs - aligned to eCommerce Strategy page
   const faqs = [
     {
       q: "Will your strategy really improve my conversion rates?",
@@ -164,15 +134,16 @@ export default function MarketingAutomation() {
   
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="digitalmarketingservicesecommercemarketing"/>
       <Header />
        <SmartBreadcrumb />
       <main className="pt-0">
         {/* HERO Section */}
         <HeroSection
           heading="eCommerce Strategy Services, Rewired for the AI Era"
-          subtext="Turning browser behavior into business breakthroughs—automatically."
+          subtext="Turning browser behavior into business breakthroughs-automatically."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/ECOMMERCE%20STRATEGY.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Digital%20Marketing%20L2%20Banner/ECOMMERCE%20STRATEGY.webp"
         />
 
         {/* Statistics / Trust Markers */}
@@ -185,7 +156,7 @@ export default function MarketingAutomation() {
           ]}
         />
 
-        {/* What We Do — EnterpriseCapabilities as a tabbed explainer */}
+        {/* What We Do - EnterpriseCapabilities as a tabbed explainer */}
         <EnterpriseCapabilities
           title="How We Make eCommerce Strategies Hit Different with AI"
           subtitle="We craft strategies that turn traffic into transactions, so you can just sit and watch your brand shine."
@@ -200,7 +171,7 @@ export default function MarketingAutomation() {
         <RecentResourcesSection
           heading="More From Our Content Repertoire"
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -224,6 +195,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="201"
 />
 
         {/* Call to Action */}
@@ -231,7 +203,7 @@ export default function MarketingAutomation() {
           heading="Let’s Give Your eCommerce Game an AI Glow Up"
           subtext="Get seen, get sales, get ahead."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

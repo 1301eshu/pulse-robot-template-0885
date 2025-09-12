@@ -59,7 +59,7 @@ export default function MarketingAutomation() {
       id: "woocommerce",
       label: "WooCommerce",
       icon: Database,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/eCommerce%20Development%20/wooCommerce.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Development%20Service%20L2%20Banner/eCommerce%20Development/wooCommerce.webp",
   //    ctaText: "Audit Me!",
    //   ctaLink: "/lead-gen-form"
     },
@@ -175,7 +175,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers Section */}
         <EditableStatSection
-          title="Youre in good company where smooth operations meet scalable growth"
+          title="You're in good company where smooth operations meet scalable growth"
           stats={[
             { label: "Combined years of full-stack development experience", value: "200+" },
             { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
@@ -196,7 +196,7 @@ export default function MarketingAutomation() {
           heading=" See How Smarter AI-Backed eCommerce Takes Off "
           body=" Brands we've helped launch faster and scale smoother "
           subTabs={[]}
-         resourceType="201"
+         resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -222,6 +222,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="201"
 />
 
         {/* CTA Section */}
@@ -229,7 +230,7 @@ export default function MarketingAutomation() {
           heading="Let's Build Your AI-Driven eCommerce Empire"
           subtext="No more slow loads, just fast sales and happy customers."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

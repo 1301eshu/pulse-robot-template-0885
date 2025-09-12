@@ -42,7 +42,7 @@ export default function WebsiteCopywriting() {
       id: "marketing",
       label: "Homepage & Service Pages",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Website%20Copywrite/Homepagev&%20Service%20Pages.webp",
     },
     {
       id: "analytics",
@@ -66,7 +66,7 @@ export default function WebsiteCopywriting() {
       id: "development",
       label: "Copy for AI & LLM Optimization",
       icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Website%20Copywriting/Copy%20for%20Al%20&%20LLM%20Optimization.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Website%20Copywrite/Al%20&%20LLM%20Optimization.webp",
     },
     {
       id: "technology",
@@ -164,44 +164,13 @@ export default function WebsiteCopywriting() {
       logo: "",
     },
     {
-      quote: "We went from bounce to buy—purely through fresh, AI-ready copy.",
+      quote: "We went from bounce to buy-purely through fresh, AI-ready copy.",
       logo: "",
     },
     {
-      quote: "Finally, a team that speaks LLM and human—our organic is up, and so are demos.",
+      quote: "Finally, a team that speaks LLM and human-our organic is up, and so are demos.",
       logo: "",
     }
-  ];
-
-  // Resources for recent articles (example placeholders)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "LLM-Optimized Content: What Actually Works in 2025",
-      subtitle: "How to write content for the new AI-indexed search era.",
-      author: "Content Team",
-      date: "July 20, 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "llm-content-2025"
-    },
-    {
-      title: "SEO Is Dead. Long Live AEO.",
-      subtitle: "Why Answer Engine Optimization is the next frontier.",
-      author: "Content Team",
-      date: "July 16, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "aeo-next"
-    },
-    {
-      title: "Copywriting in the Age of AI Search: 5 Tips",
-      subtitle: "Get your pages seen and ranked by AI, not just Google.",
-      author: "Content Team",
-      date: "July 13, 2025",
-      readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-search-copy"
-    },
   ];
 
   // FAQs
@@ -239,7 +208,7 @@ export default function WebsiteCopywriting() {
          
         />
         <EditableStatSection
-          title="You're in good crowd—with brands turning clicks into conversions through smart copy."
+          title="You're in good crowd-with brands turning clicks into conversions through smart copy."
           stats={stats}
         />
         <EnterpriseCapabilities
@@ -252,15 +221,15 @@ export default function WebsiteCopywriting() {
           heading="See How High-Impact Copy Powers Big Wins"
           body=" How our content helped brands rank, engage, and grow in the AI day & age. "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
         <LogoScroller
           heading="Brands That Let Our Copy Do the Talking"
-          subtext="Whether lean or loaded—we help teams convert faster."
+          subtext="Whether lean or loaded-we help teams convert faster."
         />
         <Testimonials
-          title="Copy That Clicked—And Clients Who Loved It"
-          description="Strategy meets structure—sprinkled with just the right amount of AI magic."
+          title="Copy That Clicked-And Clients Who Loved It"
+          description="Strategy meets structure-sprinkled with just the right amount of AI magic."
         />
         <FaqSection title="FAQs" faqs={faqs} />
         {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
@@ -270,12 +239,13 @@ export default function WebsiteCopywriting() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="35"
 />
         <ContactCta
           heading="Let's Craft Copy That Gets You Found (and Chosen)"
           subtext="Crafted for search engines, fine-tuned for humans, and a few bots."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

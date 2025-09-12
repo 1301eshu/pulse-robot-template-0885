@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "For years, Growth Natives has delivered exceptional web development, SEO, and digital marketing services. They’re responsive, skilled, and committed—often working late to meet our needs—making them an indispensable partner.",
+      "For years, Growth Natives has delivered exceptional web development, SEO, and digital marketing services. They’re responsive, skilled, and committed-often working late to meet our needs-making them an indispensable partner.",
     author: "Jeremy Young",
     position: "Chief Strategy Officer",
     company: "Gander Group",

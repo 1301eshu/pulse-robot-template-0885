@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from LinkedIn Ads Services page)
@@ -41,7 +42,7 @@ const L3Template = () => {
     },
     {
       q: "What is geotargeting, and how does it improve LinkedIn Ads?",
-      a: "Geotargeting tailors your ads to specific locations so they reach users in relevant areas—especially effective for local or regional targeting.",
+      a: "Geotargeting tailors your ads to specific locations so they reach users in relevant areas-especially effective for local or regional targeting.",
     },
     {
       q: "How do you ensure that LinkedIn Ads are optimized for performance?",
@@ -53,43 +54,9 @@ const L3Template = () => {
     },
   ];
 
-  // Recent Blogs (kept same structure)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Choosing the Right CMS: WordPress, Drupal, or Shopify?",
-      subtitle: "How to match your business goals with the right platform and ecosystem.",
-      author: "Growth Natives Editorial",
-      date: "May 8, 2024",
-      readTime: "8 min read",
-      image:
-        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=600&h=400",
-      slug: "choose-right-cms",
-    },
-    {
-      title: "Headless CMS 101: Faster Content at Scale",
-      subtitle:
-        "Decouple your stack to deliver content to every channel, from web to mobile.",
-      author: "Growth Natives Editorial",
-      date: "Apr 18, 2024",
-      readTime: "9 min read",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400",
-      slug: "headless-cms-basics",
-    },
-    {
-      title: "Migrating to a New CMS Without Losing SEO",
-      subtitle: "A step-by-step playbook to preserve rankings and performance.",
-      author: "Growth Natives Editorial",
-      date: "Mar 27, 2024",
-      readTime: "10 min read",
-      image:
-        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400",
-      slug: "cms-migration-seo",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="digitalmarketingservicesppclinkedinads"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -200,7 +167,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
-          resources={recentResources}
+            resourceType="226"
+
         />
       </div>
 

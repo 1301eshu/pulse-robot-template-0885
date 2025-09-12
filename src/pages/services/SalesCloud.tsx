@@ -91,7 +91,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "integrations",
-      description: "Bring all your customer data into one view—Sales Cloud connects seamlessly across CRMs, ERPs, social platforms, and support tools.",
+      description: "Bring all your customer data into one view-Sales Cloud connects seamlessly across CRMs, ERPs, social platforms, and support tools.",
       items: [
         { icon: BarChart2, title: "Sync lead, contact, and opportunity data across platforms" },
         { icon: BarChart2, title: "Enable cross-team visibility with shared account insights" },
@@ -100,16 +100,16 @@ export default function MarketingAutomation() {
     },
     {
       id: "migration",
-      description: "Make the move to Salesforce Sales Cloud without slowing down—fast-track adoption, preserve your data, and future-ready foundations.",
+      description: "Make the move to Salesforce Sales Cloud without slowing down-fast-track adoption, preserve your data, and future-ready foundations.",
       items: [
-        { icon: Database, title: "Migrate leads, opportunities, workflows, and reports—cleanly and completely" },
+        { icon: Database, title: "Migrate leads, opportunities, workflows, and reports-cleanly and completely" },
         { icon: Database, title: "Preserve data integrity with validation, deduplication, and mapping best practices" },
         { icon: Database, title: "Cut migration time in half with proven frameworks and AI-assisted setup" }
       ]
     },
     {
       id: "support",
-      description: "Stay sales-ready with dedicated Sales Cloud support—smart fixes, smooth operations, and zero disruption.",
+      description: "Stay sales-ready with dedicated Sales Cloud support-smart fixes, smooth operations, and zero disruption.",
       items: [
         { icon: ShieldCheck, title: "Manage roles, permissions & user onboarding with ease" },
         { icon: ShieldCheck, title: "Ensure clean, secure, and up-to-date deal data" },
@@ -210,7 +210,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands scaling smarter with Salesforce Sales Cloud."
+          title="You’re in good company-with brands scaling smarter with Salesforce Sales Cloud."
           stats={stats}
         />
 
@@ -233,7 +233,7 @@ export default function MarketingAutomation() {
         {/* Logo Section */}
         <LogoScroller
           heading="Trusted by Companies Using Salesforce Sales Cloud"
-          subtext="From lean teams to global sellers—we help them all win smarter."
+          subtext="From lean teams to global sellers-we help them all win smarter."
          
         />
 
@@ -259,7 +259,7 @@ export default function MarketingAutomation() {
           heading="Let AI Drive Your Sales Machine to New Heights"
           subtext="Custom Salesforce Sales Cloud solutions that deliver"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

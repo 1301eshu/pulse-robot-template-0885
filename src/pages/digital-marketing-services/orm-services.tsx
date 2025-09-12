@@ -90,7 +90,7 @@ export default function MarketingAutomation() {
       description: "From monitoring to messaging, we manage reviews where it matters most and turn them into trust signals.",
       items: [
         { icon: ShieldCheck, title: "Own the narrative where buyers do the talking" },
-        { icon: ShieldCheck, title: "Stars, sentiment, strategy—synced and sorted" },
+        { icon: ShieldCheck, title: "Stars, sentiment, strategy-synced and sorted" },
         { icon: ShieldCheck, title: "Your reviews, our playbook for trust and traction" }
       ]
     }
@@ -111,50 +111,20 @@ export default function MarketingAutomation() {
     { id: "cs4", label: "Case Study 4", icon: ShieldCheck, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/4" },
   ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Top ORM Tactics for Modern Brands",
-      subtitle: "AI, monitoring, and how to keep your brand spotless in 2025.",
-      author: "GN ORM Team",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "orm-ai-modern-brands"
-    },
-    {
-      title: "Crisis Management: AI Tools That Protect Your Rep",
-      subtitle: "Step-by-step on using AI for social storms, negative news, and fake reviews.",
-      author: "PR Lead",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "crisis-management-ai"
-    },
-    {
-      title: "Review Management: Winning the Trust Game",
-      subtitle: "The hidden power of G2, Trustpilot, and smart replies in 2025.",
-      author: "ORM Specialist",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "review-management-2025"
-    }
-  ];
 
   // FAQ List
   const faqs = [
     {
       q: "What platforms do you monitor for my brand’s reputation?",
-      a: "We keep tabs on all the hotspots — Google My Business, socials, Trustpilot, among others, plus forums and blogs where your brand’s buzzing."
+      a: "We keep tabs on all the hotspots - Google My Business, socials, Trustpilot, among others, plus forums and blogs where your brand’s buzzing."
     },
     {
       q: "How do you handle negative reviews or comments?",
-      a: "We tackle negativity head-on—swift, smart, and sincere—turning grumbles into cheers, one reply at a time."
+      a: "We tackle negativity head-on-swift, smart, and sincere-turning grumbles into cheers, one reply at a time."
     },
     {
       q: "How do you monitor brand mentions across the internet?",
-      a: "Our AI-powered radar never sleeps—scanning socials, reviews, blogs, forums, and news to catch every mention, 24/7."
+      a: "Our AI-powered radar never sleeps-scanning socials, reviews, blogs, forums, and news to catch every mention, 24/7."
     },
     {
       q: "How do you handle fake or malicious reviews?",
@@ -173,7 +143,7 @@ export default function MarketingAutomation() {
           heading="AI-Powered ORM Services That Turn Crises into Comebacks"
           subtext="Clean up search results, respond with clarity, and own your story."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/ORM.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Digital%20Marketing%20L2%20Banner/ORM.webp"
          
         />
 
@@ -196,13 +166,13 @@ export default function MarketingAutomation() {
           heading="See How Smart AI-Backed ORM Rewrites Reputations "
           body="Brands we’ve helped build trust, and bounce back stronger "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Names That Trust Us With Their Online Reputation"
-          subtext="From rising startups to global players—we guard their digital image."
+          subtext="From rising startups to global players-we guard their digital image."
          
         />
 
@@ -222,6 +192,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="29"
 />
 
         {/* Call to Action */}
@@ -229,7 +200,7 @@ export default function MarketingAutomation() {
           heading="Let’s Grow Your Online Reputation With AI"
           subtext="Get trusted, stay positive, and shine online."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

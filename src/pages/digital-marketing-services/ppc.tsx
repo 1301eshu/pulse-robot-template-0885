@@ -125,37 +125,6 @@ const features: FeatureContent[] = [
   
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
-
   // FAQ List
   const faqs = [
     {
@@ -178,7 +147,7 @@ const features: FeatureContent[] = [
 
   return (
     <div className="bg-white text-gray-900">
-      <DynamicSEO page="serviceHubspot" />
+      <DynamicSEO page="digitalmarketingservicesppc" />
       <Header />
       <SmartBreadcrumb />
       <main className="">
@@ -215,12 +184,12 @@ const features: FeatureContent[] = [
           heading="See How AI-Powered PPC Became a Revenue Engine "
           body="Brands we’ve helped crush goals and win with smart paid campaigns  "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
         heading="Trusted By Brands That Bet on PPC Performance "
-        subtext=" From scaling startups to enterprise leaders—we build ad engines that deliver."
+        subtext=" From scaling startups to enterprise leaders-we build ad engines that deliver."
         
       />
 
@@ -240,6 +209,7 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="226"
 />
 
         {/* Call to Action */}
@@ -247,7 +217,7 @@ const features: FeatureContent[] = [
           heading="Let’s Turn Your Ad Spend into Substantial Returns "
           subtext="Build a performance engine that runs smarter, every hour, on every platform. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

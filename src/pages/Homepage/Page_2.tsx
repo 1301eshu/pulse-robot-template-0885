@@ -12,7 +12,7 @@ export default function Page_2() {
             Trusted by Brands That Scale Smart 
           </h2>
         }
-        subtext="From fast-scaling startups to global giants—our clients know growth isn't just output. It's infrastructure."
+        subtext="From fast-scaling startups to global giants-our clients know growth isn't just output. It's infrastructure."
       />
 
       <AwardsSection />

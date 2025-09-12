@@ -26,13 +26,13 @@ export default function MarketingSalesCollateralDesign() {
       id: "sales-deck",
       label: "Sales Deck Design",
       icon: FileText,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Marketing%20Sales%20Collateral/Sales%20Deck%20Design.webp",
     },
     {
       id: "one-pagers",
       label: "One-Pagers & Battle Cards",
       icon: Database,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Marketing%20%20Sales%20Collateral%20Design/One-Pagers%20&%20Battle%20Cards.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/design%20l2/One-Pagers%20&%20Battle%20Cards.webp",
     },
     {
       id: "ai-copy",
@@ -189,12 +189,12 @@ export default function MarketingSalesCollateralDesign() {
           heading="AI-Powered Marketing & Sales Collateral That Closes the Gap Between Interest and Action"
           subtext="From pitch decks to product sheets, get conversion-focused assets crafted with strategic design and AI insights."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Marketing%20Assets.webp"
         />
 
         {/* Statistics / Trust Markers */}
         <EditableStatSection
-          title="Youre in good company with brands elevating every touchpoint through strategic collateral design."
+          title="You’re in good company-with brands elevating every touchpoint through strategic collateral design. "
           stats={[
             { label: "Assets designed across funnels, teams & touchpoints", value: "500+" },
             { label: "Sales and marketing teams enabled with better visuals", value: "40+" },
@@ -240,14 +240,16 @@ export default function MarketingSalesCollateralDesign() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="285"
+
 />
 
         {/* CTA */}
         <ContactCta
-          heading="Lets Build Collateral That Closes Deals, Not Just Fills Folders"
+          heading="Let's Build Collateral That Closes Deals, Not Just Fills Folders"
           subtext="Get high-impact, AI-optimized assets designed to persuade, scale across channels, and drive real revenue."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

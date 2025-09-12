@@ -77,17 +77,17 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
   
-    description: "See what users are doing right now—not last week.   ",
+    description: "See what users are doing right now-not last week.   ",
     items: [
       { icon: Zap, title: "Capture product usage, campaign interactions, and buyer journeys in real time   " },
       { icon: Zap, title: "Auto-surface anomalies: drop-offs, surges, blockers   " },
-      { icon: Zap, title: "Watch funnels evolve live—no refresh required    " },
+      { icon: Zap, title: "Watch funnels evolve live-no refresh required    " },
     ],
   },
   {
     id: "analytics",
    
-    description: "Know what’s coming—before your team even asks.  ",
+    description: "Know what’s coming-before your team even asks.  ",
     items: [
       { icon: BarChart2, title: "Predict churn, conversion, retention, LTV, and campaign performance   " },
       { icon: BarChart2, title: "Trained on historical and live data to surface forward-looking insights  " },
@@ -97,7 +97,7 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "We don’t just tell you what happened—we tell you what to do next.   ",
+    description: "We don’t just tell you what happened-we tell you what to do next.   ",
     items: [
       { icon: Database, title: "AI generates optimization plays across GTM levers " },
       { icon: Database, title: "CRO, ROAS, and funnel tactics predicted based on behavioral trends    " },
@@ -107,7 +107,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "From ad click to purchase—know what’s working now.   ",
+    description: "From ad click to purchase-know what’s working now.   ",
     items: [
       { icon: ShieldCheck, title: "Multi-touch attribution models, updated as user journeys unfold   " },
       { icon: ShieldCheck, title: "Identify top-performing creatives, channels, and offers on the fly    " },
@@ -194,7 +194,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="Analytics that don’t just react—they predict and prescribe.  "
+  title="Analytics that don’t just react-they predict and prescribe.  "
   stats={[
     { label: "Lag between behavior & insight  ", value: "0 " },
     { label: " Accuracy rate for predictive trend models ", value: "87%  " },
@@ -206,7 +206,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="What We Do with Real-Time & AI-Powered Analytics "
-          subtitle="We help you act faster, forecast smarter, and find meaning in motion—not just static reports. "
+          subtitle="We help you act faster, forecast smarter, and find meaning in motion-not just static reports. "
           tabs={tabs}
           features={features} 
         />
@@ -214,21 +214,21 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading=" What Happens When Data Gets Fast (and Smart)    "
-          body=" These brands stopped reacting—and started outperforming. "
+          body=" These brands stopped reacting-and started outperforming. "
            subTabs={[]} // no subtabs on this page
           resources={recentResources}
         />
 
          <LogoScroller
         heading="Chosen by Teams That Lead With Data & Act With Speed"
-        subtext=" From marketing ops to product teams—real-time insight powers everything.  "
+        subtext=" From marketing ops to product teams-real-time insight powers everything.  "
        
       />
 
         {/* Testimonials */}
         <Testimonials
           title=" Real-Time Impact, Real Business Wins.     "
-          description=" Our clients don’t guess anymore—they know, instantly.   "
+          description=" Our clients don’t guess anymore-they know, instantly.   "
         />
 
         {/* FAQs */}
@@ -245,9 +245,9 @@ const features: FeatureContent[] = [
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Get You From Data Lag to First-Mover Advantage  "
-          subtext="AI-powered insight. Real-time speed. Business clarity—on tap.     "
+          subtext="AI-powered insight. Real-time speed. Business clarity-on tap.     "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

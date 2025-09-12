@@ -9,6 +9,7 @@ interface CTAProps {
   className?: string;
   icon?: boolean;
   size?: "sm" | "md" | "lg";
+  target?: string;
 }
 
 export function SITE_CTA({
@@ -19,6 +20,7 @@ export function SITE_CTA({
   className,
   icon = true,
   size = "md",
+  target,
 }: CTAProps) {
   const baseClasses =
     "group relative inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full overflow-hidden isolate";
@@ -37,7 +39,7 @@ export function SITE_CTA({
   };
 
   const Component: any = href ? "a" : "button";
-  const props = href ? { href } : { onClick };
+  const props = href ? { href, target } : { onClick };
 
   return (
     <Component

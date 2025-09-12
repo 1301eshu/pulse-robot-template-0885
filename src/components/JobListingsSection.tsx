@@ -10,7 +10,11 @@ const HOST_ID = 'gn-indeed-host';
 
 function absUrl(href?: string | null): string | null {
   if (!href) return null;
-  try { return new URL(href, window.location.href).href; } catch { return null; }
+  try {
+    return new URL(href, window.location.href).href;
+  } catch {
+    return null;
+  }
 }
 
 const JobListingsSection: React.FC = () => {
@@ -28,7 +32,9 @@ const JobListingsSection: React.FC = () => {
 
     const ensureScript = () =>
       new Promise<void>((resolve) => {
-        const existing = document.getElementById(SOCIABLEKIT_SCRIPT_ID) as HTMLScriptElement | null;
+        const existing = document.getElementById(
+          SOCIABLEKIT_SCRIPT_ID
+        ) as HTMLScriptElement | null;
         if (existing) {
           if (typeof (window as any).Sociablekit?.Init === 'function') resolve();
           else existing.addEventListener('load', () => resolve(), { once: true });
@@ -43,7 +49,7 @@ const JobListingsSection: React.FC = () => {
         document.body.appendChild(s);
       });
 
-    // —— Styles: remove white bg & radius, stack vertically, keep clean rows ——
+    // -- Styles (with spacing fix) --
     const ensureStyles = () => {
       if (styleTagRef.current) return;
       const style = document.createElement('style');
@@ -53,17 +59,16 @@ const JobListingsSection: React.FC = () => {
 #${HOST_ID}.gn-wait { opacity: 0; }
 #${HOST_ID}.gn-ready { opacity: 1; transition: opacity .2s ease; }
 
-/* wipe widget chrome: NO background, NO radius, NO shadow, NO borders */
+/* wipe widget chrome */
 #${HOST_ID},
 #${HOST_ID} * {
-  background: transparent !important;
   background-color: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  border-radius: 0 !important;
+  border-radius: 20px !important;
 }
 
-/* force single-column stacking and remove gaps */
+/* single-column layout */
 #${HOST_ID} .sk-ww-indeed-jobs,
 #${HOST_ID} .grid-indeed-jobs {
   display: block !important;
@@ -83,7 +88,7 @@ const JobListingsSection: React.FC = () => {
 #${HOST_ID} img,
 #${HOST_ID} a[href*="sociablekit"] { display: none !important; }
 
-/* neutralize original card boxes */
+/* neutralize original card */
 #${HOST_ID} .grid-content {
   display: block !important;
   padding: 0 !important;
@@ -94,7 +99,7 @@ const JobListingsSection: React.FC = () => {
 /* our row */
 #${HOST_ID} .gn-job-row {
   display: grid !important;
-  grid-template-columns: 1fr auto !important; /* left text | right CTA */
+  grid-template-columns: 1fr auto !important;
   align-items: center !important;
   gap: 16px !important;
   padding: 16px 0 !important;
@@ -102,30 +107,61 @@ const JobListingsSection: React.FC = () => {
 }
 #${HOST_ID} .gn-job-row:last-child { border-bottom: 0 !important; }
 
-/* text */
-#${HOST_ID} .gn-left { min-width: 0 !important; }
+/* --- TEXT FIX --- */
+#${HOST_ID} .gn-left {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;       /* spacing between title & location */
+  min-width: 0 !important;
+}
 #${HOST_ID} .gn-title {
-  font-size: 22px; line-height: 1.35; font-weight: 700;
-  color: #0f172a; margin: 0 0 4px 0; text-decoration: none !important; display: inline-block;
+  font-size: 22px; 
+  line-height: 1.35; 
+  font-weight: 700;
+  color: #0f172a; 
+  margin: 0 !important;
+  text-decoration: none !important; 
+  display: block !important;
 }
 #${HOST_ID} .gn-title:hover { color: #0a66ff; }
-#${HOST_ID} .gn-location { color: #374151; font-size: 14px; }
+#${HOST_ID} .gn-location {
+  color: #374151; 
+  font-size: 14px; 
+  display: block !important;
+  margin: 0 !important;
+  white-space: normal !important;
+}
 
-/* CTA mount spot (we'll React-render SITE_CTA here) */
+/* CTA */
 #${HOST_ID} .gn-cta { display: inline-block !important; }
+#${HOST_ID} .gn-cta a,
+#${HOST_ID} .gn-cta button {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+#${HOST_ID} .gn-cta a:hover,
+#${HOST_ID} .gn-cta button:hover {
+  color: #ffffff !important;
+}
 `;
       document.head.appendChild(style);
-      addCleanup(() => { style.remove(); styleTagRef.current = null; });
+      addCleanup(() => {
+        style.remove();
+        styleTagRef.current = null;
+      });
     };
 
-    // —— Transform: turn widget cards into our rows and mount our CTA ——
+    // -- Transform widget cards --
     const restyleJobs = () => {
       const host = hostRef.current;
       if (!host) return;
 
       const scope = host.querySelector('.sk-ww-indeed-jobs') || host;
       const cards = Array.from(
-        scope.querySelectorAll<HTMLElement>('.grid-indeed-jobs .grid-content, .grid-content')
+        scope.querySelectorAll<HTMLElement>(
+          '.grid-indeed-jobs .grid-content, .grid-content'
+        )
       );
 
       let built = 0;
@@ -133,19 +169,36 @@ const JobListingsSection: React.FC = () => {
       for (const card of cards) {
         if (card.classList.contains('gn-job-row')) continue;
 
-        const allBtns = Array.from(card.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>('a,button'));
-        const applyBtn = allBtns.find((el) => /apply now/i.test(el.textContent || ''));
+        const allBtns = Array.from(
+          card.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>('a,button')
+        );
+        const applyBtn = allBtns.find((el) =>
+          /apply now/i.test(el.textContent || '')
+        );
 
         const anchors = Array.from(card.querySelectorAll<HTMLAnchorElement>('a'));
         const titleLink =
-          anchors.find((a) => a !== applyBtn && (a.textContent || '').trim().length > 0) ||
-          anchors.sort((a, b) => (b.href?.length || 0) - (a.href?.length || 0))[0] || null;
+          anchors.find(
+            (a) => a !== applyBtn && (a.textContent || '').trim().length > 0
+          ) ||
+          anchors.sort(
+            (a, b) => (b.href?.length || 0) - (a.href?.length || 0)
+          )[0] ||
+          null;
 
-        // quick location guesser (comma text)
+        // location guesser
         let locationEl: HTMLElement | null = null;
         for (const b of Array.from(card.querySelectorAll<HTMLElement>('p, span, div'))) {
           const t = (b.textContent || '').trim();
-          if (t && /,/.test(t) && !/apply now/i.test(t) && (!titleLink || b !== titleLink)) { locationEl = b; break; }
+          if (
+            t &&
+            /,/.test(t) &&
+            !/apply now/i.test(t) &&
+            (!titleLink || b !== titleLink)
+          ) {
+            locationEl = b;
+            break;
+          }
         }
         if (!titleLink && !applyBtn) continue;
 
@@ -162,12 +215,12 @@ const JobListingsSection: React.FC = () => {
 
         const loc = document.createElement('div');
         loc.className = 'gn-location';
-        loc.textContent = (locationEl?.textContent || '').trim();
+        loc.textContent = '' +(locationEl?.textContent || '').trim();
 
         left.appendChild(aTitle);
         if (loc.textContent) left.appendChild(loc);
 
-        // right (your CTA)
+        // right CTA
         const ctaMount = document.createElement('span');
         ctaMount.className = 'gn-cta';
 
@@ -177,21 +230,22 @@ const JobListingsSection: React.FC = () => {
           absUrl(titleLink?.getAttribute('href')) ||
           '#';
 
-        // wipe original & insert our row
+        // wipe and insert row
         card.innerHTML = '';
         card.appendChild(left);
         card.appendChild(ctaMount);
         card.classList.add('gn-job-row');
 
-        // Render SITE_CTA via ReactDOM
+        // Render SITE_CTA
         const root = ReactDOM.createRoot(ctaMount);
         mountedRoots.current.add(root);
         root.render(
           <SITE_CTA
-            variant="primary"
+            variant="secondary"
             text="Apply now"
             href={targetHref ?? '#'}
             size="md"
+            target="_blank"
           />
         );
 
@@ -230,13 +284,18 @@ const JobListingsSection: React.FC = () => {
         host.classList.remove('gn-wait');
         host.classList.add('gn-ready');
       }, 3000);
-      addCleanup(() => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); });
+      addCleanup(() => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+        clearTimeout(t4);
+      });
     };
 
     ensureStyles();
     ensureScript().then(mountWidget);
 
-    // cleanup: unmount CTA roots and observers/styles
+    // cleanup
     return () => {
       mountedRoots.current.forEach((r) => r.unmount());
       mountedRoots.current.clear();
@@ -248,31 +307,22 @@ const JobListingsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50 overflow-x-clip">
+    <section className="pt-16 bg-gray-50 mt-20 mb-20 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Built Different? So Are We!</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Built Different? So Are We!
+          </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            You&apos;re not here to fit into a checkbox, we&apos;re not here to hand out templated roles.
-            If you vibe with what we&apos;re building but don&apos;t see your title listed, write to us at
+            You&apos;re not here to fit into a checkbox, we&apos;re not here to
+            hand out templated roles. If you vibe with what we&apos;re building
+            but don&apos;t see your title listed, write to us at
             <br className="hidden sm:block" /> recruitment@growthnatives.com
           </p>
         </div>
 
-        {/* SociableKit host (CSS is scoped to this id) */}
+        {/* SociableKit host */}
         <div id={HOST_ID} className="mb-8" ref={hostRef} />
-
-        <div className="text-center mt-8">
-          <p className="text-gray-600 mb-4">
-            Don&apos;t see a role that fits? We&apos;re always open to exceptional talent. Send us your resume at:
-          </p>
-          <SITE_CTA
-            variant="secondary"
-            text="recruitment@growthnatives.com"
-            href="mailto:recruitment@growthnatives.com"
-            size="md"
-          />
-        </div>
       </div>
     </section>
   );

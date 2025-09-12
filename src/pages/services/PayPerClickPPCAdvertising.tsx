@@ -235,7 +235,7 @@ const features: FeatureContent[] = [
 
         <LogoScroller
         heading="Trusted By Brands That Bet on PPC Performance "
-        subtext=" From scaling startups to enterprise leaders—we build ad engines that deliver."
+        subtext=" From scaling startups to enterprise leaders-we build ad engines that deliver."
         
       />
 
@@ -261,7 +261,7 @@ const features: FeatureContent[] = [
           heading="Let’s Turn Your Ad Spend into Substantial Returns "
           subtext="Build a performance engine that runs smarter, every hour, on every platform. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

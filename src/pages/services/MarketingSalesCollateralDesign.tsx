@@ -47,7 +47,7 @@ export default function MarketingAutomation() {
       id: "sales-deck",
       label: "Sales Deck Design",
       icon: FileText,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Marketing%20Sales%20Collateral/Sales%20Deck%20Design.webp",
     },
     {
       id: "one-pagers",
@@ -106,7 +106,7 @@ export default function MarketingAutomation() {
     {
       id: "ai-copy",
       description:
-        "Messaging optimized by AI for tone, variation, and conversion—refined by real-time campaign data.",
+        "Messaging optimized by AI for tone, variation, and conversion-refined by real-time campaign data.",
       items: [
         { icon: Sparkles, title: "Headlines, CTAs, copy optimized with AI tone testing" },
         { icon: Sparkles, title: "Multiple variations auto-generated for rapid A/B testing" },
@@ -183,11 +183,11 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "What kinds of collateral do you design?",
-      a: "Sales decks, one-pagers, campaign kits, pitch materials, case studies, social ads, landing pages—if it’s part of your funnel, we design it.",
+      a: "Sales decks, one-pagers, campaign kits, pitch materials, case studies, social ads, landing pages-if it’s part of your funnel, we design it.",
     },
     {
       q: "Do you write the copy too?",
-      a: "Yes. We combine strategic messaging with AI-enhanced copywriting and design—so every word works.",
+      a: "Yes. We combine strategic messaging with AI-enhanced copywriting and design-so every word works.",
     },
     {
       q: "Can you refresh our existing materials?",
@@ -215,7 +215,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics / Trust Markers */}
         <EditableStatSection
-          title="You’re in good company—with brands elevating every touchpoint through strategic collateral design."
+          title="You’re in good company-with brands elevating every touchpoint through strategic collateral design. "
           stats={[
             { label: "Assets designed across funnels, teams & touchpoints", value: "500+" },
             { label: "Sales and marketing teams enabled with better visuals", value: "40+" },
@@ -226,7 +226,7 @@ export default function MarketingAutomation() {
         {/* What We Do */}
         <EnterpriseCapabilities
           title="What We Do with Marketing & Sales Collateral Design"
-          subtitle="From pitch decks to social ads, we craft on-brand, on-target collateral—amplified by AI and strategy."
+          subtitle="From pitch decks to social ads, we craft on-brand, on-target collateral-amplified by AI and strategy."
           tabs={tabs}
           features={features}
         />
@@ -242,7 +242,7 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands That Trust Our Collateral to Convert"
-          subtext="From early-stage ventures to established leaders—we power the assets behind high-performing teams."
+          subtext="From early-stage ventures to established leaders-we power the assets behind high-performing teams."
         />
 
         {/* Testimonials */}
@@ -265,9 +265,9 @@ export default function MarketingAutomation() {
         {/* CTA */}
         <ContactCta
           heading="Let’s Build Collateral That Closes Deals, Not Just Fills Folders"
-          subtext="Get high-impact, AI-optimized assets—designed to persuade, scale across channels, and drive real revenue."
+          subtext="Get high-impact, AI-optimized assets-designed to persuade, scale across channels, and drive real revenue."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

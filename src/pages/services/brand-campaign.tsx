@@ -29,6 +29,8 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
+import DynamicSEO from "@/components/DynamicSEO";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -40,28 +42,28 @@ export default function MarketingAutomation() {
       label: "Brand Identity Systems",
       icon: FileText,
       image:
-        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp",
+        "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/brand%20campaign/Brand%20Identity%20Systems.webp",
     },
     {
       id: "full-funnel",
       label: "Full-Funnel Campaign Design",
       icon: Package,
       image:
-        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Consulting.webp",
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Brand%20%20Campaign%20Design/Full-Funnel%20Campaign%20Design.webp",
     },
     {
       id: "narrative",
       label: "Narrative & Messaging Design",
       icon: Sparkles,
       image:
-        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Operations.webp",
+        "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/design%20l2/Narrative%20&%20Messaging%20Design.webp",
     },
     {
       id: "rapid-pods",
       label: "Rapid Creative Pods",
       icon: Zap,
       image:
-        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Migration.webp",
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Brand%20%20Campaign%20Design/Rapid%20Creative%20Pods.webp",
     },
   ];
 
@@ -107,43 +109,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Resources (structure preserved; sample content)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle:
-        "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image:
-        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector",
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle:
-        "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image:
-        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase",
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle:
-        "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image:
-        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation",
-    },
-  ];
-
   // FAQs (from the doc)
   const faqs = [
     {
@@ -166,6 +131,7 @@ export default function MarketingAutomation() {
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="uiuxdesignagencybrandcampaign"/>
       <Header />
       <SmartBreadcrumb />
       <main className="">
@@ -174,12 +140,12 @@ export default function MarketingAutomation() {
           heading="AI-Backed Brand & Campaign Design That Drives Recognition, Recall, and Results"
           subtext="Build a brand that feels distinct and run campaigns that move people, from first glance to final click."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://res.cloudinary.com/dar70fhfi/image/upload/v1753086148/image_1_qverlt.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Brand%20&%20Campaign%20design.webp"
         />
 
         {/* Trust Markers / Statistics Section */}
         <EditableStatSection
-          title="You’re in creative company—with brands that trust us to turn design into growth."
+          title="You’re in creative company-with brands that trust us to turn design into growth."
           stats={[
             { label: "Average lift in engagement after design-led refresh", value: "4.8×" },
             { label: "Retention rate on ongoing brand & creative mandates", value: "92%" },
@@ -200,7 +166,7 @@ export default function MarketingAutomation() {
           heading="How Brand & Campaign Design Became a Growth Catalyst"
           body="Brands we’ve helped bridge identity gaps, scale campaigns, and turn consistency into conversion."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -212,18 +178,20 @@ export default function MarketingAutomation() {
         {/* Testimonials */}
         <Testimonials
           title="Campaigns That Look Good and Work Harder"
-          description="Where brand clarity meets campaign precision—creativity, strategy, and AI in sync."
+          description="Where brand clarity meets campaign precision-creativity, strategy, and AI in sync."
         />
 
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
         {/* More Resources */}
-        <RecentResourcesSection
-          heading="More From Our Content Repertoire"
-          body="Stay updated with the tips, tactics, resources, and insights to outsmart the algorithm and your competitors."
-          subTabs={[]}
-          resources={recentResources}
+        <ExploreMoreBlock
+          heading=" More From Our Content Repertoire "
+          body=" Stay ahead with the sharpest CRO hacks, insights, blog posts and AI updates to stay ahead.  "
+          perPage={6}
+          firstN={4}
+          contentType="blogs"
+          resourceType="285"
         />
 
         {/* CTA */}
@@ -231,7 +199,7 @@ export default function MarketingAutomation() {
           heading="Make Every Campaign Count and Every Brand Impression Stick"
           subtext="Let’s align your message and creative with momentum that performs and endures."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

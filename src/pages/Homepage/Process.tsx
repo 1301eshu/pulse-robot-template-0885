@@ -187,11 +187,11 @@ export default function ProcessSection() {
               </span>
             </h2>
             <p className="text-[#5E6874] text-base mb-8 max-w-2xl mx-auto">
-              Our free AI-readiness audit breaks down your ops, stack, and workflows—and shows you
+              Our free AI-readiness audit breaks down your ops, stack, and workflows-and shows you
               the things you're not doing (but should be).
             </p>
             <div className="flex items-center justify-center">
-              <SITE_CTA variant="secondary" text="Book My Audit" href="/contact" size="md" />
+              <SITE_CTA variant="secondary" text="Book My Audit" href="/contact-us" size="md" />
             </div>
           </div>
 

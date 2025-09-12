@@ -52,7 +52,7 @@ export default function TestingQA() {
   const features: FeatureContent[] = [
     {
       id: "manual-testing",
-      description: "End-to-end testing that digs deeper. AI-driven QA built to catch what users—and basic tools—miss.",
+      description: "End-to-end testing that digs deeper. AI-driven QA built to catch what users-and basic tools-miss.",
       items: [
         { icon: Zap, title: "We test what matters, not just what’s visible" },
         { icon: Zap, title: "From login to launch, we test it all, AI-powered" },
@@ -70,7 +70,7 @@ export default function TestingQA() {
     },
     {
       id: "automated-testing",
-      description: "Let AI handle the heavy lifting—automated tests that keep up with every push, pull, and deploy.",
+      description: "Let AI handle the heavy lifting-automated tests that keep up with every push, pull, and deploy.",
       items: [
         { icon: Database, title: "Faster test cycles, minus the manual hassle" },
         { icon: Database, title: "Continuous testing that fits your CI/CD flow" },
@@ -107,7 +107,7 @@ export default function TestingQA() {
     },
     {
       q: "What tools do you use for automated testing?",
-      a: "We roll with the best—Selenium, Appium, Postman, JMeter and let AI jump in to spot what humans (and deadlines) might miss.",
+      a: "We roll with the best-Selenium, Appium, Postman, JMeter and let AI jump in to spot what humans (and deadlines) might miss.",
     },
     {
       q: "What if my app changes during testing?",
@@ -132,7 +132,7 @@ export default function TestingQA() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—where bug-free apps and flawless user journeys come standard."
+          title="You’re in good company-where bug-free apps and flawless user journeys come standard."
           stats={stats}
         />
 
@@ -150,7 +150,7 @@ export default function TestingQA() {
           heading="See Flawless, AI-Enhanced Testing in Action "
           body="Brands we've helped launch bug-free, high-performing experiences across platforms"
           subTabs={[]} // no subtabs on this page
-          resourceType="389"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -161,7 +161,7 @@ export default function TestingQA() {
         {/* Testimonials */}
         <Testimonials
           title="Real Impact with Smarter Testing & QA"
-          description="How we helped our clients get AI-powered apps that run smooth & perform flawless"
+          description="How we helped our clients get AI-powered apps that run smooth & perform flawlessly"
         />
 
         {/* FAQs */}
@@ -174,6 +174,7 @@ export default function TestingQA() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="398"
 />
 
         {/* Call to Action */}
@@ -181,7 +182,7 @@ export default function TestingQA() {
           heading="Let’s Upgrade Your Brand with AI-Powered Fail-Proof Testing"
           subtext="Minimize risks, accelerate delivery, and launch flawless, bug-free products."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

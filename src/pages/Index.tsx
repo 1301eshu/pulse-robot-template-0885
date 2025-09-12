@@ -8,17 +8,18 @@ import PartnershipSection from '@/components/ui/component_15';
 import DynamicSEO from "@/components/DynamicSEO";
 import { lazy, Suspense } from 'react';
 
-// Lazy load components below the fold to reduce initial script evaluation
-const Services = lazy(() => import("@/pages/Homepage/Services"));
-const ValueProposition = lazy(() => import("@/pages/Homepage/ValueProposition"));
-const Process = lazy(() => import("@/pages/Homepage/Process"));
-const FeaturedProjects = lazy(() => import("@/pages/Homepage/FeaturedProjects"));
-const Testimonials = lazy(() => import("@/pages/Homepage/Testimonials"));
-const Page_1 = lazy(() => import("@/pages/Homepage/Page_1"));
-const Page_2 = lazy(() => import("@/pages/Homepage/Page_2"));
-const EditableStatSection = lazy(() => import("@/components/Statistics"));
-const ContactCta = lazy(() => import("@/components/ui/component_6"));
-const AutoPopup = lazy(() => import("@/components/ui/AutoPopup"));
+// Remove lazy/Suspense, use direct imports
+import Services from "@/pages/Homepage/Services";
+import ValueProposition from "@/pages/Homepage/ValueProposition";
+import Process from "@/pages/Homepage/Process";
+import FeaturedProjects from "@/pages/Homepage/FeaturedProjects";
+import Testimonials from "@/pages/Homepage/Testimonials";
+import Page_1 from "@/pages/Homepage/Page_1";
+import Page_2 from "@/pages/Homepage/Page_2";
+import EditableStatSection from "@/components/Statistics";
+import ContactCta from "@/components/ui/component_6";
+import AutoPopup from "@/components/ui/AutoPopup";
+
 
 export default function Index() {
   return (
@@ -45,15 +46,15 @@ export default function Index() {
 
           <ContactCta
             heading="Let's Build Your Next Growth Chapter"
-            subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic—and a whole lot more scalable."
+            subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
             buttonLabel="Book Your Strategy Call"
-            buttonLink="/contact"
+            buttonLink="/contact-us"
           />
 
           <EditableStatSection
             stats={[
-              { label: "Customers Worldwide Put Faith In Us", value: "200+" },
-              { label: "Digital Transformation Experts", value: "400+" },
+              { label: "Customers Worldwide Put Faith In Us", value: "300+" },
+              { label: "Digital Transformation Experts", value: "300+" },
               { label: "Years Of Collective Experience", value: "1500+" },
             ]}
             paddingTop="pt-0"

@@ -94,7 +94,7 @@ const features: FeatureContent[] = [
   
     items: [
       { icon: BarChart2, title: "Full-time team + real-time LLM ideation " },
-      { icon: BarChart2, title: "SEO, CRO, content, media, design—all AI-assisted  " },
+      { icon: BarChart2, title: "SEO, CRO, content, media, design-all AI-assisted  " },
       { icon: BarChart2, title: "Flexible models tuned to your goals  " },
     ],
   },
@@ -144,7 +144,7 @@ const features: FeatureContent[] = [
      icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Tailored,%20Data-Driven%20Plans.webp",
       title: "Tailored, Data-Driven Plans ",
-      description: "No cookie-cutter frameworks—just custom roadmaps that work ",
+      description: "No cookie-cutter frameworks-just custom roadmaps that work ",
        nocta: true,
        ctaUrl: "#",
     },
@@ -152,7 +152,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/L1%20Logo%20/Platform-Agnostic%20Execution.webp",
       title: "Platform-Agnostic Execution",
-      description: "Salesforce, HubSpot, GPT—whatever moves the needle fastest ",
+      description: "Salesforce, HubSpot, GPT-whatever moves the needle fastest ",
        nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
@@ -172,11 +172,11 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "Are your strategic services built on specific AI platforms?",
-      a: " We’re platform-agnostic but AI-native—we’ll work with your stack or help implement LLM tools where they make the biggest impact.  ",
+      a: " We’re platform-agnostic but AI-native-we’ll work with your stack or help implement LLM tools where they make the biggest impact.  ",
     },
     {
       q: "What’s included in the AI-powered opportunity assessment? ",
-      a: " You’ll get a complete review of your strategy, tech stack, and funnels—plus one AI-driven opportunity we guarantee you haven’t leveraged yet. ",
+      a: " You’ll get a complete review of your strategy, tech stack, and funnels-plus one AI-driven opportunity we guarantee you haven’t leveraged yet. ",
     },
     {
       q: "Can you help us build our own LLM tools or GPT workflows?",
@@ -200,7 +200,7 @@ const features: FeatureContent[] = [
         
           subtext="Transform your business with LLM-powered strategy, planning, and growth.  "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs%20(1).jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Strategic%20Services/726011.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/strategic%20services%20hero%20banner%20/Strategic%20planning%20Services.webp"
         />
 
         {/* Statistics Section */}
@@ -230,7 +230,7 @@ const features: FeatureContent[] = [
                 Why Growth Natives for AI-Driven Strategy? 
               </h2>
               <p className="text-gray-600 mb-6">
-              Because you need more than advice—you need intelligence, agility, and execution. 
+              Because you need more than advice-you need intelligence, agility, and execution. 
               </p>
              
             </div>
@@ -271,7 +271,7 @@ const features: FeatureContent[] = [
           heading="Let’s Build Your AI-Driven Growth Strategy "
           subtext="Book a strategy session and get one immediately actionable insight that changes how you operate. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

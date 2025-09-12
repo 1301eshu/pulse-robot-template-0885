@@ -80,17 +80,17 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
    
-    description: "User setups, permission tweaks, project creation, cleanup—we’ve got it covered.  ",
+    description: "User setups, permission tweaks, project creation, cleanup-we’ve got it covered.  ",
     items: [
       { icon: Zap, title: "Get admin requests off your team’s plate    " },
       { icon: Zap, title: "Centralized change management with full traceabilit   " },
-      { icon: Zap, title: "No delays, no bottlenecks—just frictionless support   " },
+      { icon: Zap, title: "No delays, no bottlenecks-just frictionless support   " },
     ],
   },
   {
     id: "analytics",
    
-    description: "We keep an eye on everything, always—thanks to intelligent alerting and predictive diagnostics.   ",
+    description: "We keep an eye on everything, always-thanks to intelligent alerting and predictive diagnostics.   ",
     items: [
       { icon: BarChart2, title: "Proactive issue detection, not reactive fire drills    " },
       { icon: BarChart2, title: "AI flags field bloat, config decay, and workflow drift   " },
@@ -100,17 +100,17 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "Your workflows should grow with you. We keep them optimized—weekly, monthly, and as needed.   ",
+    description: "Your workflows should grow with you. We keep them optimized-weekly, monthly, and as needed.   ",
     items: [
       { icon: Database, title: "Refine rules, triggers, and transitions as usage evolves   " },
       { icon: Database, title: "Add new automations as teams and needs shift   " },
-      { icon: Database, title: "AI helps us spot when something’s slowing you down—before you do     " },
+      { icon: Database, title: "AI helps us spot when something’s slowing you down-before you do     " },
     ],
   },
   {
     id: "security",
    
-    description: "Things break. We fix fast—and we don’t guess.  ",
+    description: "Things break. We fix fast-and we don’t guess.  ",
     items: [
       { icon: ShieldCheck, title: "Ticket-based support with clear ownership     " },
       { icon: ShieldCheck, title: "SLA-based resolution timeframes for urgent issues    " },
@@ -167,7 +167,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "How often do you review and optimize workflows? ",
-      a: "Monthly by default—weekly if you’re scaling fast or evolving rapidly.  ",
+      a: "Monthly by default-weekly if you’re scaling fast or evolving rapidly.  ",
     },
   ];
 
@@ -181,7 +181,7 @@ const features: FeatureContent[] = [
         <HeroSection
           heading="AI-Enhanced Jira Support That’s Always On (So You Don’t Have to Be) "
          
-          subtext=" From break-fixes to big-picture improvements—we keep your Jira running smooth, smart, and scalable. "
+          subtext=" From break-fixes to big-picture improvements-we keep your Jira running smooth, smart, and scalable. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/L-2%20Banner%20Images/Support%20and%20maintainance.webp"
         />
@@ -201,7 +201,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title=" What We Do with Jira Support & Maintenance   "
-          subtitle=" We don’t just fix bugs. We futureproof your Jira—one AI-smart move at a time.  "
+          subtitle=" We don’t just fix bugs. We futureproof your Jira-one AI-smart move at a time.  "
           tabs={tabs}
           features={features} 
         />
@@ -209,14 +209,14 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading="See What Reliable Jira Support Looks Like in Practice  "
-          body="We don’t just keep Jira running—we make it better over time.   "
+          body="We don’t just keep Jira running-we make it better over time.   "
           subTabs={[]}
           resources={recentResources}
         />
 
         <LogoScroller
         heading=" Always-On Jira Support Trusted by Top Teams "
-        subtext=" From SaaS startups to enterprise squads—we’ve got their back, front, and roadmap."
+        subtext=" From SaaS startups to enterprise squads-we’ve got their back, front, and roadmap."
         
       />
 
@@ -242,7 +242,7 @@ const features: FeatureContent[] = [
           heading="Let’s Keep Your Jira Calm, Clean, and Climbing   "
           subtext="  Full-time support. Zero-stress stability. Smart systems that stay optimized.   "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

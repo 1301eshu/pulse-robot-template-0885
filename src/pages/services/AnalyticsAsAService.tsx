@@ -50,7 +50,7 @@ export default function MarketingAutomation() {
     id: "marketing",
     items: [{
       icon: Zap,
-      title: "Centralized, cleaned, structured—ready to analyze"
+      title: "Centralized, cleaned, structured-ready to analyze"
     }, {
       icon: Zap,
       title: "Scalable architecture, powered by cloud & logic"
@@ -65,7 +65,7 @@ export default function MarketingAutomation() {
       title: "Dashboards your team will actually use"
     }, {
       icon: BarChart2,
-      title: "Drag, drop, drill—insights in a glance"
+      title: "Drag, drop, drill-insights in a glance"
     }, {
       icon: BarChart2,
       title: "Intuitive, interactive, always up to date"
@@ -74,7 +74,7 @@ export default function MarketingAutomation() {
     id: "integration",
     items: [{
       icon: Database,
-      title: "Explore your own data—no IT required"
+      title: "Explore your own data-no IT required"
     }, {
       icon: Database,
       title: "Drag-and-drop reports with enterprise-grade accuracy"
@@ -127,16 +127,16 @@ export default function MarketingAutomation() {
   // FAQs
   const faqs = [{
     q: "Do I need a specific analytics platform to get started?",
-    a: "Nope! We’re completely tool-agnostic and work with whatever stack you’ve got—Google Analytics, Snowflake, Adobe AEP, Mixpanel, you name it."
+    a: "Nope! We’re completely tool-agnostic and work with whatever stack you’ve got-Google Analytics, Snowflake, Adobe AEP, Mixpanel, you name it."
   }, {
     q: "What’s included in the free data analytics audit?",
-    a: "A full walkthrough of your current dashboards, tracking setup, and KPIs—plus one AI-powered insight we guarantee you haven’t implemented yet."
+    a: "A full walkthrough of your current dashboards, tracking setup, and KPIs-plus one AI-powered insight we guarantee you haven’t implemented yet."
   }, {
     q: "Can you help with AEP Web SDK migration or GA4 setup?",
-    a: "Absolutely. We specialize in modern tracking architecture—including GA4 migration, parallel tracking, and seamless AEP Web SDK rollouts."
+    a: "Absolutely. We specialize in modern tracking architecture-including GA4 migration, parallel tracking, and seamless AEP Web SDK rollouts."
   }, {
     q: "Is your analytics solution only for enterprise teams?",
-    a: "Not at all! Our solutions scale beautifully—from lean startups using affordable BI tools to global teams managing complex product analytics."
+    a: "Not at all! Our solutions scale beautifully-from lean startups using affordable BI tools to global teams managing complex product analytics."
   }];
   return <div className="bg-white text-gray-900">
       <DynamicSEO page="servicesAnalytics" />
@@ -156,7 +156,7 @@ export default function MarketingAutomation() {
         value: "12x"
       }]} />
 
-        <EnterpriseCapabilities title="Where Data Meets Performance" subtitle="Analytics solutions built around 'YOUR’ business—not someone else's." tabs={tabs} features={features} />
+        <EnterpriseCapabilities title="Where Data Meets Performance" subtitle="Analytics solutions built around 'YOUR’ business-not someone else's." tabs={tabs} features={features} />
 
         <section className="py-20 bg-white">
           <div className="section-wrapper">
@@ -184,7 +184,7 @@ export default function MarketingAutomation() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-        <ContactCta heading="Let’s Turn Your Data Into an AI-Powered Direction" subtext="Book your free audit and unlock one strategic, AI-powered insight you can use immediately." buttonLabel="Talk to an Expert" buttonLink="/contact" />
+        <ContactCta heading="Let’s Turn Your Data Into an AI-Powered Direction" subtext="Book your free audit and unlock one strategic, AI-powered insight you can use immediately." buttonLabel="Talk to an Expert" buttonLink="/contact-us" />
       </main>
       <Footer />
     </div>;

@@ -98,42 +98,12 @@ export default function MotionGraphics() {
 
   // Trust Markers (Statistics)
   const stats = [
-    { label: "Years of motion mastery and counting", value: "30+" },
+//    { label: "Years of motion mastery and counting", value: "30+" },
     { label: "Boost in conversion rates post-launch", value: "45%" },
     { label: "Motion design experts on deck", value: "8+" },
-  //  { label: "Brands leveled-up with scroll-stopping motion assets", value: "70+" },
+    { label: "Brands leveled-up with scroll-stopping motion assets", value: "70+" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "5 Ways to Level Up Your Brand with Motion Graphics",
-      subtitle: "Tips and tricks for using AI-powered animation in digital storytelling.",
-      author: "Design Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "motion-graphics-ai"
-    },
-    {
-      title: "Explainer Videos: The Secret Sauce for Complex Brands",
-      subtitle: "See how motion turns complexity into clarity, and viewers into customers.",
-      author: "Video Strategy Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "explainer-videos"
-    },
-    {
-      title: "Brand Storytelling in the Age of AI Animation",
-      subtitle: "Emotional resonance + algorithmic smarts: why your next campaign needs both.",
-      author: "Animation Director",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "brand-story-ai"
-    },
-  ];
 
   // FAQs
   const faqs = [
@@ -192,7 +162,7 @@ export default function MotionGraphics() {
           heading=" See What Smart Motion Design Looks Like in Action "
           body="Peek how motion + strategy + AI = engagement that actually means business. "
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -212,10 +182,12 @@ export default function MotionGraphics() {
          {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
 <ExploreMoreBlock
   heading=" More From Our Content Repertoire "
-  body="Tips, trends, and tactical guides for better brand storytelling—delivered fresh. "
+  body="Tips, trends, and tactical guides for better brand storytelling-delivered fresh. "
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="285"
+
 />
 
         {/* Call to Action */}
@@ -223,7 +195,7 @@ export default function MotionGraphics() {
           heading="Lets Animate Your Brand with AI-Backed Brilliance"
           subtext="Storytelling, but with sparks. Strategy, but with style. Lets make things moveliterally."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

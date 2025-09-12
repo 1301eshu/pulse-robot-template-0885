@@ -77,11 +77,11 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
   
-    description: "Empower every user—from Ops to Marketing—to build dashboards that actually mean something.  ",
+    description: "Empower every user-from Ops to Marketing-to build dashboards that actually mean something.  ",
     items: [
       { icon: Zap, title: "Intuitive, drag-and-drop interfaces on tools like Looker Studio, Power BI, Tableau   " },
       { icon: Zap, title: "Pre-modeled datasets with AI-surfaced recommendations   " },
-      { icon: Zap, title: "Team onboarding included—because adoption > tools   " },
+      { icon: Zap, title: "Team onboarding included-because adoption > tools   " },
     ],
   },
   {
@@ -99,15 +99,15 @@ const features: FeatureContent[] = [
    
     description: "Ask a business question. Get a real-time answer.  ",
     items: [
-      { icon: Database, title: "Chat-style interfaces for querying data—no SQL required " },
+      { icon: Database, title: "Chat-style interfaces for querying data-no SQL required " },
       { icon: Database, title: "AI parses ambiguity and returns clear, contextual responses   " },
-      { icon: Database, title: "From “Why did revenue drop last week?” to “What changed in churn rate?”—answered in seconds   " },
+      { icon: Database, title: "From “Why did revenue drop last week?” to “What changed in churn rate?”-answered in seconds   " },
     ],
   },
   {
     id: "security",
    
-    description: "Self-service doesn’t mean messy—we build structure with safety.  ",
+    description: "Self-service doesn’t mean messy-we build structure with safety.  ",
     items: [
       { icon: ShieldCheck, title: "Universal semantic layer + KPI dictionary   " },
       { icon: ShieldCheck, title: "Guardrails for calculations, field logic, and metadata   " },
@@ -117,7 +117,7 @@ const features: FeatureContent[] = [
    {
     id: "development",
    
-    description: "We don’t just build dashboards—we build data muscle.   ",
+    description: "We don’t just build dashboards-we build data muscle.   ",
     items: [
       { icon: ShieldCheck, title: "Tailored workshops for marketing, sales, product, CX, finance  " },
       { icon: ShieldCheck, title: "Power user” enablement for internal champions    " },
@@ -161,7 +161,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "Do I need a BI platform in place already? ",
-      a: "Not necessarily. We’ll recommend, configure, or optimize tools based on your needs—whether you’re on Looker Studio, Tableau, Power BI, or something else. ",
+      a: "Not necessarily. We’ll recommend, configure, or optimize tools based on your needs-whether you’re on Looker Studio, Tableau, Power BI, or something else. ",
     },
     {
       q: "Will my data still be governed and secure?",
@@ -173,7 +173,7 @@ const features: FeatureContent[] = [
     },
     {
       q: " Is this scalable for large orgs?",
-      a: "Yes. Our approach is modular, role-based, and designed to support dozens—or hundreds—of users. ",
+      a: "Yes. Our approach is modular, role-based, and designed to support dozens-or hundreds-of users. ",
     },
   ];
   
@@ -186,7 +186,7 @@ const features: FeatureContent[] = [
         {/* HERO Section */}
         <HeroSection
           heading="Self-Service BI That Puts AI-Powered Insight in Every Team’s Hands "
-          subtext="No gatekeeping. No guesswork. Just clear answers—on demand. "
+          subtext="No gatekeeping. No guesswork. Just clear answers-on demand. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/Self-Service%20BI%20&%20Data%20Democratization.webp"
         />
@@ -194,7 +194,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="From siloed data to strategic alignment—across every team, every role.  "
+  title="From siloed data to strategic alignment-across every team, every role.  "
   stats={[
     { label: "Reduction in BI team workload with self-serve rollouts   ", value: "80% " },
     { label: "More cross-functional dashboards created within the first 30 days  ", value: "5x  " },
@@ -206,7 +206,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="What We Do with Self-Service BI & Data Democratization "
-          subtitle="We turn your business into a data-literate machine—with scalable tools and AI-empowered teams that don’t wait on analysts.  "
+          subtitle="We turn your business into a data-literate machine-with scalable tools and AI-empowered teams that don’t wait on analysts.  "
           tabs={tabs}
           features={features} 
         />
@@ -221,14 +221,14 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading="Smart Orgs Empower Every Role with Data   "
-        subtext=" From product managers to revenue ops—everyone becomes a data driver. "
+        subtext=" From product managers to revenue ops-everyone becomes a data driver. "
         
       />
 
         {/* Testimonials */}
         <Testimonials
           title="  The Freedom to Explore. The Power to Act.    "
-          description=" It’s not just self-serve—it’s self-sufficient.  "
+          description=" It’s not just self-serve-it’s self-sufficient.  "
         />
 
         {/* FAQs */}
@@ -247,7 +247,7 @@ const features: FeatureContent[] = [
           heading="Let’s Build BI That Works for Everyone "
           subtext="Empower every team with answers, not wait times.    "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

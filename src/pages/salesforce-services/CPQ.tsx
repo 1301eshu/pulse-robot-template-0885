@@ -80,7 +80,7 @@ export default function CPQ() {
     },
     {
       id: "management",
-      description: "With analytics and ML built-in, we make CPQ your team’s smartest seller—always learning, never stalling.",
+      description: "With analytics and ML built-in, we make CPQ your team’s smartest seller-always learning, never stalling.",
       items: [
         { icon: ShieldCheck, title: "Spot quote delays before they cost you" },
         { icon: ShieldCheck, title: "Forecast quote-to-close with confidence" },
@@ -90,35 +90,6 @@ export default function CPQ() {
   ];
 
   // Case Studies (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "How AI-Powered Salesforce CPQ Makes Sales Teams Unstoppable",
-      subtitle: "A few real wins we've helped brands achieve with AI-powered Salesforce CPQ.",
-      author: "Case Study Author",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "cpq-case-study-1"
-    },
-    {
-      title: "Quotes That Think, Deals That Close",
-      subtitle: "Configure, Price, Quote in minutes with intelligent automation that sales teams love.",
-      author: "Case Study Author",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "cpq-case-study-2"
-    },
-    {
-      title: "Boosting Sales Efficiency with Salesforce CPQ",
-      subtitle: "See how we made CPQ faster, smarter, and scalable with AI inside.",
-      author: "Case Study Author",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "cpq-case-study-3"
-    },
-  ];
 
   // FAQ Section
   const faqs = [
@@ -151,12 +122,12 @@ export default function CPQ() {
           heading="AI-Powered Salesforce CPQ: Quotes That Think, Deals That Close"
           subtext="Configure, Price, Quote in minutes with intelligent automation that sales teams love"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Salesforce%20Cpq.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Salesforce%20Cpq.webp"
         
         />
 
         <EditableStatSection
-          title="You're in good company—with brands closing faster with AI-powered Salesforce CPQ."
+          title="You're in good company-with brands closing faster with AI-powered Salesforce CPQ."
           stats={[
             { label: "Salesforce CPQ projects delivered since 2020 ", value: "60+" },
             { label: "Faster quote-to-cash cycle on an average ", value: "30%" },
@@ -175,12 +146,12 @@ export default function CPQ() {
           heading="See How AI-Powered Salesforce CPQ Makes Sales Teams Unstoppable"
           body="A few real wins we've helped brands achieve with AI-powered Salesforce CPQ."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
           heading="Brands That Trust Our Salesforce CPQ Know-How"
-          subtext="From scale-ups to global giants—we help them quote faster"
+          subtext="From scale-ups to global giants-we help them quote faster"
         />
 
         <Testimonials
@@ -197,13 +168,14 @@ export default function CPQ() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="262"
 />
 
         <ContactCta
           heading="Ready to Revolutionize Your Sales Process?"
           subtext="Real-time pricing. Quotes that adapt. CPQ that works for you"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

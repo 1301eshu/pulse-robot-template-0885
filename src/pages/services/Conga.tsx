@@ -223,7 +223,7 @@ export default function Conga() {
           heading="Ready to Revolutionize Your Revenue Operations?"
           subtext="Let's discuss how Conga can streamline your business processes."
           buttonLabel="Get Started"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

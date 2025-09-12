@@ -16,6 +16,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Clock, Heart } from "lucide-reac
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingAnalytics() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -101,39 +102,11 @@ export default function MarketingAnalytics() {
     { label: "Certified Web Analytics geniuses", value: "30+" },
     { label: "Analytics goals and events implemented", value: "200+" },
     { label: "Analytics Technologies Mastered", value: "20+" },
-  //  { label: "Attribution models tailored for multi-channel growth", value: "50+" },
+    //  { label: "Attribution models tailored for multi-channel growth", value: "50+" },
   ];
 
   // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Marketing Analytics Playbook: From Clicks to Revenue",
-      subtitle: "Real-world strategies to build marketing analytics that move the needle.",
-      author: "Analytics Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketing-analytics-playbook"
-    },
-    {
-      title: "Custom Attribution Models: The Secret to Scaling",
-      subtitle: "How to align attribution with your true buyer journey.",
-      author: "Growth Strategist",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "custom-attribution"
-    },
-    {
-      title: "Self-Serve Dashboards: Empower Your Teams",
-      subtitle: "Why every marketing team needs dashboards built for action.",
-      author: "Product Lead",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "self-serve-dashboards"
-    },
-  ];
+
 
   // FAQs
   const faqs = [
@@ -159,7 +132,7 @@ export default function MarketingAnalytics() {
     <div className="bg-white text-gray-900">
       <DynamicSEO page="marketingAnalytics" />
       <Header />
-       <SmartBreadcrumb />
+      <SmartBreadcrumb />
       <main className="pt-0">
 
         {/* HERO Section */}
@@ -167,12 +140,12 @@ export default function MarketingAnalytics() {
           heading="AI-Powered Marketing Analytics That Fuel Growth"
           subtext="Map your marketing to what matters. Real impact, not just impressions."
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/Marketing%20Analytics.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Anaytics%20as%20a%20service%20L2%20banner/Marketing%20Analytics.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands leveling up with sharper marketing decisions."
+          title="You’re in good company-with brands leveling up with sharper marketing decisions."
           stats={stats}
         />
 
@@ -189,13 +162,13 @@ export default function MarketingAnalytics() {
           heading="See the Impact of Sharp Marketing Analytics"
           body="A glimpse at how we’ve helped brands track smarter for better growth"
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
           heading="Folks That Trust Our Marketing Analytics Moves"
-          subtext="From high-growth startups to enterprises—we help them decode every click and conversion."
-         
+          subtext="From high-growth startups to enterprises-we help them decode every click and conversion."
+
         />
 
         {/* Testimonials */}
@@ -207,20 +180,20 @@ export default function MarketingAnalytics() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* Recent Resources Section */}
-        <RecentResourcesSection
+        <ExploreMoreBlock
           heading="More From Our Content Repertoire"
           body="Keep your marketing analytics edge sharp with our newest guides, blog posts, and AI-powered insights."
-          subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          perPage={6}
+          firstN={4}
+          contentType="blogs"
+          resourceType="12"
         />
-
         {/* Call to Action */}
         <ContactCta
           heading="Want to See Your Marketing Data in Motion?"
           subtext="Let’s turn clicks into insights and insights into revenue."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

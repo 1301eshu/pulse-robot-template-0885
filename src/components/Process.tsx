@@ -93,7 +93,7 @@ export default function ProcessSection() {
     Start Smart. Stay Scalable.
   </h2>
   <p className="text-[#5E6874] text-base mb-8 max-w-2xl mx-auto">
-    Our free AI-readiness audit breaks down your ops, stack, and workflows—and shows you the things you’re not doing (but should be).
+    Our free AI-readiness audit breaks down your ops, stack, and workflows-and shows you the things you’re not doing (but should be).
   </p>
 
   <div className="flex items-center justify-center">

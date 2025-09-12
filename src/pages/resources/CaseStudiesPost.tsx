@@ -56,7 +56,7 @@ const casePosts = {
       {
         "type": "list",
         "items": [
-          "Developed a tailored strategy focusing on keyword research, on-page optimization, and high-quality content creation—optimizing headlines, website hygiene processes, content updates, internal linking, meta tags, and adding SEO-friendly elements.",
+          "Developed a tailored strategy focusing on keyword research, on-page optimization, and high-quality content creation-optimizing headlines, website hygiene processes, content updates, internal linking, meta tags, and adding SEO-friendly elements.",
           "Implemented site speed improvements and ensured mobile-friendliness to enhance user experience and search engine crawling.",
           "Executed link building, guest blogging, content promotion, and other off-page SEO tactics to increase domain authority."
         ]
@@ -118,7 +118,7 @@ const casePosts = {
       {
         "type": "list",
         "items": [
-          "Growth Natives implemented a first-mover strategy by embracing AI Engine Optimization (AEO)—a forward-thinking strategy integrating entity-based SEO, NLP, and holistic SEO techniques.",
+          "Growth Natives implemented a first-mover strategy by embracing AI Engine Optimization (AEO)-a forward-thinking strategy integrating entity-based SEO, NLP, and holistic SEO techniques.",
           "Citation Optimization in LLMs: Created authoritative, high-quality content aligned with knowledge graphs and training data of LLMs; leveraged data visualization techniques to simplify complex information for AI systems.",
           "Redirecting Commercial Intent Traffic: Optimized pages for high-conversion keywords targeting users with purchase intent; used advanced analytics tools like DiGGrowth to track referral traffic, engagement, and conversion metrics across platforms like Perplexity.ai and Gemini.google.com."
         ]
@@ -187,7 +187,7 @@ const casePosts = {
   "automated-sales-workflows-by-integrating-hubspot-google-sheets-docusign-and-erp-system": {
     "id": "automated-sales-workflows-by-integrating-hubspot-google-sheets-docusign-and-erp-system",
     "title": "Automated Sales Workflows by Integrating HubSpot, Google Sheets, DocuSign, and ERP System",
-    "subtitle": "How a leading cask trading firm slashed order processing time by 50% through seamless cross-platform automation.",
+    "subtitle": "How a leading cask trading firm transformed sales operations, achieving a 50% reduction in order processing time through streamlined software integration.",
     "author": "Geeta Dutt",
     "date": "May 9, 2024",
     "category": "Sales Automation",
@@ -215,7 +215,7 @@ const casePosts = {
       },
       {
         "type": "paragraph",
-        "content": "The customer was using HubSpot as their CRM platform and faced challenges with their manual sales process. They were relying on disparate tools such as Google Sheets, DocuSign, and an ERP system for managing purchase orders, invoicing, and receipt generation. The lack of integration led to inconsistencies, delays, and inefficiencies in their backend processes. They wanted to automate the sales process—from order creation to invoicing—by integrating HubSpot, Google Sheets, DocuSign, and the ERP system; reduce human intervention, enhance accuracy, and optimize resource utilization to drive operational efficiency and improve customer satisfaction."
+        "content": "The customer was using HubSpot as their CRM platform and faced challenges with their manual sales process. They were relying on disparate tools such as Google Sheets, DocuSign, and an ERP system for managing purchase orders, invoicing, and receipt generation. The lack of integration led to inconsistencies, delays, and inefficiencies in their backend processes. They wanted to automate the sales process-from order creation to invoicing-by integrating HubSpot, Google Sheets, DocuSign, and the ERP system; reduce human intervention, enhance accuracy, and optimize resource utilization to drive operational efficiency and improve customer satisfaction."
       },
       {
         "type": "heading",
@@ -623,14 +623,24 @@ const CaseStudiesPost = () => {
                     />
                   );
                   break;
-                case "link":
-                  elements.push(
-                    <link
-                      key={elements.length}
-                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                    />
-                  );
+                case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
                   break;
+                }
                 case "script":
                   elements.push(
                     <script
@@ -723,7 +733,7 @@ const CaseStudiesPost = () => {
       <main className="pt-12 px-4 sm:px-6 pb-12">
         <div className="max-w-[1140px] mx-auto">
           {/* Hero Section: Left & Right Layout */}
-          <section className="pt-24 pb-24 grid md:grid-cols-2 gap-10 items-start mb-5 items-center">
+          <section className="pt-24 pb-8 md:pb-24 grid md:grid-cols-2 gap-10 items-start mb-5 items-center">
             <div>
               {/* Back Link */}
               <Link
@@ -851,7 +861,7 @@ const CaseStudiesPost = () => {
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Ready to Transform Your Marketing Strategy?</h3>
                 <p className="text-gray-600 mb-4 text-sm">Let our experts help you implement cutting-edge solutions for your business.</p>
                 <a
-                  href="/contact"
+                  href="/contact-us"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

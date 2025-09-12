@@ -6,36 +6,36 @@ const clients = [
     logo: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751358941/image_233_dqgnfw.png",
     name: "Spirent",
     headline: `"Real clients. Real results. Real systems that keep delivering long afterlaunch."`,
-    person: "— Marketing Director, Spirent",
+    person: "- Marketing Director, Spirent",
     stats: [
       { value: 20, suffix: "%", desc: "Hike in session duration & pages/session" },
       { value: 25, suffix: "%", desc: "Increase in keyword rankings & organic traffic" },
     ],
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751359291/Spirent_kx85rz.png",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Featured%20Projects/Spirent_kx85rz.webp",
     //cta: { label: "Get a Complimentary Consultation!" },
   },
   {
     logo: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360246/Image_6_avhf1r.png",
     name: "LAMAV",
     headline: `"Organic results powered by AI-first strategies."`,
-    person: "— CEO, LAMAV",
+    person: "- CEO, LAMAV",
     stats: [
       { value: 48, suffix: "%", desc: "Surge in user engagement" },
       { value: 271, suffix: "%", desc: "Rise in organic traffic with D2C" },
     ],
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751360248/Lamav_duxryv.png",
+    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Featured%20Projects/Lamav_duxryv.webp",
     //cta: { label: "Get a Complimentary Consultation!" },
   },
   {
     logo: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361549/Image_7_tqfiig.png",
     name: "Escalon",
     headline: `"Powerful automation that boosts financial clarity and business scalability."`,
-    person: "— CFO, Escalon",
+    person: "- CFO, Escalon",
     stats: [
       { value: 3, suffix: "x", desc: "Operational efficiency improvement" },
       { value: 25, suffix: "%", desc: "Reduction in manual effort" },
     ],
-    image: "https://res.cloudinary.com/dhbhumz3q/image/upload/v1751361552/Cover_wbbgla.png",
+    image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/Clients/Escalon.webp",
     //cta: { label: "Get a Complimentary Consultation!" },
   }
 ];

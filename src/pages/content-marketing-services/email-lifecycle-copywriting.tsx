@@ -118,40 +118,10 @@ const features: FeatureContent[] = [
   },
 ];
 
-const recentResources: ResourceItem[] = [
-  {
-    title: "Lifecycle Wins: Email Flows That Actually Work",
-    subtitle: "Real tactics from real brands. Step-by-step wins and lessons.",
-    author: "GN Team",
-    date: "July 15, 2025",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=600&h=400",
-    slug: "lifecycle-wins"
-  },
-  {
-    title: "The Anatomy of a Perfect Win-Back Sequence",
-    subtitle: "When (and how) to pull lost users back into your orbit.",
-    author: "GN Team",
-    date: "July 10, 2025",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=400",
-    slug: "winback-anatomy"
-  },
-  {
-    title: "Segmentation Secrets: Delivering the Right Email at the Right Time",
-    subtitle: "Cut through the clutter and connect with every segment.",
-    author: "GN Team",
-    date: "July 5, 2025",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400",
-    slug: "segmentation-secrets"
-  },
-];
-
 const faqs = [
   {
     q: "How do you ensure the email tone fits our brand?",
-    a: "We start by reviewing your current messaging, brand guidelines, and audience—then write in a voice that feels naturally yours.",
+    a: "We start by reviewing your current messaging, brand guidelines, and audience-then write in a voice that feels naturally yours.",
   },
   {
     q: "Can you write for both B2B and B2C audiences?",
@@ -178,11 +148,11 @@ return (
         heading="Email & Lifecycle Copywriting That Hits Inboxes and Intent Alike"
         subtext="From onboarding flows to win-back emails, we craft messages that engage and convert."
         bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-        rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/email%20&%20Lifecycle%20Copywriting.webp"
+        rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Content%20Banner%20L2/email%20&%20Lifecycle%20Copywriting.webp"
        
       />
       <EditableStatSection
-        title="You're in good company—with brands that know smart emails build smarter customer journeys."
+        title="You're in good company-with brands that know smart emails build smarter customer journeys."
         stats={[
           { label: "Full-funnel campaigns written", value: "60+" },
           { label: "Lifecycle email flows delivered", value: "75+" },
@@ -199,7 +169,7 @@ return (
         heading="See How Lifecycle Copywriting Scales ROI "
         body="Brands we’ve helped automate, personalize, and persuade, one sequence at a time."
         subTabs={[]}
-        resources={recentResources}
+        resourcePostType="case-studies"
       />
       <LogoScroller
         heading="Brands That Let Our Copy Run the Lifecycle"
@@ -217,12 +187,13 @@ return (
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="86"
 />
       <ContactCta
         heading="Let’s Map the Right Message to the Right Moment"
         subtext="Because great lifecycle copy knows exactly when (and what) to say."
         buttonLabel="Talk to an Expert"
-        buttonLink="/contact"
+        buttonLink="/contact-us"
       />
     </main>
     <Footer />

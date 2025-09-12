@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import ExploreMoreBlock from "@/components/exploremore";
+import DynamicSEO from "@/components/DynamicSEO";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -65,7 +66,7 @@ export default function MarketingAutomation() {
     {
       id: "erp-audit",
       description:
-        "Uncover what’s slowing you down—and where AI can speed you up.",
+        "Uncover what’s slowing you down-and where AI can speed you up.",
       items: [
         { icon: FileText, title: "Deep-dive review of current ERP performance & process friction" },
         { icon: FileText, title: "Identify automation gaps, data lags, and underutilized modules" },
@@ -75,7 +76,7 @@ export default function MarketingAutomation() {
     {
       id: "process-automation",
       description:
-        "Operational excellence starts with smart design—and smarter triggers.",
+        "Operational excellence starts with smart design-and smarter triggers.",
       items: [
         { icon: Wrench, title: "Re-architect core processes (finance, inventory, procurement, HR)" },
         { icon: Wrench, title: "Embed AI to automate tasks, reduce error, and increase speed" },
@@ -124,36 +125,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Resources → case-study style (structure kept)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "ERP Case Study: Faster Close, Clearer Forecasts",
-      subtitle: "How AI forecasting in ERP improved cash flow visibility and reduced surprises.",
-      author: "Team Design+marketing",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "erp-forecasting-case",
-    },
-    {
-      title: "Ops at Scale: Automations that Actually Stick",
-      subtitle: "Re-architected workflows cut cycle time and error rates across finance and inventory.",
-      author: "Team Design+marketing",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "erp-automation-scale",
-    },
-    {
-      title: "Migration Without the Migraine",
-      subtitle: "From legacy to cloud ERP—with data integrity and zero downtime for ops.",
-      author: "Team Design+marketing",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "erp-migration-story",
-    },
-  ];
 
   // FAQs (from the doc)
   const faqs = [
@@ -163,7 +134,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How long does an ERP optimization project take?",
-      a: "Timelines vary—most quick-win optimizations take 4–6 weeks. Larger transformations run 8–16 weeks.",
+      a: "Timelines vary-most quick-win optimizations take 4–6 weeks. Larger transformations run 8–16 weeks.",
     },
     {
       q: "What kind of companies do you work with?",
@@ -175,26 +146,27 @@ export default function MarketingAutomation() {
     },
     {
       q: "Do I need to change my ERP platform?",
-      a: "Not necessarily. Many of our clients stick with their existing system—we help them use it better and smarter.",
+      a: "Not necessarily. Many of our clients stick with their existing system-we help them use it better and smarter.",
     },
   ];
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="strategicservicesaioptimizedenterpriseresourceplanning"/>
       <Header />
       <SmartBreadcrumb />
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Enterprise Resource Planning That Learns, Adapts, and Scales—Powered by AI"
-          subtext="Align your systems, teams, and decisions with ERP that doesn’t just record history—but helps you shape it."
+          heading="Enterprise Resource Planning That Learns, Adapts, and Scales-Powered by AI"
+          subtext="Align your systems, teams, and decisions with ERP that doesn’t just record history-but helps you shape it."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/strategic%20services%20hero%20banner%20/ABM.webp"
         />
 
         {/* Statistics / Trust Markers */}
         <EditableStatSection
-          title="You’re in good company— with enterprises optimizing ERP to power smarter moves."
+          title="You’re in good company- with enterprises optimizing ERP to power smarter moves."
           stats={[
             { value: "100+", label: "ERP transformations led across industries" },
             { value: "30%", label: "Average increase in system utilization" },
@@ -215,19 +187,19 @@ export default function MarketingAutomation() {
           heading="See How Enterprise Resource Planning Drives Real Efficiency"
           body="How our clients unlocked scale and savings with smarter ERP."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
         <LogoScroller
           heading="ERP Wins Built with Ambitious Teams Like Yours"
-          subtext="From smoother systems to smarter decisions — here’s who we’ve helped plan, align, and execute better with ERP."
+          subtext="From smoother systems to smarter decisions - here’s who we’ve helped plan, align, and execute better with ERP."
         />
 
         {/* Testimonials */}
         <Testimonials
           title="What Brands Say After We Touched Their ERP"
-          description="Better visibility, faster execution, smarter moves—straight from the source."
+          description="Better visibility, faster execution, smarter moves-straight from the source."
         />
 
         {/* FAQs */}
@@ -240,6 +212,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="38"
 />
 
         {/* CTA */}
@@ -247,7 +220,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build an ERP That Thinks Ahead"
           subtext="From forecasting to fulfillment, unlock AI-driven clarity across your enterprise."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -64,7 +64,7 @@ export default function PaidAds() {
       id: "adobe",
       label: "Adobe Ad Cloud & Bing Ads",
       icon: ShieldCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Paid%20Ads/Adobe%20Ad%20Cloud%20&%20Bing%20Ads.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20/Adobe%20Ad%20Cloud%20&%20Bing%20Ads.webp",
       ctaText: "",
       ctaLink: ""
     },
@@ -134,50 +134,19 @@ export default function PaidAds() {
     { label: "ROI from paid traffic", value: "3X" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "AI for PPC: The Smart Marketer's Guide",
-      subtitle: "Harnessing automation for lower CPC and higher ROI.",
-      author: "PPC Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-for-ppc"
-    },
-    {
-      title: "Winning Ad Copy—No Clicks Wasted",
-      subtitle: "What really makes an ad scroll-stopping? Let’s break it down.",
-      author: "Ad Creative Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "winning-ad-copy"
-    },
-    {
-      title: "Remarketing Redefined: Boomerang Your Visitors",
-      subtitle: "Strategies to turn casual visitors into customers with smart retargeting.",
-      author: "Growth Strategist",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "remarketing-strategies"
-    },
-  ];
-
   // FAQs
   const faqs = [
     {
       q: "Can you help with ad copy and creatives?",
-      a: "Absolutely! We whip up ad copy and visuals that speak your audience’s language—and make them stop scrolling.",
+      a: "Absolutely! We whip up ad copy and visuals that speak your audience’s language-and make them stop scrolling.",
     },
     {
       q: "What metrics do you track to measure success?",
-      a: "We keep an eye on CTR, CPC, CPA, conversion rates, and ROI — basically, all the juicy numbers that prove we’re winning.",
+      a: "We keep an eye on CTR, CPC, CPA, conversion rates, and ROI - basically, all the juicy numbers that prove we’re winning.",
     },
     {
       q: "Can you help with remarketing campaigns?",
-      a: "You bet! We craft clever remarketing moves that pull back your visitors like a boomerang — turning looks into clicks.",
+      a: "You bet! We craft clever remarketing moves that pull back your visitors like a boomerang - turning looks into clicks.",
     },
     {
       q: "How do you manage bidding strategies?",
@@ -194,17 +163,17 @@ export default function PaidAds() {
         {/* HERO Section */}
         <HeroSection
           heading=" Performance-Obsessed Paid Ads Services with an AI Assist"
-          subtext=" Real-time paid ads magic — more clicks, better leads, bigger returns"
+          subtext=" Real-time paid ads magic - more clicks, better leads, bigger returns"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/Paid%20ads.webp"
           
         />
         <EditableStatSection
-          title="Welcome to the hub—where every click is a step toward brand success."
+          title="Welcome to the hub-where every click is a step toward brand success."
           stats={stats}
         />
         <EnterpriseCapabilities
-          title="Paid Ads That Perform—Across Every Platform"
+          title="Paid Ads That Perform-Across Every Platform"
           subtitle="We build, optimize, and scale paid campaigns for every channel that matters."
           tabs={tabs}
           features={features}
@@ -213,15 +182,15 @@ export default function PaidAds() {
           heading="See How Paid Ads Drive Results"
           body="How we helped brands scale pipeline and revenue with PPC."
           subTabs={[]}
-          resources={recentResources}
+         resourcePostType="case-studies"
         />
         <LogoScroller
-          heading="Brands That Trust Our Paid Media"
-          subtext="From SaaS to D2C, our paid ads power growth."
+          heading="Brands Backing Our Paid Ads Game "
+          subtext="From tight teams to titans-we deliver campaigns that never miss. "
         />
         <Testimonials
-          title="What Clients Say About Our Paid Ads"
-          description="We don’t just run ads. We deliver results."
+          title=" Real Stories, Real Growth with Paid Ads "
+          description="Thanks to brains syncing with AI’s precision pulse. "
         />
         <FaqSection title="FAQs" faqs={faqs} />
 
@@ -233,12 +202,13 @@ export default function PaidAds() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="226"
 />
         <ContactCta
           heading="Ready to Scale Your Paid Ads?"
           subtext="Let’s map your paid strategy to the way people search, buy, and learn."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

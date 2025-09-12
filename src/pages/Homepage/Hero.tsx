@@ -68,7 +68,7 @@ export default function HeroBanner() {
         className="
           relative z-10 max-w-7xl mx-auto px-6
           pt-32
-          pb-24 md:pb-16            /* ⬅️ extra bottom padding on mobile */
+          pb-32 md:pb-16
           flex flex-col md:flex-row items-center justify-between
           min-h-[780px] max-h-[1000px]
         "
@@ -79,7 +79,7 @@ export default function HeroBanner() {
           </h4>
 
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white drop-shadow-md mt-4">
-            We dream, design, develop, and deliver intelligent systems that drive scale—not chaos.
+            We dream, design, develop, and deliver intelligent systems that drive scale-not chaos.
           </h1>
 
           {/* CTAs */}
@@ -87,7 +87,7 @@ export default function HeroBanner() {
             <SITE_CTA
               variant="secondary"
               text="Talk to an Expert"
-              href="/contact"
+              href="/contact-us"
               size="md"
             />
           <a

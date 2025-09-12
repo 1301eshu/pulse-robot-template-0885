@@ -99,7 +99,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "enablement",
-      description: "We unlock the good stuff—forecasting, scoring, bots—and train your team to use it like pros.",
+      description: "We unlock the good stuff-forecasting, scoring, bots-and train your team to use it like pros.",
       items: [
         { icon: Zap, title: "Prioritize leads that are ready to buy" },
         { icon: Zap, title: "Forecast pipeline with crystal ball clarity" },
@@ -108,16 +108,16 @@ export default function MarketingAutomation() {
     },
     {
       id: "optimization",
-      description: "We customize AI insights by role—so your teams get what they need, when they need it.",
+      description: "We customize AI insights by role-so your teams get what they need, when they need it.",
       items: [
         { icon: Clock, title: "Personalized views for sales, service, ops" },
         { icon: Clock, title: "Auto-delivered insights in plain English" },
-        { icon: Clock, title: "Tools that simplify—not overwhelm—teams" },
+        { icon: Clock, title: "Tools that simplify-not overwhelm-teams" },
       ],
     },
      {
       id: "Development",
-       description: "We fine-tune your Einstein setup as you grow—because static models don’t win markets.",
+       description: "We fine-tune your Einstein setup as you grow-because static models don’t win markets.",
       items: [
         { icon: Clock, title: "Recalibrate AI models with fresh data" },
         { icon: Clock, title: "Benchmark performance vs. your industry" },
@@ -159,7 +159,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "How quickly will we see ROI from Einstein Analytics?",
-      a: "Most teams start spotting “Whoa, we didn’t know that” insights in 30 days—and drive measurable ROI in under 90.",
+      a: "Most teams start spotting “Whoa, we didn’t know that” insights in 30 days-and drive measurable ROI in under 90.",
     },
     {
       q: "Do we need data scientists to use Einstein effectively?",
@@ -189,7 +189,7 @@ export default function MarketingAutomation() {
         />
 
         <EditableStatSection
-          title="You're in good company—with brands predicting smarter with Einstein AI"
+          title="You're in good company-with brands predicting smarter with Einstein AI"
           stats={[
             { label: "Salesforce Einstein projects launched across industries", value: "70+" },
             { label: "Salesforce Implementations since 2020", value: "100+" },
@@ -214,12 +214,12 @@ export default function MarketingAutomation() {
 
         <LogoScroller
           heading="Brands That Trust Our Einstein AI Expertise"
-          subtext="From lean teams to enterprise squads—we help them all predict smarter."
+          subtext="From lean teams to enterprise squads-we help them all predict smarter."
         />
 
         <Testimonials
           title="Real Stories, Real AI Growth"
-          description=" From clunky reports to revenue-driving insights—see what happens when we bring Einstein AI in"
+          description=" From clunky reports to revenue-driving insights-see what happens when we bring Einstein AI in"
         />
 
         <FaqSection title="FAQs" faqs={faqs} />
@@ -235,7 +235,7 @@ export default function MarketingAutomation() {
           heading="Let's Make Your Data Predict the Future"
           subtext="Einstein AI, customized to answer your most valuable business questions"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

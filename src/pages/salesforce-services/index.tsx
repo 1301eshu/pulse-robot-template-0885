@@ -93,7 +93,7 @@ const features: FeatureContent[] = [
     items: [
       {
         icon: BarChart2,
-        title: "Connect Salesforce to your favorite tools—seamlessly  ",
+        title: "Connect Salesforce to your favorite tools-seamlessly  ",
       },
       {
         icon: BarChart2,
@@ -114,7 +114,7 @@ const features: FeatureContent[] = [
       },
       {
         icon: Database,
-        title: "Tailored Salesforce gameplans—powered by real data + AI ",
+        title: "Tailored Salesforce gameplans-powered by real data + AI ",
       },
       {
         icon: Database,
@@ -156,7 +156,7 @@ const features: FeatureContent[] = [
        icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Salesforce%20Service%20Cloud.webp",
       title: "Salesforce Service Cloud ", 
-      description: "Help desks turned help heroes—with AI in their corner. ",
+      description: "Help desks turned help heroes-with AI in their corner. ",
       useBoxedImage: false,
       ctaUrl: "/salesforce-services/service-cloud/",
     },
@@ -180,7 +180,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/icons/salesforce%20commerce%20cloud%20.webp",
       title: "Salesforce Commerce Cloud ",
-      description: "Sell smarter everywhere—powered by data and AI-driven delight. ",
+      description: "Sell smarter everywhere-powered by data and AI-driven delight. ",
       useBoxedImage: false,
       ctaUrl: "/salesforce-services/commerce-cloud/",
     },
@@ -196,7 +196,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Einstein%20AI.webp",
       title: "Einstein AI ",
-      description: "Salesforce’s brainy AI sidekick—think recommendations, automation, forecasting. ",
+      description: "Salesforce’s brainy AI sidekick-think recommendations, automation, forecasting. ",
       ctaUrl: "/salesforce-services/einstein-analytics/",
     },
     {
@@ -211,7 +211,7 @@ const features: FeatureContent[] = [
      icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/icons/servicemax.webp",
       title: "ServiceMax ",
-      description: "Field service, leveled up—connected, predictive, and ridiculously efficient. ",
+      description: "Field service, leveled up-connected, predictive, and ridiculously efficient. ",
       useBoxedImage: false,
        nocta: true,
        ctaUrl: "#",
@@ -221,7 +221,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Salesforce%20Nonprofit%20Cloud.webp",
       title: "Salesforce Nonprofit Cloud ",
-      description: "Field service, leveled up—connected, predictive, and ridiculously efficient. ",
+      description: "Field service, leveled up-connected, predictive, and ridiculously efficient. ",
        useBoxedImage: false,
        nocta: true,  
        ctaUrl: "#",
@@ -229,42 +229,11 @@ const features: FeatureContent[] = [
     
   ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
-
   // FAQ List
   const faqs = [
     {
       q: "Do I need a certain Salesforce edition to get started?",
-      a: "Nope! We speak fluent Salesforce—from Starter to Enterprise (and all the acronyms in between).",
+      a: "Nope! We speak fluent Salesforce-from Starter to Enterprise (and all the acronyms in between).",
     },
     {
       q: "What’s in the free audit?",
@@ -276,7 +245,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Can you hook Salesforce into our current stack?",
-      a: "You bet. We’re integration nerds—and proud of it.",
+      a: "You bet. We’re integration nerds-and proud of it.",
     },
   ];
 
@@ -298,7 +267,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <StatSection
  
-  title="You’re in good company—alongside brands that ditched the manual grind and leveled up with AI-fueled Salesforce. "
+  title="You’re in good company-alongside brands that ditched the manual grind and leveled up with AI-fueled Salesforce. "
   stats={[
     { label: "Salesforce Customers Since 2020 ", value: "70+" },
     { label: "Hours of Salesforce Consulting Delivered", value: "2500+" },
@@ -309,7 +278,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="We Don’t Just Do Salesforce. We AI the Heck Out of It. "
-          subtitle="Strategy, setup, automation—fully loaded with intelligence (and personality)."
+          subtitle="Strategy, setup, automation-fully loaded with intelligence (and personality)."
           tabs={tabs}
           features={features} 
         />
@@ -336,7 +305,7 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading="AI-Led Results Trusted by Brands You Know"
-        subtext="From fast-growing startups to global giants—Salesforce + AI works for them. Let’s make it work for you too.  "
+        subtext="From fast-growing startups to global giants-Salesforce + AI works for them. Let’s make it work for you too.  "
         
       />
 
@@ -354,7 +323,7 @@ const features: FeatureContent[] = [
           heading=" Let’s Make Your Salesforce Smarter (And Less Annoying) "
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

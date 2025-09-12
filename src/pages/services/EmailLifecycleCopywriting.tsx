@@ -163,7 +163,7 @@ const recentResources: ResourceItem[] = [
 const faqs = [
   {
     q: "How do you ensure the email tone fits our brand?",
-    a: "We start by reviewing your current messaging, brand guidelines, and audience—then write in a voice that feels naturally yours.",
+    a: "We start by reviewing your current messaging, brand guidelines, and audience-then write in a voice that feels naturally yours.",
   },
   {
     q: "Can you write for both B2B and B2C audiences?",
@@ -197,7 +197,7 @@ return (
 
       {/* Statistics Section */}
       <EditableStatSection
-        title="You're in good company—with brands that know smart emails build smarter customer journeys."
+        title="You're in good company-with brands that know smart emails build smarter customer journeys."
         stats={[
           { label: "Full-funnel campaigns written", value: "60+" },
           { label: "Lifecycle email flows delivered", value: "75+" },
@@ -250,7 +250,7 @@ return (
         heading="Let’s Map the Right Message to the Right Moment"
         subtext="Because great lifecycle copy knows exactly when (and what) to say."
         buttonLabel="Talk to an Expert"
-        buttonLink="/contact"
+        buttonLink="/contact-us"
       />
     </main>
     <Footer />

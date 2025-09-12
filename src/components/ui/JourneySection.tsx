@@ -28,6 +28,13 @@ const OurJourney = () => {
       icon: Globe
     },
     {
+      year: "2022",
+      title: "  Scaling Smarter  ",
+      description: "Built stronger delivery frameworks, introduced structured playbooks for each service line, and strengthened cross-team collaboration. The foundation was set for hyper-growth & bigger bets. ",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/2022.webp",
+      icon: Globe
+    },
+    {
       year: "2023",
       title: " AI Entered the Org",
       description: "The crew got bigger and AI-fluent, and we became smarter together. Requests spiked. We delivered, and the run kept building. ",

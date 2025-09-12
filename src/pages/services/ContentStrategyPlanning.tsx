@@ -127,7 +127,7 @@ export default function MarketingAutomation() {
   const recentResources: ResourceItem[] = [
     {
       title: "Why AI-Ready Content Strategies Win in 2025",
-      subtitle: "See how top brands design content that ranks, resonates, and converts—across both search engines and AI assistants.",
+      subtitle: "See how top brands design content that ranks, resonates, and converts-across both search engines and AI assistants.",
       author: "Growth Natives",
       date: "June 2025",
       readTime: "5 min read",
@@ -145,7 +145,7 @@ export default function MarketingAutomation() {
     },
     {
       title: "Content for Humans, Structured for Bots: The New SEO/AEO Playbook",
-      subtitle: "Tips and frameworks to maximize your content’s discoverability—by both search engines and generative AI.",
+      subtitle: "Tips and frameworks to maximize your content’s discoverability-by both search engines and generative AI.",
       author: "Growth Natives",
       date: "July 2025",
       readTime: "6 min read",
@@ -191,11 +191,11 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers */}
         <EditableStatSection
-          title="You’re in sharp company—with brands that lead the conversation and own the algorithm."
+          title="You’re in sharp company-with brands that lead the conversation and own the algorithm."
           stats={[
             { label: "Enterprise content strategies launched", value: "25+" },
             { label: "Content assets mapped across funnels & journeys", value: "50+" },
-            { label: "LLM-informed editorial calendars shipped", value: "20+" },
+  //          { label: "LLM-informed editorial calendars shipped", value: "20+" },
             { label: "Higher engagement from AEO-structured content clusters", value: "3x" },
           ]}
         />
@@ -219,7 +219,7 @@ export default function MarketingAutomation() {
         {/* Logos */}
         <LogoScroller
           heading="Brands That Trust Us to Guide the Content Compass"
-          subtext="Whether scaling or pivoting—we help them plan what wins."
+          subtext="Whether scaling or pivoting-we help them plan what wins."
 
         />
 
@@ -245,7 +245,7 @@ export default function MarketingAutomation() {
           heading="Let’s Map Out Content That Gets You Found & Followed"
           subtext="Clear. Strategic. Built for the bots, but written for real people."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

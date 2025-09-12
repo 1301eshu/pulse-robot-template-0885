@@ -93,7 +93,7 @@ const features: FeatureContent[] = [
     items: [
       {
         icon: BarChart2,
-        title: "Connect Salesforce to your favorite tools—seamlessly  ",
+        title: "Connect Salesforce to your favorite tools-seamlessly  ",
       },
       {
         icon: BarChart2,
@@ -114,7 +114,7 @@ const features: FeatureContent[] = [
       },
       {
         icon: Database,
-        title: "Tailored Salesforce gameplans—powered by real data + AI ",
+        title: "Tailored Salesforce gameplans-powered by real data + AI ",
       },
       {
         icon: Database,
@@ -155,7 +155,7 @@ const features: FeatureContent[] = [
        icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Salesforce%20Service%20Cloud.webp",
       title: "Salesforce Service Cloud ", 
-      description: "Help desks turned help heroes—with AI in their corner. ",
+      description: "Help desks turned help heroes-with AI in their corner. ",
       useBoxedImage: false,
       ctaUrl: "/salesforce-services/service-cloud/",
     },
@@ -179,7 +179,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/icons/salesforce%20commerce%20cloud%20.webp",
       title: "Salesforce Commerce Cloud ",
-      description: "Sell smarter everywhere—powered by data and AI-driven delight. ",
+      description: "Sell smarter everywhere-powered by data and AI-driven delight. ",
       useBoxedImage: false,
       ctaUrl: "/salesforce-services/commerce-cloud/",
     },
@@ -209,7 +209,7 @@ const features: FeatureContent[] = [
      icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/icons/servicemax.webp",
       title: "ServiceMax ",
-      description: "Field service, leveled up—connected, predictive, and ridiculously efficient. ",
+      description: "Field service, leveled up-connected, predictive, and ridiculously efficient. ",
       useBoxedImage: false,
        ctaUrl: "#",
     },
@@ -217,7 +217,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Salesforce_L1_Logo/Salesforce%20Nonprofit%20Cloud.webp",
       title: "Salesforce Nonprofit Cloud ",
-      description: "Field service, leveled up—connected, predictive, and ridiculously efficient. ",
+      description: "Field service, leveled up-connected, predictive, and ridiculously efficient. ",
       useBoxedImage: false,
        ctaUrl: "#",
     },
@@ -259,7 +259,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "Do I need a certain Salesforce edition to get started?",
-      a: "Nope! We speak fluent Salesforce—from Starter to Enterprise (and all the acronyms in between).",
+      a: "Nope! We speak fluent Salesforce-from Starter to Enterprise (and all the acronyms in between).",
     },
     {
       q: "What’s in the free audit?",
@@ -271,7 +271,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Can you hook Salesforce into our current stack?",
-      a: "You bet. We’re integration nerds—and proud of it.",
+      a: "You bet. We’re integration nerds-and proud of it.",
     },
   ];
 
@@ -293,7 +293,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <StatSection
  
-  title="You’re in good company—alongside brands that ditched the manual grind and leveled up with AI-fueled Salesforce. "
+  title="You’re in good company-alongside brands that ditched the manual grind and leveled up with AI-fueled Salesforce. "
   stats={[
     { label: "Salesforce Customers Since 2020 ", value: "70+" },
     { label: "Hours of Salesforce Consulting Delivered", value: "2500+" },
@@ -304,7 +304,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="We Don’t Just Do Salesforce. We AI the Heck Out of It. "
-          subtitle="Strategy, setup, automation—fully loaded with intelligence (and personality)."
+          subtitle="Strategy, setup, automation-fully loaded with intelligence (and personality)."
           tabs={tabs}
           features={features} 
         />
@@ -331,7 +331,7 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading="AI-Led Results Trusted by Brands You Know"
-        subtext="From fast-growing startups to global giants—Salesforce + AI works for them. Let’s make it work for you too.  "
+        subtext="From fast-growing startups to global giants-Salesforce + AI works for them. Let’s make it work for you too.  "
         
       />
 
@@ -349,7 +349,7 @@ const features: FeatureContent[] = [
           heading=" Let’s Make Your Salesforce Smarter (And Less Annoying) "
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

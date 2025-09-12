@@ -87,7 +87,7 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
    
-    description: "Future-proof your Jira—cloud, data center, or server—with strategies that actually grow with you. ",
+    description: "Future-proof your Jira-cloud, data center, or server-with strategies that actually grow with you. ",
     items: [
       { icon: Zap, title: "Architected for scale, threaded with AI guardrails.  " },
       { icon: Zap, title: "Build it right. Build it once.   " },
@@ -97,7 +97,7 @@ const features: FeatureContent[] = [
   {
     id: "analytics",
    
-    description: "Full-stack revamp: workflows, fields, roles, reports—set up the way you actually work. ",
+    description: "Full-stack revamp: workflows, fields, roles, reports-set up the way you actually work. ",
     items: [
       { icon: BarChart2, title: "Custom fields with AI insight baked in.    " },
       { icon: BarChart2, title: "Permissions that make sense, not mess.  " },
@@ -107,7 +107,7 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "From Kanban to Scrum or somewhere in between—ensure your teams sprint smarter, not just faster.  ",
+    description: "From Kanban to Scrum or somewhere in between-ensure your teams sprint smarter, not just faster.  ",
     items: [
       { icon: Database, title: "Boards built for your rhythm, with AI tuning velocity. " },
       { icon: Database, title: "Agile that’s adaptive, actionable, automated.  " },
@@ -117,7 +117,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "Turn manual chaos into automatic flow—with intelligent routing, alerts, and escalations. ",
+    description: "Turn manual chaos into automatic flow-with intelligent routing, alerts, and escalations. ",
     items: [
       { icon: ShieldCheck, title: "AI flags the bottlenecks before they block you.    " },
       { icon: ShieldCheck, title: "Spend less time updating tickets, more time delivering.   " },
@@ -127,7 +127,7 @@ const features: FeatureContent[] = [
    {
     id: "development",
    
-    description: "Dashboards that do more than display—they predict and guide.  ",
+    description: "Dashboards that do more than display-they predict and guide.  ",
     items: [
       { icon: ShieldCheck, title: "Dashboards that advise not just inform.  " },
       { icon: ShieldCheck, title: "Role-based reporting that gets every stakeholder on the same page.  " },
@@ -175,11 +175,11 @@ const features: FeatureContent[] = [
     },
     {
       q: "Can you optimize an already messy instance? ",
-      a: "Absolutely—we revamp fields, workflows, roles, dashboards while keeping your data intact.",
+      a: "Absolutely-we revamp fields, workflows, roles, dashboards while keeping your data intact.",
     },
     {
       q: "Which deployment types can you handle?",
-      a: " Cloud, Data Center, Server—you name it, we architect it. ",
+      a: " Cloud, Data Center, Server-you name it, we architect it. ",
     },
     {
       q: "How long before I see change?",
@@ -195,9 +195,9 @@ const features: FeatureContent[] = [
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Jira Strategy That Thinks Ahead—With AI at the Core "
+          heading="Jira Strategy That Thinks Ahead-With AI at the Core "
          
-          subtext="From backlog bloat to process bliss—we architect Jira systems that just make sense."
+          subtext="From backlog bloat to process bliss-we architect Jira systems that just make sense."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/L-2%20Banner%20Images/Jira%20stratedgy%20and%20implementaion.webp"
         />
@@ -205,7 +205,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
          <EditableStatSection
  
-  title="You’re in good company—with power users who run Jira without friction  "
+  title="You’re in good company-with power users who run Jira without friction  "
   stats={[
     { label: "Clients Served  ", value: "50+" },
     { label: "Certified Jira Experts  ", value: "20+" },
@@ -217,7 +217,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="  What We Do with Jira Strategy & Implementation  "
-          subtitle="We embed Jira into your org instead of forcing your org into Jira—plus we infuse AI smarts so your workflows don’t waste a beat. "
+          subtitle="We embed Jira into your org instead of forcing your org into Jira-plus we infuse AI smarts so your workflows don’t waste a beat. "
           tabs={tabs}
           features={features} 
         />
@@ -232,7 +232,7 @@ const features: FeatureContent[] = [
 
         <LogoScroller
         heading=" Brands That Trust Our Jira Expertise "
-        subtext=" From lean startups to enterprise squads—we build Jira systems that scale."
+        subtext=" From lean startups to enterprise squads-we build Jira systems that scale."
        
       />
 
@@ -256,9 +256,9 @@ const features: FeatureContent[] = [
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build a Jira That Grows With You "
-          subtext="AI-smart workflows, strategic structure, and systems that scale—starting now. "
+          subtext="AI-smart workflows, strategic structure, and systems that scale-starting now. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

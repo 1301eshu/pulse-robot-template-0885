@@ -37,9 +37,9 @@ const RevOpsHero: React.FC<RevOpsHeroProps> = ({
       <div className="section-wrapper py-[48px]">
         {/* Heading + Subheading */}
         <div className="text-left mb-6">
-          <h2 className="text-4xl md:text-5xl font-semibold text-[#101828] mb-2">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[#101828] mb-2">
             {sectionHeading}
-          </h2>
+          </h1>
           {sectionSubheading && <p className="text-lg text-[#475467]">{sectionSubheading}</p>}
         </div>
 

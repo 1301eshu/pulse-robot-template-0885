@@ -93,7 +93,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: Zap, title: "Clean, goal-aligned Tableau dashboards that reduce noise and elevate signal   " },
       { icon: Zap, title: "Automated storytelling with interactive filters, drill-downs, and AI-powered alerts    " },
-      { icon: Zap, title: "Embedded insights where your teams work—CRM, emails, presentations  " },
+      { icon: Zap, title: "Embedded insights where your teams work-CRM, emails, presentations  " },
     ],
   },
   {
@@ -188,7 +188,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Will our non-technical teams understand these dashboards?",
-      a: "That’s the goal. Our dashboards are built for everyone—easy to explore, understand, and use.",
+      a: "That’s the goal. Our dashboards are built for everyone-easy to explore, understand, and use.",
     },
   ];
 
@@ -210,7 +210,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
          <EditableStatSection
  
-  title="You’re in sharp company—with brands turning numbers into narratives.  "
+  title="You’re in sharp company-with brands turning numbers into narratives.  "
   stats={[
     { label: "Interactive dashboards designed to decode data at a glance  ", value: "350+" },
     { label: "Average uplift in data-driven decision velocity  ", value: "30%" },
@@ -236,7 +236,7 @@ const features: FeatureContent[] = [
 
         <LogoScroller
         heading="Brands That Rely on Our Data Visualization Expertise "
-        subtext=" From scaling startups to global leaders—our dashboards fuel decisions that matter."
+        subtext=" From scaling startups to global leaders-our dashboards fuel decisions that matter."
         
       />
 
@@ -262,7 +262,7 @@ const features: FeatureContent[] = [
           heading="Ready to Build Dashboards That Do the Thinking for You? "
           subtext=" Smarter visuals. Deeper insights. Decisions on demand. Let’s get started."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

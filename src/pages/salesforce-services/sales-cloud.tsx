@@ -91,7 +91,7 @@ export default function SalesCloud() {
     },
     {
       id: "integrations",
-      description: "Bring all your customer data into one view—Sales Cloud connects seamlessly across CRMs, ERPs, social platforms, and support tools.",
+      description: "Bring all your customer data into one view-Sales Cloud connects seamlessly across CRMs, ERPs, social platforms, and support tools.",
       items: [
         { icon: BarChart2, title: "Sync lead, contact, and opportunity data across platforms" },
         { icon: BarChart2, title: "Enable cross-team visibility with shared account insights" },
@@ -100,16 +100,16 @@ export default function SalesCloud() {
     },
     {
       id: "migration",
-      description: "Make the move to Salesforce Sales Cloud without slowing down—fast-track adoption, preserve your data, and future-ready foundations.",
+      description: "Make the move to Salesforce Sales Cloud without slowing down-fast-track adoption, preserve your data, and future-ready foundations.",
       items: [
-        { icon: Database, title: "Migrate leads, opportunities, workflows, and reports—cleanly and completely" },
+        { icon: Database, title: "Migrate leads, opportunities, workflows, and reports-cleanly and completely" },
         { icon: Database, title: "Preserve data integrity with validation, deduplication, and mapping best practices" },
         { icon: Database, title: "Cut migration time in half with proven frameworks and AI-assisted setup" }
       ]
     },
     {
       id: "support",
-      description: "Stay sales-ready with dedicated Sales Cloud support—smart fixes, smooth operations, and zero disruption.",
+      description: "Stay sales-ready with dedicated Sales Cloud support-smart fixes, smooth operations, and zero disruption.",
       items: [
         { icon: ShieldCheck, title: "Manage roles, permissions & user onboarding with ease" },
         { icon: ShieldCheck, title: "Ensure clean, secure, and up-to-date deal data" },
@@ -134,36 +134,6 @@ export default function SalesCloud() {
     { label: "Salesforce-certified experts on board", value: "60+" }
   ];
 
-  // Recent Resources
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Winning More Deals with AI in Salesforce Sales Cloud",
-      subtitle: "How smart automation changed the pipeline game for our clients.",
-      author: "Sales Ops Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-salesforce-deals"
-    },
-    {
-      title: "5 Ways to Supercharge Sales Cloud With Integrations",
-      subtitle: "Our best integration tips for connecting your revenue stack.",
-      author: "CRM Solutions",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "salesforce-integration-tips"
-    },
-    {
-      title: "Data Hygiene for Smarter Selling",
-      subtitle: "Why clean data is the not-so-secret weapon for quota-crushing teams.",
-      author: "Sales Enablement",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "data-hygiene-sales"
-    },
-  ];
 
   // Case Study Tabs (Carousel)
   const caseStudyTabs: TabItem[] = [
@@ -211,7 +181,7 @@ export default function SalesCloud() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands scaling smarter with Salesforce Sales Cloud."
+          title="You’re in good company-with brands scaling smarter with Salesforce Sales Cloud."
           stats={stats}
         />
 
@@ -228,14 +198,14 @@ export default function SalesCloud() {
   heading="Success Stories That Speak for Themselves "
   body="A few real-world wins we’ve driven with Salesforce Sales Cloud. "
   subTabs={[]}
-  resources={recentResources}
+resourcePostType="case-studies"
 />
 
 
         {/* Logo Section */}
         <LogoScroller
           heading="Trusted by Companies Using Salesforce Sales Cloud"
-          subtext="From lean teams to global sellers—we help them all win smarter."
+          subtext="From lean teams to global sellers-we help them all win smarter."
          
         />
 
@@ -255,6 +225,7 @@ export default function SalesCloud() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
 
@@ -263,7 +234,7 @@ export default function SalesCloud() {
           heading="Let AI Drive Your Sales Machine to New Heights"
           subtext="Custom Salesforce Sales Cloud solutions that deliver"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

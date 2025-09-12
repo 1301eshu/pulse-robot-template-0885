@@ -85,7 +85,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "omni",
-      description: "Deliver consistent, data-driven commerce across devices, stores, and touchpoints—powered by real-time AI insights.",
+      description: "Deliver consistent, data-driven commerce across devices, stores, and touchpoints-powered by real-time AI insights.",
       items: [
         { icon: BarChart2, title: "Unified shopping across web, mobile, and store" },
         { icon: BarChart2, title: "Smart POS integration with AI" },
@@ -119,37 +119,6 @@ export default function MarketingAutomation() {
     { label: "Salesforce-certified experts on deck", value: "60+" },
   ];
 
-  // Recent Resources/More Content Section
-  const recentResources: ResourceItem[] = [
-    {
-      title: "AI-First eCommerce: What It Really Means for Your Bottom Line",
-      subtitle: "How brands are using AI-powered Commerce Cloud to increase conversions and lifetime value.",
-      author: "eCommerce Insights Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-ecommerce-bottom-line"
-    },
-    {
-      title: "The Secret Sauce of Omni-Channel Shopping",
-      subtitle: "What top brands do differently to win buyers across every digital touchpoint.",
-      author: "Strategy Team",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "omnichannel-strategy"
-    },
-    {
-      title: "How AI Makes Storefronts Perform Like Top Sellers",
-      subtitle: "Why real-time performance tuning and bug detection matter for conversion.",
-      author: "Performance Engineering",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-storefront-performance"
-    },
-  ];
-
   // Case Study Tabs (for the carousel)
   const caseStudyTabs: TabItem[] = [
     { id: "cs1", label: "Case Study 1", icon: Zap, image: "", ctaText: "View Case Study", ctaLink: "/case-studies/1" },
@@ -170,11 +139,11 @@ export default function MarketingAutomation() {
     },
     {
       q: "What makes your Salesforce Commerce Cloud approach different?",
-      a: "We build AI into every touchpoint—not as an afterthought—so your store gets smarter with every visit.",
+      a: "We build AI into every touchpoint-not as an afterthought-so your store gets smarter with every visit.",
     },
     {
       q: "How do we measure success with your Salesforce Commerce Cloud solutions?",
-      a: "Revenue, conversion rates, AOV, and customer lifetime value—metrics that matter to your bottom line.",
+      a: "Revenue, conversion rates, AOV, and customer lifetime value-metrics that matter to your bottom line.",
     },
   ];
 
@@ -195,7 +164,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands making every click count with Salesforce Commerce Cloud."
+          title="You’re in good company-with brands making every click count with Salesforce Commerce Cloud."
           stats={stats}
         />
 
@@ -212,7 +181,7 @@ export default function MarketingAutomation() {
           heading="See What Smart Salesforce Commerce Cloud Looks Like in Action"
           body="A few real wins we've helped brands achieve with Salesforce Commerce Cloud. "
           subTabs={[]} // no subtabs in this section
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -238,6 +207,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         {/* CTA Section */}
@@ -245,7 +215,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build Your AI-First Commerce Cloud Experience."
           subtext="Let's build your AI-powered selling machine that works day & night"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

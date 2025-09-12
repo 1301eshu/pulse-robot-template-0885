@@ -138,13 +138,13 @@ export default function WebDevelopment() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—where creativity meets clean code for perfect websites."
+          title="You’re in good company-where creativity meets clean code for perfect websites."
           stats={stats}
         />
 
         {/* Tab Features Section (Web Dev Services) */}
         <EnterpriseCapabilities
-          title="We ssBlend AI with Web Development for Effortless User Experiences"
+          title="We Blend AI with Web Development for Effortless User Experiences"
           subtitle="We optimize every layer of your website to ensure smooth performance and intelligent functionality"
           tabs={tabs}
           features={features}
@@ -155,7 +155,7 @@ export default function WebDevelopment() {
           heading="See AI-Infused Web Development In Action"
           body="Brands we’ve helped create seamless, user-focused experiences."
           subTabs={[]} // no subtabs on this page
-          resourceType="116"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -179,6 +179,7 @@ export default function WebDevelopment() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="116"
 />
 
         {/* Call to Action */}
@@ -186,7 +187,7 @@ export default function WebDevelopment() {
           heading="Let’s Perfect Your Web Experience with a Hint of AI"
           subtext="Intuitive design, blazing speed, and rock-solid performance."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

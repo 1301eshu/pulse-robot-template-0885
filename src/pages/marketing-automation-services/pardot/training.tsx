@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from Pardot Training page)
@@ -55,6 +56,7 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="marketingautomationservicespardottraining"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -187,6 +189,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
+          resourceType="73"
         />
       </div>
 
@@ -194,7 +197,7 @@ const L3Template = () => {
         heading="Looking for Proven Pardot Training and Certification?"
         subtext="Focus your energy on growth while we train your team in Pardot automation."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/contact/"
+        buttonLink="/contact-us/"
       />
 
       <Footer />

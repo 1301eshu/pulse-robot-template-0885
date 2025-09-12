@@ -302,15 +302,21 @@ import { Link } from "react-router-dom";
 import BlogInteractionBar from "@/components/BlogInteractionBar";
 import authorsRaw from "../../assets/Author.json";
 import { API_BASE_URL } from '../../../apiconfig';
+import { handleApiDomainReplacement } from '@/lib/replaceApiDomain';
 
 
 type Author = {
   name: string;
   bio: string;
+  title: string;
   linkedin?: string;
   linkedin_url?: string;
+  image?: string;
 };
-const authors: Author[] = authorsRaw;
+const authors: Author[] = authorsRaw.map((a: any) => ({
+  title: "",
+  ...a,
+}));
 
 
 const decodeHTML = (html: string) => {
@@ -377,7 +383,7 @@ const BlogPost = () => {
   const [headTags, setHeadTags] = useState<JSX.Element[]>([]);
   const [rankMathAuthor, setRankMathAuthor] = useState<string | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fetchRankMath = async () => {
       try {
         const publicDomain = API_BASE_URL;
@@ -429,14 +435,34 @@ const BlogPost = () => {
                     />
                   );
                   break;
-                case "link":
-                  elements.push(
-                    <link
-                      key={elements.length}
-                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                    />
-                  );
+                // case "link":
+                //   elements.push(
+                //     <link
+                //       key={elements.length}
+                //       {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                //     />
+                //   );
+                //   break;
+                case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
                   break;
+                }
+
+
                 case "script":
                   elements.push(
                     <script
@@ -466,6 +492,7 @@ const BlogPost = () => {
 
 
   useEffect(() => {
+    handleApiDomainReplacement();
     if (slug) {
       fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
         .then((res) => res.json())
@@ -524,7 +551,7 @@ const BlogPost = () => {
   // const author = post._embedded?.author?.[0]?.name || "Unknown Author";
   const author = rankMathAuthor || post._embedded?.author?.[0]?.name || "Unknown Author";
   const matchedAuthor = authors.find(a => a.name.toLowerCase() === author.toLowerCase());
-  const displayAuthor = matchedAuthor || { name: author, bio: "", linkedin: null };
+  const displayAuthor = matchedAuthor || { name: author, bio: "", title: "", image: "", linkedin: null };
 
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/800x400";
   const postCategory = post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog";
@@ -547,11 +574,11 @@ const BlogPost = () => {
       <main className="pt-12 px-4 sm:px-6">
         <div className="max-w-[1140px] mx-auto">
           {/* Hero Section */}
-          <section className="pt-24 pb-24 grid md:grid-cols-2 gap-10 items-start   mb-20">
+          <section className="pt-24 grid lg:grid-cols-2 gap-10 items-start   mb-20">
             <div>
               <Link to="/blogs" className="text-blue-600 text-sm flex items-center gap-1 mb-6 hover:underline">
                 <ArrowLeft className="w-4 h-4" />
-                Back to Resource
+                Back to Blogs
               </Link>
 
               <Badge className="mb-2 text-xs">{postCategory}</Badge>
@@ -598,18 +625,67 @@ const BlogPost = () => {
           </section>
 
           {/* Grid: TOC + Content */}
-          <div className="grid pb-24 lg:grid-cols-[16rem_1fr] gap-[88px] mb-10">
+          <div className="grid pb-24 gap-[38px] lg:grid-cols-[16rem_1fr] lg:gap-[88px] mb-10">
             {/* TOC */}
+            {/* Author for mobile (inline, not sticky) */}
+            <div className="block lg:hidden mb-6 border border-gray-200 rounded-lg bg-white shadow-sm text-sm text-gray-700 p-4">
+              <h4 className="text-base font-bold text-gray-900 mb-3">Author</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                    {displayAuthor.image ? (
+                    <img
+                      src={displayAuthor.image}
+                      className="w-full h-full object-cover rounded-full"
+                      alt={displayAuthor.name}
+                    />
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                    </svg>
+                  )}
+                  </div>
+                <div>
+                  <div className="font-semibold text-gray-900 flex items-center gap-1">
+                    {displayAuthor.name}
+                    {displayAuthor.linkedin && (
+                      <a href={displayAuthor.linkedin} target="_blank" rel="noopener noreferrer">
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                          className="w-4 h-4"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {displayAuthor.bio && (
+                <div className="mt-6">
+                  <h3 className="text-sm font-semibold mb-2 text-gray-800">{displayAuthor.title}</h3>
+                  <p className="text-xs mb-4">{displayAuthor.bio}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar for desktop */}
             <aside className="hidden lg:block sticky top-24 self-start">
               {/* Author Info */}
               <div className="p-4 mb-10 border border-gray-200 rounded-lg bg-white shadow-sm text-sm text-gray-700">
                 <h4 className="text-base font-bold text-gray-900 mb-3">Author</h4>
                 <div className="flex items-center gap-3 mb-2">
-                  {/* Avatar Icon */}
                   <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                    {displayAuthor.image ? (
+                    <img
+                      src={displayAuthor.image}
+                      className="w-full h-full object-cover rounded-full"
+                      alt={displayAuthor.name}
+                    />
+                  ) : (
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
                     </svg>
+                  )}
                   </div>
 
                   <div>
@@ -628,13 +704,15 @@ const BlogPost = () => {
                   </div>
                 </div>
 
-                {/* Bio */}
                 {displayAuthor.bio && (
-                  <p className="text-xs mb-4">{displayAuthor.bio}</p>
+                  <div className="mt-6">
+                    <h3 className="text-sm font-semibold mb-2 text-gray-800">{displayAuthor.title}</h3>
+                    <p className="text-xs mb-4">{displayAuthor.bio}</p>
+                  </div>
                 )}
               </div>
 
-
+              {/* Table of Contents */}
               {toc.length > 0 && (
                 <>
                   <h3 className="text-lg font-semibold mb-4 text-gray-800">Table of Contents</h3>
@@ -659,7 +737,7 @@ const BlogPost = () => {
             </aside>
 
             {/* Main Content */}
-            <div className="max-w-[740px]">
+            <div className="max-w-[100%] lg:max-w-[740px]">
               <article
                 className="prose prose-gray max-w-none text-black"
                 dangerouslySetInnerHTML={{ __html: addHeadingAnchors(cleanContent(post.content.rendered)) }}
@@ -676,7 +754,7 @@ const BlogPost = () => {
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Ready to Transform Your Marketing Strategy?</h3>
                 <p className="text-gray-600 mb-4 text-sm">Let our experts help you implement cutting-edge solutions for your business.</p>
                 <a
-                  href="/contact"
+                  href="/contact-us"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

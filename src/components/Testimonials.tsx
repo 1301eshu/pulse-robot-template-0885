@@ -87,7 +87,7 @@ export default function Testimonials() {
           What Our <span className="text-[hsl(var(--primary))]">Clients Say</span>
         </h2>
         <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-          Don’t just take our word for it—see real results from our partners.
+          Don’t just take our word for it-see real results from our partners.
         </p>
       </div>
 

@@ -123,7 +123,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: ShieldCheck, title: "Listings that shine in Walmart’s crowded aisle    " },
       { icon: ShieldCheck, title: "Reviews managed, trust earned, sales up  " },
-      { icon: ShieldCheck, title: "Clicks, carts, and credibility—nail it all  " },
+      { icon: ShieldCheck, title: "Clicks, carts, and credibility-nail it all  " },
     ],
   },
    {
@@ -201,7 +201,7 @@ const features: FeatureContent[] = [
         <HeroSection
           heading=" eCommerce Strategy Services, Rewired for the AI Era"
          
-          subtext=" Turning browser behavior into business breakthroughs—automatically. "
+          subtext=" Turning browser behavior into business breakthroughs-automatically. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/ECOMMERCE%20STRATEGY.webp"
         />
@@ -261,7 +261,7 @@ const features: FeatureContent[] = [
           heading="Let’s Give Your eCommerce Game an AI Glow Up "
           subtext=" Get seen, get sales, get ahead. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

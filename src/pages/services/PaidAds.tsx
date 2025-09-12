@@ -147,7 +147,7 @@ export default function MarketingAutomation() {
       slug: "ai-for-ppc"
     },
     {
-      title: "Winning Ad Copy—No Clicks Wasted",
+      title: "Winning Ad Copy-No Clicks Wasted",
       subtitle: "What really makes an ad scroll-stopping? Let’s break it down.",
       author: "Ad Creative Lead",
       date: "July 2025",
@@ -170,15 +170,15 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "Can you help with ad copy and creatives?",
-      a: "Absolutely! We whip up ad copy and visuals that speak your audience’s language—and make them stop scrolling.",
+      a: "Absolutely! We whip up ad copy and visuals that speak your audience’s language-and make them stop scrolling.",
     },
     {
       q: "What metrics do you track to measure success?",
-      a: "We keep an eye on CTR, CPC, CPA, conversion rates, and ROI — basically, all the juicy numbers that prove we’re winning.",
+      a: "We keep an eye on CTR, CPC, CPA, conversion rates, and ROI - basically, all the juicy numbers that prove we’re winning.",
     },
     {
       q: "Can you help with remarketing campaigns?",
-      a: "You bet! We craft clever remarketing moves that pull back your visitors like a boomerang — turning looks into clicks.",
+      a: "You bet! We craft clever remarketing moves that pull back your visitors like a boomerang - turning looks into clicks.",
     },
     {
       q: "How do you manage bidding strategies?",
@@ -196,14 +196,14 @@ export default function MarketingAutomation() {
         {/* HERO Section */}
         <HeroSection
           heading="Performance-Obsessed PPC Services with an AI Assist"
-          subtext="Real-time PPC magic — more clicks, better leads, bigger returns"
+          subtext="Real-time PPC magic - more clicks, better leads, bigger returns"
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/Paid%20ads.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="Welcome to the hub—where every click is a step toward brand success."
+          title="Welcome to the hub-where every click is a step toward brand success."
           stats={stats}
         />
 
@@ -225,7 +225,7 @@ export default function MarketingAutomation() {
 
         <LogoScroller
           heading="Brands Backing Our Paid Ads Game"
-          subtext="From tight teams to titans—we deliver campaigns that never miss."
+          subtext="From tight teams to titans-we deliver campaigns that never miss."
           
         />
 
@@ -251,7 +251,7 @@ export default function MarketingAutomation() {
           heading="Let's Start AI-Powered PPC That Means Business"
           subtext="Target the right people, spend less, get more."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

@@ -7,13 +7,14 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from Site Optimization Services page)
   const faqs = [
     {
       q: "How does site optimization contribute to the success of an advertising campaign?",
-      a: "An optimized site is fast, responsive, and user-friendly—so more ad clicks turn into engaged visits and conversions.",
+      a: "An optimized site is fast, responsive, and user-friendly-so more ad clicks turn into engaged visits and conversions.",
     },
     {
       q: "What role does search engine optimization (SEO) play in site optimization?",
@@ -45,39 +46,10 @@ const L3Template = () => {
     },
   ];
 
-  // Recent Blogs (from the page’s Top Blogs)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "4 CRO Best Practices to Drive Business Growth",
-      subtitle: "Turn ad clicks into revenue by tightening UX, testing, and funnel clarity.",
-      author: "Rukman Singh",
-      date: "Dec 1, 2022",
-      readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400",
-      slug: "cro-best-practices-drive-growth",
-    },
-    {
-      title: "Mobile-Friendly Website Design: Enhance UX & Boost SEO",
-      subtitle: "Mobile-first experiences improve engagement, rankings, and conversions.",
-      author: "Rukman Singh",
-      date: "Mar 7, 2022",
-      readTime: "10 min read",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400",
-      slug: "mobile-friendly-website-design",
-    },
-    {
-      title: "Messy SEO – Improving Site Structure As Google’s Title Tag Change Affects CTRs",
-      subtitle: "Why hierarchy and internal linking matter more than ever.",
-      author: "Sakshi Arora",
-      date: "Jan 10, 2022",
-      readTime: "25 min read",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400",
-      slug: "improving-site-structure-title-tag-change",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="developmentserviceswebdevelopmentsiteoptimizationservices"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -197,7 +169,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
-          resources={recentResources}
+          resourceType="116"
         />
       </div>
 
@@ -205,7 +177,7 @@ const L3Template = () => {
         heading="Boost Performance, Engagement, & Conversions With the A-Team By Your Side"
         subtext="We leverage cutting-edge strategies and proven techniques to boost performance, ensuring your website works as hard as you do."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/contact/"
+        buttonLink="/contact-us/"
       />
 
       <Footer />

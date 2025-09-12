@@ -7,8 +7,9 @@ import ContactCta from "@/components/ui/component_6";
 import RecentResourcesSection from "@/components/ui/component_ebook";
 import { SITE_CTA } from "@/components/SITE_CTAs";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
-import { Calendar } from "lucide-react";
-
+import { Calendar, User } from "lucide-react";
+import DynamicSEO from '@/components/DynamicSEO';
+import { API_BASE_URL } from '../../../apiconfig';
 interface ResourceItem {
   id: number;
   title: string;
@@ -31,7 +32,7 @@ const ResourcesIndex = () => {
     const fetchFeatured = async () => {
       try {
         const res = await fetch(
-          "https://growthnatives.com/wp-json/wp/v2/ebooks?per_page=1&_embed"
+          `${API_BASE_URL}/wp-json/wp/v2/ebooks?per_page=1&_embed`
         );
         const data = await res.json();
 
@@ -71,19 +72,20 @@ const ResourcesIndex = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+       <DynamicSEO page='casestudies'/>
       <Header />
       <SmartBreadcrumb />
 
      <main className="pt-0">
   {/* DIY Hero Featured Section */}
   <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-    {/* Left copy — dynamic from API */}
+    {/* Left copy - dynamic from API */}
     <div>
       {!loading && featured && (
         <>
-          <h2 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
+          <h1 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
             {featured.title}
-          </h2>
+          </h1>
           <p className="text-lg text-gray-700 mb-4">
             {featured.subtitle}
           </p>
@@ -93,15 +95,15 @@ const ResourcesIndex = () => {
       <SITE_CTA
         variant="secondary"
         text="Talk to an Expert"
-        href="/contact"
+        href="/contact-us"
         size="md"
       />
     </div>
 
-    {/* Right card — dynamic featured ebook */}
+    {/* Right card - dynamic featured ebook */}
     {!loading && featured && (
-      <Link to={`/ebooks/${featured.slug}`} className="block">
-        <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
+      <Link to={`/ebooks/${featured.slug}`} className="block h-full ">
+        <Card className="h-full bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
           <div className="relative h-56 overflow-hidden">
             <img
               src={featured.image}
@@ -117,6 +119,9 @@ const ResourcesIndex = () => {
 
           <CardContent className="bg-white p-6">
             <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
+              <span className="flex items-center gap-1">
+                                    <User className="w-4 h-4" /> {featured.author}
+                                  </span>
               <span className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" /> {featured.date}
               </span>
@@ -136,10 +141,10 @@ const ResourcesIndex = () => {
 
   {/* CTA */}
   <ContactCta
-    heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
-    subtext="Let’s plug in the tech, the talent, and the timing."
+    heading="Let's Build Your Next Growth Chapter"
+    subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
     buttonLabel="Talk to an Expert"
-    buttonLink="/contact"
+    buttonLink="/contact-us"
   />
 </main>
 

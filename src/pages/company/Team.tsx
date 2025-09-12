@@ -9,6 +9,7 @@ import ContactCta from "@/components/ui/component_6";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { ChevronLeft, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import DynamicSEO from "@/components/DynamicSEO";
 
 // You can expand bios per member here:
 const teamMembers = [
@@ -166,7 +167,7 @@ const teamMembers = [
         <p>
          Akanksha leads Growth Natives’ marketing strategy and brand voice in an AI-first world. With over 15 years of B2B experience, she blends expertise in content, email, inbound, social, and copy with a deep understanding of marketing technology and emerging AI capabilities.  
         </p>
-        <p>A gourmet coffee loyalist and proud geek-speak translator, she turns complex tech into clear, compelling narratives that perform in-market and in-machine. Today, she spearheads Growth Natives’ multi-channel growth initiatives, guiding a high-performing team with purpose, passion, and empathy — and connecting every campaign to measurable business impact. </p>
+        <p>A gourmet coffee loyalist and proud geek-speak translator, she turns complex tech into clear, compelling narratives that perform in-market and in-machine. Today, she spearheads Growth Natives’ multi-channel growth initiatives, guiding a high-performing team with purpose, passion, and empathy - and connecting every campaign to measurable business impact. </p>
       </>
     )
   },
@@ -393,7 +394,7 @@ function TeamMemberModal({
             </div>
           </div>
 
-          {/* Details (desktop) — same height as image; bio scrolls */}
+          {/* Details (desktop) - same height as image; bio scrolls */}
           <div className="flex-1 min-w-0">
             <div className="h-[360px] flex flex-col">
               {/* header fixed */}
@@ -425,13 +426,14 @@ const Team = () => {
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="team"/>
       <Header />
       <SmartBreadcrumb />
       <main>
         <HeroStacked
           heading="The Crew Building Growth,"
           highlight="Natively"
-          subtext="At Growth Natives, leadership isn’t a title — it’s a mindset. Fueled by AI, sharp thinking, and just the right amount of disruption, our leaders turn momentum into measurable growth."
+          subtext="At Growth Natives, leadership isn’t a title - it’s a mindset. Fueled by AI, sharp thinking, and just the right amount of disruption, our leaders turn momentum into measurable growth."
           imageSrc="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/about%20us/Hero.webp"
           hideCta
         />
@@ -445,12 +447,12 @@ const Team = () => {
             </span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            The people behind the magic — leading with passion, vision, and
+            The people behind the magic - leading with passion, vision, and
             integrity.
           </p>
         </section>
 
-        <section className="container mx-auto px-6 pb-20">
+        <section className="container mx-auto px-6 pb-8">
           {/* CEOs */}
           <div className="flex justify-center flex-wrap gap-6 mb-12">
             {ceos.map((member, i) => (

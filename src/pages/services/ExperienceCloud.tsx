@@ -80,16 +80,16 @@ export default function MarketingAutomation() {
         "Plan, prioritize, and structure your community for long-term engagement and scale. ",
       items: [
         { icon: Zap, title: "Define engagement KPIs and map them to site architecture, search, and AI personalization " },
-        { icon: Zap, title: "Align Experience Cloud with GTM motions—support, partner enablement, or employee onboarding" },
+        { icon: Zap, title: "Align Experience Cloud with GTM motions-support, partner enablement, or employee onboarding" },
         { icon: Zap, title: "Use Salesforce Data Cloud to serve dynamic content based on real-time behavior " },
       ],
     },
     {
       id: "design",
       description:
-        "We design Salesforce communities from the ground up or give legacy ones a modern, AI-powered refresh—fast, intuitive, and built to scale. ",
+        "We design Salesforce communities from the ground up or give legacy ones a modern, AI-powered refresh-fast, intuitive, and built to scale. ",
       items: [
-        { icon: Heart, title: "Design community UX from zero—aligned to internal processes and goals " },
+        { icon: Heart, title: "Design community UX from zero-aligned to internal processes and goals " },
         { icon: Heart, title: "Redesign outdated portals for better flow, speed, and usability " },
         { icon: Heart, title: "Build multi-community structures on one platform with unified branding " },
       ],
@@ -198,11 +198,11 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "Is this just for customers? Or can my team use it too?",
-      a: "Both! You can create internal spaces for HR, IT, or onboarding—plus partner portals and customer hubs. One platform, many vibes.",
+      a: "Both! You can create internal spaces for HR, IT, or onboarding-plus partner portals and customer hubs. One platform, many vibes.",
     },
     {
       q: "Can I personalize content based on who’s logging in?",
-      a: "Yup. With AI and CRM data, every user sees what they need—auto-personalized pages, recs, and resources.",
+      a: "Yup. With AI and CRM data, every user sees what they need-auto-personalized pages, recs, and resources.",
     },
     {
       q: "Will it work with my current tools and data sources?",
@@ -218,7 +218,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "What happens after launch?",
-      a: "We don’t ghost you. We help optimize engagement, fix what’s broken, and roll out upgrades—on repeat.",
+      a: "We don’t ghost you. We help optimize engagement, fix what’s broken, and roll out upgrades-on repeat.",
     },
   ];
 
@@ -230,7 +230,7 @@ export default function MarketingAutomation() {
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Salesforce Experience Cloud That Connects, Clicks, and Converts—Powered by AI"
+          heading="Salesforce Experience Cloud That Connects, Clicks, and Converts-Powered by AI"
           subtext="Build branded communities that think smart, look sharp, and keep your people coming back."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Experience%20Cloud.webp"
@@ -240,7 +240,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands building smarter communities with Salesforce Experience Cloud."
+          title="You’re in good company-with brands building smarter communities with Salesforce Experience Cloud."
           stats={stats}
         />
 
@@ -290,7 +290,7 @@ export default function MarketingAutomation() {
           heading="Let's Build Your AI-Powered Community Empire"
           subtext="Engaged users. Content that converts. Communities that actually work."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

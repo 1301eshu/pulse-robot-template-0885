@@ -18,68 +18,92 @@ const RecentResourcesSections: React.FC = () => {
   // Static resources JSON
   const resources: ResourceItem[] = [
     {
-      title: "Unlocking Organic Growth: How Escalon Boosted Visibility with Integrated SEO Strategies",
+      title:
+        "Unlocking Organic Growth: How Escalon Boosted Visibility with Integrated SEO Strategies",
       author: "Vishal Mehta",
       date: "April 11, 2025",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Unlocking-Organic-Growth-Escalon-Boosted.webp",
-      slug: "unlocking-organic-growth-how-escalon-boosted-visibility-with-integrated-seo-strategies",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Unlocking-Organic-Growth-Escalon-Boosted.webp",
+      slug:
+        "unlocking-organic-growth-how-escalon-boosted-visibility-with-integrated-seo-strategies",
     },
     {
-      title: "Leveraging AI Engine Optimization (AEO) to Counter-Shifting Search Trends and Drive Revenue Growth",
+      title:
+        "Leveraging AI Engine Optimization (AEO) to Counter-Shifting Search Trends and Drive Revenue Growth",
       author: "Vishal Mehta",
       date: "April 11, 2025",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/leveraging-engine-optimization-counter.webp",
-      slug: "leveraging-ai-engine-optimization-to-counter-shifting-search-trends-and-drive-revenue-growth",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/leveraging-engine-optimization-counter.webp",
+      slug:
+        "leveraging-ai-engine-optimization-to-counter-shifting-search-trends-and-drive-revenue-growth",
     },
     {
-      title: "Automated Sales Workflows by Integrating HubSpot, Google Sheets, DocuSign, and ERP System",
+      title:
+        "Automated Sales Workflows by Integrating HubSpot, Google Sheets, DocuSign, and ERP System",
       author: "Geeta Dutt",
       date: "May 9, 2024",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Automated-Sales-Workflows-by-Integrating-HubSpot-Google-Sheets-DocuSign-and-ERP-System.webp",
-      slug: "automated-sales-workflows-by-integrating-hubspot-google-sheets-docusign-and-erp-system/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Automated-Sales-Workflows-by-Integrating-HubSpot-Google-Sheets-DocuSign-and-ERP-System.webp",
+      slug:
+        "automated-sales-workflows-by-integrating-hubspot-google-sheets-docusign-and-erp-system/",
     },
     {
-      title: "Enabling Smooth Deal Tracking Within HubSpot for a Commercial Roofing Company",
+      title:
+        "Enabling Smooth Deal Tracking Within HubSpot for a Commercial Roofing Company",
       author: "Geeta Dutt",
       date: "April 10, 2024",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Enabling-Smooth-Deal-Tracking-Within-HubSpot-for-a-Commercial-Roofing-Company.webp",
-      slug: "enabling-smooth-deal-tracking-within-hubspot-for-a-commercial-roofing-company/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Enabling-Smooth-Deal-Tracking-Within-HubSpot-for-a-Commercial-Roofing-Company.webp",
+      slug:
+        "enabling-smooth-deal-tracking-within-hubspot-for-a-commercial-roofing-company/",
     },
     {
-      title: "Achieving 7X ROI in Just 8 Months Through Digital Marketing for a Top-tier Cloud Platform",
+      title:
+        "Achieving 7X ROI in Just 8 Months Through Digital Marketing for a Top-tier Cloud Platform",
       author: "Geeta Dutt",
       date: "April 8, 2024",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Achieving-7X-ROI-in-Just-8-Months-Through-Digital-Marketing-for-a-Top-tier-Cloud-Platform.webp",
-      slug: "achieving-7x-roi-in-just-8-months-through-digital-marketing-for-a-top-tier-cloud-platform/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/Achieving-7X-ROI-in-Just-8-Months-Through-Digital-Marketing-for-a-Top-tier-Cloud-Platform.webp",
+      slug:
+        "achieving-7x-roi-in-just-8-months-through-digital-marketing-for-a-top-tier-cloud-platform/",
     },
     {
-      title: "Reducing Administrative Burden by 75% in Real Estate Operations Through Territory Management",
+      title:
+        "Reducing Administrative Burden by 75% in Real Estate Operations Through Territory Management",
       author: "Sakshi Arora",
       date: "August 23, 2023",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-3-1.webp",
-      slug: "75-reduction-in-admin-activity-time-with-salesforce-territory-management/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-3-1.webp",
+      slug:
+        "75-reduction-in-admin-activity-time-with-salesforce-territory-management/",
     },
     {
-      title: "Improving Forecasting Accuracy by 69% with Salesforce Billing Implementation for a Leading Hardware Company",
+      title:
+        "Improving Forecasting Accuracy by 69% with Salesforce Billing Implementation for a Leading Hardware Company",
       author: "Geeta Dutt",
       date: "August 23, 2023",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-1%20(1).webp",
-      slug: "69-improvement-in-forecasting-accuracy-with-salesforce-billing-implementation/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-1%20(1).webp",
+      slug:
+        "69-improvement-in-forecasting-accuracy-with-salesforce-billing-implementation/",
     },
     {
-      title: "Boosting Operational Efficiency by 75% with Salesforce CPQ Integration for a Leading Brain Technology Firm",
+      title:
+        "Boosting Operational Efficiency by 75% with Salesforce CPQ Integration for a Leading Brain Technology Firm",
       author: "Geeta Dutt",
       date: "August 23, 2023",
       readTime: "1 min read",
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-2.webp",
-      slug: "75-reduction-in-cycle-time-with-salesforce-cpq-implementation/",
+      image:
+        "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-2.webp",
+      slug:
+        "75-reduction-in-cycle-time-with-salesforce-cpq-implementation/",
     },
   ];
 
@@ -101,30 +125,54 @@ const RecentResourcesSections: React.FC = () => {
         </div>
 
         {/* Resource Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-stretch">
           {paginatedResources.map((resource, index) => (
             <Link
-                key={index}
-                to={
-                    resource.slug
-                    ? `/case-studies/${resource.slug.replace(/\/$/, "")}`
-                    : "#"
-                }
-                className="block"
-                >
-              <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
-                <div className="relative h-48 overflow-hidden">
-                    <img
-    src={resource.image}
-    alt={resource.title}
-    className="w-full h-full object-contain bg-white transform scale-110 transition-transform duration-300 group-hover:scale-125"
-  />
-  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-    <span className="text-white font-semibold text-sm flex items-center gap-1">
-      Read more <span className="text-lg">›</span>
-    </span>
-  </div>
-</div>
+              key={index}
+              to={
+                resource.slug
+                  ? `/case-studies/${resource.slug.replace(/\/$/, "")}`
+                  : "#"
+              }
+              className="block"
+            >
+              {/* Card is fluid so grid never breaks */}
+              <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100 w-full">
+                {/* IMAGE: fixed sizes per breakpoint, locked 300:157, NEVER cropped */}
+                <div className="px-4 pt-4">
+                  <figure
+                    className="
+                      relative overflow-hidden rounded-xl bg-gray-50 ring-1 ring-black/5
+                      mx-auto max-w-full
+                      w-[343px] aspect-[300/157]           /* phone */
+                      sm:w-[486px] sm:aspect-[300/157]     /* tablet */
+                      lg:w-[710px] lg:aspect-[300/157]     /* desktop */
+                    "
+                  >
+                   <img
+  src={resource.image}
+  alt={resource.title}
+  width={1200}
+  height={628}
+  loading="lazy"
+  decoding="async"
+  className="
+    absolute inset-0 w-full h-full
+    object-cover object-center     /* <-- change from contain to cover */
+    scale-[1.02]                   /* <-- tiny default zoom to hide borders */
+    transition-transform duration-300
+    group-hover:scale-[1.05]
+  "
+/>
+
+                    {/* Desktop overlay */}
+                    <div className="absolute inset-0 hidden lg:flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <span className="text-white font-semibold text-sm flex items-center gap-1">
+                        Read more <span className="text-lg">›</span>
+                      </span>
+                    </div>
+                  </figure>
+                </div>
 
                 <CardContent className="bg-white p-6">
                   <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">

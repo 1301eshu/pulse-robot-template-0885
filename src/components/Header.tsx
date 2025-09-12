@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SITE_CTA } from "@/components/SITE_CTAs";
+// import { useLockBodyScroll } from '@/components/useLockBodyScroll';
 import {
   ChevronDown,
   Zap,
@@ -50,6 +51,21 @@ export default function Header() {
             onMouseLeave={closeMenu}
           >
             <div className="flex items-center justify-between py-4 relative">
+              {/* Mega Menu positioned inside the nav container */}
+<MegaMenu open={!!activeMenu && !isMobileMenuOpen}>
+  <div className={activeMenu === 'services' ? '' : 'hidden'}>
+    {renderMenuContent('services', activeCategory, setActiveCategory)}
+  </div>
+  <div className={activeMenu === 'labs' ? '' : 'hidden'}>
+    {renderMenuContent('labs', activeCategory, setActiveCategory)}
+  </div>
+  <div className={activeMenu === 'resources' ? '' : 'hidden'}>
+    {renderMenuContent('resources', activeCategory, setActiveCategory)}
+  </div>
+  <div className={activeMenu === 'company' ? '' : 'hidden'}>
+    {renderMenuContent('company', activeCategory, setActiveCategory)}
+  </div>
+</MegaMenu>
               {/* Logo */}
               <a href="/" className="flex-shrink-0 max-w-[100px]">
                 {/* <img
@@ -68,18 +84,30 @@ export default function Header() {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-6">
                 {['services', 'labs', 'resources', 'company'].map((menu) => (
-                  <button
+                  <div
                     key={menu}
-                    className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-3 font-medium capitalize text-sm"
+                    className="relative"
                     onMouseEnter={() => openMenu(menu)}
                   >
-                    {menu === 'services'
-                      ? 'Our Services'
-                      : menu === 'labs'
-                        ? 'AI Labs'
-                        : menu.charAt(0).toUpperCase() + menu.slice(1)}
-                    <ChevronDown className="ml-1 w-3 h-3" />
-                  </button>
+                    {menu === 'resources' ? (
+                      <Link 
+                        to="/resources"
+                        className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-3 font-medium capitalize text-sm"
+                      >
+                        Resources
+                        <ChevronDown className="ml-1 w-3 h-3" />
+                      </Link>
+                    ) : (
+                      <button className="flex items-center text-white hover:text-[#0A6CFF] transition-colors py-3 font-medium capitalize text-sm">
+                        {menu === 'services'
+                          ? 'Our Services'
+                          : menu === 'labs'
+                            ? 'AI Labs'
+                            : menu.charAt(0).toUpperCase() + menu.slice(1)}
+                        <ChevronDown className="ml-1 w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
                 ))}
               </div>
 
@@ -146,7 +174,12 @@ export default function Header() {
               <div className="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-[#0A101F] z-50 overflow-hidden">
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between px-4 py-4 border-b border-gray-700 bg-[#0A101F]">
-                  <img src="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/header/Logo_-_Gradient_f2jmus.webp" alt="Growth Natives" className="h-8" />
+                  <Lottie
+                  animationData={GrowthNativesLogo}
+                  className="h-8"
+                  loop={true}
+                  autoplay={true}
+                 />
                   <button
                     onClick={toggleMobileMenu}
                     className="text-white hover:text-[#0A6CFF] transition-colors p-1.5 rounded-lg"
@@ -185,8 +218,8 @@ export default function Header() {
                           { name: 'Web Analytics', url: '/marketing-analytics-services/web-analytics/' },
                           { name: 'Advanced Data Visualization', url: '/marketing-analytics-services/advanced-data-visualization' },
                           { name: 'Marketing Analytics', url: '/marketing-analytics-services/marketing-analytics' },
-                          { name: 'Self Service Bi Data Democratization', url: '/marketing-analytics-services/self-service-bi-data-democratization' },
-                          { name: 'Real Time Ai Powered Analytics', url: '/marketing-analytics-services/real-time-ai-powered-analytics' },
+                          { name: 'Self-Service Bi & Data Democratization', url: '/marketing-analytics-services/self-service-bi-data-democratization' },
+                          { name: 'Real-Time & Ai-Powered Analytics', url: '/marketing-analytics-services/real-time-ai-powered-analytics' },
                           //  { name: 'GA4 Migration', url: '/services/ga4-migration' },
                           //   { name: 'CRO', url: '/digital-marketing-services/cro' },
                           { name: 'Data Warehousing & ETL', url: '/marketing-analytics-services/data-warehousing-etl' }
@@ -212,9 +245,9 @@ export default function Header() {
                           { name: 'eCommerce Development', url: '/development-services/ecommerce-development/' }
                     ]},
                     { name: 'Design Services', url: '/ui-ux-design-agency', subItems: [
-                          { name: 'UI/UX Design', url: '/ui-ux-design-agency/website-designing-services' },
+                          { name: 'UI/UX', url: '/ui-ux-design-agency/website-designing-services' },
                           { name: 'Motion Graphics', url: '/ui-ux-design-agency/motion-graphics' },
-                          { name: 'Social Media Design', url: '/ui-ux-design-agency/social-media' },
+                          { name: 'Social Media', url: '/ui-ux-design-agency/social-media' },
                           { name: 'Mobile Apps', url: '/ui-ux-design-agency/mobile-apps' },
                           { name: 'Marketing & Sales Collateral Design', url: '/ui-ux-design-agency/marketing-sales-collateral-design' },
                           { name: 'Brand & Campaign Design', url: '/ui-ux-design-agency/brand-campaign' }
@@ -222,7 +255,7 @@ export default function Header() {
                     ]},
                     { name: 'Strategic Services', url: '/strategic-services/', subItems: [
                           { name: 'Growth Marketing Pod', url: '/strategic-services/growth-marketing-pod' },
-                          { name: 'Enterprise Planning', url: '/strategic-services/enterprise-planning' },
+                          { name: 'Strategic Planning', url: '/strategic-services/enterprise-planning' },
                           { name: 'Strategic Opportunity Assessment', url: '/strategic-services/strategic-opportunity-assessment' },
                           { name: 'Demand Generation Strategy', url: '/strategic-services/demand-generation-strategy' },
                           { name: 'AI-Optimized Enterprise Resource Planning', url: '/strategic-services/ai-optimized-enterprise-resource-planning' }
@@ -230,13 +263,13 @@ export default function Header() {
                     { name: 'Jira Professional Services', url: '/jira-professional-services/', subItems: [
                           { name: 'Jira Strategy & Implementation', url: '/jira-professional-services/jira-strategy-implementation' },
                           { name: 'Jira Migration & Configuration', url: '/jira-professional-services/jira-migration-configuration' },
-                          { name: 'Jira Automation & Workflow', url: '/jira-professional-services/jira-automation-workflow' },
+                          { name: 'Jira Automation & Workflow Optimization', url: '/jira-professional-services/jira-automation-workflow' },
                           { name: 'Jira Support & Maintenance', url: '/jira-professional-services/jira-support-maintenance' }
                     ]},
                     { name: 'Content Marketing Services', url: '/content-marketing-services/', subItems: [
                           { name: 'Website Copywriting', url: '/content-marketing-services/website-copywriting' },
                           { name: 'Email Lifecycle Copywriting', url: '/content-marketing-services/email-lifecycle-copywriting' },
-                          { name: 'Social Media Ad Copywriting', url: '/content-marketing-services/social-media-ad-copywriting' },
+                          { name: 'Social Media & Ad Copywriting', url: '/content-marketing-services/social-media-ad-copywriting' },
                           { name: 'Content Strategy Planning', url: '/content-marketing-services/content-strategy-planning' },
                           { name: 'Blog & Long-form Content', url: '/content-marketing-services/blog-longform-content' },
                           { name: 'Thought Leadership + Ghostwriting ', url: '/content-marketing-services/ghostwriting' }
@@ -248,11 +281,13 @@ export default function Header() {
                     items={[
                       { name: 'DiGGrowth', url: 'https://diggrowth.com/', external: true },
                       { name: 'NetworkON', url: 'https://networkon.io/', external: true },
-                      { name: 'Pixel Dino', url: 'https://www.pixeldino.com/', external: true }
+                      { name: 'Pixel Dino', url: 'https://www.pixeldino.com/', external: true },
+                      { name: 'SpotBOI AI', url: 'https://spotboi.ai/', external: true }
                     ]}
                   />
                   <MobileMenuItem
                     title="Resources"
+                    href="/resources"
                     items={[
                       { name: 'Blog Posts', url: '/blogs' },
                       { name: 'Case Studies', url: '/case-studies' },
@@ -265,7 +300,7 @@ export default function Header() {
                    { name: 'Growth Stream', url: '/growth-stream' },
                    { name: 'Press Releases', url: '/press-release' },
                    // { name: 'ROI Calculator', url: '/resources/roi-calculator' }
-                      { name: 'AI Visibility Checker', url: 'https://aioverview.growthnatives.com/ai-overview-visibility-checker/' },
+                    { name: 'AI Visibility Checker', url: 'https://aioverview.growthnatives.com/ai-overview-visibility-checker/', external: true },
                     ]}
                   />
                   <MobileMenuItem
@@ -290,13 +325,6 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-            )}
-
-            {/* Mega Menu positioned outside the container but anchored to it */}
-            {!isMobileMenuOpen && (
-              <MegaMenu open={!!activeMenu}>
-                {activeMenu && renderMenuContent(activeMenu, activeCategory, setActiveCategory)}
-              </MegaMenu>
             )}
           </nav>
         </div>
@@ -324,30 +352,33 @@ function MegaMenu({ open, children }: { open: boolean; children: React.ReactNode
   return (
     <div
       className={`
-         absolute left-0 top-full w-full z-40 bg-white shadow-xl border-t border-gray-100 rounded-b-lg
+        absolute left-0 top-full w-full z-40 bg-white shadow-xl border-t border-gray-100
+        rounded-b-2xl overflow-hidden
         transition-all duration-300 ease-out
-        ${open
-          ? 'opacity-100 translate-y-0 pointer-events-auto'
-          : 'opacity-0 -translate-y-4 pointer-events-none'}
+        ${open ? 'opacity-100 translate-y-0 pointer-events-auto'
+               : 'opacity-0 -translate-y-4 pointer-events-none'}
       `}
     >
-      <div className="section-wrapper py-5">{children}</div>
+      <div className="section-wrapper py-5">
+        {children}
+      </div>
     </div>
   );
 }
+
 
 // -------- Menu Content Based on Key -------- //
 function renderMenuContent(menu: string | null, activeCategory: string, setActiveCategory: React.Dispatch<React.SetStateAction<string>>) {
   if (menu === 'services') {
     return (
       <>
-        <div className="grid grid-cols-[280px_1fr] gap-6">
+        <div className="grid grid-cols-[280px_1fr]">
           {/* Left Sidebar - Categories */}
           <div className="space-y-2">
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-4">Explore Categories</h3>
 
-            {/* SPACING CONTROL: The space-y-2 class controls 8px spacing between categories */}
-            <div className="space-y-2">
+            {/* Categories with scroll only below 1366px */}
+            <div className="space-y-2 max-h-[400px] xl:max-h-none overflow-y-auto custom-scrollbar pr-2">
               <CategoryMenuItem
                 icon={<Zap className="w-3 h-3" />}
                 iconBg="bg-yellow-100"
@@ -497,6 +528,14 @@ function renderMenuContent(menu: string | null, activeCategory: string, setActiv
             href="https://www.pixeldino.com/"
             external={true}
           />
+          <LabCard
+            icon={<Palette className="w-4 h-4 text-orange-600" />}
+            bg="bg-orange-100"
+            title="SpotBOI AI"
+            desc="A Social Media Management with AI"
+            href="https://spotboi.ai/"
+            external={true}
+          />
           {/* Hidden AI Chatbot for future use */}
           {/* <LabCard
           icon={<Users className="w-4 h-4 text-blue-600" />}
@@ -592,18 +631,20 @@ function renderMenuContent(menu: string | null, activeCategory: string, setActiv
           <ResCard
             icon={<FileText className="w-4 h-4 text-pink-600" />}
             bg="bg-pink-100"
-            title="Press Release"
+            title="Press Releases"
             desc="From launches to updates, stay informed about our journey and innovations."
             to="/press-release"
           />
-          <ResCard
-            icon={<Bot className="w-4 h-4 text-red-600" />}
-            bg="bg-red-100"
-            title=" AI Visibility Checker"
-            desc="Monitor your brand’s presence in AI Overviews "
-            to="https://aioverview.growthnatives.com/ai-overview-visibility-checker/"
-            target="_blank"
-          />
+         <ResCard
+  icon={<Bot className="w-4 h-4 text-red-600" />}
+  bg="bg-red-100"
+  title="AI Visibility Checker"
+  desc="Monitor your brand’s presence in AI Overviews"
+  to="https://aioverview.growthnatives.com/ai-overview-visibility-checker/"
+  target="_blank"
+  rel="noopener noreferrer"   // ✅ prevents security issues
+/>
+
         </div>
 
         <div className="mt-6 pt-4 border-t border-gray-100">
@@ -644,7 +685,7 @@ function renderMenuContent(menu: string | null, activeCategory: string, setActiv
             icon={<TrendingUp className="w-4 h-4 text-green-600" />}
             bg="bg-green-100"
             title="Careers"
-            desc="Get in touch"
+            desc="Join the dream team"
             to="/careers/"
           />
           <CoCard
@@ -829,7 +870,7 @@ function ServiceContent({ activeCategory }: { activeCategory: string }) {
     },
     'strategic-services': {
       title: 'Strategic Services',
-      services: ['Growth Marketing Pod', 'Enterprise Planning',  'Strategic Opportunity Assessment', 'Demand Generation Strategy', 'AI-Optimized Enterprise Resource Planning']
+      services: ['Growth Marketing Pod', 'Strategic Planning',  'Strategic Opportunity Assessment', 'Demand Generation Strategy', 'AI-Optimized Enterprise Resource Planning']
     },
     'jira-services': {
       title: 'Jira Professional Services',
@@ -840,7 +881,7 @@ function ServiceContent({ activeCategory }: { activeCategory: string }) {
       services: [
         'Website Copywriting',
         'Email Lifecycle Copywriting',
-        'Social Media Ad Copywriting',
+        'Social Media & Ad Copywriting',
         'Content Strategy Planning',
         'Blog & Long-form Content',
         'Thought Leadership + Ghostwriting'
@@ -906,7 +947,7 @@ function ServiceLink({ title }: { title: string }) {
     'eCommerce Strategy': '/digital-marketing-services/ecommerce-marketing',
     'Website Copywriting': '/content-marketing-services/website-copywriting',
     'Email Lifecycle Copywriting': '/content-marketing-services/email-lifecycle-copywriting',
-    'Social Media Ad Copywriting': '/content-marketing-services/social-media-ad-copywriting',
+    'Social Media & Ad Copywriting': '/content-marketing-services/social-media-ad-copywriting',
     'Content Strategy Planning': '/content-marketing-services/content-strategy-planning',
     'Blog & Long-form Content': '/content-marketing-services/blog-longform-content',
     'Thought Leadership + Ghostwriting': '/content-marketing-services/ghostwriting',
@@ -925,7 +966,7 @@ function ServiceLink({ title }: { title: string }) {
 
     // Strategic Services - new mappings
     'Growth Marketing Pod': '/strategic-services/growth-marketing-pod',
-    'Enterprise Planning': '/strategic-services/enterprise-planning',
+    'Strategic Planning': '/strategic-services/enterprise-planning',
     'Strategic Opportunity Assessment': '/strategic-services/strategic-opportunity-assessment',
     'Demand Generation Strategy': '/strategic-services/demand-generation-strategy',
     'AI-Optimized Enterprise Resource Planning': '/strategic-services/ai-optimized-enterprise-resource-planning',
@@ -949,8 +990,10 @@ function ServiceLink({ title }: { title: string }) {
   );
 }
 
-function MobileMenuItem({ title, items }: {
+function MobileMenuItem({ title, items, href, target }: {
   title: string;
+  href?: string;
+  target?: string;
   items: Array<{
     name: string;
     url: string;
@@ -962,13 +1005,27 @@ function MobileMenuItem({ title, items }: {
 
   return (
     <div className="border-b border-gray-700 pb-2">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-white hover:text-[#0A6CFF] py-2 font-medium text-sm"
-      >
-        {title}
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+      <div className="flex items-center justify-between w-full">
+        {href ? (
+          <Link
+            to={href}
+            target={target}
+            className="flex-1 text-white hover:text-[#0A6CFF] py-2 font-medium text-sm"
+          >
+            {title}
+          </Link>
+        ) : (
+          <span className="flex-1 text-white py-2 font-medium text-sm">
+            {title}
+          </span>
+        )}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-white hover:text-[#0A6CFF] py-2 ml-2"
+        >
+          <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
       {isOpen && (
         <div className="mt-2 space-y-1">
           {items.map((item) => (

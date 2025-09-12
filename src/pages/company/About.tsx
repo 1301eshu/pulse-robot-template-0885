@@ -46,7 +46,7 @@ export const aboutPageValues: ValueType[] = [
   {
     icon: Handshake,
     title: "We Over Me ",
-    description: "We believe the best ideas come from collaboration, not ego. Around here, success is a team sport—and we're all in. "
+    description: "We believe the best ideas come from collaboration, not ego. Around here, success is a team sport-and we're all in. "
   },
   {
     icon: Crosshair,
@@ -56,22 +56,22 @@ export const aboutPageValues: ValueType[] = [
   {
     icon: Puzzle,
     title: "Pleasant, Honest & Fun ",
-    description: "We take our work seriously—but not ourselves. We show up with good vibes, real talk, and zero jargon. (Okay, maybe some AI lingo.) "
+    description: "We take our work seriously-but not ourselves. We show up with good vibes, real talk, and zero jargon. (Okay, maybe some AI lingo.) "
   },
   {
     icon: BookOpenCheck,
     title: "Never-Stop-Learning Attitude ",
-    description: "Tech doesn't stand still—and neither do we. We're always leveling up, geeking out, and pushing the boundaries of what's possible. "
+    description: "Tech doesn't stand still-and neither do we. We're always leveling up, geeking out, and pushing the boundaries of what's possible. "
   },
   {
     icon: BarChart3,
     title: "Pride In Growth ",
-    description: "Whether it's personal, professional, or platform performance—we care deeply about getting better, together. That's what #GrowingTogether really means. "
+    description: "Whether it's personal, professional, or platform performance-we care deeply about getting better, together. That's what #GrowingTogether really means. "
   },
   {
     icon: Rocket,
     title: "Motivation Driven By Entrepreneurship ",
-    description: "We think like owners because we are owners. Every Native brings hustle, heart, and a whole lot of initiative to the table—no hand-holding required. "
+    description: "We think like owners because we are owners. Every Native brings hustle, heart, and a whole lot of initiative to the table-no hand-holding required. "
   }
 ];
 

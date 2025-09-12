@@ -146,7 +146,7 @@ export default function Pardot() {
   const faqs = [
     {
       q: "We're already using Pardot. Will you audit what's working before pitching changes?",
-      a: "Sure, we check your existing setup first—what's firing, what's flopping—then layer in what adds real lift.",
+      a: "Sure, we check your existing setup first-what's firing, what's flopping-then layer in what adds real lift.",
     },
     {
       q: "If we don't know what's broken, can you still help?",
@@ -172,12 +172,12 @@ export default function Pardot() {
           heading="Your Pardot, Amped Up with AI"
           subtext="Target like a pro, save hours, win campaigns on cruise control."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/pardot.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketing%20automation%20l1/pardot.webp"
         
         />
 
         <EditableStatSection
-          title="You're in smart company—alongside brands scaling better with Pardot."
+          title="You're in smart company-alongside brands scaling better with Pardot."
           stats={stats}
         />
 
@@ -192,17 +192,17 @@ export default function Pardot() {
           heading="See What Happens When Pardot Gets a Boost"
           body="These brands knew who to call for Pardot know-how "
           subTabs={[]}
-          resourceType="73"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
           heading="Brands That Trust Us With Pardot"
-          subtext="Unicorns, enterprises, and everything in between—Pardot runs with us"
+          subtext="Unicorns, enterprises, and everything in between-Pardot runs with us"
         />
 
         <Testimonials
           title="Real Stories, Real Pardot Growth"
-          description="Less grunt work, more growth—AI-led, expert-fed."
+          description="Less grunt work, more growth-AI-led, expert-fed."
         />
 
         <FaqSection title="FAQs" faqs={faqs} />
@@ -214,13 +214,14 @@ export default function Pardot() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="73"
 />
 
         <ContactCta
           heading="Let's Enhance Your Pardot with AI"
           subtext="Give Pardot the TLC it deserves & see the magic unfold"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

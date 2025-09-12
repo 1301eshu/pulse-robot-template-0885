@@ -78,7 +78,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "audience-intelligence",
-      description: "We don’t guess your ICP—we engineer it with precision.",
+      description: "We don’t guess your ICP-we engineer it with precision.",
       items: [
         { icon: FileText, title: "Unified signals from CRM, content, and channel engagement" },
         { icon: FileText, title: "LLMs that spot emerging personas and buying patterns" },
@@ -87,7 +87,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "conversion-playbooks",
-      description: "More than just top-funnel filler—this is storytelling that sells.",
+      description: "More than just top-funnel filler-this is storytelling that sells.",
       items: [
         { icon: Package, title: "AI-personalized messaging by funnel stage and channel" },
         { icon: Package, title: "Asset planning aligned to actual decision triggers" },
@@ -123,9 +123,9 @@ export default function MarketingAutomation() {
     },
     {
       id: "pod-deployment",
-      description: "Demand gen doesn’t live in silos—neither do we.",
+      description: "Demand gen doesn’t live in silos-neither do we.",
       items: [
-        { icon: FileText, title: "Strategy, content, operations, and analytics—moving as one" },
+        { icon: FileText, title: "Strategy, content, operations, and analytics-moving as one" },
         { icon: FileText, title: "Modular pods built for scale, speed, and GTM alignment" },
         { icon: FileText, title: "Built to plug into your current ecosystem, no heavy lift required" },
       ],
@@ -179,7 +179,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Can we start with one part of the strategy?",
-      a: "Absolutely. Start with content, targeting, or scoring—then expand as momentum builds.",
+      a: "Absolutely. Start with content, targeting, or scoring-then expand as momentum builds.",
     },
     {
       q: "Is this strategy suitable for long sales cycles and complex buyer journeys?",
@@ -203,7 +203,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers */}
         <EditableStatSection
-          title="You’re in smart company—with brands using our demand gen strategies compounding momentum."
+          title="You’re in smart company-with brands using our demand gen strategies compounding momentum."
           stats={[
             { label: "Avg. uplift in qualified pipeline within 2 quarters", value: "200%+" },
             { label: "Drop in cost-per-MQL across channels", value: "65%" },
@@ -255,7 +255,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build a Demand Engine That Doesn’t Quit"
           subtext="Demand done smarter, powered by AI and purpose-built for you."
           buttonLabel="Talk to Us"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

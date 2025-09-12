@@ -8,6 +8,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from 6Sense Services page)
@@ -54,39 +55,11 @@ const L3Template = () => {
     },
   ];
 
-  // Recent Blogs (from the page’s Top Blogs) — unchanged from your old code
-  const recentResources: ResourceItem[] = [
-    {
-      title: "4 CRO Best Practices to Drive Business Growth",
-      subtitle: "Turn ad clicks into revenue by tightening UX, testing, and funnel clarity.",
-      author: "Rukman Singh",
-      date: "Dec 1, 2022",
-      readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400",
-      slug: "cro-best-practices-drive-growth",
-    },
-    {
-      title: "Mobile-Friendly Website Design: Enhance UX & Boost SEO",
-      subtitle: "Mobile-first experiences improve engagement, rankings, and conversions.",
-      author: "Rukman Singh",
-      date: "Mar 7, 2022",
-      readTime: "10 min read",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400",
-      slug: "mobile-friendly-website-design",
-    },
-    {
-      title: "Messy SEO – Improving Site Structure As Google’s Title Tag Change Affects CTRs",
-      subtitle: "Why hierarchy and internal linking matter more than ever.",
-      author: "Sakshi Arora",
-      date: "Jan 10, 2022",
-      readTime: "25 min read",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400",
-      slug: "improving-site-structure-title-tag-change",
-    },
-  ];
+  // Recent Blogs (from the page’s Top Blogs) - unchanged from your old code
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="digitalmarketingservicesaccountbasedmarketingabm6senseservices"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -209,7 +182,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
-          resources={recentResources}
+           resourceType="11"
         />
       </div>
 
@@ -217,7 +190,7 @@ const L3Template = () => {
         heading="ABM's Golden Hour - Let 6Sense Illuminate Your Success!"
         subtext="Unleash precision targeting, personalized experiences, and impactful engagement, turning every campaign into a golden opportunity for triumph."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/contact/"
+        buttonLink="/contact-us/"
       />
 
       <Footer />

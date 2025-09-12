@@ -12,7 +12,7 @@ const stats = [
   {
     number: 94,
     suffix: '%',
-    title: 'Client Retention Since 2018 ',
+    title: 'Client Retention Since 2019 ',
     description: 'Brands that keep coming back for more',
   },
   {
@@ -146,7 +146,7 @@ export default function VisualMasterpieceSection() {
             We're not another agency. We're your AI-Native growth engine. 
           </h2>
           <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-base mb-10 md:mb-[40px]">
-            We don't just plug into your operations—we power it. From strategy to
+            We don't just plug into your operations-we power it. From strategy to
             delivery, our AI-first approach unlocks growth at every layer of your
             funnel.
           </p>

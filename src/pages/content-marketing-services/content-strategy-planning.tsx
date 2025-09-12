@@ -39,19 +39,19 @@ export default function MarketingAutomation() {
       id: "clusters",
       label: "Topic Clusters & Pillar Pages",
       icon: BookOpenCheck,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Content%20Strategy%20%20Planning/Topical%20Clusters%20&%20Pillar%20Pages.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Content%20Strategy%20Planning/Topical%20Clusters%20&%20Pillar%20Pages.webp",
     },
     {
       id: "research",
       label: "Audience-First Research",
       icon: PenTool,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Content%20Strategy%20%20Planning/Audience%20first%20research.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Content%20Strategy%20Planning/Audience%20first%20research.webp",
     },
     {
       id: "channel",
       label: "Channel & Format Strategy",
       icon: LineChart,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Content%20Strategy%20%20Planning/Channel%20&%20Formal%20Stratedgy.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Channel%20&%20Formal%20Stratedgy.webp",
     },
     {
       id: "calendar",
@@ -145,39 +145,39 @@ export default function MarketingAutomation() {
           heading="Content Strategy & Planning, Built for AI Discovery & Human Decisions"
           subtext="Structured for SERPs, surfaced by GPTs, crafted to rank, resonate, and convert."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Content%20Stratedgy%20&%20planning.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Content%20Banner%20L2/Content%20Stratedgy%20&%20planning.webp"
          
         />
 
         {/* Trust Markers */}
         <EditableStatSection
-          title="You’re in sharp company—with brands that lead the conversation and own the algorithm."
+          title="You’re in sharp company-with brands that lead the conversation and own the algorithm."
           stats={[
             { label: "Enterprise content strategies launched", value: "25+" },
             { label: "Content assets mapped across funnels & journeys", value: "50+" },
-            { label: "LLM-informed editorial calendars shipped", value: "20+" },
+  //          { label: "LLM-informed editorial calendars shipped", value: "20+" },
             { label: "Higher engagement from AEO-structured content clusters", value: "3x" },
           ]}
         />
         <EnterpriseCapabilities
           title="Content Strategy That Wins in Search, Social, and AI"
-          subtitle="We build content plans that get found, get read, and get results—by both humans and algorithms."
+          subtitle="We build content plans that get found, get read, and get results-by both humans and algorithms."
           tabs={tabs}
           features={features}
         />
         <RecentResourcesSection
-          heading="See How Strategy Drives Results"
-          body="How we helped brands build content engines that scale."
+          heading="See How Strategy Becomes Visibility (and Leads) "
+          body=" Content blueprints that helped clients rank, educate, and convert faster. "
           subTabs={[]}
-          resourceType="38"
+          resourcePostType="case-studies"
         />
         <LogoScroller
-          heading="Brands That Trust Our Content Roadmaps"
-          subtext="From SaaS to D2C, our strategies power growth."
+          heading="Brands That Trust Us to Guide the Content Compass "
+          subtext="Whether scaling or pivoting-we help them plan what wins. "
         />
         <Testimonials
-          title="What Clients Say About Our Content Strategy"
-          description="We don’t just plan. We deliver results."
+          title=" Real Stories, Real Impact "
+          description="How we do it? With skill, structure, a hint of AI and a streak of bold. "
         />
         <FaqSection title="FAQs" faqs={faqs} />
 
@@ -188,12 +188,13 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="38"
 />
         <ContactCta
-          heading="Ready to Build a Smarter Content Plan?"
-          subtext="Let’s map your content to the way people search, buy, and learn."
+          heading="Let’s Map Out Content That Gets You Found & Followed "
+          subtext="Clear. Strategic. Built for the bots, but written for real people. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

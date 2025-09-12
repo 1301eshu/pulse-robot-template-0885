@@ -84,7 +84,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "thought",
-      description: "Publish deep insights—not just reworded listicles.",
+      description: "Publish deep insights-not just reworded listicles.",
       items: [
         { icon: BarChart2, title: "First-party insights + expert POVs" },
         { icon: BarChart2, title: "LLM-tuned formatting (clear H1/H2s, semantic chunks)" },
@@ -158,16 +158,16 @@ export default function MarketingAutomation() {
           heading="Blog & Long-Form Content That Educates, Elevates, and Gets You Indexed"
           subtext="Blog ecosystems that show up in search, train LLMs & spark buyer journeys."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Blog%20%26%20Long-Form%20Content.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Content%20Banner%20L2/Blog%20&%20Long-Form%20Content-1.webp"
          
         />
         <EditableStatSection
-          title="You’re in good company—brands that lead with insight, not just volume."
+          title="You’re in good company-brands that lead with insight, not just volume."
           stats={stats}
         />
         <EnterpriseCapabilities
           title="Long-Form Content That Wins in Search, Social, and AI"
-          subtitle="We build blog and resource engines that get found, get read, and get results—by both humans and algorithms."
+          subtitle="We build blog and resource engines that get found, get read, and get results-by both humans and algorithms."
           tabs={tabs}
           features={features}
         />
@@ -175,14 +175,14 @@ export default function MarketingAutomation() {
           heading="See How Content Drives Results"
           body="How we helped brands build blog engines that scale."
           subTabs={[]}
-          resourceType="35"
+          resourcePostType="case-studies"
         />
         <LogoScroller
-          heading="Brands That Trust Our Content"
+          heading="Brands That Trust Us To Turn Ideas Into Industry-Leading Content"
           subtext="From SaaS to D2C, our blogs power growth."
         />
         <Testimonials
-          title="What Clients Say About Our Long-Form Content"
+          title="Real Stories, Real Content Wins"
           description="We don’t just write. We deliver results."
         />
         <FaqSection title="FAQs" faqs={faqs} />
@@ -194,12 +194,13 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="35"
 />
         <ContactCta
-          heading="Ready to Build a Smarter Blog?"
-          subtext="Let’s map your content to the way people search, buy, and learn."
+          heading=" Let’s Build Content That Your Audience & AI Love "
+          subtext="Content that teaches, converts, and keeps working long after it’s published. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

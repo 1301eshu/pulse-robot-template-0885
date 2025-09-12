@@ -107,7 +107,7 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "No noise or clutter—just a clean, customized setup built around what you really want to track.  ",
+    description: "No noise or clutter-just a clean, customized setup built around what you really want to track.  ",
     items: [
       { icon: Database, title: "Seamless Matomo integration, no tech headaches.  " },
       { icon: Database, title: "Customize Matomo to track what truly counts.  " },
@@ -117,7 +117,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "Data privacy, audience behavior, heatmaps—we bring it all together under one powerful, secure hood. ",
+    description: "Data privacy, audience behavior, heatmaps-we bring it all together under one powerful, secure hood. ",
     items: [
       { icon: ShieldCheck, title: "Piwik PRO, built exactly for your business.  " },
       { icon: ShieldCheck, title: "Data protection? We’ve got it locked down.  " },
@@ -171,7 +171,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: " How are your web analytics services different from a basic setup? ",
-      a: "We go beyond code drops—think smart tracking, tailored segments, and dashboards that actually make sense.",
+      a: "We go beyond code drops-think smart tracking, tailored segments, and dashboards that actually make sense.",
     },
     {
       q: "Can you help us make sense of messy data?",
@@ -183,7 +183,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Do we need to be data nerds to use your dashboards?",
-      a: "Nope. They're built for humans—clean, visual, and zero jargon guaranteed. ",
+      a: "Nope. They're built for humans-clean, visual, and zero jargon guaranteed. ",
     },
   ];
   
@@ -204,7 +204,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in sharp company—brands decoding data and growing bolder. "
+  title="You’re in sharp company-brands decoding data and growing bolder. "
   stats={[
     { label: "Certified Web Analytics geniuses  ", value: "30+" },
     { label: " Custom reports generated ", value: "500+" },
@@ -231,7 +231,7 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading="Brands That Bank on Our Web Analytics Mojo  "
-        subtext=" From hustle mode to hyper-scale—we help them read between the clicks. "
+        subtext=" From hustle mode to hyper-scale-we help them read between the clicks. "
         
       />
 
@@ -255,9 +255,9 @@ const features: FeatureContent[] = [
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build Your AI-Powered Analytics Engine"
-          subtext="Smarter data, sharper decisions, faster growth—let’s make it happen.  "
+          subtext="Smarter data, sharper decisions, faster growth-let’s make it happen.  "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

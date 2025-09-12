@@ -186,7 +186,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—where creativity meets clean code for perfect websites."
+          title="You’re in good company-where creativity meets clean code for perfect websites."
           stats={stats}
         />
 
@@ -234,7 +234,7 @@ export default function MarketingAutomation() {
           heading="Let’s Perfect Your Web Experience with a Hint of AI"
           subtext="Intuitive design, blazing speed, and rock-solid performance."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

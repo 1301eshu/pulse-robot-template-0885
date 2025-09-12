@@ -88,42 +88,13 @@ export default function MobileApps() {
 
   // Stats Section (Trust Markers)
   const stats = [
-    { value: "26+", label: "Combined years of design prowess and counting" },
+//    { value: "26+", label: "Combined years of design prowess and counting" },
     { value: "10+", label: "Game-changing apps launched" },
     { value: "8+", label: "Mobile design wizards on deck" },
- //   { value: "3x", label: "Boost in retention for clients using our AI-backed UX enhancements" },
+    { value: "3x", label: "Boost in retention for clients using our AI-backed UX enhancements" },
   ];
 
   // Case Study Tiles (as resources)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "See What AI-Backed Mobile UX Really Looks Like",
-      subtitle: "A few real wins we've helped brands achieve with killer app design.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-1"
-    },
-    {
-      title: "AI-Enhanced Onboarding that Tripled User Retention",
-      subtitle: "How we used AI to turn app downloads into daily users.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-2"
-    },
-    {
-      title: "Cross-Platform UI that Converts at Every Touchpoint",
-      subtitle: "Universal flows that drive growth for brands on every device.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-3"
-    },
-  ];
 
   // FAQs
   const faqs = [
@@ -184,7 +155,7 @@ export default function MobileApps() {
           heading="See What AI-Backed Mobile UX Really Looks Like"
           body="A few real wins we've helped brands achieve with killer app design."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -209,6 +180,8 @@ export default function MobileApps() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="285"
+
 />
 
         {/* CTA Section */}
@@ -216,7 +189,7 @@ export default function MobileApps() {
           heading="Lets Build an App That Feels as Smart as It Looks"
           subtext="AI-backed design. Pixel-perfect UI. User journeys that just flow."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -23,7 +23,7 @@ export default function HeroStacked({
   imageSrc,
   imageAlt = "Section image",
   buttonText = "Audit Me!",
-  buttonLink = "/contact/",
+  buttonLink = "/contact-us/",
   noCta,
   hideCta,
   maxWidthClass = "max-w-7xl",

@@ -50,7 +50,7 @@ export default function MarketingAutomation() {
     id: "analytics",
     label: "X (formerly Twitter) Marketing  ",
     icon: BarChart2,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Social%20Media%20Marketing%20/X%20marketing.webp",
+    image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/smm/X%20marketing.webp",
     ctaText: "Read More",
     ctaLink: "L3/smm-x"
   },
@@ -243,7 +243,7 @@ const features: FeatureContent[] = [
           heading=" Let’s Make Social Your Strongest Channel "
           subtext="Build a social engine that works 24/7 for your brand. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

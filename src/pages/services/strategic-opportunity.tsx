@@ -102,13 +102,13 @@ export default function MarketingAutomation() {
       items: [
         { icon: Database, title: "Funnel diagnostics: drop-offs, dead zones, dark data" },
         { icon: Database, title: "Asset audit: content gaps, CTA mismatches, broken paths" },
-        { icon: Database, title: "Channel audit: paid, organic, partner—what’s working, what’s noise" },
+        { icon: Database, title: "Channel audit: paid, organic, partner-what’s working, what’s noise" },
       ],
     },
     {
       id: "competitive-intel",
       description:
-        "We train LLMs on your competitors’ strategies, so you get their playbook—minus the guesswork.",
+        "We train LLMs on your competitors’ strategies, so you get their playbook-minus the guesswork.",
       items: [
         { icon: Sparkles, title: "Ad creative and messaging scraped and analyzed" },
         { icon: Sparkles, title: "Frequency, funnel stage, and format breakdowns" },
@@ -197,7 +197,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers / Statistics Section */}
         <EditableStatSection
-          title="You’re in sharp company—leaders use our assessments to fuel precision-driven growth strategies."
+          title="You’re in sharp company-leaders use our assessments to fuel precision-driven growth strategies."
           stats={[
             { label: "Strategic assessments delivered across industries", value: "200+" },
             { label: "Clients identified at least one critical funnel blindspot", value: "70%+" },
@@ -249,7 +249,7 @@ export default function MarketingAutomation() {
           heading="Let’s Chart Your Next Strategic Move"
           subtext="Get a map of where to go and how to grow when you get there."
           buttonLabel="Talk to Us"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

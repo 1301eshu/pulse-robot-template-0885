@@ -75,7 +75,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: Zap, title: "Clean, goal-aligned Tableau dashboards that reduce noise and elevate signal   " },
       { icon: Zap, title: "Automated storytelling with interactive filters, drill-downs, and AI-powered alerts    " },
-      { icon: Zap, title: "Embedded insights where your teams work—CRM, emails, presentations  " },
+      { icon: Zap, title: "Embedded insights where your teams work-CRM, emails, presentations  " },
     ],
   },
   {
@@ -120,36 +120,6 @@ const features: FeatureContent[] = [
   },
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -167,7 +137,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Will our non-technical teams understand these dashboards?",
-      a: "That’s the goal. Our dashboards are built for everyone—easy to explore, understand, and use.",
+      a: "That’s the goal. Our dashboards are built for everyone-easy to explore, understand, and use.",
     },
   ];
 
@@ -189,7 +159,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
          <EditableStatSection
  
-  title="You’re in sharp company—with brands turning numbers into narratives.  "
+  title="You’re in sharp company-with brands turning numbers into narratives.  "
   stats={[
     { label: "Interactive dashboards designed to decode data at a glance  ", value: "350+" },
     { label: "Average uplift in data-driven decision velocity  ", value: "30%" },
@@ -210,12 +180,12 @@ const features: FeatureContent[] = [
           heading="See How AI-Powered Data Visualization Drives Impact "
           body="We’ve helped brands move from scattered numbers to strategic, boardroom-ready visuals. "
           subTabs={[]}
-          resources={recentResources}
+         resourcePostType="case-studies"
         />
 
         <LogoScroller
         heading="Brands That Rely on Our Data Visualization Expertise "
-        subtext=" From scaling startups to global leaders—our dashboards fuel decisions that matter."
+        subtext=" From scaling startups to global leaders-our dashboards fuel decisions that matter."
         
       />
 
@@ -235,6 +205,7 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="350"
 />
 
         {/* Call to Action */}
@@ -242,7 +213,7 @@ const features: FeatureContent[] = [
           heading="Ready to Build Dashboards That Do the Thinking for You? "
           subtext=" Smarter visuals. Deeper insights. Decisions on demand. Let’s get started."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

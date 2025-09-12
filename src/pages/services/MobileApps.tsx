@@ -18,6 +18,7 @@ import { Zap, BarChart2, Database, ShieldCheck, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import ExploreMoreBlock from "@/components/exploremore";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -62,7 +63,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "ui",
-      description: "User-first layouts that pop, guide, and never confuse—even on the tiniest screen.",
+      description: "User-first layouts that pop, guide, and never confuse-even on the tiniest screen.",
       items: [
         { icon: Zap, title: "Design flows that feel native to iOS, Android, and every thumb" },
         { icon: Zap, title: "Build visual consistency for brand loyalty and screen-to-screen trust" },
@@ -72,7 +73,7 @@ export default function MarketingAutomation() {
     {
       id: "ux",
      
-      description: "We don’t guess. We design from intent—crafting flows your users actually want to follow, from onboarding to checkout. ",
+      description: "We don’t guess. We design from intent-crafting flows your users actually want to follow, from onboarding to checkout. ",
       items: [
         { icon: BarChart2, title: "Built around real user personas, not assumptions " },
         { icon: BarChart2, title: "Validated through behavior, not hunches " },
@@ -81,7 +82,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "prototype",
-      description: "No more “hope this works”—we test, tweak, and validate before the dev handoff.",
+      description: "No more “hope this works”-we test, tweak, and validate before the dev handoff.",
       items: [
         { icon: Database, title: "Live prototypes that feel like the real thing" },
         { icon: Database, title: "Spot UI/UX gaps before users do" },
@@ -101,41 +102,10 @@ export default function MarketingAutomation() {
 
   // Stats Section (Trust Markers)
   const stats = [
-    { value: "26+", label: "Combined years of design prowess and counting" },
+//    { value: "26+", label: "Combined years of design prowess and counting" },
     { value: "10+", label: "Game-changing apps launched" },
     { value: "8+", label: "Mobile design wizards on deck" },
     { value: "3x", label: "Boost in retention for clients using our AI-backed UX enhancements" },
-  ];
-
-  // Case Study Tiles (as resources)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "See What AI-Backed Mobile UX Really Looks Like",
-      subtitle: "A few real wins we've helped brands achieve with killer app design.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-1"
-    },
-    {
-      title: "AI-Enhanced Onboarding that Tripled User Retention",
-      subtitle: "How we used AI to turn app downloads into daily users.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-2"
-    },
-    {
-      title: "Cross-Platform UI that Converts at Every Touchpoint",
-      subtitle: "Universal flows that drive growth for brands on every device.",
-      author: "Case Study Author",
-      date: "2025",
-      readTime: "3 min read",
-      image: "",
-      slug: "case-study-3"
-    },
   ];
 
   // FAQs
@@ -150,11 +120,11 @@ export default function MarketingAutomation() {
     },
     {
       q: "What’s the role of prototyping in your process?",
-      a: "It’s everything. We use clickable prototypes to test flow, catch gaps, and validate ideas—before a single line of code.",
+      a: "It’s everything. We use clickable prototypes to test flow, catch gaps, and validate ideas-before a single line of code.",
     },
     {
       q: "How do you ensure a consistent experience across platforms?",
-      a: "We design cross-platform systems that look and feel native on every OS—without duplicating effort or UX.",
+      a: "We design cross-platform systems that look and feel native on every OS-without duplicating effort or UX.",
     },
     {
       q: "How do you incorporate AI into mobile app design?",
@@ -170,17 +140,17 @@ export default function MarketingAutomation() {
       <main className="pt-0">
         {/* HERO Section */}
         <HeroSection
-          heading="Mobile App Design That Thinks Fast, Taps Smooth—All with AI in the Loop"
+          heading="Mobile App Design That Thinks Fast, Taps Smooth-All with AI in the Loop"
           subtext="Pixel-perfect designs that adapt, engage, and convert while users swipe."
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/Mobile%20Apps.webp"
           buttonText="Audit Me!"
-          buttonLink="/lead-gen-form"
+          buttonLink="/contact-us/"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands whose apps now look sharp, feel intuitive, and convert faster."
+          title="You’re in good company-with brands whose apps now look sharp, feel intuitive, and convert faster."
           stats={stats.map(s => ({ label: s.label, value: s.value }))}
         />
 
@@ -197,13 +167,13 @@ export default function MarketingAutomation() {
           heading="See What AI-Backed Mobile UX Really Looks Like"
           body="A few real wins we've helped brands achieve with killer app design."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands That Trust Our Mobile App Design Game"
-          subtext="From first launch to millions of downloads—we design apps that grow with your goals."
+          subtext="From first launch to millions of downloads-we design apps that grow with your goals."
         />
 
         {/* Client Testimonials Section */}
@@ -215,20 +185,20 @@ export default function MarketingAutomation() {
         {/* FAQs */}
         <FaqSection title="FAQs" faqs={faqs} />
 
-        {/* More Resources Section */}
-        <RecentResourcesSection
-          heading="More From Our Design Arsenal"
-          body="Our latest takes on mobile design, AI-led UX, and what keeps users coming back."
-          subTabs={[]}
-          resources={recentResources}
+        <ExploreMoreBlock
+          heading=" More From Our Design Arsenal "
+          body="Our latest takes on mobile design, AI-led UX, and what keeps users coming back. "
+          perPage={6}
+          firstN={4}
+          contentType="blogs"
+          resourceType="285"
         />
-
         {/* CTA Section */}
         <ContactCta
           heading="Let’s Build an App That Feels as Smart as It Looks"
           subtext="AI-backed design. Pixel-perfect UI. User journeys that just flow."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

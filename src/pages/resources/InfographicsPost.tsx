@@ -305,6 +305,7 @@ import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogInteractionBar from "@/components/BlogInteractionBar";
 import { API_BASE_URL } from '../../../apiconfig';
+import { handleApiDomainReplacement } from '@/lib/replaceApiDomain';
 
 // Utility to estimate read time
 function calculateReadTime(html: string) {
@@ -417,14 +418,24 @@ useEffect(() => {
                   />
                 );
                 break;
-              case "link":
-                elements.push(
-                  <link
-                    key={elements.length}
-                    {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                  />
-                );
-                break;
+              case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
+                  break;
+                }
               case "script":
                 elements.push(
                   <script
@@ -454,6 +465,7 @@ useEffect(() => {
 
 
   useEffect(() => {
+        handleApiDomainReplacement();
     if (slug) {
       fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
         .then((res) => res.json())

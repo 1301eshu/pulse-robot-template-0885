@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { SITE_CTA } from "../SITE_CTAs";
 
 export type ValueType = {
   icon: React.ElementType;
@@ -73,27 +74,27 @@ const CoreValues: React.FC<CoreValuesProps> = ({
             <p className="text-xl text-gray-700 mb-6 max-w-lg">
               Behind every smart strategy and seamless automation is a team of humans who actually love to drive amazing business outcomes.
             </p>
+              {/* CTA with gradient container */}
+           <SITE_CTA variant="secondary" text="Meet the Team" href="/meet-the-team/" />
           </div>
 
-          {/* Right Cards - Consistent Styling */}
-          <div className="flex justify-center flex-wrap gap-6">
+         {/* Right Cards - Non-clickable */}
+<div className="flex justify-center flex-wrap gap-6">
   {teamMembers.map((member, i) => (
-    <button
+    <div
       key={i}
-      aria-label={`Open details for ${member.name}`}
-      tabIndex={0}
-      className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative focus:outline-none group"
+      className="w-[250px] h-[380px] rounded-2xl overflow-hidden relative group"
       style={{
         backgroundImage: `url(${member.image})`,
         backgroundSize: "cover",
-        backgroundPosition: "center top" // <-- FIXED
+        backgroundPosition: "center top"
       }}
     >
       <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10 text-center z-10 bg-gradient-to-t from-black via-black/70 to-transparent">
         <h3 className="text-base font-semibold text-white">{member.name}</h3>
         <p className="text-xs text-white mt-1">{member.role}</p>
       </div>
-    </button>
+    </div>
   ))}
 </div>
         </div>

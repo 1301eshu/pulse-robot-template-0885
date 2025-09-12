@@ -64,16 +64,16 @@ export default function ExperienceCloud() {
         "Plan, prioritize, and structure your community for long-term engagement and scale. ",
       items: [
         { icon: Zap, title: "Define engagement KPIs and map them to site architecture, search, and AI personalization " },
-        { icon: Zap, title: "Align Experience Cloud with GTM motions—support, partner enablement, or employee onboarding" },
+        { icon: Zap, title: "Align Experience Cloud with GTM motions-support, partner enablement, or employee onboarding" },
         { icon: Zap, title: "Use Salesforce Data Cloud to serve dynamic content based on real-time behavior " },
       ],
     },
     {
       id: "design",
       description:
-        "We design Salesforce communities from the ground up or give legacy ones a modern, AI-powered refresh—fast, intuitive, and built to scale. ",
+        "We design Salesforce communities from the ground up or give legacy ones a modern, AI-powered refresh-fast, intuitive, and built to scale. ",
       items: [
-        { icon: Heart, title: "Design community UX from zero—aligned to internal processes and goals " },
+        { icon: Heart, title: "Design community UX from zero-aligned to internal processes and goals " },
         { icon: Heart, title: "Redesign outdated portals for better flow, speed, and usability " },
         { icon: Heart, title: "Build multi-community structures on one platform with unified branding " },
       ],
@@ -105,46 +105,6 @@ export default function ExperienceCloud() {
     { label: "Happy Salesforce customers", value: "100+" },
     { label: "Certified Salesforce experts on deck", value: "60+" },
     { label: "Salesforce Experience Cloud builds and counting", value: "55+" },
-  ];
-
-  // Resources/Case Studies
-  const recentResources: ResourceItem[] = [
-    {
-      title: "See What Communities Built on Salesforce Experience Cloud Look Like in Action",
-      subtitle: "A few real wins we've helped brands achieve with Salesforce Experience Cloud.",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "experience-cloud-case-study-1",
-    },
-    {
-      title: "Case Study 2",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "experience-cloud-case-study-2",
-    },
-    {
-      title: "Case Study 3",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "experience-cloud-case-study-3",
-    },
-    {
-      title: "Case Study 4",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "experience-cloud-case-study-4",
-    },
   ];
 
   // More Resources
@@ -182,11 +142,11 @@ export default function ExperienceCloud() {
   const faqs = [
     {
       q: "Is this just for customers? Or can my team use it too?",
-      a: "Both! You can create internal spaces for HR, IT, or onboarding—plus partner portals and customer hubs. One platform, many vibes.",
+      a: "Both! You can create internal spaces for HR, IT, or onboarding-plus partner portals and customer hubs. One platform, many vibes.",
     },
     {
       q: "Can I personalize content based on who’s logging in?",
-      a: "Yup. With AI and CRM data, every user sees what they need—auto-personalized pages, recs, and resources.",
+      a: "Yup. With AI and CRM data, every user sees what they need-auto-personalized pages, recs, and resources.",
     },
     {
       q: "Will it work with my current tools and data sources?",
@@ -202,7 +162,7 @@ export default function ExperienceCloud() {
     },
     {
       q: "What happens after launch?",
-      a: "We don’t ghost you. We help optimize engagement, fix what’s broken, and roll out upgrades—on repeat.",
+      a: "We don’t ghost you. We help optimize engagement, fix what’s broken, and roll out upgrades-on repeat.",
     },
   ];
 
@@ -214,16 +174,16 @@ export default function ExperienceCloud() {
       <main className="">
         {/* HERO Section */}
         <HeroSection
-          heading="Salesforce Experience Cloud That Connects, Clicks, and Converts—Powered by AI"
+          heading="Salesforce Experience Cloud That Connects, Clicks, and Converts-Powered by AI"
           subtext="Build branded communities that think smart, look sharp, and keep your people coming back."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Experience%20Cloud.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Experience%20Cloud.webp"
          
         />
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands building smarter communities with Salesforce Experience Cloud."
+          title="You’re in good company-with brands building smarter communities with Salesforce Experience Cloud."
           stats={stats}
         />
 
@@ -240,7 +200,7 @@ export default function ExperienceCloud() {
           heading=" See What Communities Built on Salesforce Experience Cloud Look Like in Action"
           body=" A few real wins we've helped brands achieve with Salesforce Experience Cloud. "
           subTabs={[]}
-          resources={moreResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -265,6 +225,7 @@ export default function ExperienceCloud() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         {/* Call to Action */}
@@ -272,7 +233,7 @@ export default function ExperienceCloud() {
           heading="Let's Build Your AI-Powered Community Empire"
           subtext="Engaged users. Content that converts. Communities that actually work."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

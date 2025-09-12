@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 
 type FaqItem = {
   q: string;
-  a: string;
+  a: React.ReactNode;   // ✅ changed from string to ReactNode
 };
 
 type FaqSectionProps = {
@@ -34,20 +34,16 @@ export default function FaqSection({ title = 'Frequently Asked Questions', faqs 
                 aria-controls={`faq-${i}`}
               >
                 <span className="font-medium text-lg text-gray-800">{f.q}</span>
-               <ChevronDown
-  size={20}                                   // ensures the SVG’s width/height attrs are 20
-  className={`w-5 h-5 shrink-0 text-gray-500  // Tailwind size + don’t let flex shrink it
-              transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
-/>
+                <ChevronDown
+                  size={20}
+                  className={`w-5 h-5 shrink-0 text-gray-500 transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`}
+                />
               </button>
 
-              <div
-                id={`faq-${i}`}
-                className={`px-6 overflow-hidden transition-all duration-300 ease-in-out text-gray-600 bg-gray-50 ${
-                  openFaq === i ? 'max-h-screen py-4' : 'max-h-0 py-0'
-                }`}
-              >
-                <p className="text-sm leading-relaxed">{f.a}</p>
+              <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out text-gray-600 bg-gray-50 ${
+                openFaq === i ? 'max-h-screen py-4' : 'max-h-0 py-0'
+              }`}>
+                <div className="text-sm leading-relaxed">{f.a}</div>
               </div>
             </div>
           ))}

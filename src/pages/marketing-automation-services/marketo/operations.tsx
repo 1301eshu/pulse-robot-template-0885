@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from Marketo Operations page)
@@ -55,6 +56,7 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="marketingautomationservicesmarketooperations"/>
       <Header />
 
       {/* Contact Section */}
@@ -213,6 +215,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
+          resourceType="40"
+
         />
       </div>
 
@@ -220,7 +224,7 @@ const L3Template = () => {
         heading="Fast-Track Your Marketing Endeavors With Top-Notch Marketo Services"
         subtext="Achieve marketing excellence with our outcome-driven Marketo solutions that provide you with everything you need to elevate your efforts."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/contact/"
+        buttonLink="/contact-us/"
       />
 
       <Footer />

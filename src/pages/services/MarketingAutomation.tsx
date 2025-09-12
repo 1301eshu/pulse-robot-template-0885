@@ -193,7 +193,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in good company—alongside brands that automate smart, scale faster, and never drop a lead. "
+  title="You’re in good company-alongside brands that automate smart, scale faster, and never drop a lead. "
   stats={[
     { label: "Marketing Automation Customers ", value: "170+" },
     { label: "Certified Marketing Automation Experts ", value: "90+" },
@@ -258,7 +258,7 @@ const features: FeatureContent[] = [
           heading="AI Meets Marketing Automation. You Meet Results."
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

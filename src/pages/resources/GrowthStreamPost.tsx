@@ -23,7 +23,7 @@
 //     sectionDescription: "We believe in the power of knowledge sharing and learning from the best in the industry. Our Growth Stream Fireside Chats bring you exclusive sessions with seasoned Subject Matter Experts and visionary CMOs. Join us as we delve into insightful discussions on a wide range of topics, gaining valuable perspectives and strategies for growth.",
 //     keyLearningstitle: "In this ‘Fireside Chat’, you will learn:",
 //     growthPointstitle: "Solidify Your Business Growth With Us",
-//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
 //     keyLearnings: [
 //       "What options does GA4 offer to create properties for different needs?",
 //       "Learn how to migrate from legacy systems to GA4 smoothly.",
@@ -46,7 +46,7 @@
 //     sectionDescription: "Listen to Eric Eden, an accomplished marketer and CMO, and Taran Nandha, the CEO and founder of Growth Natives, in this insightful fireside chat on how CMOs can optimally use technology for innovation in 2023 and beyond. During this session, Eric and Taran discussed how CMOs can adapt to technological advancements and innovate despite limited resources. Eric also shared valuable insights on how young marketers can utilize technology to enhance their creativity and bring value to their respective organizations.",
 //     keyLearningstitle: "In this ‘Fireside Chat’, you will learn:",
 //     growthPointstitle: "Solidify Your Business Growth With Us",
-//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
 //     keyLearnings: [
 //       "The key challenges that CMOs face in adopting technology and how they can overcome them.",
 //       "Integrating innovative approaches into your marketing strategy, even with limited resources.",
@@ -67,7 +67,7 @@
 //     sectionDescription: "The dynamics of marketing change as businesses grow. Fullcast, a market leader in RevOps, helps clients’ sales with go-to-market strategies and automation. Working toward RevOps enablement by aligning technology, community, and education, the company has been solving the challenges of aligning sales planning to operational execution in high-growth companies.In this insightful fireside chat, Beth and Taran Nandha, CEO and Founder of Growth Natives, discuss how Fullcast is redefining growth marketing through innovation and the importance of aligning sales planning to operational execution.",
 //     keyLearningstitle: "In this ‘Growth Chat’, you will learn:",
 //     growthPointstitle: "Solidify Your Business Growth With Us",
-//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
 //     keyLearnings: [
 //       "The importance of growth marketing for startups and small businesses",
 //       "The challenges of growth marketing in an economically uncertain world",
@@ -88,7 +88,7 @@
 //     sectionDescription: "With changing customers’ needs and demands, the skincare industry is constantly evolving. LAMAV, a certified organic and 100% vegan skincare brand, is following suit. Introducing ayurvedic formulas and Australian bio-actives to its products, the brand is heading toward changing the course of the beauty industry. In our one-on-one conversation with LAMAV’s founder and CEO, Tarj Mavi, we discovered how she started her interesting entrepreneurial journey in the beauty industry and much more. ",
 //     keyLearningstitle: "In this ‘Growth Chat’, you will learn:",
 //     growthPointstitle: "Solidify Your Business Growth With Us",
-//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+//     growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
 //     keyLearnings: [
 //       "About the skincare industry and how LAMAV was founded",
 //       "How the 14 years of their existence have been and how their customers responded",
@@ -225,7 +225,7 @@ export const downloadablePosts: Record<string, DownloadablePostData> = {
     sectionDescription: "We believe in the power of knowledge sharing and learning from the best in the industry. Our Growth Stream Fireside Chats bring you exclusive sessions with seasoned Subject Matter Experts and visionary CMOs. Join us as we delve into insightful discussions on a wide range of topics, gaining valuable perspectives and strategies for growth.",
     keyLearningstitle: "In this ‘Fireside Chat’, you will learn:",
     growthPointstitle: "Solidify Your Business Growth With Us",
-    growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+    growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
     keyLearnings: [
       "What options does GA4 offer to create properties for different needs?",
       "Learn how to migrate from legacy systems to GA4 smoothly.",
@@ -248,7 +248,7 @@ export const downloadablePosts: Record<string, DownloadablePostData> = {
     sectionDescription: "Listen to Eric Eden, an accomplished marketer and CMO, and Taran Nandha, the CEO and founder of Growth Natives, in this insightful fireside chat on how CMOs can optimally use technology for innovation in 2023 and beyond. During this session, Eric and Taran discussed how CMOs can adapt to technological advancements and innovate despite limited resources. Eric also shared valuable insights on how young marketers can utilize technology to enhance their creativity and bring value to their respective organizations.",
     keyLearningstitle: "In this ‘Fireside Chat’, you will learn:",
     growthPointstitle: "Solidify Your Business Growth With Us",
-    growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+    growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
     keyLearnings: [
       "The key challenges that CMOs face in adopting technology and how they can overcome them.",
       "Integrating innovative approaches into your marketing strategy, even with limited resources.",
@@ -269,7 +269,7 @@ export const downloadablePosts: Record<string, DownloadablePostData> = {
     sectionDescription: "The dynamics of marketing change as businesses grow. Fullcast, a market leader in RevOps, helps clients’ sales with go-to-market strategies and automation. Working toward RevOps enablement by aligning technology, community, and education, the company has been solving the challenges of aligning sales planning to operational execution in high-growth companies.In this insightful fireside chat, Beth and Taran Nandha, CEO and Founder of Growth Natives, discuss how Fullcast is redefining growth marketing through innovation and the importance of aligning sales planning to operational execution.",
     keyLearningstitle: "In this ‘Growth Chat’, you will learn:",
     growthPointstitle: "Solidify Your Business Growth With Us",
-    growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+    growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
     keyLearnings: [
       "The importance of growth marketing for startups and small businesses",
       "The challenges of growth marketing in an economically uncertain world",
@@ -290,7 +290,7 @@ export const downloadablePosts: Record<string, DownloadablePostData> = {
     sectionDescription: "With changing customers’ needs and demands, the skincare industry is constantly evolving. LAMAV, a certified organic and 100% vegan skincare brand, is following suit. Introducing ayurvedic formulas and Australian bio-actives to its products, the brand is heading toward changing the course of the beauty industry. In our one-on-one conversation with LAMAV’s founder and CEO, Tarj Mavi, we discovered how she started her interesting entrepreneurial journey in the beauty industry and much more. ",
     keyLearningstitle: "In this ‘Growth Chat’, you will learn:",
     growthPointstitle: "Solidify Your Business Growth With Us",
-    growthPointsDescription: "Staying ahead requires more than just keeping up with trends—it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
+    growthPointsDescription: "Staying ahead requires more than just keeping up with trends-it demands insight, strategy, and a keen understanding of the industry’s pulse. Our Fireside Chats offer you a unique opportunity to stay informed and actively position yourself as an industry leader.",
     keyLearnings: [
       "About the skincare industry and how LAMAV was founded",
       "How the 14 years of their existence have been and how their customers responded",
@@ -340,11 +340,24 @@ const DownloadablePostDynamic: React.FC = () => {
                     <meta key={elements.length} {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))} />
                   );
                   break;
-                case "link":
-                  elements.push(
-                    <link key={elements.length} {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))} />
-                  );
+                case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
                   break;
+                }
                 default:
                   break;
               }
@@ -386,7 +399,7 @@ const DownloadablePostDynamic: React.FC = () => {
               <ArrowLeft className="w-4 h-4 inline-block" />
               Back to Growth Stream
             </a>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-snug">{postData.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 leading-snug">{postData.title}</h1>
             {postData.excerpt && <p className="text-gray-700 max-w-2xl mx-auto mb-8">{postData.excerpt}</p>}
             <div className="aspect-w-16 aspect-h-9 max-w-3xl h-[500px] mx-auto">
               <iframe
@@ -402,12 +415,12 @@ const DownloadablePostDynamic: React.FC = () => {
         </section>
 
         <section className="bg-white py-16">
-          <div className="max-w-[1140px] mx-auto pt-20 pb-10 px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="max-w-[1140px] mx-auto pt-5 md:pt-20 pb-10 px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">      
             <div>
               <p className="text-gray-700 max-w-lg">{postData.sectionDescription}</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <HubSpotForm portalId="7118070" formId="936a6094-5911-42b5-af43-59918fd008a0" region="na1" />
+              <HubSpotForm portalId="7118070" formId="6764d3c9-a434-4451-8145-3ae2e69634e0" region="na1" />
             </div>
           </div>
         </section>

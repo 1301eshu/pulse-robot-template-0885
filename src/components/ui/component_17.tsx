@@ -21,7 +21,7 @@ export default function GlobalStats() {
         {/* Stats */}
         <div className="grid grid-cols-2 gap-6">
           {[
-            { value: '175+', label: 'Customers Globally' },
+            { value: '300+', label: 'Customers Globally' },
             { value: '97%', label: 'Net Promoter Score' },
             { value: '300+', label: 'Team Members' },
             { value: '500+', label: 'Certifications' },

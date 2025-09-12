@@ -213,7 +213,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How do you measure ABM campaign success?",
-      a: "Engagement, conversions, pipeline, and ROI—plus a little AI magic to fine-tune as we go.",
+      a: "Engagement, conversions, pipeline, and ROI-plus a little AI magic to fine-tune as we go.",
     },
     {
       q: "Can you help us build an ABM strategy from scratch?",
@@ -230,20 +230,20 @@ export default function MarketingAutomation() {
         {/* HERO Section */}
         <HeroSection
           heading="AI-Enhanced ABM That Reach the Right Accounts at the Right Time"
-          subtext="Smarter signals, sharper plays—goodbye cold calls, hello hot accounts."
+          subtext="Smarter signals, sharper plays-goodbye cold calls, hello hot accounts."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/ABM.webp"
         />
 
         {/* Statistics / Trust Markers */}
         <EditableStatSection
-          title="You’re in good company—with the brands that prioritize the right accounts, not just leads."
+          title="You’re in good company-with the brands that prioritize the right accounts, not just leads."
           stats={stats}
         />
 
         {/* Tab Features Section */}
         <EnterpriseCapabilities
-          title="How We Make ABM Hit Different—with AI"
+          title="How We Make ABM Hit Different-with AI"
           subtitle="We find the right accounts and craft 1:1 moments. Data drives it, you own it."
           tabs={tabs}
           features={features}
@@ -283,10 +283,10 @@ export default function MarketingAutomation() {
 
         {/* Call to Action */}
         <ContactCta
-          heading="Let’s Give Your ABM a Brain & Some Heart—AI Style"
+          heading="Let’s Give Your ABM a Brain & Some Heart-AI Style"
           subtext="Get noticed, stay relevant, win key accounts."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

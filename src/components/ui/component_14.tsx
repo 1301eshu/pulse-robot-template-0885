@@ -94,7 +94,7 @@ export default function SmartStackSection() {
             Our AI-Enhanced Platform Power Plays 
           </h2>
           <p className="text-gray-600 mt-4 text-base md:text-lg fade-in">
-           We work across stacks, systems, and clouds—infused with the smartest tools in the game. 
+           We work across stacks, systems, and clouds-infused with the smartest tools in the game. 
           </p>
         </div>
 

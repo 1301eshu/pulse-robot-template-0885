@@ -8,17 +8,17 @@ export interface ScriptConfig {
 }
 
 export const scriptsConfig: ScriptConfig[] = [
- {
+  {
     id: 'google-tag-manager',
     name: 'Google Tag Manager',
-    trackingId: 'GTM-KP4V92L7',
+    trackingId: 'GTM-NZGGQ4H',
     headScript: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KP4V92L7');`,
-    bodyScript: `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP4V92L7"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`,
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZGGQ4H');`,
+    bodyScript: `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZGGQ4H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`,
     enabled: true,
   },
   {
@@ -34,7 +34,7 @@ export const scriptsConfig: ScriptConfig[] = [
 </script>`,
     enabled: true,
   },
-   {
+  {
     id: 'hubspot-tracking',
     name: 'HubSpot Tracking',
     trackingId: '20797637',
@@ -51,8 +51,8 @@ export const scriptsConfig: ScriptConfig[] = [
   {
     id: 'diggrowth-tracking',
     name: 'Diggrowth Tracking',
-    trackingId: '50280',
-    headScript: `<script type="text/javascript" src="https://app.diggrowth.com/track.js?webtrack_id=50280"></script>`,
+    trackingId: '50200',
+    headScript: `<script type="text/javascript" src="https://app.diggrowth.com/track.js?webtrack_id=50200&user_id=989556"></script>`,
     enabled: true
   },
   {

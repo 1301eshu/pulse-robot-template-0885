@@ -138,7 +138,7 @@ export default function MarketingAutomation() {
     { label: "Campaigns delivered for paid and organic growth", value: "70+" },
     { label: "Avg. lift in CTR with optimized ad copy", value: "54%" },
     { label: "Brands supported across Meta, Google, X, and LinkedIn", value: "40+" },
-    { label: "Industries served with platform-specific messaging", value: "10+" },
+ //   { label: "Industries served with platform-specific messaging", value: "10+" },
   ];
 
   // Resource Section
@@ -180,7 +180,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Do you write both ad and organic social content?",
-      a: "Yes. We handle full-funnel copy—from awareness-building posts to conversion-focused ads.",
+      a: "Yes. We handle full-funnel copy-from awareness-building posts to conversion-focused ads.",
     },
     {
       q: "Can you match our brand voice?",
@@ -188,7 +188,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How do you measure copy performance?",
-      a: "We tie performance to CTR, engagement, and conversions—using historical data, testing, and client feedback to improve.",
+      a: "We tie performance to CTR, engagement, and conversions-using historical data, testing, and client feedback to improve.",
     },
   ];
 
@@ -209,7 +209,7 @@ export default function MarketingAutomation() {
         />
 
         <EditableStatSection
-          title="You’re in good company—with brands growing reach, clicks, and conversions through smart copy."
+          title="You’re in good company-with brands growing reach, clicks, and conversions through smart copy."
           stats={stats}
         />
 
@@ -229,12 +229,12 @@ export default function MarketingAutomation() {
 
         <LogoScroller
           heading="Folks That Trust Our Words on Scroll"
-          subtext="From B2B tech to D2C lifestyle—we speak the feed’s language."
+          subtext="From B2B tech to D2C lifestyle-we speak the feed’s language."
          
         />
 
         <Testimonials
-          title="Copy That Worked—and Clients Who Got Results"
+          title="Copy That Worked-and Clients Who Got Results"
           description="Our formula? Insight, structure, and a streak of bold."
         />
 
@@ -249,9 +249,9 @@ export default function MarketingAutomation() {
 
         <ContactCta
           heading="Let’s Write Copy That Wins the Feed"
-          subtext="From strategy to posts to paid—our words spark action and build pipeline."
+          subtext="From strategy to posts to paid-our words spark action and build pipeline."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

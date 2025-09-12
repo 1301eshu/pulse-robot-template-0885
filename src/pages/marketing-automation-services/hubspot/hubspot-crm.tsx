@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from HubSpot CRM Implementation page)
@@ -168,6 +169,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
+                    resourceType="71"
+
         />
       </div>
 

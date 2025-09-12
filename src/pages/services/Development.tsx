@@ -79,7 +79,7 @@ export default function MarketingAutomation() {
     id: "integration",
     items: [{
       icon: Database,
-      title: "Shopify, Magento, Woo, or custom—we’ve got it "
+      title: "Shopify, Magento, Woo, or custom-we’ve got it "
     }, {
       icon: Database,
       title: "Performance-tuned storefronts that scale fast "
@@ -119,13 +119,13 @@ export default function MarketingAutomation() {
     a: " We’re full-stack pros fluent in React, Node, Python, PHP, .NET, and more. "
   }, {
     q: " Do you offer post-launch support? ",
-    a: " Yep—ongoing maintenance, optimization, and scaling built into every contract."
+    a: " Yep-ongoing maintenance, optimization, and scaling built into every contract."
   }, {
     q: "Can I start small and scale later?",
     a: " Absolutely. We’re great at MVPs that grow into monsters. "
   }, {
     q: "Do you integrate AI into your builds?",
-    a: "Yes. From smart forms to automated workflows—we make apps think."
+    a: "Yes. From smart forms to automated workflows-we make apps think."
   }];
   return <div className="bg-white text-gray-900">
       <DynamicSEO page="development" />
@@ -136,7 +136,7 @@ export default function MarketingAutomation() {
         <HeroSection heading="AI-Led Development That Builds Fast, Scales Smart, and Just Works" subtext="We design, develop, and deploy experiences that feel seamless and perform like beasts. " bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs_1.webp" rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Development%20/Development.webp" />
 
         {/* Statistics Section */}
-        <EditableStatSection title="You’re in good company—alongside brands that trust us to build smart and scale clean.  " stats={[{
+        <EditableStatSection title="You’re in good company-alongside brands that trust us to build smart and scale clean.  " stats={[{
         label: "Successful Project Launches for Startups & Enterprises  ",
         value: "200+"
       }, {
@@ -164,7 +164,7 @@ export default function MarketingAutomation() {
         <FaqSection title="FAQs" faqs={faqs} />
 
         {/* Call to Action */}
-        <ContactCta heading=" Let’s Build Something Brilliant—Together " subtext=" AI-powered. Pixel-perfect. Ready to go live?" buttonLabel="Talk to an Expert" buttonLink="/contact" />
+        <ContactCta heading=" Let’s Build Something Brilliant-Together " subtext=" AI-powered. Pixel-perfect. Ready to go live?" buttonLabel="Talk to an Expert" buttonLink="/contact-us" />
       </main>
       <Footer />
     </div>;

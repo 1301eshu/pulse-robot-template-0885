@@ -62,11 +62,11 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
   
-    description: "Empower every user—from Ops to Marketing—to build dashboards that actually mean something.  ",
+    description: "Empower every user-from Ops to Marketing-to build dashboards that actually mean something.  ",
     items: [
       { icon: Zap, title: "Intuitive, drag-and-drop interfaces on tools like Looker Studio, Power BI, Tableau   " },
       { icon: Zap, title: "Pre-modeled datasets with AI-surfaced recommendations   " },
-      { icon: Zap, title: "Team onboarding included—because adoption > tools   " },
+      { icon: Zap, title: "Team onboarding included-because adoption > tools   " },
     ],
   },
   {
@@ -84,15 +84,15 @@ const features: FeatureContent[] = [
    
     description: "Ask a business question. Get a real-time answer.  ",
     items: [
-      { icon: Database, title: "Chat-style interfaces for querying data—no SQL required " },
+      { icon: Database, title: "Chat-style interfaces for querying data-no SQL required " },
       { icon: Database, title: "AI parses ambiguity and returns clear, contextual responses   " },
-      { icon: Database, title: "From “Why did revenue drop last week?” to “What changed in churn rate?”—answered in seconds   " },
+      { icon: Database, title: "From “Why did revenue drop last week?” to “What changed in churn rate?”-answered in seconds   " },
     ],
   },
   {
     id: "security",
    
-    description: "Self-service doesn’t mean messy—we build structure with safety.  ",
+    description: "Self-service doesn’t mean messy-we build structure with safety.  ",
     items: [
       { icon: ShieldCheck, title: "Universal semantic layer + KPI dictionary   " },
       { icon: ShieldCheck, title: "Guardrails for calculations, field logic, and metadata   " },
@@ -102,7 +102,7 @@ const features: FeatureContent[] = [
    {
     id: "development",
    
-    description: "We don’t just build dashboards—we build data muscle.   ",
+    description: "We don’t just build dashboards-we build data muscle.   ",
     items: [
       { icon: ShieldCheck, title: "Tailored workshops for marketing, sales, product, CX, finance  " },
       { icon: ShieldCheck, title: "Power user” enablement for internal champions    " },
@@ -111,42 +111,12 @@ const features: FeatureContent[] = [
   },
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
     {
       q: "Do I need a BI platform in place already? ",
-      a: "Not necessarily. We’ll recommend, configure, or optimize tools based on your needs—whether you’re on Looker Studio, Tableau, Power BI, or something else. ",
+      a: "Not necessarily. We’ll recommend, configure, or optimize tools based on your needs-whether you’re on Looker Studio, Tableau, Power BI, or something else. ",
     },
     {
       q: "What tools or platforms do you support for self-service BI",
@@ -162,7 +132,7 @@ const features: FeatureContent[] = [
     },
     {
       q: " Is this scalable for large orgs?",
-      a: "Yes. Our approach is modular, role-based, and designed to support dozens—or hundreds—of users. ",
+      a: "Yes. Our approach is modular, role-based, and designed to support dozens-or hundreds-of users. ",
     },
   ];
   
@@ -175,15 +145,15 @@ const features: FeatureContent[] = [
         {/* HERO Section */}
         <HeroSection
           heading="Self-Service BI That Puts AI-Powered Insight in Every Team’s Hands "
-          subtext="No gatekeeping. No guesswork. Just clear answers—on demand. "
+          subtext="No gatekeeping. No guesswork. Just clear answers-on demand. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/L-2%20Banner%20Images%20/Self-Service%20BI%20&%20Data%20Democratization.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Anaytics%20as%20a%20service%20L2%20banner/Self-Service%20BI%20&%20Data%20Democratization.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="From siloed data to strategic alignment—across every team, every role.  "
+  title="From siloed data to strategic alignment-across every team, every role.  "
   stats={[
     { label: "Reduction in BI team workload with self-serve rollouts   ", value: "80% " },
     { label: "More cross-functional dashboards created within the first 30 days  ", value: "5x  " },
@@ -195,7 +165,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="What We Do with Self-Service BI & Data Democratization "
-          subtitle="We turn your business into a data-literate machine—with scalable tools and AI-empowered teams that don’t wait on analysts.  "
+          subtitle="We turn your business into a data-literate machine-with scalable tools and AI-empowered teams that don’t wait on analysts.  "
           tabs={tabs}
           features={features} 
         />
@@ -205,19 +175,19 @@ const features: FeatureContent[] = [
           heading=" How Teams Got Smarter Without Adding Headcount   "
           body=" Self-service done right = insights at scale. "
            subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+         resourcePostType="case-studies"
         />
 
          <LogoScroller
         heading="Smart Orgs Empower Every Role with Data   "
-        subtext=" From product managers to revenue ops—everyone becomes a data driver. "
+        subtext=" From product managers to revenue ops-everyone becomes a data driver. "
         
       />
 
         {/* Testimonials */}
         <Testimonials
           title="  The Freedom to Explore. The Power to Act.    "
-          description=" It’s not just self-serve—it’s self-sufficient.  "
+          description=" It’s not just self-serve-it’s self-sufficient.  "
         />
 
         {/* FAQs */}
@@ -230,6 +200,7 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="12"
 />
 
         {/* Call to Action */}
@@ -237,7 +208,7 @@ const features: FeatureContent[] = [
           heading="Let’s Build BI That Works for Everyone "
           subtext="Empower every team with answers, not wait times.    "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

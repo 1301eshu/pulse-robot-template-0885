@@ -82,7 +82,7 @@ export default function EinsteinAnalytics() {
     },
     {
       id: "enablement",
-      description: "We unlock the good stuff—forecasting, scoring, bots—and train your team to use it like pros.",
+      description: "We unlock the good stuff-forecasting, scoring, bots-and train your team to use it like pros.",
       items: [
         { icon: Zap, title: "Prioritize leads that are ready to buy" },
         { icon: Zap, title: "Forecast pipeline with crystal ball clarity" },
@@ -91,16 +91,16 @@ export default function EinsteinAnalytics() {
     },
     {
       id: "optimization",
-      description: "We customize AI insights by role—so your teams get what they need, when they need it.",
+      description: "We customize AI insights by role-so your teams get what they need, when they need it.",
       items: [
         { icon: Clock, title: "Personalized views for sales, service, ops" },
         { icon: Clock, title: "Auto-delivered insights in plain English" },
-        { icon: Clock, title: "Tools that simplify—not overwhelm—teams" },
+        { icon: Clock, title: "Tools that simplify-not overwhelm-teams" },
       ],
     },
      {
       id: "Development",
-       description: "We fine-tune your Einstein setup as you grow—because static models don’t win markets.",
+       description: "We fine-tune your Einstein setup as you grow-because static models don’t win markets.",
       items: [
         { icon: Clock, title: "Recalibrate AI models with fresh data" },
         { icon: Clock, title: "Benchmark performance vs. your industry" },
@@ -109,40 +109,11 @@ export default function EinsteinAnalytics() {
     },
   ];
 
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Business Intelligence",
-      subtitle: "Forget dashboards. Let the data talk back. Discover the rise of Einstein AI + Agentic tools.",
-      author: "Sneha Kumari",
-      date: "July 25, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "einstein-agentic-ai"
-    },
-    {
-      title: "5 Einstein Features You’re Not Using (But Should)",
-      subtitle: "If you're only using forecasting, you're leaving ROI on the table. Here's what to unlock next.",
-      author: "Mehakpreet Kaur",
-      date: "July 22, 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "einstein-feature-checklist"
-    },
-    {
-      title: "Smarter Teams with Role-Based Einstein Insights",
-      subtitle: "Sales wants pipeline. Ops needs accuracy. Everyone wins when Einstein adapts by role.",
-      author: "Mehakpreet Kaur",
-      date: "July 18, 2025",
-      readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "einstein-role-insights"
-    },
-  ];
 
   const faqs = [
     {
       q: "How quickly will we see ROI from Einstein Analytics?",
-      a: "Most teams start spotting “Whoa, we didn’t know that” insights in 30 days—and drive measurable ROI in under 90.",
+      a: "Most teams start spotting “Whoa, we didn’t know that” insights in 30 days-and drive measurable ROI in under 90.",
     },
     {
       q: "Do we need data scientists to use Einstein effectively?",
@@ -172,7 +143,7 @@ export default function EinsteinAnalytics() {
         />
 
         <EditableStatSection
-          title="You're in good company—with brands predicting smarter with Einstein AI"
+          title="You're in good company-with brands predicting smarter with Einstein AI"
           stats={[
             { label: "Salesforce Einstein projects launched across industries", value: "70+" },
             { label: "Salesforce Implementations since 2020", value: "100+" },
@@ -191,17 +162,17 @@ export default function EinsteinAnalytics() {
           heading="See How Einstein AI Transforms Business Outcomes"
           body="A few real wins we've helped brands achieve with Einstein AI."
            subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
           heading="Brands That Trust Our Einstein AI Expertise"
-          subtext="From lean teams to enterprise squads—we help them all predict smarter."
+          subtext="From lean teams to enterprise squads-we help them all predict smarter."
         />
 
         <Testimonials
           title="Real Stories, Real AI Growth"
-          description=" From clunky reports to revenue-driving insights—see what happens when we bring Einstein AI in"
+          description=" From clunky reports to revenue-driving insights-see what happens when we bring Einstein AI in."
         />
 
         <FaqSection title="FAQs" faqs={faqs} />
@@ -213,13 +184,14 @@ export default function EinsteinAnalytics() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         <ContactCta
           heading="Let's Make Your Data Predict the Future"
           subtext="Einstein AI, customized to answer your most valuable business questions."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

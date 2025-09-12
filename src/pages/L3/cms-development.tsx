@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from CMS Development Services page)
@@ -79,6 +80,7 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="developmentserviceswebdevelopmentcontentmanagementsystem"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -223,7 +225,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
-          resources={recentResources}
+          resourceType="116"
         />
       </div>
 

@@ -127,39 +127,11 @@ export default function SocialMediaAdCopywriting() {
     { label: "Campaigns delivered for paid and organic growth", value: "70+" },
     { label: "Avg. lift in CTR with optimized ad copy", value: "54%" },
     { label: "Brands supported across Meta, Google, X, and LinkedIn", value: "40+" },
-    { label: "Industries served with platform-specific messaging", value: "10+" },
+//    { label: "Industries served with platform-specific messaging", value: "10+" },
   ];
 
   // Resource Section
-  const recentResources: ResourceItem[] = [
-    {
-      title: "How to Write Copy That Breaks the Scroll",
-      subtitle: "Secrets to hook, engage, and drive action across paid and organic.",
-      author: "Team GN",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "write-copy-that-breaks-scroll"
-    },
-    {
-      title: "Platform-Smart Messaging: What’s Working Now",
-      subtitle: "See how structure and AI shape better outcomes on X, Insta, and more.",
-      author: "Team GN",
-      date: "June 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "platform-smart-messaging"
-    },
-    {
-      title: "UGC That Converts: A Brief for Influencers",
-      subtitle: "Steal our best templates to brief creators and boost UGC results.",
-      author: "Team GN",
-      date: "June 2025",
-      readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ugc-that-converts"
-    },
-  ];
+
 
   // FAQ Section
   const faqs = [
@@ -169,7 +141,7 @@ export default function SocialMediaAdCopywriting() {
     },
     {
       q: "Do you write both ad and organic social content?",
-      a: "Yes. We handle full-funnel copy—from awareness-building posts to conversion-focused ads.",
+      a: "Yes. We handle full-funnel copy-from awareness-building posts to conversion-focused ads.",
     },
     {
       q: "Can you match our brand voice?",
@@ -177,7 +149,7 @@ export default function SocialMediaAdCopywriting() {
     },
     {
       q: "How do you measure copy performance?",
-      a: "We tie performance to CTR, engagement, and conversions—using historical data, testing, and client feedback to improve.",
+      a: "We tie performance to CTR, engagement, and conversions-using historical data, testing, and client feedback to improve.",
     },
   ];
 
@@ -192,11 +164,11 @@ export default function SocialMediaAdCopywriting() {
           heading="AI-Powered Social Media & Ad Copywriting That Builds Demand"
           subtext="From scroll-stops to click-throughs, we craft copy that’s platform-smart & algorithm-savvy."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/L-2%20Banner%20Images/Social%20Media%20&%20Ad%20Copywriting%20.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Content%20Banner%20L2/Social%20Media%20&%20Ad%20Copywriting%20.webp"
         
         />
         <EditableStatSection
-          title="You’re in good company—with brands growing reach, clicks, and conversions through smart copy."
+          title="You’re in good company-with brands growing reach, clicks, and conversions through smart copy."
           stats={stats}
         />
         <EnterpriseCapabilities
@@ -209,15 +181,15 @@ export default function SocialMediaAdCopywriting() {
           heading="See How Good Copy Turned Campaigns Around"
           body="How we helped brands turn scrolls into pipeline"
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
         <LogoScroller
           heading="Folks That Trust Our Words on Scroll"
-          subtext="From B2B tech to D2C lifestyle—we speak the feed’s language."
+          subtext="From B2B tech to D2C lifestyle-we speak the feed’s language."
          
         />
         <Testimonials
-          title="Copy That Worked—and Clients Who Got Results"
+          title="Copy That Worked-and Clients Who Got Results"
           description="Our formula? Insight, structure, and a streak of bold."
         />
         <FaqSection title="FAQs" faqs={faqs} />
@@ -228,12 +200,13 @@ export default function SocialMediaAdCopywriting() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="76"
 />
         <ContactCta
           heading="Let’s Write Copy That Wins the Feed"
-          subtext="From strategy to posts to paid—our words spark action and build pipeline."
+          subtext="From strategy to posts to paid-our words spark action and build pipeline."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

@@ -2,8 +2,9 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { API_BASE_URL } from "../../../apiconfig";
 
 /* ===== Types ===== */
 export interface ResourceItem {
@@ -25,25 +26,18 @@ interface SubTab {
 interface RecentResourcesProps {
   heading?: string;
   body?: string;
-  resourceType?: string; // e.g., "blog", "case-study", etc.
-
-  /** legacy props (kept for compatibility; overridden when autoData=true) */
+  resourceType?: string;
+  resourcePostType?: string;
   subTabs?: SubTab[];
   resources?: ResourceItem[];
-
-  /** pagination/load-more (unchanged) */
   onLoadMore?: () => void;
   hasMore?: boolean;
   isLoadingMore?: boolean;
   LoadMoreSkeleton?: React.ComponentType;
-
-  /** NEW controls */
-  autoData?: boolean;   // default: true (fetch & override)
-  limit?: number;       // used only if count is undefined
-  hideTabs?: boolean;   // default: true (hide category pills)
-  count?: number;       // default: 3 (also used for fetch size)
-  
-  /** External tab control */
+  autoData?: boolean;
+  limit?: number;
+  hideTabs?: boolean;
+  count?: number;
   onTabChange?: (tabId: string) => void | Promise<void>;
   activeTab?: string;
 }
@@ -53,34 +47,25 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   heading = "Most Recent Resources",
   body,
   resourceType,
-  // legacy incoming props (ignored when autoData=true)
+  resourcePostType,
   subTabs: subTabsProp = [],
   resources: resourcesProp = [],
-
   onLoadMore,
   hasMore = false,
   isLoadingMore = false,
   LoadMoreSkeleton,
-
-  // sensible defaults per request
   autoData = true,
   hideTabs = true,
   count = 3,
   limit = 9,
-  
-  // external tab control
   onTabChange,
   activeTab,
 }) => {
   const postLimit = count ?? limit;
-
-  // internal state for auto data
   const [fetched, setFetched] = useState<ResourceItem[]>([]);
   const [autoTabs, setAutoTabs] = useState<SubTab[]>([]);
   const [loading, setLoading] = useState<boolean>(autoData);
 
-  // choose data source
-  // IMPORTANT: only trim by `count` when autoData=true (so page-supplied lists aren't cut)
   const effectiveResourcesUncapped = autoData ? fetched : resourcesProp;
   const effectiveResources = autoData
     ? (count ? fetched.slice(0, count) : fetched)
@@ -99,8 +84,7 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   const [activeSubTab, setActiveSubTab] = useState(
     activeTab || effectiveTabs[0]?.id || "all"
   );
-  
-  // Use external activeTab when provided
+
   const currentActiveTab = activeTab || activeSubTab;
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 30;
@@ -114,8 +98,9 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
       try {
         setLoading(true);
         const resourceTypeParam = resourceType ? `&categories=${resourceType}` : '';
+        const resourcepostTypeParam = resourcePostType ? `${resourcePostType}` : 'posts';
         const res = await fetch(
-          `https://growthnatives.com/wp-json/wp/v2/posts?status=publish&per_page=${postLimit}&_embed${resourceTypeParam}`,
+          `${API_BASE_URL}/wp-json/wp/v2/${resourcepostTypeParam}?status=publish&per_page=${postLimit}&_embed${resourceTypeParam}`,
           { cache: "no-store" }
         );
         const data = await res.json();
@@ -124,7 +109,7 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
         const mapped: ResourceItem[] = data.map((post: any) => ({
           title: post.title.rendered,
           subtitle: stripHTML(post.excerpt.rendered),
-          author: post._embedded?.author?.[0]?.name || "Unknown Author",
+          author: post.author_name || "Unknown Author",
           date: new Date(post.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -138,7 +123,6 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
         }));
 
-        // Tabs hidden by default; only build if visible
         if (!hideTabs) {
           const categories = Array.from(
             new Set(
@@ -174,7 +158,6 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
   }, [autoData, postLimit, hideTabs]);
 
   /* ===== Filtering ===== */
-  // If we have tabs (auto OR provided), filter by category slug.
   const filteredResources = useMemo(() => {
     if (currentActiveTab === "all") return effectiveResources;
 
@@ -187,11 +170,10 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
       );
     }
 
-    // fallback: no tabs available
     return effectiveResources;
   }, [currentActiveTab, effectiveResources, autoData, autoTabs.length, subTabsProp]);
 
-  /* ===== Pagination / Display ===== */
+  /* ===== Pagination ===== */
   const displayResources = onLoadMore
     ? filteredResources
     : filteredResources.slice(
@@ -201,7 +183,6 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
 
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
 
-  /* ===== Loading state (only for autoData) ===== */
   if (autoData && loading) {
     return (
       <section className="py-16 bg-gray-50">
@@ -216,16 +197,15 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
     );
   }
 
-  /* ===== Render ===== */
   return (
-    <section className="py-16 bg-gray-50 ">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">{heading}</h2>
           {body && <p className="text-gray-600 mt-2 max-w-2xl">{body}</p>}
         </div>
 
-        {/* Sub-tabs (hidden by default) */}
+        {/* Sub-tabs */}
         {!hideTabs && (
           <div className="flex gap-2 mb-8 overflow-x-auto">
             {effectiveTabs.map((tab) => (
@@ -258,44 +238,63 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
               key={index}
               to={
                 resource.slug
-                  ? `/blogs/${
-                      (resource.category || "general")
+                  ? resourcePostType === "case-studies"
+                    ? `/case-studies/${resource.slug}`
+                    : `/blogs/${(resource.category || "general")
                         .replace(/\s*\([^)]*\)/g, "")
                         .toLowerCase()
-                        .replace(/\s+/g, "-")
-                    }/${resource.slug}`
+                        .replace(/\s+/g, "-")}/${resource.slug}`
                   : "#"
               }
-              className="block"
+              className="block h-full"
             >
-              <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
-                {/* Image + Hover Overlay */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={resource.image}
-                    alt={resource.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                    <span className="text-white font-semibold text-sm flex items-center gap-1">
-                      Read more <span className="text-lg">›</span>
-                    </span>
-                  </div>
+              <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100 h-full flex flex-col">
+                {/* IMAGE */}
+                <div className="px-4 pt-4">
+                  <figure
+                    className="
+                      relative overflow-hidden rounded-xl bg-gray-50 ring-1 ring-black/5
+                      mx-auto max-w-full
+                      w-[343px] aspect-[300/157]           /* phone */
+                      sm:w-[486px] sm:aspect-[300/157]     /* tablet */
+                      lg:w-[710px] lg:aspect-[300/157]     /* desktop */
+                    "
+                  >
+                    <img
+                      src={resource.image}
+                      alt={resource.title}
+                      className="
+                        absolute inset-0 w-full h-full
+                        object-cover object-center
+                        scale-[1.02]                  /* bleed past edges */
+                        transition-transform duration-300
+                        group-hover:scale-[1.05]
+                      "
+                    />
+                    <div className="absolute inset-0 hidden md:flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <span className="text-white font-semibold text-sm flex items-center gap-1">
+                        Read more <span className="text-lg">›</span>
+                      </span>
+                    </div>
+                  </figure>
                 </div>
 
-                {/* Card Text Content */}
-                <CardContent className="bg-white p-6">
+                {/* Card Content */}
+                <CardContent className="bg-white p-6 flex-1 flex flex-col">
                   <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
+                     <span className="flex items-center gap-1">
+                                          <User className="w-4 h-4" /> {resource.author}
+                                        </span>
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" /> {resource.date}
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-gray-900 mb-8 group-hover:text-blue-600 transition-colors line-clamp-2 text-[1.05rem] leading-tight">
+                  <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 text-[1.05rem] leading-tight min-h-[2.625rem]">
                     {resource.title}
                   </h3>
 
-                  <div className="text-sm text-gray-500 flex items-center gap-1 mt-2">
+                  <div className="text-sm text-gray-500 flex items-center gap-1 mt-auto pt-4">
                     <Clock className="w-4 h-4" />
                     {resource.readTime}
                   </div>
@@ -305,10 +304,8 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           ))}
         </div>
 
-        {/* Loading More Skeleton */}
         {isLoadingMore && LoadMoreSkeleton && <LoadMoreSkeleton />}
 
-        {/* Load More Button - only show if onLoadMore prop is provided */}
         {onLoadMore && hasMore && !isLoadingMore && (
           <div className="flex justify-center mt-10">
             <button
@@ -320,7 +317,6 @@ const RecentResourcesSection: React.FC<RecentResourcesProps> = ({
           </div>
         )}
 
-        {/* Traditional Pagination - only show if no onLoadMore prop */}
         {!onLoadMore && totalPages > 1 && (
           <div className="flex justify-center mt-10 gap-2">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (

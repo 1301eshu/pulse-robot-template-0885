@@ -112,7 +112,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: ShieldCheck, title: "Ghostwritten brilliance, still 100% “you”  " },
       { icon: ShieldCheck, title: "Executive POVs with strategic teeth " },
-      { icon: ShieldCheck, title: "Scripts, articles, posts—they’ll read it, we swear  " },
+      { icon: ShieldCheck, title: "Scripts, articles, posts-they’ll read it, we swear  " },
     ],
   },
 ];
@@ -123,7 +123,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Blog%20Posts.webp",
       title: " Blog Posts ",
-      description: "SEO-smart and snackable—written for humans, optimized for AEO. ",
+      description: "SEO-smart and snackable-written for humans, optimized for AEO. ",
        nocta: true,
        ctaUrl: "#",
     },
@@ -156,7 +156,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/social%20ad%20copywriting.webp",
       title: " Social + Ad Copywriting ",
-      description: "From LinkedIn hooks to paid ad zingers—short, sharp, and scroll-stopping. ",
+      description: "From LinkedIn hooks to paid ad zingers-short, sharp, and scroll-stopping. ",
        nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
@@ -174,7 +174,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Video%20Podcast.webp",
       title: "  Video & Podcast Scripts ",
-      description: "Written for the ear, not the page—clear, clever, and cuttable.  ",
+      description: "Written for the ear, not the page-clear, clever, and cuttable.  ",
         nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
@@ -183,7 +183,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Thought%20Leadership.webp",
       title: " Thought Leadership  ",
-      description: "Ghostwritten brilliance that sounds 100% “you”—only sharper.  ",
+      description: "Ghostwritten brilliance that sounds 100% “you”-only sharper.  ",
         nocta: true,
         ctaUrl: "#",
       useBoxedImage: false
@@ -209,7 +209,7 @@ const features: FeatureContent[] = [
       icon: null,
       imageSrc: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/Icons%20L1/Product%20GTechnical%20docs.webp",
       title: "Product + Technical Docs   ",
-      description: "Complex ideas, cleanly explained—your PMs will thank you.  ",
+      description: "Complex ideas, cleanly explained-your PMs will thank you.  ",
        nocta: true,
        ctaUrl: "#",
       useBoxedImage: false
@@ -240,7 +240,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Do you do full-funnel content or just top-of-funnel?",
-      a: " All of it. From blogs and carousels to landing pages and nurture copy—we write for the whole journey.  ",
+      a: " All of it. From blogs and carousels to landing pages and nurture copy-we write for the whole journey.  ",
     },
     {
       q: " If you’re using AI, how do you keep it “me”? ",
@@ -303,7 +303,7 @@ const features: FeatureContent[] = [
         
           subtext="We use AI and LLMs to create high-performing content that drives pipeline, not just pageviews.  "
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs%20(1).jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/content-marketing-services/726014.png"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Strategic%20Opportunity%20Assessment.webp"
         />
 
         {/* Statistics Section */}
@@ -320,7 +320,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="Strategy-First, AI-Savvy, Built To Scale  "
-          subtitle=" We turn scattered content into a system—with structure, voice, and results baked in.  "
+          subtitle=" We turn scattered content into a system-with structure, voice, and results baked in.  "
           tabs={tabs}
           features={features} 
         />
@@ -333,12 +333,12 @@ const features: FeatureContent[] = [
                We Make All The Things, Sing... 
               </h2>
               <p className="text-gray-600 mb-6">
-               From blog posts to webinar scripts—if it needs writing, we’ve got it. 
+               From blog posts to webinar scripts-if it needs writing, we’ve got it. 
               </p>
              
             </div>
 
-            {/* Unified grid — no slices, no flex — clean 3-column layout */}
+            {/* Unified grid - no slices, no flex - clean 3-column layout */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {platformFeatures.map((card, idx) => (
         <FeatureCard key={idx} {...card} />
@@ -360,7 +360,7 @@ const features: FeatureContent[] = [
              
             </div>
 
-            {/* Unified grid — no slices, no flex — clean 3-column layout */}
+            {/* Unified grid - no slices, no flex - clean 3-column layout */}
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {platformTools.map((card, idx) => (
         <FeatureCard key={idx} {...card} />
@@ -370,15 +370,15 @@ const features: FeatureContent[] = [
         </section>
 
         <LogoScroller
-        heading="Content That Pops —Backed by Brands Who Get It "
+        heading="Content That Pops -Backed by Brands Who Get It "
         subtext="They needed strategy, velocity, and voice. we gave them all three. "
         
       />
 
         {/* Testimonials */}
         <Testimonials
-          title=" Real Stories, Real Design Wins  "
-          description=" Our content doesn’t just look good—it performs even better.  "
+          title=" Real Stories, Real Wins  "
+          description=" Our content doesn’t just look good-it performs even better.  "
         />
 
         {/* FAQs */}
@@ -389,7 +389,7 @@ const features: FeatureContent[] = [
           heading=" Ready For Content That’s Sharp, Strategic, And Scales?"
           subtext="Let’s blend some copy magic with AI muscle and turn your ideas into high-converting content. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -175,7 +175,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Is it GDPR compliant?",
-      a: "Absolutely — we are fully compliant with GDPR and data regulations.",
+      a: "Absolutely - we are fully compliant with GDPR and data regulations.",
     },
   ];
   
@@ -257,7 +257,7 @@ const features: FeatureContent[] = [
           heading="AI Meets Marketing Automation. You Meet Results."
           subtext="Let’s plug in the tech, the talent, and the timing."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

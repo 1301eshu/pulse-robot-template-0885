@@ -180,19 +180,19 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: " Do I need to use specific platforms for your AI-driven digital marketing services? ",
-      a: "Not at all! We’re fully platform-agnostic—we’ll work with whatever you’ve got, from Google Ads and Meta to HubSpot, Marketo, or your custom stack. ",
+      a: "Not at all! We’re fully platform-agnostic-we’ll work with whatever you’ve got, from Google Ads and Meta to HubSpot, Marketo, or your custom stack. ",
     },
     {
       q: " What’s included in the free digital marketing audit? ",
-      a: " A full review of your paid, organic, and owned channels—plus one AI-powered growth tactic we guarantee you’re not using yet. ",
+      a: " A full review of your paid, organic, and owned channels-plus one AI-powered growth tactic we guarantee you’re not using yet. ",
     },
     {
       q: " Can AI actually improve my existing marketing performance? ",
-      a: " Yes—and fast. Our LLM tools optimize copy, audience targeting, bid strategy, and CRO testing, often leading to 2–4x improvements in results. ",
+      a: " Yes-and fast. Our LLM tools optimize copy, audience targeting, bid strategy, and CRO testing, often leading to 2–4x improvements in results. ",
     },
     {
       q: "Is your digital marketing approach suitable for both B2B and B2C brands? ",
-      a: "Absolutely. We tailor every strategy using AI segmentation and real-time analytics—whether you’re nurturing leads or driving direct sales. ",
+      a: "Absolutely. We tailor every strategy using AI segmentation and real-time analytics-whether you’re nurturing leads or driving direct sales. ",
     },
   ];
   
@@ -238,7 +238,7 @@ const features: FeatureContent[] = [
                Our Platform Power Plays
               </h2>
               <p className="text-gray-600 mb-6">
-                Top digital marketing tools we use—powered by AI, optimized for impact.
+                Top digital marketing tools we use-powered by AI, optimized for impact.
               </p>
               
             </div>
@@ -279,7 +279,7 @@ const features: FeatureContent[] = [
           heading=" Let’s Build Your AI-Driven Growth Strategy  "
           subtext="Book a strategy session and get one immediately actionable insight that changes how you operate. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

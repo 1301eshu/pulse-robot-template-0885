@@ -386,7 +386,7 @@
 //         heading=" Let's Make Your Salesforce Smarter (And Less Annoying) "
 //         subtext="Let's plug in the tech, the talent, and the timing."
 //         buttonLabel="Talk to an Expert"
-//         buttonLink="/contact"
+//         buttonLink="/contact-us"
 //       />
 
 //       <Footer />
@@ -404,7 +404,7 @@ import {
   FileText,
   Image,
   Download,
-//  Search,
+  //  Search,
   Clock,
   User,
   Calendar,
@@ -419,6 +419,8 @@ import ExploreMoreSection, { ExploreItem } from "@/components/ui/component_9";
 import { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import { API_BASE_URL } from '../../apiconfig';
+import DynamicSEO from "@/components/DynamicSEO";
+
 interface SubTab {
   id: string;
   label: string;
@@ -447,10 +449,12 @@ const TABS: SubTab[] = [
   { id: "case-studies", label: "Case Studies" },
   { id: "infographics", label: "Infographics" },
   { id: "downloadable-assets", label: "Downloadable Assets" },
+  { id: "ebooks", label: "Ebooks" },
+  { id: "press-release", label: "Press Release" },
+  { id: "growth-stream", label: "Growth Stream" },
 ];
 
 const ResourcesIndex = () => {
-  // Separate states for hero and resources tabs
   const [heroActiveTab, setHeroActiveTab] = useState<string>("blogs");
   const [resourcesActiveTab, setResourcesActiveTab] = useState<string>("blogs");
 
@@ -460,7 +464,6 @@ const ResourcesIndex = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isLoadingResources, setIsLoadingResources] = useState<boolean>(false);
 
-  // Reusable fetch function
   const fetchData = async (url: string) => {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to fetch ${url}`);
@@ -472,7 +475,6 @@ const ResourcesIndex = () => {
     const content: Record<string, any> = {};
 
     try {
-      // Blogs Hero + Explore more
       const blogsData = await fetchData(
         `${API_BASE_URL}/wp-json/wp/v2/posts?per_page=4&_embed`
       );
@@ -489,6 +491,7 @@ const ResourcesIndex = () => {
               post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
               "https://via.placeholder.com/600x400",
             slug: post.slug,
+            author: post.author_name || "Unknown Author", 
             type: "blog",
           };
         });
@@ -511,7 +514,6 @@ const ResourcesIndex = () => {
         };
       }
 
-      // Case Studies Hero
       const csData = await fetchData(
         `${API_BASE_URL}/wp-json/wp/v2/case-studies?per_page=1&_embed`
       );
@@ -529,7 +531,6 @@ const ResourcesIndex = () => {
         };
       }
 
-      // Infographics Hero
       const infographicsData = await fetchData(
         `${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=7&per_page=1&_embed`
       );
@@ -549,20 +550,71 @@ const ResourcesIndex = () => {
         };
       }
 
-      // Downloadable Assets Hero
       const assetsData = await fetchData(
         `${API_BASE_URL}/wp-json/wp/v2/downloadable-assets?per_page=1&_embed`
       );
       if (assetsData.length > 0) {
         const asset = assetsData[0];
         content["downloadable-assets"] = {
-          featuredTag: "DOWNLOAD",
+          featuredTag: "DOWNLOAD Assets",
           title: decodeHTML(asset.title.rendered),
           description: stripHTML(asset.excerpt.rendered).substring(0, 150) + "...",
           buttonText: "Download Now",
           buttonLink: `/downloadable-assets/${formatCategorySlug(
             asset._embedded?.["wp:term"]?.[0]?.[0]?.name || "general"
           )}/${asset.slug}`,
+          imageUrl:
+            asset._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "https://via.placeholder.com/600x400",
+        };
+      }
+      const ebookData = await fetchData(
+        `${API_BASE_URL}/wp-json/wp/v2/ebooks?per_page=1&_embed`
+      );
+      if (ebookData.length > 0) {
+        const asset = ebookData[0];
+        content["ebooks"] = {
+          featuredTag: "Ebooks",
+          title: decodeHTML(asset.title.rendered),
+          description: stripHTML(asset.excerpt.rendered).substring(0, 150) + "...",
+          buttonText: "Download Now",
+          buttonLink: `/ebooks/${asset.slug}`,
+          imageUrl:
+            asset._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "https://via.placeholder.com/600x400",
+        };
+      }
+
+      const pressData = await fetchData(
+        `${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=8&per_page=1&_embed`
+      );
+      if (pressData.length > 0) {
+        const info = pressData[0];
+        content["press-release"] = {
+          featuredTag: "Press Release",
+          title: decodeHTML(info.title.rendered),
+          description: stripHTML(info.excerpt.rendered).substring(0, 150) + "...",
+          buttonText: "View Press Release",
+          buttonLink: `/blogs/${formatCategorySlug(
+            info._embedded?.["wp:term"]?.[0]?.[0]?.name || "general"
+          )}/${info.slug}`,
+          imageUrl:
+            info._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "https://via.placeholder.com/600x400",
+        };
+      }
+
+      const growthData = await fetchData(
+        `${API_BASE_URL}/wp-json/wp/v2/growth-stream?per_page=1&_embed`
+      );
+      if (growthData.length > 0) {
+        const asset = growthData[0];
+        content["growth-stream"] = {
+          featuredTag: "Growth Stream",
+          title: decodeHTML(asset.title.rendered),
+          description: stripHTML(asset.excerpt.rendered).substring(0, 150) + "...",
+          buttonText: "View Growth Stream",
+          buttonLink: `/growth-stream/${asset.slug}`,
           imageUrl:
             asset._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
             "https://via.placeholder.com/600x400",
@@ -588,6 +640,11 @@ const ResourcesIndex = () => {
           `${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=7&per_page=12&_embed`,
         "downloadable-assets":
           `${API_BASE_URL}/wp-json/wp/v2/downloadable-assets?per_page=12&_embed`,
+        ebooks: `${API_BASE_URL}/wp-json/wp/v2/ebooks?per_page=12&_embed`,
+        "press-release":
+          `${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=8&per_page=12&_embed`,
+        "growth-stream":
+          `${API_BASE_URL}/wp-json/wp/v2/growth-stream?per_page=12&_embed`,
       };
 
       const data = await fetchData(urls[category] || urls.blogs);
@@ -597,14 +654,18 @@ const ResourcesIndex = () => {
         return {
           title: decodeHTML(post.title.rendered),
           subtitle: stripHTML(post.excerpt.rendered),
-          author: post._embedded?.author?.[0]?.name || "Unknown Author",
+          author: post.author_name || "Unknown Author",
           date: new Date(post.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
           }),
-          readTime: calculateReadTime(post.content?.rendered || post.excerpt?.rendered),
-          image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/600x400",
+          readTime: calculateReadTime(
+            post.content?.rendered || post.excerpt?.rendered
+          ),
+          image:
+            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+            "https://via.placeholder.com/600x400",
           slug: post.slug,
           category: cat,
         };
@@ -628,6 +689,7 @@ const ResourcesIndex = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <DynamicSEO page="resources" />
       <Header />
       <SmartBreadcrumb />
 
@@ -663,11 +725,10 @@ const ResourcesIndex = () => {
               <button
                 key={tab.id}
                 onClick={() => setResourcesActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  resourcesActiveTab === tab.id
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${resourcesActiveTab === tab.id
                     ? "bg-primary text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 {tab.label}
               </button>
@@ -679,32 +740,59 @@ const ResourcesIndex = () => {
               <Link
                 key={index}
                 to={
-                  resourcesActiveTab === "blogs" || resourcesActiveTab === "infographics"
+                  resourcesActiveTab === "blogs" ||
+                  resourcesActiveTab === "infographics" ||
+                  resourcesActiveTab === "press-release"
                     ? `/blogs/${formatCategorySlug(resource.category)}/${resource.slug}`
                     : resourcesActiveTab === "case-studies"
                     ? `/case-studies/${resource.slug}`
                     : resourcesActiveTab === "downloadable-assets"
                     ? `/downloadable-assets/${formatCategorySlug(resource.category)}/${resource.slug}`
+                    : resourcesActiveTab === "ebooks"
+                    ? `/ebooks/${resource.slug}`
+                    : resourcesActiveTab === "growth-stream"
+                    ? `/growth-stream/${resource.slug}`
                     : "#"
                 }
-                className="block"
+                className="block h-full"
               >
-                <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={resource.image}
-                      alt={resource.title}
-                      className="w-full h-full object-contain bg-white transform scale-110 transition-transform duration-300 group-hover:scale-125"
-                    />
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      <span className="text-white font-semibold text-sm flex items-center gap-1">
-                        Read more <span className="text-lg">›</span>
-                      </span>
-                    </div>
+                <Card className="h-full bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
+                  {/* Image (bulletproof no-trim) */}
+                  <div className="px-4 pt-4">
+                    <figure
+                    className="
+                      relative overflow-hidden rounded-xl bg-gray-50 ring-1 ring-black/5
+                      mx-auto max-w-full
+                      w-[343px] aspect-[300/157]           /* phone */
+                      sm:w-[486px] sm:aspect-[300/157]     /* tablet */
+                      lg:w-[710px] lg:aspect-[300/157]     /* desktop */
+                    "
+                    >
+                      <img
+                        src={resource.image}
+                        alt={decodeHTML(resource.title)}
+                        className="
+                          absolute inset-0 w-full h-full
+                          object-cover object-center
+                          scale-[1.02]                  /* bleed past edges */
+                          transition-transform duration-300
+                          group-hover:scale-[1.05]
+                        "
+                      />
+                      {/* Desktop-only hover overlay */}
+                      <div className="absolute inset-0 hidden md:flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <span className="text-white font-semibold text-sm flex items-center gap-1">
+                          Read more <span className="text-lg">›</span>
+                        </span>
+                      </div>
+                    </figure>
                   </div>
 
                   <CardContent className="bg-white p-6">
                     <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
+                      <span className="flex items-center gap-1">
+                        <User className="w-4 h-4" /> {resource.author}
+                      </span>
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" /> {resource.date}
                       </span>
@@ -726,10 +814,10 @@ const ResourcesIndex = () => {
       </section>
 
       <ContactCta
-        heading="Let's Make Your Salesforce Smarter (And Less Annoying)"
-        subtext="Let's plug in the tech, the talent, and the timing."
+        heading="Let's Build Your Next Growth Chapter"
+        subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
         buttonLabel="Talk to an Expert"
-        buttonLink="/contact"
+        buttonLink="/contact-us"
       />
 
       <Footer />

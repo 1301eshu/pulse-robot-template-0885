@@ -42,7 +42,7 @@ export default function MarketingAutomation() {
       id: "marketing",
       label: "Homepage & Service Pages",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hubspot/Hubspot%20Audit.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Homepagev&%20Service%20Pages.webp",
       // ctaText: "Audit Me!",
       // ctaLink: "/lead-gen-website-copy"
     },
@@ -176,11 +176,11 @@ export default function MarketingAutomation() {
       logo: "",
     },
     {
-      quote: "We went from bounce to buy—purely through fresh, AI-ready copy.",
+      quote: "We went from bounce to buy-purely through fresh, AI-ready copy.",
       logo: "",
     },
     {
-      quote: "Finally, a team that speaks LLM and human—our organic is up, and so are demos.",
+      quote: "Finally, a team that speaks LLM and human-our organic is up, and so are demos.",
       logo: "",
     }
   ];
@@ -254,7 +254,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers Section */}
         <EditableStatSection
-          title="You're in good crowd—with brands turning clicks into conversions through smart copy."
+          title="You're in good crowd-with brands turning clicks into conversions through smart copy."
           stats={stats}
         />
 
@@ -277,14 +277,14 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands That Let Our Copy Do the Talkin"
-          subtext="Whether lean or loaded—we help teams convert faster."
+          subtext="Whether lean or loaded-we help teams convert faster."
          
         />
 
         {/* Client Testimonials Section */}
         <Testimonials
-          title="Copy That Clicked—And Clients Who Loved It"
-          description="Strategy meets structure—sprinkled with just the right amount of AI magic."
+          title="Copy That Clicked-And Clients Who Loved It"
+          description="Strategy meets structure-sprinkled with just the right amount of AI magic."
         />
 
         {/* FAQs */}
@@ -303,7 +303,7 @@ export default function MarketingAutomation() {
           heading="Let's Craft Copy That Gets You Found (and Chosen)"
           subtext="Crafted for search engines, fine-tuned for humans, and a few bots."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

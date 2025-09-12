@@ -77,7 +77,7 @@ export default function MarketingAutomation() {
       id: "custom-content",
       description: "Content that actually makes people stop scrolling (and maybe even click “follow”).",
       items: [
-        { icon: Zap, title: "Designs that match your vibe—across posts, stories, reels, and videos." },
+        { icon: Zap, title: "Designs that match your vibe-across posts, stories, reels, and videos." },
         { icon: Zap, title: "AI-enhanced video thumbnails, product mockups, animations & promos." },
         { icon: Zap, title: "Platform-specific tweaks that make your content perform better (everywhere)." },
       ],
@@ -87,13 +87,13 @@ export default function MarketingAutomation() {
       description: "Your brand, but with templates that get real consistent and seriously clickable.",
       items: [
         { icon: Heart, title: "Templates you can reuse, remix, and rule every content format." },
-        { icon: Heart, title: "Perfect alignment of colors, fonts, logo placements—zero off-brand moments." },
-        { icon: Heart, title: "Built to flex across Instagram, LinkedIn, YouTube, Pinterest—you name it." },
+        { icon: Heart, title: "Perfect alignment of colors, fonts, logo placements-zero off-brand moments." },
+        { icon: Heart, title: "Built to flex across Instagram, LinkedIn, YouTube, Pinterest-you name it." },
       ],
     },
     {
       id: "strategy",
-      description: "We blend brand aesthetics, platform psychology, and AI-assisted insights to craft social visuals that aren’t just pretty—they perform.",
+      description: "We blend brand aesthetics, platform psychology, and AI-assisted insights to craft social visuals that aren’t just pretty-they perform.",
       items: [
         { icon: BarChart2, title: "Visual systems tailored to your brand and platform behavior." },
         { icon: BarChart2, title: "AI-powered testing for layouts, formats, and thumb-stopping imagery." },
@@ -141,7 +141,7 @@ export default function MarketingAutomation() {
     },
     {
       title: "Profile Makeovers: 2025 Edition",
-      subtitle: "What matters now, what’s out—and why you need an upgrade.",
+      subtitle: "What matters now, what’s out-and why you need an upgrade.",
       author: "Strategy Director",
       date: "July 2025",
       readTime: "5 min read",
@@ -154,15 +154,15 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "How can custom social media design improve my brand’s presence?",
-      a: "Custom design makes your feed cohesive, recognizable, and scroll-stopping—aka, the stuff that builds loyal fans.",
+      a: "Custom design makes your feed cohesive, recognizable, and scroll-stopping-aka, the stuff that builds loyal fans.",
     },
     {
       q: "What platforms do you design for?",
-      a: "Instagram, LinkedIn, YouTube, Twitter, Facebook, Pinterest—even Threads.",
+      a: "Instagram, LinkedIn, YouTube, Twitter, Facebook, Pinterest-even Threads.",
     },
     {
       q: "How do you ensure brand consistency?",
-      a: "We build a custom brand kit—colors, fonts, vibe checks—and use AI tools to keep every post on point.",
+      a: "We build a custom brand kit-colors, fonts, vibe checks-and use AI tools to keep every post on point.",
     },
     {
       q: "How do you develop a content strategy for my brand?",
@@ -183,7 +183,7 @@ export default function MarketingAutomation() {
 
         {/* HERO Section */}
         <HeroSection
-          heading="Social Media Design That Pops, Performs—Powered by AI"
+          heading="Social Media Design That Pops, Performs-Powered by AI"
           subtext="Scroll-stopping designs + smart content systems that make your brand impossible to ignore."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Design%20Services/Hero-Section-Banner_L2/Social%20Media.webp"
@@ -191,7 +191,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands that don’t just post, they perform"
+          title="You’re in good company-with brands that don’t just post, they perform"
           stats={stats}
         />
 
@@ -212,7 +212,7 @@ export default function MarketingAutomation() {
         />
 
         <LogoScroller
-          heading="Creators, Founders, Marketers—They All Trust Our Scroll Game"
+          heading="Creators, Founders, Marketers-They All Trust Our Scroll Game"
           subtext="From startups to unicorns, we’ve helped brands punch above their weight."
          
         />
@@ -239,7 +239,7 @@ export default function MarketingAutomation() {
           heading="Let's Build Your AI-Powered Social Media Empire"
           subtext="More eyes, more clicks, more “who did your design?” DMs."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

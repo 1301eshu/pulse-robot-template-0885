@@ -12,11 +12,8 @@ interface HeroSectionProps {
   buttonLink?: string;
   rightImage: string;
   noCta?: boolean;
-  bgImage?: string; // existing usage (don't touch this)
-  customBgImage?: string; // ✅ new prop for page-level overrides
-  overlayTitle?: string;
-  overlayDesc?: string;
-  overlayButtonText?: string;
+  bgImage?: string;
+  customBgImage?: string;
   centerText?: boolean;
 }
 
@@ -25,14 +22,13 @@ export default function HeroSection({
   highlight,
   subtext,
   buttonText = "Audit Me!",
-  buttonLink = "/contact/",
+  buttonLink = "/contact-us/",
   rightImage,
   noCta,
   centerText = false,
   bgImage,
-  customBgImage, // ✅ added
+  customBgImage,
 }: HeroSectionProps) {
-  // Priority: customBgImage > bgImage > DEFAULT
   const effectiveBg = customBgImage || bgImage || DEFAULT_HERO_BG;
 
   return (
@@ -43,27 +39,20 @@ export default function HeroSection({
           <div className="absolute inset-0 z-0">
             <img
               src={effectiveBg}
-              alt="Hero Background"
+              alt=""
               className="w-full h-full object-cover"
               loading="lazy"
+              aria-hidden="true"
             />
             <div className="absolute inset-0 bg-black/60" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 py-8 sm:py-12 px-4 sm:px-8">
-            <div
-              className={`grid items-center gap-8 sm:gap-10 md:gap-12 ${
-                centerText ? "grid-cols-1 text-center" : "md:grid-cols-12"
-              }`}
-            >
-              {/* Left */}
-              <div className={centerText ? "max-w-3xl mx-auto" : "md:col-span-7"}>
-                <h1
-                  className={`text-white font-medium tracking-tight mb-4 leading-[1.2]
-                  text-4xl sm:text-5xl md:text-6xl
-                  ${centerText ? "text-center" : "text-left"}`}
-                >
+          <div className="relative z-10 px-4 sm:px-8 py-8 sm:py-12">
+            {/* When centerText = true -> NO GRID. This removes the ghost spacing. */}
+            {centerText ? (
+              <div className="w-full max-w-4xl mx-auto text-center">
+                <h1 className="text-white font-medium tracking-tight mb-4 leading-[1.2] text-4xl sm:text-5xl md:text-6xl">
                   {heading}
                   {highlight && (
                     <span className="ml-2 align-middle bg-green-500 text-black px-2 py-0.5 rounded-md inline-block text-sm sm:text-base font-medium">
@@ -72,16 +61,13 @@ export default function HeroSection({
                   )}
                 </h1>
 
-                <p
-                  className={`text-gray-200 mb-6 leading-relaxed
-                  text-[15px] sm:text-base md:text-lg font-normal
-                  ${centerText ? "text-center" : "text-left"}`}
-                >
+                {/* Remove big bottom margin in centered layout */}
+                <p className="text-gray-200 leading-relaxed text-[15px] sm:text-base md:text-lg font-normal mb-0">
                   {subtext}
                 </p>
 
                 {!noCta && (
-                  <div className={centerText ? "flex justify-center" : ""}>
+                  <div className="mt-6 flex justify-center">
                     <SITE_CTA
                       variant="secondary"
                       text={buttonText}
@@ -93,21 +79,47 @@ export default function HeroSection({
                   </div>
                 )}
               </div>
+            ) : (
+              // Default (two-column) layout -> keep grid
+              <div className="grid items-center gap-8 sm:gap-10 md:gap-12 md:grid-cols-12">
+                <div className="md:col-span-7 text-left">
+                  <h1 className="text-white font-medium tracking-tight mb-4 leading-[1.2] text-4xl sm:text-5xl md:text-6xl">
+                    {heading}
+                    {highlight && (
+                      <span className="ml-2 align-middle bg-green-500 text-black px-2 py-0.5 rounded-md inline-block text-sm sm:text-base font-medium">
+                        {highlight}
+                      </span>
+                    )}
+                  </h1>
 
-              {/* Right image */}
-              {!centerText && (
+                  <p className="text-gray-200 mb-6 leading-relaxed text-[15px] sm:text-base md:text-lg font-normal">
+                    {subtext}
+                  </p>
+
+                  {!noCta && (
+                    <SITE_CTA
+                      variant="secondary"
+                      text={buttonText}
+                      href={buttonLink}
+                      size="md"
+                      className="text-white w-full sm:w-auto"
+                      icon
+                    />
+                  )}
+                </div>
+
                 <div className="md:col-span-5">
                   <div className="relative rounded-xl overflow-hidden">
                     <img
                       src={rightImage}
-                      alt="Hero Right"
+                      alt="Hero visual"
                       className="w-full h-auto object-cover"
                       loading="lazy"
                     />
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </section>
       </div>

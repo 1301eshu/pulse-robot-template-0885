@@ -42,64 +42,64 @@ export default function MarketingAutomation() {
       label: "Salesforce Marketing Cloud Audit ",
       icon: Zap,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20marketing%20cloud%20Audit.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "consulting",
       label: "Salesforce Marketing Cloud Consulting",
       icon: BarChart2,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20marketing%20cloud%20Consulting.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "implementation",
       label: "Salesforce Marketing Cloud Implementation",
       icon: Database,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20Marketing%20Cloud%20Agentforce%20Implementation.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "migrations",
       label: "Salesforce Marketing Cloud Migrations ",
       icon: ShieldCheck,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20marketing%20cloud%20migration.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "agentforce",
       label: "Salesforce Marketing Cloud Agentforce Implementation",
       icon: Clock,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20Marketing%20Cloud%20Agentforce%20Implementation.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "operations",
       label: "Salesforce Marketing Cloud Operations Services  ",
       icon: Heart,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20Marketing%20Cloud%20Operations%20Services.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "managed",
       label: "Salesforce Marketing Cloud Managed Services ",
       icon: ShieldCheck,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20Marketing%20Cloud%20Managed%20Services.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     },
     {
       id: "training",
       label: "Salesforce Marketing Cloud Training ",
       icon: BarChart2,
       image: "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Marketing%20Automation/Salesforce%20marketing%20cloud/Salesforce%20Marketing%20Cloud%20Training.webp",
-    //  ctaText: "Get a Demo",
-    //  ctaLink: "/l3-template"
+      //  ctaText: "Get a Demo",
+      //  ctaLink: "/l3-template"
     }
   ];
 
@@ -203,36 +203,6 @@ export default function MarketingAutomation() {
     }
   ];
 
-   // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   return (
     <div className="bg-white text-gray-900">
@@ -246,11 +216,11 @@ export default function MarketingAutomation() {
           bgImage=""
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/Salesforce%20Marketing%20Cloud.webp"
           buttonText="Audit Me!"
-          buttonLink="/your-lead-gen-form-page"
+          buttonLink="/contact-us/"
         />
 
         <EditableStatSection
-          title="You’re in good company—with brands scaling smarter on Salesforce Marketing Cloud"
+          title="You’re in good company-with brands scaling smarter on Salesforce Marketing Cloud"
           stats={stats}
         />
 
@@ -266,13 +236,13 @@ export default function MarketingAutomation() {
           heading="Get a Front-Row View of AI-Sprinkled Salesforce Marketing Cloud  "
           body="Brands we’ve helped win big with Salesforce Marketing Cloud  "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
           heading="Brands Backing Our Salesforce Marketing Cloud Brilliance"
           subtext="Small crews or big leagues, we plug in a strategy that scales."
-         
+
         />
 
         <Testimonials
@@ -282,20 +252,21 @@ export default function MarketingAutomation() {
 
         <FaqSection title="FAQs" faqs={faqs} />
 
-       {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
-<ExploreMoreBlock
-  heading=" More From Our Content Repertoire "
-  body=" Stay in the know with the latest Salesforce Marketing Cloud blog posts, guides, and AI hacks to keep you sharp. "
-  perPage={6}
-  firstN={4}
-  contentType="blogs"
-/>
+        {/* --- Section B: component_9 via ExploreMoreBlock (left feature + list) --- */}
+        <ExploreMoreBlock
+          heading=" More From Our Content Repertoire "
+          body=" Stay in the know with the latest Salesforce Marketing Cloud blog posts, guides, and AI hacks to keep you sharp. "
+          perPage={6}
+          firstN={4}
+          contentType="blogs"
+          resourceType="242"
+        />
 
         <ContactCta
           heading="Let’s Fire Up Your AI-Powered Salesforce Marketing Cloud Engine"
           subtext="Smarter insights, faster workflows, and campaigns that think on their feet."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

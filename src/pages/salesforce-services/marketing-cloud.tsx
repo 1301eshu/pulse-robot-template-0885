@@ -21,25 +21,25 @@ export default function MarketingCloud() {
       id: "audit",
       label: "Strategy & Planning  ",
       icon: Zap,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Audit%20.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Marketing%20Cloud/Strategy%20&%20Planning.webp",
     },
     {
       id: "consulting",
       label: "Implementation & Setup ",
       icon: BarChart2,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Consulting.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Marketing%20Cloud/Implementation%20&%20Setup.webp",
     },
     {
       id: "implementation",
       label: "Analytics & Reporting ",
       icon: Database,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Implementation.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Marketing%20Cloud/Analytics%20&%20Reporting.webp",
     },
     {
       id: "migrations",
       label: "Integrations & Optimization  ",
       icon: ShieldCheck,
-       image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Marketing%20Cloud/Implementation.webp",
+       image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Marketing%20Cloud/Integrations%20&%20Optimization.webp",
     },
     
   ];
@@ -56,7 +56,7 @@ export default function MarketingCloud() {
     },
     {
       id: "consulting",
-      description: "Set up for success—clean builds, fast rollouts, and journeys that perform from day one. ",
+      description: "Set up for success-clean builds, fast rollouts, and journeys that perform from day one. ",
       items: [
         { icon: BarChart2, title: "Define scope, goals, and data requirements upfront " },
         { icon: BarChart2, title: "Configure Salesforce Marketing Cloud tools: Email Studio, Journey Builder, Mobile Studio " },
@@ -69,12 +69,12 @@ export default function MarketingCloud() {
       items: [
         { icon: Database, title: "Real-time dashboards, zero guesswork " },
         { icon: Database, title: "Performance views across every channel " },
-        { icon: Database, title: "Predictive insights with Einstein A" }
+        { icon: Database, title: "Predictive insights with Einstein AI" }
       ]
     },
     {
       id: "migrations",
-      description: "We turn siloed systems into synchronized journeys—powered by real-time data and automation. ",
+      description: "We turn siloed systems into synchronized journeys-powered by real-time data and automation. ",
       items: [
         { icon: ShieldCheck, title: "Connect Sales & Service Cloud to Salesforce Marketing Cloud for unified journeys " },
         { icon: ShieldCheck, title: "Trigger campaigns with real-time behavioral and CRM data " },
@@ -109,36 +109,6 @@ export default function MarketingCloud() {
     }
   ];
 
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
-
   return (
     <div className="bg-white text-gray-900">
       <DynamicSEO page="salesforceMarketingCloud" />
@@ -149,12 +119,12 @@ export default function MarketingCloud() {
           heading=" AI-Powered Salesforce Marketing Cloud That Knows Your Customers Better Than Their Mothers"
           subtext=" Turn data into personalized journeys that convert, engage, and grow your business"
           bgImage=""
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Hero%20Section_L1_Banner/Salesforce%20Marketing%20Cloud.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Marketing%20Cloud.webp"
        
         />
 
         <EditableStatSection
-          title="You're in good company—with brands scaling faster with Salesforce Marketing Cloud. "
+          title="You're in good company-with brands scaling faster with Salesforce Marketing Cloud. "
           stats={stats}
         />
 
@@ -169,7 +139,7 @@ export default function MarketingCloud() {
           heading="Salesforce Marketing Cloud in Action: Real Results, Real ROI "
           body=" How we helped brands unlock growth with data-driven marketing and AI. "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -191,13 +161,14 @@ export default function MarketingCloud() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         <ContactCta
           heading="Let's Make Your Salesforce Marketing Cloud Work 10x Harder"
           subtext="From implementation to optimization, we'll power up your customer journeys with AI baked into every step."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

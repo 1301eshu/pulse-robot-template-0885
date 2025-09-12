@@ -77,7 +77,7 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
   
-    description: "Your data, transformed and loaded the right way—fast, accurate, and audit-friendly.  ",
+    description: "Your data, transformed and loaded the right way-fast, accurate, and audit-friendly.  ",
     items: [
       { icon: Zap, title: "Cloud-native pipelines designed for agility and scale  " },
       { icon: Zap, title: "ETL or ELT? We choose what fits your flow, not ours  " },
@@ -89,7 +89,7 @@ const features: FeatureContent[] = [
    
     description: "We design the infrastructure your insights deserve. ",
     items: [
-      { icon: BarChart2, title: "Snowflake, BigQuery, Redshift, Azure—you name it, we deploy it   " },
+      { icon: BarChart2, title: "Snowflake, BigQuery, Redshift, Azure-you name it, we deploy it   " },
       { icon: BarChart2, title: "Automated partitioning, scaling, and storage optimization   " },
       { icon: BarChart2, title: "AI monitors performance spikes, usage patterns, and latency bottlenecks   " },
     ],
@@ -99,7 +99,7 @@ const features: FeatureContent[] = [
    
     description: "Structured to scale, organized to answer questions before they’re even asked. ",
     items: [
-      { icon: Database, title: "Star, snowflake, or hybrid schema—custom-modeled for your business use case  " },
+      { icon: Database, title: "Star, snowflake, or hybrid schema-custom-modeled for your business use case  " },
       { icon: Database, title: "Dimensional modeling built around your KPIs   " },
       { icon: Database, title: "AI-assisted anomaly detection and field usage mapping   " },
     ],
@@ -107,7 +107,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "We don’t just move data—we guarantee its trustworthiness.  ",
+    description: "We don’t just move data-we guarantee its trustworthiness.  ",
     items: [
       { icon: ShieldCheck, title: "End-to-end QA across each pipeline  " },
       { icon: ShieldCheck, title: "Rule-based and AI-assisted anomaly detection   " },
@@ -161,7 +161,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "Do I need a cloud data warehouse to work with you? ",
-      a: "Not necessarily—but if you don’t have one, we’ll recommend and implement the best fit based on your scale and goals.",
+      a: "Not necessarily-but if you don’t have one, we’ll recommend and implement the best fit based on your scale and goals.",
     },
     {
       q: "Can you help with legacy migration (on-prem to cloud)?",
@@ -186,7 +186,7 @@ const features: FeatureContent[] = [
         {/* HERO Section */}
         <HeroSection
           heading="Data Warehousing & ETL That Sets the Stage for Smarter Insights "
-          subtext=" Seamless data flow from source to insight—clean, governed, and built to scale with your business.  "
+          subtext=" Seamless data flow from source to insight-clean, governed, and built to scale with your business.  "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/analytics-as-a-service/Hero%20Section_L2_Bannera/data%20warehousing%20ETL.webp"
         />
@@ -206,7 +206,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="What We Do with Data Warehousing & ETL"
-          subtitle=" We turn chaos into clarity—building pipelines that never crack under pressure and warehouses that scale with your growth.  "
+          subtitle=" We turn chaos into clarity-building pipelines that never crack under pressure and warehouses that scale with your growth.  "
           tabs={tabs}
           features={features} 
         />
@@ -221,14 +221,14 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading="Solid Data Stacks Start Here  "
-        subtext="  From bootstrapped startups to global brands—we help them build, clean, and scale.. "
+        subtext="  From bootstrapped startups to global brands-we help them build, clean, and scale.. "
        
       />
 
         {/* Testimonials */}
         <Testimonials
           title=" Don’t Just Store Data. Activate It.    "
-          description="  Our clients didn’t just get dashboards—they got decisions they could trust.  "
+          description="  Our clients didn’t just get dashboards-they got decisions they could trust.  "
         />
 
         {/* FAQs */}
@@ -245,9 +245,9 @@ const features: FeatureContent[] = [
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build a Warehouse That Works as Hard as You Do"
-          subtext="Your data foundation—optimized, automated, and AI-enhanced.   "
+          subtext="Your data foundation-optimized, automated, and AI-enhanced.   "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

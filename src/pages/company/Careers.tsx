@@ -11,6 +11,7 @@ import { ValueType } from "@/components/ui/component_11";
 import ContactCta from "@/components/ui/component_6";
 import InstagramSection from "@/components/ui/component_16";
 import JobListingsSection from "@/components/JobListingsSection";
+import DynamicSEO from "@/components/DynamicSEO";
 
 
 export const aboutPageValues: ValueType[] = [
@@ -49,6 +50,7 @@ export const aboutPageValues: ValueType[] = [
 const Careers = () => {
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="careers"/>
       <Header />
       <SmartBreadcrumb />
       <main>
@@ -73,7 +75,7 @@ const Careers = () => {
           heading="Let’s Build What Breaks the Mold "
           subtext=" Join us on a journey where bold ideas meet real expertise and success is engineered. "
           buttonLabel="Talk to Us! "
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
         
       </main>

@@ -128,35 +128,7 @@ export default function MarketingAutomation() {
   ];
 
   // Recent Resources Section
-  const recentResources: ResourceItem[] = [
-    {
-      title: "How AI is Changing B2B Blog Strategy",
-      subtitle: "New rules for ranking, writing, and staying relevant in the LLM era.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-changing-b2b-blog"
-    },
-    {
-      title: "AEO & Entity-Based SEO: The Next Wave",
-      subtitle: "Why blogs that feed AI models are outpacing those that don't.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "aeo-entity-seo"
-    },
-    {
-      title: "The Anatomy of a LLM-Optimized Pillar Page",
-      subtitle: "Structuring long-form content for search, humans, and AI all at once.",
-      author: "Editorial Team",
-      date: "July 2025",
-      readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "llm-pillar-page"
-    },
-  ];
+  
 
   // FAQs
   const faqs = [
@@ -189,32 +161,32 @@ export default function MarketingAutomation() {
           heading="Thought Leadership That Builds Authority. Ghostwriting That Sounds Like You. "
           subtext="Turn your ideas into insight-packed content that ranks and drives reputation."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Content%20Writing/Blog%20&%20Long-Form%20Content%20(2).webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/content%20strategy%20L1/Content%20Banner%20L2/Ghost%20Writing.webp"
         
         />
         <EditableStatSection
-          title="You’re in good company—brands and leaders who trust us to write their story."
+          title="You're in sharp company-with executives and experts using our words to lead the conversation. "
           stats={stats}
         />
         <EnterpriseCapabilities
-          title="Ghostwriting That Wins in Search, Social, and AI"
-          subtitle="We build thought leadership engines that get found, get read, and get results—by both humans and algorithms."
+          title="Strategic Thought Leadership & Ghostwriting for the AI-First Web "
+          subtitle="Content that earns trust, builds domain authority, and shows up in the right places and in minds. "
           tabs={tabs}
           features={features}
         />
         <RecentResourcesSection
-          heading="See How Ghostwriting Drives Results"
-          body="How we helped leaders build authority and scale their voice."
+          heading="See the Impact of High-Authority Content in Action"
+          body="Executives whose voices now lead LinkedIn feeds, press headlines, and Perplexity results. "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
         <LogoScroller
-          heading="Leaders Who Trust Our Words"
-          subtext="From SaaS founders to Fortune 500 execs, our ghostwriting powers reputations."
+          heading="The Go-To Team for Executives Who Think (and Publish) Big "
+          subtext="Trusted by founders, operators, and CMOs across tech, AI, and consulting. "
         />
         <Testimonials
-          title="What Clients Say About Our Ghostwriting"
-          description="We don’t just write. We deliver results."
+          title=" Real Stories, Real Thought Leadership "
+          description="It’s structure, strategy, and just enough AI wizardry to make it click. "
         />
         <FaqSection title="FAQs" faqs={faqs} />
 
@@ -225,12 +197,13 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="35"
 />
         <ContactCta
-          heading="Ready to Build Your Thought Leadership?"
-          subtext="Let’s map your content to the way people search, buy, and learn."
+          heading="Let’s Put Your Name Where It Belongs-On Great Content "
+          subtext="From voice to visibility, we ghostwrite the leadership your brand deserves. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

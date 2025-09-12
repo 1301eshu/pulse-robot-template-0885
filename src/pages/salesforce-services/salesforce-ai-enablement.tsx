@@ -117,7 +117,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "crm",
-      description: "Your central command for every customer touchpoint—now powered by smarter signals, automation, and insight.",
+      description: "Your central command for every customer touchpoint-now powered by smarter signals, automation, and insight.",
       items: [
         { icon: Zap, title: "Predict who’s ready to buy, churn, or engage" },
         { icon: Zap, title: "Automate lead scores, follow-ups, and clean-ups" },
@@ -135,7 +135,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "salescloud",
-      description: "Close faster with sales tools that think ahead—AI helps reps focus on deals, not data.",
+      description: "Close faster with sales tools that think ahead-AI helps reps focus on deals, not data.",
       items: [
         { icon: Database, title: "Auto-score leads based on conversion potential" },
         { icon: Database, title: "Surface next-best actions for every opportunity" },
@@ -153,7 +153,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "commercecloud",
-      description: "Smarter stores, happier shoppers—AI curates, recommends, and accelerates conversions across your storefronts.",
+      description: "Smarter stores, happier shoppers-AI curates, recommends, and accelerates conversions across your storefronts.",
       items: [
         { icon: ShieldCheck, title: "Deliver product recommendations that match intent" },
         { icon: ShieldCheck, title: "Automate promotions based on buying behavior" },
@@ -162,7 +162,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "experiencecloud",
-      description: "Create digital experiences that learn and evolve—AI helps you serve the right content at the right time.",
+      description: "Create digital experiences that learn and evolve-AI helps you serve the right content at the right time.",
       items: [
         { icon: Clock, title: "Personalize portals using user history and signals" },
         { icon: Clock, title: "Recommend content and support docs automatically" },
@@ -171,7 +171,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "analyticscloud",
-      description: "Turn scattered data into sharp, AI-powered decisions—faster.",
+      description: "Turn scattered data into sharp, AI-powered decisions-faster.",
       items: [
         { icon: Zap, title: "Build dashboards that forecast, not just report" },
         { icon: Zap, title: "Use machine learning to find hidden patterns" },
@@ -180,7 +180,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "mulesoft",
-      description: "Connect, sync, and visualize like a pro—MuleSoft moves your data and Tableau shows what matters.",
+      description: "Connect, sync, and visualize like a pro-MuleSoft moves your data and Tableau shows what matters.",
       items: [
         { icon: Database, title: "MuleSoft connects all your systems to deliver AI-ready, unified data" },
         { icon: Database, title: "Tableau visualizes that data with live, decision-ready dashboards" },
@@ -206,35 +206,7 @@ export default function MarketingAutomation() {
   ];
 
   // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "5 Ways AI Supercharges Salesforce Workflows",
-      subtitle: "Why automation and insight beat intuition—every single time.",
-      author: "Salesforce Strategy Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "salesforce-ai-workflows"
-    },
-    {
-      title: "Moving to Salesforce AI: Migration Playbook for Enterprise",
-      subtitle: "How to migrate without the headaches, keep your data, and boost results fast.",
-      author: "Migration Specialist",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "salesforce-ai-migration-playbook"
-    },
-    {
-      title: "Campaign Reporting in Salesforce: What’s Worth Tracking?",
-      subtitle: "Tips on turning Salesforce analytics into winning marketing moves.",
-      author: "Lead Analyst",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "salesforce-reporting"
-    },
-  ];
+
 
   // Case Study Tabs (Dummy for carousel)
   const caseStudyTabs: TabItem[] = [
@@ -260,7 +232,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Will you train our teams on Agentforce and AI tools?",
-      a: "Yes. We upskill your team to confidently run AI-powered systems—day one and beyond.",
+      a: "Yes. We upskill your team to confidently run AI-powered systems-day one and beyond.",
     },
   ];
 
@@ -275,7 +247,7 @@ export default function MarketingAutomation() {
           heading="Salesforce AI That Predicts, Learns, and Closes Without Breaking a Sweat"
           subtext="AI-powered Salesforce that works as hard as your team & never needs coffee."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Menu/Salesforce%20AI.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Salesforce%20AI.webp"
          
         />
 
@@ -298,13 +270,13 @@ export default function MarketingAutomation() {
           heading="See What Smart Salesforce AI Looks Like in Action"
           body=" Real growth stories we’ve made possible with Salesforce AI. "
           subTabs={[]} // No tabs for this blog section
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Trusted by Brands That Move Fast with Salesforce AI"
-          subtext="From startups to global players—we help them scale smarter."
+          subtext="From startups to global players-we help them scale smarter."
          
         />
 
@@ -324,6 +296,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         {/* Call to Action */}
@@ -331,7 +304,7 @@ export default function MarketingAutomation() {
           heading="Let's Build Your AI-Powered Salesforce Engine"
           subtext="From lead to close, AI makes every step faster, sharper, and more human"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

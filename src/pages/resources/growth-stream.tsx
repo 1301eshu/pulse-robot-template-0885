@@ -8,7 +8,7 @@ import RecentResourcesSection from "@/components/ui/component_growth_stream";
 import { SITE_CTA } from "@/components/SITE_CTAs";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import { Calendar } from "lucide-react";
-
+import { API_BASE_URL } from '../../../apiconfig';
 interface ResourceItem {
   id: number;
   title: string;
@@ -35,7 +35,7 @@ const ResourcesIndex = () => {
     const fetchFeatured = async () => {
       try {
         const res = await fetch(
-          "https://growthnatives.com/wp-json/wp/v2/growth-stream?per_page=1&_embed"
+        `${API_BASE_URL}/wp-json/wp/v2/growth-stream?per_page=1&_embed`
         );
         const data = await res.json();
 
@@ -81,13 +81,13 @@ const ResourcesIndex = () => {
      <main className="pt-0">
   {/* DIY Hero Featured Section */}
   <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-    {/* Left copy — dynamic from API */}
+    {/* Left copy - dynamic from API */}
     <div>
       {!loading && featured && (
         <>
-          <h2 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
+          <h1 className="text-4xl font-bold text-blue-600 mb-6 leading-tight">
             {featured.title}
-          </h2>
+          </h1>
           <p className="text-lg text-gray-700 mb-4">
             <span dangerouslySetInnerHTML={{ __html: featured.subtitle }} />
           </p>
@@ -97,12 +97,12 @@ const ResourcesIndex = () => {
       <SITE_CTA
         variant="secondary"
         text="Talk to an Expert"
-        href="/contact"
+        href="/contact-us"
         size="md"
       />
     </div>
 
-    {/* Right card — dynamic featured ebook */}
+    {/* Right card - dynamic featured ebook */}
     {!loading && featured && (
       <Link to={`/growth-stream/${featured.slug}`} className="block">
         <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
@@ -140,10 +140,10 @@ const ResourcesIndex = () => {
 
   {/* CTA */}
   <ContactCta
-    heading="Let’s Make Your Salesforce Smarter (And Less Annoying)"
-    subtext="Let’s plug in the tech, the talent, and the timing."
+    heading="Let's Build Your Next Growth Chapter"
+          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
     buttonLabel="Talk to an Expert"
-    buttonLink="/contact"
+    buttonLink="/contact-us"
   />
 </main>
 

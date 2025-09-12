@@ -102,7 +102,7 @@ export default function MarketingAutomation() {
       description: "From monitoring to messaging, we manage reviews where it matters most and turn them into trust signals.",
       items: [
         { icon: ShieldCheck, title: "Own the narrative where buyers do the talking" },
-        { icon: ShieldCheck, title: "Stars, sentiment, strategy—synced and sorted" },
+        { icon: ShieldCheck, title: "Stars, sentiment, strategy-synced and sorted" },
         { icon: ShieldCheck, title: "Your reviews, our playbook for trust and traction" }
       ]
     }
@@ -158,15 +158,15 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "What platforms do you monitor for my brand’s reputation?",
-      a: "We keep tabs on all the hotspots — Google My Business, socials, Trustpilot, among others, plus forums and blogs where your brand’s buzzing."
+      a: "We keep tabs on all the hotspots - Google My Business, socials, Trustpilot, among others, plus forums and blogs where your brand’s buzzing."
     },
     {
       q: "How do you handle negative reviews or comments?",
-      a: "We tackle negativity head-on—swift, smart, and sincere—turning grumbles into cheers, one reply at a time."
+      a: "We tackle negativity head-on-swift, smart, and sincere-turning grumbles into cheers, one reply at a time."
     },
     {
       q: "How do you monitor brand mentions across the internet?",
-      a: "Our AI-powered radar never sleeps—scanning socials, reviews, blogs, forums, and news to catch every mention, 24/7."
+      a: "Our AI-powered radar never sleeps-scanning socials, reviews, blogs, forums, and news to catch every mention, 24/7."
     },
     {
       q: "How do you handle fake or malicious reviews?",
@@ -215,7 +215,7 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Names That Trust Us With Their Online Reputation"
-          subtext="From rising startups to global players—we guard their digital image."
+          subtext="From rising startups to global players-we guard their digital image."
          
         />
 
@@ -241,7 +241,7 @@ export default function MarketingAutomation() {
           heading="Let’s Grow Your Online Reputation With AI"
           subtext="Get trusted, stay positive, and shine online."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

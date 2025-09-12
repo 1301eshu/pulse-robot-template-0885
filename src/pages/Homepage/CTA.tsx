@@ -23,12 +23,12 @@ export default function CTA() {
               </span>
             </h2>
             <p className="text-gray-700 text-lg mb-8">
-              Learn how you can take your marketing up a notch with our GrowthPod methodology—all in one AI-powered platform.
+              Learn how you can take your marketing up a notch with our GrowthPod methodology-all in one AI-powered platform.
             </p>
             <SITE_CTA 
               variant="primary" 
               text="Get a Complimentary Consultation!" 
-              href="/contact"
+              href="/contact-us"
               size="lg"
             />
           </div>

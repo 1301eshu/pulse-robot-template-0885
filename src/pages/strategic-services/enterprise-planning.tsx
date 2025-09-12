@@ -125,36 +125,6 @@ const features: FeatureContent[] = [
   
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -164,11 +134,11 @@ const features: FeatureContent[] = [
     },
     {
       q: "What makes your planning process different? ",
-      a: " We combine expert facilitation, purpose-built AI, and real-time collaboration tools to help you go from chaos to coordinated execution in weeks—not quarters.",
+      a: " We combine expert facilitation, purpose-built AI, and real-time collaboration tools to help you go from chaos to coordinated execution in weeks-not quarters.",
     },
     {
       q: "What happens after planning?  ",
-      a: " Your Pod doesn’t disappear. We stay on to ensure execution follows strategy—translating plans into sprints, dashboards, and real impact. ",
+      a: " Your Pod doesn’t disappear. We stay on to ensure execution follows strategy-translating plans into sprints, dashboards, and real impact. ",
     },
     {
       q: " Do you only work with tech companies? ",
@@ -176,13 +146,13 @@ const features: FeatureContent[] = [
     },
     {
       q: " How does AI actually help? ",
-      a: " It streamlines analysis, identifies gaps, and helps prioritize better—faster. We blend AI + human insight.",
+      a: " It streamlines analysis, identifies gaps, and helps prioritize better-faster. We blend AI + human insight.",
     },
   ];
 
   return (
     <div className="bg-white text-gray-900">
-      <DynamicSEO page="serviceHubspot" />
+      <DynamicSEO page="enterprisePlanning" />
       <Header />
       <SmartBreadcrumb />
       <main className="">
@@ -198,7 +168,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
          <EditableStatSection
  
-  title="You’re in good company—with brands planning smarter, executing faster. "
+  title="You’re in good company-with brands planning smarter, executing faster. "
   stats={[
     { label: "Strategic planning initiatives launched across verticals  ", value: "90+" },
     { label: "Average acceleration in GTM execution velocity  ", value: "35%" },
@@ -209,7 +179,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title=" What We Do with Strategic Organizational Planning "
-          subtitle="We help growth-stage and enterprise teams' action smarter plans—by turning goals into AI-prioritized sprints, executed by a cross-functional pod. "
+          subtitle="We help growth-stage and enterprise teams' action smarter plans-by turning goals into AI-prioritized sprints, executed by a cross-functional pod. "
           tabs={tabs}
           features={features} 
         />
@@ -219,7 +189,7 @@ const features: FeatureContent[] = [
           heading="See What AI-Powered Strategic Organizational Planning Looks Like in Action  "
           body="A few transformations we’ve helped architect across industries. "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -244,14 +214,15 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="38"
 />
 
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build a Strategic Plan That Knows What’s Next "
-          subtext=" Get the AI insights, strategy frameworks, and execution systems to align teams—and actually hit your targets. "
+          subtext=" Get the AI insights, strategy frameworks, and execution systems to align teams-and actually hit your targets. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

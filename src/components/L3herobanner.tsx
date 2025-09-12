@@ -92,14 +92,14 @@ const ContactWithBg: React.FC<ContactWithBgProps> = ({
       <div className="section-wrapper grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left - Text */}
         <div className="space-y-5">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             {heading}{" "}
             {highlight && (
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 {highlight}
               </span>
             )}
-          </h2>
+          </h1>
           {description && (
             <p className="text-lg text-gray-200 max-w-md">{description}</p>
           )}

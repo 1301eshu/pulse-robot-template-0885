@@ -16,6 +16,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
 import ExploreMoreBlock from "@/components/exploremore";
+import DynamicSEO from "@/components/DynamicSEO";
 
 export default function MarketingAutomation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -88,13 +89,13 @@ export default function MarketingAutomation() {
       items: [
         { icon: Database, title: "Funnel diagnostics: drop-offs, dead zones, dark data" },
         { icon: Database, title: "Asset audit: content gaps, CTA mismatches, broken paths" },
-        { icon: Database, title: "Channel audit: paid, organic, partner—what’s working, what’s noise" },
+        { icon: Database, title: "Channel audit: paid, organic, partner-what’s working, what’s noise" },
       ],
     },
     {
       id: "competitive-intel",
       description:
-        "We train LLMs on your competitors’ strategies, so you get their playbook—minus the guesswork.",
+        "We train LLMs on your competitors’ strategies, so you get their playbook-minus the guesswork.",
       items: [
         { icon: Sparkles, title: "Ad creative and messaging scraped and analyzed" },
         { icon: Sparkles, title: "Frequency, funnel stage, and format breakdowns" },
@@ -113,39 +114,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Case-study style resources (structure preserved)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Case Study 1: From Signals to Strategy",
-      subtitle:
-        "How a mid-market SaaS used our assessment to identify whitespace and re-target high-fit segments.",
-      author: "Team Design+marketing",
-      date: "July 7, 2025",
-      readTime: "5 min read",
-      image: "https://via.placeholder.com/600x400?text=Case+Study+1",
-      slug: "soa-case-study-1",
-    },
-    {
-      title: "Case Study 2: ICP Overhaul, Faster Pivots",
-      subtitle:
-        "Behavioral clustering revealed a higher-fit ICP and cut wasted spend by 28%.",
-      author: "Team Design+marketing",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://via.placeholder.com/600x400?text=Case+Study+2",
-      slug: "soa-case-study-2",
-    },
-    {
-      title: "Case Study 3: GTM Readiness to Revenue",
-      subtitle:
-        "Fixing dark data and CTA mismatches lifted SQO rate by 31% in 60 days.",
-      author: "Team Design+marketing",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://via.placeholder.com/600x400?text=Case+Study+3",
-      slug: "soa-case-study-3",
-    },
-  ];
 
   // FAQs from the doc
   const faqs = [
@@ -169,6 +137,7 @@ export default function MarketingAutomation() {
 
   return (
     <div className="bg-white text-gray-900">
+      <DynamicSEO page="strategicservicesstrategicopportunityassessment"/>
       <Header />
       <SmartBreadcrumb />
       <main className="">
@@ -183,7 +152,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers / Statistics Section */}
         <EditableStatSection
-          title="You’re in sharp company—leaders use our assessments to fuel precision-driven growth strategies."
+          title="You’re in sharp company-leaders use our assessments to fuel precision-driven growth strategies."
           stats={[
             { label: "Strategic assessments delivered across industries", value: "200+" },
             { label: "Clients identified at least one critical funnel blindspot", value: "70%+" },
@@ -204,7 +173,7 @@ export default function MarketingAutomation() {
           heading="See How Strategic Opportunity Assessment Unlocked Growth"
           body="From GTM pivots to ICP overhauls, our assessment brought fresh growth for these brands."
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -229,6 +198,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="38"
 />
 
         {/* CTA */}
@@ -236,7 +206,7 @@ export default function MarketingAutomation() {
           heading="Let’s Chart Your Next Strategic Move"
           subtext="Get a map of where to go and how to grow when you get there."
           buttonLabel="Talk to Us"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

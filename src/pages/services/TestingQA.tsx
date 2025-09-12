@@ -75,7 +75,7 @@ export default function MarketingAutomation() {
   const features: FeatureContent[] = [
     {
       id: "manual-testing",
-      description: "End-to-end testing that digs deeper. AI-driven QA built to catch what users—and basic tools—miss.",
+      description: "End-to-end testing that digs deeper. AI-driven QA built to catch what users-and basic tools-miss.",
       items: [
         { icon: Zap, title: "We test what matters, not just what’s visible" },
         { icon: Zap, title: "From login to launch, we test it all, AI-powered" },
@@ -93,7 +93,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "automated-testing",
-      description: "Let AI handle the heavy lifting—automated tests that keep up with every push, pull, and deploy.",
+      description: "Let AI handle the heavy lifting-automated tests that keep up with every push, pull, and deploy.",
       items: [
         { icon: Database, title: "Faster test cycles, minus the manual hassle" },
         { icon: Database, title: "Continuous testing that fits your CI/CD flow" },
@@ -161,7 +161,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "What tools do you use for automated testing?",
-      a: "We roll with the best—Selenium, Appium, Postman, JMeter and let AI jump in to spot what humans (and deadlines) might miss.",
+      a: "We roll with the best-Selenium, Appium, Postman, JMeter and let AI jump in to spot what humans (and deadlines) might miss.",
     },
     {
       q: "What if my app changes during testing?",
@@ -186,7 +186,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—where bug-free apps and flawless user journeys come standard."
+          title="You’re in good company-where bug-free apps and flawless user journeys come standard."
           stats={stats}
         />
 
@@ -239,7 +239,7 @@ export default function MarketingAutomation() {
           heading="Let’s Upgrade Your Brand with AI-Powered Fail-Proof Testing"
           subtext="Minimize risks, accelerate delivery, and launch flawless, bug-free products."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

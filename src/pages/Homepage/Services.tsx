@@ -15,7 +15,7 @@ const services = [
   },
   {
     title: 'Wholesome Salesforce Solutions ',
-    description: 'From Sales Cloud to Service + Marketing—intelligence built in. ',
+    description: 'From Sales Cloud to Service + Marketing-intelligence built in. ',
     image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/third.webp'
   },
   {
@@ -31,7 +31,7 @@ const services = [
   {
     title: 'Analytics for Better Decisions ',
     description: 'Real-time dashboards, predictive insights, and no guesswork. ',
-    image: 'https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Services/Group_7527_dxacmp.webp'
+    image: 'https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Homepage/services/Analytics%20for%20Better%20Decisions.webp'
   },
   {
     title: 'Creative Services with Intelligence Inside ',
@@ -108,7 +108,7 @@ export default function ServicesSection() {
             Full-Stack Firepower. AI-Native Execution for Full-Funnel Growth 
           </h2>
           <p className="text-gray-600 mt-4 text-base md:text-lg fade-in">
-            Our work spans strategy, code, creative, and AI-fueled ops—so your growth isn't just good-looking, it's scalable. 
+            Our work spans strategy, code, creative, and AI-fueled ops-so your growth isn't just good-looking, it's scalable. 
           </p>
         </div>
 

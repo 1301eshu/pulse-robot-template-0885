@@ -9,6 +9,7 @@ import ExploreMoreSection, { ExploreItem } from "@/components/ui/component_9";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/componentcase";
 import ContactCta from "@/components/ui/component_6";
 import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const ResourcesIndex = () => {
   const [activeTab, setActiveTab] = useState('articles');
@@ -18,6 +19,7 @@ const ResourcesIndex = () => {
       tag: "Case Studies",
       title: "Improving Forecasting Accuracy by 69% with Salesforce Billing Implementation for a Leading Hardware Company",
       readTime: "1 min read",
+      author:"Geeta Dutt",
       category: "Growth Natives Case Study",
       thumbnail: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/image-1.webp",
       slug: "69-improvement-in-forecasting-accuracy-with-salesforce-billing-implementation",
@@ -27,6 +29,7 @@ const ResourcesIndex = () => {
       tag: "Case Studies",
       title: "Reducing Administrative Burden by 75% in Real Estate Operations Through Territory Management",
       readTime: "1 min read",
+      author:"Sakshi Arora",
       category: "Growth Natives Case Study",
       slug: "75-reduction-in-admin-activity-time-with-salesforce-territory-management",
       type: 'case-studies'
@@ -35,6 +38,7 @@ const ResourcesIndex = () => {
       tag: "Case Studies",
       title: "Boosting Operational Efficiency by 75% with Salesforce CPQ Integration for a Leading Brain Technology Firm",
       readTime: "1 min read",
+       author:"Geeta Dutt",
       category: "Growth Natives Case Study",
       slug: "75-reduction-in-cycle-time-with-salesforce-cpq-implementation",
       type: 'case-studies'
@@ -43,6 +47,7 @@ const ResourcesIndex = () => {
       tag: "Case Studies",
       title: "Unlocking Organic Growth: How Escalon Boosted Visibility with Integrated SEO Strategies" ,
       readTime: "1 min read",
+       author:"Vishal Mehta",
       category: "Growth Natives Case Study",
       slug: "unlocking-organic-growth-how-escalon-boosted-visibility-with-integrated-seo-strategies",
       type: 'case-studies'
@@ -51,12 +56,13 @@ const ResourcesIndex = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+       <DynamicSEO page='casestudies'/>
       <Header />
        <SmartBreadcrumb />
 
       <main className="pt-0">
         {/* Explore More Section */}
-        <ExploreMoreSection heading="Case Studies" items={exploreMoreItems} />
+        <ExploreMoreSection heading="Case Studies" items={exploreMoreItems}  useH1={true} />
 
         {/* Recent Blogs - Center heading only for this page */}
         <div className="[&>h2]:text-center">
@@ -65,10 +71,10 @@ const ResourcesIndex = () => {
 
         {/* Contact CTA */}
         <ContactCta
-          heading="Join Our Newsletter"
-          subtext="Talk to an expert"
+           heading="Let's Build Your Next Growth Chapter"
+          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

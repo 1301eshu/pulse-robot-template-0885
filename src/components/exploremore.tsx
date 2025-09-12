@@ -15,13 +15,21 @@ type Props = {
   /** Fallback label if no WP tag is present */
   tagLabel?: string;
   className?: string;
+  resourceType?: string;
   /** Must be 'blogs' or 'case-studies' to satisfy the union */
   contentType?: ExploreItemType["type"];
 };
 
 /** Build the WP endpoint inside the component */
-const buildEndpoint = (perPage: number) =>
-  `${API_BASE_URL}/wp-json/wp/v2/posts?per_page=${perPage}&_embed`;
+const buildEndpoint = (
+  perPage: number,
+  resourceType?: string,
+  resourcePostType: string = 'posts'
+): string => {
+  const resourceTypeParam = resourceType ? `&categories=${resourceType}` : '';
+  return `${API_BASE_URL}/wp-json/wp/v2/${resourcePostType}?status=publish&per_page=${perPage}&_embed${resourceTypeParam}`;
+};
+
 
 export default function ExploreMoreBlock({
   heading,
@@ -30,13 +38,18 @@ export default function ExploreMoreBlock({
   firstN = 4,
   tagLabel = "Blogs",
   className,
+  resourceType,
   contentType = "blogs",
 }: Props) {
   const [items, setItems] = useState<ExploreItemType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const endpoint = useMemo(() => buildEndpoint(perPage), [perPage]);
+  // const endpoint = useMemo(() => buildEndpoint(perPage), [perPage]);
+  const endpoint = useMemo(() => {
+    const resourcePostType = 'posts';
+    return buildEndpoint(perPage, resourceType, resourcePostType);
+  }, [perPage, resourceType, contentType]);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,9 +62,9 @@ export default function ExploreMoreBlock({
         if (!res.ok) throw new Error(`WP fetch failed: ${res.status}`);
         const data = await res.json();
 
-        const mapped: ExploreItemType[] = (Array.isArray(data) ? data : [])
-          .slice(0, firstN)
-          .map((post: any) => mapWpPostToExploreItem(post, tagLabel, contentType));
+const mapped: ExploreItemType[] = (Array.isArray(data) ? data : [])
+  .map((post: any) => mapWpPostToExploreItem(post, tagLabel, contentType));
+
 
         if (!cancelled) setItems(mapped);
       } catch (e: any) {
@@ -84,6 +97,7 @@ function mapWpPostToExploreItem(
   contentType: ExploreItemType["type"] // "blogs" | "case-studies"
 ): ExploreItemType {
   const title: string = post?.title?.rendered ?? "Untitled";
+  const author: string = post?.author_name ?? "Unknown Author";
 
   // Prefer full content for estimating read time; fall back to excerpt
   const htmlForReadTime: string =
@@ -113,6 +127,7 @@ function mapWpPostToExploreItem(
     tag,
     title,
     readTime,
+    author,
     category,
     thumbnail,
     slug,

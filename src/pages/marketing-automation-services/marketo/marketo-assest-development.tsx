@@ -112,7 +112,7 @@ const L3Template = () => {
               {
                 title: "Custom Marketo Asset Development for Demo",
                 desc:
-                  "Create tailored content assets that align with your marketing strategy—ebooks, whitepapers, webinars, and more.",
+                  "Create tailored content assets that align with your marketing strategy-ebooks, whitepapers, webinars, and more.",
                 bullets: [
                   "Develop content assets such as ebooks, webinars, and whitepapers",
                   "Create custom lead‑generation forms to capture valuable information",
@@ -171,6 +171,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
+          resourceType="40"
         />
       </div>
 

@@ -11,16 +11,18 @@ export default function faqs() {
   const faqs = [
     {
       q: "What Services Does Growth Natives Offer?",
-      a: `Growth Natives offers a diverse range of services to meet your business needs:
-
-• Strategic Services: Crafting strategic solutions tailored to your business goals.
-• Development Services: Building robust and scalable digital solutions.
-• Growth Marketing: Executing data-driven marketing strategies for business expansion.
-• Marketing Analytics: Harnessing the power of data for insightful marketing decisions.
-• Salesforce: Providing expertise in Salesforce solutions for streamlined operations.
-• Jira Services: Optimizing project management through Jira solutions.
-• Design Services: Creating visually appealing and user-centric designs.
-• Marketing Automation: Implementing automated marketing processes for efficiency and effectiveness.`,
+      a: (
+        <ul className="list-disc list-outside pl-6 space-y-3 marker:text-gray-400">
+          <li>Strategic Services: Crafting strategic solutions tailored to your business goals.</li>
+          <li>Development Services: Building robust and scalable digital solutions.</li>
+          <li>Growth Marketing: Executing data-driven marketing strategies for business expansion.</li>
+          <li>Marketing Analytics: Harnessing the power of data for insightful marketing decisions.</li>
+          <li>Salesforce: Providing expertise in Salesforce solutions for streamlined operations.</li>
+          <li>Jira Services: Optimizing project management through Jira solutions.</li>
+          <li>Design Services: Creating visually appealing and user-centric designs.</li>
+          <li>Marketing Automation: Implementing automated marketing processes for efficiency and effectiveness.</li>
+        </ul>
+      )
     },
     {
       q: "Can Growth Natives Tailor its Services to Specific Industry Requirements?",

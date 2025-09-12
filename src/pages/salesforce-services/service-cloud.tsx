@@ -100,7 +100,7 @@ export default function ServiceCloud() {
     },
     {
       id: "integration",
-      description: "Built for speed and scale—real-time sync and routing across your Salesforce stack.",
+      description: "Built for speed and scale-real-time sync and routing across your Salesforce stack.",
       items: [
         { icon: Database, title: "Real-time sync across platforms and tools" },
         { icon: Database, title: "Automated routing to boost response times" },
@@ -135,41 +135,12 @@ export default function ServiceCloud() {
   ];
 
   // Recent Resources Section
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Smarter Case Resolution with AI",
-      subtitle: "How AI is transforming support desk efficiency, reducing time-to-close, and boosting satisfaction.",
-      author: "AI Solutions Team",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "salesforce-service-cloud-ai"
-    },
-    {
-      title: "Building Loyalty Beyond Ticket Resolution",
-      subtitle: "The shift from closing tickets to creating lasting customer loyalty using Service Cloud.",
-      author: "CX Strategists",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "service-cloud-loyalty"
-    },
-    {
-      title: "How to Audit Your Service Workflows with AI",
-      subtitle: "A practical guide to spotting and fixing inefficiencies in your Service Cloud setup.",
-      author: "Ops Audit Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "audit-service-cloud-ai"
-    },
-  ];
 
   // FAQ List
   const faqs = [
     {
       q: "Can Service Cloud improve both agent performance and customer experience?",
-      a: "Yes. AI-assisted tools boost productivity while helping agents personalize every interaction—no more copy-paste replies.",
+      a: "Yes. AI-assisted tools boost productivity while helping agents personalize every interaction-no more copy-paste replies.",
     },
     {
       q: "What’s included in your Salesforce Service Cloud audit?",
@@ -196,9 +167,9 @@ export default function ServiceCloud() {
         {/* HERO Section */}
         <HeroSection
           heading="AI-Powered Salesforce Service Cloud That Solves Customer Issues Faster and Smarter"
-          subtext="Build support systems that think like your best agent—and improve with every interaction."
+          subtext="Build support systems that think like your best agent-and improve with every interaction."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Service%20Cloud.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Salesfoce%20Service%20L2%20Banner%20/Service%20Cloud.webp"
        
         />
 
@@ -210,7 +181,7 @@ export default function ServiceCloud() {
 
         {/* What We Do Section */}
         <EnterpriseCapabilities
-          title="AI Support That Thinks Like Your Best Agent—Only Faster"
+          title="AI Support That Thinks Like Your Best Agent-Only Faster"
           subtitle="We tune, train, and tailor your Salesforce Service Cloud with AI smarts for real results."
           tabs={tabs}
           features={features}
@@ -221,7 +192,7 @@ export default function ServiceCloud() {
           heading=" See What Smart Salesforce Service Cloud Looks Like in Action"
           body="A few real wins we've helped brands achieve with Salesforce Service Cloud.  "
           subTabs={[]}
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -247,14 +218,15 @@ export default function ServiceCloud() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="242"
 />
 
         {/* Call to Action */}
         <ContactCta
           heading="Transform Your Customer Support With AI-Powered Salesforce Service Cloud"
-          subtext="Let’s map your Service Cloud transformation—with automation, insights, and AI built in."
+          subtext="Let’s map your Service Cloud transformation-with automation, insights, and AI built in."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

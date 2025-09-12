@@ -87,11 +87,11 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
    
-    description: "We map how your team actually works—and design flows that do the work for them. ",
+    description: "We map how your team actually works-and design flows that do the work for them. ",
     items: [
       { icon: Zap, title: "Smart branching based on real usage patterns   " },
       { icon: Zap, title: "Dynamic workflows that evolve with team inputs   " },
-      { icon: Zap, title: "No more one-size-fits-all flows—just logic that adapts   " },
+      { icon: Zap, title: "No more one-size-fits-all flows-just logic that adapts   " },
     ],
   },
   {
@@ -101,7 +101,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: BarChart2, title: "AI-assisted rule generation for cleaner logic and fewer collisions     " },
       { icon: BarChart2, title: "Eliminate ticket ping-pong with intelligent field updates, alerts, escalations   " },
-      { icon: BarChart2, title: "One rule to rule them all—and scale across your Jira instance   " },
+      { icon: BarChart2, title: "One rule to rule them all-and scale across your Jira instance   " },
     ],
   },
   {
@@ -117,7 +117,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "We automate your ticket journey—from creation to close—with zero dead ends. ",
+    description: "We automate your ticket journey-from creation to close-with zero dead ends. ",
     items: [
       { icon: ShieldCheck, title: "Smart triggers for stale tickets, stuck issues, or loopbacks     " },
       { icon: ShieldCheck, title: "Automate reminders, transitions, and handoffs without gaps    " },
@@ -127,7 +127,7 @@ const features: FeatureContent[] = [
    {
     id: "development",
    
-    description: "We don’t just build it—we help you improve it with AI-powered visibility.   ",
+    description: "We don’t just build it-we help you improve it with AI-powered visibility.   ",
     items: [
       { icon: ShieldCheck, title: "Dashboards that highlight friction in real time   " },
       { icon: ShieldCheck, title: "AI flags workflow collisions, redundant rules, or logic decay   " },
@@ -171,7 +171,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "  What’s included in an automation audit? ",
-      a: " Rule diagnostics, workflow logic review, performance mapping—and some AI-powered opportunities you’re not using yet.  ",
+      a: " Rule diagnostics, workflow logic review, performance mapping-and some AI-powered opportunities you’re not using yet.  ",
     },
     {
       q: "Can you help us fix broken or bloated workflows?  ",
@@ -197,7 +197,7 @@ const features: FeatureContent[] = [
         <HeroSection
           heading="AI-Powered Jira Automation That Works While You Don’t "
          
-          subtext=" From smart triggers to full-blown workflows—we make Jira flow like it’s reading your mind. "
+          subtext=" From smart triggers to full-blown workflows-we make Jira flow like it’s reading your mind. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/L-2%20Banner%20Images/Jira%20Automation%20&%20Workflow.webp"
         />
@@ -217,7 +217,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="  What We Do with Jira Automation & Workflow Optimization  "
-          subtitle="We build systems that think before your team needs to act—using AI to automate, streamline, and supercharge every workflow. "
+          subtitle="We build systems that think before your team needs to act-using AI to automate, streamline, and supercharge every workflow. "
           tabs={tabs}
           features={features} 
         />
@@ -232,14 +232,14 @@ const features: FeatureContent[] = [
 
         <LogoScroller
         heading=" Automation You Can Trust. AI You Can Count On. "
-        subtext=" These brands optimized Jira—and haven’t looked back."
+        subtext=" These brands optimized Jira-and haven’t looked back."
         
       />
 
         {/* Testimonials */}
         <Testimonials
           title=" Real Stories, Real Jira Impact  "
-          description=" We don’t just automate—we accelerate. "
+          description=" We don’t just automate-we accelerate. "
         />
 
         {/* FAQs */}
@@ -258,7 +258,7 @@ const features: FeatureContent[] = [
           heading="Let’s Build a Smarter, Self-Driving Jira  "
           subtext=" AI-infused workflows. Effortless operations. It’s time to let Jira do the heavy lifting.  "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

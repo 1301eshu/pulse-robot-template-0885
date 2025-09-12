@@ -99,7 +99,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "integration",
-      description: "Built for speed and scale—real-time sync and routing across your Salesforce stack.",
+      description: "Built for speed and scale-real-time sync and routing across your Salesforce stack.",
       items: [
         { icon: Database, title: "Real-time sync across platforms and tools" },
         { icon: Database, title: "Automated routing to boost response times" },
@@ -168,7 +168,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "Can Service Cloud improve both agent performance and customer experience?",
-      a: "Yes. AI-assisted tools boost productivity while helping agents personalize every interaction—no more copy-paste replies.",
+      a: "Yes. AI-assisted tools boost productivity while helping agents personalize every interaction-no more copy-paste replies.",
     },
     {
       q: "What’s included in your Salesforce Service Cloud audit?",
@@ -195,7 +195,7 @@ export default function MarketingAutomation() {
         {/* HERO Section */}
         <HeroSection
           heading="AI-Powered Salesforce Service Cloud That Solves Customer Issues Faster and Smarter"
-          subtext="Build support systems that think like your best agent—and improve with every interaction."
+          subtext="Build support systems that think like your best agent-and improve with every interaction."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Salesforce/Hero_Section-L2-Banners/Service%20Cloud.webp"
           buttonText="Audit Me!"
@@ -210,7 +210,7 @@ export default function MarketingAutomation() {
 
         {/* What We Do Section */}
         <EnterpriseCapabilities
-          title="AI Support That Thinks Like Your Best Agent—Only Faster"
+          title="AI Support That Thinks Like Your Best Agent-Only Faster"
           subtitle="We tune, train, and tailor your Salesforce Service Cloud with AI smarts for real results."
           tabs={tabs}
           features={features}
@@ -251,9 +251,9 @@ export default function MarketingAutomation() {
         {/* Call to Action */}
         <ContactCta
           heading="Transform Your Customer Support With AI-Powered Salesforce Service Cloud"
-          subtext="Let’s map your Service Cloud transformation—with automation, insights, and AI built in."
+          subtext="Let’s map your Service Cloud transformation-with automation, insights, and AI built in."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import HubSpotForm from '@/components/HubSpotForm';
 import { Helmet } from "react-helmet-async";
 import { API_BASE_URL } from '../../../apiconfig';
+import { handleApiDomainReplacement } from '@/lib/replaceApiDomain';
 
 type WPPost = {
   id: number;
@@ -22,6 +23,10 @@ type WPPost = {
     heroImage?: string;
     pdf_url?: string;
   };
+  downloadable_assets_file?: {
+    url?: string;
+    title?: string;
+  };
 };
 
 const DownloadablePost = () => {
@@ -32,11 +37,12 @@ const DownloadablePost = () => {
 
   // Fetch post data
   useEffect(() => {
+     handleApiDomainReplacement();
     if (!slug) return;
     const fetchPost = async () => {
       try {
         const res = await fetch(
-          `https://growthnatives.com/wp-json/wp/v2/downloadable-assets?slug=${slug}&_embed`
+          `${API_BASE_URL}/wp-json/wp/v2/downloadable-assets?slug=${slug}&_embed`
         );
         const data: WPPost[] = await res.json();
         setPost(data.length ? data[0] : null);
@@ -86,16 +92,24 @@ const DownloadablePost = () => {
                     />
                   );
                   break;
-                case "link":
-                  elements.push(
-                    <link
-                      key={elements.length}
-                      {...Object.fromEntries(
-                        [...el.attributes].map((attr) => [attr.name, attr.value])
-                      )}
-                    />
-                  );
+                case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
                   break;
+                }
                 default:
                   break;
               }
@@ -136,18 +150,19 @@ const DownloadablePost = () => {
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug"
                 dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               />
-              <div
-                className="text-gray-700 max-w-lg"
-                dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-              />
+
             </div>
 
             {/* Form Column */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <HubSpotForm
                 portalId="7118070"
-                formId="936a6094-5911-42b5-af43-59918fd008a0"
+                formId="cb77c399-402e-4385-a217-68ebf1d83900"
                 region="na1"
+                assetFieldName="downloadable_assets_url"
+                assetFieldNameLabel="downloadable_assets_name"
+                assetLabel={post.downloadable_assets_file?.title || ""}
+                assetURL={post.downloadable_assets_file?.url || ""}
               />
             </div>
           </div>
@@ -168,21 +183,16 @@ const DownloadablePost = () => {
             <p className="text-gray-600 mb-4 text-sm sm:text-base max-w-2xl mx-auto">
               Download the full checklist and start optimizing your digital experiences today.
             </p>
-            {post.acf?.pdf_url ? (
               <a
-                href={post.acf.pdf_url}
+                href="/contact-us"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
-                  Download Now
+                  Get Started Today
                 </Button>
               </a>
-            ) : (
-              <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
-                Download Now
-              </Button>
-            )}
+
           </div>
         </div>
       </main>

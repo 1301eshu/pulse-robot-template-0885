@@ -137,7 +137,7 @@ export default function MarketingAutomation() {
   const recentResources: ResourceItem[] = [
     {
       title: "5 Ways AI Supercharges Eloqua Workflows",
-      subtitle: "Why automation and insight beat intuition—every single time.",
+      subtitle: "Why automation and insight beat intuition-every single time.",
       author: "Eloqua Strategy Team",
       date: "July 2025",
       readTime: "6 min read",
@@ -180,7 +180,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How long does Eloqua implementation take?",
-      a: "Most brands go live in under 4 weeks—strategy, setup, testing, and a dash of AI included.",
+      a: "Most brands go live in under 4 weeks-strategy, setup, testing, and a dash of AI included.",
     },
     {
       q: "What if our Eloqua setup’s already live?",
@@ -212,7 +212,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good crowd—where top brands scale with Eloqua"
+          title="You’re in good crowd-where top brands scale with Eloqua"
           stats={stats}
         />
 
@@ -251,7 +251,7 @@ export default function MarketingAutomation() {
         {/* More Resources Section */}
         <RecentResourcesSection
           heading="More From Our Content Repertoire"
-          body="Stay sharp on all things Eloqua—tips, tricks, and AI takes served fresh."
+          body="Stay sharp on all things Eloqua-tips, tricks, and AI takes served fresh."
           subTabs={[]}
           resources={recentResources}
         />
@@ -261,7 +261,7 @@ export default function MarketingAutomation() {
           heading="Launch AI-Baked Eloqua Like It’s Built for Today"
           subtext="Seamless strategies, sharp insights, and AI magic under the hood."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

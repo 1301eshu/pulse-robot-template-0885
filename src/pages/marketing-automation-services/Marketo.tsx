@@ -28,7 +28,7 @@ export default function Marketo() {
       id: "consulting",
       label: "Marketo Consulting",
       icon: BarChart2,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Marketo/Marketo%20Consulting.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketing%20automation%20l1/Marketo/Marketo%20Consulting.webp",
       ctaText: "Read More",
       ctaLink: "/marketing-automation-services/marketo/consulting"
     },
@@ -36,7 +36,7 @@ export default function Marketo() {
       id: "implementation",
       label: "Marketo Implementation",
       icon: Heart,
-      image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Marketing%20Automation/Marketo/Marketo%20Implementation.webp",
+      image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/marketo%20L2/Marketo%20Implementation.webp",
     },
     {
       id: "operations",
@@ -112,7 +112,7 @@ export default function Marketo() {
       items: [
         { icon: ShieldCheck, title: "Run campaigns like clockwork without the manual madness" },
         { icon: ShieldCheck, title: "Keep your data and flows clean and your ops unstoppable" },
-        { icon: ShieldCheck, title: "Reporting, QA, cloning, scaling—we’re the backstage crew making it all sing" },
+        { icon: ShieldCheck, title: "Reporting, QA, cloning, scaling-we’re the backstage crew making it all sing" },
       ],
     },
     {
@@ -120,7 +120,7 @@ export default function Marketo() {
       description: "We build custom integrations that plug into your stack seamlessly, so Marketo fits right into your world and works like it was always meant to.",
       items: [
         { icon: Database, title: "AI-backed integrations that make Marketo feel at home." },
-        { icon: Database, title: "Connect your tools to Marketo—effortlessly." },
+        { icon: Database, title: "Connect your tools to Marketo-effortlessly." },
         { icon: Database, title: "Custom solutions that just work, without drama." },
       ],
     },
@@ -162,7 +162,7 @@ export default function Marketo() {
   const faqs = [
     {
       q: "Do I need a specific plan or subscription to get started with your services?",
-      a: "Nope! We work with any Marketo plan—whether you're keeping it basic or going all in with the advanced stuff.",
+      a: "Nope! We work with any Marketo plan-whether you're keeping it basic or going all in with the advanced stuff.",
     },
     {
       q: "Do I need to change my current Marketo setup to work with your team?",
@@ -208,7 +208,7 @@ export default function Marketo() {
           heading=" See How Marketo Does Its Thing "
           body=" Some brands we helped hit big with Marketo. "
           subTabs={[]}
-           resourceType="40"
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -230,13 +230,14 @@ export default function Marketo() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="40"
 />
 
         <ContactCta
           heading="Let's Boost Your Marketo IQ"
           subtext="Get more bang for your buck with Marketo’s smart tech."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

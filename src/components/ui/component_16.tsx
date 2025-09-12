@@ -14,27 +14,27 @@ export default function InstagramSection() {
     "https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Company/Instagram/1-Instgram-Image.webp";
 
   return (
-    <section className="bg-white text-gray-900 py-16 sm:py-20">
+    <section className="bg-white text-gray-900 pt-16">
       <div className="max-w-7xl mx-auto px-6 space-y-10">
         {/* Heading */}
         <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             The Fun Side of <span className="text-[#1DA1F2]">#GrowingTogether</span>
-          </h1>
+          </h2>
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-700">
-            Sure, we optimize funnels and launch big ideas—but we also film fake drama,
+            Sure, we optimize funnels and launch big ideas-but we also film fake drama,
             roast each other lovingly, and make Fridays feel like festivals.
           </p>
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left copy */}
-          <div className="flex flex-col items-start justify-center h-full gap-4">
+          <div className="flex flex-col items-center lg:items-start justify-center h-full gap-4 text-center lg:text-left">
             <p className="text-xl sm:text-2xl font-bold">
               Follow Us on <span className="italic">Instagram</span>
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               <img
                 src="https://res.cloudinary.com/dar70fhfi/image/upload/v1753429158/Instagram_logo_2022.svg_xoutog.webp"
                 alt="Instagram Logo"
@@ -54,7 +54,7 @@ export default function InstagramSection() {
           </div>
 
           {/* Right: clickable image grid */}
-          <div className="grid grid-cols-2 gap-4 max-w-xl w-full lg:ml-0 justify-self-start">
+          <div className="grid grid-cols-2 gap-4 max-w-xl w-full mx-auto md:justify-self-center lg:mx-0 lg:ml-auto lg:justify-self-end">
             {images.map((src, i) => (
               <a
                 key={i}
@@ -73,7 +73,6 @@ export default function InstagramSection() {
                     if (img.src !== fallback) img.src = fallback;
                   }}
                 />
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </a>
             ))}

@@ -178,7 +178,7 @@ const features: FeatureContent[] = [
   const faqs = [
     {
       q: "We’re already using Pardot. Will you audit what’s working before pitching changes?",
-      a: "Sure, we check your existing setup first—what’s firing, what’s flopping—then layer in what adds real lift. ",
+      a: "Sure, we check your existing setup first-what’s firing, what’s flopping-then layer in what adds real lift. ",
     },
     {
       q: " If we don’t know what’s broken, can you still help?",
@@ -210,7 +210,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in smart company—alongside brands scaling better with Pardot. "
+  title="You’re in smart company-alongside brands scaling better with Pardot. "
   stats={[
     { label: "Happy Pardot Clients  ", value: "25+" },
     { label: "Certified Pardot Nerds ", value: "20+" },
@@ -235,14 +235,14 @@ const features: FeatureContent[] = [
 
          <LogoScroller
         heading=" Brands That Trust Us With Pardot"
-        subtext=" Unicorns, enterprises, and everything in between—Pardot runs with us  "
+        subtext=" Unicorns, enterprises, and everything in between-Pardot runs with us  "
         
       />
 
         {/* Testimonials */}
         <Testimonials
           title="Real Stories, Real AI Impact "
-          description=" Less grunt work, more growth—AI-led, expert-fed. "
+          description=" Less grunt work, more growth-AI-led, expert-fed. "
         />
 
         {/* FAQs */}
@@ -253,7 +253,7 @@ const features: FeatureContent[] = [
           heading="Don’t Let Your Pardot Gather Dust "
           subtext="Give it the TLC it deserves & see the magic unfold!"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -122,7 +122,7 @@ export default function MarketingAutomation() {
       id: "online-presence",
     //  description: "We audit, analyze, and optimize your website, ads, and content performance, then show you how it all connects.",
       items: [
-        { icon: Zap, title: "Centralized, cleaned, structured—ready to analyze " },
+        { icon: Zap, title: "Centralized, cleaned, structured-ready to analyze " },
         { icon: Zap, title: "Scalable architecture, powered by cloud & logic " },
         { icon: Zap, title: "Built to support modern BI and AI workflows " },
       ],
@@ -132,7 +132,7 @@ export default function MarketingAutomation() {
    //   description: "Let AI do the heavy lifting. Predict, personalize, and pivot with precision.",
       items: [
         { icon: BarChart2, title: "Dashboards your team will actually use " },
-        { icon: BarChart2, title: "Drag, drop, drill—insights in a glance " },
+        { icon: BarChart2, title: "Drag, drop, drill-insights in a glance " },
         { icon: BarChart2, title: "Intuitive, interactive, always up to date " },
       ],
     },
@@ -140,7 +140,7 @@ export default function MarketingAutomation() {
       id: "tracking-setup",
    //   description: "Get the foundation right or everything else crumbles. Set up events and parameters to track what drives performance.",
       items: [
-        { icon: Database, title: "Explore your own data—no IT required " },
+        { icon: Database, title: "Explore your own data-no IT required " },
         { icon: Database, title: "Drag-and-drop reports with enterprise-grade accuracy " },
         { icon: Database, title: "Train your teams, not just your tools " },
       ],
@@ -164,54 +164,25 @@ export default function MarketingAutomation() {
    
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Marketing Analytics Playbook: From Clicks to Revenue",
-      subtitle: "Real-world strategies to build marketing analytics that move the needle.",
-      author: "Analytics Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketing-analytics-playbook"
-    },
-    {
-      title: "Custom Attribution Models: The Secret to Scaling",
-      subtitle: "How to align attribution with your true buyer journey.",
-      author: "Growth Strategist",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "custom-attribution"
-    },
-    {
-      title: "Self-Serve Dashboards: Empower Your Teams",
-      subtitle: "Why every marketing team needs dashboards built for action.",
-      author: "Product Lead",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "self-serve-dashboards"
-    },
-  ];
+
 
   // FAQs
   const faqs = [
     {
       q: "Do I need a specific analytics platform to get started?",
-      a: "Nope! We’re completely tool-agnostic and work with whatever stack you’ve got—Google Analytics, Snowflake, Adobe AEP, Mixpanel, you name it. ",
+      a: "Nope! We’re completely tool-agnostic and work with whatever stack you’ve got-Google Analytics, Snowflake, Adobe AEP, Mixpanel, you name it. ",
     },
     {
       q: "What’s included in the free data analytics audit?",
-      a: "A full walkthrough of your current dashboards, tracking setup, and KPIs—plus one AI-powered insight we guarantee you haven’t implemented yet.",
+      a: "A full walkthrough of your current dashboards, tracking setup, and KPIs-plus one AI-powered insight we guarantee you haven’t implemented yet.",
     },
     {
       q: "Can you help with AEP Web SDK migration or GA4 setup? ",
-      a: "Absolutely. We specialize in modern tracking architecture—including GA4 migration, parallel tracking, and seamless AEP Web SDK rollouts.",
+      a: "Absolutely. We specialize in modern tracking architecture-including GA4 migration, parallel tracking, and seamless AEP Web SDK rollouts.",
     },
     {
       q: "Is your analytics solution only for enterprise teams?",
-      a: "Not at all! Our solutions scale beautifully—from lean startups using affordable BI tools to global teams managing complex product analytics.",
+      a: "Not at all! Our solutions scale beautifully-from lean startups using affordable BI tools to global teams managing complex product analytics.",
     },
   ];
 
@@ -239,7 +210,7 @@ export default function MarketingAutomation() {
         {/* Tab Features Section (How We Make Marketing Analytics Work for Results) */}
         <EnterpriseCapabilities
           title="Where Data Meets Performance "
-          subtitle=" Analytics solutions built around 'YOUR’ business—not someone else's. "
+          subtitle=" Analytics solutions built around 'YOUR’ business-not someone else's. "
           tabs={tabs}
           features={features}
         />
@@ -286,7 +257,7 @@ export default function MarketingAutomation() {
           heading="Let’s Turn Your Data Into an AI-Powered Direction  "
           subtext="Book your free audit and unlock one strategic, AI-powered insight you can use immediately. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

@@ -102,7 +102,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "support",
-      description: "Think of us as your post-launch pit crew—fixing issues fast, preventing the rest, and keeping users happy.",
+      description: "Think of us as your post-launch pit crew-fixing issues fast, preventing the rest, and keeping users happy.",
       items: [
         { icon: ShieldCheck, title: "Non-stop security monitoring to keep the bad guys out" },
         { icon: ShieldCheck, title: "Vulnerability reports that catch problems before they catch you" },
@@ -153,7 +153,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "What tech stack do you use?",
-      a: "We’re fluent in Swift, Kotlin, React Native, Flutter—and whatever works best for you.",
+      a: "We’re fluent in Swift, Kotlin, React Native, Flutter-and whatever works best for you.",
     },
     {
       q: "Can you turn my rough idea into a full app?",
@@ -161,7 +161,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "Do you help with app store submissions?",
-      a: "Yep. We handle the whole process—from icons to guidelines to going live.",
+      a: "Yep. We handle the whole process-from icons to guidelines to going live.",
     },
     {
       q: "How do you ensure my app is secure?",
@@ -186,14 +186,14 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in the right place—where mobile innovation drives real growth."
+          title="You’re in the right place-where mobile innovation drives real growth."
           stats={stats}
         />
 
         {/* Tab Features Section (Mobile App Dev Services) */}
         <EnterpriseCapabilities
           title="How We Blend AI into Mobile App Development"
-          subtitle="From native to hybrid, we design mobile experiences that adapt, personalize, and perform—powered by AI."
+          subtitle="From native to hybrid, we design mobile experiences that adapt, personalize, and perform-powered by AI."
           tabs={tabs}
           features={features}
         />
@@ -232,9 +232,9 @@ export default function MarketingAutomation() {
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build Smarter Mobile Apps with the Midas Touch of AI"
-          subtext="Slick design, smooth performance, and user love—baked in."
+          subtext="Slick design, smooth performance, and user love-baked in."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

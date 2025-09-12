@@ -18,7 +18,7 @@ import {
 const valueItems = [
   {
     title: "Smart Workflow Automation",
-    desc: "Triggers, tasks, and touchpoints—handled without lifting a finger.",
+    desc: "Triggers, tasks, and touchpoints-handled without lifting a finger.",
     icon: Settings,
   },
   {
@@ -43,17 +43,17 @@ const valueItems = [
   },
   {
     title: "Auto-Tagging & Enrichment of CRM Data",
-    desc: "Your CRM, finally clean. Auto-tagged, deduped, and enriched—like magic.",
+    desc: "Your CRM, finally clean. Auto-tagged, deduped, and enriched-like magic.",
     icon: Filter,
   },
   {
     title: "Adaptive Campaign Budgets",
-    desc: "Let AI shift your dollars in real time—toward what's working now.",
+    desc: "Let AI shift your dollars in real time-toward what's working now.",
     icon: Brain,
   },
   {
     title: "Dynamic Content Personalization",
-    desc: "Messages that rewrite themselves—based on who's reading.",
+    desc: "Messages that rewrite themselves-based on who's reading.",
     icon: MessageCircle,
   },
   {
@@ -109,7 +109,7 @@ const ValueProposition = () => {
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               We use AI not for show, but for scale. With AI infused across
-              content, data, delivery, and decision-making—every touchpoint gets
+              content, data, delivery, and decision-making-every touchpoint gets
               smarter by design.
             </p>
           </div>

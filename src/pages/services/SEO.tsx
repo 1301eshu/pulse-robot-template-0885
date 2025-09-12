@@ -191,7 +191,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How do you get content into AI search results (GEO)?",
-      a: "We serve up well-cited, high-authority content that AI loves to quote — perfect for SGE, chatbots, and all things generative.",
+      a: "We serve up well-cited, high-authority content that AI loves to quote - perfect for SGE, chatbots, and all things generative.",
     },
     {
       q: "Do you optimize for voice, mobile, and AI assistants?",
@@ -268,7 +268,7 @@ export default function MarketingAutomation() {
           heading="Let's shift from SEO-first to AI-first marketing & show up where it matters."
           subtext="Structured content and boosted visibility at every high-intent moment."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

@@ -1,178 +1,3 @@
-// 'use client';
-
-// import { useState, useEffect, useMemo } from "react";
-// import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
-// import { ExploreItem } from "@/components/ui/component_9";
-// import ExploreMoreSection from "@/components/ui/component_9";
-// import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
-// import ContactCta from "@/components/ui/component_6";
-// import { ExploreSectionSkeleton, RecentBlogsSkeleton, LoadMoreSkeleton } from "@/components/ui/BlogSkeletons";
-// import { SmartBreadcrumb } from "@/components/SmartBreadcrumb";
-// import { API_BASE_URL } from '../../../apiconfig';
-
-// const decodeHTML = (html: string) => {
-//   const txt = document.createElement("textarea");
-//   txt.innerHTML = html;
-//   return txt.value;
-// };
-
-// const ResourcesIndex = () => {
-//   const [exploreMoreItems, setExploreMoreItems] = useState<ExploreItem[]>([]);
-//   const [recentResources, setRecentResources] = useState<ResourceItem[]>([]);
-//   const [page, setPage] = useState(1);
-//   const [hasMore, setHasMore] = useState(true);
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [isLoadingMore, setIsLoadingMore] = useState(false);
-
-//   // show 9 per page as requested
-//   const perPage = 9;
-
-//   const fetchPosts = async (page: number) => {
-//     if (page > 1) setIsLoadingMore(true);
-
-//     try {
-//       const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`);
-//       const data = await res.json();
-
-//       const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
-//       setHasMore(page < totalPages);
-
-//       const formattedResources: ResourceItem[] = data.map((post: any) => ({
-//         title: decodeHTML(post.title.rendered),
-//         subtitle: stripHTML(post.excerpt.rendered),
-//         author: post._embedded?.author?.[0]?.name || "Unknown Author",
-//         date: new Date(post.date).toLocaleDateString("en-US", {
-//           year: "numeric",
-//           month: "long",
-//           day: "numeric",
-//         }),
-//         readTime: calculateReadTime(post.content.rendered),
-//         image:
-//           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-//           "https://via.placeholder.com/600x400",
-//         slug: post.slug,
-//         category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-//       }));
-
-//       setRecentResources(prev => [...prev, ...formattedResources]);
-
-//       // Set explore items only once (from first batch)
-//       if (page === 1) {
-//         const formattedExploreItems: ExploreItem[] = data.slice(0, 4).map((post: any) => ({
-//           tag: "Blogs",
-//           title: decodeHTML(post.title.rendered),
-//           readTime: calculateReadTime(post.content.rendered),
-//           category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
-//           thumbnail:
-//             post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-//             "https://via.placeholder.com/600x400",
-//           slug: post.slug,
-//         }));
-//         setExploreMoreItems(formattedExploreItems);
-//         setIsLoading(false);
-//       }
-//     } catch (err) {
-//       console.error("Failed to fetch posts", err);
-//       setHasMore(false);
-//       setIsLoading(false);
-//     } finally {
-//       setIsLoadingMore(false);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchPosts(page);
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, [page]);
-
-//   const handleLoadMore = () => setPage(prev => prev + 1);
-
-//   // Build tabs from the categories in the resources (All + unique categories)
-//   const categoryTabs = useMemo(() => {
-//     const cats = Array.from(
-//       new Set(
-//         recentResources
-//           .map(r => (r.category || "General").trim())
-//           .filter(Boolean)
-//       )
-//     );
-//     return [{ id: "all", label: "All" }, ...cats.map(c => ({ id: slugify(c), label: c }))];
-//   }, [recentResources]);
-
-//   return (
-//     <div className="min-h-screen bg-gray-50">
-//       <Header />
-//       <SmartBreadcrumb />
-
-//       <main className="pt-0">
-//         {isLoading ? (
-//           <>
-//             <ExploreSectionSkeleton />
-//             <RecentBlogsSkeleton />
-//           </>
-//         ) : (
-//           <>
-//             <ExploreMoreSection heading="Featured Posts" items={exploreMoreItems} />
-
-//             <div className="[&>h2]:text-center">
-//               <RecentResourcesSection
-//                 heading="Explore more"
-//                 body="No fluff. Just frameworks, findings, and future-forward thinking."
-//                 // use your fetched data (so disable internal autoData)
-//                 autoData={false}
-//                 // SHOW TAGS on this page
-//                 hideTabs={false}
-//                 // let the component use our tabs (built from categories)
-//                 subTabs={categoryTabs}
-//                 // feed all resources we’ve fetched so far
-//                 resources={recentResources}
-//                 // load more flow
-//                 onLoadMore={handleLoadMore}
-//                 hasMore={hasMore}
-//                 isLoadingMore={isLoadingMore}
-//                 LoadMoreSkeleton={LoadMoreSkeleton}
-//                 // IMPORTANT: don’t pass `count` so it won’t trim to 3
-//               />
-//             </div>
-//           </>
-//         )}
-
-//         <ContactCta
-//           heading="Let's Make Your Salesforce Smarter (And Less Annoying)"
-//           subtext="Let's plug in the tech, the talent, and the timing."
-//           buttonLabel="Talk to an Expert"
-//           buttonLink="/contact"
-//         />
-//       </main>
-
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default ResourcesIndex;
-
-// /* utils */
-// function stripHTML(html: string) {
-//   return html.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").trim();
-// }
-// function calculateReadTime(html: string) {
-//   const plainText = html.replace(/<[^>]+>/g, "");
-//   const wordCount = plainText.trim().split(/\s+/).length;
-//   const time = Math.ceil(wordCount / 200);
-//   return `${time} min read`;
-// }
-// function slugify(s: string) {
-//   return s
-//     .toLowerCase()
-//     .replace(/\s*\([^)]*\)/g, "")
-//     .replace(/[^\w\s-]/g, "")
-//     .trim()
-//     .replace(/\s+/g, "-");
-// }
-
-
 'use client';
 
 import { useState, useEffect, useMemo } from "react";
@@ -193,7 +18,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Calendar, Clock } from "lucide-react";
+import { ChevronDown, Calendar, Clock, User } from "lucide-react";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const decodeHTML = (html: string) => {
   const txt = document.createElement("textarea");
@@ -213,7 +39,10 @@ const ResourcesIndex = () => {
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
   const [isLoadingExplore, setIsLoadingExplore] = useState(false);
 
-  // show 9 per page as requested
+  // Control dropdown open state (so we can close it on scroll)
+  const [catMenuOpen, setCatMenuOpen] = useState(false);
+
+  // show 9 per page
   const perPage = 9;
 
   const fetchCategories = async () => {
@@ -234,9 +63,7 @@ const ResourcesIndex = () => {
 
     try {
       let url = `${API_BASE_URL}/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&_embed`;
-      if (categoryId) {
-        url += `&categories=${categoryId}`;
-      }
+      if (categoryId) url += `&categories=${categoryId}`;
 
       const res = await fetch(url);
       const data = await res.json();
@@ -247,7 +74,7 @@ const ResourcesIndex = () => {
       const formattedResources: ResourceItem[] = data.map((post: any) => ({
         title: decodeHTML(post.title.rendered),
         subtitle: stripHTML(post.excerpt.rendered),
-        author: post._embedded?.author?.[0]?.name || "Unknown Author",
+        author: post.author_name || "Unknown Author",
         date: new Date(post.date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
@@ -261,18 +88,16 @@ const ResourcesIndex = () => {
         category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
       }));
 
-      if (reset) {
-        setRecentResources(formattedResources);
-      } else {
-        setRecentResources(prev => [...prev, ...formattedResources]);
-      }
+      if (reset) setRecentResources(formattedResources);
+      else setRecentResources(prev => [...prev, ...formattedResources]);
 
-      // Set explore items only once (from first batch of latest posts - not filtered by category)
+      // Explore items (first batch, unfiltered)
       if (page === 1 && !categoryId) {
         const formattedExploreItems: ExploreItem[] = data.slice(0, 4).map((post: any) => ({
           tag: "Blogs",
           title: decodeHTML(post.title.rendered),
           readTime: calculateReadTime(post.content.rendered),
+          author: post.author_name || "Unknown Author",
           category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
           thumbnail:
             post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -289,7 +114,7 @@ const ResourcesIndex = () => {
       if (reset) setIsLoading(false);
     } finally {
       setIsLoadingMore(false);
-      setIsLoadingExplore(false); // <-- stop skeleton when category loaded
+      setIsLoadingExplore(false);
     }
   };
 
@@ -302,25 +127,30 @@ const ResourcesIndex = () => {
     initializeData();
   }, []);
 
-  // Get current category name for display
+  // Close dropdown on scroll
+  useEffect(() => {
+    const onScroll = () => setCatMenuOpen(false);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const getCurrentCategoryName = () => {
     if (activeCategory === "all") return "All";
     return categories.find(cat => cat.slug === activeCategory)?.name || "All";
   };
 
-  // Handle category change
   const handleCategoryChange = async (categorySlug: string) => {
     setActiveCategory(categorySlug);
     setPage(1);
     setRecentResources([]);
     setHasMore(true);
-    setIsLoadingExplore(true); // <-- show skeleton
+    setIsLoadingExplore(true);
+    setCatMenuOpen(false);
 
     const categoryId = categorySlug === "all" ? undefined : categories.find(cat => cat.slug === categorySlug)?.id;
     await fetchPosts(1, categoryId, true);
   };
 
-  // Handle load more
   const handleLoadMore = () => {
     const categoryId = activeCategory === "all" ? undefined : categories.find(cat => cat.slug === activeCategory)?.id;
     const nextPage = page + 1;
@@ -328,16 +158,13 @@ const ResourcesIndex = () => {
     fetchPosts(nextPage, categoryId);
   };
 
-  // Build tabs from the fetched categories
   const categoryTabs = useMemo(() => {
-    return [
-      { id: "all", label: "All" },
-      ...categories.map(cat => ({ id: cat.slug, label: cat.name }))
-    ];
+    return [{ id: "all", label: "All" }, ...categories.map(cat => ({ id: cat.slug, label: cat.name }))];
   }, [categories]);
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <DynamicSEO page='blogs'/>
       <Header />
       <SmartBreadcrumb />
 
@@ -349,50 +176,55 @@ const ResourcesIndex = () => {
           </>
         ) : (
           <>
-            <ExploreMoreSection heading="Featured Posts" items={exploreMoreItems} />
+            <ExploreMoreSection heading="Featured Posts" items={exploreMoreItems} useH1={true} />
 
             <section className="py-16 bg-gray-50">
               <div className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Explore more</h2>
-                    <p className="text-gray-600 mt-2">No fluff. Just frameworks, findings, and future-forward thinking.</p>
-                  </div>
+                {/* Heading + Category control */}
+                <div className="mb-8">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-900">Explore more</h2>
+                      <p className="text-gray-600 mt-2">
+                        No fluff. Just frameworks, findings, and future-forward thinking.
+                      </p>
+                    </div>
 
-                  {/* Category Dropdown - moved to right */}
-                  <DropdownMenu modal={false}>
-                    <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                      <span className="text-sm font-medium text-gray-700">
-                        {isLoadingCategories ? "Loading..." : getCurrentCategoryName()}
-                      </span>
-                      <ChevronDown className="w-4 h-4 text-gray-500" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      className="w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto"
-                      align="end"
-                      sideOffset={4}
-                      avoidCollisions={true}
-                      collisionPadding={16}
-                    >
-                      <DropdownMenuItem
-                        onClick={() => handleCategoryChange("all")}
-                        className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === "all" ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
-                          }`}
-                      >
-                        All
-                      </DropdownMenuItem>
-                      {categories.map((category) => (
-                        <DropdownMenuItem
-                          key={category.id}
-                          onClick={() => handleCategoryChange(category.slug)}
-                          className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === category.slug ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"
-                            }`}
+                    {/* Mobile: full width + below text; Desktop: inline at right */}
+                    <div className="w-full md:w-auto">
+                      <DropdownMenu open={catMenuOpen} onOpenChange={setCatMenuOpen} modal={false}>
+                        <DropdownMenuTrigger className="w-full md:w-auto flex items-center gap-2 justify-between md:justify-start px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                          <span className="text-sm font-medium text-gray-700">
+                            {isLoadingCategories ? "Loading..." : getCurrentCategoryName()}
+                          </span>
+                          <ChevronDown className="w-4 h-4 text-gray-500" />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                          className="w-[calc(100vw-3rem)] md:w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-30 max-h-80 overflow-y-auto"
+                          align="start"
+                          sideOffset={6}
+                          avoidCollisions
+                          collisionPadding={16}
                         >
-                          {category.name}
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                          <DropdownMenuItem
+                            onClick={() => handleCategoryChange("all")}
+                            className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === "all" ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"}`}
+                          >
+                            All
+                          </DropdownMenuItem>
+                          {categories.map((category) => (
+                            <DropdownMenuItem
+                              key={category.id}
+                              onClick={() => handleCategoryChange(category.slug)}
+                              className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 ${activeCategory === category.slug ? "bg-blue-50 text-blue-600 font-medium" : "text-gray-700"}`}
+                            >
+                              {category.name}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Loading State */}
@@ -418,32 +250,51 @@ const ResourcesIndex = () => {
                           to={
                             resource.slug
                               ? `/blogs/${(resource.category || "general")
-                                .replace(/\s*\([^)]*\)/g, "")
-                                .toLowerCase()
-                                .replace(/\s+/g, "-")
-                              }/${resource.slug}`
+                                  .replace(/\s*\([^)]*\)/g, "")
+                                  .toLowerCase()
+                                  .replace(/\s+/g, "-")}/${resource.slug}`
                               : "#"
                           }
-                          className="block"
+                          className="block h-full"
                         >
-                          <Card className="bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
-                            {/* Image + Hover Overlay */}
-                            <div className="relative h-48 overflow-hidden">
-                              <img
-                                src={resource.image}
-                                alt={resource.title}
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                                <span className="text-white font-semibold text-sm flex items-center gap-1">
-                                  Read more <span className="text-lg">›</span>
-                                </span>
-                              </div>
+                          <Card className="h-full bg-white overflow-hidden transition-all group cursor-pointer hover:shadow-xl border border-gray-100">
+                            {/* Image (bulletproof no-trim) */}
+                            <div className="px-4 pt-4">
+                                               <figure
+                    className="
+                      relative overflow-hidden rounded-xl bg-gray-50 ring-1 ring-black/5
+                      mx-auto max-w-full
+                      w-[343px] aspect-[300/157]           /* phone */
+                      sm:w-[486px] sm:aspect-[300/157]     /* tablet */
+                      lg:w-[710px] lg:aspect-[300/157]     /* desktop */
+                    "
+                  >
+                                <img
+                                  src={resource.image}
+                                  alt={resource.title}
+                                  className="
+                                    absolute inset-0 w-full h-full
+                                    object-cover object-center
+                                    scale-[1.02]                  /* bleed past edges */
+                                    transition-transform duration-300
+                                    group-hover:scale-[1.05]
+                                  "
+                                />
+                                {/* Desktop overlay */}
+                                <div className="absolute inset-0 hidden md:flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                  <span className="text-white font-semibold text-sm flex items-center gap-1">
+                                    Read more <span className="text-lg">›</span>
+                                  </span>
+                                </div>
+                              </figure>
                             </div>
 
                             {/* Card Text Content */}
                             <CardContent className="bg-white p-6">
                               <div className="flex flex-wrap items-center text-xs text-gray-500 mb-4 gap-x-4 gap-y-2">
+                                <span className="flex items-center gap-1">
+                      <User className="w-4 h-4" /> {resource.author}
+                    </span>
                                 <span className="flex items-center gap-1">
                                   <Calendar className="w-4 h-4" /> {resource.date}
                                 </span>
@@ -479,17 +330,16 @@ const ResourcesIndex = () => {
                     )}
                   </>
                 )}
-
               </div>
             </section>
           </>
         )}
 
         <ContactCta
-          heading="Let's Make Your Salesforce Smarter (And Less Annoying)"
-          subtext="Let's plug in the tech, the talent, and the timing."
+          heading="Let's Build Your Next Growth Chapter"
+          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

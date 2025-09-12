@@ -77,7 +77,7 @@ const features: FeatureContent[] = [
   
     
     items: [
-      { icon: Zap, title: "Flows that feel like second nature—because they are. " },
+      { icon: Zap, title: "Flows that feel like second nature-because they are. " },
       { icon: Zap, title: "Strategy built on user logic, powered by AI precision. Less digging, more doing. Jira that actually works the way you do. " },
       { icon: Zap, title: "Less digging, more doing. Jira that actually works the way you do.  " },
     ],
@@ -88,7 +88,7 @@ const features: FeatureContent[] = [
    
     items: [
       { icon: BarChart2, title: "No data loss. No downtime. Just a clean handoff to the future. " },
-      { icon: BarChart2, title: "AI anticipates breaks before they happen—so you don’t have to.  " },
+      { icon: BarChart2, title: "AI anticipates breaks before they happen-so you don’t have to.  " },
       { icon: BarChart2, title: "Migrate once. Never look back. " },
     ],
   },
@@ -98,7 +98,7 @@ const features: FeatureContent[] = [
    
     items: [
       { icon: Database, title: "AI that catches blockers before your team even hits them. " },
-      { icon: Database, title: "No more manual ticket triage—just intelligent flow. " },
+      { icon: Database, title: "No more manual ticket triage-just intelligent flow. " },
       { icon: Database, title: "From overwhelmed to overachieving." },
     ],
   },
@@ -109,7 +109,7 @@ const features: FeatureContent[] = [
     items: [
       { icon: ShieldCheck, title: "Your Jira, always running. We watch it so you don’t have to. " },
       { icon: ShieldCheck, title: "Fixes before failures. Tweaks before tickets.  " },
-      { icon: ShieldCheck, title: "Human support with an AI sidekick—24/7 peace of mind. " },
+      { icon: ShieldCheck, title: "Human support with an AI sidekick-24/7 peace of mind. " },
     ],
   },
 ];
@@ -152,36 +152,6 @@ const features: FeatureContent[] = [
     
   ];
 
-   // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -191,11 +161,11 @@ const features: FeatureContent[] = [
     },
     {
       q: "Which Jira environments do you support? ",
-      a: "Cloud, Data Center, Server—your choice. Full-stack support across the Atlassian suite. ",
+      a: "Cloud, Data Center, Server-your choice. Full-stack support across the Atlassian suite. ",
     },
     {
       q: "Can you fix / optimize what we already have? ",
-      a: "Absolutely. We clean, configure, optimize—and toss in AI-powered automations when needed. ",
+      a: "Absolutely. We clean, configure, optimize-and toss in AI-powered automations when needed. ",
     },
     {
       q: "How long does onboarding take?",
@@ -213,7 +183,7 @@ const features: FeatureContent[] = [
         <HeroSection
           heading="AI-Led Jira Services That Think Faster Than You Can Type"
         
-          subtext="Custom workflows, smarter tools, zero chaos—so your team can actually get stuff done."
+          subtext="Custom workflows, smarter tools, zero chaos-so your team can actually get stuff done."
           bgImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/Homepage/Value%20Proposition%20/8302_gqqgrs%20(1).jpg"
           rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/726013.png"
         />
@@ -221,7 +191,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in expert hands—built on deep Atlassian experience and results that scale.  "
+  title="You’re in expert hands-built on deep Atlassian experience and results that scale.  "
   stats={[
     { label: "Clients Served  ", value: "50+" },
     { label: "Certified Jira Experts ", value: "20+" },
@@ -233,7 +203,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="Where Jira Strategy Meets AI-First Execution  "
-          subtitle="From cloud migrations to plugin magic—no fluff, just results.  "
+          subtitle="From cloud migrations to plugin magic-no fluff, just results.  "
           tabs={tabs}
           features={features} 
         />
@@ -246,7 +216,7 @@ const features: FeatureContent[] = [
                 The Atlassian Stack, Supercharged with AI  
               </h2>
               <p className="text-gray-600 mb-6">
-               We fuse Jira with the tools you already love—and AI-boost your ecosystem.
+               We fuse Jira with the tools you already love-and AI-boost your ecosystem.
               </p>
              
             </div>
@@ -289,7 +259,7 @@ const features: FeatureContent[] = [
           heading="More From Our Content Repertoire  "
           body="Keep your Jira IQ high with our freshest blog posts, guides, and AI hot takes. "
            subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         {/* Call to Action */}
@@ -297,7 +267,7 @@ const features: FeatureContent[] = [
           heading="AI-First Jira. Results-First Execution. "
           subtext=" Plug in Atlassian expertise, intelligent automation, and workflows that scale with your business. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

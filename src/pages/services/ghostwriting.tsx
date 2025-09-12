@@ -205,7 +205,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers / Statistics Section */}
         <EditableStatSection
-          title="You're in sharp company—with executives and experts using our words to lead the conversation. "
+          title="You're in sharp company-with executives and experts using our words to lead the conversation.  "
           stats={stats}
         />
 
@@ -251,10 +251,10 @@ export default function MarketingAutomation() {
 
         {/* CTA Section */}
         <ContactCta
-          heading=" Let’s Put Your Name Where It Belongs—On Great Content "
+          heading=" Let’s Put Your Name Where It Belongs-On Great Content "
           subtext=" From voice to visibility, we ghostwrite the leadership your brand deserves. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

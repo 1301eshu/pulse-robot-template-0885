@@ -61,9 +61,15 @@ export default function LogoScroller({
     <section className={clsx("bg-white overflow-hidden", paddingTop, paddingBottom, className)}>
       <div className="max-w-7xl mx-auto px-4 text-center">
         {heading && (
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#0F172A] mb-4 inline-flex items-center justify-center gap-2">
-            {heading}
-          </h2>
+          React.isValidElement(heading) ? (
+            <div className="mb-4 flex items-center justify-center">
+              {heading}
+            </div>
+          ) : (
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#0F172A] mb-4 inline-flex items-center justify-center gap-2">
+              {heading}
+            </h2>
+          )
         )}
         {subtext && (
           <p className="text-gray-600 max-w-2xl mx-auto text-base mb-4">

@@ -78,6 +78,9 @@ const routeNames: Record<string, string> = {
   blogs: 'Blogs',
   documentation: 'Documentation',
   infographics: 'Infographics',
+  ebooks: 'Ebooks', 
+ 'growth-stream': 'Growth Stream',
+ 'press-release': 'Press Release',
   'roi-calculator': 'ROI Calculator',
   support: 'Support',
   templates: 'Templates',
@@ -101,6 +104,9 @@ const RESOURCES_CHILDREN = new Set<string>([
   'documentation',
   'infographics',
   'roi-calculator',
+  'ebooks',    /////
+ 'growth-stream',
+ 'press-release',
   'support',
 ]);
 
@@ -205,7 +211,7 @@ export function SmartBreadcrumb() {
   const lastIndex = crumbs.length - 1;
 
   return (
-    <div className="bg-gray-50 border-b border-gray-200 relative z-20 mt-20">
+    <div className="bg-gray-50 border-b border-gray-200 relative z-20 mt-16 lg:mt-20">
       <div className="container mx-auto px-6 py-3 max-w-7xl">
         <Breadcrumb>
           <BreadcrumbList className="items-center justify-start">

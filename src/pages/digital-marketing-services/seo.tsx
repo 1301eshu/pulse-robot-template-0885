@@ -137,36 +137,6 @@ export default function MarketingAutomation() {
     { label: "SEO specialists on deck", value: "50+" },
   ];
 
-  // Resources (RecentResourcesSection)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "AI-First SEO: What Marketers Need Now",
-      subtitle: "Key shifts as search engines get smarter (and what to do about it).",
-      author: "SEO Strategy Team",
-      date: "July 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "ai-first-seo"
-    },
-    {
-      title: "The New Rules of Technical SEO",
-      subtitle: "Why site health and AI readiness are now inseparable.",
-      author: "Technical SEO Lead",
-      date: "July 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "technical-seo"
-    },
-    {
-      title: "Getting Cited in LLMs and Chatbots",
-      subtitle: "From schema to outreach: what helps your brand get referenced.",
-      author: "Outreach Lead",
-      date: "July 2025",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "llm-seo-citations"
-    },
-  ];
 
   // FAQs
   const faqs = [
@@ -176,7 +146,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How do you get content into AI search results (GEO)?",
-      a: "We serve up well-cited, high-authority content that AI loves to quote — perfect for SGE, chatbots, and all things generative.",
+      a: "We serve up well-cited, high-authority content that AI loves to quote - perfect for SGE, chatbots, and all things generative.",
     },
     {
       q: "Do you optimize for voice, mobile, and AI assistants?",
@@ -200,7 +170,7 @@ export default function MarketingAutomation() {
           heading="SEO Services with an LLM-First Mindset"
           subtext="Designed for how people search now, not how they used to. From algorithms to audience needs, LLM SEO bridges the gap."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/SEO.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20/SEO.webp"
         />
 
         {/* Statistics Section */}
@@ -222,7 +192,7 @@ export default function MarketingAutomation() {
           heading="Watch How AI-Infused SEO Owns the Game"
           body="Brands we’ve helped climb the SERPs with LLM-led content & AEO-friendly strategies"
           subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -247,6 +217,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="100"
 />
 
         {/* Call to Action */}
@@ -254,7 +225,7 @@ export default function MarketingAutomation() {
           heading="Let's shift from SEO-first to AI-first marketing & show up where it matters."
           subtext="Structured content and boosted visibility at every high-intent moment."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

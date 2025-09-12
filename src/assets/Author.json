@@ -21,8 +21,10 @@
   },
   {
     "name": "Akanksha Dass",
-    "bio": "Akanksha is a content marketing expert who strongly focuses on driving a brand's narrative through modern content marketing techniques. With extensive experience in the B2B world, she has worked for brands like Dell and American Express. She specializes in content, email, inbound, social media, and copywriting. A writer at heart and a marketing technology enthusiast, she currently spearheads a team of intelligent writers, mentoring them with purpose, passion, and empathy.",
-    "linkedin": "https://www.linkedin.com/in/akanksha-dass-225401145/?originalSubdomain=in"
+    "title": "Director of Marketing & Communications",
+    "bio": "Akanksha leads Growth Natives’ marketing strategy and brand voice in an AI-first world. With over 15 years of B2B experience, she blends expertise in content, email, inbound, social, and copy with a deep understanding of marketing technology and emerging AI capabilities. A gourmet coffee loyalist and proud geek-speak translator, she turns complex tech into clear, compelling narratives that perform in-market and in-machine. Today, she spearheads Growth Natives’ multi-channel growth initiatives, guiding a high-performing team with purpose, passion, and empathy - and connecting every campaign to measurable business impact.",
+    "linkedin": "https://www.linkedin.com/in/akanksha-dass-225401145/?originalSubdomain=in",
+    "image": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Akanksha.jpg"
   },
   {
     "name": "Rahul Saini",
@@ -119,15 +121,19 @@
     "bio": "Rahul is an experienced senior marketer with a demonstrated history of working in the information technology and services industry. He is skilled in customer service, sales, marketing strategy, customer relationship management (CRM), and social media.",
     "linkedin": "https://www.linkedin.com/in/rahul-sharma-b5b8ba61/"
   },
-  {
+ {
     "name": "Mehakpreet Kaur",
-    "bio": "As a dedicated Content Marketer, Mehak merges creative finesse with strategic insight to amplify brand presence. With a flair for research, she enriches her content creation framework, resonating deeply with audiences and fostering genuine connections. Off the clock, she\u2019s an avid reader, discovering new adventures within pages, and finds joy in caring for animals.",
-    "linkedin": "https://www.linkedin.com/in/mehakpreet-kaur-6872b6256/"
+    "title": "Senior Content Marketer",
+    "bio": "Mehak is a storyteller at heart and a strategist by craft. She fuses creative vision with data-driven precision to shape brand narratives that resonate across every channel. Her insight-led approach to content development ensures each piece drives measurable impact & builds genuine audience connections.With an outstanding track record in content strategy and execution excellence, she leads initiatives that elevate brand presence and boost growth. Beyond work, Mehak finds fulfillment in caring for animals, a passion that continually nurtures her empathy. ",
+    "linkedin": "https://www.linkedin.com/in/mehakpreet-kaur-6872b6256/",
+    "image": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mehak.jpg"
   },
   {
     "name": "Sneha Kumari",
-    "bio": "Sneha is a digital content chameleon, effortlessly blending words for buttoned-up B2B clients and casual B2C crowds. With a motive of turning mundane topics into page-turners, she's on a mission to make the internet a more interesting place, one witty sentence at a time. When not weaving words, Sneha finds her zen in the mountains, balancing creativity with spirituality.",
-    "linkedin": "https://www.linkedin.com/in/sneha-kumari-35b9901a8/"
+    "title": "Senior Copywriter & Editor ",
+    "bio": "Sneha is a versatile copywriter and editor who brings brands to life with words that balance creativity and strategy. Passionate about transforming complex concepts into compelling narratives, she elevates brand messaging through strategic copy that drives both engagement and conversions.Her editorial expertise ensures every piece of content upholds the highest standards of clarity, consistency, and impact. When not crafting copy that converts, Sneha finds inspiration in the mountains, drawing on nature's tranquility to fuel her creative process. ",
+    "linkedin": "https://www.linkedin.com/in/sneha-kumari-35b9901a8/",
+    "image": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Sneha.jpg"
   },
   {
     "name": "Anjali Rajput",
@@ -138,5 +144,10 @@
     "name": "Shivam Joshi",
     "bio": "Shivam Joshi is a Google and Adobe Certified Data Analyst, specializing in Adobe Analytics, GA4, Google Tag Manager (GTM), Web SDK, Mobile SDK, and AEP services. With deep expertise in data collection, implementation, and optimization, he helps businesses seamlessly integrate Adobe Experience Cloud and Google Analytics solutions for precise tracking and actionable insights.",
     "linkedin": "https://www.linkedin.com/in/mrshivamjoshi/"
+  },
+  {
+    "name": "Sayam Sehgal",
+    "bio": "Experienced Project Manager in IT industries, specializing in agile methodologies and cross-functional team leadership.",
+    "linkedin": ""
   }
 ]

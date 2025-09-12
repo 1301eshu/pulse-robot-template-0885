@@ -187,7 +187,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands leveling up with sharper marketing decisions."
+          title="You’re in good company-with brands leveling up with sharper marketing decisions."
           stats={stats}
         />
 
@@ -209,7 +209,7 @@ export default function MarketingAutomation() {
 
         <LogoScroller
           heading="Folks That Trust Our Marketing Analytics Moves"
-          subtext="From high-growth startups to enterprises—we help them decode every click and conversion."
+          subtext="From high-growth startups to enterprises-we help them decode every click and conversion."
          
         />
 
@@ -235,7 +235,7 @@ export default function MarketingAutomation() {
           heading="Want to See Your Marketing Data in Motion?"
           subtext="Let’s turn clicks into insights and insights into revenue."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
 
       </main>

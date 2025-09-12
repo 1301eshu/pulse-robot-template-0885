@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import { API_BASE_URL } from "../../../apiconfig";
+import { handleApiDomainReplacement } from "@/lib/replaceApiDomain";
 
 interface Ebook {
   id: number;
@@ -21,6 +22,10 @@ interface Ebook {
     author?: string;
     pdf_url?: string;
   };
+  ebook_file?: {
+    url?: string;
+    title?: string;
+  };
 }
 
 const EbookDetail: React.FC = () => {
@@ -31,9 +36,10 @@ const EbookDetail: React.FC = () => {
 
   // Fetch Ebook
   useEffect(() => {
+     handleApiDomainReplacement();
     if (!slug) return;
 
-    fetch(`https://growthnatives.com/wp-json/wp/v2/ebooks?slug=${slug}`)
+    fetch(`${API_BASE_URL}/wp-json/wp/v2/ebooks?slug=${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setEbook(data[0]); // WP returns array when filtering by slug
@@ -81,16 +87,24 @@ const EbookDetail: React.FC = () => {
                     />
                   );
                   break;
-                case "link":
-                  elements.push(
-                    <link
-                      key={elements.length}
-                      {...Object.fromEntries(
-                        [...el.attributes].map((attr) => [attr.name, attr.value])
-                      )}
-                    />
-                  );
+                case "link": {
+                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+                  // ✅ Force canonical domain to growthnatives.com
+                  if (attrs.rel === "canonical" && attrs.href) {
+                    try {
+                      const url = new URL(attrs.href);
+                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
+                      url.protocol = "https:"; // enforce https
+                      attrs.href = url.toString();
+                    } catch (err) {
+                      console.warn("Invalid canonical URL:", attrs.href, err);
+                    }
+                  }
+
+                  elements.push(<link key={elements.length} {...attrs} />);
                   break;
+                }
                 default:
                   break;
               }
@@ -133,10 +147,6 @@ const EbookDetail: React.FC = () => {
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug"
                 dangerouslySetInnerHTML={{ __html: ebook.title.rendered }}
               />
-
-              <p className="text-gray-700 max-w-lg">
-                {ebook.excerpt?.rendered.replace(/<[^>]+>/g, "")}
-              </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -144,6 +154,10 @@ const EbookDetail: React.FC = () => {
                 portalId="7118070"
                 formId="936a6094-5911-42b5-af43-59918fd008a0"
                 region="na1"
+                assetFieldName="ebook_url"
+                assetFieldNameLabel="ebook_name"
+                assetLabel={ebook.ebook_file?.title || ebook.ebook_file?.title || ""}
+                assetURL={ebook.ebook_file?.url || ebook.ebook_file?.url || ""}
               />
             </div>
           </div>
@@ -164,9 +178,16 @@ const EbookDetail: React.FC = () => {
               experiences today.
             </p>
 
-              <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
-                Download Now
-              </Button>
+               <a
+                 href="/contact-us"
+                 target="_blank"
+                 rel="noopener noreferrer"
+               >
+                 <Button className="bg-blue-600 text-white px-6 hover:bg-blue-700">
+                   Get Started Today
+                 </Button>
+               </a>
+
           </div>
         </div>
       </main>
@@ -176,3 +197,5 @@ const EbookDetail: React.FC = () => {
 };
 
 export default EbookDetail;
+
+

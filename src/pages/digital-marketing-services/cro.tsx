@@ -112,45 +112,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // Case Studies
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Case Study 1",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/case-study-1"
-    },
-    {
-      title: "Case Study 2",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/case-study-2"
-    },
-    {
-      title: "Case Study 3",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/case-study-3"
-    },
-    {
-      title: "Case Study 4",
-      subtitle: "Headline",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/case-study-4"
-    },
-  ];
 
   // Client Logo Section
   const logoHeading = "Brands That Trust Us to Optimize What Matters";
@@ -185,36 +146,6 @@ export default function MarketingAutomation() {
     },
   ];
 
-  // More Resources Section
-  const moreResources = [
-    {
-      title: "More from Our Content Repertoire",
-      subtitle: "Stay ahead with the sharpest CRO hacks, insights, blog posts and AI updates to stay ahead.",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/more-cro-content"
-    },
-    {
-      title: "More from Our Content Repertoire",
-      subtitle: "Stay ahead with the sharpest CRO hacks, insights, blog posts and AI updates to stay ahead.",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/more-cro-content"
-    },
-    {
-      title: "More from Our Content Repertoire",
-      subtitle: "Stay ahead with the sharpest CRO hacks, insights, blog posts and AI updates to stay ahead.",
-      author: "",
-      date: "",
-      readTime: "",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "/more-cro-content"
-    }
-  ];
 
   // CTA Section
   const ctaHeading = "Let’s Maximize Conversions with Smart CRO";
@@ -255,7 +186,7 @@ export default function MarketingAutomation() {
           heading=" See How Smart CRO Helped Brands Convert Better"
           body=" Folks we’ve helped turn traffic into real business impact "
           subTabs={[]}
-          resources={moreResources}
+          resourcePostType="case-studies"
         />
 
         {/* Customer Logo Section */}
@@ -281,6 +212,7 @@ export default function MarketingAutomation() {
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="17"
 />
 
         {/* Call to Action */}
@@ -288,7 +220,7 @@ export default function MarketingAutomation() {
           heading={ctaHeading}
           subtext={ctaSubtext}
           buttonLabel={ctaButton}
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

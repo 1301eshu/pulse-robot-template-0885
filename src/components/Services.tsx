@@ -110,7 +110,7 @@ export default function ServicesSection() {
             Full-Stack Firepower. AI-Native Execution for Full-Funnel Growth
           </h2>
           <p className="text-gray-600 mt-4 text-base md:text-lg fade-in">
-            Our work spans strategy, code, creative, and AI-fueled ops—so your growth isn't just good-looking, it's scalable.
+            Our work spans strategy, code, creative, and AI-fueled ops-so your growth isn't just good-looking, it's scalable.
           </p>
         </div>
 

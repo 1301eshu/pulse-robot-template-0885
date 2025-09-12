@@ -208,7 +208,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "We're already using Pardot. Will you audit what's working before pitching changes?",
-      a: "Sure, we check your existing setup first—what's firing, what's flopping—then layer in what adds real lift.",
+      a: "Sure, we check your existing setup first-what's firing, what's flopping-then layer in what adds real lift.",
     },
     {
       q: "If we don't know what's broken, can you still help?",
@@ -241,7 +241,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You're in smart company—alongside brands scaling better with Pardot."
+          title="You're in smart company-alongside brands scaling better with Pardot."
           stats={stats}
         />
 
@@ -264,14 +264,14 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands That Trust Us With Pardot"
-          subtext="Unicorns, enterprises, and everything in between—Pardot runs with us"
+          subtext="Unicorns, enterprises, and everything in between-Pardot runs with us"
          
         />
 
         {/* Testimonials */}
         <Testimonials
           title="Real Stories, Real Pardot Growth"
-          description="Less grunt work, more growth—AI-led, expert-fed."
+          description="Less grunt work, more growth-AI-led, expert-fed."
         />
 
         {/* FAQs */}
@@ -290,7 +290,7 @@ export default function MarketingAutomation() {
           heading="Let's Enhance Your Pardot with AI"
           subtext="Give Pardot the TLC it deserves & see the magic unfold"
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

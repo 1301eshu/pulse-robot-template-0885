@@ -58,7 +58,7 @@ return (
    {/* CORE VALUES SECTION */}
       <section
         ref={sectionRef}
-        className="py-24 bg-white text-gray-800 w-full"
+        className="bg-white text-gray-800 w-full"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">

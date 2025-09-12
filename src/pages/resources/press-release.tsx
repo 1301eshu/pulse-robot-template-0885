@@ -85,7 +85,7 @@
 //     },
 //     {
 //       title: "The Ultimate AI Readiness Checklist for Your Marketing Ops Stack",
-//       subtitle: "AI isn't the future—it's already here, quietly revolutionizing marketing operations stacks everywhere...",
+//       subtitle: "AI isn't the future-it's already here, quietly revolutionizing marketing operations stacks everywhere...",
 //       author: "Akanksha Dass",
 //       date: "June 13, 2025",
 //       readTime: "3 min read",
@@ -126,7 +126,7 @@
 //           heading="Let's Make Your Salesforce Smarter (And Less Annoying)"
 //           subtext="Let's plug in the tech, the talent, and the timing."
 //           buttonLabel="Talk to an Expert"
-//           buttonLink="/contact"
+//           buttonLink="/contact-us"
 //         />
 //       </main>
 
@@ -171,7 +171,7 @@ const ResourcesIndex = () => {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?resource_category=8&per_page=${perPage}&page=${page}&_embed`);
+      const res = await fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?categories=70&per_page=${perPage}&page=${page}&_embed`);
       const data = await res.json();
 
       const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
@@ -180,7 +180,7 @@ const ResourcesIndex = () => {
       const formattedResources: ResourceItem[] = data.map((post: any) => ({
         title: decodeHTML(post.title.rendered),
         subtitle: stripHTML(post.excerpt.rendered),
-        author: post._embedded?.author?.[0]?.name || "Unknown Author",
+        author: post.author_name|| "Unknown Author",
         date: new Date(post.date).toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
@@ -202,6 +202,7 @@ const ResourcesIndex = () => {
           tag: "Blogs",
           title: decodeHTML(post.title.rendered),
           readTime: calculateReadTime(post.content.rendered),
+          author: post.author_name || "Unknown Author", 
           category: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "General",
           thumbnail:
             post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -239,7 +240,7 @@ const ResourcesIndex = () => {
           </>
         ) : (
           <>
-            <ExploreMoreSection heading="Explore more" items={exploreMoreItems} />
+            <ExploreMoreSection heading="Press Release" items={exploreMoreItems} useH1={true} />
 
             <div className="[&>h2]:text-center">
              <RecentResourcesSection
@@ -265,10 +266,10 @@ const ResourcesIndex = () => {
         )}
 
         <ContactCta
-          heading="Let's Make Your Salesforce Smarter (And Less Annoying)"
-          subtext="Let's plug in the tech, the talent, and the timing."
+         heading="Let's Build Your Next Growth Chapter"
+          subtext="With AI at the core and clarity at every step, we're here to make growth feel less chaotic-and a whole lot more scalable."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
 

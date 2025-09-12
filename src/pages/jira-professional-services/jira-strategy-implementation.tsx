@@ -73,7 +73,7 @@ export default function JiraStrategyImplementation() {
 const features: FeatureContent[] = [
   {
     id: "marketing",
-    description: "Future-proof your Jira—cloud, data center, or server—with strategies that actually grow with you. ",
+    description: "Future-proof your Jira-cloud, data center, or server-with strategies that actually grow with you. ",
     items: [
       { icon: Zap, title: "Architected for scale, threaded with AI guardrails.  " },
       { icon: Zap, title: "Build it right. Build it once.   " },
@@ -82,7 +82,7 @@ const features: FeatureContent[] = [
   },
   {
     id: "analytics",
-    description: "Full-stack revamp: workflows, fields, roles, reports—set up the way you actually work. ",
+    description: "Full-stack revamp: workflows, fields, roles, reports-set up the way you actually work. ",
     items: [
       { icon: BarChart2, title: "Custom fields with AI insight baked in.    " },
       { icon: BarChart2, title: "Permissions that make sense, not mess.  " },
@@ -91,7 +91,7 @@ const features: FeatureContent[] = [
   },
   {
     id: "integration",
-    description: "From Kanban to Scrum or somewhere in between—ensure your teams sprint smarter, not just faster.  ",
+    description: "From Kanban to Scrum or somewhere in between-ensure your teams sprint smarter, not just faster.  ",
     items: [
       { icon: Database, title: "Boards built for your rhythm, with AI tuning velocity. " },
       { icon: Database, title: "Agile that’s adaptive, actionable, automated.  " },
@@ -100,7 +100,7 @@ const features: FeatureContent[] = [
   },
   {
     id: "security",
-    description: "Turn manual chaos into automatic flow—with intelligent routing, alerts, and escalations. ",
+    description: "Turn manual chaos into automatic flow-with intelligent routing, alerts, and escalations. ",
     items: [
       { icon: ShieldCheck, title: "AI flags the bottlenecks before they block you.    " },
       { icon: ShieldCheck, title: "Spend less time updating tickets, more time delivering.   " },
@@ -109,7 +109,7 @@ const features: FeatureContent[] = [
   },
    {
     id: "development",
-    description: "Dashboards that do more than display—they predict and guide.  ",
+    description: "Dashboards that do more than display-they predict and guide.  ",
     items: [
       { icon: ShieldCheck, title: "Dashboards that advise not just inform.  " },
       { icon: ShieldCheck, title: "Role-based reporting that gets every stakeholder on the same page.  " },
@@ -118,35 +118,6 @@ const features: FeatureContent[] = [
   },
 ];
 
-const recentResources: ResourceItem[] = [
-  {
-    title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-    subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-    author: "Sneha Kumari",
-    date: "July 7, 2025",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-    slug: "hubspot-chatgpt-connector"
-  },
-  {
-    title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-    subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-    author: "Mehakpreet Kaur",
-    date: "July 4, 2025",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-    slug: "google-ads-roi-increase"
-  },
-  {
-    title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-    subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-    author: "Mehakpreet Kaur",
-    date: "July 4, 2025",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-    slug: "marketo-ai-segmentation"
-  },
-];
 
 const faqs = [
   {
@@ -155,11 +126,11 @@ const faqs = [
   },
   {
     q: "Can you optimize an already messy instance? ",
-    a: "Absolutely—we revamp fields, workflows, roles, dashboards while keeping your data intact.",
+    a: "Absolutely-we revamp fields, workflows, roles, dashboards while keeping your data intact.",
   },
   {
     q: "Which deployment types can you handle?",
-    a: " Cloud, Data Center, Server—you name it, we architect it. ",
+    a: " Cloud, Data Center, Server-you name it, we architect it. ",
   },
   {
     q: "How long before I see change?",
@@ -175,13 +146,13 @@ return (
     <main className="">
       {/* HERO Section */}
       <HeroSection
-        heading="Jira Strategy That Thinks Ahead—With AI at the Core "
-        subtext="From backlog bloat to process bliss—we architect Jira systems that just make sense."
+        heading="Jira Strategy That Thinks Ahead-With AI at the Core "
+        subtext="From backlog bloat to process bliss-we architect Jira systems that just make sense."
         bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
         rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/jira-professional-services/L-2%20Banner%20Images/Jira%20stratedgy%20and%20implementaion.webp"
       />
       <EditableStatSection
-        title="You’re in good company—with power users who run Jira without friction  "
+        title="You’re in good company-with power users who run Jira without friction  "
         stats={[
           { label: "Clients Served  ", value: "50+" },
           { label: "Certified Jira Experts  ", value: "20+" },
@@ -191,7 +162,7 @@ return (
       />
       <EnterpriseCapabilities
         title="  What We Do with Jira Strategy & Implementation  "
-        subtitle="We embed Jira into your org instead of forcing your org into Jira—plus we infuse AI smarts so your workflows don’t waste a beat. "
+        subtitle="We embed Jira into your org instead of forcing your org into Jira-plus we infuse AI smarts so your workflows don’t waste a beat. "
         tabs={tabs}
         features={features} 
       />
@@ -199,11 +170,11 @@ return (
         heading=" See What Smart Jira Strategy Looks Like in Action  "
         body="A few real wins we’ve helped brands achieve with HubSpot. "
         subTabs={[]}
-        resources={recentResources}
+        resourcePostType="case-studies"
       />
       <LogoScroller
         heading=" Brands That Trust Our Jira Expertise "
-        subtext=" From lean startups to enterprise squads—we build Jira systems that scale."
+        subtext=" From lean startups to enterprise squads-we build Jira systems that scale."
       />
       <Testimonials
         title="Real Stories, Real Jira Transformation  "
@@ -217,12 +188,14 @@ return (
   perPage={6}
   firstN={4}
   contentType="blogs"
+    resourceType="671"
+
 />
       <ContactCta
         heading="Let’s Build a Jira That Grows With You "
-        subtext="AI-smart workflows, strategic structure, and systems that scale—starting now. "
+        subtext="AI-smart workflows, strategic structure, and systems that scale-starting now. "
         buttonLabel="Talk to an Expert"
-        buttonLink="/contact"
+        buttonLink="/contact-us"
       />
     </main>
     <Footer />

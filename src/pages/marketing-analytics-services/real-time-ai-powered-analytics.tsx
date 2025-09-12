@@ -62,17 +62,17 @@ const features: FeatureContent[] = [
   {
     id: "marketing",
   
-    description: "See what users are doing right now—not last week.   ",
+    description: "See what users are doing right now-not last week.   ",
     items: [
       { icon: Zap, title: "Capture product usage, campaign interactions, and buyer journeys in real time   " },
       { icon: Zap, title: "Auto-surface anomalies: drop-offs, surges, blockers   " },
-      { icon: Zap, title: "Watch funnels evolve live—no refresh required    " },
+      { icon: Zap, title: "Watch funnels evolve live-no refresh required    " },
     ],
   },
   {
     id: "analytics",
    
-    description: "Know what’s coming—before your team even asks.  ",
+    description: "Know what’s coming-before your team even asks.  ",
     items: [
       { icon: BarChart2, title: "Predict churn, conversion, retention, LTV, and campaign performance   " },
       { icon: BarChart2, title: "Trained on historical and live data to surface forward-looking insights  " },
@@ -82,7 +82,7 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "We don’t just tell you what happened—we tell you what to do next.   ",
+    description: "We don’t just tell you what happened-we tell you what to do next.   ",
     items: [
       { icon: Database, title: "AI generates optimization plays across GTM levers " },
       { icon: Database, title: "CRO, ROAS, and funnel tactics predicted based on behavioral trends    " },
@@ -92,7 +92,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "From ad click to purchase—know what’s working now.   ",
+    description: "From ad click to purchase-know what’s working now.   ",
     items: [
       { icon: ShieldCheck, title: "Multi-touch attribution models, updated as user journeys unfold   " },
       { icon: ShieldCheck, title: "Identify top-performing creatives, channels, and offers on the fly    " },
@@ -111,36 +111,6 @@ const features: FeatureContent[] = [
   },
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -173,13 +143,13 @@ const features: FeatureContent[] = [
           heading="Real-Time, AI-Powered Analytics That See the Shift Before You Do "
           subtext="Turn high-volume data into decisions instantly. Embedded AI does the thinking, so you don’t have to."
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://wwyaefeuznhbcaewxvhp.supabase.co/storage/v1/object/public/revamp-ai/Mega%20Menu/Analytics%20as%20a%20Service/L-2%20Banner%20Images%20/Real%20Time%20Ai%20Powered%20Analytics.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Anaytics%20as%20a%20service%20L2%20banner/Real%20time%20Ai%20Powered%20Analytics.webp"
         />
 
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="Analytics that don’t just react—they predict and prescribe.  "
+  title="Analytics that don’t just react-they predict and prescribe.  "
   stats={[
     { label: "Lag between behavior & insight  ", value: "0 " },
     { label: " Accuracy rate for predictive trend models ", value: "87%  " },
@@ -191,7 +161,7 @@ const features: FeatureContent[] = [
         {/* Tab Features Section */}
         <EnterpriseCapabilities
           title="What We Do with Real-Time & AI-Powered Analytics "
-          subtitle="We help you act faster, forecast smarter, and find meaning in motion—not just static reports. "
+          subtitle="We help you act faster, forecast smarter, and find meaning in motion-not just static reports. "
           tabs={tabs}
           features={features} 
         />
@@ -199,21 +169,21 @@ const features: FeatureContent[] = [
         {/* Recent Resources Section */}
         <RecentResourcesSection
           heading=" What Happens When Data Gets Fast (and Smart)    "
-          body=" These brands stopped reacting—and started outperforming. "
+          body=" These brands stopped reacting-and started outperforming. "
            subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
          <LogoScroller
         heading="Chosen by Teams That Lead With Data & Act With Speed"
-        subtext=" From marketing ops to product teams—real-time insight powers everything.  "
+        subtext=" From marketing ops to product teams-real-time insight powers everything.  "
        
       />
 
         {/* Testimonials */}
         <Testimonials
           title=" Real-Time Impact, Real Business Wins.     "
-          description=" Our clients don’t guess anymore—they know, instantly.   "
+          description=" Our clients don’t guess anymore-they know, instantly.   "
         />
 
         {/* FAQs */}
@@ -226,14 +196,15 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="12"
 />
 
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Get You From Data Lag to First-Mover Advantage  "
-          subtext="AI-powered insight. Real-time speed. Business clarity—on tap.     "
+          subtext="AI-powered insight. Real-time speed. Business clarity-on tap.     "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

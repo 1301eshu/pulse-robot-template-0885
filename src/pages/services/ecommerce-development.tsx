@@ -79,7 +79,7 @@ export default function MarketingAutomation() {
       description: "Your store shouldn’t feel like everyone else’s. We design it in a way that it flexes with every integration your stack throws at it.",
       items: [
         { icon: Zap, title: "Custom Shopify stores, just like your brand" },
-        { icon: Zap, title: "Smooth payments, seamless integrations—no hiccups" },
+        { icon: Zap, title: "Smooth payments, seamless integrations-no hiccups" },
         { icon: Zap, title: "Sprinkle LLM magic to make your store the star" },
       ],
     },
@@ -98,7 +98,7 @@ export default function MarketingAutomation() {
       items: [
         { icon: Database, title: "Integrate with ease, run your store like a boss" },
         { icon: Database, title: "Mobile or desktop? Perfect experiences across devices" },
-        { icon: Database, title: "Full control and endless tweaks—your store, your way" },
+        { icon: Database, title: "Full control and endless tweaks-your store, your way" },
       ],
     },
     {
@@ -140,7 +140,7 @@ export default function MarketingAutomation() {
   const recentResources: ResourceItem[] = [
     {
       title: "AI for eCommerce: Real Use Cases for Smarter Stores",
-      subtitle: "Get hands-on with AI integrations that drive real sales growth—see our favorite use cases, from automation to analytics.",
+      subtitle: "Get hands-on with AI integrations that drive real sales growth-see our favorite use cases, from automation to analytics.",
       author: "GrowthNatives",
       date: "July 2025",
       readTime: "5 min read",
@@ -149,7 +149,7 @@ export default function MarketingAutomation() {
     },
     {
       title: "Top 5 eCommerce Dev Trends for 2025",
-      subtitle: "The future is here—AI, headless commerce, automation, and the tech that makes it all seamless.",
+      subtitle: "The future is here-AI, headless commerce, automation, and the tech that makes it all seamless.",
       author: "GrowthNatives",
       date: "July 2025",
       readTime: "6 min read",
@@ -171,7 +171,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "Can you migrate our store without losing data or SEO?",
-      a: "Yes, securely and seamlessly. Everything stays intact—URLs, content, rankings, and customer data.",
+      a: "Yes, securely and seamlessly. Everything stays intact-URLs, content, rankings, and customer data.",
     },
     {
       q: "Can you integrate with our tools and systems?",
@@ -205,7 +205,7 @@ export default function MarketingAutomation() {
 
         {/* Trust Markers Section */}
         <EditableStatSection
-          title="You’re in good company—where smooth operations meet scalable growth"
+          title="You’re in good company-where smooth operations meet scalable growth"
           stats={[
             { label: "Combined years of full-stack development experience", value: "200+" },
             { label: "Frontend, backend, and cloud technologies mastered", value: "60+" },
@@ -232,7 +232,7 @@ export default function MarketingAutomation() {
         {/* Customer Logo Section */}
         <LogoScroller
           heading="Brands Backing Our eCommerce Builds"
-          subtext="From bold startups to big players—we power their eCommerce growth."
+          subtext="From bold startups to big players-we power their eCommerce growth."
           
         />
 
@@ -258,7 +258,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build Your AI-Driven eCommerce Empire"
           subtext="No more slow loads, just fast sales and happy customers."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

@@ -80,7 +80,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "ux",
-      description: "From desktop to mobile—everything just works.",
+      description: "From desktop to mobile-everything just works.",
       items: [
         { icon: BarChart2, title: "Mobile-first designs that actually feel mobile" },
         { icon: BarChart2, title: "Build flows that users don’t need to “figure out”" },
@@ -89,7 +89,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "ecom",
-      description: "Carts, checkouts, and conversions—done right.",
+      description: "Carts, checkouts, and conversions-done right.",
       items: [
         { icon: Database, title: "Design that guides users straight to “Buy Now”" },
         { icon: Database, title: "Product layouts that make scrolling addictive" },
@@ -98,7 +98,7 @@ export default function MarketingAutomation() {
     },
     {
       id: "cms",
-      description: "Update content like a boss—no dev required.",
+      description: "Update content like a boss-no dev required.",
       items: [
         { icon: ShieldCheck, title: "Plug into WordPress, Shopify, or your CMS of choice" },
         { icon: ShieldCheck, title: "Train your team to use the CMS with ease" },
@@ -146,7 +146,7 @@ export default function MarketingAutomation() {
     },
     {
       title: "Smart UI/UX in Action: Case Study 3",
-      subtitle: "Yet another brand success story—by design.",
+      subtitle: "Yet another brand success story-by design.",
       author: "Case Study Author",
       date: "2025",
       readTime: "3 min read",
@@ -159,7 +159,7 @@ export default function MarketingAutomation() {
   const faqs = [
     {
       q: "What makes custom website design better than using templates?",
-      a: "Custom design lets us create a unique user interface tailored specifically to your business goals, audience needs, and branding—giving you that competitive edge that templates just can't deliver.",
+      a: "Custom design lets us create a unique user interface tailored specifically to your business goals, audience needs, and branding-giving you that competitive edge that templates just can't deliver.",
     },
     {
       q: "How do you ensure a seamless mobile experience for websites?",
@@ -175,7 +175,7 @@ export default function MarketingAutomation() {
     },
     {
       q: "How long does the design process typically take?",
-      a: "Most projects are completed in 3–4 weeks, but the timeline depends on complexity and scope—we keep you in the loop every step of the way.",
+      a: "Most projects are completed in 3–4 weeks, but the timeline depends on complexity and scope-we keep you in the loop every step of the way.",
     },
   ];
 
@@ -196,7 +196,7 @@ export default function MarketingAutomation() {
 
         {/* Statistics Section */}
         <EditableStatSection
-          title="You’re in good company—with brands that design faster, convert better, and scale smoother."
+          title="You’re in good company-with brands that design faster, convert better, and scale smoother."
           stats={stats.map(s => ({ label: s.label, value: s.value }))}
         />
 
@@ -225,7 +225,7 @@ export default function MarketingAutomation() {
         {/* Testimonials */}
         <Testimonials
           title="Clients That Felt Our UI/UX Glow-Up"
-          description="These stories are real—just like their skyrocketing engagement stats."
+          description="These stories are real-just like their skyrocketing engagement stats."
         />
 
         {/* FAQs */}
@@ -244,7 +244,7 @@ export default function MarketingAutomation() {
           heading="Let’s Build Your AI-Powered Website Experience"
           subtext="Smooth flows, sticky UX, and a vibe your users remember."
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

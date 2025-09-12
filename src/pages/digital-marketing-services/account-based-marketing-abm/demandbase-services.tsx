@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactWithBg from "@/components/L3herobanner";
 import ContactCta from "@/components/ui/component_6";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from Demandbase Services page)
@@ -53,39 +54,10 @@ const L3Template = () => {
     },
   ];
 
-  // Recent Blogs (from page Top Blogs section)
-  const recentResources: ResourceItem[] = [
-    {
-      title: "10 Must-Read Account-Based Marketing Ebooks (ABM Ebook) for Success",
-      subtitle: "",
-      author: "Arpit Srivastava",
-      date: "Jan 25, 2021",
-      readTime: "13 min read",
-      image: "",
-      slug: "abm-ebooks-success",
-    },
-    {
-      title: "Tried and Tested B2B Lead Generation Tactics",
-      subtitle: "",
-      author: "Gaurav Rajpoot",
-      date: "Oct 19, 2021",
-      readTime: "7 min read",
-      image: "",
-      slug: "b2b-lead-generation-tactics",
-    },
-    {
-      title: "How to Scale Personalization with Account-Based Marketing",
-      subtitle: "",
-      author: "Arpit Srivastava",
-      date: "Apr 26, 2023",
-      readTime: "14 min read",
-      image: "",
-      slug: "scale-personalization-with-abm",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="digitalmarketingservicesaccountbasedmarketingabmdemandbaseservices"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -207,7 +179,7 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to our best practices and resources from experienced."
           subTabs={[]}
-          resources={recentResources}
+           resourceType="11"
         />
       </div>
 

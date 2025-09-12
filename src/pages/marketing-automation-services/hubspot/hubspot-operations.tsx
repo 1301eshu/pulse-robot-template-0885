@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from HubSpot Operations Services page)
@@ -17,11 +18,11 @@ const L3Template = () => {
     },
     {
       q: "How Can HubSpot Operations Services Benefit My Business?",
-      a: "They help you maintain clean and organized data, automate manual processes, gain deeper insights through reporting and analytics, and ensure your HubSpot platform is optimized to support your specific business objectives—leading to increased efficiency, improved customer engagement, and better ROI.",
+      a: "They help you maintain clean and organized data, automate manual processes, gain deeper insights through reporting and analytics, and ensure your HubSpot platform is optimized to support your specific business objectives-leading to increased efficiency, improved customer engagement, and better ROI.",
     },
     {
       q: "What Types of Businesses Can Benefit from HubSpot Operations Services?",
-      a: "Businesses of all sizes and industries that use the HubSpot platform for marketing, sales, and customer service can benefit. Services can be tailored to meet unique requirements—from startups to large enterprises.",
+      a: "Businesses of all sizes and industries that use the HubSpot platform for marketing, sales, and customer service can benefit. Services can be tailored to meet unique requirements-from startups to large enterprises.",
     },
     {
       q: "Can HubSpot Operations Services be Customized to Suit My Business's Needs?",
@@ -43,6 +44,7 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="marketingautomationserviceshubspotoperations"/>
       <Header />
 
       {/* Contact Section (reusable component) */}
@@ -81,7 +83,7 @@ const L3Template = () => {
                   "Our certified HubSpot experts and service providers will set up the HubSpot instance tailored to your business needs and strategies.",
                 bullets: [
                   "Set up HubSpot instance",
-                  "Migrate leads/contacts from your existing system to HubSpot",
+                  "Migrate leads/contact-us from your existing system to HubSpot",
                   "Integrate your HubSpot instance with your MarTech stack",
                   "Organize all created assets in lists and folders",
                   "Enhance user experience with engaging landing pages and emails",
@@ -152,6 +154,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Get quick access to best practices and resources from our CMS experts."
           subTabs={[]}
+                    resourceType="71"
+
         />
       </div>
 

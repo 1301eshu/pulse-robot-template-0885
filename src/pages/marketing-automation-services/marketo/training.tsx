@@ -7,6 +7,7 @@ import FaqSection from "@/components/ui/component_5";
 import RecentResourcesSection, { ResourceItem } from "@/components/ui/component_10";
 import ContactCta from "@/components/ui/component_6";
 import ContactWithBg from "@/components/L3herobanner";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const L3Template = () => {
   // FAQs (from Marketo Training page)
@@ -39,6 +40,7 @@ const L3Template = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO page="marketingautomationservicesmarketotraining"/>
       <Header />
 
       {/* Contact Section */}
@@ -101,7 +103,7 @@ const L3Template = () => {
               },
               {
                 title: "Onsite & Offsite Marketo Training",
-                desc: "Whether you’re new to Marketo or looking to upskill your team, we offer customized training that can be delivered onsite or online to suit your needs. Our experienced trainers will help create a tailored program that covers everything—from basic functionality to advanced features.",
+                desc: "Whether you’re new to Marketo or looking to upskill your team, we offer customized training that can be delivered onsite or online to suit your needs. Our experienced trainers will help create a tailored program that covers everything-from basic functionality to advanced features.",
                 bullets: [
                   "Get Marketo-certified experts for hands-on training",
                   "Get online training courses or get trained at our training facility",
@@ -164,6 +166,8 @@ const L3Template = () => {
           heading="Top Blogs"
           body="Learn from our collection of resources, best practices, and expert tips on marketing automation."
           subTabs={[]}
+          resourceType="40"
+
         />
       </div>
 
@@ -171,7 +175,7 @@ const L3Template = () => {
         heading="Ready to Become a Marketo Ninja?"
         subtext="Focus your energy on growth while we train your team in Marketo automation."
         buttonLabel="Schedule 1:1 Call"
-        buttonLink="/contact/"
+        buttonLink="/contact-us/"
       />
 
       <Footer />

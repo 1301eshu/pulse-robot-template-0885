@@ -101,7 +101,7 @@ const features: FeatureContent[] = [
   {
     id: "integration",
    
-    description: "No noise or clutter—just a clean, customized setup built around what you really want to track.  ",
+    description: "No noise or clutter-just a clean, customized setup built around what you really want to track.  ",
     items: [
       { icon: Database, title: "Seamless Matomo integration, no tech headaches.  " },
       { icon: Database, title: "Customize Matomo to track what truly counts.  " },
@@ -111,7 +111,7 @@ const features: FeatureContent[] = [
   {
     id: "security",
    
-    description: "Data privacy, audience behavior, heatmaps—we bring it all together under one powerful, secure hood. ",
+    description: "Data privacy, audience behavior, heatmaps-we bring it all together under one powerful, secure hood. ",
     items: [
       { icon: ShieldCheck, title: "Piwik PRO, built exactly for your business.  " },
       { icon: ShieldCheck, title: "Data protection? We’ve got it locked down.  " },
@@ -140,42 +140,12 @@ const features: FeatureContent[] = [
   },
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
     {
       q: " How are your web analytics services different from a basic setup? ",
-      a: "We go beyond code drops—think smart tracking, tailored segments, and dashboards that actually make sense.",
+      a: "We go beyond code drops-think smart tracking, tailored segments, and dashboards that actually make sense.",
     },
     {
       q: "Can you help us make sense of messy data?",
@@ -187,7 +157,7 @@ const features: FeatureContent[] = [
     },
     {
       q: "Do we need to be data nerds to use your dashboards?",
-      a: "Nope. They're built for humans—clean, visual, and zero jargon guaranteed. ",
+      a: "Nope. They're built for humans-clean, visual, and zero jargon guaranteed. ",
     },
   ];
   
@@ -208,7 +178,7 @@ const features: FeatureContent[] = [
         {/* Statistics Section */}
         <EditableStatSection
  
-  title="You’re in sharp company—brands decoding data and growing bolder. "
+  title="You’re in sharp company-brands decoding data and growing bolder. "
   stats={[
     { label: "Certified Web Analytics specialists on deck ", value: "30+" },
     { label: " Custom dashboards & reports built ", value: "500+" },
@@ -230,12 +200,12 @@ const features: FeatureContent[] = [
           heading="See What Smart Web Analytics Looks Like in Action  "
           body=" A glimpse at how we’ve helped brands turn raw traffic into real traction. "
            subTabs={[]} // no subtabs on this page
-          resources={recentResources}
+          resourcePostType="case-studies"
         />
 
          <LogoScroller
         heading="Brands That Bank on Our Web Analytics Mojo  "
-        subtext=" From hustle mode to hyper-scale—we help them read between the clicks. "
+        subtext=" From hustle mode to hyper-scale-we help them read between the clicks. "
         
       />
 
@@ -255,14 +225,15 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="195"
 />
 
         {/* Call to Action */}
         <ContactCta
           heading="Let’s Build Your AI-Powered Analytics Engine"
-          subtext="Smarter data, sharper decisions, faster growth—let’s make it happen.  "
+          subtext="Smarter data, sharper decisions, faster growth-let’s make it happen.  "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />

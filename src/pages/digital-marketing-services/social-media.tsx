@@ -33,7 +33,7 @@ export default function MarketingAutomation() {
     id: "analytics",
     label: "X (formerly Twitter) Marketing  ",
     icon: BarChart2,
-    image: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Social%20Media%20Marketing%20/X%20marketing.webp",
+    image: "https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/digital%20marketing%20/X%20marketing.webp",
     ctaText: "Read More",
     ctaLink: "/digital-marketing-services/social-media/twitter-marketing/"
   },
@@ -105,36 +105,6 @@ const features: FeatureContent[] = [
   
 ];
 
-  // Resources for recent articles
-  const recentResources: ResourceItem[] = [
-    {
-      title: "Agentic AI: The Silent Force Reshaping Marketing Ops",
-      subtitle: "Wait, so this thing just... does it? Like, by itself? Yes. And no, it's not magic. It's called Agentic AI and it's the next evolution of marketing automation you...",
-      author: "Sneha Kumari",
-      date: "July 7, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "hubspot-chatgpt-connector"
-    },
-    {
-      title: "The AI Shortlist: Top Use Cases for Marketing Ops That You Must Know",
-      subtitle: "Back in the day, Marketing Ops used to mean fighting timelines and making friends with a dozen dashboards...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "google-ads-roi-increase"
-    },
-    {
-      title: "Marketo & AI: Best Practices for Smarter Segmentation and Nurturing",
-      subtitle: "You've got Marketo. You've got data. You've got 47 tabs open. Now what?...",
-      author: "Mehakpreet Kaur",
-      date: "July 4, 2025",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400",
-      slug: "marketo-ai-segmentation"
-    },
-  ];
 
   // FAQ List
   const faqs = [
@@ -158,7 +128,7 @@ const features: FeatureContent[] = [
 
   return (
     <div className="bg-white text-gray-900">
-      <DynamicSEO page="serviceHubspot" />
+      <DynamicSEO page="digitalmarketingservicessocialmedia" />
       <Header />
       <SmartBreadcrumb />
       <main className="">
@@ -168,7 +138,7 @@ const features: FeatureContent[] = [
          
           subtext="Win attention, build traction, and translate scrolls into conversions, across every social channel. "
           bgImage="https://res.cloudinary.com/dhbhumz3q/image/upload/v1751917421/8302_gqqgrs.jpg"
-          rightImage="https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/Mega%20Menu/DigitalMarketing/Hero%20Section_L2_Bannera/SMM.webp"
+          rightImage="https://czsfjrcdignecnemjvfh.supabase.co/storage/v1/object/public/revamp-growth/Design%20Services/Social%20Media.webp"
         />
 
         {/* Statistics Section */}
@@ -195,7 +165,7 @@ const features: FeatureContent[] = [
           heading="See How AI-Led Social Strategy Turned Followers into Funnels  "
           body="Stay ahead with AI-powered tips, blog posts SMM tactics, and other resources from the experts. "
           subTabs={[]}
-          resources={recentResources}
+         resourcePostType="case-studies"
         />
 
         <LogoScroller
@@ -220,6 +190,7 @@ const features: FeatureContent[] = [
   perPage={6}
   firstN={4}
   contentType="blogs"
+  resourceType="76"
 />
 
         {/* Call to Action */}
@@ -227,7 +198,7 @@ const features: FeatureContent[] = [
           heading=" Let’s Make Social Your Strongest Channel "
           subtext="Build a social engine that works 24/7 for your brand. "
           buttonLabel="Talk to an Expert"
-          buttonLink="/contact"
+          buttonLink="/contact-us"
         />
       </main>
       <Footer />
