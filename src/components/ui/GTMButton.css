@@ -1,0 +1,74 @@
+.gtm-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  overflow: hidden;
+}
+
+.gtm-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: subtract;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gtm-button:hover::before,
+.gtm-button--active::before {
+  opacity: 1;
+}
+
+.gtm-button:hover {
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.gtm-button--active {
+  color: #1f2937;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.gtm-button--active .gtm-button__label {
+  position: relative;
+  z-index: 1;
+}
+
+.gtm-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.gtm-button__label {
+  position: relative;
+  z-index: 2;
+  font-weight: inherit;
+  transition: all 0.3s ease;
+}
+
+.gtm-button--active .gtm-button__label {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
