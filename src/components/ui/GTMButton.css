@@ -1,4 +1,4 @@
-.gtm-button {
+.TabsList2027980309__tab {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.gtm-button::before {
+.TabsList2027980309__tab::before {
   content: '';
   position: absolute;
   top: 0;
@@ -34,39 +34,39 @@
   transition: opacity 0.3s ease;
 }
 
-.gtm-button:hover::before,
-.gtm-button--active::before {
+.TabsList2027980309__tab:hover::before,
+.TabsList2027980309--current::before {
   opacity: 1;
 }
 
-.gtm-button:hover {
+.TabsList2027980309__tab:hover {
   color: #374151;
   transform: translateY(-1px);
 }
 
-.gtm-button--active {
+.TabsList2027980309--current {
   color: #1f2937;
   background: rgba(59, 130, 246, 0.05);
 }
 
-.gtm-button--active .gtm-button__label {
+.TabsList2027980309--current .TabsList2027980309__label {
   position: relative;
   z-index: 1;
 }
 
-.gtm-button:focus-visible {
+.has-custom-focus:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
-.gtm-button__label {
+.TabsList2027980309__label {
   position: relative;
   z-index: 2;
   font-weight: inherit;
   transition: all 0.3s ease;
 }
 
-.gtm-button--active .gtm-button__label {
+.TabsList2027980309--current .TabsList2027980309__label {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

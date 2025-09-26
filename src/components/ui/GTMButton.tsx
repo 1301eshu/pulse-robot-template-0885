@@ -14,12 +14,13 @@ export const GTMButton: React.FC<GTMButtonProps> = ({
 }) => {
   return (
     <button
-      className={`gtm-button ${isActive ? 'gtm-button--active' : ''}`}
+      className={`TabsList2027980309__tab wixui-tabs__item has-custom-focus ${isActive ? 'TabsList2027980309--current' : ''}`}
       onClick={onClick}
       role="tab"
+      tabIndex={0}
       aria-selected={isActive}
     >
-      <span className="gtm-button__label">{children}</span>
+      <span className="TabsList2027980309__label">{children}</span>
     </button>
   );
 };
