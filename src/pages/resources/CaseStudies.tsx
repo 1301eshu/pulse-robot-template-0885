@@ -17,6 +17,16 @@ const ResourcesIndex = () => {
   const exploreMoreItems: ExploreItem[] = [
     {
       tag: "Case Studies",
+      title: "Salesforce + Snowflake + Braze Integration Case Study",
+      readTime: "3 min read",
+      author:"Growth Natives",
+      category: "Data Integration",
+      thumbnail: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/salesforce-snowflake-braze-integration.webp",
+      slug: "salesforce-snowflake-braze-integration",
+      type: 'case-studies'
+    },
+    {
+      tag: "Case Studies",
       title: "Klaviyo to Braze Migration Case Study",
       readTime: "3 min read",
       author:"Growth Natives",

@@ -666,6 +666,104 @@ const casePosts = {
         ]
       }
     ]
+  },
+  "salesforce-snowflake-braze-integration": {
+    "id": "salesforce-snowflake-braze-integration",
+    "title": "Salesforce + Snowflake + Braze Integration Case Study",
+    "subtitle": "How a SaaS Scale-Up Unified Its Customer Data and Boosted Retention by 25%",
+    "author": "Growth Natives",
+    "date": "Jan 15, 2025",
+    "category": "Data Integration",
+    "readTime": "3 min read",
+    "tags": ["Salesforce", "Snowflake", "Braze", "Integration", "SaaS", "Data Unification"],
+    "heroImage": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/salesforce-snowflake-braze-integration.webp",
+    "toc": [
+      "The Customer",
+      "The Challenge",
+      "The Solution",
+      "The Results"
+    ],
+    "content": [
+      {
+        "type": "heading",
+        "content": "The Customer"
+      },
+      {
+        "type": "paragraph",
+        "content": "The customer was a fast-growing B2B SaaS company with around 500 employees and enterprise clients worldwide. Their go-to-market team relied on Salesforce CRM for sales and Snowflake for analytics, while Braze was used for marketing automation—but none of these systems communicated seamlessly."
+      },
+      {
+        "type": "heading",
+        "content": "The Challenge"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Disconnected systems made it impossible to get a single view of the customer",
+          "Marketing campaigns ran on outdated data due to manual imports and delays",
+          "Reporting required hours of spreadsheet wrangling instead of live dashboards",
+          "Lack of real-time triggers meant personalization stalled at a \"batch-and-blast\" level"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Solution"
+      },
+      {
+        "type": "paragraph",
+        "content": "We designed and executed an integration strategy to unify the client's stack and transform Braze into the central engagement engine."
+      },
+      {
+        "type": "heading",
+        "content": "Salesforce + Braze Sync"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Connected Salesforce CRM with Braze for real-time updates on customer status, lifecycle stage, and deal activity",
+          "Enabled automatic enrollment of new leads and closed-won customers into Braze journeys without manual handoffs"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Snowflake + Braze Data Flow"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Integrated Snowflake with Braze to feed in predictive churn scores, product usage signals, and AI-driven customer segments",
+          "Enabled dynamic segmentation in Braze that adapted instantly as customer behavior shifted"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Reporting + Feedback Loop"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Automated campaign performance data from Braze back into Snowflake, giving ops teams live dashboards of engagement, retention, and revenue impact",
+          "Created a feedback loop where results continually refined customer segments"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Results"
+      },
+      {
+        "type": "paragraph",
+        "content": "Within the first 90 days post-integration, the SaaS company saw measurable improvements:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "25% boost in retention campaign performance through AI-driven segmentation powered by live data",
+          "50% reduction in reporting time, with automated dashboards replacing manual exports",
+          "Real-time personalization unlocked, enabling smarter upsell and cross-sell campaigns",
+          "One unified customer view across sales, marketing, and analytics teams"
+        ]
+      }
+    ]
   }
 
 
