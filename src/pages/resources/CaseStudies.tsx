@@ -17,6 +17,16 @@ const ResourcesIndex = () => {
   const exploreMoreItems: ExploreItem[] = [
     {
       tag: "Case Studies",
+      title: "Braze Implementation Case Study",
+      readTime: "3 min read",
+      author:"Growth Natives",
+      category: "Marketing Automation",
+      thumbnail: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/braze-implementation-dtc.webp",
+      slug: "braze-implementation-dtc-beauty",
+      type: 'case-studies'
+    },
+    {
+      tag: "Case Studies",
       title: "Salesforce + Snowflake + Braze Integration Case Study",
       readTime: "3 min read",
       author:"Growth Natives",

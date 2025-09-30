@@ -764,6 +764,104 @@ const casePosts = {
         ]
       }
     ]
+  },
+  "braze-implementation-dtc-beauty": {
+    "id": "braze-implementation-dtc-beauty",
+    "title": "Braze Implementation Case Study",
+    "subtitle": "How a DTC Beauty Brand Got Braze Right From Day One and Boosted Repeat Purchases by 35%",
+    "author": "Growth Natives",
+    "date": "Jan 15, 2025",
+    "category": "Marketing Automation",
+    "readTime": "3 min read",
+    "tags": ["Braze", "Implementation", "DTC", "Beauty", "Personalization"],
+    "heroImage": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/braze-implementation-dtc.webp",
+    "toc": [
+      "The Customer",
+      "The Challenge",
+      "The Solution",
+      "The Results"
+    ],
+    "content": [
+      {
+        "type": "heading",
+        "content": "The Customer"
+      },
+      {
+        "type": "paragraph",
+        "content": "The customer was a fast-growing direct-to-consumer beauty brand with around 50 employees and a global customer base. Their lean marketing team wanted to leverage Braze to deliver personalized, cross-channel engagement—but lacked the expertise to set it up for long-term scale."
+      },
+      {
+        "type": "heading",
+        "content": "The Challenge"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Basic \"batch-and-blast\" campaigns with little personalization",
+          "Risk of messy, unsustainable workflows if Braze wasn't implemented correctly",
+          "No clear data structure or naming conventions, making campaigns harder to manage",
+          "Limited internal knowledge of predictive journeys and AI-driven optimization"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Solution"
+      },
+      {
+        "type": "paragraph",
+        "content": "We delivered a smart, AI-first Braze implementation that set the brand up for scale and impact."
+      },
+      {
+        "type": "heading",
+        "content": "Cross-Channel Journeys with Predictive Triggers"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Designed customer journeys spanning email, push, and in-app messaging",
+          "Built predictive flows: e.g., cart viewed → trigger push; purchase abandoned → trigger SMS; loyal customer → send loyalty reward"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Clean Data Structures & Naming Conventions"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Established standardized event tracking, attributes, and segment structures",
+          "Implemented clear naming conventions to avoid confusion and speed up campaign builds"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "AI-Powered Testing & Training"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Trained the marketing team to use Braze's experimentation tools and AI testing features",
+          "Enabled automatic subject line, send-time, and creative optimization"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Results"
+      },
+      {
+        "type": "paragraph",
+        "content": "Within the first 90 days of going live on Braze, the customer achieved:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "35% lift in repeat purchases, driven by predictive journeys and personalized flows",
+          "40% faster campaign build time, thanks to clean data structures and standardized workflows",
+          "20% increase in customer engagement rates across email and push notifications",
+          "Scalable foundation for growth, allowing the lean team to launch campaigns with confidence"
+        ]
+      }
+    ]
   }
 
 
