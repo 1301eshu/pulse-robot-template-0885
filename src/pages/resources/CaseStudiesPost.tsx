@@ -554,8 +554,119 @@ const casePosts = {
         ]
       }
     ]
+  },
+  "klaviyo-to-braze-migration": {
+    "id": "klaviyo-to-braze-migration",
+    "title": "Klaviyo to Braze Migration Case Study",
+    "subtitle": "How a Mid-Sized Retail Brand Moved From Klaviyo to Braze Without Missing a Beat",
+    "author": "Growth Natives",
+    "date": "Jan 15, 2025",
+    "category": "Marketing Automation",
+    "readTime": "3 min read",
+    "tags": ["Marketing Automation", "Migration", "Braze", "Klaviyo", "Retail"],
+    "heroImage": "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/klaviyo-braze-migration.webp",
+    "toc": [
+      "The Customer",
+      "The Challenge",
+      "The Solution",
+      "The Results"
+    ],
+    "content": [
+      {
+        "type": "heading",
+        "content": "The Customer"
+      },
+      {
+        "type": "paragraph",
+        "content": "The customer was a fashion retailer with 200 employees, operating across North America with both eCommerce and brick-and-mortar stores."
+      },
+      {
+        "type": "heading",
+        "content": "The Challenge"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Multiple campaign tools, inconsistent messaging across channels",
+          "Slow turnaround for launching new campaigns or tweaking workflows",
+          "Data silos: customer behavior data, purchase history, and engagement metrics were spread between tools",
+          "Risk of data loss, campaign downtime and broken workflows during migration"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Solution"
+      },
+      {
+        "type": "paragraph",
+        "content": "We handled a full migration strategy with minimal disruption, detailed in these steps:"
+      },
+      {
+        "type": "heading",
+        "content": "Audit & Mapping"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Took stock of 250+ existing campaigns and flows in Klaviyo",
+          "Identified redundant or overlapping automations",
+          "Used mapping tools and expert review to plan equivalent (or improved) flows in Braze"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Re-architecting with Scale & Clean Logic"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Rather than copying old flows verbatim, we redesigned them using Braze's event-triggered architecture (delays, conditional paths, channel switching)",
+          "Established naming conventions, clean data event definitions, and folder structures so future builds would be faster"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Shadow Testing & QA"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Ran \"shadow campaigns\" in Braze in parallel with Klaviyo flows to compare behavior, timing, and deliverability (without sending to customers)",
+          "Verified data integrity, deliverability, and logic paths before final switch"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Go-Live & Post-Migration Optimization"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Switched over flows stage by stage to avoid downtime or loss of deliverability",
+          "Monitored performance closely for first 30 days",
+          "Applied minor tweaks: send-time optimizations, channel reallocations, subject-line improvements"
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "The Results"
+      },
+      {
+        "type": "paragraph",
+        "content": "The migration didn't just move campaigns from one tool to another—it set the foundation for faster, smarter engagement. Within the first 60 days on Braze, the retail brand saw:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "20% faster campaign launches: average build time dropped from 10 days to 8 days",
+          "18% lift in engagement rates: (opens + clicks) across email and push notifications",
+          "25% drop in cart abandonment: thanks to AI-powered, real-time trigger flows",
+          "Zero downtime during migration: customers never noticed the switch",
+          "40% reduction in manual campaign errors due to clean logic and standardized workflows"
+        ]
+      }
+    ]
   }
-
 
 
 

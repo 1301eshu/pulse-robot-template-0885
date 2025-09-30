@@ -17,6 +17,16 @@ const ResourcesIndex = () => {
   const exploreMoreItems: ExploreItem[] = [
     {
       tag: "Case Studies",
+      title: "Klaviyo to Braze Migration Case Study",
+      readTime: "3 min read",
+      author:"Growth Natives",
+      category: "Marketing Automation",
+      thumbnail: "https://jhtpqlptodpdsixlblpx.supabase.co/storage/v1/object/public/media/case-study/klaviyo-braze-migration.webp",
+      slug: "klaviyo-to-braze-migration",
+      type: 'case-studies'
+    },
+    {
+      tag: "Case Studies",
       title: "Improving Forecasting Accuracy by 69% with Salesforce Billing Implementation for a Leading Hardware Company",
       readTime: "1 min read",
       author:"Geeta Dutt",
