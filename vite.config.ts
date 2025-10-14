@@ -12,6 +12,21 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      // Proxy WordPress API calls to avoid CORS in development
+      '/wp-json': {
+        target: 'https://growthnatives.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path
+      },
+      '/wp-content': {
+        target: 'https://growthnatives.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path
+      }
+    }
   },
   plugins: [
     react(),

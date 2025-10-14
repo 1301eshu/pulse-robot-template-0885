@@ -2,9 +2,51 @@
 
 ## 🎯 Overview
 
-This project now implements **static site generation (SSG)** for blog pages to ensure proper SEO and social media sharing. Blog posts are pre-rendered at build time with full meta tags and structured data.
+This project implements **static site generation (SSG)** for blog pages with proper SEO, plus a development proxy to handle API requests without CORS issues.
 
 ## 🚀 How It Works
+
+### Development Mode
+- **Vite Proxy**: All `/wp-json/*` and `/wp-content/*` requests are proxied to `https://growthnatives.com`
+- **Relative URLs**: `API_BASE_URL` is empty in dev, so requests use relative paths through the proxy
+- **No CORS Issues**: Proxy handles cross-origin requests automatically
+
+### Production Mode
+- **Pre-rendered HTML**: Blog pages generated at build time with full SEO meta tags
+- **Direct API Calls**: Uses `https://growthnatives.com` directly
+- **Static + Dynamic**: Pre-rendered HTML + React hydration for interactivity
+
+## 🛠️ Development Setup
+
+The proxy is configured in `vite.config.ts`:
+
+```typescript
+proxy: {
+  '/wp-json': {
+    target: 'https://growthnatives.com',
+    changeOrigin: true,
+    secure: true
+  }
+}
+```
+
+Blog pages now work in development without CORS errors!
+
+## 📦 API Client
+
+New utility at `src/lib/apiClient.ts` provides:
+- Automatic retry logic (3 attempts)
+- Better error handling
+- Type-safe WordPress API calls
+- Consistent request configuration
+
+Usage:
+```typescript
+import { getWordPressPosts, getWordPressCategories } from '@/lib/apiClient';
+
+const posts = await getWordPressPosts({ perPage: 10, page: 1 });
+const categories = await getWordPressCategories();
+```
 
 ### 1. Pre-Build Scripts
 
