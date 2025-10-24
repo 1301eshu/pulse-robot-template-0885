@@ -383,6 +383,7 @@ const BlogPost = () => {
   const [headTags, setHeadTags] = useState<JSX.Element[]>([]);
   const [rankMathAuthor, setRankMathAuthor] = useState<string | null>(null);
 
+
   useLayoutEffect(() => {
     const fetchRankMath = async () => {
       try {
@@ -489,26 +490,55 @@ const BlogPost = () => {
     fetchRankMath();
   }, []);
 
-
-
-  useEffect(() => {
-    handleApiDomainReplacement();
-    if (slug) {
-      fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.length > 0) {
-            const contentHTML = data[0].content.rendered;
-            const tocData = extractTOC(contentHTML);
-            setPost(data[0]);
-            setToc(tocData);
-          } else {
-            setNotFound(true);
-          }
-        })
-        .catch(() => setNotFound(true));
+useLayoutEffect(() => {
+  const loadBlogData = async () => {
+    if (!slug) {
+      setNotFound(true);
+      return;
     }
-  }, [slug]);
+
+    try {
+      // ✅ Dynamically import the JSON file from local folder
+      const blogData = await import(`../../staticjson/${slug}.json`);
+
+      // Some bundlers wrap JSON in `.default`
+      const postData = blogData.default || blogData;
+
+      // Build TOC from content
+      const contentHTML = postData.content?.rendered || "";
+      const tocData = extractTOC(contentHTML);
+
+      setPost(postData);
+      setToc(tocData);
+      setNotFound(false);
+    } catch (error) {
+      console.error("Error loading blog data:", error);
+      setNotFound(true);
+    }
+  };
+
+  loadBlogData();
+}, [slug]);
+
+
+  // useEffect(() => {
+  //   handleApiDomainReplacement();
+  //   if (slug) {
+  //     fetch(`${API_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.length > 0) {
+  //           const contentHTML = data[0].content.rendered;
+  //           const tocData = extractTOC(contentHTML);
+  //           setPost(data[0]);
+  //           setToc(tocData);
+  //         } else {
+  //           setNotFound(true);
+  //         }
+  //       })
+  //       .catch(() => setNotFound(true));
+  //   }
+  // }, [slug]);
 
   // Scroll spy effect
   useEffect(() => {
@@ -552,7 +582,8 @@ const BlogPost = () => {
   const author = rankMathAuthor || post._embedded?.author?.[0]?.name || "Unknown Author";
   const matchedAuthor = authors.find(a => a.name.toLowerCase() === author.toLowerCase());
   const displayAuthor = matchedAuthor || { name: author, bio: "", title: "", image: "", linkedin: null };
-
+  const reviewerName = post.reviewer_name;
+  const reviewerLinkedin = post.reviewer_linkedin;
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://via.placeholder.com/800x400";
   const postCategory = post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog";
   const tags = post._embedded?.["wp:term"]?.[1]?.map((t: any) => t.name) || [];
@@ -632,7 +663,7 @@ const BlogPost = () => {
               <h4 className="text-base font-bold text-gray-900 mb-3">Author</h4>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                    {displayAuthor.image ? (
+                  {displayAuthor.image ? (
                     <img
                       src={displayAuthor.image}
                       className="w-full h-full object-cover rounded-full"
@@ -643,7 +674,7 @@ const BlogPost = () => {
                       <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
                     </svg>
                   )}
-                  </div>
+                </div>
                 <div>
                   <div className="font-semibold text-gray-900 flex items-center gap-1">
                     {displayAuthor.name}
@@ -676,16 +707,16 @@ const BlogPost = () => {
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
                     {displayAuthor.image ? (
-                    <img
-                      src={displayAuthor.image}
-                      className="w-full h-full object-cover rounded-full"
-                      alt={displayAuthor.name}
-                    />
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                    </svg>
-                  )}
+                      <img
+                        src={displayAuthor.image}
+                        className="w-full h-full object-cover rounded-full"
+                        alt={displayAuthor.name}
+                      />
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.67 0 4.8-2.13 4.8-4.8S14.67 2.4 12 2.4 7.2 4.53 7.2 7.2 9.33 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                      </svg>
+                    )}
                   </div>
 
                   <div>
@@ -708,6 +739,13 @@ const BlogPost = () => {
                   <div className="mt-6">
                     <h3 className="text-sm font-semibold mb-2 text-gray-800">{displayAuthor.title}</h3>
                     <p className="text-xs mb-4">{displayAuthor.bio}</p>
+                    <p className="text-xs">
+                      <strong className="text-gray-900">Article Reviewed By:</strong>{" "}
+                      {reviewerName}{" "}
+                      <a href={reviewerLinkedin} target="_blank" rel="noopener noreferrer">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" className="w-4 h-4 inline ml-1" alt="LinkedIn" />
+                      </a>
+                    </p>
                   </div>
                 )}
               </div>
