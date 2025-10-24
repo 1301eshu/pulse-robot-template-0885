@@ -384,141 +384,128 @@ const BlogPost = () => {
   const [rankMathAuthor, setRankMathAuthor] = useState<string | null>(null);
 
 
+  // Process RankMath SEO data from static JSON
   useLayoutEffect(() => {
-    const fetchRankMath = async () => {
-      try {
-        const publicDomain = API_BASE_URL;
-        const path = window.location.pathname;
-        const apiUrl = `${publicDomain}/wp-json/rankmath/v1/getHead?url=${publicDomain}${path}`;
+    if (!post?.rankmath_head) return;
 
-        const response = await fetch(apiUrl);
-        const result = await response.json();
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(post.rankmath_head, "text/html");
+      const elements: JSX.Element[] = [];
 
-        if (result?.head) {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(result.head, "text/html");
-          const elements: JSX.Element[] = [];
-
-          // ✅ Extract Author from twitter:data1
-          const twitterData1 = doc.querySelector('meta[name="twitter:data1"]')?.getAttribute("content");
-          if (twitterData1) {
-            setRankMathAuthor(twitterData1);
-          } else {
-            // ✅ Fallback: Extract from JSON-LD
-            const jsonLdScript = doc.querySelector('script[type="application/ld+json"]');
-            if (jsonLdScript) {
-              try {
-                const jsonLd = JSON.parse(jsonLdScript.textContent || "{}");
-                if (jsonLd["@graph"]) {
-                  const authorNode = jsonLd["@graph"].find((node: any) => node["@type"] === "Person" && node.name);
-                  if (authorNode?.name) {
-                    setRankMathAuthor(authorNode.name);
-                  }
-                }
-              } catch (err) {
-                console.warn("Error parsing JSON-LD:", err);
+      // ✅ Extract Author from twitter:data1
+      const twitterData1 = doc.querySelector('meta[name="twitter:data1"]')?.getAttribute("content");
+      if (twitterData1) {
+        setRankMathAuthor(twitterData1);
+      } else {
+        // ✅ Fallback: Extract from JSON-LD
+        const jsonLdScript = doc.querySelector('script[type="application/ld+json"]');
+        if (jsonLdScript) {
+          try {
+            const jsonLd = JSON.parse(jsonLdScript.textContent || "{}");
+            if (jsonLd["@graph"]) {
+              const authorNode = jsonLd["@graph"].find((node: any) => node["@type"] === "Person" && node.name);
+              if (authorNode?.name) {
+                setRankMathAuthor(authorNode.name);
               }
             }
+          } catch (err) {
+            console.warn("Error parsing JSON-LD:", err);
           }
-
-          doc.head.childNodes.forEach((node) => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              const el = node as HTMLElement;
-              switch (el.tagName.toLowerCase()) {
-                case "title":
-                  elements.push(<title key={elements.length}>{el.textContent}</title>);
-                  break;
-                case "meta":
-                  elements.push(
-                    <meta
-                      key={elements.length}
-                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                    />
-                  );
-                  break;
-                // case "link":
-                //   elements.push(
-                //     <link
-                //       key={elements.length}
-                //       {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                //     />
-                //   );
-                //   break;
-                case "link": {
-                  const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
-
-                  // ✅ Force canonical domain to growthnatives.com
-                  if (attrs.rel === "canonical" && attrs.href) {
-                    try {
-                      const url = new URL(attrs.href);
-                      url.hostname = "growthnatives.com"; // replace api.growthnatives.com
-                      url.protocol = "https:"; // enforce https
-                      attrs.href = url.toString();
-                    } catch (err) {
-                      console.warn("Invalid canonical URL:", attrs.href, err);
-                    }
-                  }
-
-                  elements.push(<link key={elements.length} {...attrs} />);
-                  break;
-                }
-
-
-                case "script":
-                  elements.push(
-                    <script
-                      key={elements.length}
-                      {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
-                    >
-                      {el.textContent}
-                    </script>
-                  );
-                  break;
-                default:
-                  break;
-              }
-            }
-          });
-
-          setHeadTags(elements);
         }
+      }
+
+      doc.head.childNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          const el = node as HTMLElement;
+          switch (el.tagName.toLowerCase()) {
+            case "title":
+              elements.push(<title key={elements.length}>{el.textContent}</title>);
+              break;
+            case "meta":
+              elements.push(
+                <meta
+                  key={elements.length}
+                  {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                />
+              );
+              break;
+            case "link": {
+              const attrs = Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]));
+
+              // ✅ Force canonical domain to growthnatives.com
+              if (attrs.rel === "canonical" && attrs.href) {
+                try {
+                  const url = new URL(attrs.href);
+                  url.hostname = "growthnatives.com";
+                  url.protocol = "https:";
+                  attrs.href = url.toString();
+                } catch (err) {
+                  console.warn("Invalid canonical URL:", attrs.href, err);
+                }
+              }
+
+              elements.push(<link key={elements.length} {...attrs} />);
+              break;
+            }
+            case "script":
+              elements.push(
+                <script
+                  key={elements.length}
+                  {...Object.fromEntries([...el.attributes].map(attr => [attr.name, attr.value]))}
+                  dangerouslySetInnerHTML={{ __html: el.textContent || "" }}
+                />
+              );
+              break;
+            default:
+              break;
+          }
+        }
+      });
+
+      setHeadTags(elements);
+    } catch (error) {
+      console.error("Error processing RankMath data:", error);
+    }
+  }, [post]);
+
+  // Load blog data from static JSON files
+  useLayoutEffect(() => {
+    const loadBlogData = async () => {
+      if (!slug) {
+        setNotFound(true);
+        return;
+      }
+
+      try {
+        // ✅ Load from root-level JSON files (WordPress API export format)
+        const blogData = await import(`../../../${slug}.json`);
+        const postData = blogData.default || blogData;
+
+        // Process content (WordPress format: content.rendered)
+        const rawContent = postData.content?.rendered || postData.content || "";
+        const tocData = extractTOC(rawContent);
+        setToc(tocData);
+
+        const contentWithAnchors = addHeadingAnchors(rawContent);
+        const cleanedContent = cleanContent(contentWithAnchors);
+
+        // Set post data with all fields including SEO data from seo_meta.raw_head
+        setPost({
+          ...postData,
+          content: { rendered: cleanedContent },
+          rankmath_head: postData.seo_meta?.raw_head || '',
+        });
+        
+        setNotFound(false);
       } catch (error) {
-        console.error("Error fetching Rank Math data:", error);
+        console.error("Error loading blog data:", error);
+        setNotFound(true);
       }
     };
 
-    fetchRankMath();
-  }, []);
-
-useLayoutEffect(() => {
-  const loadBlogData = async () => {
-    if (!slug) {
-      setNotFound(true);
-      return;
-    }
-
-    try {
-      // ✅ Dynamically import the JSON file from local folder
-      const blogData = await import(`../../staticjson/${slug}.json`);
-
-      // Some bundlers wrap JSON in `.default`
-      const postData = blogData.default || blogData;
-
-      // Build TOC from content
-      const contentHTML = postData.content?.rendered || "";
-      const tocData = extractTOC(contentHTML);
-
-      setPost(postData);
-      setToc(tocData);
-      setNotFound(false);
-    } catch (error) {
-      console.error("Error loading blog data:", error);
-      setNotFound(true);
-    }
-  };
-
-  loadBlogData();
-}, [slug]);
+    loadBlogData();
+  }, [slug]);
 
 
   // useEffect(() => {
